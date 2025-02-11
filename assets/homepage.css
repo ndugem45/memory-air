@@ -132,6 +132,7 @@ linear-gradient(180deg, rgba(170, 126, 113, 0) 0%, rgba(170, 126, 113, 0.1) 100%
 }
 .product .right-content .item.active{
   opacity: 1;
+  padding-bottom: 323px;
 }
 .product .right-content .item svg{
   color: white;
