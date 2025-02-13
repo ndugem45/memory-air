@@ -1,4 +1,16 @@
 $(document).ready(() => {
+  $('.life_slider').on('init', (event, slick) => {
+    const totalSlides = slick.slideCount;
+    const widthPercentage = (1 / totalSlides) * 100;
+    $('#life-indicator .bar').css('width', widthPercentage + '%');
+  });
+
+  $('.stories_slider').on('init', (event, slick) => {
+    const totalSlides = slick.slideCount;
+    const widthPercentage = (1 / totalSlides) * 100;
+    $('#stories-indicator .bar').css('width', widthPercentage + '%');
+  });
+
   $('.partner .container').slick({
     arrows: false,
     dots: false,
@@ -28,6 +40,17 @@ $(document).ready(() => {
     variableWidth: true,
     autoplay: true,
     autoplaySpeed: 2000,
+  });
+
+  $('.life_slider').on('afterChange', (event, slick, currentSlide) => {
+    const totalSlides = slick.slideCount;
+    const widthPercentage = ((currentSlide + 1) / totalSlides) * 100;
+    $('#life-indicator .bar').css('width', widthPercentage + '%');
+  });
+  $('.stories_slider').on('afterChange', (event, slick, currentSlide) => {
+    const totalSlides = slick.slideCount;
+    const widthPercentage = ((currentSlide + 1) / totalSlides) * 100;
+    $('#stories-indicator .bar').css('width', widthPercentage + '%');
   });
 
   $('#life-prev').click(() => {
