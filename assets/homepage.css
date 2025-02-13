@@ -63,15 +63,19 @@
 }
 .life .container:last-child{
   padding: unset;
-  max-width: 1680px;
+  max-width: 2048px;
 }
 .life .life_slider{
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 20px;
-  overflow: hidden;
-  border-radius: 32px;
+}
+@media only screen and (min-width: 2048px) {
+  .life .life_slider{
+    border-radius: 32px;
+    overflow: hidden;
+  }
 }
 .life .slider_item-wrap{
   padding-inline: 10px;
@@ -112,10 +116,13 @@
 .product .container{
   display: flex;
   gap: 99px;
+  align-items: flex-start;
 }
 .product .left-content{
   display: flex;
   gap: 28px;
+  /* position: sticky;
+  top: 25vh; */
 }
 .product .left-content .head{
   display: flex;
@@ -123,10 +130,15 @@
   align-items: flex-start;
   gap: 21px;
 }
+.product .left-content .head img{
+  flex: 1;
+  object-fit: contain;
+}
 .product .right-content{
   display: flex;
   flex-direction: column;
   gap: 24px;
+  /* height: 3000px; */
 }
 .product .right-content .item{
   display: flex;
@@ -153,14 +165,16 @@
 }
 .stories .container{
   padding: unset;
-  max-width: 1680px;
+  max-width: 2048px;
 }
 .stories .stories_card-wrap{
   padding-inline: 12px;
 }
-.stories .stories_slider{
-  border-radius: 32px;
-  overflow: hidden;
+@media only screen and (min-width: 2048px) {
+  .stories .stories_slider{
+    border-radius: 32px;
+    overflow: hidden;
+  }
 }
 .stories .stories_card{
   display: flex;
