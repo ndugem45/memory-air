@@ -425,6 +425,9 @@ footer .right .menu-btm{
     align-items: center;
     gap: 18px;
 }
+footer .right .menu-btm p{
+    max-width: 236px;
+}
 footer .menu-term{
     display: flex;
     align-items: center;

@@ -30,6 +30,20 @@ $(document).ready(() => {
     autoplaySpeed: 2000,
   });
 
+  $('#life-prev').click(() => {
+    $('.life_slider').slick('slickPrev');
+  });
+  $('#life-next').click(() => {
+    $('.life_slider').slick('slickNext');
+  });
+
+  $('#stories-prev').click(() => {
+    $('.stories_slider').slick('slickPrev');
+  });
+  $('#stories-next').click(() => {
+    $('.stories_slider').slick('slickNext');
+  });
+
   const acc = document.getElementsByClassName('head');
   let i;
 

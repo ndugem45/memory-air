@@ -63,6 +63,7 @@
 }
 .life .container:last-child{
   padding: unset;
+  max-width: 1680px;
 }
 .life .life_slider{
   display: flex;
@@ -70,6 +71,7 @@
   align-items: center;
   gap: 20px;
   overflow: hidden;
+  border-radius: 32px;
 }
 .life .slider_item-wrap{
   padding-inline: 10px;
@@ -151,13 +153,19 @@
 }
 .stories .container{
   padding: unset;
+  max-width: 1680px;
 }
 .stories .stories_card-wrap{
   padding-inline: 12px;
 }
+.stories .stories_slider{
+  border-radius: 32px;
+  overflow: hidden;
+}
 .stories .stories_card{
   display: flex;
-  width: 1073px;
+  width: 100vw;
+  max-width: 1073px;
   height: 520px;
   align-items: stretch;
   gap: 32px;
