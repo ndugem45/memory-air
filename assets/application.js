@@ -37,10 +37,10 @@ $(document).ready(() => {
     $('.life_slider').slick('slickNext');
   });
 
-  $('#stories-prev').click(() => {
+  $('.stories-prev').click(() => {
     $('.stories_slider').slick('slickPrev');
   });
-  $('#stories-next').click(() => {
+  $('.stories-next').click(() => {
     $('.stories_slider').slick('slickNext');
   });
 
