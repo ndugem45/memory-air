@@ -1,0 +1,125 @@
+/* hero */
+
+.hero3{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    background: var(--Gradient-BG, linear-gradient(180deg, rgba(170, 126, 113, 0.10) 0%, rgba(170, 126, 113, 0.00) 98.6%), #FFF);
+}
+
+.press_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.press_content-display{
+    display: flex;
+    font-family: "Avenir Next Cyr";
+}
+.press_content > h2 > span {
+    font-weight: 500;
+}
+.r-watermark{
+    color: #232323;
+    font-family: "Avenir Next Cyr";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 450;
+    line-height: 100%;
+    letter-spacing: -1.68px;
+    margin-top: 8px;
+}
+
+.float-press-1,
+.float-press-2{
+    position: absolute;
+    top: 0;
+}
+
+.float-press-2{
+    right: 0;
+}
+.float-press-1{
+    left: 0;
+}
+
+/* tab-style */
+
+.press_tab-head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.tab-head_button-wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    justify-content: center;
+    align-items: center;
+}
+.tab-head_button-wrapper > span{
+    font-family: "General Sans";
+}
+
+.card_press,
+.card_press-body{
+display: flex;
+flex-direction: column;
+justify-content: start;
+align-items: start;
+max-width: 400px;
+}
+
+.card_press-body-text{
+    color: #232323;
+    font-weight: 500;
+}
+
+.card_press-body-dsc{
+    color: #3C2E25;
+    font-family: "General Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+    letter-spacing: 0.1px;
+}
+
+.card_press-body-link{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+gap: 8px;
+color: #3C2E25;
+}
+.press_tab-body{
+width: 100%;
+
+}
+
+.button-scientific.active,
+.button-press.active {
+    font-weight: bold;
+    border-bottom: 2px solid black;
+}
+
+.tab-head_button-wrapper > a{
+    cursor: pointer;
+}
+.press-content,
+.scientific-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
