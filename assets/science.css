@@ -1,0 +1,17 @@
+.hero2{
+  padding-bottom: unset;
+  padding-top: 135px;
+  background: linear-gradient(180deg, rgba(170, 126, 113, 0.10) 0%, rgba(170, 126, 113, 0.00) 100%), #FFF;
+}
+.hero2 .container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 79px;
+}
+.hero2 .content{
+  max-width: 588px;
+}
+.hero2 .illus{
+  width: 634px;
+}
