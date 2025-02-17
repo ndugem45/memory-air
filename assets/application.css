@@ -73,7 +73,7 @@ h2{
     letter-spacing: 0%;
 }
 h2 span{
-    font-family: Cormorant Garamond;
+    font-family: "Cormorant Garamond";
     font-weight: 700;
     font-style: italic;
     font-size: 72px;
@@ -88,6 +88,13 @@ h3{
     font-style: normal;
     font-weight: 500;
     line-height: 130%;
+}
+h3 span{
+    font-family: "Cormorant Garamond";
+    font-size: 40px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 100%;
 }
 
 p{
@@ -267,6 +274,16 @@ button{
 
 .opacity-60{
     opacity: 0.6;
+}
+
+.hero-label{
+    color: var(--color-primary);
+    font-family: "General Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: capitalize;
 }
 
 .btn-wrap{
