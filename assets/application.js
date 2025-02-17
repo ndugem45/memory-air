@@ -106,6 +106,13 @@ $(document).ready(() => {
     $('#memory-slide').slick('slickGoTo', index);
   });
 
+  $('#timeline-toggle').click(() => {
+    const wrapper = document.querySelector('.timeline .item-wrap');
+    wrapper.classList.add('active');
+    wrapper.style.maxHeight = wrapper.scrollHeight + 'px';
+    $(event.currentTarget).hide();
+  });
+
   const acc = document.getElementsByClassName('head');
   let i;
 
