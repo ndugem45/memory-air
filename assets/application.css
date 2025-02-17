@@ -293,6 +293,11 @@ button{
     letter-spacing: 0%;
     color: var(--color-primary);
 }
+.btn.is-outline-black{
+    border: 1px solid var(--color-primary);
+    background: white;
+    color: var(--color-primary);
+}
 .btn.is-outline{
     border: 1px solid #FFFFFF;
     background: #00000033;

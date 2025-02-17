@@ -11,6 +11,12 @@ $(document).ready(() => {
     $('#stories-indicator .bar').css('width', widthPercentage + '%');
   });
 
+  $('#review-slider').on('init', (event, slick) => {
+    const totalSlides = slick.slideCount;
+    const widthPercentage = (1 / totalSlides) * 100;
+    $('#review-indicator .bar').css('width', widthPercentage + '%');
+  });
+
   $('.partner .container').slick({
     arrows: false,
     dots: false,
@@ -42,6 +48,20 @@ $(document).ready(() => {
     autoplaySpeed: 2000,
   });
 
+  $('#review-slider').slick({
+    arrows: false,
+    dots: false,
+    centerMode: true,
+    variableWidth: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+  });
+  $('#memory-slide').slick({
+    arrows: false,
+    dots: false,
+    fade: true,
+  });
+
   $('.life_slider').on('afterChange', (event, slick, currentSlide) => {
     const totalSlides = slick.slideCount;
     const widthPercentage = ((currentSlide + 1) / totalSlides) * 100;
@@ -51,6 +71,11 @@ $(document).ready(() => {
     const totalSlides = slick.slideCount;
     const widthPercentage = ((currentSlide + 1) / totalSlides) * 100;
     $('#stories-indicator .bar').css('width', widthPercentage + '%');
+  });
+  $('#review-slider').on('afterChange', (event, slick, currentSlide) => {
+    const totalSlides = slick.slideCount;
+    const widthPercentage = ((currentSlide + 1) / totalSlides) * 100;
+    $('#review-indicator .bar').css('width', widthPercentage + '%');
   });
 
   $('#life-prev').click(() => {
@@ -65,6 +90,20 @@ $(document).ready(() => {
   });
   $('.stories-next').click(() => {
     $('.stories_slider').slick('slickNext');
+  });
+
+  $('#review-prev').click(() => {
+    $('#review-slider').slick('slickPrev');
+  });
+  $('#review-next').click(() => {
+    $('#review-slider').slick('slickNext');
+  });
+
+  $('.tab_btn button').click((e) => {
+    const index = e.currentTarget.getAttribute('id').split('tab-btn-')[1];
+    $('.tab_btn button').removeClass('active');
+    $(e.currentTarget).addClass('active');
+    $('#memory-slide').slick('slickGoTo', index);
   });
 
   const acc = document.getElementsByClassName('head');
@@ -92,37 +131,36 @@ $(document).ready(() => {
   });
 });
 
-
 // tab logic
 
-document.addEventListener("DOMContentLoaded", function () {
-  const scientificTab = document.querySelector(".button-scientific");
-  const pressTab = document.querySelector(".button-press");
-  const scientificContent = document.querySelector(".scientific-content");
-  const pressContent = document.querySelector(".press-content");
+document.addEventListener('DOMContentLoaded', function () {
+  const scientificTab = document.querySelector('.button-scientific');
+  const pressTab = document.querySelector('.button-press');
+  const scientificContent = document.querySelector('.scientific-content');
+  const pressContent = document.querySelector('.press-content');
 
   function showTab(selectedTab) {
-      if (selectedTab === "scientific") {
-          scientificContent.style.display = "flex";
-          pressContent.style.display = "none";
-          scientificTab.classList.add("active");
-          pressTab.classList.remove("active");
-      } else {
-          scientificContent.style.display = "none";
-          pressContent.style.display = "flex";
-          scientificTab.classList.remove("active");
-          pressTab.classList.add("active");
-      }
+    if (selectedTab === 'scientific') {
+      scientificContent.style.display = 'flex';
+      pressContent.style.display = 'none';
+      scientificTab.classList.add('active');
+      pressTab.classList.remove('active');
+    } else {
+      scientificContent.style.display = 'none';
+      pressContent.style.display = 'flex';
+      scientificTab.classList.remove('active');
+      pressTab.classList.add('active');
+    }
   }
 
   // Set default active tab
-  showTab("press");
+  showTab('press');
 
-  scientificTab.addEventListener("click", function () {
-      showTab("scientific");
+  scientificTab.addEventListener('click', function () {
+    showTab('scientific');
   });
 
-  pressTab.addEventListener("click", function () {
-      showTab("press");
+  pressTab.addEventListener('click', function () {
+    showTab('press');
   });
 });
