@@ -321,7 +321,7 @@
 .faq{
   background: linear-gradient(180deg, rgba(170, 126, 113, 0.10) 0%, rgba(170, 126, 113, 0.00) 100%), #FFF;
 }
-.faq .faq_wrap{
+.faq_wrap{
   width: 100%;
   max-width: 717px;
   margin: auto;
@@ -329,18 +329,18 @@
   flex-direction: column;
   gap: 40px;
 }
-.faq .faq_item{
+.faq_wrap.faq_item{
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-.faq .faq_item .head{
+.faq_wrap .faq_item .head{
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
 }
-.faq .faq_item .head{
+.faq_wrap .faq_item .head{
   padding-right: 12px;
   font-family: "General Sans";
   font-size: 24px;
@@ -348,13 +348,13 @@
   font-weight: 500;
   line-height: 130%;
 }
-.faq .faq_item .head svg{
+.faq_wrap .faq_item .head svg{
   transition: all 200ms ease;
 }
-.faq .faq_item .head.active svg{
+.faq_wrap .faq_item .head.active svg{
   transform: rotate(135deg);
 }
-.faq .faq_item .body{
+.faq_wrap .faq_item .body{
   font-family: "General Sans";
   max-height: 0;
   overflow: hidden;
