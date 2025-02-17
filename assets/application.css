@@ -330,6 +330,12 @@ button{
     color: white;
     background: var(--color-secondary);
 }
+.btn.is-bordered{
+    border-radius: 80px;
+    border: 1px solid #232323;
+    color: black;
+    background-color: #fff;
+}
 
 .divider{
     width: 100%;

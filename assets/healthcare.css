@@ -1,0 +1,12 @@
+.healthcare_content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.healthcare_content-text{
+    max-width: 640px;
+    width: 100%;
+}
