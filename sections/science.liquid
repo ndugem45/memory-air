@@ -1,0 +1,72 @@
+{% style %}
+  #shopify-section-{{section.id}}.science .science_content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 56px;
+  }
+  #shopify-section-{{section.id}}.science .science_right{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  #shopify-section-{{section.id}}.science .science_label{
+    font-family: "General Sans";
+    color: var(--secondary-50);
+    margin-bottom: 36px;
+  }
+  #shopify-section-{{section.id}}.science .science_stat-wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  #shopify-section-{{section.id}}.science .science_stat{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+{% endstyle %}
+
+<div class="container">
+  <h2 class="text-center m-btm m-54 text-primary">
+    Memory Air® is based on the <br>
+    <span>
+      Science of Olfactory Enrichment
+    </span>
+  </h2>
+  <div class="science_content">
+    <div class="science_video">
+      <img src="assets/images/science_illus.png" alt="" srcset="">
+    </div>
+    <div class="science_right">
+      <div class="science_label text-16">
+        The science behind Memory Air
+      </div>
+      <div class="science_stat-wrap m-btm m-32">
+        <div class="science_stat">
+          <div class="font-italic text-80 font-medium text-primary">
+            226%
+          </div>
+          <span class="text-16">Improvement in Seniors</span>
+        </div>
+        <div class="divider opacity-60"></div>
+        <div class="science_stat">
+          <div class="font-italic text-80 font-medium text-primary">
+            300%
+          </div>
+          <span class="text-16">Improvement in People with Dementia/Alzheimer's</span>
+        </div>
+      </div>
+      <a href="" class="btn is-black">
+        Explore The Science
+      </a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "tag": "section",
+    "class": "science"
+  }
+{% endschema %}

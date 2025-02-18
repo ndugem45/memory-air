@@ -1,0 +1,99 @@
+{% style %}
+  #shopify-section-{{section.id}}.partner{
+    padding-block: 64px;
+    overflow: hidden;
+  }
+  #shopify-section-{{section.id}}.partner .container{
+    max-width: 100%;
+    padding: unset;
+  }
+  #shopify-section-{{section.id}}.partner .container div{
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 40px;
+  }
+{% endstyle %}
+
+<div class="container">
+  <div>
+    <img src="assets/images/everyday_BW.png" alt="">
+  </div>
+  <div>
+    <img src="assets/images/NPR_BW.png" alt="">
+  </div>
+  <div>
+    <img src="assets/images/Frontier_BW.png" alt="">
+  </div>
+  <div>
+    <img src="assets/images/medscape_BW.png" alt="">
+  </div>
+  <div>
+    <img src="assets/images/CBS_BW.png" alt="">
+  </div>
+  <div>
+    <img src="assets/images/aljazeera.png" alt="">
+  </div>
+  <div>
+    <img src="assets/images/american_psychological_association.png" alt="">
+  </div>
+  <div>
+    <img src="assets/images/cbs_news.png" alt="">
+  </div>
+  <div>
+    <img src="assets/images/bbc.png" alt="">
+  </div>
+  <div>
+    <img src="assets/images/cnn.png" alt="">
+  </div>
+  <div>
+    <img src="assets/images/en.png" alt="">
+  </div>
+  <div>
+    <img src="assets/images/fox_news.png" alt="">
+  </div>
+  <div>
+    <img src="assets/images/geriatric_psychiatry.png" alt="">
+  </div>
+  <div>
+    <img src="assets/images/gg_international.png" alt="">
+  </div>
+  <div>
+    <img src="assets/images/hbo.png" alt="">
+  </div>
+  <div>
+    <img src="assets/images/nbc-modified.png" alt="">
+  </div>
+  <div>
+    <img src="assets/images/science_direct.png" alt="">
+  </div>
+  <div>
+    <img src="assets/images/skynews.png" alt="">
+  </div>
+</div>
+
+<script>
+  $(document).ready(function(){
+    $('.partner .container').slick({
+      arrows: false,
+      dots: false,
+      centerMode: true,
+      variableWidth: true,
+      speed: 2500,
+      cssEase: 'linear',
+      autoplay: true,
+      autoplaySpeed: 10,
+      pauseOnHover: false,
+      pauseOnFocus: false,
+    });
+  });
+</script>
+
+
+{% schema %}
+  {
+    "tag": "section",
+    "class": "partner"
+  }
+{% endschema %}

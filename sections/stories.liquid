@@ -1,0 +1,213 @@
+{% style %}
+  #shopify-section-{{section.id}}.stories{
+    background: linear-gradient(180deg, rgba(170, 126, 113, 0.00) 0%, rgba(170, 126, 113, 0.10) 100%), #FFF;
+  }
+  #shopify-section-{{section.id}}.stories .container{
+    padding: unset;
+    max-width: 2048px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #shopify-section-{{section.id}}.stories .stories_card-wrap{
+    padding-inline: 12px;
+  }
+  @media only screen and (min-width: 2048px) {
+    #shopify-section-{{section.id}}.stories .stories_slider{
+      border-radius: 32px;
+      overflow: hidden;
+    }
+  }
+  #shopify-section-{{section.id}}.stories .stories_card{
+    display: flex;
+    width: 100vw;
+    max-width: 1073px;
+    height: 520px;
+    align-items: stretch;
+    gap: 32px;
+    border-radius: 32px;
+    background: var(--orange-light);
+  }
+  #shopify-section-{{section.id}}.stories .stories_card img{
+    height: 520px;
+    border-radius: 24px;
+    object-fit: cover;
+    width: 439px;
+    background-color: lightgray;
+  }
+  #shopify-section-{{section.id}}.stories .stories_card .content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-block: 24px;
+  }
+  #shopify-section-{{section.id}}.stories .stories_card .content p{
+    color: #000;
+    font-family: "General Sans";
+  }
+  #shopify-section-{{section.id}}.stories .stories_card .user{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  #shopify-section-{{section.id}}.stories .stories_card .user span:last-child{
+    color: var(--black-60);
+  }
+  #shopify-section-{{section.id}}.stories .stories_navigation{
+    position: relative;
+    width: 100%;
+    max-width: calc( 1440px - 5%);
+  }
+  #shopify-section-{{section.id}}.stories .stories_navigation button{
+    position: absolute;
+    left: 0;
+    top: -300px;
+  }
+  #shopify-section-{{section.id}}.stories .stories_navigation button:last-child{
+    left: unset;
+    right: 0;
+  }
+{% endstyle %}
+
+<div class="container">
+  <h2 class="text-center m-btm m-32">
+    Success <br>
+    <span>
+      Stories
+    </span>
+  </h2>
+  <div class="stories_slider">
+    <div class="stories_card-wrap">
+      <div class="stories_card">
+        <img src="/assets/images/stories-1.webp" alt="">
+        <div class="content">
+          <p class="text-32 font-medium text-black">
+            “I used to have so much anxiety around my memory. Now, I confidently recall names, faces, and important
+            information when I need to. I feel 20 years younger! I can travel with ease!”
+          </p>
+          <div class="user text-20">
+            <span class="text-black">
+              Nicole & Martin
+            </span>
+            <span>
+              Owner at Louis Vuitton
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="stories_card-wrap">
+      <div class="stories_card">
+        <img src="/assets/images/stories-2.webp" alt="">
+        <div class="content">
+          <p class="text-32 font-medium text-black">
+            “I used to have so much anxiety around my memory. Now, I confidently recall names, faces, and important
+            information when I need to. I feel 20 years younger! I can travel with ease!”
+          </p>
+          <div class="user text-20">
+            <span class="text-black">
+              Nicole & Martin
+            </span>
+            <span>
+              Owner at Louis Vuitton
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="stories_card-wrap">
+      <div class="stories_card">
+        <img src="/assets/images/stories-3.webp" alt="">
+        <div class="content">
+          <p class="text-32 font-medium text-black">
+            “I used to have so much anxiety around my memory. Now, I confidently recall names, faces, and important
+            information when I need to. I feel 20 years younger! I can travel with ease!”
+          </p>
+          <div class="user text-20">
+            <span class="text-black">
+              Nicole & Martin
+            </span>
+            <span>
+              Owner at Louis Vuitton
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="stories_navigation">
+    <button class="stories-prev">
+      <svg width="85" height="84" viewBox="0 0 85 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.208008" width="84" height="84" rx="42" fill="white" />
+        <path d="M45.208 49.5L37.708 42L45.208 34.5" stroke="#3C2E25" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </button>
+    <button class="stories-next">
+      <svg width="85" height="84" viewBox="0 0 85 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.208008" width="84" height="84" rx="42" fill="white" />
+        <path d="M39.208 34.5L46.708 42L39.208 49.5" stroke="#3C2E25" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </button>
+  </div>
+  <div class="navigation-slider m-top m-78">
+    <button class="stories-prev">
+      <svg width="85" height="84" viewBox="0 0 85 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.208008" width="84" height="84" rx="42" fill="white" />
+        <path d="M45.208 49.5L37.708 42L45.208 34.5" stroke="#3C2E25" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </button>
+    <div id="stories-indicator" class="navigation-slider_indicator">
+      <div class="bar"></div>
+    </div>
+    <button class="stories-next">
+      <svg width="85" height="84" viewBox="0 0 85 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.208008" width="84" height="84" rx="42" fill="white" />
+        <path d="M39.208 34.5L46.708 42L39.208 49.5" stroke="#3C2E25" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  $(document).ready(() => {
+    $('.stories_slider').on('init', (event, slick) => {
+      const totalSlides = slick.slideCount;
+      const widthPercentage = (1 / totalSlides) * 100;
+      $('#stories-indicator .bar').css('width', widthPercentage + '%');
+    });
+
+    $('.stories_slider').slick({
+      arrows: false,
+      dots: false,
+      centerMode: true,
+      variableWidth: true,
+      autoplay: true,
+      autoplaySpeed: 2000,
+    });
+
+    $('.stories_slider').on('afterChange', (event, slick, currentSlide) => {
+      const totalSlides = slick.slideCount;
+      const widthPercentage = ((currentSlide + 1) / totalSlides) * 100;
+      $('#stories-indicator .bar').css('width', widthPercentage + '%');
+    });
+
+    $('.stories-prev').click(() => {
+      $('.stories_slider').slick('slickPrev');
+    });
+    $('.stories-next').click(() => {
+      $('.stories_slider').slick('slickNext');
+    });
+  });
+</script>
+
+{% schema %}
+  {
+    "tag": "section",
+    "class": "stories"
+  }
+{% endschema %}
