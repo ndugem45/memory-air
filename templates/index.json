@@ -20,7 +20,23 @@
     },
     "news": {
       "type": "news"
+    },
+    "submission": {
+      "type": "submission"
+    },
+    "faq": {
+      "type": "faq"
     }
   },
-  "order": ["hero", "partner", "science", "life", "product", "stories", "news"]
+  "order": [
+    "hero", 
+    "partner", 
+    "science", 
+    "life", 
+    "product", 
+    "stories", 
+    "news", 
+    "submission",
+    "faq"
+  ]
 }
