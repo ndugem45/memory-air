@@ -1,0 +1,192 @@
+{% style %}
+	#shopify-section-{{section.id}} .hero-contact {
+			display: flex;
+			justify-content: center;
+			padding-bottom: 48px;
+	}
+	
+	#shopify-section-{{section.id}} .container-contactus {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+			padding-block: 50px;
+	}
+	
+	#shopify-section-{{section.id}} .contactus_content {
+			display: flex;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			width: 100%;
+	}
+	
+	#shopify-section-{{section.id}} .contactus_content-image,
+	#shopify-section-{{section.id}} .contactus_content-form {
+			width: 100%;
+			position: relative;
+	}
+	
+	#shopify-section-{{section.id}} .contactus_content-form {
+			background-image: url('{{ "bg-form.png" | asset_url }}');
+			background-position: top center;
+			background-repeat: no-repeat;
+			display: flex;
+			align-items: start;
+			justify-content: center;
+			height: 800px;
+			background-size: 780px 800px;
+	}
+	
+	#shopify-section-{{section.id}} form {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			max-width: 612px;
+			padding: 24px;
+	}
+	
+	#shopify-section-{{section.id}} .input-layout {
+			display: flex;
+			justify-content: space-between;
+			gap: 16px;
+	}
+	
+	.input-form {
+			border-radius: 16px;
+			background: #F6F5F5;
+			width: 100%;
+			height: 48px;
+			padding-left: 16px;
+			padding-right: 16px;
+	}
+	
+	.select-input,
+	input::placeholder,
+	textarea::placeholder {
+			color: rgba(35, 35, 35, 0.4);
+			font-family: "General Sans";
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 145%;
+	}
+	
+	textarea {
+			height: 134px !important;
+			padding-top: 12px;
+	}
+	
+	#shopify-section-{{section.id}} .lable-form {
+			color: #232323;
+			font-family: "General Sans";
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 160%;
+	}
+	
+	#shopify-section-{{section.id}} .btn-full {
+			width: 100%;
+	}
+	{% endstyle %}
+	
+
+
+	<div class="container container-contactus">
+		<div>
+			<h1 class="m-btm m-54">
+				Contact
+				<span>Us</span>
+			</h1>
+		</div>
+		<div class="contactus_content">
+			<div class="contactus_content-image">
+				<div class="contactus_img-head m-btm m-32">
+					<img class="img-open" src="/assets/images/img-contactus-open.png" alt="" class="illus">
+					<div class="image-wrapper">
+						<img src="/assets/images/img-contactus-1.png" alt="" class="illus">
+						<img src="/assets/images/img-contactus-2.png" alt="" class="illus">
+						<img src="/assets/images/img-contactus-3.png" alt="" class="illus">
+					</div>
+				</div>
+				<div class="contactus_img-text">
+					<h2 class="contactus_text-title">Order Memory Air <span>®</span> Today!</h2>
+
+					<h3 class="contactus_text-list">● Works while you sleep</h3>
+					<span class="contactus_text-list-dsc">Works while you sleep to enhance memory without interrupting daily
+						activities.</span>
+
+					<h3 class="contactus_text-list ">● 100% automated with timing and dosage delivery</h3>
+					<span class="contactus_text-list-dsc">Fully automated with precise timing and dosage delivery.</span>
+
+					<h3 class="contactus_text-list">● All-natural, safe, pleasant scents for olfactory stimulation</h3>
+					<span class="contactus_text-list-dsc">Safe, natural, and pleasant scents to stimulate the sense of
+						smell.</span>
+
+					<h3 class="contactus_text-list">● Monthly refills delivered right to their door</h3>
+					<span class="contactus_text-list-dsc">Easy and convenient.</span>
+
+					<h3 class="contactus_text-list">● Tracks progress</h3>
+					<span class="contactus_text-list-dsc">Monitors memory progress through tests every 4 months.</span>
+				</div>
+				<div class="m-top m-32 btn-wrap">
+					<a class="btn is-black btn-full" href="">Buy Now</a>
+				</div>
+				<span class="contactus_img-text-btm">Order Memory Air now to start your patients on the road to memory
+					improvement.</span>
+			</div>
+
+			<div class="contactus_content-form">
+				<!-- <img class="form-bg" src="./assets/images/bg-form.png" alt="" srcset=""> -->
+				<form action="">
+					<label for="" class="lable-form m-btm m-32">Interested in Finally Having a Memory Loss Answer for Your
+						Patients? We’re here to work with healthcare providers to get Memory Air to the people who need it most.
+						<br>Reach out for:
+						<br>
+						● Referral Pads & In-office Resources
+						<br>
+						● More information</label>
+					<div class="input-layout m-btm m-12">
+						<input class="input-form" type="text" id="fname" name="firstname" placeholder="First Name">
+						<input class="input-form" type="text" id="lname" name="lastname" placeholder="Last Name">
+					</div>
+
+					<input class="input-form m-btm m-12" type="email" id="email" name="email" placeholder="Email">
+					<label class="m-btm m-12">
+						<input class=" " type="checkbox" name="Subscribe to the newsletter" id="subscribe"> Subscribe to the
+						newsletter
+					</label>
+					<select class="input-form select-input m-btm m-12" id="Select Topic" name="Select Topic">
+						<option value="Select Topic">Select Topic</option>
+						<option value="canada">Canada</option>
+						<option value="usa">USA</option>
+					</select>
+					<select class="input-form select-input m-btm m-12" id="Professional" name="Professional Practitioners">
+						<option value="Professional Practitioners">Professional Practitioners</option>
+						<option value="canada">Canada</option>
+						<option value="usa">USA</option>
+					</select>
+					<textarea class="input-form m-btm m-12" placeholder="Comment"></textarea>
+
+					<input type="submit" value="Send" class="btn is-black">
+					<label for="" class="lable-bottom-form">By signing in you agree with the Terms and Conditions and Privacy
+						Policy</label>
+				</form>
+			</div>
+		</div>
+		<div class="contactus-title_btm m-top m-32">
+			<p>Memory Air® has been designed based upon the science of olfactory enrichment. The device itself, however, has
+				not been tested to replicate the results of these 20 underlying studies. It is not required to be approved by
+				the FDA for yourself and your family since it does not treat diseases. As does the underlying science, it has
+				been designed to alleviate the symptoms of diseases and conditions.</p>
+		</div>
+	</div>
+
+
+
+{% schema %}
+	{
+		"tag": "section",
+		"class": "hero-contact"
+	}
+{% endschema %}
