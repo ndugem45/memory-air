@@ -1,0 +1,89 @@
+{% comment %} for healthcare page {% endcomment %}
+
+{% comment %} for healthcare page {% endcomment %}
+
+{% assign icon_head1 = 'icon_head-1.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign icon_head2 = 'icon_head-2.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign icon_head3 = 'icon_head-3.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign icon_head4 = 'icon_head-4.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+
+	
+	{% style %}
+
+  #shopify-section-{{section.id}}.finaly{
+    padding-block: 48px;
+		background-color: #3C2E25;
+  }
+	#shopify-section-{{section.id}} .finaly_wraper{
+    display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 80px
+  }
+	#shopify-section-{{section.id}} .finaly_title{
+		max-width: 1050px;
+		width: 100%;
+    text-align: center;
+		color: #fff;
+	}
+
+	#shopify-section-{{section.id}}	.card_patient{
+		border-radius: 16px;
+		border: 1px solid rgba(60, 46, 37, 0.50);
+		padding: 20px;
+		height: 368px;
+		max-width: 297px;
+		width: 100%;
+	}
+	#shopify-section-{{section.id}}	.patient_card-wrapper{
+		display: flex;
+		flex-direction: row;
+		gap: 32px;
+	}
+
+	#shopify-section-{{section.id}}	.card_patient-head {
+		border-radius: 16px;
+		border: 1px solid var(--Light-3, #E7DBD8);
+		background: var(--Light-1, #F6EFDC);
+		padding: 12px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	#shopify-section-{{section.id}} .head_text {
+		color: #232323;
+		font-family: "Avenir Next Cyr";
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 450;
+		line-height: 130%; /* 26px */
+		max-width: 120px;
+		width: 100%;
+	}
+
+	.icon_head{
+		width: 60px;
+		height: 60px;
+	}
+		
+	{% endstyle %}
+	
+
+	<div class="container">
+			<div class="finaly_wraper">
+					<h2 class="finaly_title">Finally, the Biggest Improvement in
+							<span class="finaly_title-span">Human Memory Ever Discovered...</span>
+					</h2>
+
+			</div>
+	</div>
+
+	
+	
+	{% schema %}
+			{
+					"tag": "section",
+					"class": "finaly"
+			}
+	{% endschema %}

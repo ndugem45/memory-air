@@ -1,42 +1,26 @@
 {
     "sections": {
-    "hero": {
-        "type": "hero"
-    },
+    "hero-healthcare": {
+            "type": "hero-healthcare"
+        },
     "partner": {
         "type": "partner"
     },
-    "science": {
-        "type": "science"
+    "patients": {
+        "type": "patients"
     },
-    "life": {
-        "type": "life"
-    },
-    "product": {
-        "type": "product"
-    },
-    "stories": {
-        "type": "stories"
-    },
-    "news": {
-        "type": "news"
-    },
-    "submission": {
-        "type": "submission"
+    "finaly": {
+        "type": "finaly"
     },
     "contactus": {
         "type": "contactus"
     }
     },
     "order": [
-    "hero", 
+    "hero-healthcare", 
     "partner", 
-    "science", 
-    "life", 
-    "product", 
-    "stories", 
-    "news", 
-    "submission",
+    "patients",
+    "finaly",
     "contactus"
     ]
 }

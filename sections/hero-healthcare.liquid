@@ -1,0 +1,58 @@
+{% comment %} for healthcare page {% endcomment %}
+
+{% style %}
+#shopify-section-{{section.id}} .healthcare_content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#shopify-section-{{section.id}} .healthcare_content-text{
+    max-width: 640px;
+    width: 100%;
+}
+
+#shopify-section-{{section.id}} .healthcare_content-img{
+max-width: 650px;
+width: 100%;
+}
+#shopify-section-{{section.id}} .healthcare_content-img > img{
+max-width: 650px;
+width: 100%;
+}
+
+{% endstyle %}
+
+<div class="container">
+	<div class="healthcare_content">
+		<div class="healthcare_content-text">
+			<h1 class="m-btm m-32">
+				<span>
+					Deliver Real Results<br>
+				</span>
+				to Your Patients
+			</h1>
+			<p>
+				Memory Air® was created by a world-famous scientist ranked in the top 2% by the Stanford School of Medicine.
+				Now you can deliver real results to your patients and clients.
+			</p>
+			<div class="m-top m-32 btn-wrap">
+				<a class="btn is-black" href="">Buy Now</a>
+				<a class="btn is-bordered" href="">Contact Us for Bulk Ordering</a>
+			</div>
+		</div>
+		<div class="healthcare_content-img">
+			<img src="/assets/images/healthcare_hero-img.png" alt="" class="illus">
+		</div>
+	</div>
+</div>
+
+
+{% schema %}
+	{
+		"tag": "section",
+		"class": "hero-healthcare"
+	}
+{% endschema %}
