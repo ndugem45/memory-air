@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero"
+    },
+    "partner": {
+      "type": "partner"
+    },
+    "science": {
+      "type": "science"
+    },
+    "life": {
+      "type": "life"
+    },
+    "product": {
+      "type": "product"
+    },
+    "stories": {
+      "type": "stories"
+    },
+    "news": {
+      "type": "news"
+    }
+  },
+  "order": ["hero", "partner", "science", "life", "product", "stories", "news"]
+}
