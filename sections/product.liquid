@@ -1,3 +1,5 @@
+{% assign product_img = 'MemoryAir2.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+
 {% style %}
   #shopify-section-{{section.id}}.product{
     background-color: var(--color-secondary);
@@ -72,7 +74,7 @@
         Explore Memory Air®
       </a>
     </div>
-    <img src="/assets/images/MemoryAir2.png" alt="">
+    <img src="{{product_img}}" alt="">
   </div>
   <div class="right-content">
     <div class="item active">

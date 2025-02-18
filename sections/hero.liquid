@@ -1,6 +1,8 @@
+{% assign bg = 'hero_bg.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+
 {% style %}
-  #shopify-section-{{ section.id}.hero{
-    background: #375461 url('assets/images/hero_bg.png') no-repeat;
+  #shopify-section-{{section.id}}.hero{
+    background: #375461 url('{{ bg }}') no-repeat;
     background-position: center;
     background-size: cover;
     color: white !important;

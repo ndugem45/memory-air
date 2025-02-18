@@ -1,3 +1,6 @@
+{% assign thumb1 = 'news-1.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign thumb2 = 'news-2.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+
 {% style %}
   #shopify-section-{{section.id}}.news{
     padding-bottom: 31px;
@@ -40,7 +43,7 @@
   </h2>
   <div class="news_grid m-btm m-54">
     <div class="news_item">
-      <img src="/assets/images/news-1.webp" alt="" class="m-btm m-32">
+      <img src="{{ thumb1 }}" alt="" class="m-btm m-32">
       <h3 class="m-btm m-12 p-horizontal p-12">
         #1 Researcher for Olfactory Enrichment
       </h3>
@@ -49,7 +52,7 @@
       </p>
     </div>
     <div class="news_item">
-      <img src="/assets/images/news-2.webp" alt="" class="m-btm m-32">
+      <img src="{{ thumb2 }}" alt="" class="m-btm m-32">
       <h3 class="m-btm m-12 p-horizontal p-12">
         The Solution to Memory Loss is Right Under Our Nose
       </h3>

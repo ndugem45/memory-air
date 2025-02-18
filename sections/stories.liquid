@@ -1,3 +1,7 @@
+{% assign stories1 = 'stories-1.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign stories2 = 'stories-2.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign stories3 = 'stories-3.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+
 {% style %}
   #shopify-section-{{section.id}}.stories{
     background: linear-gradient(180deg, rgba(170, 126, 113, 0.00) 0%, rgba(170, 126, 113, 0.10) 100%), #FFF;
@@ -80,7 +84,7 @@
   <div class="stories_slider">
     <div class="stories_card-wrap">
       <div class="stories_card">
-        <img src="/assets/images/stories-1.webp" alt="">
+        <img src="{{ stories1 }}" alt="">
         <div class="content">
           <p class="text-32 font-medium text-black">
             “I used to have so much anxiety around my memory. Now, I confidently recall names, faces, and important
@@ -99,7 +103,7 @@
     </div>
     <div class="stories_card-wrap">
       <div class="stories_card">
-        <img src="/assets/images/stories-2.webp" alt="">
+        <img src="{{ stories2 }}" alt="">
         <div class="content">
           <p class="text-32 font-medium text-black">
             “I used to have so much anxiety around my memory. Now, I confidently recall names, faces, and important
@@ -118,7 +122,7 @@
     </div>
     <div class="stories_card-wrap">
       <div class="stories_card">
-        <img src="/assets/images/stories-3.webp" alt="">
+        <img src="{{ stories3 }}" alt="">
         <div class="content">
           <p class="text-32 font-medium text-black">
             “I used to have so much anxiety around my memory. Now, I confidently recall names, faces, and important

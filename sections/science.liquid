@@ -1,3 +1,5 @@
+{% assign illus = 'science_illus.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+
 {% style %}
   #shopify-section-{{section.id}}.science .science_content{
     display: flex;
@@ -36,7 +38,7 @@
   </h2>
   <div class="science_content">
     <div class="science_video">
-      <img src="assets/images/science_illus.png" alt="" srcset="">
+      <img src="{{ illus }}" alt="" srcset="">
     </div>
     <div class="science_right">
       <div class="science_label text-16">
