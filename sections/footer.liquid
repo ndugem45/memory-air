@@ -1,3 +1,5 @@
+{% assign logo = 'footer-logo.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+
 {% style %}
   footer{
       display: flex;
@@ -118,7 +120,7 @@
   <div class="container top">
     <div class="left">
       <a href="/">
-        <img src="assets/images/footer-logo.webp" width="316" height="168" alt="" class="footer_logo">
+        <img src="{{ logo }}" width="316" height="168" alt="" class="footer_logo">
       </a>
       <p class="text-16">
         Join our newsletter to stay up to date on the latest in memory care
