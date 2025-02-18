@@ -25,7 +25,14 @@
 			width: 100%;
 			position: relative;
 	}
-	
+	#shopify-section-{{section.id}} .contactus_content-image{
+		width: 612px;
+		padding: 20px;
+		border-radius: 16px;
+		border: 1px solid #EEE;
+		background: #FFF;
+		box-shadow: -2px -2px 10px 0px rgba(238, 238, 238, 0.20), 2px 2px 10px 0px rgba(238, 238, 238, 0.20);
+	}
 	#shopify-section-{{section.id}} .contactus_content-form {
 			background-image: url('{{ "bg-form.png" | asset_url }}');
 			background-position: top center;
@@ -36,7 +43,62 @@
 			height: 800px;
 			background-size: 780px 800px;
 	}
-	
+	#shopify-section-{{section.id}} .contactus_img-head > img{
+		width: 572px;
+		height: 334px;
+	}
+	#shopify-section-{{section.id}} .image-wrapper > img{
+		width: 184px;
+		height: 90px;
+	}
+	#shopify-section-{{section.id}} .image-wrapper{
+    display: flex;
+    justify-content: space-between;
+	}
+
+	#shopify-section-{{section.id}} .contactus_text-title{
+		color: #232323;
+		font-family: "General Sans";
+		font-size: 32px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 140%; /* 44.8px */
+		display: flex;
+		margin-bottom: 24px;
+	}
+
+	#shopify-section-{{section.id}} .contactus_img-text{
+	display: flex;
+	flex-direction: column;
+	}
+
+	#shopify-section-{{section.id}} .contactus_text-title > span{
+		color: #232323;
+		font-family: "Avenir Next Cyr";
+		font-size: 15px;
+		font-style: normal;
+		font-weight: 450;
+		line-height: 100%;
+		padding-top: 8px;
+		margin-right: 4px;
+	}
+	#shopify-section-{{section.id}} .contactus_text-list{
+		color: #232323;
+		font-family: "General Sans";
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 160%; /* 28.8px */
+	}
+	#shopify-section-{{section.id}} .contactus_text-list-dsc{
+		color: #232323;
+		font-family: "General Sans";
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 160%; /* 22.4px */
+		margin-bottom: 16px;
+	}
 	#shopify-section-{{section.id}} form {
 			display: flex;
 			flex-direction: column;
@@ -88,6 +150,26 @@
 	#shopify-section-{{section.id}} .btn-full {
 			width: 100%;
 	}
+
+	#shopify-section-{{section.id}} .lable-bottom-form{
+		color: rgba(35, 35, 35, 0.4);
+		text-align: center;
+		font-family: "General Sans";
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 160%; /* 22.4px */
+	}
+	#shopify-section-{{section.id}} .contactus-title_btm > p {
+		color: #232323;
+		text-align: justify;
+		font-family: "General Sans";
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 160%; /* 25.6px */
+	}
+	
 	{% endstyle %}
 	
 
@@ -102,7 +184,7 @@
 		<div class="contactus_content">
 			<div class="contactus_content-image">
 				<div class="contactus_img-head m-btm m-32">
-					<img class="img-open" src="/assets/images/img-contactus-open.png" alt="" class="illus">
+					<img src="/assets/images/img-contactus-open.png" alt="" class="img-open illus">
 					<div class="image-wrapper">
 						<img src="/assets/images/img-contactus-1.png" alt="" class="illus">
 						<img src="/assets/images/img-contactus-2.png" alt="" class="illus">
@@ -129,7 +211,7 @@
 					<h3 class="contactus_text-list">● Tracks progress</h3>
 					<span class="contactus_text-list-dsc">Monitors memory progress through tests every 4 months.</span>
 				</div>
-				<div class="m-top m-32 btn-wrap">
+				<div class="m-vertical m-32 btn-wrap">
 					<a class="btn is-black btn-full" href="">Buy Now</a>
 				</div>
 				<span class="contactus_img-text-btm">Order Memory Air now to start your patients on the road to memory
@@ -137,7 +219,6 @@
 			</div>
 
 			<div class="contactus_content-form">
-				<!-- <img class="form-bg" src="./assets/images/bg-form.png" alt="" srcset=""> -->
 				<form action="">
 					<label for="" class="lable-form m-btm m-32">Interested in Finally Having a Memory Loss Answer for Your
 						Patients? We’re here to work with healthcare providers to get Memory Air to the people who need it most.
@@ -169,7 +250,7 @@
 					<textarea class="input-form m-btm m-12" placeholder="Comment"></textarea>
 
 					<input type="submit" value="Send" class="btn is-black">
-					<label for="" class="lable-bottom-form">By signing in you agree with the Terms and Conditions and Privacy
+					<label for="" class="lable-bottom-form m-top m-32">By signing in you agree with the Terms and Conditions and Privacy
 						Policy</label>
 				</form>
 			</div>

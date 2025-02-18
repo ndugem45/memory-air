@@ -1,0 +1,228 @@
+{% comment %} for healthcare page {% endcomment %}
+
+{% assign icon_head1 = 'icon_head-1.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign icon_head2 = 'icon_head-2.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign icon_head3 = 'icon_head-3.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign icon_head4 = 'icon_head-4.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+
+	
+	{% style %}
+
+  #shopify-section-{{section.id}} .patient{
+    padding-block: 80px;
+		background-color: #F6F2F1;
+  }
+	#shopify-section-{{section.id}} .patient_wraper{
+    display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 80px
+  }
+	#shopify-section-{{section.id}} .patient_title{
+		max-width: 600px;
+		width: 100%;
+    text-align: center;
+	}
+
+	#shopify-section-{{section.id}}	.card_patient{
+		border-radius: 16px;
+		border: 1px solid rgba(60, 46, 37, 0.50);
+		padding: 20px;
+		height: 368px;
+		max-width: 297px;
+		width: 100%;
+	}
+	#shopify-section-{{section.id}}	.patient_card-wrapper{
+		display: flex;
+		flex-direction: row;
+		gap: 32px;
+	}
+
+	#shopify-section-{{section.id}}	.card_patient-head {
+		border-radius: 16px;
+		border: 1px solid var(--Light-3, #E7DBD8);
+		background: var(--Light-1, #F6EFDC);
+		padding: 12px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	#shopify-section-{{section.id}} .head_text {
+		color: #232323;
+		font-family: "Avenir Next Cyr";
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 450;
+		line-height: 130%; /* 26px */
+		max-width: 120px;
+		width: 100%;
+	}
+
+	.icon_head{
+		width: 60px;
+		height: 60px;
+	}
+		
+	{% endstyle %}
+	
+
+	<div class="container">
+			<div class="patient_wraper">
+					<h2 class="patient_title">Support Your Patients
+							<span class="patient_title-span">I’m a...</span>
+					</h2>
+					<div class="patient_card-wrapper">
+
+							<div class="card_patient">
+									<div class="card_patient-head">
+										<h3 class="head_text">Medical Practitioners</h3>
+										<img class="icon_head" src="{{icon_head1}}" alt="">
+									</div>
+									<div class="card_patient-body">
+										<ul>
+											<li>
+												<span>Neurologist</span>
+											</li>
+											<li>
+												<span>Gerontologist</span>
+											</li>
+											<li>
+												<span>Psychiatrist</span>
+											</li>
+											<li>
+												<span>Family Practitioner</span>
+											</li>
+											<li>
+												<span>Internist</span>
+											</li>
+											<li>
+												<span>Gynecologist</span>
+											</li>
+											<li>
+												<span>General Practitioner</span>
+											</li>
+											<li>
+												<span>Naturopath</span>
+											</li>
+											<li>
+												<span>Integrative Medicine Specialist</span>
+											</li>
+											<li>
+												<span>Other Physician</span>
+											</li>
+											
+										</ul>
+									</div>
+							</div>
+
+							<div class="card_patient">
+								<div class="card_patient-head">
+									<h3 class="head_text">Nurses and PAs</h3>
+									<img class="icon_head" src="{{icon_head2}}" alt="">
+								</div>
+								<div class="card_patient-body">
+									<ul>
+										<li>
+											<span>
+												Registered Nurse
+												</span>
+										</li>
+										<li>
+											<span>
+												Gerontological Nurses (AGNP)
+												</span>
+										</li>
+										<li>
+											<span>
+												Memory Care Nurse
+											</span>
+										</li>
+										<li>
+											<span>
+												Home Health Nurse
+											</span>
+										</li>
+										<li>
+											<span>
+												Rehabilitation Nurse
+												</span>
+										</li>
+										<li>
+											<span>
+												Nurse Educator
+												</span>
+										</li>
+										<li>
+											<span>
+											Physicians Assistant
+											</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="card_patient">
+								<div class="card_patient-head">
+									<h3 class="head_text">Therapists and Counselors</h3>
+									<img class="icon_head" src="{{icon_head3}}" alt="">
+								</div>
+								<div class="card_patient-body">
+									<ul>
+										<li>
+											<span>Psychologist</span>
+										</li>
+										<li>
+											<span>
+												Psychotherapist
+												</span>
+										</li>
+										<li>
+											<span>PhD</span>
+										</li>
+										<li>
+											<span>Marriage, Family, Child Counselors (MFCC or MFC)</span>
+										</li>
+										<li>
+											<span>Licensed Clinical Social Workers (LCSW)</span>
+										</li>
+										<li>
+											<span>Religious or Pastoral Clinician (Priests, Pastors, Rabbis, Imams, etc.)</span>
+										</li>
+										
+									</ul>
+								</div>
+							</div>
+
+							<div class="card_patient">
+								<div class="card_patient-head">
+									<h3 class="head_text">Wellness Practitioners</h3>
+									<img class="icon_head" src="{{icon_head4}}" alt="">
+								</div>
+								<div class="card_patient-body">
+									<ul>
+										<li>
+											<span>Chiropractor</span>
+										</li>
+										<li>
+											<span>Holistic Provider</span>
+										</li>
+										<li>
+											<span>Aromatherapist</span>
+										</li>
+										
+									</ul>
+								</div>
+							</div>
+				</div>
+			</div>
+	</div>
+
+	
+	
+	{% schema %}
+			{
+					"tag": "section",
+					"class": "patient"
+			}
+	{% endschema %}
