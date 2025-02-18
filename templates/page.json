@@ -1,0 +1,42 @@
+{
+    "sections": {
+    "hero": {
+        "type": "hero"
+    },
+    "partner": {
+        "type": "partner"
+    },
+    "science": {
+        "type": "science"
+    },
+    "life": {
+        "type": "life"
+    },
+    "product": {
+        "type": "product"
+    },
+    "stories": {
+        "type": "stories"
+    },
+    "news": {
+        "type": "news"
+    },
+    "submission": {
+        "type": "submission"
+    },
+    "contactus": {
+        "type": "contactus"
+    }
+    },
+    "order": [
+    "hero", 
+    "partner", 
+    "science", 
+    "life", 
+    "product", 
+    "stories", 
+    "news", 
+    "submission",
+    "contactus"
+    ]
+}
