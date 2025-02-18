@@ -1,4 +1,4 @@
-{% comment %} {% assign logo = 'images/nav-logo.webp' | asset_url | append: '?v=' | append: 'timestamp' %} {% endcomment %}
+{% assign logo = 'images/nav-logo.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
 
 {% style %}
   .nav{
@@ -85,6 +85,7 @@
   <div class="left">
     <a href="/index.html">
       <img src="assets/images/nav-logo.webp" height="54" width="100" class="logo">
+      <img src="{{logo}}" height="54" width="100" class="logo">
     </a>
     <div class="menu">
       <a href="/science.html">The science</a>

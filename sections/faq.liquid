@@ -1,0 +1,87 @@
+{% style %}
+  #shopify-section-{{section.id}}.faq{
+    background: linear-gradient(180deg, rgba(170, 126, 113, 0.10) 0%, rgba(170, 126, 113, 0.00) 100%), #FFF;
+  }
+  #shopify-section-{{section.id}}.faq .faq_wrap{
+    width: 100%;
+    max-width: 717px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  #shopify-section-{{section.id}}.faq .faq_wrap.faq_item{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  #shopify-section-{{section.id}}.faq .faq_wrap .faq_item .head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  #shopify-section-{{section.id}}.faq .faq_wrap .faq_item .head{
+    padding-right: 12px;
+    font-family: "General Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+  }
+  #shopify-section-{{section.id}}.faq .faq_wrap .faq_item .head svg{
+    transition: all 200ms ease;
+  }
+  #shopify-section-{{section.id}}.faq .faq_wrap .faq_item .head.active svg{
+    transform: rotate(135deg);
+  }
+  #shopify-section-{{section.id}}.faq .faq_wrap .faq_item .body{
+    font-family: "General Sans";
+    max-height: 0;
+    overflow: hidden;
+    padding-right: 52px;
+    transition: all 200ms ease;
+  }
+{% endstyle %}
+
+<div class="container">
+  <h2 class="text-center m-btm m-54">
+    Frequenty Asked <br>
+    <span>
+      Questions
+    </span>
+  </h2>
+  {% assign title = "Why isn't a diffuser enough to improve my memory?" %}
+  <div class="faq_wrap">
+    {% render 'faq-accordion' with title %}
+    {% render 'faq-accordion' with title %}
+    {% render 'faq-accordion' with title %}
+    {% render 'faq-accordion' with title %}
+  </div>
+</div>
+
+<script>
+  $(document).ready(() => {
+    const acc = document.querySelectorAll('.faq .head');
+    let i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener('click', function () {
+        this.classList.toggle('active');
+        const panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      });
+    }
+  });
+</script>
+
+{% schema %}
+  {
+    "tag": "section",
+    "class": "faq"
+  }
+{% endschema %}
