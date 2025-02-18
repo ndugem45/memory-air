@@ -321,6 +321,9 @@
 .faq{
   background: linear-gradient(180deg, rgba(170, 126, 113, 0.10) 0%, rgba(170, 126, 113, 0.00) 100%), #FFF;
 }
+.faq.plain{
+  background: unset;
+}
 .faq_wrap{
   width: 100%;
   max-width: 717px;
