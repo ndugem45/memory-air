@@ -14,6 +14,7 @@
 }
 *{
     box-sizing: border-box;
+    font-family: 'General Sans Regular';
 }
 body{
     padding: unset;
