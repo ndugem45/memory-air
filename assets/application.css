@@ -1,3 +1,23 @@
+@font-face {
+    font-family: "General Sans Regular";
+    src: url(./GeneralSans/GeneralSans-Regular.otf);
+}
+@font-face {
+    font-family: "General Sans Bold";
+    src: url(./GeneralSans/GeneralSans-Bold.otf);
+}
+@font-face {
+    font-family: "General Sans Medium";
+    src: url(./GeneralSans/GeneralSans-Medium.otf);
+}
+@font-face {
+    font-family: "General Sans Semibold";
+    src: url(./GeneralSans/GeneralSans-Semibold.otf);
+}
+@font-face {
+    font-family: "Avenir";
+    src: url(./avenir.ttf);
+}
 :root{
     --color-primary: #232323;
     --color-secondary: #3C2E25;
@@ -14,6 +34,7 @@
 }
 *{
     box-sizing: border-box;
+    font-family: "General Sans";
 }
 body{
     padding: unset;
@@ -33,7 +54,7 @@ textarea{
     padding: unset;
     border: unset;
     color: var(--color-secondary);
-    font-family: "General Sans";
+    font-family: "General Sans Medium";
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -49,7 +70,7 @@ textarea{
 
 h1{
     margin: unset;
-    font-family: Avenir Next Cyr;
+    font-family: "Avenir";
     font-weight: 400;
     font-size: 60px;
     line-height: 100%;
@@ -66,7 +87,7 @@ h1 span{
 
 h2{
     margin: unset;
-    font-family: Avenir Next Cyr;
+    font-family: "Avenir";
     font-weight: 450;
     font-size: 56px;
     line-height: 100%;
@@ -83,7 +104,7 @@ h2 span{
 
 h3{
     margin: unset;
-    font-family: "General Sans";
+    font-family: "General Sans Medium";
     font-size: 24px;
     font-style: normal;
     font-weight: 500;
@@ -99,7 +120,7 @@ h3 span{
 
 p{
     margin: unset;
-    font-family: General Sans;
+    font-family: "General Sans Regular";
     font-weight: 400;
     font-size: 20px;
     line-height: 150%;
@@ -278,7 +299,7 @@ button{
 
 .hero-label{
     color: var(--color-primary);
-    font-family: "General Sans";
+    font-family: "General Sans Medium";
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -303,7 +324,7 @@ button{
     padding-right: 32px;
     padding-bottom: 12px;
     padding-left: 32px;
-    font-family: Avenir Next Cyr;
+    font-family: "Avenir";
     font-weight: 450;
     font-size: 16px;
     line-height: 140%;
@@ -428,7 +449,7 @@ nav .right{
 }
 nav .menu a{
     color: white;
-    font-family: "General Sans";
+    font-family: "General Sans Medium";
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -504,7 +525,7 @@ footer form{
     color: white;
 }
 footer form input{
-    font-family: "General Sans";
+    font-family: "General Sans Regular";
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
@@ -524,7 +545,7 @@ footer .right{
 footer .right a{
     color: white;
 
-    font-family: "General Sans";
+    font-family: "General Sans Regular";
     font-size: 14px;
     font-style: normal;
     font-weight: 400;

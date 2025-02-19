@@ -1,5 +1,6 @@
 .banner{
-  background-color: var(--color-secondary);
+  background: var(--color-secondary) url('/assets/banner-bg.webp') center no-repeat;
+  background-size: cover;
   color: white;
 }
 .banner .container{
@@ -17,14 +18,15 @@
   flex-direction: column;
   align-items: flex-start; 
   border-radius: 16px;
-  background: var(--Light-3, #F4EDE4);
+  background: var(--Light-3, #F4EDE4) url('/assets/banner-bg2.webp') no-repeat;
+  background-position: top right;
   box-shadow: -4px -4px 10px 0px rgba(238, 238, 238, 0.25), 4px 4px 10px 0px rgba(238, 238, 238, 0.25);
   padding: 80px 100px;
   gap: 32px;
 }
 .banner-cta .container .card p{
   color: var(--color-secondary);
-  font-family: "General Sans";
+  font-family: "General Sans Regular";
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
