@@ -33,7 +33,7 @@ textarea{
     padding: unset;
     border: unset;
     color: var(--color-secondary);
-    font-family: "General Sans";
+    font-family: "General Sans Medium";
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -49,7 +49,7 @@ textarea{
 
 h1{
     margin: unset;
-    font-family: Avenir Next Cyr;
+    font-family: "Avenir";
     font-weight: 400;
     font-size: 60px;
     line-height: 100%;
@@ -66,7 +66,7 @@ h1 span{
 
 h2{
     margin: unset;
-    font-family: Avenir Next Cyr;
+    font-family: "Avenir";
     font-weight: 450;
     font-size: 56px;
     line-height: 100%;
@@ -83,7 +83,7 @@ h2 span{
 
 h3{
     margin: unset;
-    font-family: "General Sans";
+    font-family: "General Sans Medium";
     font-size: 24px;
     font-style: normal;
     font-weight: 500;
@@ -99,7 +99,7 @@ h3 span{
 
 p{
     margin: unset;
-    font-family: General Sans;
+    font-family: "General Sans Regular";
     font-weight: 400;
     font-size: 20px;
     line-height: 150%;
@@ -278,7 +278,7 @@ button{
 
 .hero-label{
     color: var(--color-primary);
-    font-family: "General Sans";
+    font-family: "General Sans Medium";
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -303,7 +303,7 @@ button{
     padding-right: 32px;
     padding-bottom: 12px;
     padding-left: 32px;
-    font-family: Avenir Next Cyr;
+    font-family: "Avenir";
     font-weight: 450;
     font-size: 16px;
     line-height: 140%;
@@ -381,7 +381,7 @@ button{
 input::placeholder,
 textarea::placeholder{
     color: rgba(35, 35, 35, 0.4);
-    font-family: "General Sans";
+    font-family: "General Sans Regular";
     font-size: 16px;
     font-style: normal;
     font-weight: 400;

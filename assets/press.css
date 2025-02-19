@@ -18,14 +18,14 @@
 
 .press_content-display{
     display: flex;
-    font-family: "Avenir Next Cyr";
+    font-family: "Avenir";
 }
 .press_content > h2 > span {
     font-weight: 500;
 }
 .r-watermark{
     color: #232323;
-    font-family: "Avenir Next Cyr";
+    font-family: "Avenir";
     font-size: 16px;
     font-style: normal;
     font-weight: 450;
@@ -65,7 +65,7 @@
     align-items: center;
 }
 .tab-head_button-wrapper > span{
-    font-family: "General Sans";
+    font-family: "General Sans Regular";
 }
 
 .card_press,
@@ -84,7 +84,7 @@ max-width: 400px;
 
 .card_press-body-dsc{
     color: #3C2E25;
-    font-family: "General Sans";
+    font-family: "General Sans Regular";
     font-size: 16px;
     font-style: normal;
     font-weight: 400;

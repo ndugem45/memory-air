@@ -7,7 +7,7 @@
   padding-bottom: 255px;
 }
 .hero .hero_desc{
-  font-family: "General Sans";
+  font-family: "General Sans Semibold";
   font-weight: 600;
   font-size: 24px;
   line-height: 140%;
@@ -43,7 +43,7 @@
   align-items: start;
 }
 .science .science_label{
-  font-family: "General Sans";
+  font-family: "General Sans Regular";
   color: var(--secondary-50);
   margin-bottom: 36px;
 }
@@ -105,7 +105,7 @@
   bottom: 32px;
   left: 0;
   padding-inline: 24px;
-  font-family: "General Sans";
+  font-family: "General Sans Regular";
   z-index: 2;
 }
 
@@ -205,7 +205,7 @@
 }
 .stories .stories_card .content p{
   color: #000;
-  font-family: "General Sans";
+  font-family: "General Sans Regular";
 }
 .stories .stories_card .user{
   display: flex;
@@ -294,7 +294,7 @@
 }
 .submission .submission_card p{
   flex: 1;
-  font-family: "General Sans";
+  font-family: "General Sans Regular";
 }
 .submission .submission_card form{
   width: 100%;
@@ -345,7 +345,7 @@
 }
 .faq_wrap .faq_item .head{
   padding-right: 12px;
-  font-family: "General Sans";
+  font-family: "General Sans Medium";
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
@@ -358,7 +358,7 @@
   transform: rotate(135deg);
 }
 .faq_wrap .faq_item .body{
-  font-family: "General Sans";
+  font-family: "General Sans Regular";
   max-height: 0;
   overflow: hidden;
   padding-right: 52px;
