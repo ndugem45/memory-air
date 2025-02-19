@@ -12,6 +12,9 @@
     "finaly": {
         "type": "finaly"
     },
+    "behind": {
+        "type": "behind"
+    },
     "contactus": {
         "type": "contactus"
     }
@@ -21,6 +24,7 @@
     "partner", 
     "patients",
     "finaly",
+    "behind",
     "contactus"
     ]
 }

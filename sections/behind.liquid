@@ -1,0 +1,248 @@
+{% comment %} for healthcare page {% endcomment %}
+
+
+{% assign behind-img1 = 'behind_image-1.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign behind-img2 = 'behind_image-2.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign behind-img3 = 'behind_image-3.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign behind-img4 = 'behind_image-4.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign behind-img5 = 'behind_image-5.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+
+{% assign behind-cta = 'behind_img-cta.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+	
+	{% style %}
+
+  #shopify-section-{{section.id}}.behind{
+    padding-block: 80px;
+  }
+
+	#shopify-section-{{section.id}} .behind_title > h2{
+    color: #232323;
+		font-family: "Avenir Next Cyr";
+		font-size: 56px;
+		font-style: normal;
+		font-weight: 450;
+		line-height: 100%;
+    text-align: center;
+  }
+
+	#shopify-section-{{section.id}} .behind_content{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 60px;
+
+  }
+
+	#shopify-section-{{section.id}} .behind_content-items{
+		display: flex;
+		flex-direction: row;
+		gap: 40px;
+		align-items: center;
+		max-width: 1280px;
+		width: 100%;
+  }
+
+	#shopify-section-{{section.id}} .behind_content-img > img{
+		width: 250px;
+		height: 250px;
+  }
+
+	#shopify-section-{{section.id}} .behind_content-text{
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+  }
+
+	#shopify-section-{{section.id}} .behind_content-text-title{
+		color: #242424;
+		font-family: "General Sans";
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 140%;
+  }
+	#shopify-section-{{section.id}} .behind_content-text-dsc{
+		color: #232323;
+		font-family: "General Sans";
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 150%;
+  }
+
+	#shopify-section-{{section.id}} .behind_cta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+		border-radius: 16px;
+		background: #3C2E25;
+		padding: 80px 40px;
+		margin-top: 80px;
+  }
+	#shopify-section-{{section.id}} .behind_content-cta{
+		display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    width: 100%;
+  }
+
+	#shopify-section-{{section.id}} .behind_cta-title > h2{
+		color: #FFF;
+		text-align: center;
+		font-family: "Cormorant Garamond";
+		font-size: 52px;
+		font-style: italic;
+		font-weight: 500;
+		line-height: 120%; /* 62.4px */
+		letter-spacing: -0.52px;
+		max-width: 700px;
+		width: 100%;
+  }
+
+	#shopify-section-{{section.id}} .behind_cta-items{
+		display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+  }
+
+	#shopify-section-{{section.id}} .behind_cta-img{
+		border-radius: 100%;
+		overflow: hidden;
+		display: flex;
+		width: 200px;
+		height: 200px;
+		min-width: 200px;
+
+  }
+
+	#shopify-section-{{section.id}} .behind_cta-img > img{
+		width: 100%;
+  }
+
+	#shopify-section-{{section.id}} .behind_cta-text{
+		display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+	#shopify-section-{{section.id}} .behind_cta-text-title{
+		color: #FFF;
+		font-family: "General Sans";
+		font-size: 36px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 140%; /* 50.4px */
+  }
+	#shopify-section-{{section.id}} .behind_cta-text-dsc{
+		color: #FFF;
+		font-family: "General Sans";
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 160%; /* 32px */
+		width: 100%;
+		max-width: 360px;
+  }
+
+
+
+	{% endstyle %}
+	
+
+	<div class="container">
+			<div class="behind_wraper">
+				<div class="behind_title">
+					<h2>The Science Behind Memory Air®</h2>
+				</div>
+				<div class="behind_content m-top m-78">
+
+					<div class="behind_content-items">
+						<div class="behind_content-img">
+								<img src={{behind-img1}} alt="">
+						</div>
+						<div class="behind_content-text">
+							<h3 class="behind_content-text-title">The “Super Highway” of Cognition </h3>
+							<p class="behind_content-text-dsc">The olfactory system is the only sensory system that has a direct path to the brain’s cognitive control areas. All other senses must travel through "side streets" thus having milder effects. We refer to this direct access as the “Super Highway” to the brain.</p>
+						</div>
+					</div>
+
+					<div class="behind_content-items">
+						<div class="behind_content-text">
+							<h3 class="behind_content-text-title">Losing your sense of smell can indicate cognitive decline</h3>
+							<p class="behind_content-text-dsc">As we age, and various health conditions emerge, we start to lose our sense of smell, which can mean a deterioration in our cognitive ability. </p>
+						</div>
+						<div class="behind_content-img">
+								<img src={{behind-img2}} alt="">
+						</div>
+					</div>
+
+					<div class="behind_content-items">
+						<div class="behind_content-img">
+								<img src={{behind-img3}} alt="">
+						</div>
+						<div class="behind_content-text">
+							<h3 class="behind_content-text-title">Smelling more scents restores olfactory abilities</h3>
+							<p class="behind_content-text-dsc">Smelling a variety of different scents can reverse loss of olfactory abilities. Results were achieved with daily exposure to four odorants: resinous, flowery, fruity, and aromatic. But that’s just the tip of the iceberg. Further olfactory improvements are achieved by increasing duration of exposure, concentration, and a much larger number of odorants.</p>
+						</div>
+					</div>
+
+					<div class="behind_content-items">
+						<div class="behind_content-text">
+							<h3 class="behind_content-text-title">Olfactory enrichment improves cognition and brain function at while you sleep </h3>
+							<p class="behind_content-text-dsc">In our study, a group of older adults received olfactory enrichment for 2 hours every night over the course of 6 months.</p>
+							<p class="behind_content-text-dsc">This resulted in a 226% improvement in cognitive ability compared to a control group. This is the largest improvement in memory ever reported in healthy seniors. Nothing else has ever come close.</p>
+						</div>
+						<div class="behind_content-img">
+								<img src={{behind-img4}} alt="">
+						</div>
+					</div>
+
+					<div class="behind_content-items">
+						<div class="behind_content-img">
+								<img src={{behind-img5}} alt="">
+						</div>
+						<div class="behind_content-text">
+							<h3 class="behind_content-text-title">Memory Air® provides 80 different Olfactory Stimulations every night</h3>
+							<p class="behind_content-text-dsc">TTrying to smell 40 scents twice a day on your own is simply not practical. Imagine opening 80 bottles and separately loading each one into a device so you can smell it (and doing this every day!) Add memory issues to the equation, and the problem is compounded.<br><br>
+							Memory Air® automatically dispenses 80 olfactory stimulations per night and works while you sleep.
+							</p>
+						</div>
+					</div>
+
+				</div>
+				<div class="behind_cta">
+					<div class="behind_content-cta">
+						<div class="behind_cta-title">
+							<h2>“As far as we know, this is the largest improvement in healthy adults ever reported.”</h2>
+						</div>
+						<div class="behind_cta-items">
+							<div class="behind_cta-img">
+									<img src={{behind-cta}} alt="">
+							</div>
+							<div class="behind_cta-text">
+								<h3 class="behind_cta-text-title">Dr. Michael Leon</h3>
+								<p class="behind_cta-text-dsc">Chief Science Officer of Memory Air and Professor Emeritus of Neurobiology & Behavior, University of California Irvine </p>
+							</div>
+						</div>
+					</div>
+					<div class="behind_content-btn m-top m-54">
+						<div class="btn is-white">
+							Read the full Report
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+
+	
+	
+	{% schema %}
+			{
+					"tag": "section",
+					"class": "behind"
+			}
+	{% endschema %}
