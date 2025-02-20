@@ -1,7 +1,7 @@
 {
     "sections": {
     "hero-healthcare": {
-            "type": "hero-healthcare"
+        "type": "hero-healthcare"
         },
     "partner": {
         "type": "partner"
