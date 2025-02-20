@@ -49,6 +49,7 @@
 }
 .membership .card form button {
 	margin-top: 40px;
+	border-radius: 16px;
 }
 .membership .card .label {
 	color: var(--color-primary);
