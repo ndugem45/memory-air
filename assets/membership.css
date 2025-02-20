@@ -1,0 +1,64 @@
+.membership {
+	padding-top: 115px;
+	padding-bottom: 30px;
+	background: linear-gradient(
+		180deg,
+		rgba(170, 126, 113, 0.1) 0%,
+		rgba(170, 126, 113, 0.0) 98.6%
+	);
+}
+.membership .card {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 700px;
+	padding: 14px;
+	align-items: center;
+	gap: 95px;
+
+	border-radius: 16px;
+	background: #fff;
+	box-shadow: -2px -2px 10px 0px rgba(204, 204, 204, 0.1), 2px 2px 10px 0px
+		rgba(238, 238, 238, 0.1);
+}
+.membership .card .content {
+	max-width: 531px;
+}
+.membership .card img {
+	height: 672px;
+	width: 55%;
+	max-width: 720px;
+	object-fit: cover;
+	border-radius: 15px;
+}
+.membership .card p {
+	color: var(--color-primary);
+	font-family: "General Sans Regular";
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 155%;
+	padding-block: 24px;
+	padding-right: 80px;
+}
+.membership .card form {
+	width: 100%;
+	padding: unset;
+	margin-bottom: 24px;
+	padding-right: 80px;
+}
+.membership .card form button {
+	margin-top: 40px;
+}
+.membership .card .label {
+	color: var(--color-primary);
+	text-align: center;
+	font-family: "General Sans Regular";
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 160%;
+	text-align: center;
+	opacity: 0.4;
+	padding-right: 80px;
+}
