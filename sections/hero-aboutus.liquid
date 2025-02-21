@@ -1,0 +1,55 @@
+{% comment %} for about us {% endcomment %}
+
+{% assign aboutus-display = 'about_img.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+
+
+{% style %}
+    #shopify-section-{{section.id}} .healthcare_content{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    
+    #shopify-section-{{section.id}} .healthcare_content-text{
+        max-width: 640px;
+        width: 100%;
+    }
+    
+    #shopify-section-{{section.id}} .healthcare_content-img{
+    max-width: 650px;
+    width: 100%;
+    }
+    #shopify-section-{{section.id}} .healthcare_content-img > img{
+    max-width: 650px;
+    width: 100%;
+    }
+    
+    {% endstyle %}
+    
+    <div class="container">
+        <div class="healthcare_content">
+            <div class="healthcare_content-text">
+                <span>About Memory Air®</span>
+                <h1 class="m-btm m-32">
+                    <span>
+                        Using Science to <br>
+                        Help You<br>
+                    </span>
+                    Live Your Best Life
+                </h1>
+            </div>
+            <div class="healthcare_content-img">
+                <img src={{aboutus-display}} alt="" class="image-display">
+            </div>
+        </div>
+    </div>
+    
+    
+    {% schema %}
+        {
+            "tag": "section",
+            "class": "hero-healthcare"
+        }
+    {% endschema %}

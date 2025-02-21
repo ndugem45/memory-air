@@ -1,0 +1,85 @@
+{% comment %} for about us {% endcomment %}
+
+{% assign bringing-display = 'healthcare_hero-img.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+
+
+{% style %}
+    #shopify-section-{{section.id}} .healthcare_content{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    
+    #shopify-section-{{section.id}} .healthcare_content-text.bringing_content-text{
+        max-width: 650px;
+        width: 100%;
+    }
+    
+    #shopify-section-{{section.id}} .healthcare_content-img{
+    max-width: 650px;
+    width: 100%;
+    }
+    #shopify-section-{{section.id}} .healthcare_content-img > img{
+    max-width: 650px;
+    width: 100%;
+    }
+    #shopify-section-{{section.id}} .bringing_text-dsc > span{
+        font-weight: 500;
+        font-family: "General Sans Semibold"
+    }
+
+    #shopify-section-{{section.id}} .bringing_content-text > h1{
+        color: #232323;
+        font-family: "General Sans Reguler";
+        font-size: 56px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 38px; /* 67.857% */
+        letter-spacing: -0.4px;
+    }
+    #shopify-section-{{section.id}} .bringing_content-text > span{
+        color: #232323;
+        font-family: "Cormorant Garamond";
+        font-size: 64px;
+        font-style: italic;
+        font-weight: 700;
+        line-height: 38px; /* 59.375% */
+        letter-spacing: -0.4px;
+    }
+
+    
+
+    
+    
+    {% endstyle %}
+    
+    <div class="container">
+        <div class="healthcare_content">
+            <div class="healthcare_content-img">
+                <img src={{bringing-display}} alt="" class="image-display">
+            </div>
+            <div class="healthcare_content-text bringing_content-text">
+                <h1 class="m-btm m-32">
+                    Bringing Innovative Science <br>
+                    <span>
+                        Directly to your Door
+                    </span>
+                </h1>
+                <p class="bringing_text-dsc">
+                    <span>Memory Air®</span> is dedicated to revolutionizing brain and memory care based directly on high-quality, consistent science that is causal, not just correlative.<br><br>
+                    That means we have very, very high confidence in the science. By marrying simple, easy-to-use design with this powerful science, we are committed to bringing customers real results in a space overrun with claims that just can’t be backed up.<br><br>
+                    With <span>Memory Air®</span>, you can trust that you will feel better and experience real results.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    
+    {% schema %}
+        {
+            "tag": "section",
+            "class": "hero-healthcare"
+        }
+    {% endschema %}

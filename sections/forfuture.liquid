@@ -1,0 +1,153 @@
+	{% comment %} for abouteus page {% endcomment %}
+
+	{% assign forfuture-img = 'forfuture-img.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+	{% assign forfuture-ornament1 = 'forfuture-ornament1.svg' | asset_url | append: '?v=' | append: 'timestamp' %}
+	{% assign forfuture-ornament2 = 'forfuture-ornament2.svg' | asset_url | append: '?v=' | append: 'timestamp' %}
+
+	{% style %}
+
+	#shopify-section-{{section.id}}.forfuture{
+		padding-block: 80px;
+		background: #3C2E25;
+		position: relative;
+	}
+
+	#shopify-section-{{section.id}} .forfuture_title > h2{
+		color: #fff;
+		font-family: "Avenir";
+		font-size: 56px;
+		font-style: normal;
+		font-weight: 450;
+		line-height: 100%;
+		text-align: center;
+	}
+	#shopify-section-{{section.id}} .forfuture_cta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+		border-radius: 16px;
+		background: #3C2E25;
+		padding: 80px 40px;
+  }
+	#shopify-section-{{section.id}} .behind_content-cta{
+		display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    width: 100%;
+  }
+
+	#shopify-section-{{section.id}} .behind_cta-title > h2{
+		color: #FFF;
+		text-align: center;
+		font-family: "Cormorant Garamond";
+		font-size: 52px;
+		font-style: italic;
+		font-weight: 500;
+		line-height: 120%; /* 62.4px */
+		letter-spacing: -0.52px;
+		max-width: 700px;
+		width: 100%;
+	}
+
+	#shopify-section-{{section.id}} .behind_cta-items{
+		display: flex;
+		align-content: center;
+		justify-content: center;
+		align-items: center;
+		gap: 18px;
+	}
+
+	#shopify-section-{{section.id}} .behind_cta-img{
+		border-radius: 100%;
+		overflow: hidden;
+		display: flex;
+		width: 200px;
+		height: 200px;
+		min-width: 200px;
+
+	}
+
+	#shopify-section-{{section.id}} .behind_cta-img > img{
+		width: 100%;
+	}
+
+	#shopify-section-{{section.id}} .behind_cta-text{
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+	#shopify-section-{{section.id}} .behind_cta-text-title{
+		color: #FFF;
+		font-family: "General Sans";
+		font-size: 36px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 140%; /* 50.4px */
+	}
+	#shopify-section-{{section.id}} .behind_cta-text-dsc{
+		color: #FFF;
+		font-family: "General Sans";
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 160%; /* 32px */
+		width: 100%;
+		max-width: 360px;
+	}
+
+	#shopify-section-{{section.id}} .forfuture_ornamennt1{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+	#shopify-section-{{section.id}} .forfuture_ornamennt2{
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+
+
+
+	{% endstyle %}
+
+
+	<div class="container">
+			<img class="forfuture_ornamennt1" src={{forfuture-ornament1}} alt="">
+			<img class="forfuture_ornamennt2" src={{forfuture-ornament2}} alt="">
+			<div class="forfuture_wraper">
+				<div class="forfuture_title">
+					<h2>At Memory Air® <br>
+						<span>We’re Building for the future </span>
+					</h2>
+				</div>
+				<div class="forfuture_cta">
+					<div class="behind_content-cta">
+						<div class="behind_cta-title">
+							<h2>““We are particularly committed to making Memory Air® affordable to the poor around the nation and around the world.”</h2>
+						</div>
+						<div class="behind_cta-items">
+							<div class="behind_cta-img">
+									<img src={{forfuture-img}} alt="">
+							</div>
+							<div class="behind_cta-text">
+								<h3 class="behind_cta-text-title">Alan Bernstein</h3>
+								<p class="behind_cta-text-dsc">Chief Executive Officer of Science Lab 3.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+
+
+
+	{% schema %}
+			{
+					"tag": "section",
+					"class": "forfuture"
+			}
+	{% endschema %}

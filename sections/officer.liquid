@@ -1,0 +1,143 @@
+{% comment %} for about us {% endcomment %}
+
+{% assign thumb1 = 'news-1.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign thumb2 = 'news-2.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+
+{% style %}
+#shopify-section-{{section.id}}.news{
+	padding-bottom: 31px;
+}
+#shopify-section-{{section.id}}.news .container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#shopify-section-{{section.id}}.news .news_grid{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 1fr;
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
+}
+#shopify-section-{{section.id}}.news .news_item{
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+}
+#shopify-section-{{section.id}}.news .news_item img{
+	width: 100%;
+	border-radius: 24px;
+	background: var(--orange-light);
+	height: 359px;
+	object-fit: cover;
+}
+#shopify-section-{{section.id}}.news .news_item:hover h3{
+	text-decoration: underline;
+}
+
+#shopify-section-{{section.id}} .officer_wrapper{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	gap: 100px;
+}
+
+#shopify-section-{{section.id}} .officer_text-wrapper{
+		max-width: 494px;
+		width: 100%;
+		display: flex;
+    flex-direction: column;
+}
+
+#shopify-section-{{section.id}} .officer_text-span{
+	color: #232323;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 28px; /* 155.556% */
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	margin-bottom: 50px;
+}
+
+#shopify-section-{{section.id}} .officer_text-name{
+	color: #232323;
+	font-family: "General Sans Semibold";
+	font-size: 48px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 38px; /* 79.167% */
+	letter-spacing: -0.4px;
+	margin-bottom: 16px;
+}
+
+#shopify-section-{{section.id}} .officer_text-profession{
+	color: #3C2E25;
+	font-family: "General Sans Semibold";
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 20px; /* 142.857% */
+	margin-bottom: 50px;
+}
+
+#shopify-section-{{section.id}} .officer_text-dsc{
+	color: #3C2E25;
+font-family: "General Sans Reguler";
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px; /* 155.556% */
+}
+
+
+
+{% endstyle %}
+
+<div class="container">
+
+<div class="officer_wrapper">
+
+	<div class="officer_text-wrapper">
+		<span class="officer_text-span">Memory Air® Chief Science Officer</span>
+		<h3 class="officer_text-name">Michael Leon, PhD</h3>
+		<span class="officer_text-profession">Professor Emeritus, Neurobiology and Behavior
+			Charlie Dunlop School of Biological Sciences, University of California Irvine</span>
+		<p class="officer_text-dsc">Michael Leon was ranked among the top 2% of all scientists in the world in a recent analysis from Stanford University.  His innovative science in olfactory enrichment has been published in X scientific articles & publications. Memory Air® is built directly on his science in olfactory enrichment.
+				<br><br>
+			Through the delivery of an simple to use, powerful product, the benefits of his science can be experienced right at home.
+		</p>
+	</div>
+
+	<div class="news_grid m-btm m-54">
+		<div class="news_item">
+			<img src="{{ thumb1 }}" alt="" class="m-btm m-32">
+			<h3 class="m-btm m-12 p-horizontal p-12">
+				#1 Researcher for Olfactory Enrichment
+			</h3>
+			<p class="m-top m-4 p-horizontal p-12">
+				And Ranked in the Top 2% of All Scientists in the World by a Stanford School of Medicine Study.
+			</p>
+		</div>
+		<div class="news_item">
+			<img src="{{ thumb2 }}" alt="" class="m-btm m-32">
+			<h3 class="m-btm m-12 p-horizontal p-12">
+				The Solution to Memory Loss is Right Under Our Nose
+			</h3>
+			<p class="m-top m-4 p-horizontal p-12">
+				Dr. Michael Leon’s TED talk on the importance of smell in memory.
+			</p>
+		</div>
+	</div>
+
+</div>
+
+
+</div>
+
+{% schema %}
+{
+	"tag": "section",
+	"class": "news"
+}
+{% endschema %}

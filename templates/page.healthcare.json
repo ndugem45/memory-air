@@ -1,7 +1,7 @@
 {
     "sections": {
     "hero-healthcare": {
-            "type": "hero-healthcare"
+        "type": "hero-healthcare"
         },
     "partner": {
         "type": "partner"
@@ -12,6 +12,9 @@
     "finaly": {
         "type": "finaly"
     },
+    "behind": {
+        "type": "behind"
+    },
     "contactus": {
         "type": "contactus"
     }
@@ -21,6 +24,7 @@
     "partner", 
     "patients",
     "finaly",
+    "behind",
     "contactus"
     ]
 }
