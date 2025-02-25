@@ -29,23 +29,31 @@
 
 @media (max-width: 768px) {
 	#shopify-section-{{section.id}}.hero2 {
-		padding-top: 80px; /* Kurangi padding atas */
+		padding-top: 120px;
 	}
 
 	#shopify-section-{{section.id}}.hero2 .container {
-		flex-direction: column; /* Stack elemen secara vertikal */
-		gap: 40px; /* Kurangi jarak antar elemen */
-		text-align: center; /* Pusatkan teks */
+		flex-direction: column;
+		gap: 40px;
 	}
 
 	#shopify-section-{{section.id}}.hero2 .content {
 		max-width: 100%;
-		padding: 0 20px; /* Tambahkan padding agar lebih responsif */
+		padding: 0 20px;
+	}
+	#shopify-section-{{section.id}}.hero2 .content > h1{
+		font-size: 40px;
+	}
+	#shopify-section-{{section.id}}.hero2 .content > h1 > span{
+		font-size: 40px;
+	}
+	#shopify-section-{{section.id}}.hero2 .content > p{
+		font-size: 16px;
 	}
 
 	#shopify-section-{{section.id}}.hero2 .illus {
-		width: 80%; /* Kurangi ukuran gambar agar lebih pas di layar kecil */
-		max-width: 400px; /* Batasi lebar maksimum gambar */
+		width: 80%;
+		max-width: 400px;
 	}
 }
 
