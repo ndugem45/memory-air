@@ -1,0 +1,13 @@
+{
+	"sections": {
+		"hero-faq": {
+			"type": "hero-faq",
+			"settings": {}
+		},
+		"faq-body": {
+			"type": "faq-body",
+			"settings": {}
+		}
+	},
+	"order": ["hero-faq", "faq-body"]
+}

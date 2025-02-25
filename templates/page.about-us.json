@@ -9,37 +9,37 @@
  */
 {
   "sections": {
-    "hero-healthcare": {
-      "type": "hero-healthcare",
+    "hero-aboutus": {
+      "type": "hero-aboutus",
       "settings": {}
     },
     "partner": {
       "type": "partner",
       "settings": {}
     },
-    "patients": {
-      "type": "patients",
+    "bringing": {
+      "type": "bringing",
       "settings": {}
     },
-    "finaly": {
-      "type": "finaly",
+    "officer": {
+      "type": "officer",
       "settings": {}
     },
-    "behind": {
-      "type": "behind",
+    "forfuture": {
+      "type": "forfuture",
       "settings": {}
     },
-    "contactus": {
-      "type": "contactus",
+    "technical": {
+      "type": "technical",
       "settings": {}
     }
   },
   "order": [
-    "hero-healthcare",
+    "hero-aboutus",
     "partner",
-    "patients",
-    "finaly",
-    "behind",
-    "contactus"
+    "bringing",
+    "officer",
+    "forfuture",
+    "technical"
   ]
 }

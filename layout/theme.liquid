@@ -34,7 +34,7 @@
       }
     {% endstyle %}
 
-{{ 'index.css' | asset_url | stylesheet_tag }}
+    {{ 'index.css' | asset_url | stylesheet_tag }}
 
     {{ content_for_header }}
     
@@ -56,6 +56,6 @@
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-    {% comment %} {{ 'application.js' | asset_url | script_tag }} {% endcomment %}
+    {{ 'index.js' | asset_url | script_tag }}
   </body>
 </html>

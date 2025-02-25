@@ -1,3 +1,8 @@
+{% assign life1 = 'better-illus1.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign life2 = 'better-illus2.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign life3 = 'better-illus3.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign life4 = 'better-illus4.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+
 {% style %}
   #shopify-section-{{section.id}}.life{
     background: linear-gradient(180deg, rgba(170, 126, 113, 0.00) 0%, rgba(170, 126, 113, 0.10) 100%), #FFF;
@@ -63,7 +68,7 @@
   <div class="life_slider">
     <div class="slider_item-wrap">
       <div class="slider_item">
-        <img src="" alt="">
+        <img src="{{ life1 }}" alt="">
         <div class="font-medium text-32">
           Feel 6 years younger
         </div>
@@ -71,7 +76,7 @@
     </div>
     <div class="slider_item-wrap">
       <div class="slider_item">
-        <img src="" alt="">
+        <img src="{{ life2 }}" alt="">
         <div class="font-medium text-32">
           Regain & maintain confidence in daily life
         </div>
@@ -79,7 +84,7 @@
     </div>
     <div class="slider_item-wrap">
       <div class="slider_item">
-        <img src="" alt="">
+        <img src="{{ life3 }}" alt="">
         <div class="font-medium text-32">
           Improved mental clarity & focus
         </div>
@@ -87,7 +92,7 @@
     </div>
     <div class="slider_item-wrap">
       <div class="slider_item">
-        <img src="" alt="">
+        <img src="{{ life4 }}" alt="">
         <div class="font-medium text-32">
           Live free & reduce
           dependency on others
