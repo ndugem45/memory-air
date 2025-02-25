@@ -1,0 +1,13 @@
+{
+	"sections": {
+		"banner": {
+			"type": "banner",
+			"settings": {}
+		},
+		"banner-cta": {
+			"type": "banner-cta",
+			"settings": {}
+		}
+	},
+	"order": ["banner", "banner-cta"]
+}

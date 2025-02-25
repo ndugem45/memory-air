@@ -1,0 +1,40 @@
+{% assign bg = 'banner-bg.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+
+{% style %}
+  #shopify-section-{{section.id}}.banner{
+    background: var(--color-secondary) url('{{ bg }}') center no-repeat;
+    background-size: cover;
+    color: white;
+  }
+  #shopify-section-{{section.id}}.banner .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  #shopify-section-{{section.id}}.banner .btn{
+    margin-top: 16px;
+  }
+{% endstyle %}
+
+  <div class="container">
+    <h2 class="text-center">
+      Looking for the <br>
+      <span>
+        Member P0rtal?
+      </span>
+    </h2>
+    <p class="text-center">
+      Access your membership for exclusive benefits!
+    </p>
+    <a href="" class="btn">
+      Login to Member Portal
+    </a>
+  </div>
+
+{% schema %}
+  {
+    "tag": "section",
+    "class": "banner"
+  }
+{% endschema %}
