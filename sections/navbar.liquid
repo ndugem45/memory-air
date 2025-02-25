@@ -116,7 +116,7 @@
     </svg>        
   </button>
   <div class="left">
-    <a href="/index.html">
+    <a href="/">
       <img src="{{logo}}" height="54" width="100" class="logo">
     </a>
     <div class="menu">
@@ -126,7 +126,7 @@
   </div>
   <div class="right">
     <div class="menu">
-      {% for link in section.settings.menu.links %}
+      {% comment %} {% for link in section.settings.menu.links %}
         {% assign child_list_handle = link.title | handleize %}
         {% if linklists[child_list_handle].links != blank %}
           <a href="{{ link.url }}">{{ link.title }}</a>
@@ -136,7 +136,11 @@
         {% else %}
           <a href="{{ link.url }}">{{ link.title }}</a>
         {% endif %}
-      {% endfor %}
+      {% endfor %} {% endcomment %}
+      
+      <a href="/pages/about-us">About us</a>
+      <a href="/pages/healthcare">for healthcare professsional</a>
+      <a href="/pages//press-resource.html">press & Resources</a>
     </div>
     <a href="" class="btn is-black">
       Buy Now
@@ -155,12 +159,22 @@
 <script>
   $(document).ready(function(){
     const navbar = document.querySelector('header');
+    
+    $(".cart").click(() => {
+      navbar.classList.toggle('open');
+    });
+
+    if(location.pathname !== '/'){
+      navbar.classList.add('black')
+    }
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {
-        if (window.scrollY > (document.querySelector('.hero').offsetHeight-50)) {
-          navbar.classList.add('white');
-        }else{
-          navbar.classList.remove('white');
+        if (location.pathname === '/') {
+          if(window.scrollY > (document.querySelector('.hero').offsetHeight-50)){
+            navbar.classList.add('white');
+          }else{
+            navbar.classList.remove('white');
+          }
         }
         navbar.classList.add('scrolled');
       } else {
@@ -173,9 +187,13 @@
 {% schema %}
   {
     "tag": "header",
-    "name": "Navbar",
     "class": "nav",
     "settings": [
+      {
+        "type": "checkbox",
+        "id": "isdark",
+        "label": "Dark Variant"
+      },
       {
         "type": "link_list",
         "id": "menu_right",

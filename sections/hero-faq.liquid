@@ -1,0 +1,71 @@
+{% style %}
+  #shopify-section-{{section.id}}.hero-faq{
+    padding-top: 172px;
+    padding-bottom: 0;
+    z-index: 2;
+  }
+  #shopify-section-{{section.id}}.hero-faq .container{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+  }
+  #shopify-section-{{section.id}}.hero-faq .scroll-btn{
+    margin-top: -17px;
+    margin-bottom: -80px;
+  }
+{% endstyle %}
+
+<div class="container">
+  <div class="hero-label">Get answers to common questions here.</div>
+  <h1 class="text-center">
+    Frequenty Asked <br>
+    <span>
+      Questions
+    </span>
+  </h1>
+  <button class="scroll-btn">
+    <svg width="149" height="148" viewBox="0 0 149 148" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g filter="url(#filter0_dd_389_18462)">
+        <rect x="14.792" y="14" width="120" height="120" rx="60" fill="#3C2E25" />
+        <g clip-path="url(#clip0_389_18462)">
+          <path d="M75.4219 54.0661V92.7607" stroke="white" stroke-width="3" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path d="M94.7649 73.4134L75.4176 92.7607L56.0703 73.4134" stroke="white" stroke-width="3"
+            stroke-linecap="round" stroke-linejoin="round" />
+        </g>
+      </g>
+      <defs>
+        <filter id="filter0_dd_389_18462" x="-5.20801" y="-6" width="160" height="160" filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            result="hardAlpha" />
+          <feOffset dx="4" dy="4" />
+          <feGaussianBlur stdDeviation="5" />
+          <feComposite in2="hardAlpha" operator="out" />
+          <feColorMatrix type="matrix" values="0 0 0 0 0.533333 0 0 0 0 0.533333 0 0 0 0 0.533333 0 0 0 0.08 0" />
+          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_389_18462" />
+          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            result="hardAlpha" />
+          <feOffset dx="-4" dy="-4" />
+          <feGaussianBlur stdDeviation="5" />
+          <feComposite in2="hardAlpha" operator="out" />
+          <feColorMatrix type="matrix" values="0 0 0 0 0.533333 0 0 0 0 0.533333 0 0 0 0 0.533333 0 0 0 0.04 0" />
+          <feBlend mode="normal" in2="effect1_dropShadow_389_18462" result="effect2_dropShadow_389_18462" />
+          <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_389_18462" result="shape" />
+        </filter>
+        <clipPath id="clip0_389_18462">
+          <rect width="48.0919" height="51.4086" fill="white" transform="translate(42 72.8274) rotate(-45)" />
+        </clipPath>
+      </defs>
+    </svg>
+  </button>
+</div>
+
+{% schema %}
+  {
+    "tag": "section",
+    "class": "hero-faq"
+  }
+{% endschema %}

@@ -1,15 +1,25 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
+  "sections": {
     "hero-detail-article": {
-        "type": "hero-detail-article"
-        },
+      "type": "hero-detail-article",
+      "settings": {}
+    },
     "detail-article": {
-        "type": "detail-article"
-    },
-    
-    },
-    "order": [
+      "type": "detail-article",
+      "settings": {}
+    }
+  },
+  "order": [
     "hero-detail-article",
     "detail-article"
-    ]
+  ]
 }
