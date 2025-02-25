@@ -1,0 +1,287 @@
+{% comment %} for press resource {% endcomment %}
+
+{% assign card-img = 'press_card.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign card-img2 = 'press_card2.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+
+{% style %}
+    /* #shopify-section-{{section.id}} .healthcare_content{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    
+    #shopify-section-{{section.id}} .healthcare_content-text{
+        max-width: 640px;
+        width: 100%;
+    }
+    
+    #shopify-section-{{section.id}} .healthcare_content-img{
+    max-width: 650px;
+    width: 100%;
+    }
+    #shopify-section-{{section.id}} .healthcare_content-img > img{
+    max-width: 650px;
+    width: 100%;
+    } */
+
+
+
+/* tab-style */
+
+#shopify-section-{{section.id}} .press_tab-head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#shopify-section-{{section.id}} .tab-head_button-wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    justify-content: center;
+    align-items: center;
+}
+#shopify-section-{{section.id}} .tab-head_button-wrapper > span{
+    font-family: "General Sans Regular";
+}
+
+#shopify-section-{{section.id}} .card_press,
+#shopify-section-{{section.id}} .card_press-body{
+display: flex;
+flex-direction: column;
+justify-content: start;
+align-items: start;
+max-width: 400px;
+}
+
+#shopify-section-{{section.id}} .card_press-body-text{
+    color: #232323;
+    font-weight: 500;
+}
+
+#shopify-section-{{section.id}} .card_press-body-dsc{
+    color: #3C2E25;
+    font-family: "General Sans Regular";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+    letter-spacing: 0.1px;
+}
+
+#shopify-section-{{section.id}} .card_press-body-link{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+gap: 8px;
+color: #3C2E25;
+}
+#shopify-section-{{section.id}} .press_tab-body{
+width: 100%;
+
+}
+
+#shopify-section-{{section.id}} .button-scientific.active,
+#shopify-section-{{section.id}} .button-press.active {
+    font-weight: bold;
+    border-bottom: 2px solid black;
+}
+
+#shopify-section-{{section.id}} .tab-head_button-wrapper > a{
+    cursor: pointer;
+}
+#shopify-section-{{section.id}} .press-content,
+#shopify-section-{{section.id}} .scientific-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+
+#shopify-section-{{section.id}} .tab-content {
+    display: none; /* Sembunyikan semua tab */
+}
+#shopify-section-{{section.id}} .tab-content.active {
+    display: flex; /* Hanya tampilkan tab yang aktif */
+}
+#shopify-section-{{section.id}} .tab-button {
+    cursor: pointer;
+    color: rgba(35, 35, 35, 0.7);
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+    letter-spacing: 0.1px;
+}
+#shopify-section-{{section.id}} .tab-button.active {
+    color: black;
+    text-style: underline;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+    letter-spacing: 0.1px;
+}
+
+    
+    {% endstyle %}
+    
+	
+
+		<div class="container p-horizontal p-78">
+			<div class="press_content">
+				<div class="press_tab-head m-btm m-78">
+					<h2 class="tab-head_text text-32">Press & Resources</h2>
+					<div class="tab-head_button-wrapper">
+
+                        <a class="tab-button button-scientific text-16 active" data-tab="scientific-content">Scientific Articles</a>
+                        <a class="tab-button button-press text-16" data-tab="press-content">Press</a>
+					</div>
+				</div>
+				<div class="press_tab-body">
+                    <div class="tab-content press-content">
+
+                        <div class="card_press p-2">
+                            <img src={{card-img}} alt="">
+                            <div class="card_press-body m-top m-32">
+                                <h3 class="card_press-body-text font-semibold m-btm m-12">Want to Improve Your Memory? Smell these
+                                    Scents While Sleeping</h3>
+                                <p class="card_press-body-dsc font-medium text-16 m-btm m-12">Stay updated with our latest press
+                                    releases and brand announcements. Get all the essential details and insights about our company’s
+                                    journey.</p>
+                                <a class="card_press-body-link font-semibold">
+                                    Read more
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="20" viewBox="0 0 8 20" fill="none">
+                                        <path d="M1.70801 6.5L5.70801 10.5L1.70801 14.5" stroke="#232323" stroke-width="1.5" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="card_press p-2">
+                            <img src={{card-img}} alt="">
+                            <div class="card_press-body m-top m-32">
+                                <h3 class="card_press-body-text font-semibold m-btm m-12">Want to Improve Your Memory? Smell these
+                                    Scents While Sleeping</h3>
+                                <p class="card_press-body-dsc font-medium text-16 m-btm m-12">Stay updated with our latest press
+                                    releases and brand announcements. Get all the essential details and insights about our company’s
+                                    journey.</p>
+                                <a class="card_press-body-link font-semibold">
+                                    Read more
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="20" viewBox="0 0 8 20" fill="none">
+                                        <path d="M1.70801 6.5L5.70801 10.5L1.70801 14.5" stroke="#232323" stroke-width="1.5" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="card_press p-2">
+                            <img src={{card-img}} alt="">
+                            <div class="card_press-body m-top m-32">
+                                <h3 class="card_press-body-text font-semibold m-btm m-12">Want to Improve Your Memory? Smell these
+                                    Scents While Sleeping</h3>
+                                <p class="card_press-body-dsc font-medium text-16 m-btm m-12">Stay updated with our latest press
+                                    releases and brand announcements. Get all the essential details and insights about our company’s
+                                    journey.</p>
+                                <a class="card_press-body-link font-semibold">
+                                    Read more
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="20" viewBox="0 0 8 20" fill="none">
+                                        <path d="M1.70801 6.5L5.70801 10.5L1.70801 14.5" stroke="#232323" stroke-width="1.5" />
+                                    </svg>
+                                </a>
+                            </div>
+                    </div>
+
+                    </div>
+                    <div class="tab-content scientific-content active">
+
+                        <div class="card_press p-2">
+                            <img src={{card-img2}} alt="">
+                            <div class="card_press-body m-top m-32">
+                                <h3 class="card_press-body-text font-semibold m-btm m-12">Novelty Determines the Effects of
+                                    Olfactory Enrichment on...</h3>
+                                <p class="card_press-body-dsc font-medium text-16 m-btm m-12">Effect of intensive olfactory training
+                                    for cognitive function in patients with dementia</p>
+                                <a class="card_press-body-link font-semibold">
+                                    Read more
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="20" viewBox="0 0 8 20" fill="none">
+                                        <path d="M1.70801 6.5L5.70801 10.5L1.70801 14.5" stroke="#232323" stroke-width="1.5" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="card_press p-2">
+                            <img src={{card-img2}} alt="">
+                            <div class="card_press-body m-top m-32">
+                                <h3 class="card_press-body-text font-semibold m-btm m-12">Novelty Determines the Effects of
+                                    Olfactory Enrichment on...</h3>
+                                <p class="card_press-body-dsc font-medium text-16 m-btm m-12">Effect of intensive olfactory training
+                                    for cognitive function in patients with dementia</p>
+                                <a class="card_press-body-link font-semibold">
+                                    Read more
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="20" viewBox="0 0 8 20" fill="none">
+                                        <path d="M1.70801 6.5L5.70801 10.5L1.70801 14.5" stroke="#232323" stroke-width="1.5" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="card_press p-2">
+                            <img src={{card-img2}} alt="">
+                            <div class="card_press-body m-top m-32">
+                                <h3 class="card_press-body-text font-semibold m-btm m-12">Novelty Determines the Effects of
+                                    Olfactory Enrichment on...</h3>
+                                <p class="card_press-body-dsc font-medium text-16 m-btm m-12">Effect of intensive olfactory training
+                                    for cognitive function in patients with dementia</p>
+                                <a class="card_press-body-link font-semibold">
+                                    Read more
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="20" viewBox="0 0 8 20" fill="none">
+                                        <path d="M1.70801 6.5L5.70801 10.5L1.70801 14.5" stroke="#232323" stroke-width="1.5" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabButtons = document.querySelectorAll(".tab-button");
+            const tabContents = document.querySelectorAll(".tab-content");
+
+            tabButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    tabButtons.forEach(btn => btn.classList.remove("active"));
+                    this.classList.add("active");
+                    let targetTab = this.getAttribute("data-tab");
+
+                    tabContents.forEach(content => content.classList.remove("active"));
+
+                    document.querySelector("." + targetTab).classList.add("active");
+                });
+            });
+        });
+</script>
+
+    
+    
+    {% schema %}
+        {
+            "tag": "section",
+            "class": "press"
+        }
+    {% endschema %}

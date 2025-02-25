@@ -1,0 +1,14 @@
+{
+    "sections": {
+    "hero-press-resource": {
+        "type": "hero-press-resource"
+        },
+    "tab-pressResource": {
+            "type": "tab-pressResource"
+        },
+    },
+    "order": [
+    "hero-press-resource",
+    "tab-pressResource"
+    ]
+}

@@ -1,0 +1,82 @@
+{% comment %} for press resource {% endcomment %}
+
+{% assign float-press1 = 'press-float-bg-1.svg' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign float-press2 = 'press-float-bg-2.svg' | asset_url | append: '?v=' | append: 'timestamp' %}
+
+{% style %}
+
+#shopify-section-{{section.id}}.hero3{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    background: var(--Gradient-BG, linear-gradient(180deg, rgba(170, 126, 113, 0.10) 0%, rgba(170, 126, 113, 0.00) 98.6%), #FFF);
+}
+
+#shopify-section-{{section.id}} .press_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#shopify-section-{{section.id}} .press_content-display{
+    display: flex;
+    font-family: "Avenir";
+}
+#shopify-section-{{section.id}} .press_content > h2 > span {
+    font-weight: 500;
+}
+#shopify-section-{{section.id}} .r-watermark{
+    color: #232323;
+    font-family: "Avenir";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 450;
+    line-height: 100%;
+    letter-spacing: -1.68px;
+    margin-top: 8px;
+}
+
+#shopify-section-{{section.id}} .float-press-1,
+#shopify-section-{{section.id}} .float-press-2{
+    position: absolute;
+    top: 0;
+}
+
+#shopify-section-{{section.id}} .float-press-2{
+    right: 0;
+}
+#shopify-section-{{section.id}} .float-press-1{
+    left: 0;
+}
+
+    {% endstyle %}
+    
+	
+		<div class="container">
+			<img class="float-press-1" src={{float-press1}} alt="" srcset="">
+            <img class="float-press-2" src={{float-press2}} alt="" srcset="">
+			<div class="content p-vertical p-54 press_content">
+				<span class="text-primary text-center text-16 m-btm m-32 ">The Biggest Breakthrough Ever in Memory
+					Science</span>
+				<h2 class="m-btm m-4 text-center">
+					<span>
+						People are talking about
+					</span>
+				</h2>
+				<h2 class="text-center press_content-display">
+					Memory Air
+					<span class="r-watermark">®</span>
+				</h2>
+			</div>
+		</div>
+    
+    
+    {% schema %}
+        {
+            "tag": "section",
+            "class": "hero3"
+        }
+    {% endschema %}

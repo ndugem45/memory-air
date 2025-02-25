@@ -162,36 +162,4 @@ $(document).ready(() => {
 	});
 });
 
-// tab logic
-
-document.addEventListener("DOMContentLoaded", function () {
-	const scientificTab = document.querySelector(".button-scientific");
-	const pressTab = document.querySelector(".button-press");
-	const scientificContent = document.querySelector(".scientific-content");
-	const pressContent = document.querySelector(".press-content");
-
-	function showTab(selectedTab) {
-		if (selectedTab === "scientific") {
-			scientificContent.style.display = "flex";
-			pressContent.style.display = "none";
-			scientificTab.classList.add("active");
-			pressTab.classList.remove("active");
-		} else {
-			scientificContent.style.display = "none";
-			pressContent.style.display = "flex";
-			scientificTab.classList.remove("active");
-			pressTab.classList.add("active");
-		}
-	}
-
-	// Set default active tab
-	showTab("press");
-
-	scientificTab.addEventListener("click", function () {
-		showTab("scientific");
-	});
-
-	pressTab.addEventListener("click", function () {
-		showTab("press");
-	});
-});
+// tab logic move to page tab-pressResource.liquid
