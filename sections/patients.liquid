@@ -6,25 +6,24 @@
 {% assign icon_head4 = 'icon_head-4.png' | asset_url | append: '?v=' | append: 'timestamp' %}
 
 	
-	{% style %}
+{% style %}
 
-  #shopify-section-{{section.id}} .patient{
-    padding-block: 80px;
+	#shopify-section-{{section.id}} .patient{
+		padding-block: 80px;
 		background-color: #F6F2F1;
-  }
+	}
 	#shopify-section-{{section.id}} .patient_wraper{
-    display: flex;
+		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		gap: 80px
-  }
+	}
 	#shopify-section-{{section.id}} .patient_title{
 		max-width: 600px;
 		width: 100%;
-    text-align: center;
+		text-align: center;
 	}
-
 	#shopify-section-{{section.id}}	.card_patient{
 		border-radius: 16px;
 		border: 1px solid rgba(60, 46, 37, 0.50);
@@ -63,8 +62,40 @@
 		width: 60px;
 		height: 60px;
 	}
+
+@media (max-width: 768px) {
+    #shopify-section-{{section.id}} .patient {
+        padding-block: 40px;
+    }
+	#shopify-section-{{section.id}} .patient_title,
+	#shopify-section-{{section.id}} .patient_title-span {
+        font-size: 48px;
+    }
+
+    #shopify-section-{{section.id}} .patient_card-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+
+    #shopify-section-{{section.id}} .card_patient {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #shopify-section-{{section.id}} .head_text {
+        font-size: 18px;
+		max-width: 100%;
+    }
+
+    .icon_head {
+        width: 50px;
+        height: 50px;
+    }
+}
+
 		
-	{% endstyle %}
+{% endstyle %}
 	
 
 	<div class="container">

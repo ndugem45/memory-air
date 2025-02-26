@@ -1,27 +1,62 @@
 {% comment %} for healthcare page {% endcomment %}
 
 {% style %}
-#shopify-section-{{section.id}} .healthcare_content{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+	#shopify-section-{{section.id}} .healthcare_content{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+	}
+
+	#shopify-section-{{section.id}} .healthcare_content-text{
+		max-width: 640px;
+		width: 100%;
+	}
+
+	#shopify-section-{{section.id}} .healthcare_content-img{
+		max-width: 650px;
+		width: 100%;
+	}
+	#shopify-section-{{section.id}} .healthcare_content-img > img{
+		max-width: 650px;
+		width: 100%;
+	}
+
+@media (max-width: 768px) {
+    #shopify-section-{{section.id}} .healthcare_content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+		padding-top: 40px;
+		
+    }
+
+    #shopify-section-{{section.id}} .healthcare_content-text {
+        max-width: 100%;
+    }
+
+	#shopify-section-{{section.id}} .healthcare_content-text > h1,
+	#shopify-section-{{section.id}} .healthcare_content-text > h1 > span {
+        font-size: 48px;
+    }
+
+    #shopify-section-{{section.id}} .healthcare_content-img {
+        max-width: 100%;
+    }
+
+    #shopify-section-{{section.id}} .healthcare_content-img > img {
+        max-width: 100%;
+        height: auto;
+    }
+	#shopify-section-{{section.id}} .btn-wrap > a {
+        font-size: 16px;
+		padding-inline: 20px;
+    }
 }
 
-#shopify-section-{{section.id}} .healthcare_content-text{
-    max-width: 640px;
-    width: 100%;
-}
 
-#shopify-section-{{section.id}} .healthcare_content-img{
-max-width: 650px;
-width: 100%;
-}
-#shopify-section-{{section.id}} .healthcare_content-img > img{
-max-width: 650px;
-width: 100%;
-}
 
 {% endstyle %}
 

@@ -1,39 +1,45 @@
 /*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
-    "sections": {
-    "hero-science": {
-        "type": "hero-science"
-        },
-    "memory-loss": {
-        "type": "memory-loss"
-        },
-    "nose": {
-        "type": "nose"
-        },
-    "timeline": {
-        "type": "timeline"
-        },
-    "introduce": {
-        "type": "introduce"
-        },
-    "review": {
-        "type": "review"
-        },
+"sections": {
+    "hero-healthcare": {
+    "type": "hero-healthcare",
+    "settings": {}
     },
-    "order": [
-    "hero-science",
-    "memory-loss",
-    "nose",
-    "timeline",
-    "introduce",
-    "review",
-    ]
+    "partner": {
+    "type": "partner",
+    "settings": {}
+    },
+    "patients": {
+    "type": "patients",
+    "settings": {}
+    },
+    "finaly": {
+    "type": "finaly",
+    "settings": {}
+    },
+    "behind": {
+    "type": "behind",
+    "settings": {}
+    },
+    "contactus": {
+    "type": "contactus",
+    "settings": {}
+    }
+},
+"order": [
+    "hero-healthcare",
+    "partner",
+    "patients",
+    "finaly",
+    "behind",
+    "contactus"
+]
 }
