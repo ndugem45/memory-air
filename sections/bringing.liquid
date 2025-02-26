@@ -4,6 +4,7 @@
 
 
 {% style %}
+
     #shopify-section-{{section.id}} .healthcare_content{
         display: flex;
         flex-direction: row;
@@ -18,12 +19,12 @@
     }
     
     #shopify-section-{{section.id}} .healthcare_content-img{
-    max-width: 650px;
-    width: 100%;
+        max-width: 650px;
+        width: 100%;
     }
     #shopify-section-{{section.id}} .healthcare_content-img > img{
-    max-width: 650px;
-    width: 100%;
+        max-width: 650px;
+        width: 100%;
     }
     #shopify-section-{{section.id}} .bringing_text-dsc > span{
         font-weight: 500;
@@ -49,10 +50,34 @@
         letter-spacing: -0.4px;
     }
 
+@media (max-width: 768px) {
+    #shopify-section-{{section.id}} .healthcare_content {
+        flex-direction: column;
+        text-align: start;
+    }
+    #shopify-section-{{section.id}}.hero-healthcare {
+        padding-top: 40px;
+    }
     
+    #shopify-section-{{section.id}} .bringing_content-text {
+        margin-top: 40px;
+    }
+
+    #shopify-section-{{section.id}} .bringing_content-text > h1 {
+        font-size: 36px;
+        line-height: 120%;
+        text-align: center;
+    }
+
+    #shopify-section-{{section.id}} .bringing_content-text > span {
+        font-size: 40px;
+        line-height: 120%;
+        text-align: start;
+    }
+}
 
     
-    
+
     {% endstyle %}
     
     <div class="container">

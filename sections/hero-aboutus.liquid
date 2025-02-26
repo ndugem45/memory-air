@@ -4,6 +4,7 @@
 
 
 {% style %}
+
     #shopify-section-{{section.id}}{
         padding-top: 200px;
         background: linear-gradient(180deg, rgba(170, 126, 113, 0.10) 0%, rgba(170, 126, 113, 0.00) 98.6%);
@@ -22,15 +23,49 @@
     }
     
     #shopify-section-{{section.id}} .healthcare_content-img{
-    max-width: 650px;
-    width: 100%;
+        max-width: 650px;
+        width: 100%;
     }
     #shopify-section-{{section.id}} .healthcare_content-img > img{
-    max-width: 650px;
-    width: 100%;
+        max-width: 650px;
+        width: 100%;
     }
+
+@media (max-width: 768px) {
+    #shopify-section-{{section.id}} {
+        padding-top: 120px;
+    }
+
+    #shopify-section-{{section.id}} .healthcare_content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #shopify-section-{{section.id}} .healthcare_content-text {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    #shopify-section-{{section.id}} .healthcare_content-text > h1,
+    #shopify-section-{{section.id}} .healthcare_content-text > h1 > span{
+        max-width: 100%;
+        font-size: 40px;
+    }
+
+    #shopify-section-{{section.id}} .healthcare_content-img {
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #shopify-section-{{section.id}} .healthcare_content-img > img {
+        max-width: 90%;
+        height: auto;
+    }
+}
+
     
-    {% endstyle %}
+{% endstyle %}
     
     <div class="container">
         <div class="healthcare_content">
