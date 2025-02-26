@@ -1,3 +1,5 @@
+console.log("hallo");
+
 $(document).ready(() => {
 	$(".cart").click(() => {
 		$("nav").toggleClass("open");

@@ -1,0 +1,222 @@
+{% comment %} for healthcare page {% endcomment %}
+
+{% assign science-display = 'science-illus.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+
+{% style %}
+
+
+#shopify-section-{{section.id}}.review {
+	background: linear-gradient(
+			180deg,
+			rgba(170, 126, 113, 0.0) 0%,
+			rgba(170, 126, 113, 0.1) 100%
+		), #fff;
+}
+#shopify-section-{{section.id}}.review .container {
+	max-width: 100%;
+	padding: unset;
+	max-width: 2048px;
+}
+#shopify-section-{{section.id}}.review h2 {
+	margin-bottom: 64px;
+}
+@media only screen and (min-width: 2048px) {
+	#shopify-section-{{section.id}}.review .slider {
+		border-radius: 24px;
+		overflow: hidden;
+	}
+}
+#shopify-section-{{section.id}}.review .slider_item-wrap {
+	padding-inline: 12px;
+}
+#shopify-section-{{section.id}}.review .slider_item {
+	display: flex;
+	flex-direction: column;
+	max-width: 405px;
+	color: var(--color-primary);
+}
+#shopify-section-{{section.id}}.review .slider_item h3 {
+	padding-inline: 16px;
+	margin-top: 32px;
+}
+#shopify-section-{{section.id}}.review .slider_item p {
+	flex: 1;
+	padding-inline: 16px;
+	margin-top: 32px;
+	padding-bottom: 20px;
+}
+#shopify-section-{{section.id}}.review .slider_item img {
+	height: 304px;
+	width: 100%;
+	object-fit: cover;
+	border-radius: 24px;
+}
+#shopify-section-{{section.id}}.review .slider_item .user {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	padding-inline: 16px;
+}
+#shopify-section-{{section.id}}.review .slider_item .user span {
+	font-family: "General Sans";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 140%;
+}
+#shopify-section-{{section.id}}.review .slider_item .user span:first-child {
+	font-weight: 500;
+	line-height: 150%;
+	text-transform: capitalize;
+}
+
+    
+    {% endstyle %}
+    
+    <div class="container">
+        <h2 class="text-center">
+        What the <br>
+        <span>
+            Experts Say
+        </span>
+        </h2>
+        <div id="review-slider" class="slider">
+        <div class="slider_item-wrap">
+            <div class="slider_item">
+            <img src="/assets/images/review-photo1.webp" alt="">
+            <h3 class="font-medium text-32">
+                “Risk free and backed by good science”
+            </h3>
+            <p>
+                “Memory Air® is well-suited for everyone since you just plug it in and it delivers while you sleep. This
+                is risk-free and backed by good science. It looks like it’s the first effective method to improve and
+                delay memory loss and it’s very exciting.”
+            </p>
+            <div class="user">
+                <span>Dr. Amy Borenstein, PhD, MPH, FAAN</span>
+                <span>
+                Professor Emerita, Author, Alzheimer’s Disease: Life Course Perspectives on Risk Reduction
+                </span>
+            </div>
+            </div>
+        </div>
+        <div class="slider_item-wrap">
+            <div class="slider_item">
+            <img src="/assets/images/review-photo2.webp" alt="">
+            <h3 class="font-medium text-32">
+                “Risk free and backed by good science”
+            </h3>
+            <p>
+                “Memory Air® is well-suited for everyone since you just plug it in and it delivers while you sleep. This
+                is risk-free and backed by good science. It looks like it’s the first effective method to improve and
+                delay memory loss and it’s very exciting.”
+            </p>
+            <div class="user">
+                <span>Dr. Amy Borenstein, PhD, MPH, FAAN</span>
+                <span>
+                Professor Emerita, Author, Alzheimer’s Disease: Life Course Perspectives on Risk Reduction
+                </span>
+            </div>
+            </div>
+        </div>
+        <div class="slider_item-wrap">
+            <div class="slider_item">
+            <img src="/assets/images/review-photo3.webp" alt="">
+            <h3 class="font-medium text-32">
+                “Risk free and backed by good science”
+            </h3>
+            <p>
+                “Memory Air® is well-suited for everyone since you just plug it in and it delivers while you sleep. This
+                is risk-free and backed by good science. It looks like it’s the first effective method to improve and
+                delay memory loss and it’s very exciting.”
+            </p>
+            <div class="user">
+                <span>Dr. Amy Borenstein, PhD, MPH, FAAN</span>
+                <span>
+                Professor Emerita, Author, Alzheimer’s Disease: Life Course Perspectives on Risk Reduction
+                </span>
+            </div>
+            </div>
+        </div>
+        <div class="slider_item-wrap">
+            <div class="slider_item">
+            <img src="/assets/images/review-photo4.webp" alt="">
+            <h3 class="font-medium text-32">
+                “Risk free and backed by good science”
+            </h3>
+            <p>
+                “Memory Air® is well-suited for everyone since you just plug it in and it delivers while you sleep. This
+                is risk-free and backed by good science. It looks like it’s the first effective method to improve and
+                delay memory loss and it’s very exciting.”
+            </p>
+            <div class="user">
+                <span>Dr. Amy Borenstein, PhD, MPH, FAAN</span>
+                <span>
+                Professor Emerita, Author, Alzheimer’s Disease: Life Course Perspectives on Risk Reduction
+                </span>
+            </div>
+            </div>
+        </div>
+        </div>
+        <div class="navigation-slider m-top m-78">
+        <button id="review-prev">
+            <svg width="85" height="84" viewBox="0 0 85 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.208008" width="84" height="84" rx="42" fill="white" />
+            <path d="M45.208 49.5L37.708 42L45.208 34.5" stroke="#3C2E25" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+        </button>
+        <div id="review-indicator" class="navigation-slider_indicator">
+            <div class="bar"></div>
+        </div>
+        <button id="review-next">
+            <svg width="85" height="84" viewBox="0 0 85 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.208008" width="84" height="84" rx="42" fill="white" />
+            <path d="M39.208 34.5L46.708 42L39.208 49.5" stroke="#3C2E25" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+        </button>
+        </div>
+    </div>
+    <script>
+        $(document).ready(() => {
+
+            $("#review-slider").on("init", (event, slick) => {
+                const totalSlides = slick.slideCount;
+                const widthPercentage = (1 / totalSlides) * 100;
+                $("#review-indicator .bar").css("width", widthPercentage + "%");
+            });
+        
+            $("#review-slider").slick({
+                arrows: false,
+                dots: false,
+                centerMode: true,
+                variableWidth: true,
+                autoplay: true,
+                autoplaySpeed: 2000,
+            });
+        
+            $("#review-slider").on("afterChange", (event, slick, currentSlide) => {
+                const totalSlides = slick.slideCount;
+                const widthPercentage = ((currentSlide + 1) / totalSlides) * 100;
+                $("#review-indicator .bar").css("width", widthPercentage + "%");
+            });
+        
+            $("#review-prev").click(() => {
+                $("#review-slider").slick("slickPrev");
+            });
+            
+            $("#review-next").click(() => {
+                $("#review-slider").slick("slickNext");
+            });
+        
+        });
+
+    </script>
+    
+    {% schema %}
+        {
+            "tag": "section",
+            "class": "review"
+        }
+    {% endschema %}

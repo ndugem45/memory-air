@@ -1,0 +1,90 @@
+{% comment %} for healthcare page {% endcomment %}
+
+{% assign science-display = 'science-illus.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+
+{% style %}
+
+#shopify-section-{{section.id}}.hero2 {
+	padding-bottom: unset;
+	padding-top: 135px;
+	background: linear-gradient(
+			180deg,
+			rgba(170, 126, 113, 0.1) 0%,
+			rgba(170, 126, 113, 0.0) 100%
+		), #fff;
+}
+#shopify-section-{{section.id}}.hero2 .container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 79px;
+}
+#shopify-section-{{section.id}}.hero2 .content {
+	max-width: 588px;
+}
+#shopify-section-{{section.id}}.hero2 .illus {
+	width: 634px;
+}
+
+
+@media (max-width: 768px) {
+	#shopify-section-{{section.id}}.hero2 {
+		padding-top: 120px;
+	}
+
+	#shopify-section-{{section.id}}.hero2 .container {
+		flex-direction: column;
+		gap: 40px;
+	}
+
+	#shopify-section-{{section.id}}.hero2 .content {
+		max-width: 100%;
+		padding: 0 0;
+	}
+	#shopify-section-{{section.id}}.hero2 .content > h1{
+		font-size: 40px;
+	}
+	#shopify-section-{{section.id}}.hero2 .content > h1 > span{
+		font-size: 40px;
+	}
+	#shopify-section-{{section.id}}.hero2 .content > p{
+		font-size: 16px;
+	}
+
+	#shopify-section-{{section.id}}.hero2 .illus {
+		width: 80%;
+		max-width: 400px;
+	}
+}
+
+    {% endstyle %}
+    
+    <div class="container">
+        <div class="content">
+            <h1 class="m-btm m-32">
+            Memory Air® works. <br>
+            It’s backed by <br>
+            <span>
+                world class science.
+            </span>
+            </h1>
+            <p>
+            Developed in partnership with Professor Emeritus of Neurobiology at University of California Irvine. Dr.
+            Michael Leon is one of the world’s Leading neuroscientists.
+            <br>
+            <br>
+            Memory Air® was designed Using proven science:<br>
+            <strong>226%</strong> improvement in memory in adults aged 60-85.<br>
+            <strong>300%</strong> improvement in patients with dementia.
+            </p>
+        </div>
+    <img src={{science-display}} alt="" class="illus">
+    </div>
+    
+    
+    {% schema %}
+        {
+            "tag": "section",
+            "class": "hero2"
+        }
+    {% endschema %}

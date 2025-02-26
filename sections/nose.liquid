@@ -1,0 +1,108 @@
+{% comment %} for healthcare page {% endcomment %}
+
+{% assign science-display = 'science-illus.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+
+{% style %}
+
+	#shopify-section-{{section.id}}.nose {
+		background: rgb(251, 249, 248);
+		background: linear-gradient(
+			0deg,
+			rgba(251, 249, 248, 1) 0%,
+			rgba(248, 244, 243, 1) 64%,
+			rgba(251, 248, 247, 1) 100%
+		);
+	}
+	#shopify-section-{{section.id}} .content {
+		margin-top: 225px;
+		max-width: 435px;
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		color: var(--color-primary);
+	}
+	#shopify-section-{{section.id}} .content h3 {
+		font-family: "Avenir Next Cyr";
+		font-size: 64px;
+		font-style: normal;
+		font-weight: 450;
+		line-height: 100%;
+	}
+	#shopify-section-{{section.id}} .content p {
+		font-family: "General Sans";
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 140%;
+	}
+
+@media (max-width: 768px) {
+	#shopify-section-{{section.id}}.nose {
+		background: linear-gradient(
+			0deg,
+			rgba(251, 249, 248, 1) 0%,
+			rgba(248, 244, 243, 1) 64%,
+			rgba(251, 248, 247, 1) 100%
+		);
+		padding: 40px 20px;
+		text-align: center;
+	}
+
+	#shopify-section-{{section.id}} .content {
+		margin-top: 120px;
+		max-width: 100%;
+		gap: 12px;
+		align-items: center;
+	}
+
+	#shopify-section-{{section.id}}.nose .container > h2,
+	#shopify-section-{{section.id}}.nose .container > h2 > span{
+		font-size: 38px;
+	}
+
+	#shopify-section-{{section.id}} .content h3 {
+		font-size: 24px;
+		line-height: 110%;
+	}
+
+	#shopify-section-{{section.id}} .content p {
+		font-size: 16px;
+		line-height: 130%;
+		text-align: start;
+	}
+}
+
+
+    {% endstyle %}
+    
+    <div class="container">
+        <h2 class="text-center">
+        The powerful answer has been right <br>
+        <span>
+            under our nose...
+        </span>
+        </h2>
+
+        <div class="content">
+        <h3>
+            Your nose is the key to your brain
+        </h3>
+        <p>
+            Science shows that the sense of smell is a “Super Highway” going directly to the center of your brain.
+            <br><br>
+            Factors such as age, trauma, and diseases like Covid-19 weaken your nose’s ability to smell, which then
+            weakens the
+            brain’s memory centers.
+            <br><br>
+            Your sense of smell is just like a muscle: you use it or lose it.
+        </p>
+        </div>
+    </div>
+    
+    
+    {% schema %}
+        {
+            "tag": "section",
+            "class": "nose"
+        }
+    {% endschema %}
