@@ -1,0 +1,91 @@
+{% comment %} for healthcare page {% endcomment %}
+
+{% assign science-display = 'product-vid-placeholder.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+
+{% style %}
+
+#shopify-section-{{section.id}}.hero-product {
+	padding-bottom: unset;
+	padding-top: 135px;
+	background: linear-gradient(
+			180deg,
+			rgba(170, 126, 113, 0.1) 0%,
+			rgba(170, 126, 113, 0.0) 100%
+		), #fff;
+}
+#shopify-section-{{section.id}}.hero-product .container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 79px;
+}
+#shopify-section-{{section.id}}.hero-product .content {
+	max-width: 588px;
+}
+#shopify-section-{{section.id}}.hero-product .illus {
+	width: 634px;
+}
+
+
+@media (max-width: 768px) {
+	#shopify-section-{{section.id}}.hero-product {
+		padding-top: 120px;
+	}
+
+	#shopify-section-{{section.id}}.hero-product .container {
+		flex-direction: column;
+		gap: 40px;
+	}
+
+	#shopify-section-{{section.id}}.hero-product .content {
+		max-width: 100%;
+		padding: 0 0;
+	}
+	#shopify-section-{{section.id}}.hero-product .content > h1{
+		font-size: 40px;
+	}
+	#shopify-section-{{section.id}}.hero-product .content > h1 > span{
+		font-size: 40px;
+	}
+	#shopify-section-{{section.id}}.hero-product .content > p{
+		font-size: 16px;
+	}
+
+	#shopify-section-{{section.id}}.hero-product .illus {
+		width: 80%;
+		max-width: 400px;
+	}
+}
+
+    {% endstyle %}
+    
+<div class="container">
+    <div class="content">
+        <h1 class="m-btm m-32">
+				Improve Your <br>
+        <span>Memory...</span> <br>
+				While You <span>Sleep</span>
+        </h1>
+        <p>
+					The revolutionary new product that improves memory while you sleep, Created by a world
+					famous Neuroscientist.
+        </p>
+				<div class="btn-wrap m-top m-54">
+					<a href="" class="btn is-black">
+						Buy Now
+					</a>
+					<a href="" class="btn is-bordered">
+						Watch video
+					</a>
+				</div>
+    </div>
+  <img src={{science-display}} alt="" class="illus">
+</div>
+    
+    
+{% schema %}
+    {
+        "tag": "section",
+        "class": "hero-product"
+    }
+{% endschema %}
