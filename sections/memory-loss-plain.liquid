@@ -1,0 +1,76 @@
+{% comment %} for healthcare page {% endcomment %}
+
+{% assign illus1 = 'science-illus1.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign illus2 = 'science-illus2.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign illus3 = 'science-illus3.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+
+    
+    <div class="container">
+			<h2 class="text-center m-btm m-54">
+        We’re Here
+        <span>
+          to Help
+        </span>
+      </h2>
+
+			<div class="memory-los_card dark">
+        <div class="label">Just 3 Steps to Enhance Cognitive Wellness with Memory Air®</div>
+        <div class="tab">
+          <div id="memory-slide" class="tab_img-wrap">
+            <img src="{{ illus1 }}" alt="">
+            <img src="{{ illus2 }}" alt="">
+            <img src="{{ illus3 }}" alt="">
+          </div>
+          <div class="tab_btn">
+            <button id="tab-btn-1" class="active">
+              1. Load the scent belt.
+              <p>
+                Insert the scent belt into the compartment, ensuring it’s securely in place.
+              </p>
+            </button>
+            <button id="tab-btn-2">
+              2. Plug it into a reliable power source.
+              <p>
+                Connect the device to a power source using the provided adapter to ensure continuous operation.
+              </p>
+            </button>
+            <button id="tab-btn-3">
+              3. Press the button on the inside when you go to bed.
+              <p>
+                Activate Memory Air® by pressing the button to start its sleep-enhancing features.
+              </p>
+            </button>
+            <a href="" class="btn is-black m-top m-32">
+              Download the Guide
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+        $(document).ready(() => {
+
+            $("#memory-slide").slick({
+                arrows: false,
+                dots: false,
+                fade: true,
+            });
+
+            $(".tab_btn button").click((e) => {
+                const index = e.currentTarget.getAttribute("id").split("tab-btn-")[1];
+                $(".tab_btn button").removeClass("active");
+                $(e.currentTarget).addClass("active");
+                $("#memory-slide").slick("slickGoTo", index);
+            });
+
+        });
+    </script>
+    
+    {% schema %}
+        {
+            "tag": "section",
+            "class": "memory-los plain"
+        }
+    {% endschema %}

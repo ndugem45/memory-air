@@ -1,0 +1,31 @@
+{% style %}
+  #shopify-section-{{section.id}}.faq{
+    background: unset;
+  }
+{% endstyle %}
+
+  <div class="container">
+    <h2 class="text-center m-btm m-54">
+      Maintenance and <br>
+      <span>
+        Troubleshooting
+      </span>
+    </h2>
+    {% assign title = "Why isn't a diffuser enough to improve my memory?" %}
+    <div class="faq_wrap">
+      {% render 'faq-accordion' with title %}
+      {% render 'faq-accordion' with title %}
+      {% render 'faq-accordion' with title %}
+      {% render 'faq-accordion' with title %}
+      <a href="" class="btn is-black">
+        Go to FAQ
+      </a>
+    </div>
+  </div>
+
+{% schema %}
+  {
+    "tag": "section",
+    "class": "faq plain"
+  }
+{% endschema %}
