@@ -1,0 +1,13 @@
+{
+	"sections": {
+		"hero-detail-article": {
+			"type": "hero-detail-article",
+			"settings": {}
+		},
+		"detail-article": {
+			"type": "detail-article",
+			"settings": {}
+		}
+	},
+	"order": ["hero-detail-article", "detail-article"]
+}
