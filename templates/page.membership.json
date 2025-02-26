@@ -1,0 +1,9 @@
+{
+	"sections": {
+		"membership": {
+			"type": "membership",
+			"settings": {}
+		}
+	},
+	"order": ["membership"]
+}
