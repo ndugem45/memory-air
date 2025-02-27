@@ -4,90 +4,154 @@
 {% assign thumb2 = 'news-2.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
 
 {% style %}
-#shopify-section-{{section.id}}.news{
-	padding-bottom: 31px;
-}
-#shopify-section-{{section.id}}.news .container{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-#shopify-section-{{section.id}}.news .news_grid{
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: 1fr;
-	grid-column-gap: 20px;
-	grid-row-gap: 20px;
-}
-#shopify-section-{{section.id}}.news .news_item{
-	display: flex;
-	flex-direction: column;
-	cursor: pointer;
-}
-#shopify-section-{{section.id}}.news .news_item img{
-	width: 100%;
-	border-radius: 24px;
-	background: var(--orange-light);
-	height: 359px;
-	object-fit: cover;
-}
-#shopify-section-{{section.id}}.news .news_item:hover h3{
-	text-decoration: underline;
-}
 
-#shopify-section-{{section.id}} .officer_wrapper{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	gap: 100px;
-}
+	#shopify-section-{{section.id}}.news{
+		padding-bottom: 31px;
+	}
+	#shopify-section-{{section.id}}.news .container{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	#shopify-section-{{section.id}}.news .news_grid{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: 1fr;
+		grid-column-gap: 20px;
+		grid-row-gap: 20px;
+	}
+	#shopify-section-{{section.id}}.news .news_item{
+		display: flex;
+		flex-direction: column;
+		cursor: pointer;
+	}
+	#shopify-section-{{section.id}}.news .news_item img{
+		width: 100%;
+		border-radius: 24px;
+		background: var(--orange-light);
+		height: 359px;
+		object-fit: cover;
+	}
+	#shopify-section-{{section.id}}.news .news_item:hover h3{
+		text-decoration: underline;
+	}
 
-#shopify-section-{{section.id}} .officer_text-wrapper{
+	#shopify-section-{{section.id}} .officer_wrapper{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		gap: 100px;
+	}
+
+	#shopify-section-{{section.id}} .officer_text-wrapper{
 		max-width: 494px;
 		width: 100%;
 		display: flex;
-    flex-direction: column;
+		flex-direction: column;
+	}
+
+	#shopify-section-{{section.id}} .officer_text-span{
+		color: #232323;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 28px; /* 155.556% */
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		margin-bottom: 50px;
+	}
+
+	#shopify-section-{{section.id}} .officer_text-name{
+		color: #232323;
+		font-family: "General Sans Semibold";
+		font-size: 48px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 38px; /* 79.167% */
+		letter-spacing: -0.4px;
+		margin-bottom: 16px;
+	}
+
+	#shopify-section-{{section.id}} .officer_text-profession{
+		color: #3C2E25;
+		font-family: "General Sans Semibold";
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 20px; /* 142.857% */
+		margin-bottom: 50px;
+	}
+
+	#shopify-section-{{section.id}} .officer_text-dsc{
+		color: #3C2E25;
+		font-family: "General Sans Reguler";
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 28px; /* 155.556% */
+	}
+
+@media (max-width: 768px) {
+	
+    #shopify-section-{{section.id}}.news {
+        padding-bottom: 20px;
+    }
+
+    #shopify-section-{{section.id}}.news .news_grid {
+        grid-template-columns: 1fr; /* Ubah dari 2 kolom ke 1 kolom */
+        grid-row-gap: 16px;
+    }
+
+    #shopify-section-{{section.id}}.news .news_item img {
+        height: 250px; /* Sesuaikan tinggi gambar agar tidak terlalu besar */
+        border-radius: 16px;
+    }
+
+    #shopify-section-{{section.id}} .officer_wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    #shopify-section-{{section.id}} .officer_text-wrapper {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    #shopify-section-{{section.id}} .officer_text-span {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 30px;
+    }
+
+    #shopify-section-{{section.id}} .officer_text-name {
+        font-size: 32px;
+        line-height: 36px;
+        margin-bottom: 12px;
+    }
+
+    #shopify-section-{{section.id}} .officer_text-profession {
+        font-size: 12px;
+        line-height: 18px;
+        margin-bottom: 30px;
+    }
+
+    #shopify-section-{{section.id}} .officer_text-dsc {
+        font-size: 16px;
+        line-height: 24px;
+    }
 }
 
-#shopify-section-{{section.id}} .officer_text-span{
-	color: #232323;
-	font-size: 18px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: 28px; /* 155.556% */
-	letter-spacing: 2px;
-	text-transform: uppercase;
-	margin-bottom: 50px;
-}
+@media (max-width: 480px) {
+    #shopify-section-{{section.id}}.news .news_item img {
+        height: 200px;
+        border-radius: 12px;
+    }
 
-#shopify-section-{{section.id}} .officer_text-name{
-	color: #232323;
-	font-family: "General Sans Semibold";
-	font-size: 48px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: 38px; /* 79.167% */
-	letter-spacing: -0.4px;
-	margin-bottom: 16px;
-}
-
-#shopify-section-{{section.id}} .officer_text-profession{
-	color: #3C2E25;
-	font-family: "General Sans Semibold";
-	font-size: 14px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: 20px; /* 142.857% */
-	margin-bottom: 50px;
-}
-
-#shopify-section-{{section.id}} .officer_text-dsc{
-	color: #3C2E25;
-font-family: "General Sans Reguler";
-font-size: 18px;
-font-style: normal;
-font-weight: 400;
-line-height: 28px; /* 155.556% */
+    #shopify-section-{{section.id}} .officer_text-name {
+        font-size: 28px;
+        line-height: 32px;
+    }
 }
 
 

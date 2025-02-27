@@ -7,87 +7,194 @@
 
 {% style %}
 
-#shopify-section-{{section.id}}.technical{
-	padding: 80px 0 140px 0;
+	#shopify-section-{{section.id}}.technical{
+		padding: 80px 0 140px 0;
 
+	}
+
+	#shopify-section-{{section.id}}.technical .technical_wraper{
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+	}
+
+	#shopify-section-{{section.id}}.technical .technical_title > h2{
+		color: #232323;
+		font-family: "Cormorant Garamond";
+		font-size: 72px;
+		font-style: italic;
+		font-weight: 700;
+		line-height: 100%; /* 72px */
+	}
+	#shopify-section-{{section.id}}.technical .technical_title > p{
+		color: #232323;
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 130%; /* 31.2px */
+		margin-top: 24px;
+		max-width: 1080px;
+	}
+	#shopify-section-{{section.id}}.technical .technical_advisor{
+		max-width: 1045px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#shopify-section-{{section.id}}.technical .advisor_card{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		gap: 50px;
+		margin-block: 40px;
+	}
+	#shopify-section-{{section.id}}.technical .advisor_card-img > img{
+		max-width: 450px;
+		width: 100%;
+	}
+
+	#shopify-section-{{section.id}}.technical .advisor_card-text{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		max-width: 545px;
+		padding: 64px;
+	}
+	#shopify-section-{{section.id}}.technical .technical_text-btm{
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+	}
+
+	#shopify-section-{{section.id}}.technical .technical_btm-quotes{
+		color: #3C2E25;
+		text-align: center;
+		font-family: "Cormorant Garamond";
+		font-size: 36px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 56px; /* 155.556% */
+		letter-spacing: -0.72px;
+	}
+	#shopify-section-{{section.id}}.technical .technical_btm-name{
+		color: #232323;
+		font-family: "Cormorant Garamond";
+		font-size: 32px;
+		font-style: italic;
+		font-weight: 700;
+		line-height: 32px; /* 100% */
+		letter-spacing: -0.1px;
+	}
+
+@media (max-width: 1024px) {
+    #shopify-section-{{section.id}}.technical {
+        padding: 60px 0 100px 0;
+    }
+
+    #shopify-section-{{section.id}}.technical .technical_title > h2 {
+        font-size: 56px;
+    }
+
+    #shopify-section-{{section.id}}.technical .technical_title > p {
+        font-size: 20px;
+        max-width: 90%;
+    }
+
+    #shopify-section-{{section.id}}.technical .advisor_card {
+        flex-direction: column;
+		gap: 0px;
+    }
+
+    #shopify-section-{{section.id}}.technical .advisor_card-text {
+        padding: 40px;
+    }
+
+    #shopify-section-{{section.id}}.technical .technical_btm-quotes {
+        font-size: 28px;
+        line-height: 42px;
+    }
+
+    #shopify-section-{{section.id}}.technical .technical_btm-name {
+        font-size: 28px;
+    }
 }
 
-#shopify-section-{{section.id}}.technical .technical_wraper{
-	display: flex;
-	flex-direction: column;
-	justify-content: start;
+@media (max-width: 768px) {
+    #shopify-section-{{section.id}}.technical {
+        padding: 50px 0 80px 0;
+    }
+
+    #shopify-section-{{section.id}}.technical .technical_title > h2 {
+        font-size: 42px;
+    }
+
+    #shopify-section-{{section.id}}.technical .technical_title > p {
+        font-size: 18px;
+        max-width: 100%;
+    }
+
+    #shopify-section-{{section.id}}.technical .advisor_card-img > img {
+        width: 100%;
+    }
+
+    #shopify-section-{{section.id}}.technical .advisor_card-text {
+        padding: 30px;
+    }
+
+    #shopify-section-{{section.id}}.technical .technical_btm-quotes {
+        font-size: 24px;
+        line-height: 36px;
+    }
+
+    #shopify-section-{{section.id}}.technical .technical_btm-name {
+        font-size: 24px;
+    }
+	#shopify-section-{{section.id}} .mobile-layout{
+		flex-direction: column-reverse !important;
+    }
+	
 }
 
-#shopify-section-{{section.id}}.technical .technical_title > h2{
-	color: #232323;
-	font-family: "Cormorant Garamond";
-	font-size: 72px;
-	font-style: italic;
-	font-weight: 700;
-	line-height: 100%; /* 72px */
-}
-#shopify-section-{{section.id}}.technical .technical_title > p{
-	color: #232323;
-	font-size: 24px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: 130%; /* 31.2px */
-	margin-top: 24px;
-	max-width: 1080px;
-}
-#shopify-section-{{section.id}}.technical .technical_advisor{
-	max-width: 1045px;
-	margin-left: auto;
-	margin-right: auto;
+@media (max-width: 480px) {
+    #shopify-section-{{section.id}}.technical {
+        padding: 40px 0 60px 0;
+    }
+
+    #shopify-section-{{section.id}}.technical .technical_title > h2{
+        font-size: 32px;
+    }
+
+    #shopify-section-{{section.id}}.technical .technical_title > p {
+        font-size: 16px;
+    }
+
+    #shopify-section-{{section.id}}.technical .advisor_card-img > img {
+        width: 100%;
+    }
+
+    #shopify-section-{{section.id}}.technical .advisor_card-text {
+        padding: 20px;
+    }
+	
+    #shopify-section-{{section.id}} .technical_btm-title {
+        font-size: 38px;
+    }
+	#shopify-section-{{section.id}} .technical_btm-title > span {
+        font-size: 38px;
+    }
+    #shopify-section-{{section.id}}.technical .technical_btm-quotes {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    #shopify-section-{{section.id}}.technical .technical_btm-name {
+        font-size: 20px;
+    }
 }
 
-#shopify-section-{{section.id}}.technical .advisor_card{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	gap: 50px;
-	margin-block: 40px;
-}
-#shopify-section-{{section.id}}.technical .advisor_card-img > img{
-	max-width: 450px;
-	width: 100%;
-}
-
-#shopify-section-{{section.id}}.technical .advisor_card-text{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	max-width: 545px;
-	padding: 64px;
-}
-#shopify-section-{{section.id}}.technical .technical_text-btm{
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
-}
-
-#shopify-section-{{section.id}}.technical .technical_btm-quotes{
-	color: #3C2E25;
-	text-align: center;
-	font-family: "Cormorant Garamond";
-	font-size: 36px;
-	font-style: normal;
-	font-weight: 700;
-	line-height: 56px; /* 155.556% */
-	letter-spacing: -0.72px;
-}
-#shopify-section-{{section.id}}.technical .technical_btm-name{
-	color: #232323;
-	font-family: "Cormorant Garamond";
-	font-size: 32px;
-	font-style: italic;
-	font-weight: 700;
-	line-height: 32px; /* 100% */
-	letter-spacing: -0.1px;
-}
 
 
 
@@ -104,7 +211,7 @@
 			</div>
 			<div class="technical_advisor">
 
-				<div class="advisor_card">
+				<div class="advisor_card mobile-layout">
 					<div class="advisor_card-text">
 						<h3>
 							Stanton Rowe <br>
@@ -132,7 +239,7 @@
 					</div>
 				</div>
 
-				<div class="advisor_card">
+				<div class="advisor_card mobile-layout">
 					<div class="advisor_card-text">
 						<h3>
 							Stanton Rowe <br>
