@@ -1,31 +1,34 @@
 {
-    "sections": {
-    "hero-science": {
-        "type": "hero-science"
-        },
-    "memory-loss": {
-        "type": "memory-loss"
-        },
-    "nose": {
-        "type": "nose"
-        },
-    "timeline": {
-        "type": "timeline"
-        },
-    "introduce": {
-        "type": "introduce"
-        },
-    "review": {
-        "type": "review"
-        },
-    },
-    "order": [
-    "hero-science",
-    "memory-loss",
-    "nose",
-    "timeline",
-    "introduce",
-    "review",
-    ]
+	"sections": {
+		"hero-science": {
+			"type": "hero-science"
+		},
+		"memory-loss": {
+			"type": "memory-loss"
+		},
+		"nose": {
+			"type": "nose"
+		},
+		"timeline": {
+			"type": "timeline"
+		},
+		"introduce": {
+			"type": "introduce"
+		},
+		"review": {
+			"type": "review"
+		},
+		"faq": {
+			"type": "faq"
+		}
+	},
+	"order": [
+		"hero-science",
+		"memory-loss",
+		"nose",
+		"timeline",
+		"introduce",
+		"review",
+		"faq"
+	]
 }
-// kurang faq

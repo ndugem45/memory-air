@@ -1,20 +1,24 @@
 {
 	"sections": {
-		"memory-loss-plain": {
-			"type": "memory-loss-plain"
+		"hero-product": {
+			"type": "hero-product"
+		},
+		"life": {
+			"type": "life",
+			"settings": {}
+		},
+		"stories": {
+			"type": "stories",
+			"settings": {}
+		},
+		"news": {
+			"type": "news",
+			"settings": {}
 		},
 		"faq-plain": {
 			"type": "faq-plain",
 			"settings": {}
-		},
-		"banner": {
-			"type": "banner",
-			"settings": {}
-		},
-		"banner-cta": {
-			"type": "banner-cta",
-			"settings": {}
 		}
 	},
-	"order": ["memory-loss-plain", "faq-plain", "banner", "banner-cta"]
+	"order": ["hero-product", "life", "stories", "news", "faq-plain"]
 }
