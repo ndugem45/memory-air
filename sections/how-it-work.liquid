@@ -1,0 +1,248 @@
+{% assign product_img = 'hiw-product.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+
+{% style %}
+  #shopify-section-{{section.id}} .container{
+    display: flex;
+    flex-direction: column;
+  }
+  #shopify-section-{{section.id}} h2{
+    margin-bottom: 86px;
+  }
+  #shopify-section-{{section.id}} .content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 215px;
+    padding-bottom: 500px;
+  }
+  #shopify-section-{{section.id}} .content .product{
+    width: 283px;
+  }
+  #shopify-section-{{section.id}} .content .item{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 550px;
+  }
+  #shopify-section-{{section.id}} .content .item .head{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center; 
+  }
+  #shopify-section-{{section.id}} .content .item .head span{
+    font-family: "General Sans Medium";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    border-radius: 80px;
+    border: 1px solid var(--color-primary);
+    background: #F6F2F1;
+    box-shadow: -4px -4px 20px 0px rgba(204, 204, 204, 0.10), 4px 4px 20px 0px rgba(204, 204, 204, 0.10);
+    padding: 10px 24px;
+  }
+  #shopify-section-{{section.id}} .content .item .body{
+    font-family: "General Sans Regular";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    color: #3C2E25;
+  }
+  #shopify-section-{{section.id}} .content .item .body ul{
+    margin: unset;
+  }
+  #shopify-section-{{section.id}} .content #item-1{
+    top: 0;
+    left: 0;
+  }
+  #shopify-section-{{section.id}} .content #item-2{
+    top: 0;
+    right: 0;
+  }
+  #shopify-section-{{section.id}} .content #item-3{
+    top: 400px;
+    left: 0;
+    max-width: 500px;
+  }
+  #shopify-section-{{section.id}} .content #item-4{
+    top: 400px;
+    right: 0;
+    max-width: 500px;
+  }
+  #shopify-section-{{section.id}} .content #item-5{
+    top: 800px;
+    left: 10%;
+  }
+  #shopify-section-{{section.id}} .content #item-6{
+    top: 800px;
+    right: 10%;
+  }
+  #shopify-section-{{section.id}} .content #item-7{
+    bottom: 0;
+  }
+{% endstyle %}
+
+<div class="container">
+  <h2 class="text-center">
+    How Memory Air® <span>Works</span>
+  </h2>
+  <div class="content">
+    <img src="{{ product_img }}" alt="" class="product"/>
+
+    <div class="item" id="item-1">
+      <div class="head">
+        <span>
+          Based on Revolutionary Neuroscience
+        </span>
+        <img src="" alt=""/>
+      </div>
+      <div class="body">
+        <p>
+          Memory Air®  is backed by science with proven results:
+        </p>
+        <ul>
+          <li>
+            226% memory improvement in seniors ages 60-85
+          </li>
+          <li>
+            300% memory improvement in dementia/Alzheimer's patients
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item" id="item-2">
+      <div class="head">
+        <span>
+          Replacements delivered to your door
+        </span>
+        <img src="" alt=""/>
+      </div>
+      <div class="body">
+        <ul>
+          <li>
+            Members receive replacement scent belts every month
+          </li>
+          <li>
+            Easy to install
+          </li>
+          <li>
+            Keeps Memory Air® at full strength
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item" id="item-3">
+      <div class="head">
+        <span>
+          Safe and Fully Automated
+        </span>
+        <img src="" alt=""/>
+      </div>
+      <div class="body">
+        <ul>
+          <li>
+            Scent management is completely automatic
+          </li>
+          <li>
+            Happens while you sleep
+          </li>
+          <li>
+            Just press the button once at setup and Memory Air® takes care of the rest
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item" id="item-4">
+      <div class="head">
+        <span>
+          Simple to get started
+        </span>
+        <img src="" alt=""/>
+      </div>
+      <div class="body">
+        <ul>
+          <li>
+            No apps. No wifi. No bluetooth.
+          </li>
+          <li>
+            Just plug it in and turn it on
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item" id="item-5">
+      <div class="head">
+        <span>
+          Unique Scent Belt
+        </span>
+        <img src="" alt=""/>
+      </div>
+      <div class="body">
+        <ul>
+          <li>
+            40 pleasant all-natural scents selected by our team of neuroscientists
+          </li>
+          <li>
+            Nothing to pour, nothing to measure
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item" id="item-6">
+      <div class="head">
+        <span>
+          Works While you Sleep
+        </span>
+        <img src="" alt=""/>
+      </div>
+      <div class="body">
+        <ul>
+          <li>
+            Two cycles per night
+          </li>
+          <li>
+            80 brain-building scents delivered while you sleep
+          </li>
+          <li>
+            Experience pleasant dreams
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item" id="item-7">
+      <div class="head">
+        <span>
+          The Proof is in the Progress
+        </span>
+        <img src="" alt=""/>
+      </div>
+      <div class="body">
+        <ul>
+          <li>
+            Members get access to ongoing memory tests to track your improvement over time
+          </li>
+          <li>
+            Proof that your Memory Air® is working!
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "tag": "section",
+    "class": "how-it-work"
+  }
+{% endschema %}

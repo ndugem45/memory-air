@@ -1,0 +1,153 @@
+{% assign btm-left = 'btm-card.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign btm-right = 'btm-card-flip.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+
+{% style %}
+  #shopify-section-{{section.id}} .container{
+    display: flex;
+    flex-direction: column;
+  }
+  #shopify-section-{{section.id}} h2{
+    margin-bottom: 94px;
+  }
+  #shopify-section-{{section.id}} .card-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+  }
+  #shopify-section-{{section.id}} .card{
+    border-radius: 16px;
+    background: var(--color-secondary);
+    flex: 1;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 57px;
+    position: relative;
+  }
+  #shopify-section-{{section.id}} .card .price{
+    color: #FFF;
+    text-align: center;
+    font-family: "Avenir";
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    margin-bottom: 32px;
+  }
+  #shopify-section-{{section.id}} .card h3{
+    color: #FFF;
+    text-align: center;
+    font-family: "Cormorant Garamond";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 56px; /* 175% */
+    letter-spacing: -0.64px;
+    text-transform: capitalize;
+    margin-bottom: 32px;
+  }
+  #shopify-section-{{section.id}} .list{
+    display: flex;
+    flex-direction: column;
+    max-width: 377px;
+    margin: auto;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  #shopify-section-{{section.id}} .list-item{
+    color: #FFF;
+    font-family: "General Sans Regular";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    display: flex;
+    gap: 16px;
+  }
+  #shopify-section-{{section.id}} .list-item svg{
+    margin-top:4px;
+  }
+  #shopify-section-{{section.id}} .card .btn{
+    font-family: "General Sans Medium";
+    font-weight: 500;
+  }
+  #shopify-section-{{section.id}} .card img{
+    position: absolute;
+    top: 100%;
+  }
+{% endstyle %}
+
+<div class="container">
+  <h2 class="text-center">
+    <span>No</span> Drugs<span>, No</span> Work<span>, No</span> Side Effects
+  </h2>
+  <div class="card-wrapper">
+    <div class="card">
+      <img src="{{ btm-left }}" alt="">
+      <h3>
+        all-in-one device <br>
+        w/ monthly membership
+      </h3>
+      <div class="price">
+        $799 + $39/mo
+      </div>
+      <div class="list">
+        <div class="list-item">
+          <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 13.86L8.66667 19.25L17.7433 8.75" stroke="white" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15.9219 19.25L24.9985 8.75" stroke="white" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Improve your brain & memory function while you sleep with Memory Air®.
+        </div>
+        <div class="list-item">
+          <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 13.86L8.66667 19.25L17.7433 8.75" stroke="white" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15.9219 19.25L24.9985 8.75" stroke="white" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Monthly replacement scent belt delivered to your door to continue & maintain your results.
+        </div>
+      </div>
+      <a href="" class="btn is-white">
+        Buy Now
+      </a>
+    </div>
+
+    <div class="card">
+      <img src="{{ btm-right }}" alt="">
+      <h3>
+        Save 15% <br>
+        w/ Annual Membership
+      </h3>
+      <div class="price">
+        $799 + $397/yr
+      </div>
+      <div class="list">
+        <div class="list-item">
+          <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 13.86L8.66667 19.25L17.7433 8.75" stroke="white" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15.9219 19.25L24.9985 8.75" stroke="white" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Improve your brain & memory function while you sleep with Memory Air®.
+        </div>
+        <div class="list-item">
+          <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 13.86L8.66667 19.25L17.7433 8.75" stroke="white" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15.9219 19.25L24.9985 8.75" stroke="white" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          15% off monthly scent belt replacement when purchased annually.
+        </div>
+      </div>
+      <a href="" class="btn is-white">
+        Buy Now
+      </a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "tag": "section",
+    "class": "pricing"
+  }
+{% endschema %}

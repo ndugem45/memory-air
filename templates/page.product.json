@@ -3,6 +3,12 @@
 		"hero-product": {
 			"type": "hero-product"
 		},
+		"how-it-work": {
+			"type": "how-it-work"
+		},
+		"pricing": {
+			"type": "pricing"
+		},
 		"life": {
 			"type": "life",
 			"settings": {}
@@ -20,5 +26,13 @@
 			"settings": {}
 		}
 	},
-	"order": ["hero-product", "life", "stories", "news", "faq-plain"]
+	"order": [
+		"hero-product",
+		"how-it-work",
+		"pricing",
+		"life",
+		"stories",
+		"news",
+		"faq-plain"
+	]
 }
