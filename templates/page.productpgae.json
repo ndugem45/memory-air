@@ -1,0 +1,13 @@
+
+{
+    "sections": {
+        "hero-productpage": {
+        "type": "hero-productpage",
+        "settings": {}
+        },
+    },
+    "order": [
+        "hero-productpage",
+    ]
+    }
+    
