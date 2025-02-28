@@ -1,0 +1,382 @@
+{% style %}
+	#shopify-section-{{section.id}}.hero-productpage {
+		display: flex;
+		justify-content: center;
+		padding-bottom: 48px;
+        background: var(--Gradient-BG, linear-gradient(180deg, rgba(170, 126, 113, 0.10) 0%, rgba(170, 126, 113, 0.00) 98.6%), #FFF);
+	}
+	#shopify-section-{{section.id}} .productpage_title {
+        display: flex;
+		justify-content: center;
+        flex-direction: row;
+    }
+	#shopify-section-{{section.id}} .productpage-contactus {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		padding-block: 50px;
+	}
+	
+	#shopify-section-{{section.id}} .productpage_content {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		width: 100%;
+        gap: 40px;
+	}
+	
+	#shopify-section-{{section.id}} .productpage_content-image,
+	#shopify-section-{{section.id}} .productpage_content-form {
+		width: 100%;
+		position: relative;
+	}
+	#shopify-section-{{section.id}} .productpage_content-image{
+		width: 100%;
+		padding: 20px;
+		border-radius: 16px;
+		border: 1px solid #EEE;
+		background: #FFF;
+		box-shadow: -2px -2px 10px 0px rgba(238, 238, 238, 0.20), 2px 2px 10px 0px rgba(238, 238, 238, 0.20);
+	}
+	#shopify-section-{{section.id}} .productpage_content-form {
+		background-image: url('{{ "bg-form.png" | asset_url }}');
+		background-position: top center;
+		background-repeat: no-repeat;
+		display: flex;
+		align-items: start;
+		justify-content: center;
+		height: 800px;
+		background-size: 780px 800px;
+	}
+    #shopify-section-{{section.id}} .productpage_img-head{
+        gap: 16px;
+        display: flex;
+        flex-direction: column;
+    }
+
+	#shopify-section-{{section.id}} .productpage_img-head > img{
+		width: 100%;
+		height: 334px;
+	}
+	#shopify-section-{{section.id}} .image-wrapper > img{
+		width: 100%;
+		height: 90px;
+	}
+	#shopify-section-{{section.id}} .image-wrapper{
+		display: flex;
+		justify-content: space-between;
+        gap: 16px;
+	}
+
+	#shopify-section-{{section.id}} .productpage_text-title{
+		color: #232323;
+		font-family: "General Sans Medium";
+		font-size: 32px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 140%; /* 44.8px */
+		display: flex;
+		margin-bottom: 24px;
+	}
+
+	#shopify-section-{{section.id}} .productpage_img-text{
+		display: flex;
+		flex-direction: column;
+	}
+
+	#shopify-section-{{section.id}} .productpage_text-title > span{
+		color: #232323;
+		font-family: "Avenir";
+		font-size: 15px;
+		font-style: normal;
+		font-weight: 450;
+		line-height: 100%;
+		padding-top: 8px;
+		margin-right: 4px;
+	}
+	#shopify-section-{{section.id}} .productpage_text-list{
+		color: #232323;
+		font-family: "General Sans Medium";
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 160%; /* 28.8px */
+	}
+	#shopify-section-{{section.id}} .productpage_text-list-dsc{
+		color: #232323;
+		font-family: "General Sans Regular";
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 160%; /* 22.4px */
+		margin-bottom: 16px;
+	}
+
+	#shopify-section-{{section.id}} .productpage-title_btm > p {
+		color: #232323;
+		text-align: justify;
+		font-family: "General Sans Regular";
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 160%; /* 25.6px */
+	}
+
+    #shopify-section-{{section.id}} .product-card {
+        width: 100%;
+        max-width: 600px;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        font-family: Arial, sans-serif;
+    }
+    #shopify-section-{{section.id}} .product-card > h2 {
+        border-bottom: solid 1px #E4E3E4;
+        padding-bottom: 8px;
+    } 
+
+    #shopify-section-{{section.id}} h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    #shopify-section-{{section.id}} .option {
+        background: white;
+        border-radius: 12px;
+        padding: 16px;
+        margin-bottom: 12px;
+        border: 2px solid #ddd;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #shopify-section-{{section.id}} .option:hover {
+        border-color: #aa7e71;
+        background: rgba(170, 126, 113, 0.1);
+        box-shadow: 0 4px 12px rgba(170, 126, 113, 0.2);
+    }
+
+    #shopify-section-{{section.id}} .option label {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        cursor: pointer;
+    }
+
+    #shopify-section-{{section.id}} .option input {
+        display: none;
+    }
+
+    #shopify-section-{{section.id}} .custom-checkbox {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #aa7e71;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s ease-in-out;
+    }
+
+
+    #shopify-section-{{section.id}} .option input:checked + .custom-checkbox {
+        background: #aa7e71;
+        border-color: #aa7e71;
+        position: relative;
+    }
+
+    #shopify-section-{{section.id}} .option input:checked + .custom-checkbox::after {
+        content: "✔";
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    #shopify-section-{{section.id}} .option-content {
+        flex: 1;
+    }
+
+    #shopify-section-{{section.id}} .title {
+        font-size: 16px;
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    #shopify-section-{{section.id}} ul {
+        padding-left: 20px;
+        margin: 0 0 8px;
+        font-size: 14px;
+    }
+
+    #shopify-section-{{section.id}} .price {
+        font-size: 16px;
+        font-weight: bold;
+        display: block;
+        text-align: end;
+    }
+
+    #shopify-section-{{section.id}} .add-to-cart {
+        width: 100%;
+        padding: 14px;
+        background: black;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        margin-top: 16px;
+    }
+
+    #shopify-section-{{section.id}} .add-to-cart:hover {
+        background: #333;
+    }
+
+    #shopify-section-{{section.id}} .info-text {
+        text-align: center;
+        font-size: 12px;
+        color: #666;
+        margin-top: 12px;
+    }
+
+@media (max-width: 768px) {
+
+    #shopify-section-{{section.id}} .productpage_content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    #shopify-section-{{section.id}} .productpage_title > h1,
+    #shopify-section-{{section.id}} .productpage_title > h1 > span{
+        font-size: 48px;
+        margin-bottom: 30px !important;
+    }
+
+
+    #shopify-section-{{section.id}} .productpage_content-image {
+        padding: 10px;
+    }
+
+    #shopify-section-{{section.id}} .productpage_content-form {
+        height: auto;
+        background-size: cover;
+        padding: 20px;
+    }
+
+    #shopify-section-{{section.id}} .productpage_img-head > img {
+        height: auto;
+        
+    }
+
+    #shopify-section-{{section.id}} .image-wrapper {
+        flex-wrap: wrap;
+        gap: 8px;
+        width: 100%;
+    }
+    #shopify-section-{{section.id}} .image-wrapper > img {
+        width: 104px;
+        height: 60px;
+    }
+
+    #shopify-section-{{section.id}} .productpage_text-title {
+        font-size: 24px;
+    }
+
+    #shopify-section-{{section.id}} .productpage_text-list {
+        font-size: 16px;
+    }
+
+    #shopify-section-{{section.id}} .productpage_text-list-dsc {
+        font-size: 12px;
+    }
+
+    #shopify-section-{{section.id}} .product-card {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    #shopify-section-{{section.id}} .option label {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    #shopify-section-{{section.id}} .add-to-cart {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+
+
+
+{% endstyle %}
+	
+
+
+	<div class="container container-contactus">
+		<div class="productpage_title">
+			<h1 class="m-btm m-54">
+				<span>Buy </span>
+				Memory Air®
+			</h1>
+		</div>
+		<div class="productpage_content">
+			<div class="productpage_content-image">
+				<div class="productpage_img-head">
+					<img src="/assets/images/img-contactus-open.png" alt="" class="img-open illus">
+					<div class="image-wrapper">
+						<img src="/assets/images/img-contactus-1.png" alt="" class="illus">
+						<img src="/assets/images/img-contactus-2.png" alt="" class="illus">
+						<img src="/assets/images/img-contactus-3.png" alt="" class="illus">
+					</div>
+				</div>
+
+			</div>
+
+            <div class="product-card">
+                <h2>Memory Air®</h2>
+            
+                <div class="option">
+                <label>
+                    <input type="radio" name="memory-air">
+                    <div class="custom-checkbox"></div>
+                    <div class="option-content">
+                    <span class="title">Memory Air® + Subscription</span>
+                    <ul>
+                        <li>Filter auto-delivered every 6 months</li>
+                        <li>No commitment, Cancel anytime</li>
+                    </ul>
+                    <span class="price">$799 + $39/ month</span>
+                    </div>
+                </label>
+                </div>
+            
+                <div class="option">
+                <label>
+                    <input type="radio" name="memory-air">
+                    <div class="custom-checkbox"></div>
+                    <div class="option-content">
+                    <span class="title">Memory Air® (device only)</span>
+                    <span class="price">$799</span>
+                    </div>
+                </label>
+                </div>
+            
+                <button class="add-to-cart">Add to Cart</button>
+            
+                <p class="info-text">
+                Buying more than one Memory Air®?<br>
+                You can select shipping addresses on the next screen
+                </p>
+            </div>
+            
+
+		</div>
+	</div>
+
+
+
+{% schema %}
+	{
+		"tag": "section",
+		"class": "hero-productpage"
+	}
+{% endschema %}

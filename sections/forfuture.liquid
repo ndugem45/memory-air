@@ -4,7 +4,7 @@
 	{% assign forfuture-ornament1 = 'forfuture-ornament1.svg' | asset_url | append: '?v=' | append: 'timestamp' %}
 	{% assign forfuture-ornament2 = 'forfuture-ornament2.svg' | asset_url | append: '?v=' | append: 'timestamp' %}
 
-	{% style %}
+{% style %}
 
 	#shopify-section-{{section.id}}.forfuture{
 		padding-block: 80px;
@@ -22,21 +22,21 @@
 		text-align: center;
 	}
 	#shopify-section-{{section.id}} .forfuture_cta{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 		border-radius: 16px;
 		background: #3C2E25;
 		padding: 80px 40px;
   }
 	#shopify-section-{{section.id}} .behind_content-cta{
 		display: flex;
-    align-content: center;
-    align-items: center;
-    justify-content: space-between;
-    color: #fff;
-    width: 100%;
+		align-content: center;
+		align-items: center;
+		justify-content: space-between;
+		color: #fff;
+		width: 100%;
   }
 
 	#shopify-section-{{section.id}} .behind_cta-title > h2{
@@ -109,6 +109,73 @@
 		right: 0;
 	}
 
+@media (max-width: 768px) {
+
+    #shopify-section-{{section.id}}.forfuture {
+        padding-block: 50px;
+    }
+
+    #shopify-section-{{section.id}} .forfuture_title > h2 {
+        font-size: 42px;
+    }
+
+    #shopify-section-{{section.id}} .forfuture_cta {
+        padding: 60px 20px;
+    }
+
+    #shopify-section-{{section.id}} .behind_cta-title > h2 {
+        font-size: 40px;
+    }
+
+    #shopify-section-{{section.id}} .behind_cta-img {
+        width: 120px;
+        height: 120px;
+        min-width: 120px;
+    }
+	#shopify-section-{{section.id}} .behind_content-cta {
+		flex-direction: column;
+		gap: 40px;
+    }
+
+    #shopify-section-{{section.id}} .behind_cta-text-title {
+        font-size: 24px;
+    }
+
+    #shopify-section-{{section.id}} .behind_cta-text-dsc {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    #shopify-section-{{section.id}} .forfuture_title > h2,
+	#shopify-section-{{section.id}} .forfuture_title > h2 > span{
+        font-size: 38px;
+    }
+
+    #shopify-section-{{section.id}} .behind_cta-title > h2 {
+        font-size: 32px;
+    }
+
+    #shopify-section-{{section.id}} .behind_cta-img {
+        width: 100px;
+        height: 100px;
+        min-width: 100px;
+    }
+
+    #shopify-section-{{section.id}} .behind_cta-text-title {
+        font-size: 20px;
+    }
+
+    #shopify-section-{{section.id}} .behind_cta-text-dsc {
+        font-size: 14px;
+    }
+
+    #shopify-section-{{section.id}} .forfuture_ornamennt1,
+    #shopify-section-{{section.id}} .forfuture_ornamennt2 {
+        display: none; /* Hilangkan ornamen agar tidak mengganggu tampilan mobile */
+    }
+}
 
 
 
