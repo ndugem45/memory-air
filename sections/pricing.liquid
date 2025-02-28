@@ -6,6 +6,11 @@
     display: flex;
     flex-direction: column;
   }
+  @media only screen and (max-width: 990px) {
+    #shopify-section-{{section.id}} .container{
+      padding-bottom: 42px;
+    }
+  }
   #shopify-section-{{section.id}} h2{
     margin-bottom: 94px;
   }
@@ -14,6 +19,12 @@
     justify-content: center;
     align-items: center;
     gap: 100px;
+  }
+  @media only screen and (max-width: 990px) {
+    #shopify-section-{{section.id}} .card-wrapper{
+      flex-direction: column;
+      gap: 100px;
+    }
   }
   #shopify-section-{{section.id}} .card{
     border-radius: 16px;
@@ -24,6 +35,7 @@
     flex-direction: column;
     padding: 24px 57px;
     position: relative;
+    align-items: center;
   }
   #shopify-section-{{section.id}} .card .price{
     color: #FFF;
@@ -35,6 +47,11 @@
     line-height: 100%;
     margin-bottom: 32px;
   }
+  @media only screen and (max-width: 990px) {
+    #shopify-section-{{section.id}} .card .price{
+      font-size: 42px;
+    }
+  }
   #shopify-section-{{section.id}} .card h3{
     color: #FFF;
     text-align: center;
@@ -42,10 +59,15 @@
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
-    line-height: 56px; /* 175% */
+    line-height: 175%;
     letter-spacing: -0.64px;
     text-transform: capitalize;
     margin-bottom: 32px;
+  }
+  @media only screen and (max-width: 990px) {
+    #shopify-section-{{section.id}} .card h3{
+      font-size: 24px;
+    }
   }
   #shopify-section-{{section.id}} .list{
     display: flex;
@@ -71,10 +93,12 @@
   #shopify-section-{{section.id}} .card .btn{
     font-family: "General Sans Medium";
     font-weight: 500;
+    width: 100%;
   }
   #shopify-section-{{section.id}} .card img{
     position: absolute;
     top: 100%;
+    width: 90%;
   }
 {% endstyle %}
 

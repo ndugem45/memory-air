@@ -17,6 +17,11 @@
     grid-column-gap: 20px;
     grid-row-gap: 20px;
   }
+  @media only screen and (max-width: 990px) {
+    #shopify-section-{{section.id}}.news .news_grid{
+      grid-template-columns: 1fr;
+    }
+  }
   #shopify-section-{{section.id}}.news .news_item{
     display: flex;
     flex-direction: column;

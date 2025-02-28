@@ -1,16 +1,21 @@
 {% style %}
-  #shopify-section-{{section.id}} .submission{
+  .submission{
     background: var(--orange-light);
     padding-block: 64px;
   }
-  #shopify-section-{{section.id}} .submission .container{
+  .submission .container{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 24px;
     grid-row-gap: 24px;
   }
-  #shopify-section-{{section.id}} .submission .submission_card{
+  @media only screen and (max-width: 990px) {
+    .submission .container{
+      grid-template-columns: 1fr;
+    }
+  }
+  .submission .submission_card{
     display: flex;
     width: 100%;
     height: 340px;
@@ -22,7 +27,7 @@
     background: var(--color-secondary);
     color: white;
   }
-  #shopify-section-{{section.id}} .submission .submission_card h2{
+  .submission .submission_card h2{
     font-family: "Cormorant Garamond";
     font-size: 32px;
     font-style: normal;
@@ -30,11 +35,11 @@
     line-height: 175%;
     letter-spacing: -0.64px;
   }
-  #shopify-section-{{section.id}} .submission .submission_card p{
+  .submission .submission_card p{
     flex: 1;
     font-family: "General Sans Regular";
   }
-  #shopify-section-{{section.id}} .submission .submission_card form{
+  .submission .submission_card form{
     width: 100%;
     display: flex;
     padding: 4px 4px 4px 16px;
@@ -43,16 +48,17 @@
     align-items: stretch;
     border-radius: 9999px;
     background: #FFF;
+    max-width: 100%;
   }
-  #shopify-section-{{section.id}} .submission .submission_card form input{
+  .submission .submission_card form input{
     flex: 1;
     padding-inline: 12px;
   }
-  #shopify-section-{{section.id}} .submission .submission_card:nth-child(2){
+  .submission .submission_card:nth-child(2){
     background-color: white;
     color: var(--color-tertiary);
   }
-  #shopify-section-{{section.id}} .submission .submission_card:nth-child(2) form{
+  .submission .submission_card:nth-child(2) form{
     background-color: var(--grey-light);
   }
 {% endstyle %}

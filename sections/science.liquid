@@ -7,10 +7,19 @@
     align-items: center;
     gap: 56px;
   }
+  @media only screen and (max-width: 990px) {
+    #shopify-section-{{section.id}}.science .science_content{
+      flex-direction: column;
+    }
+  }
   #shopify-section-{{section.id}}.science .science_right{
     display: flex;
     flex-direction: column;
     align-items: start;
+  }
+  #shopify-section-{{section.id}}.science .science_video,
+  #shopify-section-{{section.id}}.science .science_video img{
+    width: 100%;
   }
   #shopify-section-{{section.id}}.science .science_label{
     font-family: "General Sans Regular";
@@ -26,6 +35,17 @@
     display: flex;
     align-items: center;
     gap: 24px;
+  }
+  @media only screen and (max-width: 990px) {
+    #shopify-section-{{section.id}}.science .science_stat > div{
+      font-size: 64px;
+    }
+    #shopify-section-{{section.id}}.science .science_stat > span{
+      font-size: 14px;
+    }
+    #shopify-section-{{section.id}}.science .science_right .btn{
+      width: 100%;
+    }
   }
 {% endstyle %}
 
