@@ -26,7 +26,7 @@ section {
 	position: relative;
 	padding-block: 100px;
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 990px) {
 	section {
 		padding-block: 62px;
 	}
@@ -69,7 +69,7 @@ h1 span {
 	line-height: 100%;
 	letter-spacing: 0%;
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 990px) {
 	h1 {
 		font-size: 32px !important;
 	}
@@ -93,7 +93,7 @@ h2 span {
 	line-height: 100%;
 	letter-spacing: 0%;
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 990px) {
 	h2 {
 		font-size: 28px !important;
 	}
@@ -116,7 +116,7 @@ h3 span {
 	font-weight: 700;
 	line-height: 100%;
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 990px) {
 	h3 {
 		font-size: 22px !important;
 	}
@@ -136,7 +136,7 @@ p {
 	line-height: 150%;
 	letter-spacing: 0%;
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 990px) {
 	p {
 		font-size: 16px !important;
 	}
@@ -449,6 +449,11 @@ form {
 	flex-direction: column;
 	gap: 40px;
 }
+@media only screen and (max-width: 990px) {
+	.faq_wrap {
+		gap: 24px;
+	}
+}
 .faq_wrap.faq_item {
 	display: flex;
 	flex-direction: column;
@@ -468,6 +473,11 @@ form {
 	font-weight: 500;
 	line-height: 130%;
 }
+@media only screen and (max-width: 990px) {
+	.faq_wrap .faq_item .head {
+		font-size: 20px;
+	}
+}
 .faq_wrap .faq_item .head svg {
 	transition: all 200ms ease;
 }
@@ -479,6 +489,7 @@ form {
 	max-height: 0;
 	overflow: hidden;
 	padding-right: 52px;
+	padding-top: 12px;
 	transition: all 200ms ease;
 }
 
