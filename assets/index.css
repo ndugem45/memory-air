@@ -592,4 +592,16 @@ form {
 	.memory-loss .memory-los_card p span {
 		font-size: 32px;
 	}
+	.memory-los .tab {
+		display: flex;
+		align-items: stretch;
+		gap: 33px;
+		flex: 1;
+		flex-direction: column;
+		width: 100%;
+	}
+	.plain > .container > h2,
+	.plain > .container > h2 > span{
+		font-size: 38px;
+	}
 }

@@ -66,6 +66,108 @@
     opacity: 0.4;
     padding-right: 80px;
   }
+
+@media (max-width: 1024px) {
+    .membership {
+        padding-top: 120px;
+        padding-bottom: 20px;
+    }
+
+    .membership .card {
+        flex-direction: column;
+        height: auto;
+        gap: 50px;
+        padding: 20px;
+    }
+
+    .membership .card img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+    }
+
+    .membership .card .content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .membership .card p,
+    .membership .card form,
+    .membership .card .label {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .membership {
+        padding-top: 60px;
+        padding-bottom: 20px;
+    }
+
+    .membership .card {
+        gap: 30px;
+        padding: 16px;
+    }
+
+    .membership .card img {
+        max-width: 400px;
+    }
+
+    .membership .card p {
+        font-size: 16px;
+        padding-block: 16px;
+    }
+
+    .membership .card form {
+        margin-bottom: 16px;
+    }
+
+    .membership .card form button {
+        margin-top: 24px;
+    }
+
+    .membership .card .label {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .membership {
+        padding-top: 120px;
+        padding-bottom: 10px;
+    }
+
+    .membership .card {
+        gap: 20px;
+        padding: 12px;
+    }
+    .content > h2,
+    .content > h2 > span {
+      font-size: 34px;
+      text-align: left;
+    }
+
+    .membership .card img {
+        max-width: 100%;
+    }
+
+    .membership .card p {
+        font-size: 14px;
+        line-height: 140%;
+    }
+
+    .membership .card form button {
+        margin-top: 16px;
+    }
+
+    .membership .card .label {
+        font-size: 12px;
+        line-height: 140%;
+    }
+}
+
+
+
 {% endstyle %}
 
 <div class="container">
