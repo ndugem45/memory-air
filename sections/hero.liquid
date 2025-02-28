@@ -9,6 +9,12 @@
     padding-top: 233px;
     padding-bottom: 255px;
   }
+  @media only screen and (max-width: 720px) {
+    #shopify-section-{{section.id}}.hero{
+      background-position: 60% 0% !important;
+      padding-block: 150px !important;
+    }
+  }
   #shopify-section-{{section.id}}.hero .hero_desc {
     font-family: "General Sans Semibold";
     font-weight: 600;
@@ -16,6 +22,19 @@
     line-height: 140%;
     letter-spacing: 0;
     max-width: 524px;
+  }
+  @media only screen and (max-width: 720px) {
+    #shopify-section-{{section.id}}.hero p{
+      max-width: 50% !important;
+      margin-bottom: 32px !important;
+    }
+    #shopify-section-{{section.id}} .btn-wrap{
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    #shopify-section-{{section.id}} .btn-wrap .btn{
+      min-width: 160px;
+    }
   }
 {% endstyle %}
 

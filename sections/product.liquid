@@ -10,17 +10,35 @@
     gap: 99px;
     align-items: flex-start;
   }
+  @media only screen and (max-width: 720px) {
+    #shopify-section-{{section.id}}.product .container{
+      flex-direction: column;
+      align-items: center;
+    }
+  }
   #shopify-section-{{section.id}}.product .left-content{
     display: flex;
     gap: 28px;
     /* position: sticky;
     top: 25vh; */
   }
+  @media only screen and (max-width: 720px) {
+    #shopify-section-{{section.id}}.product .left-content{
+      flex-direction: column;
+      align-items: center;
+    }
+  }
   #shopify-section-{{section.id}}.product .left-content .head{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 21px;
+  }
+  @media only screen and (max-width: 720px) {
+    #shopify-section-{{section.id}}.product .left-content .head{
+      align-items: center;
+      text-align: center;
+    }
   }
   #shopify-section-{{section.id}}.product .left-content .head img{
     flex: 1;

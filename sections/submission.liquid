@@ -10,6 +10,11 @@
     grid-column-gap: 24px;
     grid-row-gap: 24px;
   }
+  @media only screen and (max-width: 720px) {
+    #shopify-section-{{section.id}}.submission .container{
+      grid-template-columns: 1fr;
+    }
+  }
   #shopify-section-{{section.id}}.submission .submission_card{
     display: flex;
     width: 100%;

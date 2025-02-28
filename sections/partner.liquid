@@ -33,6 +33,18 @@
     align-items: center;
     padding-inline: 40px;
   }
+  #shopify-section-{{section.id}}.partner .container div img{
+    object-fit: contain;
+    height: 100%;
+  }
+  @media only screen and (max-width: 720px) {
+    #shopify-section-{{section.id}}.partner{
+      padding-block: 32px;
+    }
+    #shopify-section-{{section.id}}.partner .container div{
+      height: 50px !important;
+    }
+  }
 {% endstyle %}
 
 <div class="container">
