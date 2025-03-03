@@ -1,6 +1,6 @@
 {% comment %} for healthcare page {% endcomment %}
 
-{% assign science-display = 'introduce-illus.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign science_display = 'introduce-illus.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
 
 {% style %}
 
@@ -71,10 +71,10 @@
             works while you sleep.
         </p>
         <div class="img-wrap m-top m-54" id="introduce-slider">
-            <img src="/assets/images/introduce-illus.webp" alt="">
-            <img src="/assets/images/introduce-illus.webp" alt="">
-            <img src="/assets/images/introduce-illus.webp" alt="">
-            <img src="/assets/images/introduce-illus.webp" alt="">
+            <img src="{{ science_display }}" alt="">
+            <img src="{{ science_display }}" alt="">
+            <img src="{{ science_display }}" alt="">
+            <img src="{{ science_display }}" alt="">
         </div>
         <div class="btn-wrap m-top m-32">
             <a class="btn is-black" href="">Explore Our Product</a>
