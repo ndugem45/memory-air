@@ -1,8 +1,8 @@
 {% comment %} for healthcare page {% endcomment %}
 
 {% assign science-iluss = 'science-illus1.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
-{% assign science-iluss2 = 'science-illus2.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
-{% assign science-iluss3 = 'science-illus3.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign science-iluss2 = 'science-illus2-2.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign science-iluss3 = 'science-illus3-2.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
 
     
     <div class="container">
@@ -17,8 +17,8 @@
             <div class="tab">
                 <div id="memory-slide" class="tab_img-wrap">
                     <img src={{science-iluss}} alt="">
-                    <img src={{science-iluss2}} alt="">
                     <img src={{science-iluss3}} alt="">
+                    <img src={{science-iluss2}} alt="">
                 </div>
                 <div class="tab_btn">
                     <button id="tab-btn-1" class="active">
@@ -53,7 +53,7 @@
                 const index = e.currentTarget.getAttribute("id").split("tab-btn-")[1];
                 $(".tab_btn button").removeClass("active");
                 $(e.currentTarget).addClass("active");
-                $("#memory-slide").slick("slickGoTo", index);
+                $("#memory-slide").slick("slickGoTo", index-1);
             });
 
         });
