@@ -561,15 +561,13 @@
   
   const updateThis = (id, q) => {
     try {
-      console.log(q);
-  
       if (updater && typeof updater.abort === 'function') {
         updater.abort();
       }
   
       updater = $.post("/cart/change.js", {
         "id": id,
-        "quantity": q !== undefined ? q : $('#updates_' + id).val()
+        "quantity": q ? 0 : $('#updates_' + id).val()
       }, function (data, status) {
         load();
       }).fail((jqXHR, textStatus, errorThrown) => {
