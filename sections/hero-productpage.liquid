@@ -1,3 +1,5 @@
+{% assign featured_image = current_variant.featured_image | default: product.featured_image %}
+
 {% style %}
 	#shopify-section-{{section.id}}.hero-productpage {
 		display: flex;
@@ -255,77 +257,75 @@
         margin-top: 12px;
     }
 
-@media (max-width: 768px) {
+    @media (max-width: 768px) {
 
-    #shopify-section-{{section.id}} .productpage_content {
-        flex-direction: column;
-        gap: 20px;
-    }
-    #shopify-section-{{section.id}} .productpage_title > h1,
-    #shopify-section-{{section.id}} .productpage_title > h1 > span{
-        font-size: 48px;
-        margin-bottom: 30px !important;
-    }
+        #shopify-section-{{section.id}} .productpage_content {
+            flex-direction: column;
+            gap: 20px;
+        }
+        #shopify-section-{{section.id}} .productpage_title > h1,
+        #shopify-section-{{section.id}} .productpage_title > h1 > span{
+            font-size: 48px;
+            margin-bottom: 30px !important;
+        }
 
 
-    #shopify-section-{{section.id}} .productpage_content-image {
-        padding: 10px;
-    }
+        #shopify-section-{{section.id}} .productpage_content-image {
+            padding: 10px;
+        }
 
-    #shopify-section-{{section.id}} .productpage_content-form {
-        height: auto;
-        background-size: cover;
-        padding: 20px;
-    }
+        #shopify-section-{{section.id}} .productpage_content-form {
+            height: auto;
+            background-size: cover;
+            padding: 20px;
+        }
 
-    #shopify-section-{{section.id}} .productpage_img-head > img {
-        height: auto;
-        
-    }
+        #shopify-section-{{section.id}} .productpage_img-head > img {
+            height: auto;
+            
+        }
 
-    #shopify-section-{{section.id}} .image-wrapper {
-        flex-wrap: wrap;
-        gap: 8px;
-        width: 100%;
-    }
-    #shopify-section-{{section.id}} .image-wrapper > img {
-        width: 104px;
-        height: 60px;
-    }
+        #shopify-section-{{section.id}} .image-wrapper {
+            flex-wrap: wrap;
+            gap: 8px;
+            width: 100%;
+        }
+        #shopify-section-{{section.id}} .image-wrapper > img {
+            width: 104px;
+            height: 60px;
+        }
 
-    #shopify-section-{{section.id}} .productpage_text-title {
-        font-size: 24px;
-    }
+        #shopify-section-{{section.id}} .productpage_text-title {
+            font-size: 24px;
+        }
 
-    #shopify-section-{{section.id}} .productpage_text-list {
-        font-size: 16px;
-    }
+        #shopify-section-{{section.id}} .productpage_text-list {
+            font-size: 16px;
+        }
 
-    #shopify-section-{{section.id}} .productpage_text-list-dsc {
-        font-size: 12px;
-    }
+        #shopify-section-{{section.id}} .productpage_text-list-dsc {
+            font-size: 12px;
+        }
 
-    #shopify-section-{{section.id}} .product-card {
-        max-width: 100%;
-        padding: 15px;
-    }
+        #shopify-section-{{section.id}} .product-card {
+            max-width: 100%;
+            padding: 15px;
+        }
 
-    #shopify-section-{{section.id}} .option label {
-        flex-direction: row;
-        gap: 10px;
-    }
+        #shopify-section-{{section.id}} .option label {
+            flex-direction: row;
+            gap: 10px;
+        }
 
-    #shopify-section-{{section.id}} .add-to-cart {
-        font-size: 14px;
-        padding: 12px;
+        #shopify-section-{{section.id}} .add-to-cart {
+            font-size: 14px;
+            padding: 12px;
+        }
     }
-}
 
 
 
 {% endstyle %}
-	
-
 
 	<div class="container container-contactus">
 		<div class="productpage_title">
@@ -336,17 +336,13 @@
 		</div>
 		<div class="productpage_content">
 			<div class="productpage_content-image">
-                <img src="{{ featured_image.src | img_url: 'original' }}" alt="" class="img-open illus">
+                <img src="{{ featured_image.src | img_url: 'original' }}" alt="{{ featured_image.alt | escape }}" class="img-open illus">
                 <div class="image-wrapper">
-                    <div>
-                        <img src="/assets/images/img-contactus-1.png" alt="" class="illus">
-                    </div>
-                    <div>
-                        <img src="/assets/images/img-contactus-2.png" alt="" class="illus">
-                    </div>
-                    <div>
-                        <img src="/assets/images/img-contactus-3.png" alt="" class="illus">
-                    </div>
+                    {% for image in product.images %}
+                        <div>
+                            <img src="{{ image.src | img_url: 'compact' }}" alt="{{ image.alt | escape }}" class="illus">
+                        </div>
+                    {% endfor %}
                 </div>
 			</div>
 

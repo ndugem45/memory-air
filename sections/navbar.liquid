@@ -330,8 +330,9 @@
       <a href="/pages/healthcare">for healthcare professsional</a>
       <a href="/pages/press-resources">press & Resources</a>
     </div>
-    <a href="" class="btn is-black">
-      Buy Now
+    
+    <a href="{{ section.settings.section_product.url }}" class="btn is-black">
+      Buy Now 
     </a>
     <button class="cart">
       <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -342,6 +343,7 @@
     </button>
   </div>
 </div>
+
 <div class="cart-menu">
   <div class="content">
     <div class="head">
@@ -448,6 +450,11 @@
         "type": "link_list",
         "id": "menu_left",
         "label": "Left Navbar Menu"
+      },
+      {
+        "type": "product",
+        "id": "section_product",
+        "label": "Selected product"
       }
     ]
   }
