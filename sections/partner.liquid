@@ -32,7 +32,7 @@
 <div class="container">
   {%- for block in section.blocks -%}
     <div>
-      <img src="{{block.settings.image}}" alt="">
+      {{ block.settings.image | image_url: width: 120 | image_tag }}
     </div>
   {%- endfor -%}
 </div>
@@ -41,7 +41,7 @@
   var selector_slider = '#shopify-section-{{ section.id }}.partner .container'
 
   $(document).ready(function(){
-    {% comment %} $(selector_slider).slick({
+    $(selector_slider).slick({
       arrows: false,
       dots: false,
       centerMode: true,
@@ -52,7 +52,7 @@
       autoplaySpeed: 10,
       pauseOnHover: false,
       pauseOnFocus: false,
-    }); {% endcomment %}
+    });
   });
 </script>
 
