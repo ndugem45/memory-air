@@ -8,56 +8,92 @@
  * ------------------------------------------------------------
  */
 {
-	"sections": {
-		"hero": {
-			"type": "hero",
-			"settings": {
-				"video_cta": "",
-				"section_product": "rustic-wooden-coffee-table"
-			}
-		},
-		"partner": {
-			"type": "partner",
-			"settings": {}
-		},
-		"science": {
-			"type": "science",
-			"settings": {}
-		},
-		"life": {
-			"type": "life",
-			"settings": {}
-		},
-		"product": {
-			"type": "product",
-			"settings": {}
-		},
-		"stories": {
-			"type": "stories",
-			"settings": {}
-		},
-		"news": {
-			"type": "news",
-			"settings": {}
-		},
-		"submission": {
-			"type": "submission",
-			"settings": {}
-		},
-		"faq": {
-			"type": "faq",
-			"settings": {}
-		}
-	},
-	"order": [
-		"hero",
-		"partner",
-		"science",
-		"life",
-		"product",
-		"stories",
-		"news",
-		"submission",
-		"faq"
-	]
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "section_product": "rustic-wooden-coffee-table",
+        "video_cta": ""
+      }
+    },
+    "partner": {
+      "type": "partner",
+      "blocks": {
+        "partner_R4yytX": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/cnn.png",
+            "title": ""
+          }
+        },
+        "partner_nnMBb3": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/aljazeera.png",
+            "title": ""
+          }
+        },
+        "partner_ADngJH": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/american_psychological_association.png",
+            "title": ""
+          }
+        },
+        "partner_kfwVxU": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/bbc.png",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "partner_R4yytX",
+        "partner_nnMBb3",
+        "partner_ADngJH",
+        "partner_kfwVxU"
+      ],
+      "settings": {}
+    },
+    "science": {
+      "type": "science",
+      "settings": {}
+    },
+    "life": {
+      "type": "life",
+      "settings": {}
+    },
+    "product": {
+      "type": "product",
+      "settings": {}
+    },
+    "stories": {
+      "type": "stories",
+      "settings": {}
+    },
+    "news": {
+      "type": "news",
+      "settings": {}
+    },
+    "submission": {
+      "type": "submission",
+      "settings": {}
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "partner",
+    "science",
+    "life",
+    "product",
+    "stories",
+    "news",
+    "submission",
+    "faq"
+  ]
 }
