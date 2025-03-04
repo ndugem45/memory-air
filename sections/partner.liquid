@@ -48,60 +48,11 @@
 {% endstyle %}
 
 <div class="container">
-  <div>
-    <img src="{{everyday_BW}}" alt="">
-  </div>
-  <div>
-    <img src="{{NPR_BW}}" alt="">
-  </div>
-  <div>
-    <img src="{{Frontier_BW}}" alt="">
-  </div>
-  <div>
-    <img src="{{medscape_BW}}" alt="">
-  </div>
-  <div>
-    <img src="{{CBS_BW}}" alt="">
-  </div>
-  <div>
-    <img src="{{aljazeera}}" alt="">
-  </div>
-  <div>
-    <img src="{{american_psychological_association}}" alt="">
-  </div>
-  <div>
-    <img src="{{cbs_news}}" alt="">
-  </div>
-  <div>
-    <img src="{{bbc}}" alt="">
-  </div>
-  <div>
-    <img src="{{cnn}}" alt="">
-  </div>
-  <div>
-    <img src="{{en}}" alt="">
-  </div>
-  <div>
-    <img src="{{fox_news}}" alt="">
-  </div>
-  <div>
-    <img src="{{geriatric_psychiatry}}" alt="">
-  </div>
-  <div>
-    <img src="{{gg_international}}" alt="">
-  </div>
-  <div>
-    <img src="{{hbo}}" alt="">
-  </div>
-  <div>
-    <img src="{{nbc_modified}}" alt="">
-  </div>
-  <div>
-    <img src="{{science_direct}}" alt="">
-  </div>
-  <div>
-    <img src="{{skynews}}" alt="">
-  </div>
+  {%- for block in section.blocks -%}
+    <div>
+      <img src="{{block.settings.image}}" alt="">
+    </div>
+    {%- endfor -%}
 </div>
 
 <script>
@@ -125,6 +76,19 @@
 {% schema %}
   {
     "tag": "section",
-    "class": "partner"
+    "class": "partner",
+    "blocks": [
+        {
+            "name": "Partner",
+            "type": "partner",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Partner logo"
+                }
+            ]
+        }
+      ]
   }
 {% endschema %}
