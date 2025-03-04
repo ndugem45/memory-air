@@ -8,53 +8,56 @@
  * ------------------------------------------------------------
  */
 {
-	"sections": {
-		"hero": {
-			"type": "hero",
-			"settings": {}
-		},
-		"partner": {
-			"type": "partner",
-			"settings": {}
-		},
-		"science": {
-			"type": "science",
-			"settings": {}
-		},
-		"life": {
-			"type": "life",
-			"settings": {}
-		},
-		"product": {
-			"type": "product",
-			"settings": {}
-		},
-		"stories": {
-			"type": "stories",
-			"settings": {}
-		},
-		"news": {
-			"type": "news",
-			"settings": {}
-		},
-		"submission": {
-			"type": "submission",
-			"settings": {}
-		},
-		"faq": {
-			"type": "faq",
-			"settings": {}
-		}
-	},
-	"order": [
-		"hero",
-		"partner",
-		"science",
-		"life",
-		"product",
-		"stories",
-		"news",
-		"submission",
-		"faq"
-	]
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "video_cta": "",
+        "section_product": "rustic-wooden-coffee-table"
+      }
+    },
+    "partner": {
+      "type": "partner",
+      "settings": {}
+    },
+    "science": {
+      "type": "science",
+      "settings": {}
+    },
+    "life": {
+      "type": "life",
+      "settings": {}
+    },
+    "product": {
+      "type": "product",
+      "settings": {}
+    },
+    "stories": {
+      "type": "stories",
+      "settings": {}
+    },
+    "news": {
+      "type": "news",
+      "settings": {}
+    },
+    "submission": {
+      "type": "submission",
+      "settings": {}
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "partner",
+    "science",
+    "life",
+    "product",
+    "stories",
+    "news",
+    "submission",
+    "faq"
+  ]
 }
