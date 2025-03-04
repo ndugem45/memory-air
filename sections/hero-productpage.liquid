@@ -331,7 +331,7 @@
 		<div class="productpage_title">
 			<h1 class="m-btm m-54">
 				<span>Buy </span>
-				{{current_variant.title}}
+				{{ product.title }}
 			</h1>
 		</div>
 		<div class="productpage_content">
@@ -347,24 +347,26 @@
 			</div>
 
             <div class="product-card">
-                <h2>Memory Air®</h2>
-            
-                <div class="option">
-                <label>
-                    <input type="radio" name="memory-air">
-                    <div class="custom-checkbox"></div>
-                    <div class="option-content">
-                    <span class="title">Memory Air® + Subscription</span>
-                    <ul>
-                        <li>Filter auto-delivered every 6 months</li>
-                        <li>No commitment, Cancel anytime</li>
-                    </ul>
-                    <span class="price">$799 + $39/ month</span>
+                <h2>{{ product.title }}</h2>
+                {{ product.variants | json }}
+                {% for variant in product.variants %}
+                    <div class="option">
+                    <label>
+                        <input type="radio" name="memory-air">
+                        <div class="custom-checkbox"></div>
+                        <div class="option-content">
+                        <span class="title">{{ variant.name }}</span>
+                        <ul>
+                            <li>Filter auto-delivered every 6 months</li>
+                            <li>No commitment, Cancel anytime</li>
+                        </ul>
+                        <span class="price">$799 + $39/ month</span>
+                        </div>
+                    </label>
                     </div>
-                </label>
-                </div>
+                {% endfor %}
             
-                <div class="option">
+                {% comment %} <div class="option">
                 <label>
                     <input type="radio" name="memory-air">
                     <div class="custom-checkbox"></div>
@@ -373,7 +375,7 @@
                     <span class="price">$799</span>
                     </div>
                 </label>
-                </div>
+                </div> {% endcomment %}
             
                 <button class="add-to-cart">Add to Cart</button>
             
