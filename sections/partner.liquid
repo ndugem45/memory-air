@@ -50,7 +50,7 @@
       dots: false,
       centerMode: true,
       variableWidth: true,
-      speed: 2500,
+      speed: {{ section.settings.speed }},
       cssEase: 'linear',
       autoplay: true,
       autoplaySpeed: 10,
@@ -65,6 +65,15 @@
   {
     "tag": "section",
     "class": "partner",
+    "settings": [
+      {
+        "type": "number",
+        "id": "speed",
+        "label": "Slider speed",
+        "default": 25000,
+        "info": "Value in Millisecond"
+      },
+    ],
     "blocks": [
       {
         "name": "Partner",
