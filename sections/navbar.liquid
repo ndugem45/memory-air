@@ -292,6 +292,15 @@
     height: 0.5px;
     background-color: rgba(0, 0, 0, 1);
   }
+  nav .cart-menu .summary .btn{
+    display: none;
+  }
+  nav .cart-menu .summary form{
+    padding: unset;
+  }
+  nav .cart-menu .summary .btn.active{
+    display: block;
+  }
 {% endstyle %}
 
 
@@ -349,8 +358,9 @@
     <div class="head">
       <h3>Cart</h3>
     </div>
-    <div class="item-wrap">
-      <div class="item">
+    <div class="item-wrap" id="placer">
+      -
+      {% comment %} <div class="item">
         <button class="close">
           <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
             <line x1="0.927772" y1="0.694298" x2="12.2415" y2="12.008" stroke="#232323" stroke-opacity="0.5" />
@@ -370,34 +380,45 @@
             <button class="stepper-btn" onclick="increaseQty()">+</button>
           </div>
         </div>
-      </div>
+      </div> {% endcomment %}
+
     </div>
     <div class="summary">
-      <button class="btn is-black">Checkout</button>
+
+      <form
+        action="/cart"
+        method="post"
+        novalidate>
+        <button 
+          type="submit"
+          name="checkout" 
+          class="btn is-black">Checkout</button>
+      </form>
+
       <div class="summary_content">
         <div class="summary_item">
           <span>
             Total:
           </span>
-          <span>
-            $799 + $39/month
+          <span id="total-price">
+            -
           </span>
         </div>
-        <div class="summary_item">
+        {% comment %} <div class="summary_item">
           <span>
             Discounts:
           </span>
           <span>
             -$20
           </span>
-        </div>
+        </div> {% endcomment %}
         <div class="divider"></div>
         <div class="summary_item">
           <span>
             Subtotal:
           </span>
-          <span>
-            $838
+          <span id="sub-total">
+            -
           </span>
         </div>
       </div>
@@ -407,11 +428,16 @@
 
 
 <script>
+  var formatter,updater,cartData
+  var curr = '{{ shop.money_format }}'.split('{')[0]
+  var sym = '{{ cart.currency.iso_code }}'
+
   $(document).ready(function(){
     const navbar = document.querySelector('nav');
     
     $(".cart").click(() => {
       navbar.classList.toggle('open');
+      load()
     });
 
     window.addEventListener('scroll', () => {
@@ -429,17 +455,157 @@
       }
     });
   });
+
+  function tmplt(item) {
+    return `<div class="item">
+        <button class="close" onclick="updateThis(${item.id}, true)">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0.927772" y1="0.694298" x2="12.2415" y2="12.008" stroke="#232323" stroke-opacity="0.5" />
+            <line x1="12.545" y1="0.894569" x2="1.23125" y2="12.2083" stroke="#232323" stroke-opacity="0.5" />
+          </svg>
+        </button>
+
+        <img src="${item.image}" alt="">
+        <div class="item_content">
+          <h4>${item.variant_title}</h4>
+          <span>
+            ${item.newPrice}
+          </span>
+          <div class="stepper">
+            <button class="stepper-btn" onclick="stepperUp(false,${item.id})">-</button>
+            <input 
+              type="number" 
+              value="${item.quantity}" 
+              min="1"
+              id="updates_${item.id}" 
+              onchange="updateThis(${item.id})" 
+              onfocusin="focusMe('cartStepper-${item.id}')"
+              onfocusout="focusMe('cartStepper-${item.id}')"
+              >
+            <button class="stepper-btn" onclick="stepperUp(true,${item.id})">+</button>
+          </div>
+        </div>
+      </div>`
+  }
+
+  const formatCost = (cost) => {
+    let formatter = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: sym,
+    })
+
+    if (sym === 'SGD') {
+      formatter = new Intl.NumberFormat('en-US', {
+        style: 'decimal',
+      })
+      return 'S$' + formatter.format(cost)
+    }
+
+    return formatter.format(cost)
+  }
+
+  function stepperUp(s, id) {
+    var q_elem
+    if (s) {
+      q_elem = $(event.currentTarget).prev()[0]
+  
+      q_elem.value = parseInt(q_elem.value) + 1
+    } else {
+      q_elem = $(event.currentTarget).next()[0]
+  
+      if ((parseInt(q_elem.value) - 1) >= 1) {
+        q_elem.value = parseInt(q_elem.value) - 1
+      }
+    } 
+    updateThis(id)
+  }
+
+  const focusMe = (id) => {
+    document.querySelector('#' + id).classList.toggle('focus')
+  }
+
+  const load = () => {
+    try {
+      $('#placer').html('');
+    
+      if (updater && typeof updater.abort === 'function') {
+        updater.abort();
+      }
+  
+      updater = $.get("/cart.js", function (data, status) {
+        let dataResult = typeof data === 'string' ? JSON.parse(data) : data;
+        let dd = dataResult.items;
+        cartData = dataResult;
+        updater = null;
+  
+        $('#total-price').html(formatCost(parseFloat(cartData.total_price / 100)));
+        $('#sub-total').html(formatCost(parseFloat(cartData.items_subtotal_price / 100)));
+  
+        if (dd.length) {
+          $('nav .cart-menu .summary .btn').addClass('active');
+          dd.forEach((s) => {
+            s.newPrice = formatCost(parseInt(s.price / 100));
+            $('#placer').append(tmplt(s));
+          });
+        } else {
+          $('nav .cart-menu .summary .btn').removeClass('active');
+          $('#placer').append('<div>No data</div>');
+        }
+      }).fail((jqXHR, textStatus, errorThrown) => {
+        console.error("Error fetching cart data:", textStatus, errorThrown);
+      });
+    } catch (e) {
+      console.error("Load function error:", e);
+    }
+  };
+  
+  const updateThis = (id, q) => {
+    try {
+      console.log(q);
+  
+      if (updater && typeof updater.abort === 'function') {
+        updater.abort();
+      }
+  
+      updater = $.post("/cart/change.js", {
+        "id": id,
+        "quantity": q !== undefined ? q : $('#updates_' + id).val()
+      }, function (data, status) {
+        load();
+      }).fail((jqXHR, textStatus, errorThrown) => {
+        console.error("Error updating cart:", textStatus, errorThrown);
+      });
+    } catch (e) {
+      console.error("Update function error:", e);
+    }
+  };
+  
+  const addThis = (id, q) => {
+    try {
+      if (updater && typeof updater.abort === 'function') {
+        updater.abort();
+      }
+  
+      updater = $.post("/cart/add.js", {
+        "id": id,
+        "quantity": q ? q : 1
+      }, function (data, status) {
+        load();
+        document.querySelector('nav').classList.add('open');
+      }).fail((jqXHR, textStatus, errorThrown) => {
+        console.error("Error adding to cart:", textStatus, errorThrown);
+      });
+    } catch (e) {
+      console.error("Add function error:", e);
+    }
+  };
+  
 </script>
 
 {% schema %}
   {
     "tag": "div",
     "settings": [
-      {
-        "type": "checkbox",
-        "id": "isdark",
-        "label": "Dark Variant"
-      },
       {
         "type": "link_list",
         "id": "menu_right",

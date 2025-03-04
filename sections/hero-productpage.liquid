@@ -348,23 +348,28 @@
 
             <div class="product-card">
                 <h2>{{ product.title }}</h2>
-                {{ product.variants | json }}
+
                 {% for variant in product.variants %}
                     <div class="option">
-                    <label>
-                        <input type="radio" name="memory-air">
-                        <div class="custom-checkbox"></div>
-                        <div class="option-content">
-                        <span class="title">{{ variant.name }}</span>
-                        <ul>
-                            <li>Filter auto-delivered every 6 months</li>
-                            <li>No commitment, Cancel anytime</li>
-                        </ul>
-                        <span class="price">$799 + $39/ month</span>
-                        </div>
-                    </label>
+                        <label>
+                            <input type="radio" name="memory-air" id="{{  variant.id }}" value="{{  variant.id }}">
+                            <div class="custom-checkbox"></div>
+                            <div class="option-content">
+                            <span class="title">{{ variant.title }}</span>
+                            {% if variant.metafields.custom.variant_description %}
+                                {{ variant.metafields.custom.variant_description | metafield_tag }}
+                                {% comment %} <ul>
+                                    <li>Filter auto-delivered every 6 months</li>
+                                    <li>No commitment, Cancel anytime</li>
+                                    </ul> {% endcomment %}
+                            {% endif %}
+                            <span class="price">{{ variant.metafields.custom.price_display }}</span>
+                            </div>
+                        </label>
                     </div>
                 {% endfor %}
+
+                {% comment %} addThisProduct({{ product.variants.first.id }}) {% endcomment %}
             
                 {% comment %} <div class="option">
                 <label>
@@ -377,7 +382,7 @@
                 </label>
                 </div> {% endcomment %}
             
-                <button class="add-to-cart">Add to Cart</button>
+                <button class="add-to-cart" onclick="addThisProduct()">Add to Cart</button>
             
                 <p class="info-text">
                 Buying more than one Memory Air®?<br>
@@ -389,7 +394,18 @@
 		</div>
 	</div>
 
-
+<script>
+    const addThisProduct = () => {
+        try{
+            const variantValue = document.querySelector('input[name="memory-air"]:checked').value
+            if(variantValue){
+                addThis(variantValue, 1)
+            }
+        }catch(e){
+            console.log(e)
+        }
+    }
+</script>
 
 {% schema %}
 	{
