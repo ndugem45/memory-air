@@ -17,7 +17,11 @@
   }
   #shopify-section-{{section.id}}.partner .container div img{
     object-fit: contain;
+    filter: saturate(0);
     height: 100%;
+  }
+  #shopify-section-{{section.id}}.partner .container div img:hover{
+    filter: saturate(1);
   }
   @media only screen and (max-width: 990px) {
     #shopify-section-{{section.id}}.partner{
@@ -70,12 +74,7 @@
             "type": "image_picker",
             "id": "image",
             "label": "Partner logo"
-          },
-          {
-            "type": "text",
-            "id": "title",
-            "label": "Partner title"
-          },
+          }
         ]
       }
     ]
