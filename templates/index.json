@@ -22,29 +22,25 @@
         "partner_R4yytX": {
           "type": "partner",
           "settings": {
-            "image": "shopify://shop_images/cnn.png",
-            "title": ""
+            "image": "shopify://shop_images/cnn.png"
           }
         },
         "partner_nnMBb3": {
           "type": "partner",
           "settings": {
-            "image": "shopify://shop_images/aljazeera.png",
-            "title": ""
+            "image": "shopify://shop_images/aljazeera.png"
           }
         },
         "partner_ADngJH": {
           "type": "partner",
           "settings": {
-            "image": "shopify://shop_images/american_psychological_association.png",
-            "title": ""
+            "image": "shopify://shop_images/american_psychological_association.png"
           }
         },
         "partner_kfwVxU": {
           "type": "partner",
           "settings": {
-            "image": "shopify://shop_images/bbc.png",
-            "title": ""
+            "image": "shopify://shop_images/bbc.png"
           }
         }
       },
@@ -54,7 +50,9 @@
         "partner_ADngJH",
         "partner_kfwVxU"
       ],
-      "settings": {}
+      "settings": {
+        "speed": 2500
+      }
     },
     "science": {
       "type": "science",
