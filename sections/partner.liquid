@@ -49,15 +49,18 @@
 
 <div class="container">
   {%- for block in section.blocks -%}
+    {{ section.block.settings.title }}
     <div>
       <img src="{{block.settings.image}}" alt="">
     </div>
-    {%- endfor -%}
+  {%- endfor -%}
 </div>
 
 <script>
+  var selector_slider = '#shopify-section-{{ section.id }}.partner .container'
+
   $(document).ready(function(){
-    $('.partner .container').slick({
+    {% comment %} $(selector_slider).slick({
       arrows: false,
       dots: false,
       centerMode: true,
@@ -68,7 +71,7 @@
       autoplaySpeed: 10,
       pauseOnHover: false,
       pauseOnFocus: false,
-    });
+    }); {% endcomment %}
   });
 </script>
 
@@ -78,17 +81,22 @@
     "tag": "section",
     "class": "partner",
     "blocks": [
-        {
-            "name": "Partner",
-            "type": "partner",
-            "settings": [
-                {
-                    "type": "image_picker",
-                    "id": "image",
-                    "label": "Partner logo"
-                }
-            ]
-        }
-      ]
+      {
+        "name": "Partner",
+        "type": "partner",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Partner logo"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Partner title"
+          },
+        ]
+      }
+    ]
   }
 {% endschema %}
