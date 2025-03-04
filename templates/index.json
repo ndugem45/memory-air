@@ -12,12 +12,44 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "video_cta": "",
-        "section_product": "rustic-wooden-coffee-table"
+        "section_product": "rustic-wooden-coffee-table",
+        "video_cta": ""
       }
     },
     "partner": {
       "type": "partner",
+      "blocks": {
+        "partner_VK7fwx": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/cnn.png"
+          }
+        },
+        "partner_zpjCMV": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/aljazeera.png"
+          }
+        },
+        "partner_QMK7rC": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/american_psychological_association.png"
+          }
+        },
+        "partner_BQF8XR": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/bbc.png"
+          }
+        }
+      },
+      "block_order": [
+        "partner_VK7fwx",
+        "partner_zpjCMV",
+        "partner_QMK7rC",
+        "partner_BQF8XR"
+      ],
       "settings": {}
     },
     "science": {
