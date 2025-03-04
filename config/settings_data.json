@@ -13,8 +13,10 @@
       "navbar": {
         "type": "navbar",
         "settings": {
+          "isdark": false,
           "menu_right": "",
-          "menu_left": ""
+          "menu_left": "",
+          "section_product": "rustic-wooden-coffee-table"
         }
       },
       "footer": {
