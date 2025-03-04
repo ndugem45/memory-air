@@ -3,6 +3,7 @@
 		display: flex;
 		justify-content: center;
 		padding-bottom: 48px;
+        padding-top: 125px;
         background: var(--Gradient-BG, linear-gradient(180deg, rgba(170, 126, 113, 0.10) 0%, rgba(170, 126, 113, 0.00) 98.6%), #FFF);
 	}
 	#shopify-section-{{section.id}} .productpage_title {
@@ -32,11 +33,14 @@
 		position: relative;
 	}
 	#shopify-section-{{section.id}} .productpage_content-image{
-		width: 100%;
+		width: 60%;
 		padding: 20px;
 		border-radius: 16px;
 		border: 1px solid #EEE;
 		background: #FFF;
+        gap: 16px;
+        display: flex;
+        flex-direction: column;
 		box-shadow: -2px -2px 10px 0px rgba(238, 238, 238, 0.20), 2px 2px 10px 0px rgba(238, 238, 238, 0.20);
 	}
 	#shopify-section-{{section.id}} .productpage_content-form {
@@ -49,24 +53,31 @@
 		height: 800px;
 		background-size: 780px 800px;
 	}
-    #shopify-section-{{section.id}} .productpage_img-head{
+    /* #shopify-section-{{section.id}} .productpage_img-head{
         gap: 16px;
         display: flex;
         flex-direction: column;
-    }
+    } */
 
-	#shopify-section-{{section.id}} .productpage_img-head > img{
+	#shopify-section-{{section.id}} .img-open{
 		width: 100%;
-		height: 334px;
+		height: 453px;
+        border-radius: 16px;
+        object-fit: cover;
 	}
-	#shopify-section-{{section.id}} .image-wrapper > img{
-		width: 100%;
-		height: 90px;
-	}
-	#shopify-section-{{section.id}} .image-wrapper{
-		display: flex;
-		justify-content: space-between;
+    #shopify-section-{{section.id}} .image-wrapper{
+        display: flex;
+        justify-content: flex-start;
         gap: 16px;
+        overflow: auto;
+        flex-direction: row;
+        flex: 1;
+    }
+	#shopify-section-{{section.id}} .image-wrapper .illus{
+		height: 130px;
+        border-radius: 16px;
+        object-fit: cover;
+        flex: 1;
 	}
 
 	#shopify-section-{{section.id}} .productpage_text-title{
@@ -128,7 +139,9 @@
         max-width: 600px;
         padding: 20px;
         border-radius: 12px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border: 1px solid #EEE;
+        background: white;
+        box-shadow: -2px -2px 10px 0px rgba(238, 238, 238, 0.20), 2px 2px 10px 0px rgba(238, 238, 238, 0.20);
         font-family: Arial, sans-serif;
     }
     #shopify-section-{{section.id}} .product-card > h2 {
@@ -320,15 +333,12 @@
 		</div>
 		<div class="productpage_content">
 			<div class="productpage_content-image">
-				<div class="productpage_img-head">
-					<img src="/assets/images/img-contactus-open.png" alt="" class="img-open illus">
-					<div class="image-wrapper">
-						<img src="/assets/images/img-contactus-1.png" alt="" class="illus">
-						<img src="/assets/images/img-contactus-2.png" alt="" class="illus">
-						<img src="/assets/images/img-contactus-3.png" alt="" class="illus">
-					</div>
-				</div>
-
+                <img src="/assets/images/img-contactus-open.png" alt="" class="img-open illus">
+                <div class="image-wrapper">
+                    <img src="/assets/images/img-contactus-1.png" alt="" class="illus">
+                    <img src="/assets/images/img-contactus-2.png" alt="" class="illus">
+                    <img src="/assets/images/img-contactus-3.png" alt="" class="illus">
+                </div>
 			</div>
 
             <div class="product-card">
