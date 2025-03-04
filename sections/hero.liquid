@@ -51,8 +51,10 @@
       The Biggest Improvement in Human Memory Ever Discovered.
     </p>
     <div class="btn-wrap">
-      <a class="btn" href="">Buy Now</a>
-      <a class="btn is-outline" href="">Watch video</a>
+      {% if section.settings.section_product %}
+        <a class="btn" href="{{ section.settings.section_product.url }}">Buy Now</a>
+      {% endif %}
+      <a class="btn is-outline" href="{{ section.settings.video_cta }}">Watch video</a>
     </div>
   </div>
 </div>
@@ -60,6 +62,18 @@
 {% schema %}
   {
     "tag": "section",
-    "class": "hero"
+    "class": "hero",
+    "settings": [
+      {
+        "type": "url",
+        "id": "video_cta",
+        "label": "Watch video url"
+      },
+      {
+        "type": "product",
+        "id": "section_product",
+        "label": "Selected product"
+      },
+    ]
   }
 {% endschema %}
