@@ -83,9 +83,18 @@
     },
     "news": {
       "type": "news",
-      "settings": {
-        "news_blog": "news"
-      }
+      "blocks": {
+        "blog_xLKEEF": {
+          "type": "blog",
+          "settings": {
+            "news_blog": "news"
+          }
+        }
+      },
+      "block_order": [
+        "blog_xLKEEF"
+      ],
+      "settings": {}
     },
     "submission": {
       "type": "submission",
