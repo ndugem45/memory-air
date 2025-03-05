@@ -13,16 +13,40 @@
   </h2>
   {% assign title = "Why isn't a diffuser enough to improve my memory?" %}
   <div class="faq_wrap">
-    {% render 'faq-accordion' with title %}
-    {% render 'faq-accordion' with title %}
-    {% render 'faq-accordion' with title %}
-    {% render 'faq-accordion' with title %}
+    {% if section.blocks != blank %}
+      {%-  for block in section.blocks -%}
+        {% render 'faq-accordion' with block %}
+      {% endfor %}
+    {% else %}
+      {% render 'faq-accordion' with title %}
+      {% render 'faq-accordion' with title %}
+      {% render 'faq-accordion' with title %}
+      {% render 'faq-accordion' with title %}
+    {% endif %}
   </div>
 </div>
 
 {% schema %}
   {
     "tag": "section",
-    "class": "faq"
+    "class": "faq",
+    "blocks": [
+      {
+        "name": "FAQ Item",
+        "type": "faq_item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "faq_title",
+            "label": "FAQ title"
+          },
+          {
+            "type": "textarea",
+            "id": "faq_desc",
+            "label": "FAQ description"
+          }
+        ]
+      }
+    ],
   }
 {% endschema %}
