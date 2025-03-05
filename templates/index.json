@@ -68,18 +68,6 @@
     },
     "life": {
       "type": "life",
-      "blocks": {
-        "slider_item_W9G87q": {
-          "type": "slider_item",
-          "settings": {
-            "image": "shopify://shop_images/better-illus1.webp",
-            "text": "Feel younger"
-          }
-        }
-      },
-      "block_order": [
-        "slider_item_W9G87q"
-      ],
       "settings": {}
     },
     "product": {
