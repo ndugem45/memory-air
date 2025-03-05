@@ -99,41 +99,52 @@
 </div>
 <div class="container btm">
   <div class="life_slider">
-    {%- for block in section.blocks -%}
+    {% if section.blocks != blank %}
+      {%- for block in section.blocks -%}
+        <div class="slider_item-wrap">
+          <div class="slider_item">
+            {{ block.settings.image | image_url: width: 411 | image_tag }}
+            <div class="font-medium text-32">
+              {{  block.settings.text }}
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    {% else %}
       <div class="slider_item-wrap">
         <div class="slider_item">
-          {{ block.settings.image | image_url: width: 411 | image_tag }}
+          <img src="{{ life1 }}" alt="">
           <div class="font-medium text-32">
-            {{  block.settings.text }}
+            Feel younger
           </div>
         </div>
       </div>
-    {%- endfor -%}
-    {% comment %} <div class="slider_item-wrap">
-      <div class="slider_item">
-        <img src="{{ life2 }}" alt="">
-        <div class="font-medium text-32">
-          Regain & maintain confidence in daily life
+      <div class="slider_item-wrap">
+        <div class="slider_item">
+          <img src="{{ life2 }}" alt="">
+          <div class="font-medium text-32">
+            Regain & maintain confidence in daily life
+          </div>
         </div>
       </div>
-    </div>
-    <div class="slider_item-wrap">
-      <div class="slider_item">
-        <img src="{{ life3 }}" alt="">
-        <div class="font-medium text-32">
-          Improved mental clarity & focus
+      <div class="slider_item-wrap">
+        <div class="slider_item">
+          <img src="{{ life3 }}" alt="">
+          <div class="font-medium text-32">
+            Improved mental clarity & focus
+          </div>
         </div>
       </div>
-    </div>
-    <div class="slider_item-wrap">
-      <div class="slider_item">
-        <img src="{{ life4 }}" alt="">
-        <div class="font-medium text-32">
-          Live free & reduce
-          dependency on others
+      <div class="slider_item-wrap">
+        <div class="slider_item">
+          <img src="{{ life4 }}" alt="">
+          <div class="font-medium text-32">
+            Live free & reduce
+            dependency on others
+          </div>
         </div>
       </div>
-    </div> {% endcomment %}
+    {% endif %}
   </div>
   <div class="navigation-slider m-top m-78">
     <button id="life-prev">
@@ -192,7 +203,6 @@
 {% schema %}
   {
     "tag": "section",
-    "name": "Life Section",
     "class": "life",
     "blocks": [
       {
@@ -208,27 +218,6 @@
             "type": "text",
             "id": "text",
             "label": "Slider title"
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "Default life section",
-        "blocks": [
-          {
-            "type": "slider_item",
-            "settings": {
-              "image": "shopify:\/\/assets\/better-illus1.webp",
-              "text": "Judul Slider Default 1"
-            }
-          },
-          {
-            "type": "slider_item",
-            "settings": {
-              "image": "shopify:\/\/assets\/better-illus2.webp",
-              "text": "Judul Slider Default 2"
-            }
           }
         ]
       }
