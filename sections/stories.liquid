@@ -119,63 +119,86 @@
     </span>
   </h2>
   <div class="stories_slider">
-    <div class="stories_card-wrap">
-      <div class="stories_card">
-        <img src="{{ stories1 }}" alt="">
-        <div class="content">
-          <p class="text-32 font-medium text-black">
-            “I used to have so much anxiety around my memory. Now, I confidently recall names, faces, and important
-            information when I need to. I feel 20 years younger! I can travel with ease!”
-          </p>
-          <div class="user text-20">
-            <span class="text-black">
-              Nicole & Martin
-            </span>
-            <span>
-              Owner at Louis Vuitton
-            </span>
+    {% if section.blocks != blank %}
+      {%- for block in section.blocks -%}
+        <div class="stories_card-wrap">
+          <div class="stories_card">
+            <img src="{{ blank.u_photo }}" alt="">
+            <div class="content">
+              <p class="text-32 font-medium text-black">
+               {{ blank.u_message }}
+              </p>
+              <div class="user text-20">
+                <span class="text-black">
+                  {{ blank.u_name }}
+                </span>
+                <span>
+                  {{ blank.u_pos }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    {% else %}
+      <div class="stories_card-wrap">
+        <div class="stories_card">
+          <img src="{{ stories1 }}" alt="">
+          <div class="content">
+            <p class="text-32 font-medium text-black">
+              “I used to have so much anxiety around my memory. Now, I confidently recall names, faces, and important
+              information when I need to. I feel 20 years younger! I can travel with ease!”
+            </p>
+            <div class="user text-20">
+              <span class="text-black">
+                Nicole & Martin
+              </span>
+              <span>
+                Owner at Louis Vuitton
+              </span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="stories_card-wrap">
-      <div class="stories_card">
-        <img src="{{ stories2 }}" alt="">
-        <div class="content">
-          <p class="text-32 font-medium text-black">
-            “I used to have so much anxiety around my memory. Now, I confidently recall names, faces, and important
-            information when I need to. I feel 20 years younger! I can travel with ease!”
-          </p>
-          <div class="user text-20">
-            <span class="text-black">
-              Nicole & Martin
-            </span>
-            <span>
-              Owner at Louis Vuitton
-            </span>
+      <div class="stories_card-wrap">
+        <div class="stories_card">
+          <img src="{{ stories2 }}" alt="">
+          <div class="content">
+            <p class="text-32 font-medium text-black">
+              “I used to have so much anxiety around my memory. Now, I confidently recall names, faces, and important
+              information when I need to. I feel 20 years younger! I can travel with ease!”
+            </p>
+            <div class="user text-20">
+              <span class="text-black">
+                Nicole & Martin
+              </span>
+              <span>
+                Owner at Louis Vuitton
+              </span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="stories_card-wrap">
-      <div class="stories_card">
-        <img src="{{ stories3 }}" alt="">
-        <div class="content">
-          <p class="text-32 font-medium text-black">
-            “I used to have so much anxiety around my memory. Now, I confidently recall names, faces, and important
-            information when I need to. I feel 20 years younger! I can travel with ease!”
-          </p>
-          <div class="user text-20">
-            <span class="text-black">
-              Nicole & Martin
-            </span>
-            <span>
-              Owner at Louis Vuitton
-            </span>
+      <div class="stories_card-wrap">
+        <div class="stories_card">
+          <img src="{{ stories3 }}" alt="">
+          <div class="content">
+            <p class="text-32 font-medium text-black">
+              “I used to have so much anxiety around my memory. Now, I confidently recall names, faces, and important
+              information when I need to. I feel 20 years younger! I can travel with ease!”
+            </p>
+            <div class="user text-20">
+              <span class="text-black">
+                Nicole & Martin
+              </span>
+              <span>
+                Owner at Louis Vuitton
+              </span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    {% endif %}
   </div>
   <div class="stories_navigation">
     <button class="stories-prev">
@@ -249,6 +272,39 @@
 {% schema %}
   {
     "tag": "section",
-    "class": "stories"
+    "class": "stories",
+    "blocks": [
+      {
+        "name": "Story Item",
+        "type": "story_item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "u_photo",
+            "label": "User photo"
+          },
+          {
+            "type": "text",
+            "id": "u_name",
+            "label": "User name"
+          },
+          {
+            "type": "text",
+            "id": "u_pos",
+            "label": "User position"
+          }
+          {
+            "type": "textarea",
+            "id": "u_message",
+            "label": "User message"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Stories section"
+      }
+    ]
   }
 {% endschema %}
