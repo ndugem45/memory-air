@@ -49,16 +49,17 @@
   <div class="news_grid m-btm m-54">
     {% if section.blocks != blank %}
       {%- for block in section.blocks -%}
-        <div class="news_item">
-          {% comment %} <img src="{{ block.settings.news_ }}" alt="" class="m-btm m-32"> {% endcomment %}
+        {{ block.settings | json }}
+        <a href="{{ block.settings.url }}" class="news_item">
+          <img src="{{ block.settings.article.img.src }}" alt="" class="m-btm m-32">
           
-          <iframe width="560" height="315" class="video m-btm m-32" src="{{  section.settings.news_vid_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          {% comment %} <iframe width="560" height="315" class="video m-btm m-32" src="{{  block.metafields.settings.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> {% endcomment %}
 
           <h3 class="m-btm m-12 p-horizontal p-12">
-            {{ block.settings.news_title }}
+            {{ block.settings.title }}
           </h3>
           <p class="m-top m-4 p-horizontal p-12">
-            {{ block.settings.news_summary }}
+            {{ block.settings.article.content }}
           </p>
         </div>
       {%- endfor -%}
@@ -93,18 +94,19 @@
     "tag": "section",
     "class": "news",
     "blocks": [
-    {
-      "type": "blog",
-      "name": "Blog Post",
-      "settings": [
-        {
-          "type": "blog",
-          "id": "news_blog",
-          "label": "Select blog post"
-        }
-      ]
-    }
-  ],
+      {
+        "type": "blog",
+        "name": "Blog Post",
+        "settings": [
+          {
+            "type": "blog",
+            "id": "news_blog",
+            "label": "Select blog post"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 2,
     "presets": [
       {
         "name": "News section"
