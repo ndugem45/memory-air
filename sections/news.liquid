@@ -16,6 +16,7 @@
     grid-template-rows: 1fr;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
+    width: 100%;
   }
   @media only screen and (max-width: 990px) {
     #shopify-section-{{section.id}}.news .news_grid{
@@ -26,6 +27,8 @@
     display: flex;
     flex-direction: column;
     cursor: pointer;
+    text-decoration: none;
+    color: var(--color-primary);
   }
   #shopify-section-{{section.id}}.news .news_item .video{
     width: 100%;
@@ -49,19 +52,20 @@
   <div class="news_grid m-btm m-54">
     {% if section.blocks != blank %}
       {%- for block in section.blocks -%}
-        {{ block.settings.news_blog | json }}
-        <a href="{{ block.settings.url }}" class="news_item">
-          <img src="{{ block.settings.news_blog.article.img.src }}" alt="" class="m-btm m-32">
-          
-          {% comment %} <iframe width="560" height="315" class="video m-btm m-32" src="{{  block.metafields.settings.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> {% endcomment %}
-
-          <h3 class="m-btm m-12 p-horizontal p-12">
-            {{ block.settings.news_blog.title }}
-          </h3>
-          <p class="m-top m-4 p-horizontal p-12">
-            {{ block.settings.news_blog.article.content }}
-          </p>
-        </a>
+        {% for article in block.settings.news_blog.articles %}
+          <a href="{{ article.url }}" class="news_item">
+            <img src="{{ article.img.src | img_url: 'medium' }}" alt="" class="video m-btm m-32">
+            
+            {% comment %} <iframe width="560" height="315" class="video m-btm m-32" src="{{  block.metafields.settings.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> {% endcomment %}
+            
+            <h3 class="m-btm m-12 p-horizontal p-12">
+              {{ article.title }}
+            </h3>
+            <div class="m-top m-4 p-horizontal p-12">
+              {{ article.content }}
+            </div>
+          </a>
+        {% endfor %}
       {%- endfor -%}
     {% else %}
       <div class="news_item">
