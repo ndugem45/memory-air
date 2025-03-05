@@ -59,6 +59,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding-block: 24px;
+    padding-right: 12px;
   }
   @media only screen and (max-width: 990px) {
     #shopify-section-{{section.id}}.stories .stories_card .content{
@@ -126,7 +127,7 @@
             <img src="{{ block.settings.u_photo }}" alt="">
             <div class="content">
               <p class="text-32 font-medium text-black">
-               {{ block.settings.u_message }}
+               "{{ block.settings.u_message }}"
               </p>
               <div class="user text-20">
                 <span class="text-black">

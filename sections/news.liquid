@@ -27,7 +27,7 @@
     flex-direction: column;
     cursor: pointer;
   }
-  #shopify-section-{{section.id}}.news .news_item img{
+  #shopify-section-{{section.id}}.news .news_item .video{
     width: 100%;
     border-radius: 24px;
     background: var(--orange-light);
@@ -47,24 +47,41 @@
     </span>
   </h2>
   <div class="news_grid m-btm m-54">
-    <div class="news_item">
-      <img src="{{ thumb1 }}" alt="" class="m-btm m-32">
-      <h3 class="m-btm m-12 p-horizontal p-12">
-        #1 Researcher for Olfactory Enrichment
-      </h3>
-      <p class="m-top m-4 p-horizontal p-12">
-        And Ranked in the Top 2% of All Scientists in the World by a Stanford School of Medicine Study.
-      </p>
-    </div>
-    <div class="news_item">
-      <img src="{{ thumb2 }}" alt="" class="m-btm m-32">
-      <h3 class="m-btm m-12 p-horizontal p-12">
-        The Solution to Memory Loss is Right Under Our Nose
-      </h3>
-      <p class="m-top m-4 p-horizontal p-12">
-        Dr. Michael Leon’s TED talk on the importance of smell in memory.
-      </p>
-    </div>
+    {% if section.blocks != blank %}
+      {%- for block in section.blocks -%}
+        <div class="news_item">
+          {% comment %} <img src="{{ block.settings.news_ }}" alt="" class="m-btm m-32"> {% endcomment %}
+          
+          <iframe width="560" height="315" class="video m-btm m-32" src="{{  section.settings.news_vid_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+          <h3 class="m-btm m-12 p-horizontal p-12">
+            {{ block.settings.news_title }}
+          </h3>
+          <p class="m-top m-4 p-horizontal p-12">
+            {{ block.settings.news_summary }}
+          </p>
+        </div>
+      {%- endfor -%}
+    {% else %}
+      <div class="news_item">
+        <img src="{{ thumb1 }}" alt="" class="video m-btm m-32">
+        <h3 class="m-btm m-12 p-horizontal p-12">
+          #1 Researcher for Olfactory Enrichment
+        </h3>
+        <p class="m-top m-4 p-horizontal p-12">
+          And Ranked in the Top 2% of All Scientists in the World by a Stanford School of Medicine Study.
+        </p>
+      </div>
+      <div class="news_item">
+        <img src="{{ thumb2 }}" alt="" class="video m-btm m-32">
+        <h3 class="m-btm m-12 p-horizontal p-12">
+          The Solution to Memory Loss is Right Under Our Nose
+        </h3>
+        <p class="m-top m-4 p-horizontal p-12">
+          Dr. Michael Leon’s TED talk on the importance of smell in memory.
+        </p>
+      </div>
+    {% endif %}
   </div>
   <a href="" class="btn is-black m-top m-2">
     More Press & Resources
@@ -74,6 +91,18 @@
 {% schema %}
   {
     "tag": "section",
-    "class": "news"
+    "class": "news",
+    "settings": [
+      {
+        "type": "blogs",
+        "id": "news_blog",
+        "label": "Select blog post"
+      }
+    ],
+    "presets": [
+      {
+        "name": "News section"
+      }
+    ]
   }
 {% endschema %}
