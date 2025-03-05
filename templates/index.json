@@ -79,20 +79,6 @@
     },
     "stories": {
       "type": "stories",
-      "blocks": {
-        "story_item_LVeM8L": {
-          "type": "story_item",
-          "settings": {
-            "u_photo": "shopify://shop_images/better-illus1.webp",
-            "u_name": "asdasd",
-            "u_pos": "weqwe",
-            "u_message": "asmdh aksdhhkjah dkjahsjk dhasjk haskjd hajksdh ajkshd jkashd kjashdjk a"
-          }
-        }
-      },
-      "block_order": [
-        "story_item_LVeM8L"
-      ],
       "settings": {}
     },
     "news": {
