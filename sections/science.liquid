@@ -18,8 +18,23 @@
     align-items: start;
   }
   #shopify-section-{{section.id}}.science .science_video,
-  #shopify-section-{{section.id}}.science .science_video img{
+  #shopify-section-{{section.id}}.science .science_video .video{
     width: 100%;
+  }
+  #shopify-section-{{section.id}}.science .science_video .video{
+    height: 500px;
+    border-radius: 24px;
+    background: var(--color-primary);
+  }
+  @media only screen and (max-width: 990px) {
+    #shopify-section-{{section.id}}.science .science_video .video{
+      height: 300px;
+    }
+  }
+  @media only screen and (max-width: 430px) {
+    #shopify-section-{{section.id}}.science .science_video .video{
+      height: 250px;
+    }
   }
   #shopify-section-{{section.id}}.science .science_label{
     font-family: "General Sans Regular";
@@ -58,7 +73,7 @@
   </h2>
   <div class="science_content">
     <div class="science_video">
-      <img src="{{ illus }}" alt="" srcset="">
+      <iframe width="560" height="315" class="video" src="{{  section.settings.video_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
     <div class="science_right">
       <div class="science_label text-16">

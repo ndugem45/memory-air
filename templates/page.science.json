@@ -9,27 +9,42 @@
  */
 {
   "sections": {
-    "memory-loss-plain": {
-      "type": "memory-loss-plain",
+    "hero-science": {
+      "type": "hero-science",
       "settings": {}
     },
-    "faq-plain": {
-      "type": "faq-plain",
+    "memory-loss": {
+      "type": "memory-loss",
       "settings": {}
     },
-    "banner": {
-      "type": "banner",
+    "nose": {
+      "type": "nose",
       "settings": {}
     },
-    "banner-cta": {
-      "type": "banner-cta",
+    "timeline": {
+      "type": "timeline",
+      "settings": {}
+    },
+    "introduce": {
+      "type": "introduce",
+      "settings": {}
+    },
+    "review": {
+      "type": "review",
+      "settings": {}
+    },
+    "faq": {
+      "type": "faq",
       "settings": {}
     }
   },
   "order": [
-    "memory-loss-plain",
-    "faq-plain",
-    "banner",
-    "banner-cta"
+    "hero-science",
+    "memory-loss",
+    "nose",
+    "timeline",
+    "introduce",
+    "review",
+    "faq"
   ]
 }

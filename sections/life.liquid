@@ -95,15 +95,17 @@
 </div>
 <div class="container btm">
   <div class="life_slider">
-    <div class="slider_item-wrap">
-      <div class="slider_item">
-        <img src="{{ life1 }}" alt="">
-        <div class="font-medium text-32">
-          Feel Younger
+    {%- for block in section.blocks -%}
+      <div class="slider_item-wrap">
+        <div class="slider_item">
+          {{ block.settings.image | image_url: width: 411 | image_tag }}
+          <div class="font-medium text-32">
+            {{  block.settings.title }}
+          </div>
         </div>
       </div>
-    </div>
-    <div class="slider_item-wrap">
+    {%- endfor -%}
+    {% comment %} <div class="slider_item-wrap">
       <div class="slider_item">
         <img src="{{ life2 }}" alt="">
         <div class="font-medium text-32">
@@ -127,7 +129,7 @@
           dependency on others
         </div>
       </div>
-    </div>
+    </div> {% endcomment %}
   </div>
   <div class="navigation-slider m-top m-78">
     <button id="life-prev">
@@ -186,6 +188,24 @@
 {% schema %}
   {
     "tag": "section",
-    "class": "life"
+    "class": "life",
+    "blocks": [
+      {
+        "name": "Slider Item",
+        "type": "slider_item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Slider image"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Slider title"
+          }
+        ]
+      }
+    ]
   }
 {% endschema %}

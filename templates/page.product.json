@@ -1,38 +1,50 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-	"sections": {
-		"hero-product": {
-			"type": "hero-product"
-		},
-		"how-it-work": {
-			"type": "how-it-work"
-		},
-		"pricing": {
-			"type": "pricing"
-		},
-		"life": {
-			"type": "life",
-			"settings": {}
-		},
-		"stories": {
-			"type": "stories",
-			"settings": {}
-		},
-		"news": {
-			"type": "news",
-			"settings": {}
-		},
-		"faq-plain": {
-			"type": "faq-plain",
-			"settings": {}
-		}
-	},
-	"order": [
-		"hero-product",
-		"how-it-work",
-		"pricing",
-		"life",
-		"stories",
-		"news",
-		"faq-plain"
-	]
+  "sections": {
+    "hero-product": {
+      "type": "hero-product",
+      "settings": {}
+    },
+    "how-it-work": {
+      "type": "how-it-work",
+      "settings": {}
+    },
+    "pricing": {
+      "type": "pricing",
+      "settings": {}
+    },
+    "life": {
+      "type": "life",
+      "settings": {}
+    },
+    "stories": {
+      "type": "stories",
+      "settings": {}
+    },
+    "news": {
+      "type": "news",
+      "settings": {}
+    },
+    "faq-plain": {
+      "type": "faq-plain",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero-product",
+    "how-it-work",
+    "pricing",
+    "life",
+    "stories",
+    "news",
+    "faq-plain"
+  ]
 }

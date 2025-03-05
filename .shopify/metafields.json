@@ -10,6 +10,27 @@
   "order": [],
   "page": [],
   "product": [],
-  "variant": [],
+  "variant": [
+    {
+      "key": "price_display",
+      "namespace": "custom",
+      "name": "Price display",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "variant_description",
+      "namespace": "custom",
+      "name": "Variant description",
+      "description": "",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    }
+  ],
   "shop": []
 }
