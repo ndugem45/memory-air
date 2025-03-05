@@ -123,17 +123,17 @@
       {%- for block in section.blocks -%}
         <div class="stories_card-wrap">
           <div class="stories_card">
-            <img src="{{ blank.u_photo }}" alt="">
+            <img src="{{ block.settings.u_photo }}" alt="">
             <div class="content">
               <p class="text-32 font-medium text-black">
-               {{ blank.u_message }}
+               {{ block.settings.u_message }}
               </p>
               <div class="user text-20">
                 <span class="text-black">
-                  {{ blank.u_name }}
+                  {{ block.settings.u_name }}
                 </span>
                 <span>
-                  {{ blank.u_pos }}
+                  {{ block.settings.u_pos }}
                 </span>
               </div>
             </div>
