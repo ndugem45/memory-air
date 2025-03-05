@@ -1,3 +1,21 @@
+{% assign everyday_BW = 'everyday_BW.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign NPR_BW = 'NPR_BW.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign Frontier_BW = 'Frontier_BW.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign medscape_BW = 'medscape_BW.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign CBS_BW = 'CBS_BW.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign aljazeera = 'aljazeera.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign american_psychological_association = 'american_psychological_association.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign cbs_news = 'cbs_news.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign bbc = 'bbc.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign cnn = 'cnn.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign en = 'en.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign fox_news = 'fox_news.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign geriatric_psychiatry = 'geriatric_psychiatry.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign gg_international = 'gg_international.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign hbo = 'hbo.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign nbc_modified = 'nbc-modified.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign science_direct = 'science_direct.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign skynews = 'skynews.png' | asset_url | append: '?v=' | append: 'timestamp' %}
 
 {% style %}
   #shopify-section-{{section.id}}.partner{
@@ -34,11 +52,68 @@
 {% endstyle %}
 
 <div class="container">
-  {%- for block in section.blocks -%}
+  {% if section.blocks != blank%}
+    {%- for block in section.blocks -%}
+      <div>
+        {{ block.settings.image | image_url: width: 120 | image_tag }}
+      </div>
+    {%- endfor -%}
+  {% else %}
     <div>
-      {{ block.settings.image | image_url: width: 120 | image_tag }}
+      <img src="{{everyday_BW}}" alt="">
     </div>
-  {%- endfor -%}
+    <div>
+      <img src="{{NPR_BW}}" alt="">
+    </div>
+    <div>
+      <img src="{{Frontier_BW}}" alt="">
+    </div>
+    <div>
+      <img src="{{medscape_BW}}" alt="">
+    </div>
+    <div>
+      <img src="{{CBS_BW}}" alt="">
+    </div>
+    <div>
+      <img src="{{aljazeera}}" alt="">
+    </div>
+    <div>
+      <img src="{{american_psychological_association}}" alt="">
+    </div>
+    <div>
+      <img src="{{cbs_news}}" alt="">
+    </div>
+    <div>
+      <img src="{{bbc}}" alt="">
+    </div>
+    <div>
+      <img src="{{cnn}}" alt="">
+    </div>
+    <div>
+      <img src="{{en}}" alt="">
+    </div>
+    <div>
+      <img src="{{fox_news}}" alt="">
+    </div>
+    <div>
+      <img src="{{geriatric_psychiatry}}" alt="">
+    </div>
+    <div>
+      <img src="{{gg_international}}" alt="">
+    </div>
+    <div>
+      <img src="{{hbo}}" alt="">
+    </div>
+    <div>
+      <img src="{{nbc_modified}}" alt="">
+    </div>
+    <div>
+      <img src="{{science_direct}}" alt="">
+    </div>
+    <div>
+      <img src="{{skynews}}" alt="">
+    </div>
+  {% endif %}
 </div>
 
 <script>
