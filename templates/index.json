@@ -68,18 +68,6 @@
     },
     "life": {
       "type": "life",
-      "blocks": {
-        "slider_item_W9G87q": {
-          "type": "slider_item",
-          "settings": {
-            "image": "shopify://shop_images/frame_2121452647.webp",
-            "text": "asdasdasdad"
-          }
-        }
-      },
-      "block_order": [
-        "slider_item_W9G87q"
-      ],
       "settings": {}
     },
     "product": {
