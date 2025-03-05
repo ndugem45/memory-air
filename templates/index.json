@@ -109,6 +109,18 @@
     },
     "faq": {
       "type": "faq",
+      "blocks": {
+        "faq_item_VFWV6k": {
+          "type": "faq_item",
+          "settings": {
+            "faq_title": "jashgdjhasgd",
+            "faq_desc": "askdhaskdh akjdhasj hdkjsahd kjashd jkashdkj haisdha uisdhasj ihdkasj hajksd asd"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_VFWV6k"
+      ],
       "settings": {}
     }
   },
