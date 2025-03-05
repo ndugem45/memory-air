@@ -24,6 +24,7 @@
   #shopify-section-{{section.id}}.science .science_video .video{
     height: 500px;
     border-radius: 24px;
+    object-fit: cover;
     background: var(--color-primary);
   }
   @media only screen and (max-width: 1048px) {
@@ -79,9 +80,9 @@
   <div class="science_content">
     <div class="science_video">
       {% if section.settings.video_url != blank %}
-        <img class="video" src="{{ illus }}" alt=""/>
-      {% else %}
         <iframe width="560" height="315" class="video" src="{{  section.settings.video_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      {% else %}
+        <img class="video" src="{{ illus }}" alt=""/>
       {% endif %}
     </div>
     <div class="science_right">

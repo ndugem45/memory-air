@@ -88,8 +88,8 @@
       <p class="text-16 font-regular">
         Sits on your nightstand next to your bed.
       </p>
-      <a href="" class="btn">
-        Explore Memory Air®
+      <a href="{{ section.settings.cta_btn_url }}" class="btn">
+        {{ section.settings.cta_btn_title }}
       </a>
     </div>
     <img src="{{product_img}}" alt="">
@@ -216,6 +216,19 @@
 {% schema %}
   {
     "tag": "section",
-    "class": "product"
+    "class": "product",
+    "settings": [
+      {
+        "type": "text",
+        "id": "cta_btn_title",
+        "label": "CTA button title",
+        "default": "Explore Memory Air®"
+      },
+      {
+        "type": "url",
+        "id": "cta_btn_url",
+        "label": "CTA button url"
+      },
+    ]
   }
 {% endschema %}
