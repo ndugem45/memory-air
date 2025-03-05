@@ -83,7 +83,9 @@
     },
     "news": {
       "type": "news",
-      "settings": {}
+      "settings": {
+        "news_blog": "news"
+      }
     },
     "submission": {
       "type": "submission",
