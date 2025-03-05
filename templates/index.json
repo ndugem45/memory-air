@@ -89,10 +89,17 @@
           "settings": {
             "news_blog": "news"
           }
+        },
+        "blog_yG8tkq": {
+          "type": "blog",
+          "settings": {
+            "news_blog": "news"
+          }
         }
       },
       "block_order": [
-        "blog_xLKEEF"
+        "blog_xLKEEF",
+        "blog_yG8tkq"
       ],
       "settings": {}
     },
