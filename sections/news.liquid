@@ -49,7 +49,7 @@
   <div class="news_grid m-btm m-54">
     {% if section.blocks != blank %}
       {%- for block in section.blocks -%}
-        {{ block.settings | json }}
+        {{ block.settings.article | json }}
         <a href="{{ block.settings.url }}" class="news_item">
           <img src="{{ block.settings.article.img.src }}" alt="" class="m-btm m-32">
           
