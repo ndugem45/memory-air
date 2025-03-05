@@ -56,10 +56,30 @@
     },
     "science": {
       "type": "science",
-      "settings": {}
+      "settings": {
+        "video_url": "",
+        "percent1": "226%",
+        "label_percent1": "Memory Improvement in Seniors",
+        "percent2": "300%",
+        "label_percent2": "Memory Improvement in People with Dementia/Alzheimer's",
+        "cta_title": "Explore The Science",
+        "cta_url": ""
+      }
     },
     "life": {
       "type": "life",
+      "blocks": {
+        "slider_item_W9G87q": {
+          "type": "slider_item",
+          "settings": {
+            "image": "shopify://shop_images/frame_2121452647.webp",
+            "text": "asdasdasdad"
+          }
+        }
+      },
+      "block_order": [
+        "slider_item_W9G87q"
+      ],
       "settings": {}
     },
     "product": {
