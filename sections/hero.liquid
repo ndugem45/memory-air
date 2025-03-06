@@ -41,7 +41,7 @@
 <div class="container">
   <div class="hero_content">
     <h1 class="m-btm m-32">
-      {% if section.settings.section_title %}
+      {% if section.settings.section_title != blank %}
         {{ section.settings.section_title }}
       {% else %}
         Prevent & Reverse <br>
