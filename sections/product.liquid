@@ -76,17 +76,25 @@
     <div class="head">
       <div>
         <span>
-          Memory Air® is a standalone device
+          {{section.settings.section_label}}
         </span>
         <h2 class="m-top m-12">
-          Effortless to use <br>
-          <span>
-            Trackable results
-          </span>
+          {% if section.settings.section_title != blank %}
+            {{ section.settings.section_title }}
+          {% else %}
+            Effortless to use <br>
+            <span>
+              Trackable results
+            </span>
+          {% endif %}
         </h2>
       </div>
       <p class="text-16 font-regular">
-        Sits on your nightstand next to your bed.
+        {% if section.settings.section_desc != blank %}
+          {{section.settings.section_desc}}
+        {% else %}
+          Sits on your nightstand next to your bed.
+        {% endif %}
       </p>
       <a href="{{ section.settings.cta_btn_url }}" class="btn">
         {{ section.settings.cta_btn_title }}
@@ -218,6 +226,23 @@
     "tag": "section",
     "class": "product",
     "settings": [
+      {
+        "type": "text",
+        "id": "section_label",
+        "label": "Section label",
+        "default": "Memory Air® is a standalone device"
+      },
+      {
+        "type": "textarea",
+        "id": "section_title",
+        "label": "Section title",
+        "info": "Wrap italic font with <span>"
+      },
+      {
+        "type": "textarea",
+        "id": "section_desc",
+        "label": "Section description",
+      },
       {
         "type": "text",
         "id": "cta_btn_title",

@@ -91,10 +91,14 @@
 
 <div class="container">
   <h2 class="m-btm m-78 text-primary">
-    Life is Better <br>
-    <span>
-      with Memory Air®
-    </span>
+    {% if section.settings.section_title != blank %}
+      {{ section.settings.section_title }}
+    {% else %}
+      Life is Better <br>
+      <span>
+        with Memory Air®
+      </span>
+    {% endif %}
   </h2>
 </div>
 <div class="container btm">
@@ -204,6 +208,14 @@
   {
     "tag": "section",
     "class": "life",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "section_title",
+        "label": "Section title",
+        "info": "Wrap italic font with <span>"
+      },
+    ],
     "blocks": [
       {
         "name": "Slider Item",

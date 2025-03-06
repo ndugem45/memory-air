@@ -207,7 +207,11 @@
         <img src="{{ logo }}" width="316" height="168" alt="" class="footer_logo">
       </a>
       <p class="text-16">
-        Join our newsletter to stay up to date on the latest in memory care
+        {% if section.settings.footer_desc != blank %}
+          {{ section.settings.footer_desc }}
+        {% else %}
+          Join our newsletter to stay up to date on the latest in memory care
+        {% endif %}
       </p>
       <form action="">
         <input type="text" placeholder="Email">
@@ -340,6 +344,11 @@
     "tag": "footer",
     "class": "footer",
     "settings": [
+      {
+        "type": "textarea",
+        "id": "footer_desc",
+        "label": "Footer Description",
+      },
       {
         "type": "link_list",
         "id": "foot_menu_column1",

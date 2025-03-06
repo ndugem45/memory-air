@@ -72,10 +72,14 @@
 
 <div class="container">
   <h2 class="text-center m-btm m-54 text-primary">
-    Memory Air® is based on the <br>
-    <span>
-      Science of Olfactory Enrichment
-    </span>
+    {% if section.settings.section_title != blank %}
+      {{ section.settings.section_title }}
+    {% else %}
+      Memory Air® is based on the <br>
+      <span>
+        Science of Olfactory Enrichment
+      </span>
+    {% endif %}
   </h2>
   <div class="science_content">
     <div class="science_video">
@@ -120,6 +124,12 @@
     "tag": "section",
     "class": "science",
     "settings": [
+      {
+        "type": "textarea",
+        "id": "section_title",
+        "label": "Section title",
+        "info": "Wrap italic font with <span>"
+      },
       {
         "type": "url",
         "id": "video_url",

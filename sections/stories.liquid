@@ -114,10 +114,14 @@
 
 <div class="container">
   <h2 class="text-center m-btm m-32">
-    Success <br>
-    <span>
-      Stories
-    </span>
+    {% if section.settings.section_title != blank %}
+      {{ section.settings.section_title }}
+    {% else %}
+      Success <br>
+      <span>
+        Stories
+      </span>
+    {% endif %}
   </h2>
   <div class="stories_slider">
     {% if section.blocks != blank %}
@@ -274,6 +278,14 @@
   {
     "tag": "section",
     "class": "stories",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "section_title",
+        "label": "Section title",
+        "info": "Wrap italic font with <span>"
+      },
+    ],
     "blocks": [
       {
         "name": "Story Item",

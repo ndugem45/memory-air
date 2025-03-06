@@ -44,10 +44,14 @@
 
 <div class="container">
   <h2 class="text-center m-btm m-54">
-    Memory Air® <br>
-    <span>
-      in the News
-    </span>
+    {% if section.settings.section_title != blank %}
+      {{ section.settings.section_title }}
+    {% else %}
+      Memory Air® <br>
+      <span>
+        in the News
+      </span>
+    {% endif %}
   </h2>
   <div class="news_grid m-btm m-54">
     {% if section.blocks != blank %}
@@ -88,8 +92,9 @@
       </div>
     {% endif %}
   </div>
-  <a href="" class="btn is-black m-top m-2">
+  <a href="{{ section.settings.cta_url }}" class="btn is-black m-top m-2">
     More Press & Resources
+    {{ section.settings.cta_title }}
   </a>
 </div>
 
@@ -97,6 +102,24 @@
   {
     "tag": "section",
     "class": "news",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "section_title",
+        "label": "Section title",
+        "info": "Wrap italic font with <span>"
+      },
+      {
+        "type": "text",
+        "id": "cta_title",
+        "label": "CTA button title",
+      },
+      {
+        "type": "url",
+        "id": "cta_url",
+        "label": "CTA button url",
+      },
+    ],
     "blocks": [
       {
         "type": "blog",
