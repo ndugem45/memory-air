@@ -1,5 +1,16 @@
 {
-  "article": [],
+  "article": [
+    {
+      "key": "video_url",
+      "namespace": "custom",
+      "name": "Video url",
+      "description": "Video for blog post",
+      "type": {
+        "name": "link",
+        "category": "LINK"
+      }
+    }
+  ],
   "blog": [],
   "brand": [],
   "collection": [],
