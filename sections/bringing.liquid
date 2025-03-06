@@ -83,7 +83,11 @@
     <div class="container">
         <div class="healthcare_content">
             <div class="healthcare_content-img">
-                <img src={{bringing-display}} alt="" class="image-display">
+                {% if section.settings.section_image != blank %}
+                    {{ section.settings.section_image | image_url: width: 650 | image_tag }}
+                {% else %}
+                    <img src={{bringing-display}} alt="" class="image-display">
+                {% endif %}
             </div>
             <div class="healthcare_content-text bringing_content-text">
                 <h1 class="m-btm m-32">
@@ -97,7 +101,7 @@
                     {% endif %}
                 </h1>
                 <p class="bringing_text-dsc">
-                    {% if section.settings.section_desc %}
+                    {% if section.settings.section_desc != blank %}
                         {{ section.settings.section_desc }}
                     {% else %}
                         <span>Memory Air®</span> is dedicated to revolutionizing brain and memory care based directly on high-quality, consistent science that is causal, not just correlative.<br><br>
