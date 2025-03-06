@@ -86,14 +86,14 @@
         <div class="healthcare_content">
             <div class="healthcare_content-img">
                 {% if section.settings.section_image != blank %}
-                    {{ section.settings.section_image | image_url: width: 650 | image_tag }}
+                    <img src="{{ section.settings.section_image | img_url: 'medium' }}" alt="" class="image-display">
                 {% else %}
-                    <img src={{bringing-display}} alt="" class="image-display">
+                    <img src="{{ bringing-display }}" alt="" class="image-display">
                 {% endif %}
             </div>
             <div class="healthcare_content-text bringing_content-text">
                 <h2 class="m-btm m-32">
-                    {% if section.settings.section_title %}
+                    {% if section.settings.section_title != blank %}
                         {{ section.settings.section_title }}
                     {% else %}
                         Bringing Innovative Science <br>
