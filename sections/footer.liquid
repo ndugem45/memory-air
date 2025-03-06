@@ -256,7 +256,7 @@
           <div class="menu-btm">
             {% if section.blocks != blank %}
               {%- for block in section.blocks -%}
-                <a href="{{ block.settings.social_url }}">
+                <a href="{{ block.settings.social_url }}" target="_blank">
                   {{ block.settings.social_img | image_url: width: 19 | image_tag }}
                 </a>
               {%- endfor -%}
