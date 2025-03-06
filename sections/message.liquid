@@ -1,4 +1,7 @@
 {% style %}
+  #shopify-section-{{section.id}}{
+    padding-top: 50px;
+  }
   #shopify-section-{{section.id}} .container{
     display: flex;
 		flex-direction: column;
@@ -15,15 +18,26 @@
 		line-height: 155.556%;
 		letter-spacing: -0.72px;
   }
+  #shopify-section-{{section.id}} .container span{
+		color: #232323;
+		font-family: "Cormorant Garamond";
+		font-size: 32px;
+		font-style: italic;
+		font-weight: 700;
+		line-height: 100%;
+		letter-spacing: -0.1px;
+	}
 
   @media (max-width: 1024px) {
-    #shopify-section-{{section.id}} .container p{
+    #shopify-section-{{section.id}} .container p,
+    #shopify-section-{{section.id}} .container span{
         font-size: 28px;
     }
   }
 
   @media (max-width: 768px) {
-    #shopify-section-{{section.id}} .container p{
+    #shopify-section-{{section.id}} .container p,
+    #shopify-section-{{section.id}} .container span{
         font-size: 24px;
     }
   }
@@ -32,7 +46,8 @@
     #shopify-section-{{section.id}} .container h2{
       font-size: 38px;
     }
-    #shopify-section-{{section.id}} .container p{
+    #shopify-section-{{section.id}} .container p,
+    #shopify-section-{{section.id}} .container span{
       font-size: 20px;
     }
   }
