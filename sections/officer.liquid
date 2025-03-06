@@ -25,7 +25,7 @@
 		flex-direction: column;
 		cursor: pointer;
 	}
-	#shopify-section-{{section.id}}.news .news_item img{
+	#shopify-section-{{section.id}}.news .news_item .video{
 		width: 100%;
 		border-radius: 24px;
 		background: var(--orange-light);
@@ -163,35 +163,63 @@
 <div class="officer_wrapper">
 
 	<div class="officer_text-wrapper">
-		<span class="officer_text-span">Memory Air® Chief Science Officer</span>
-		<h3 class="officer_text-name">Michael Leon, PhD</h3>
-		<span class="officer_text-profession">Professor Emeritus, Neurobiology and Behavior
-			Charlie Dunlop School of Biological Sciences, University of California Irvine</span>
-		<p class="officer_text-dsc">Michael Leon was ranked among the top 2% of all scientists in the world in a recent analysis from Stanford University.  His innovative science in olfactory enrichment has been published in X scientific articles & publications. Memory Air® is built directly on his science in olfactory enrichment.
-				<br><br>
-			Through the delivery of an simple to use, powerful product, the benefits of his science can be experienced right at home.
+		<span class="officer_text-span">{{  section.settings.section_label }}</span>
+		<h3 class="officer_text-name">
+			{{ section.settings.officer_name }}
+		</h3>
+		<span class="officer_text-profession">
+			{{ section.settings.officer_title }}
+		</span>
+
+		<p class="officer_text-dsc">
+			{% if section.settings.officer_bio != blank %}
+				{{ section.settings.officer_bio }}
+			{% else %}
+				Michael Leon was ranked among the top 2% of all scientists in the world in a recent analysis from Stanford University.  His innovative science in olfactory enrichment has been published in X scientific articles & publications. Memory Air® is built directly on his science in olfactory enrichment.
+					<br><br>
+				Through the delivery of an simple to use, powerful product, the benefits of his science can be experienced right at home.
+			{% endif %}
 		</p>
 	</div>
 
 	<div class="news_grid m-btm m-54">
-		<div class="news_item">
-			<img src="{{ thumb1 }}" alt="" class="m-btm m-32">
-			<h3 class="m-btm m-12 p-horizontal p-12">
-				#1 Researcher for Olfactory Enrichment
-			</h3>
-			<p class="m-top m-4 p-horizontal p-12">
-				And Ranked in the Top 2% of All Scientists in the World by a Stanford School of Medicine Study.
-			</p>
-		</div>
-		<div class="news_item">
-			<img src="{{ thumb2 }}" alt="" class="m-btm m-32">
-			<h3 class="m-btm m-12 p-horizontal p-12">
-				The Solution to Memory Loss is Right Under Our Nose
-			</h3>
-			<p class="m-top m-4 p-horizontal p-12">
-				Dr. Michael Leon’s TED talk on the importance of smell in memory.
-			</p>
-		</div>
+		{% if section.blocks != blank %}
+      {%- for block in section.blocks -%}
+        {% for article in block.settings.news_blog.articles %}
+          <a href="{{ article.url }}" class="news_item">
+            <img src="{{ article.img.src | img_url: 'medium' }}" alt="" class="video m-btm m-32">
+            
+            {% comment %} <iframe width="560" height="315" class="video m-btm m-32" src="{{  block.metafields.settings.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> {% endcomment %}
+            
+            <h3 class="m-btm m-12 p-horizontal p-12">
+              {{ article.title }}
+            </h3>
+            <div class="m-top m-4 p-horizontal p-12">
+              {{ article.content }}
+            </div>
+          </a>
+        {% endfor %}
+      {%- endfor -%}
+    {% else %}
+			<div class="news_item">
+				<img src="{{ thumb1 }}" alt="" class="video m-btm m-32">
+				<h3 class="m-btm m-12 p-horizontal p-12">
+					#1 Researcher for Olfactory Enrichment
+				</h3>
+				<p class="m-top m-4 p-horizontal p-12">
+					And Ranked in the Top 2% of All Scientists in the World by a Stanford School of Medicine Study.
+				</p>
+			</div>
+			<div class="news_item">
+				<img src="{{ thumb2 }}" alt="" class="video m-btm m-32">
+				<h3 class="m-btm m-12 p-horizontal p-12">
+					The Solution to Memory Loss is Right Under Our Nose
+				</h3>
+				<p class="m-top m-4 p-horizontal p-12">
+					Dr. Michael Leon’s TED talk on the importance of smell in memory.
+				</p>
+			</div>
+		{% endif %}
 	</div>
 
 </div>
@@ -202,6 +230,51 @@
 {% schema %}
 {
 	"tag": "section",
-	"class": "news"
+	"class": "news",
+	"settings": [
+		{
+      "type": "text",
+      "id": "section_label",
+      "label": "Section label",
+      "default": "Memory Air® Chief Science Officer",
+    },
+		{
+      "type": "text",
+      "id": "officer_name",
+      "label": "Officer name",
+      "default": "Michael Leon, PhD",
+    },
+		{
+      "type": "text",
+      "id": "officer_title",
+      "label": "Officer title",
+      "default": "Professor Emeritus, Neurobiology and Behavior
+			Charlie Dunlop School of Biological Sciences, University of California Irvine",
+    },
+		{
+      "type": "textarea",
+      "id": "officer_bio",
+      "label": "Officer bio",
+    },
+	],
+	"blocks": [
+		{
+			"type": "blog",
+			"name": "Blog Post",
+			"settings": [
+				{
+					"type": "blog",
+					"id": "news_blog",
+					"label": "Select blog post"
+				}
+			]
+		}
+	],
+	"max_blocks": 2,
+	"presets": [
+    {
+      "name": "Officer about us section",
+    },
+  ]
 }
 {% endschema %}

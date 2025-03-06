@@ -33,7 +33,7 @@
         font-family: "General Sans Semibold"
     }
 
-    #shopify-section-{{section.id}} .bringing_content-text > h1{
+    #shopify-section-{{section.id}} .bringing_content-text > h2{
         color: #232323;
         font-family: "General Sans Reguler";
         font-size: 56px;
@@ -92,7 +92,7 @@
                 {% endif %}
             </div>
             <div class="healthcare_content-text bringing_content-text">
-                <h1 class="m-btm m-32">
+                <h2 class="m-btm m-32">
                     {% if section.settings.section_title %}
                         {{ section.settings.section_title }}
                     {% else %}
@@ -101,7 +101,7 @@
                             Directly to your Door
                         </span>
                     {% endif %}
-                </h1>
+                </h2>
                 <p class="bringing_text-dsc">
                     {% if section.settings.section_desc != blank %}
                         {{ section.settings.section_desc }}
