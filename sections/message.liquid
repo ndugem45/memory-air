@@ -18,7 +18,7 @@
 		line-height: 155.556%;
 		letter-spacing: -0.72px;
   }
-  #shopify-section-{{section.id}} .container span{
+  #shopify-section-{{section.id}} .container .bottom{
 		color: #232323;
 		font-family: "Cormorant Garamond";
 		font-size: 32px;
@@ -30,14 +30,14 @@
 
   @media (max-width: 1024px) {
     #shopify-section-{{section.id}} .container p,
-    #shopify-section-{{section.id}} .container span{
+    #shopify-section-{{section.id}} .container .bottom{
         font-size: 28px;
     }
   }
 
   @media (max-width: 768px) {
     #shopify-section-{{section.id}} .container p,
-    #shopify-section-{{section.id}} .container span{
+    #shopify-section-{{section.id}} .container .bottom{
         font-size: 24px;
     }
   }
@@ -47,7 +47,7 @@
       font-size: 38px;
     }
     #shopify-section-{{section.id}} .container p,
-    #shopify-section-{{section.id}} .container span{
+    #shopify-section-{{section.id}} .container .bottom{
       font-size: 20px;
     }
   }
@@ -69,7 +69,7 @@
         “This is just the beginning of our commitment to providing exceptional service and solutions. We're helping those in need and those who want to prevent being in need.”
       {% endif %}
     </p>
-    <span class="technical_btm-name text-center m-top m-32">
+    <span class="bottom technical_btm-name text-center m-top m-32">
       - {{ section.settings.user_name }} - {{ section.settings.user_title }}
     </span>
 </div>
