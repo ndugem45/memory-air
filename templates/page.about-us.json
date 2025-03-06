@@ -8,38 +8,43 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {
-    "hero-aboutus": {
-      "type": "hero-aboutus",
-      "settings": {}
-    },
-    "partner": {
-      "type": "partner",
-      "settings": {}
-    },
-    "bringing": {
-      "type": "bringing",
-      "settings": {}
-    },
-    "officer": {
-      "type": "officer",
-      "settings": {}
-    },
-    "forfuture": {
-      "type": "forfuture",
-      "settings": {}
-    },
-    "technical": {
-      "type": "technical",
-      "settings": {}
-    }
-  },
-  "order": [
-    "hero-aboutus",
-    "partner",
-    "bringing",
-    "officer",
-    "forfuture",
-    "technical"
-  ]
+	"sections": {
+		"hero-aboutus": {
+			"type": "hero-aboutus",
+			"settings": {}
+		},
+		"partner": {
+			"type": "partner",
+			"settings": {}
+		},
+		"bringing": {
+			"type": "bringing",
+			"settings": {}
+		},
+		"officer": {
+			"type": "officer",
+			"settings": {}
+		},
+		"forfuture": {
+			"type": "forfuture",
+			"settings": {}
+		},
+		"technical": {
+			"type": "technical",
+			"settings": {}
+		},
+		"message": {
+			"type": "message",
+			"settings": {}
+		}
+	},
+	"order": [
+		"hero-aboutus",
+		"partner",
+		"bringing",
+		"officer",
+		"forfuture",
+		"technical",
+		"message"
+	]
 }

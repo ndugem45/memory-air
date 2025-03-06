@@ -1,0 +1,97 @@
+{% style %}
+  #shopify-section-{{section.id}} .container{
+    display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+  }
+  #shopify-section-{{section.id}} .container p{
+    color: #3C2E25;
+		text-align: center;
+		font-family: "Cormorant Garamond";
+		font-size: 36px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 155.556%;
+		letter-spacing: -0.72px;
+  }
+
+  @media (max-width: 1024px) {
+    #shopify-section-{{section.id}} .container p{
+        font-size: 28px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #shopify-section-{{section.id}} .container p{
+        font-size: 24px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #shopify-section-{{section.id}} .container h2{
+      font-size: 38px;
+    }
+    #shopify-section-{{section.id}} .container p{
+      font-size: 20px;
+    }
+  }
+{% endstyle %}
+
+<div class="container">
+    <h2 class="text-center m-btm m-32">
+      {% if section.settings.section_title != blank %}
+        {{ section.settings.section_title }}
+      {% else %}
+        At Memory Air®<br>
+        <span>We’re Building for the future </span>
+      {% endif %}
+    </h2>
+    <p class="text-center m-vertical m-32">
+      {% if section.settings.section_title != blank %}
+        {{ section.settings.section_dec }}
+      {% else %}
+        “This is just the beginning of our commitment to providing exceptional service and solutions. We're helping those in need and those who want to prevent being in need.”
+      {% endif %}
+    </p>
+    <span class="technical_btm-name text-center m-top m-32">
+      - {{ section.settings.user_name }} - {{ section.settings.user_title }}
+    </span>
+</div>
+
+{% schema %}
+	{
+		"tag": "section",
+		"class": "technical",
+		"settings": [
+			{
+        "type": "textarea",
+        "id": "section_title",
+        "label": "Section title",
+        "info": "Wrap italic font with <span>"
+      },
+			{
+        "type": "textarea",
+        "id": "section_dec",
+        "label": "Message",
+      },
+			{
+        "type": "text",
+        "id": "user_name",
+        "label": "User name",
+        "default": "Alan Bernstein, CEO"
+      },
+			{
+        "type": "text",
+        "id": "user_title",
+        "label": "User title",
+        "default": "Science Lab 3, Makers of MemoryAir"
+      },
+		],
+    "presets": [
+      {
+        "name": "Message section"
+      }
+    ]
+	}
+{% endschema %}
