@@ -87,15 +87,23 @@
             </div>
             <div class="healthcare_content-text bringing_content-text">
                 <h1 class="m-btm m-32">
-                    Bringing Innovative Science <br>
-                    <span>
-                        Directly to your Door
-                    </span>
+                    {% if section.settings.section_title %}
+                        {{ section.settings.section_title }}
+                    {% else %}
+                        Bringing Innovative Science <br>
+                        <span>
+                            Directly to your Door
+                        </span>
+                    {% endif %}
                 </h1>
                 <p class="bringing_text-dsc">
-                    <span>Memory Air®</span> is dedicated to revolutionizing brain and memory care based directly on high-quality, consistent science that is causal, not just correlative.<br><br>
-                    That means we have very, very high confidence in the science. By marrying simple, easy-to-use design with this powerful science, we are committed to bringing customers real results in a space overrun with claims that just can’t be backed up.<br><br>
-                    With <span>Memory Air®</span>, you can trust that you will feel better and experience real results.
+                    {% if section.settings.section_desc %}
+                        {{ section.settings.section_desc }}
+                    {% else %}
+                        <span>Memory Air®</span> is dedicated to revolutionizing brain and memory care based directly on high-quality, consistent science that is causal, not just correlative.<br><br>
+                        That means we have very, very high confidence in the science. By marrying simple, easy-to-use design with this powerful science, we are committed to bringing customers real results in a space overrun with claims that just can’t be backed up.<br><br>
+                        With <span>Memory Air®</span>, you can trust that you will feel better and experience real results.
+                    {% endif %}
                 </p>
             </div>
         </div>
@@ -105,6 +113,29 @@
     {% schema %}
         {
             "tag": "section",
-            "class": "hero-healthcare"
+            "class": "hero-healthcare",
+            "settings": [
+                {
+                    "type": "textarea",
+                    "id": "section_title",
+                    "label": "Section title",
+                    "info": "Wrap italic font with <span>",
+                },
+                {
+                    "type": "textarea",
+                    "id": "section_desc",
+                    "label": "Section description",
+                },
+                {
+                    "type": "image_picker",
+                    "id": "section_image",
+                    "label": "Section image",
+                },
+            ],
+            "presets": [
+                {
+                "name": "About us product section",
+                },
+            ]
         }
     {% endschema %}
