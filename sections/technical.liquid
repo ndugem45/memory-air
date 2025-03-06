@@ -49,9 +49,13 @@
 		gap: 50px;
 		margin-block: 40px;
 	}
+	#shopify-section-{{section.id}}.technical .advisor_card:nth-child(even){
+			flex-direction: row-reverse;
+		}
 	#shopify-section-{{section.id}}.technical .advisor_card-img > img{
 		max-width: 450px;
 		width: 100%;
+		object-fit: cover;
 	}
 
 	#shopify-section-{{section.id}}.technical .advisor_card-text{
@@ -105,8 +109,11 @@
 
     #shopify-section-{{section.id}}.technical .advisor_card {
         flex-direction: column;
-		gap: 0px;
+				gap: 0px;
     }
+		#shopify-section-{{section.id}}.technical .advisor_card:nth-child(even){
+			flex-direction: column-reverse;
+		}
 
     #shopify-section-{{section.id}}.technical .advisor_card-text {
         padding: 40px;
@@ -205,54 +212,84 @@
 
 		<div class="technical_wraper">
 			<div class="technical_title m-btm m-32">
-				<h2>Technical Advisors
+				<h2>
+					{% if section.settings.section_title != blank %}
+						{{ section.settings.section_title }}
+					{% else %}
+							Technical Advisors
+					{% endif %}
 				</h2>
-				<p>Our team of technical advisors value real science & deep research bringing their expertise to Memory Air</p>
+				<p>
+					{% if section.settings.section_dec != blank %}
+						{{ section.settings.section_dec }}
+					{% else %}
+						Our team of technical advisors value real science & deep research bringing their expertise to Memory Air
+					{% endif %}
+				</p>
 			</div>
 			<div class="technical_advisor">
+				{% if section.blocks != blank %}
+					{%- for block in section.blocks -%}
+						<div class="advisor_card mobile-layout">
+							<div class="advisor_card-text">
+								<h3>
+									{{ block.settings.advisor_name }}
+									<br>
+									{{ block.settings.advisor_title }}
+								</h3>
+								<div class="divider m-vertical m-32"></div>
+								<p>
+									{{ block.settings.advisor_bio }}
+								</p>
+							</div>
+							<div class="advisor_card-img">
+								{{ block.settings.advisor_photo | image_url: width: 450 | image_tag }}
+							</div>
+						</div>
+					{%- endfor -%}
+				{% else %}
+					<div class="advisor_card">
+						<div class="advisor_card-text">
+							<h3>
+								Stanton Rowe <br>
+								Former Chief Scientific Officer & VP Advanced Tech, Edwards Lifesciences	
+							</h3>
+							<div class="divider m-vertical m-32"></div>
+							<p>Stanton Rowe is a leading figure in advanced technology and worldwide clinical research. He is on advisory boards at UC Irvine, Georgia Tech, and Brown University.</p>
+						</div>
+						<div class="advisor_card-img">
+							<img src={{advisor-img1}} alt="">
+						</div>
+					</div>
 
-				<div class="advisor_card mobile-layout">
-					<div class="advisor_card-text">
-						<h3>
-							Stanton Rowe <br>
-							Former Chief Scientific Officer & VP Advanced Tech, Edwards Lifesciences	
-						</h3>
-						<div class="divider m-vertical m-32"></div>
-						<p>Stanton Rowe is a leading figure in advanced technology and worldwide clinical research. He is on advisory boards at UC Irvine, Georgia Tech, and Brown University.</p>
+					<div class="advisor_card">
+						<div class="advisor_card-text">
+							<h3>
+								Stanton Rowe <br>
+								Former Chief Scientific Officer & VP Advanced Tech, Edwards Lifesciences	
+							</h3>
+							<div class="divider m-vertical m-32"></div>
+							<p>Stanton Rowe is a leading figure in advanced technology and worldwide clinical research. He is on advisory boards at UC Irvine, Georgia Tech, and Brown University.</p>
+						</div>
+						<div class="advisor_card-img">
+							<img src={{advisor-img2}} alt="">
+						</div>
 					</div>
-					<div class="advisor_card-img">
-						<img src={{advisor-img1}} alt="">
-					</div>
-				</div>
 
-				<div class="advisor_card">
-					<div class="advisor_card-img">
-						<img src={{advisor-img2}} alt="">
+					<div class="advisor_card">
+						<div class="advisor_card-text">
+							<h3>
+								Stanton Rowe <br>
+								Former Chief Scientific Officer & VP Advanced Tech, Edwards Lifesciences	
+							</h3>
+							<div class="divider m-vertical m-32"></div>
+							<p>Stanton Rowe is a leading figure in advanced technology and worldwide clinical research. He is on advisory boards at UC Irvine, Georgia Tech, and Brown University.</p>
+						</div>
+						<div class="advisor_card-img">
+							<img src={{advisor-img3}} alt="">
+						</div>
 					</div>
-					<div class="advisor_card-text">
-						<h3>
-							Stanton Rowe <br>
-							Former Chief Scientific Officer & VP Advanced Tech, Edwards Lifesciences	
-						</h3>
-						<div class="divider m-vertical m-32"></div>
-						<p>Stanton Rowe is a leading figure in advanced technology and worldwide clinical research. He is on advisory boards at UC Irvine, Georgia Tech, and Brown University.</p>
-					</div>
-				</div>
-
-				<div class="advisor_card mobile-layout">
-					<div class="advisor_card-text">
-						<h3>
-							Stanton Rowe <br>
-							Former Chief Scientific Officer & VP Advanced Tech, Edwards Lifesciences	
-						</h3>
-						<div class="divider m-vertical m-32"></div>
-						<p>Stanton Rowe is a leading figure in advanced technology and worldwide clinical research. He is on advisory boards at UC Irvine, Georgia Tech, and Brown University.</p>
-					</div>
-					<div class="advisor_card-img">
-						<img src={{advisor-img3}} alt="">
-					</div>
-				</div>
-
+				{% endif %}
 			</div>
 			<div class="technical_text-btm m-top m-98">
 				<h2 class="technical_btm-title text-center m-btm m-32">
@@ -272,8 +309,54 @@
 
 
 {% schema %}
-		{
-				"tag": "section",
-				"class": "technical"
-		}
+	{
+		"tag": "section",
+		"class": "technical",
+		"settings": [
+			{
+        "type": "textarea",
+        "id": "section_title",
+        "label": "Section title",
+        "info": "Wrap italic font with <span>"
+      },
+			{
+        "type": "textarea",
+        "id": "section_dec",
+        "label": "Section description",
+      },
+		],
+		"blocks": [
+      {
+        "name": "Advisor Item",
+        "type": "Advisor_item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "advisor_photo",
+            "label": "Advisor photo"
+          },
+          {
+            "type": "text",
+            "id": "advisor_name",
+            "label": "Advisor name"
+          },
+          {
+            "type": "text",
+            "id": "advisor_title",
+            "label": "Advisor title"
+          },
+          {
+            "type": "textarea",
+            "id": "advisor_bio",
+            "label": "Advisor bio"
+          },
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Technical section"
+      }
+    ]
+	}
 {% endschema %}
