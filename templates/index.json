@@ -34,7 +34,7 @@
         "percent2": "300%",
         "label_percent2": "Memory Improvement in People with Dementia/Alzheimer's",
         "cta_title": "Explore The Science",
-        "cta_url": ""
+        "cta_url": "shopify://pages/science"
       }
     },
     "life": {
@@ -50,7 +50,7 @@
         "section_title": "",
         "section_desc": "",
         "cta_btn_title": "Explore Memory Air®",
-        "cta_btn_url": ""
+        "cta_btn_url": "shopify://collections"
       }
     },
     "stories": {
