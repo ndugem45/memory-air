@@ -374,7 +374,7 @@
                 {% else %}
                     <div class="option">
                         <label>
-                            <input type="radio" name="memory-air" id="{{  product.id }}" value="{{  variant.id }}" checked>
+                            <input type="radio" name="memory-air" id="{{  product.variants.first.id }}" value="{{  variant.id }}" checked>
                             <div class="custom-checkbox"></div>
                             <div class="option-content">
                             <span class="title">{{ product.title }}</span>
