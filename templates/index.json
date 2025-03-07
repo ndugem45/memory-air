@@ -20,30 +20,6 @@
     },
     "partner": {
       "type": "partner",
-      "blocks": {
-        "partner_R4yytX": {
-          "type": "partner",
-          "settings": {}
-        },
-        "partner_nnMBb3": {
-          "type": "partner",
-          "settings": {}
-        },
-        "partner_ADngJH": {
-          "type": "partner",
-          "settings": {}
-        },
-        "partner_kfwVxU": {
-          "type": "partner",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "partner_R4yytX",
-        "partner_nnMBb3",
-        "partner_ADngJH",
-        "partner_kfwVxU"
-      ],
       "settings": {
         "speed": 2500
       }
