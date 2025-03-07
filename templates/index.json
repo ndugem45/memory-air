@@ -12,6 +12,8 @@
     "hero": {
       "type": "hero",
       "settings": {
+        "section_title": "",
+        "section_desc": "",
         "section_product": "rustic-wooden-coffee-table",
         "video_cta": ""
       }
@@ -21,27 +23,19 @@
       "blocks": {
         "partner_R4yytX": {
           "type": "partner",
-          "settings": {
-            "image": "shopify://shop_images/cnn.png"
-          }
+          "settings": {}
         },
         "partner_nnMBb3": {
           "type": "partner",
-          "settings": {
-            "image": "shopify://shop_images/aljazeera.png"
-          }
+          "settings": {}
         },
         "partner_ADngJH": {
           "type": "partner",
-          "settings": {
-            "image": "shopify://shop_images/american_psychological_association.png"
-          }
+          "settings": {}
         },
         "partner_kfwVxU": {
           "type": "partner",
-          "settings": {
-            "image": "shopify://shop_images/bbc.png"
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -57,6 +51,7 @@
     "science": {
       "type": "science",
       "settings": {
+        "section_title": "",
         "video_url": "",
         "percent1": "226%",
         "label_percent1": "Memory Improvement in Seniors",
@@ -68,40 +63,33 @@
     },
     "life": {
       "type": "life",
-      "settings": {}
+      "settings": {
+        "section_title": ""
+      }
     },
     "product": {
       "type": "product",
       "settings": {
+        "section_label": "Memory Air® is a standalone device",
+        "section_title": "",
+        "section_desc": "",
         "cta_btn_title": "Explore Memory Air®",
         "cta_btn_url": ""
       }
     },
     "stories": {
       "type": "stories",
-      "settings": {}
+      "settings": {
+        "section_title": ""
+      }
     },
     "news": {
       "type": "news",
-      "blocks": {
-        "blog_xLKEEF": {
-          "type": "blog",
-          "settings": {
-            "news_blog": "news"
-          }
-        },
-        "blog_yG8tkq": {
-          "type": "blog",
-          "settings": {
-            "news_blog": "news"
-          }
-        }
-      },
-      "block_order": [
-        "blog_xLKEEF",
-        "blog_yG8tkq"
-      ],
-      "settings": {}
+      "settings": {
+        "section_title": "",
+        "cta_title": "",
+        "cta_url": "shopify://blogs/news"
+      }
     },
     "submission": {
       "type": "submission",
@@ -121,7 +109,9 @@
       "block_order": [
         "faq_item_VFWV6k"
       ],
-      "settings": {}
+      "settings": {
+        "section_title": ""
+      }
     }
   },
   "order": [
