@@ -378,7 +378,7 @@
                             <div class="custom-checkbox"></div>
                             <div class="option-content">
                             <span class="title">{{ product.title }}</span>
-                            {{ product.description | metafield_tag }}
+                            {{ product.description | html }}
                             <span class="price">{{ product.price | money }}</span>
                             </div>
                         </label>
