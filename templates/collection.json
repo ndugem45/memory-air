@@ -1,0 +1,41 @@
+{
+	"sections": {
+		"hero-product": {
+			"type": "hero-product",
+			"settings": {}
+		},
+		"how-it-work": {
+			"type": "how-it-work",
+			"settings": {}
+		},
+		"pricing": {
+			"type": "pricing",
+			"settings": {}
+		},
+		"life": {
+			"type": "life",
+			"settings": {}
+		},
+		"stories": {
+			"type": "stories",
+			"settings": {}
+		},
+		"news": {
+			"type": "news",
+			"settings": {}
+		},
+		"faq-plain": {
+			"type": "faq-plain",
+			"settings": {}
+		}
+	},
+	"order": [
+		"hero-product",
+		"how-it-work",
+		"pricing",
+		"life",
+		"stories",
+		"news",
+		"faq-plain"
+	]
+}
