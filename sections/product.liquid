@@ -96,9 +96,11 @@
           Sits on your nightstand next to your bed.
         {% endif %}
       </p>
-      <a href="{{ section.settings.cta_btn_url }}" class="btn">
-        {{ section.settings.cta_btn_title }}
-      </a>
+      {% if section.settings.cta_btn_url != blank %}
+        <a href="{{ section.settings.cta_btn_url }}" class="btn">
+          {{ section.settings.cta_btn_title }}
+        </a>
+      {% endif %}
     </div>
     <img src="{{product_img}}" alt="">
   </div>

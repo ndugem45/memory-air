@@ -25,14 +25,16 @@
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0);
   }
   nav.scrolled.black::before,
-  nav.open::before{
-      background: white;
-      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  nav.open::before,
+  nav.scrolled.white.open::before{
+      background: white !important;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) !important;
   }
   nav.scrolled.white::before{
     background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%) !important;
     box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0) !important;
   }
+
   nav.scrolled::before,
   nav.open::before{
       opacity: 1;
