@@ -1,6 +1,10 @@
 {% comment %} for healthcare page {% endcomment %}
 
 {% assign science-display = 'science-illus.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign review1 = 'review-photo1.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign review2 = 'review-photo2.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign review3 = 'review-photo3.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign review4 = 'review-photo4.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
 
 {% style %}
 
@@ -83,7 +87,7 @@
         <div id="review-slider" class="slider">
         <div class="slider_item-wrap">
             <div class="slider_item">
-            <img src="/assets/images/review-photo1.webp" alt="">
+            <img src="{{ review1 }}" alt="">
             <h3 class="font-medium text-32">
                 “Risk free and backed by good science”
             </h3>
@@ -102,7 +106,7 @@
         </div>
         <div class="slider_item-wrap">
             <div class="slider_item">
-            <img src="/assets/images/review-photo2.webp" alt="">
+            <img src="{{review2}}" alt="">
             <h3 class="font-medium text-32">
                 “Risk free and backed by good science”
             </h3>
@@ -121,7 +125,7 @@
         </div>
         <div class="slider_item-wrap">
             <div class="slider_item">
-            <img src="/assets/images/review-photo3.webp" alt="">
+            <img src="{{ review3 }}" alt="">
             <h3 class="font-medium text-32">
                 “Risk free and backed by good science”
             </h3>
@@ -140,7 +144,7 @@
         </div>
         <div class="slider_item-wrap">
             <div class="slider_item">
-            <img src="/assets/images/review-photo4.webp" alt="">
+            <img src="{{ review4 }}" alt="">
             <h3 class="font-medium text-32">
                 “Risk free and backed by good science”
             </h3>

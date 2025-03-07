@@ -1,3 +1,8 @@
+{% assign img_contactus_open = 'img-contactus-open.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign img_contactus_1 = 'img-contactus-1.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign img_contactus_2 = 'img-contactus-2.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign img_contactus_3 = 'img-contactus-3.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+
 {% style %}
 	#shopify-section-{{section.id}} .hero-contact {
 		display: flex;
@@ -262,11 +267,11 @@
 		<div class="contactus_content">
 			<div class="contactus_content-image">
 				<div class="contactus_img-head m-btm m-32">
-					<img src="/assets/images/img-contactus-open.png" alt="" class="img-open illus">
+					<img src="{{ img_contactus_open }}" alt="" class="img-open illus">
 					<div class="image-wrapper">
-						<img src="/assets/images/img-contactus-1.png" alt="" class="illus">
-						<img src="/assets/images/img-contactus-2.png" alt="" class="illus">
-						<img src="/assets/images/img-contactus-3.png" alt="" class="illus">
+						<img src="{{ img_contactus_1 }}" alt="" class="illus">
+						<img src="{{ img_contactus_2 }}" alt="" class="illus">
+						<img src="{{ img_contactus_3 }}" alt="" class="illus">
 					</div>
 				</div>
 				<div class="contactus_img-text">

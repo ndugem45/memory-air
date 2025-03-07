@@ -1,4 +1,5 @@
 {% comment %} for healthcare page {% endcomment %}
+{% assign healthcareHero = 'healthcare_hero-img.png' | asset_url | append: '?v=' | append: 'timestamp' %}
 
 {% style %}
 	#shopify-section-{{section.id}} .healthcare_content{
@@ -79,7 +80,7 @@
 			</div>
 		</div>
 		<div class="healthcare_content-img">
-			<img src="/assets/images/healthcare_hero-img.png" alt="" class="illus">
+			<img src="{{ healthcareHero }}" alt="" class="illus">
 		</div>
 	</div>
 </div>
