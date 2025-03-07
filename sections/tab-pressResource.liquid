@@ -4,31 +4,6 @@
 {% assign card-img2 = 'press_card2.png' | asset_url | append: '?v=' | append: 'timestamp' %}
 
 {% style %}
-    /* #shopify-section-{{section.id}} .healthcare_content{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-    }
-    
-    #shopify-section-{{section.id}} .healthcare_content-text{
-        max-width: 640px;
-        width: 100%;
-    }
-    
-    #shopify-section-{{section.id}} .healthcare_content-img{
-    max-width: 650px;
-    width: 100%;
-    }
-    #shopify-section-{{section.id}} .healthcare_content-img > img{
-    max-width: 650px;
-    width: 100%;
-    } */
-
-
-
-/* tab-style */
 
 #shopify-section-{{section.id}} .press_tab-head{
     display: flex;
@@ -142,11 +117,11 @@ width: 100%;
 			<div class="press_content">
 				<div class="press_tab-head m-btm m-78">
 					<h2 class="tab-head_text text-32">Press & Resources</h2>
-					<div class="tab-head_button-wrapper">
+					{% comment %} <div class="tab-head_button-wrapper">
 
                         <a class="tab-button button-scientific text-16 active" data-tab="scientific-content">Scientific Articles</a>
                         <a class="tab-button button-press text-16" data-tab="press-content">Press</a>
-					</div>
+					</div> {% endcomment %}
 				</div>
 				<div class="press_tab-body">
                     <div class="tab-content press-content">
@@ -202,7 +177,7 @@ width: 100%;
                             </div>
                     </div>
 
-                    </div>
+                    {% comment %} </div> {% endcomment %}
                     <div class="tab-content scientific-content active">
 
                         <div class="card_press p-2">
