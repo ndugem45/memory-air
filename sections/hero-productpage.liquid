@@ -337,13 +337,15 @@
 		<div class="productpage_content">
 			<div class="productpage_content-image">
                 <img src="{{ featured_image.src | img_url: 'original' }}" alt="{{ featured_image.alt | escape }}" class="img-open illus">
-                <div class="image-wrapper">
-                    {% for image in product.images %}
-                        <div>
-                            <img src="{{ image.src | img_url: 'compact' }}" alt="{{ image.alt | escape }}" class="illus">
-                        </div>
-                    {% endfor %}
-                </div>
+                {% if product.images.length > 1 %}
+                    <div class="image-wrapper">
+                        {% for image in product.images %}
+                            <div>
+                                <img src="{{ image.src | img_url: 'compact' }}" alt="{{ image.alt | escape }}" class="illus">
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
 			</div>
 
             <div class="product-card">
