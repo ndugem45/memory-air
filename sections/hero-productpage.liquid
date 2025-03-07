@@ -351,25 +351,39 @@
             <div class="product-card">
                 <h2>{{ product.title }}</h2>
 
-                {% for variant in product.variants %}
+                {% if product.variants.length > 1%}
+                    {% for variant in product.variants %}
+                        <div class="option">
+                            <label>
+                                <input type="radio" name="memory-air" id="{{  variant.id }}" value="{{  variant.id }}">
+                                <div class="custom-checkbox"></div>
+                                <div class="option-content">
+                                <span class="title">{{ variant.title }}</span>
+                                {% if variant.metafields.custom.variant_description %}
+                                    {{ variant.metafields.custom.variant_description | metafield_tag }}
+                                    {% comment %} <ul>
+                                        <li>Filter auto-delivered every 6 months</li>
+                                        <li>No commitment, Cancel anytime</li>
+                                        </ul> {% endcomment %}
+                                {% endif %}
+                                <span class="price">{{ variant.metafields.custom.price_display }}</span>
+                                </div>
+                            </label>
+                        </div>
+                    {% endfor %}
+                {% else %}
                     <div class="option">
                         <label>
-                            <input type="radio" name="memory-air" id="{{  variant.id }}" value="{{  variant.id }}">
+                            <input type="radio" name="memory-air" id="{{  product.id }}" value="{{  variant.id }}" checked>
                             <div class="custom-checkbox"></div>
                             <div class="option-content">
-                            <span class="title">{{ variant.title }}</span>
-                            {% if variant.metafields.custom.variant_description %}
-                                {{ variant.metafields.custom.variant_description | metafield_tag }}
-                                {% comment %} <ul>
-                                    <li>Filter auto-delivered every 6 months</li>
-                                    <li>No commitment, Cancel anytime</li>
-                                    </ul> {% endcomment %}
-                            {% endif %}
-                            <span class="price">{{ variant.metafields.custom.price_display }}</span>
+                            <span class="title">{{ product.title }}</span>
+                            {{ product.description | metafield_tag }}
+                            <span class="price">{{ product.price | money }}</span>
                             </div>
                         </label>
                     </div>
-                {% endfor %}
+                {% endif %}
 
                 {% comment %} addThisProduct({{ product.variants.first.id }}) {% endcomment %}
             
