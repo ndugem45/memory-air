@@ -59,10 +59,12 @@
       {% endif %}
     </p>
     <div class="btn-wrap">
-      {% if section.settings.section_product %}
+      {% if section.settings.section_product != blank %}
         <a class="btn" href="{{ section.settings.section_product.url }}">Buy Now</a>
       {% endif %}
-      <a class="btn is-outline" href="{{ section.settings.video_cta }}">Watch video</a>
+      {% if section.settings.video_cta != blank %}
+        <a class="btn is-outline" href="{{ section.settings.video_cta }}">Watch video</a>
+      {% endif %}
     </div>
   </div>
 </div>
