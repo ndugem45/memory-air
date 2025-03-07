@@ -1,4 +1,6 @@
 <!-- /templates/customers/activate_account.liquid -->
+<section style="min-height: 70vh;padding-top: 20vh;">
+  <div class="container">
 {% form 'activate_customer_password' %}
 {{ form.errors | default_errors }}
 <div class="password">
@@ -15,3 +17,5 @@
   <input type="submit" name="decline" value="Decline Invitation" />
 </div>
 {% endform %}
+</div>
+</div>

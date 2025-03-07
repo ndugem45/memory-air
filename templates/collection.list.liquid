@@ -1,3 +1,5 @@
+<section style="min-height: 70vh;padding-top: 20vh;">
+  <div class="container">
 {% paginate collection.products by 2 %}
   <h1>{{ collection.title }}</h1>
   {% for product in collection.products %}
@@ -14,4 +16,6 @@
   {% endfor %}
   {% if paginate.pages > 1 %}{{ paginate | default_pagination }}{% endif %}
 {% endpaginate %}
+</div>
+</div>
 

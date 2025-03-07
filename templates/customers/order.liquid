@@ -1,5 +1,6 @@
 <!-- /templates/customers/order.liquid -->
-
+<section style="min-height: 70vh;padding-top: 20vh;">
+  <div class="container">
 <h2>Billing Address</h2>
 <p><span>Payment Status:</span> <span class="status_{{ order.financial_status }}">{{ order.financial_status }}</span></p>
 <p>{{ order.billing_address.name }}</p>
@@ -30,3 +31,5 @@
   </tr>
   {% endfor %}
 </table>
+</div>
+</div>
