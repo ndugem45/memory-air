@@ -447,7 +447,7 @@
 
         <img src="${item.image}" alt="">
         <div class="item_content">
-          <h4>${item.variant_title ?? item.title}</h4>
+          <h4>${item.variant_title && item.variant_title != 'null' ? item.variant_title : item.title}</h4>
           <span>
             ${item.newPrice}
           </span>
