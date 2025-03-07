@@ -15,12 +15,18 @@
         "settings": {
           "menu_right": "",
           "menu_left": "",
-          "section_product": "rustic-wooden-coffee-table"
+          "section_product": "memory-air-device"
         }
       },
       "footer": {
         "type": "footer",
-        "settings": {}
+        "settings": {
+          "footer_desc": "",
+          "foot_menu_column1": "",
+          "foot_menu_column2": "",
+          "foot_address": "Science Lab 3, 6619 South Dixie Highway, #251 Miami, FL 33143",
+          "foot_menu_btm": ""
+        }
       }
     },
     "content_for_index": []
