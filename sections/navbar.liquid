@@ -26,7 +26,9 @@
   }
   nav.scrolled.black::before,
   nav.open::before,
-  nav.scrolled.white.open::before{
+  nav.scrolled.white.open::before,
+  nav.scrolled.white.menu::before,
+  nav.menu::before{
       background: white !important;
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) !important;
   }
@@ -36,10 +38,12 @@
   }
 
   nav.scrolled::before,
-  nav.open::before{
+  nav.open::before,
+  nav.menu::before{
       opacity: 1;
   }
-  nav.scrolled:not(.open) {
+  nav.scrolled:not(.open),
+  nav.scrolled:not(.menu) {
       padding-block: 12px;
   }
   nav .container{
@@ -55,7 +59,8 @@
   }
   nav.black .logo,
   nav.white .logo,
-  nav.open .logo{
+  nav.open .logo,
+  nav.menu .logo{
       filter: invert(1);
   }
   nav .menu{
@@ -110,10 +115,14 @@
   nav.white .menu-toggle,
   nav.open .cart,
   nav.open .menu-toggle,
-  nav.open .menu a{
+  nav.open .menu a,
+  nav.menu .cart,
+  nav.menu .menu-toggle,
+  nav.menu .menu a{
       color: var(--color-secondary);
   }
-  nav .cart-menu {
+  nav .cart-menu ,
+  nav .mobile-menu{
     width: 0vw;
     overflow: hidden;
     position: fixed;
@@ -122,10 +131,25 @@
     top: 0;
     background: rgba(35, 35, 35, 0.7);
   }
-  nav.open .cart-menu {
+  nav .mobile-menu{
+    width: 100vw;
+    height: auto;
+    max-height: 0;
+    left: 0;
+    right: unset;
+    overflow: hidden;
+    transition: all 200ms ease;
+    transition-delay: 50ms;
+  }
+  nav:not(.menu) .mobile-menu{
+    /* transition-delay: 100ms;
+    transition: all 10ms ease;  */
+  }
+  nav.open .cart-menu{
     width: 100vw;
   }
-  nav .cart-menu .content {
+  nav .cart-menu .content,
+  nav .mobile-menu .content {
     height: 100%;
     background: white;
     width: 0px;
@@ -137,9 +161,46 @@
     transition: all 200ms ease;
     transition-delay: 100ms;
   }
+  nav .mobile-menu .content{
+    width: 100%;
+    opacity: 1;
+    float: left;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  nav.menu .mobile-menu .content{
+    width: 100%;
+    opacity: 1;
+  }
+  nav.menu .mobile-menu .content .divider{
+    width: 100%;
+    height: 1px;
+    background: black;
+  }
+  @media only screen and (max-width:1200px) {
+    nav .mobile-menu .content .menu{
+      display: flex !important;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+      padding-inline: 20px;
+    }
+    nav .mobile-menu .content .btn{
+      display: block !important;
+      text-align: center;
+      margin-top: 32px;
+    }
+  }
   nav.open .cart-menu .content {
     width: 400px;
     opacity: 1;
+  }
+  @media only screen and (max-width:1200px) {
+    nav.open .cart-menu .content {
+      width: 100%;
+    }
   }
   nav .cart-menu .content .head {
     display: flex;
@@ -355,6 +416,36 @@
   </div>
 </div>
 
+<div class="mobile-menu">
+  <div class="content">
+    <div class="menu">
+      <a href="/pages/science">The science</a>
+      <a href="/collections">Our Product</a>
+    </div>
+    <div class="divider"></div>
+    <div class="menu">
+      {% comment %} {% for link in section.settings.menu.links %}
+        {% assign child_list_handle = link.title | handleize %}
+        {% if linklists[child_list_handle].links != blank %}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+          [{% for childlink in linklists[child_list_handle].links %}
+            <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+          {% endfor %}]
+        {% else %}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {% endif %}
+      {% endfor %} {% endcomment %}
+      
+      <a href="/pages/about-us">About us</a>
+      <a href="/pages/healthcare">for healthcare professsional</a>
+      <a href="/blogs/news">press & Resources</a>
+    </div>
+    <a href="{{ section.settings.section_product.url }}" class="btn is-black">
+      Buy Now 
+    </a>
+  </div>
+</div>
+
 <div class="cart-menu">
   <div class="content">
     <div class="head">
@@ -418,6 +509,16 @@
     $(".cart").click(() => {
       navbar.classList.toggle('open');
       load()
+    });
+
+    $(".menu-toggle").click(() => {
+      navbar.classList.toggle('menu');
+      let menu = $('nav .mobile-menu');
+      if (menu[0].style.maxHeight) {
+        menu[0].style.maxHeight = null;
+      } else {
+        menu[0].style.maxHeight = menu[0].scrollHeight + "px";
+      }
     });
 
     window.addEventListener('scroll', () => {
