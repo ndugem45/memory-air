@@ -349,8 +349,8 @@
 			</div>
 
             <div class="product-card">
-                <h2>{{ product.title }} - {{ product | json }}</h2>
-                {% if product.variants.length > 1%}
+                <h2>{{ product.title }}</h2>
+                {% if product.variants != blank%}
                     {% for variant in product.variants %}
                         <div class="option">
                             <label>
