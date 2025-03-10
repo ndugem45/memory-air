@@ -278,6 +278,7 @@
 
         #shopify-section-{{section.id}} .productpage_content-image {
             padding: 10px;
+            width: 100%;
         }
 
         #shopify-section-{{section.id}} .productpage_content-form {
@@ -289,6 +290,11 @@
         #shopify-section-{{section.id}} .productpage_img-head > img {
             height: auto;
             
+        }
+
+        #shopify-section-{{section.id}} .img-open{
+            flex: unset;
+            height: 300px;
         }
 
         #shopify-section-{{section.id}} .image-wrapper {
@@ -364,7 +370,7 @@
                     </div>
                 {% endif %}
 
-                {% if product.variants != blank%}
+                {% comment %} {% if product.variants != blank%}
                     {% for variant in product.variants %}
                         {% if variant.requires_shipping == false %}
                             <div class="option">
@@ -384,22 +390,49 @@
                             <div class="hidden" id="{{  variant.id }}"></div>
                         {% endif %}
                     {% endfor %}
-                {% endif %}
+                {% endif %} {% endcomment %}
 
-                {% comment %} addThisProduct({{ product.variants.first.id }}) {% endcomment %}
+                <form method="post" action="/cart/add" id="product_form_{{ product.id }}" accept-charset="UTF-8" class="shopify-product-form" enctype="multipart/form-data">
+                    <input type="hidden" name="form_type" value="product" />
+                    <input type="hidden" name="utf8" value="✓" />
+
+                    <h2>{{ product.title }}</h2>
+
+                    {% if product.description != blank %}
+                        <div class="desc">
+                            {{ product.description | html }}
+                        </div>
+                    {% endif %}
+                    
+                    {% if product.variants != blank%}
+                        {% for variant in product.variants %}
+                            {% if variant.requires_shipping == false %}
+                                <div class="option">
+                                    <label>
+                                        <input type="radio" name="subscription" id="{{  variant.id }}" value="{{  variant.id }}">
+                                        <div class="custom-checkbox"></div>
+                                        <div class="option-content">
+                                        <span class="title">{{ variant.title }}</span>
+                                        {% if variant.metafields.custom.variant_description %}
+                                            {{ variant.metafields.custom.variant_description | metafield_tag }}
+                                        {% endif %}
+                                        <span class="price">{{ variant.metafields.custom.price_text }}</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            {% else %}
+                                {% comment %} <div class="hidden" id="{{  variant.id }}"></div> {% endcomment %}
+                                <input class="hidden" type="radio" name="device" id="{{  variant.id }}" value="{{  variant.id }}" checked>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+
+                    <input type="hidden" name="product-id" value="{{ product.id }}" />
+
+                    {% comment %} <button class="add-to-cart" onclick="addThisProduct()">Add to Cart</button> {% endcomment %}
+                    <button class="add-to-cart" type="submit">Add to Cart</button>
+                </form>
             
-                {% comment %} <div class="option">
-                <label>
-                    <input type="radio" name="memory-air">
-                    <div class="custom-checkbox"></div>
-                    <div class="option-content">
-                    <span class="title">Memory Air® (device only)</span>
-                    <span class="price">$799</span>
-                    </div>
-                </label>
-                </div> {% endcomment %}
-            
-                <button class="add-to-cart" onclick="addThisProduct()">Add to Cart</button>
             
                 <p class="info-text">
                 Buying more than one Memory Air®?<br>
