@@ -414,12 +414,11 @@
                 addThis([
                     {
                         'id': prodValue,
-                        'quantity': 1
-                    },
-                    {
-                        'id': variantValue,
-                        'quantity': 1
-                    },
+                        'quantity': 1,
+                        "properties":{
+                            "Subscription": variantValue
+                        }
+                    }
                 ], (result)=>{
                     if(result){
                         load();
