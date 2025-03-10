@@ -161,6 +161,12 @@
     transition: all 200ms ease;
     transition-delay: 100ms;
   }
+  @media only screen and (max-width:1200px) {
+    nav .cart-menu .content,
+    nav .mobile-menu .content{
+      padding-inline: 20px;
+    }
+  }
   nav .mobile-menu .content{
     width: 100%;
     opacity: 1;
@@ -185,7 +191,7 @@
       flex-direction: column;
       gap: 12px;
       align-items: flex-start;
-      padding-inline: 20px;
+      
     }
     nav .mobile-menu .content .btn{
       display: block !important;
@@ -508,6 +514,8 @@
     
     $(".cart").click(() => {
       navbar.classList.remove('menu');
+      let menu = $('nav .mobile-menu');
+      menu[0].style.maxHeight = null;
       navbar.classList.toggle('open');
       load()
     });
