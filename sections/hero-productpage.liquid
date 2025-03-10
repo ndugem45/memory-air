@@ -370,6 +370,8 @@
                     </div>
                 {% endif %}
 
+                <div class="sealsubs-target-element" data-product="{{ product | json | escape }}" data-handle="{{ product.handle }}"></div>
+
                 {% if product.variants != blank%}
                     {% for variant in product.variants %}
                         {% if variant.requires_shipping == false %}
