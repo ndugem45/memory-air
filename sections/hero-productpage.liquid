@@ -356,7 +356,7 @@
             <div class="product-card" id="{{ product.id }}">
                 <h2>{{ product.title }}</h2>
 
-                {% comment %} {{ product | json }} {% endcomment %}
+                {{ product | json }}
                 {% if product.description != blank %}
                     <div class="desc">
                         {{ product.description | html }}
