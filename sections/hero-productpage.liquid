@@ -356,7 +356,7 @@
             <div class="product-card" id="{{ product.id }}">
                 <h2>{{ product.title }}</h2>
 
-                {{ product | json }}
+                {% comment %} {{ product | json }} {% endcomment %}
                 {% if product.description != blank %}
                     <div class="desc">
                         {{ product.description | html }}
@@ -370,7 +370,7 @@
                                 <input type="radio" name="memory-air" id="{{  variant.id }}" value="{{  variant.id }}">
                                 <div class="custom-checkbox"></div>
                                 <div class="option-content">
-                                <span class="title">{{ variant.title }}</span>
+                                <span class="title">{{ variant.name }}</span>
                                 {% if variant.metafields.custom.variant_description %}
                                     {{ variant.metafields.custom.variant_description | metafield_tag }}
                                 {% endif %}
