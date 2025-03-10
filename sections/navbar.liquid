@@ -391,27 +391,27 @@
       <img src="{{logo}}" height="54" width="100" class="logo">
     </a>
     <div class="menu">
-      <a href="/pages/science">The science</a>
-      <a href="/collections">Our Product</a>
+      {%  if section.settings.menu_left != blank%}
+        {% for link in section.settings.menu_left.links %}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {% endfor %}
+      {% else %}
+        <a href="">The science</a>
+        <a href="">Our Product</a>
+      {% endif %}
     </div>
   </div>
   <div class="right">
     <div class="menu">
-      {% comment %} {% for link in section.settings.menu.links %}
-        {% assign child_list_handle = link.title | handleize %}
-        {% if linklists[child_list_handle].links != blank %}
+      {%  if section.settings.menu_right != blank%}
+        {% for link in section.settings.menu_left.links %}
           <a href="{{ link.url }}">{{ link.title }}</a>
-          [{% for childlink in linklists[child_list_handle].links %}
-            <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
-          {% endfor %}]
-        {% else %}
-          <a href="{{ link.url }}">{{ link.title }}</a>
-        {% endif %}
-      {% endfor %} {% endcomment %}
-      
-      <a href="/pages/about-us">About us</a>
-      <a href="/pages/healthcare">for healthcare professsional</a>
-      <a href="/blogs/news">press & Resources</a>
+        {% endfor %}
+      {% else %}
+        <a href="">About us</a>
+        <a href="">for healthcare professsional</a>
+        <a href="">press & Resources</a>
+      {% endif %}
     </div>
     
     <a href="{{ section.settings.section_product.url }}" class="btn is-black">
@@ -430,26 +430,26 @@
 <div class="mobile-menu">
   <div class="content">
     <div class="menu">
-      <a href="/pages/science">The science</a>
-      <a href="/collections">Our Product</a>
+      {%  if section.settings.menu_left != blank%}
+        {% for link in section.settings.menu_left.links %}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {% endfor %}
+      {% else %}
+        <a href="">The science</a>
+        <a href="">Our Product</a>
+      {% endif %}
     </div>
     <div class="divider"></div>
     <div class="menu">
-      {% comment %} {% for link in section.settings.menu.links %}
-        {% assign child_list_handle = link.title | handleize %}
-        {% if linklists[child_list_handle].links != blank %}
+      {%  if section.settings.menu_right != blank%}
+        {% for link in section.settings.menu_right.links %}
           <a href="{{ link.url }}">{{ link.title }}</a>
-          [{% for childlink in linklists[child_list_handle].links %}
-            <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
-          {% endfor %}]
-        {% else %}
-          <a href="{{ link.url }}">{{ link.title }}</a>
-        {% endif %}
-      {% endfor %} {% endcomment %}
-      
-      <a href="/pages/about-us">About us</a>
-      <a href="/pages/healthcare">for healthcare professsional</a>
-      <a href="/blogs/news">press & Resources</a>
+        {% endfor %}
+      {% else %}
+        <a href="">About us</a>
+        <a href="">for healthcare professsional</a>
+        <a href="">press & Resources</a>
+      {% endif %}
     </div>
     <a href="{{ section.settings.section_product.url }}" class="btn is-black">
       Buy Now 
