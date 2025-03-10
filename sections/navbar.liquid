@@ -404,7 +404,7 @@
   <div class="right">
     <div class="menu">
       {%  if section.settings.menu_right != blank%}
-        {% for link in section.settings.menu_left.links %}
+        {% for link in section.settings.menu_right.links %}
           <a href="{{ link.url }}">{{ link.title }}</a>
         {% endfor %}
       {% else %}
