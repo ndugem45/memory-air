@@ -507,11 +507,13 @@
     const navbar = document.querySelector('nav');
     
     $(".cart").click(() => {
+      navbar.classList.remove('menu');
       navbar.classList.toggle('open');
       load()
     });
 
     $(".menu-toggle").click(() => {
+      navbar.classList.remove('open');
       navbar.classList.toggle('menu');
       let menu = $('nav .mobile-menu');
       if (menu[0].style.maxHeight) {
