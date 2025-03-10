@@ -352,6 +352,7 @@
 
             <div class="product-card">
                 <h2>{{ product.title }}</h2>
+                {{ product | json }}
 
                 {% if product.variants != blank%}
                     {% for variant in product.variants %}
