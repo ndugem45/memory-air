@@ -683,10 +683,14 @@
       updater = jQuery.ajax({
         type: 'POST',
         url: '/cart/add.js',
-        data: data,
+        data: JSON.stringify(data),
+        contentType: 'application/json',
         dataType: 'json',
         success: function(data) {
           callback(true);
+        },
+        error: function(xhr, status, error) {
+          callback(false);
         }
       });
       {% comment %} updater = $.post("/cart/add.js", {
