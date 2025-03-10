@@ -674,13 +674,22 @@
     }
   };
   
-  const addThis = (id, q, multi) => {
+  const addThis = (data, callback) => {
     try {
       if (updater && typeof updater.abort === 'function') {
         updater.abort();
       }
-  
-      updater = $.post("/cart/add.js", {
+      
+      updater = jQuery.ajax({
+        type: 'POST',
+        url: '/cart/add.js',
+        data: data,
+        dataType: 'json',
+        success: function(data) {
+          callback(true);
+        }
+      });
+      {% comment %} updater = $.post("/cart/add.js", {
         "id": id,
         "quantity": q ? q : 1
       }, function (data, status) {
@@ -688,7 +697,7 @@
       }).fail((jqXHR, textStatus, errorThrown) => {
         console.error("Error adding to cart:", textStatus, errorThrown);
         multi(false);
-      });
+      }); {% endcomment %}
     } catch (e) {
       console.error("Add function error:", e);
       multi(false);

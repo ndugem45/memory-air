@@ -412,18 +412,26 @@
             const variantValue = document.querySelector('input[name="memory-air"]:checked').value
             const prodValue = document.querySelector('.product-card').getAttribute('id')
             if(variantValue){
-                addThis(prodValue, 1, (result)=>{
+                addThis([
+                    {
+                        'id': prodValue,
+                        'quantity': 1
+                    },
+                    {
+                        'id': variantValue,
+                        'quantity': 1
+                    },
+                ], (result)=>{
                     if(result){
-                        addThis(variantValue, 1, (result2)=>{
-                            if(result2){
-                                load();
-                                document.querySelector('nav').classList.add('open');
-                            }
-                        });
+                        load();
+                        document.querySelector('nav').classList.add('open');
                     }
-                })
+                });
             }else{
-                addThis(prodValue, 1, (result)=>{
+                addThis([{
+                    'id': prodValue,
+                    'quantity': 1
+                }], (result)=>{
                     if(result){
                         load();
                         document.querySelector('nav').classList.add('open');
