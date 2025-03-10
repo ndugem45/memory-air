@@ -13,8 +13,8 @@
       "navbar": {
         "type": "navbar",
         "settings": {
-          "menu_right": "",
-          "menu_left": "",
+          "menu_right": "menu-right",
+          "menu_left": "menu-left",
           "section_product": "memory-air-device"
         }
       },
