@@ -42,9 +42,12 @@
   nav.menu::before{
       opacity: 1;
   }
-  nav.scrolled:not(.open),
-  nav.scrolled:not(.menu) {
-      padding-block: 12px;
+  nav.scrolled{
+      padding-block: 12px !important;
+  }
+  nav.scrolled.open,
+  nav.scrolled.menu {
+      padding-block: 30px !important;
   }
   nav .container{
       display: flex;
@@ -375,7 +378,7 @@
 
 <div class="container">
   <button class="menu-toggle">
-    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="24" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0.792969 1.5H15.793" stroke="currentColor" stroke-width="1.5"/>
       <path d="M0.792969 6H15.793" stroke="currentColor" stroke-width="1.5"/>
       <path d="M0.792969 10.5H15.793" stroke="currentColor" stroke-width="1.5"/>
