@@ -350,9 +350,13 @@
                 {% endif %}
 			</div>
 
-            <div class="product-card">
+            <div class="product-card" id="{{ product.id }}">
                 <h2>{{ product.title }}</h2>
-                {{ product | json }}
+
+                {% comment %} {{ product | json }} {% endcomment %}
+                {% if product.description != blank %}
+                    {{ product.description | html }}
+                {% endif %}
 
                 {% if product.variants != blank%}
                     {% for variant in product.variants %}
@@ -370,20 +374,6 @@
                             </label>
                         </div>
                     {% endfor %}
-                {% else %}
-                    <div class="option">
-                        <label>
-                            <input type="radio" name="memory-air" id="{{  product.variants.first.id }}" value="{{  product.variants.first.id }}" checked>
-                            <div class="custom-checkbox"></div>
-                            <div class="option-content">
-                            <span class="title">{{ product.title }}</span>
-                            {% if product.description != blank %}
-                                {{ product.description | html }}
-                            {% endif %}
-                            <span class="price">{{ product.price | money }}</span>
-                            </div>
-                        </label>
-                    </div>
                 {% endif %}
 
                 {% comment %} addThisProduct({{ product.variants.first.id }}) {% endcomment %}
@@ -415,8 +405,10 @@
     const addThisProduct = () => {
         try{
             const variantValue = document.querySelector('input[name="memory-air"]:checked').value
+            const prodValue = document.querySelector('.product-card').getAttr('id')
             if(variantValue){
                 addThis(variantValue, 1)
+            }else{
             }
         }catch(e){
             console.log(e)
