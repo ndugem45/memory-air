@@ -18,7 +18,7 @@
   .submission .submission_card{
     display: flex;
     width: 100%;
-    height: 340px;
+    min-height: 340px;
     padding: 32px;
     flex-direction: column;
     align-items: flex-start;
@@ -26,6 +26,11 @@
     border-radius: 32px;
     background: var(--color-secondary);
     color: white;
+  }
+  @media only screen and (max-width: 990px) {
+    .submission .submission_card{
+      padding: 24px;
+    }
   }
   .submission .submission_card h2{
     font-family: "Cormorant Garamond";
@@ -49,6 +54,19 @@
     border-radius: 9999px;
     background: #FFF;
     max-width: 100%;
+  }
+  @media only screen and (max-width:990px) {
+    .submission .submission_card form input{
+      padding: 8px;
+    }
+    .submission .submission_card form{
+      flex-direction: column;
+      height: auto;
+      gap: 24px;
+      border-radius: 16px;
+      padding: 8px;
+      margin-top: 24px;
+    }
   }
   .submission .submission_card form input{
     flex: 1;
