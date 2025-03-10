@@ -350,6 +350,7 @@
 
             <div class="product-card">
                 <h2>{{ product.title }}</h2>
+                <div class="sealsubs-target-element" data-product="{{ product | json | escape }}" data-handle="{{ product.handle }}"></div>
                 {% if product.variants != blank%}
                     {% for variant in product.variants %}
                         <div class="option">
