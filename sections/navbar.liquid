@@ -683,7 +683,9 @@
       updater = jQuery.ajax({
         type: 'POST',
         url: '/cart/add.js',
-        data: JSON.stringify(data),
+        data: JSON.stringify({
+          'items': data
+         }),
         contentType: 'application/json',
         dataType: 'json',
         success: function(data) {
