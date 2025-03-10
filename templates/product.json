@@ -8,11 +8,29 @@
  * ------------------------------------------------------------
  */
 {
-	"sections": {
-		"hero-productpage": {
-			"type": "hero-productpage",
-			"settings": {}
-		}
-	},
-	"order": ["hero-productpage"]
+  "sections": {
+    "hero-productpage": {
+      "type": "hero-productpage",
+      "settings": {}
+    },
+    "1741588715d658788b": {
+      "type": "apps",
+      "blocks": {
+        "seal_subscriptions_subscription_widget_EqqLfz": {
+          "type": "shopify://apps/seal-subscriptions/blocks/subscription-widget/13b25004-a140-4ab7-b5fe-29918f759699",
+          "settings": {
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "seal_subscriptions_subscription_widget_EqqLfz"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero-productpage",
+    "1741588715d658788b"
+  ]
 }
