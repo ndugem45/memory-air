@@ -366,12 +366,11 @@
                 {% if product.variants != blank%}
                     {% for variant in product.variants %}
                         <div class="option">
-                            {{ variant | json | escape }}
                             <label>
                                 <input type="radio" name="memory-air" id="{{  variant.id }}" value="{{  variant.id }}">
                                 <div class="custom-checkbox"></div>
                                 <div class="option-content">
-                                <span class="title">{{ variant.title }}</span>
+                                <span class="title">{{ variant.title }} --- {{ variant | json | escape }}</span>
                                 {% if variant.metafields.custom.variant_description %}
                                     {{ variant.metafields.custom.variant_description | metafield_tag }}
                                 {% endif %}
