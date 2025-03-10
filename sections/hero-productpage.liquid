@@ -353,7 +353,7 @@
                 {% endif %}
 			</div>
 
-            <div class="product-card" id="{{ product.id }}">
+            <div class="product-card">
                 <h2>{{ product.title }}</h2>
 
                 {% comment %} {{ product | json }} {% endcomment %}
@@ -414,7 +414,7 @@
     const addThisProduct = () => {
         try{
             const variantValue = document.querySelector('input[name="memory-air"]:checked').value
-            const prodValue = document.querySelector('.product-card').getAttribute('id')
+            const prodValue = document.querySelector('.hidden').getAttribute('id')
             if(variantValue){
                 addThis([
                     {
