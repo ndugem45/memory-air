@@ -361,15 +361,16 @@
 			</div>
 
             <div class="product-card">
-                {% comment %} <h2>{{ product.title }}</h2>
+                <h2>{{ product.title }}</h2>
 
+                {% comment %} {{ product | json }} {% endcomment %}
                 {% if product.description != blank %}
                     <div class="desc">
                         {{ product.description | html }}
                     </div>
-                {% endif %} {% endcomment %}
+                {% endif %}
 
-                {% comment %} {% if product.variants != blank%}
+                {% if product.variants != blank%}
                     {% for variant in product.variants %}
                         {% if variant.requires_shipping == false %}
                             <div class="option">
@@ -389,49 +390,10 @@
                             <div class="hidden" id="{{  variant.id }}"></div>
                         {% endif %}
                     {% endfor %}
-                {% endif %} {% endcomment %}
-
-                <form method="post" action="/cart/add" id="product_form_{{ product.id }}" accept-charset="UTF-8" class="shopify-product-form" enctype="multipart/form-data">
-                    <input type="hidden" name="form_type" value="product" />
-                    <input type="hidden" name="utf8" value="✓" />
-
-                    <h2>{{ product.title }}</h2>
-
-                    {% if product.description != blank %}
-                        <div class="desc">
-                            {{ product.description | html }}
-                        </div>
-                    {% endif %}
-                    
-                    {% if product.variants != blank%}
-                        {% for variant in product.variants %}
-                            {% if variant.requires_shipping == false %}
-                                <div class="option">
-                                    <label>
-                                        <input type="radio" name="subscription" id="{{  variant.id }}" value="{{  variant.id }}">
-                                        <div class="custom-checkbox"></div>
-                                        <div class="option-content">
-                                        <span class="title">{{ variant.title }}</span>
-                                        {% if variant.metafields.custom.variant_description %}
-                                            {{ variant.metafields.custom.variant_description | metafield_tag }}
-                                        {% endif %}
-                                        <span class="price">{{ variant.metafields.custom.price_text }}</span>
-                                        </div>
-                                    </label>
-                                </div>
-                            {% else %}
-                                {% comment %} <div class="hidden" id="{{  variant.id }}"></div> {% endcomment %}
-                                <input class="hidden" type="radio" name="device" id="{{  variant.id }}" value="{{  variant.id }}" checked>
-                            {% endif %}
-                        {% endfor %}
-                    {% endif %}
-
-                    <input type="hidden" name="product-id" value="{{ product.id }}" />
-
-                    {% comment %} <button class="add-to-cart" onclick="addThisProduct()">Add to Cart</button> {% endcomment %}
-                    <button class="add-to-cart" type="submit">Add to Cart</button>
-                </form>
+                {% endif %}
+                
             
+                <button class="add-to-cart" onclick="addThisProduct()">Add to Cart</button>
             
                 <p class="info-text">
                 Buying more than one Memory Air®?<br>
