@@ -349,7 +349,7 @@
 			</div>
 
             <div class="product-card">
-                <h2>{{ product.title }} - {{ product.variants | json }}</h2>
+                <h2>{{ product.title }} - {{ product | json }}</h2>
                 {% if product.variants.length > 1%}
                     {% for variant in product.variants %}
                         <div class="option">
