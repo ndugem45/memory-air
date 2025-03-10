@@ -350,7 +350,7 @@
 
             <div class="product-card">
                 <h2>{{ product.title }}</h2>
-                
+
                 {% if product.variants != blank%}
                     {% for variant in product.variants %}
                         <div class="option">
@@ -374,7 +374,9 @@
                             <div class="custom-checkbox"></div>
                             <div class="option-content">
                             <span class="title">{{ product.title }}</span>
-                            {{ product.description | html }}
+                            {% if product.description != blank %}
+                                {{ product.description | html }}
+                            {% endif %}
                             <span class="price">{{ product.price | money }}</span>
                             </div>
                         </label>
