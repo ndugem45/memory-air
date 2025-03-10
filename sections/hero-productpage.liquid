@@ -361,14 +361,13 @@
 			</div>
 
             <div class="product-card">
-                <h2>{{ product.title }}</h2>
+                {% comment %} <h2>{{ product.title }}</h2>
 
-                {% comment %} {{ product | json }} {% endcomment %}
                 {% if product.description != blank %}
                     <div class="desc">
                         {{ product.description | html }}
                     </div>
-                {% endif %}
+                {% endif %} {% endcomment %}
 
                 {% comment %} {% if product.variants != blank%}
                     {% for variant in product.variants %}
