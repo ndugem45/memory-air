@@ -161,17 +161,19 @@
 
     #shopify-section-{{section.id}} .option {
         background: white;
-        border-radius: 12px;
+        border-radius: 16px;
         padding: 16px;
         margin-bottom: 12px;
-        border: 2px solid #ddd;
+        border: 1px solid #ddd;
         transition: all 0.3s ease-in-out;
     }
 
     #shopify-section-{{section.id}} .option:hover {
         border-color: #aa7e71;
         background: rgba(170, 126, 113, 0.1);
-        box-shadow: 0 4px 12px rgba(170, 126, 113, 0.2);
+        /* box-shadow: 0 4px 12px rgba(170, 126, 113, 0.2); */
+        border: 0.5px solid #E1A277;
+        background: #F6F2F1;
     }
 
     #shopify-section-{{section.id}} .option label {
@@ -188,7 +190,7 @@
     #shopify-section-{{section.id}} .custom-checkbox {
         width: 20px;
         height: 20px;
-        border: 2px solid #aa7e71;
+        border: 1px solid #aa7e71;
         border-radius: 4px;
         display: flex;
         align-items: center;
@@ -198,7 +200,8 @@
 
 
     #shopify-section-{{section.id}} .option input:checked + .custom-checkbox {
-        background: #aa7e71;
+        /* background: #aa7e71; */
+        background: rgba(35, 35, 35, 1);
         border-color: #aa7e71;
         position: relative;
     }
