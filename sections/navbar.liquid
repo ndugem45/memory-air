@@ -674,7 +674,7 @@
     }
   };
   
-  const addThis = (id, q) => {
+  const addThis = (id, q, multi) => {
     try {
       if (updater && typeof updater.abort === 'function') {
         updater.abort();
@@ -684,13 +684,14 @@
         "id": id,
         "quantity": q ? q : 1
       }, function (data, status) {
-        load();
-        document.querySelector('nav').classList.add('open');
+          multi(true);
       }).fail((jqXHR, textStatus, errorThrown) => {
         console.error("Error adding to cart:", textStatus, errorThrown);
+        multi(false);
       });
     } catch (e) {
       console.error("Add function error:", e);
+      multi(false);
     }
   };
   
