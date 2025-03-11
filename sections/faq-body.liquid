@@ -99,7 +99,7 @@
           {% if section.blocks != blank %}
             {%-  for block in section.blocks -%}
               <li>
-                <a href="">
+                <a href="#{{ block.settings.faq_cat_title | upcase | remove: ' ' | join: '-' }}">
                   {{ block.settings.faq_cat_title }}
                 </a>
               </li>
@@ -110,7 +110,7 @@
       <div class="basic_item">
         {% if section.blocks != blank %}
           {%-  for block in section.blocks -%}
-            <h3>
+            <h3 id="{{ block.settings.faq_cat_title | upcase | remove: ' ' | join: '-' }}">
               {{ block.settings.faq_cat_title }}
             </h3>
             <div class="faq_wrap">
