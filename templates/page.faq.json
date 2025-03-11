@@ -1,13 +1,46 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-	"sections": {
-		"hero-faq": {
-			"type": "hero-faq",
-			"settings": {}
-		},
-		"faq-body": {
-			"type": "faq-body",
-			"settings": {}
-		}
-	},
-	"order": ["hero-faq", "faq-body"]
+  "sections": {
+    "hero-faq": {
+      "type": "hero-faq",
+      "settings": {
+        "section_label": "Get answers to common questions here.",
+        "section_title": ""
+      }
+    },
+    "faq-body": {
+      "type": "faq-body",
+      "blocks": {
+        "faq_cat_PtdqXA": {
+          "type": "faq_cat",
+          "settings": {
+            "faq_cat_title": "General Information",
+            "faq_object": [
+              "what-is-memory-air",
+              "what-is-the-science-behind-olfactory-enrichment",
+              "how-does-memory-air-work",
+              "on-which-side-of-the-bed-should-i-place-my-memory-air",
+              "does-memory-air-cover-two-people-in-the-same-bed"
+            ]
+          }
+        }
+      },
+      "block_order": [
+        "faq_cat_PtdqXA"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero-faq",
+    "faq-body"
+  ]
 }
