@@ -62,7 +62,7 @@
                 const index = e.currentTarget.getAttribute("id").split("tab-btn-")[1];
                 $(".tab_btn button").removeClass("active");
                 $(e.currentTarget).addClass("active");
-                $("#memory-slide").slick("slickGoTo", index);
+                $("#memory-slide").slick("slickGoTo", index-1);
             });
 
         });
