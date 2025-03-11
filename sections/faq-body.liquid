@@ -99,9 +99,9 @@
           {% if section.blocks != blank %}
             {%-  for block in section.blocks -%}
               <li>
-                <a href="#{{ block.settings.faq_cat_title | upcase | remove: ' ' | join: '-' }}">
+                <div onclick="jumpTo('{{ block.settings.faq_cat_title | upcase | remove: ' ' | join: '-' }}')">
                   {{ block.settings.faq_cat_title }}
-                </a>
+                </div>
               </li>
             {% endfor %}
           {% endif %}
@@ -123,6 +123,13 @@
       </div>
     </div>
   </div>
+
+  <script>
+    function jumpTo(id){
+      const element = getElementById(id);
+      element.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+    }
+  </script>
 
 {% schema %}
   {
