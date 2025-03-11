@@ -22,29 +22,117 @@
         "faq_cat_PtdqXA": {
           "type": "faq_cat",
           "settings": {
-            "faq_cat_title": "General <span>Information</span>",
+            "faq_cat_title": "General Information <span>& Overview</span>",
             "faq_list": [
               "what-is-memory-air",
               "what-is-the-science-behind-olfactory-enrichment",
-              "how-does-memory-air-work"
+              "what-are-the-most-commonly-reported-benefits-of-memory-air",
+              "if-i-have-good-olfactory-stimulation-do-i-need-memory-air",
+              "what-is-the-difference-between-memory-air-and-aromatherapy",
+              "cant-i-do-this-on-my-own-without-memory-air-by-sniffing-many-scents-from-their-bottles",
+              "can-i-use-a-diffuser-and-hand-switch-different-scents-and-get-the-same-results",
+              "how-do-i-tell-real-science-from-junk-science",
+              "this-sounds-too-good-to-be-true-is-it",
+              "how-big-is-memory-air-will-it-take-up-a-lot-of-space",
+              "is-memory-air-battery-operated-or-a-plug-in"
             ]
           }
         },
         "faq_cat_HNKQEN": {
           "type": "faq_cat",
           "settings": {
-            "faq_cat_title": "Setup <span>and Usage</span>",
+            "faq_cat_title": "Setup <span>& Troubleshooting</span>",
             "faq_list": [
-              "what-is-memory-air",
-              "what-is-the-science-behind-olfactory-enrichment",
-              "how-does-memory-air-work"
+              "will-i-need-to-read-instructions-or-watch-the-instructional-video-when-i-set-up-my-memory-air",
+              "what-if-i-forgot-to-push-the-start-button",
+              "what-should-i-do-if-memory-air-is-not-operating-correctly",
+              "do-i-have-to-reset-my-memory-air-for-daylight-savings-time",
+              "do-i-have-to-reset-my-memory-air-after-a-power-outage",
+              "what-if-i-knock-the-device-over",
+              "what-happens-if-memory-air-stops-working-or-gets-clogged"
+            ]
+          }
+        },
+        "faq_cat_mxhjYN": {
+          "type": "faq_cat",
+          "settings": {
+            "faq_cat_title": "Health <span>& Safety</span>",
+            "faq_list": [
+              "does-memory-air-have-side-effects",
+              "does-memory-air-contain-any-stimulants-like-some-supplements-do",
+              "does-memory-air-contain-any-drugs",
+              "can-i-use-memory-air-with-my-current-medications",
+              "does-the-us-food-drug-administration-have-warnings-about-some-memory-supplements",
+              "what-if-im-allergic-or-sensitive-to-certain-scents"
+            ]
+          }
+        },
+        "faq_cat_epgyYA": {
+          "type": "faq_cat",
+          "settings": {
+            "faq_cat_title": "Usage Guidance <span>(Daily Use & Placement)</span>",
+            "faq_list": [
+              "how-does-memory-air-work",
+              "on-which-side-of-the-bed-should-i-place-my-memory-air",
+              "does-memory-air-cover-two-people-in-the-same-bed",
+              "when-is-the-best-time-to-use-memory-air-while-sleeping-working-watching-videos-reading",
+              "can-i-put-memory-air-anywhere-in-my-room",
+              "im-a-light-sleeper-is-memory-air-quiet",
+              "how-long-will-it-take-to-feel-results",
+              "what-if-i-dont-like-how-some-of-the-scents-smell",
+              "do-i-have-to-do-any-work",
+              "what-if-i-go-away-and-my-memory-air-runs-dry"
+            ]
+          }
+        },
+        "faq_cat_epEX47": {
+          "type": "faq_cat",
+          "settings": {
+            "faq_cat_title": "Refills <span>& Maintenance</span>",
+            "faq_list": [
+              "how-many-scents-are-in-each-monthly-refill",
+              "what-specific-scents-are-in-each-cassette",
+              "what-if-there-are-scents-still-left-in-my-refill-after-30-days-can-i-continue-to-use-it-until-theyre-all-gone",
+              "how-often-does-a-refill-need-to-be-changed-is-there-an-indicator",
+              "does-memory-air-have-a-filter"
+            ]
+          }
+        },
+        "faq_cat_XDWy8g": {
+          "type": "faq_cat",
+          "settings": {
+            "faq_cat_title": "Purchasing <span>& Membership</span>",
+            "faq_list": [
+              "do-i-need-a-prescription-to-receive-memory-air",
+              "is-memory-air-covered-by-insurance",
+              "where-can-i-buy-memory-air",
+              "is-memory-air-available-on-amazon",
+              "how-do-i-cancel-my-membership",
+              "what-if-i-paid-for-a-year-in-advance-but-then-want-a-refund",
+              "will-memory-air-work-outside-the-united-states"
+            ]
+          }
+        },
+        "faq_cat_ffdUpM": {
+          "type": "faq_cat",
+          "settings": {
+            "faq_cat_title": "Memory Testing <span>& Tracking</span>",
+            "faq_list": [
+              "how-do-you-test-to-get-a-baseline-measurement-of-my-memory",
+              "i-have-my-spouse-partner-in-my-bed-can-we-both-be-memory-tested",
+              "what-if-i-have-changed-my-spouse-or-partner-can-i-have-his-or-her-memory-tested-before-they-start-the-memory-air"
             ]
           }
         }
       },
       "block_order": [
         "faq_cat_PtdqXA",
-        "faq_cat_HNKQEN"
+        "faq_cat_HNKQEN",
+        "faq_cat_mxhjYN",
+        "faq_cat_epgyYA",
+        "faq_cat_epEX47",
+        "faq_cat_XDWy8g",
+        "faq_cat_ffdUpM"
       ],
       "settings": {}
     }
