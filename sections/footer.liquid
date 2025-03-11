@@ -325,8 +325,10 @@
 
 <script>
   $(document).ready(()=>{
-    const date = new window.Date.getFullYear();
-    $('#footer_year').text(date)
+    try{
+      const date = new window.Date.getFullYear();
+      $('#footer_year').text(date)
+    }catch(e){}
   })
 </script>
 
