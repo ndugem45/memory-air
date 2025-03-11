@@ -61,7 +61,7 @@
     "banner": {
       "type": "banner",
       "settings": {
-        "cta_url": "",
+        "cta_url": "shopify://pages/membership",
         "cta_title": "Login to Member Portal"
       }
     },
