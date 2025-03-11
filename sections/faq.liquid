@@ -24,8 +24,8 @@
     {% else %}
       {% assign item = '' | split: '' %}
       {% assign item = item | push: 'Title' | push: 'Description' %}
-      {% assign title = item[0] %}
-      {% assign description = item[1] %}
+      {% assign faq_title = item[0] %}
+      {% assign faq_desc = item[1] %}
 
       {% render 'faq-accordion' with item %}
       {% render 'faq-accordion' with item %}

@@ -35,7 +35,48 @@
     },
     "faq": {
       "type": "faq",
-      "settings": {}
+      "blocks": {
+        "faq_item_WMai79": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "how-does-memory-air-work"
+          }
+        },
+        "faq_item_fNByN7": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "what-is-the-science-behind-olfactory-enrichment"
+          }
+        },
+        "faq_item_PTg9Ck": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "on-which-side-of-the-bed-should-i-place-my-memory-air"
+          }
+        },
+        "faq_item_4zpWrz": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "does-memory-air-cover-two-people-in-the-same-bed"
+          }
+        },
+        "faq_item_UYLhTc": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "how-long-will-it-take-to-feel-results"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_WMai79",
+        "faq_item_fNByN7",
+        "faq_item_PTg9Ck",
+        "faq_item_4zpWrz",
+        "faq_item_UYLhTc"
+      ],
+      "settings": {
+        "section_title": ""
+      }
     }
   },
   "order": [

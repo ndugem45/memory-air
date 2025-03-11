@@ -77,44 +77,32 @@
         "faq_item_RbUbgy": {
           "type": "faq_item",
           "settings": {
-            "faq_title": "What is Memory Air®?",
-            "faq_desc": "Memory Air® is an innovation based upon the latest science of Olfactory Enrichment, which shows that scientifically-selected odorants — delivered in a specific sequence — directly stimulate the brain’s main highway to your memory center.  Now, with this revolutionary, convenient, scent delivery system, you can improve your brain function in ways that aromatherapy, supplements, drugs, or computer games can’t come close to. Memory Air® is the perfect self-care for your brain."
-          }
-        },
-        "faq_item_Xe9CKQ": {
-          "type": "faq_item",
-          "settings": {
-            "faq_title": "What is the science behind Olfactory Enrichment?",
-            "faq_desc": "The science of Olfactory Enrichment is a fundamental breakthrough discovered by Dr. Michael Leon, Professor Emeritus, Neurobiology and Learning, University of California Irvine, along with a group of eminent scientists around the world.  Named one of the top 2% of scientists in the world, Dr. Leon discovered that when the olfactory system is stimulated in a very specific way, your brain function and memory are improved. To get these brain benefits, a variety of scents must be delivered consistently every day. So Dr. Leon developed Memory Air®, a device that does the whole process for you automatically, while you sleep!"
+            "faq_object": "how-does-memory-air-work"
           }
         },
         "faq_item_9PXGjb": {
           "type": "faq_item",
           "settings": {
-            "faq_title": "How does Memory Air® work?",
-            "faq_desc": "Memory Air® is designed to start dispensing your therapy one hour after you go to sleep.  On your first night with Memory Air®, you simply push the Start button one time when you go to bed, and then you’re done! \n\nThe Start button does not need to be pushed every night.  Memory Air® will remember when you go to bed and do everything automatically.\n\nThen when your monthly replacement Scent Belt arrives at your home, just remove the old belt and replace it with the new one. You do not have to push the Start button again"
+            "faq_object": "how-long-will-it-take-to-feel-results"
           }
         },
-        "faq_item_cJAjMx": {
+        "faq_item_RyhqKH": {
           "type": "faq_item",
           "settings": {
-            "faq_title": "On which side of the bed should I place my Memory Air®?",
-            "faq_desc": "You should place the device on the side of the bed you face while you sleep. So, if you sleep on your right side, then place the device on your left side of the bed. If you sleep on your left side, you should place your device on the right side of the bed.  If you predominantly sleep on your back, either side will do."
+            "faq_object": "will-memory-air-work-outside-the-united-states"
           }
         },
         "faq_item_kPkmb9": {
           "type": "faq_item",
           "settings": {
-            "faq_title": "Does Memory Air cover two people in the same bed?",
-            "faq_desc": "Memory Air® can be used by two people at once, as long as both can feel a slight air flow from the device on their face while in bed. Air flow may be disrupted by other fans, obstructions near the face, or nasal congestion or blockage, which can reduce effectiveness."
+            "faq_object": "what-should-i-do-with-my-memory-air-if-i-go-on-vacation"
           }
         }
       },
       "block_order": [
         "faq_item_RbUbgy",
-        "faq_item_Xe9CKQ",
         "faq_item_9PXGjb",
-        "faq_item_cJAjMx",
+        "faq_item_RyhqKH",
         "faq_item_kPkmb9"
       ],
       "settings": {
