@@ -8,43 +8,92 @@
  * ------------------------------------------------------------
  */
 {
-	"sections": {
-		"hero-product": {
-			"type": "hero-product",
-			"settings": {}
-		},
-		"how-it-work": {
-			"type": "how-it-work",
-			"settings": {}
-		},
-		"pricing": {
-			"type": "pricing",
-			"settings": {}
-		},
-		"life": {
-			"type": "life",
-			"settings": {}
-		},
-		"stories": {
-			"type": "stories",
-			"settings": {}
-		},
-		"news": {
-			"type": "news",
-			"settings": {}
-		},
-		"faq-plain": {
-			"type": "faq-plain",
-			"settings": {}
-		}
-	},
-	"order": [
-		"hero-product",
-		"how-it-work",
-		"pricing",
-		"life",
-		"stories",
-		"news",
-		"faq-plain"
-	]
+  "sections": {
+    "hero-product": {
+      "type": "hero-product",
+      "settings": {}
+    },
+    "how-it-work": {
+      "type": "how-it-work",
+      "settings": {}
+    },
+    "pricing": {
+      "type": "pricing",
+      "settings": {}
+    },
+    "life": {
+      "type": "life",
+      "settings": {
+        "section_title": ""
+      }
+    },
+    "stories": {
+      "type": "stories",
+      "settings": {
+        "section_title": ""
+      }
+    },
+    "news": {
+      "type": "news",
+      "settings": {
+        "section_title": "",
+        "cta_title": "",
+        "cta_url": ""
+      }
+    },
+    "faq-plain": {
+      "type": "faq-plain",
+      "blocks": {
+        "faq_item_Ry4Ake": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "how-does-memory-air-work"
+          }
+        },
+        "faq_item_QMzCWP": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "how-long-will-it-take-to-feel-results"
+          }
+        },
+        "faq_item_4MkUjk": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "when-is-the-best-time-to-use-memory-air-while-sleeping-working-watching-videos-reading"
+          }
+        },
+        "faq_item_UrCh8d": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "im-a-light-sleeper-is-memory-air-quiet"
+          }
+        },
+        "faq_item_aUCN7a": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "what-is-memory-air"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_Ry4Ake",
+        "faq_item_QMzCWP",
+        "faq_item_4MkUjk",
+        "faq_item_UrCh8d",
+        "faq_item_aUCN7a"
+      ],
+      "settings": {
+        "section_title": ""
+      }
+    }
+  },
+  "order": [
+    "hero-product",
+    "how-it-work",
+    "pricing",
+    "life",
+    "stories",
+    "news",
+    "faq-plain"
+  ]
 }
