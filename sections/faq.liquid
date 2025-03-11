@@ -19,7 +19,7 @@
   <div class="faq_wrap">
     {% if section.blocks != blank %}
       {%-  for block in section.blocks -%}
-        {% render 'faq-accordion' with block.settings %}
+        {% render 'faq-accordion' with block.settings.faq_object %}
       {% endfor %}
     {% else %}
       {% assign item = '' | split: '' %}
@@ -53,19 +53,10 @@
         "type": "faq_item",
         "settings": [
           {
-            "type": "text",
-            "id": "faq_title",
-            "label": "FAQ title"
-          },
-          {
-            "type": "textarea",
-            "id": "faq_desc",
-            "label": "FAQ description"
-          },
-          {
             "type": "metaobject",
-            "id": "faqs",
+            "id": "faq_object",
             "label": "Faq item",
+            "metaobject_type": "faq"
           },
         ]
       }
