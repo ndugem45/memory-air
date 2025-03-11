@@ -96,81 +96,28 @@
       <div class="toc">
         <div>Table of Content</div>
         <ul>
-          <li>
-            <a href="">
-              General Information
-            </a>
-          </li>
-          <li>
-            <a href="">
-              Setup & Usage
-            </a>
-          </li>
-          <li>
-            <a href="">
-              Effectiveness & Benefits
-            </a>
-          </li>
-          <li>
-            <a href="">
-              Maintenance & Troubleshooting
-            </a>
-          </li>
+          {% if section.blocks != blank %}
+            {%-  for block in section.blocks -%}
+              <li>
+                <a href="">
+                  {{ block.settings.faq_cat_title }}
+                </a>
+              </li>
+            {% endfor %}
+          {% endif %}
         </ul>
       </div>
       <div class="basic_item">
-        <h3>
-          General <br>
-          <span>
-            Information
-          </span>
-        </h3>
-        <div class="faq_wrap">
-          {% assign title = "Why isn't a diffuser enough to improve my memory?" %}
-          {% render 'faq-accordion' with title %}
-          {% render 'faq-accordion' with title %}
-          {% render 'faq-accordion' with title %}
-          {% render 'faq-accordion' with title %}
-        </div>
-        <h3>
-          General <br>
-          <span>
-            Information
-          </span>
-        </h3>
-        <div class="faq_wrap">
-          {% assign title = "Why isn't a diffuser enough to improve my memory?" %}
-          {% render 'faq-accordion' with title %}
-          {% render 'faq-accordion' with title %}
-          {% render 'faq-accordion' with title %}
-          {% render 'faq-accordion' with title %}
-        </div>
-        <h3>
-          General <br>
-          <span>
-            Information
-          </span>
-        </h3>
-        <div class="faq_wrap">
-          {% assign title = "Why isn't a diffuser enough to improve my memory?" %}
-          {% render 'faq-accordion' with title %}
-          {% render 'faq-accordion' with title %}
-          {% render 'faq-accordion' with title %}
-          {% render 'faq-accordion' with title %}
-        </div>
-        <h3>
-          General <br>
-          <span>
-            Information
-          </span>
-        </h3>
-        <div class="faq_wrap">
-          {% assign title = "Why isn't a diffuser enough to improve my memory?" %}
-          {% render 'faq-accordion' with title %}
-          {% render 'faq-accordion' with title %}
-          {% render 'faq-accordion' with title %}
-          {% render 'faq-accordion' with title %}
-        </div>
+        {% if section.blocks != blank %}
+          {%-  for block in section.blocks -%}
+            <h3>
+              {{ block.settings.faq_cat_title }}
+            </h3>
+            {%-  for item in block.settings.faq_list -%}
+              {% render 'faq-accordion' with item %}
+            {%- endfor -%}
+          {% endfor %}
+        {% endif %}
       </div>
     </div>
   </div>
@@ -185,13 +132,14 @@
         "type": "faq_cat",
         "settings": [
           {
-            "type": "text",
+            "type": "textarea",
             "id": "faq_cat_title",
-            "label": "FAQ category title"
+            "label": "FAQ category title",
+            "info": "Wrap italic font with <span>"
           },
           {
             "type": "metaobject_list",
-            "id": "faq_object",
+            "id": "faq_list",
             "label": "FAQ list",
             "metaobject_type": "faq"
           },
