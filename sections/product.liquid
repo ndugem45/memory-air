@@ -1,4 +1,5 @@
 {% assign product_img = 'MemoryAir2.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign video_section = 'Memory_Air.mp4' | asset_url | append: '?v=' | append: 'timestamp' %}
 
 {% style %}
   #shopify-section-{{section.id}}.product{
@@ -40,7 +41,7 @@
       text-align: center;
     }
   }
-  #shopify-section-{{section.id}}.product .left-content .head img{
+  #shopify-section-{{section.id}}.product .left-content .head .video{
     flex: 1;
     object-fit: contain;
   }
@@ -102,7 +103,10 @@
         </a>
       {% endif %}
     </div>
-    <img src="{{product_img}}" alt="">
+    {% comment %} <img src="{{product_img}}" alt=""> {% endcomment %}
+    <video autoplay muted loop>
+      <source src="{{ video_section }}" type="video/mp4">
+    </video>
   </div>
   <div class="right-content">
     <div class="item active">
