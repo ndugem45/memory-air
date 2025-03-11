@@ -81,6 +81,9 @@
     list-style: decimal;
     padding-left: 12px;
   }
+  #shopify-section-{{section.id}} .toc li div{
+    cursor: pointer;
+  }
   #shopify-section-{{section.id}} .toc a{
     color: var(--color-primary);
     font-family: "General Sans Regular";
@@ -126,7 +129,7 @@
 
   <script>
     function jumpTo(id){
-      const element = getElementById(id);
+      const element = document.getElementById(id);
       element.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
     }
   </script>
