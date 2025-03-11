@@ -7,6 +7,7 @@
 {% assign behind-img5 = 'behind_image-5.png' | asset_url | append: '?v=' | append: 'timestamp' %}
 
 {% assign behind-cta = 'behind_img-cta.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign pattern = 'pattern-brown.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
 	
 {% style %}
 
@@ -73,9 +74,10 @@
 		align-items: center;
 		justify-content: center;
 		border-radius: 16px;
-		background: #3C2E25;
 		padding: 80px 40px;
 		margin-top: 80px;
+		background: #3C2E25 url({{ pattern }}) no-repeat;
+		background-size: cover;
 	}
 	#shopify-section-{{section.id}} .behind_content-cta{
 		display: flex;
