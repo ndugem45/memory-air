@@ -42,6 +42,7 @@
   
     for (i = 0; i < acc.length; i++) {
       acc[i].addEventListener("click", function () {
+        console.log(event)
         event.currentTarget.classList.toggle("active");
         const panel = this.nextElementSibling;
         if (panel.style.maxHeight) {
