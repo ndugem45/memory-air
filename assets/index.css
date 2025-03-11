@@ -465,7 +465,7 @@ form {
 	justify-content: space-between;
 	cursor: pointer;
 }
-.faq_wrap .faq_item .head {
+.faq_wrap .faq_item .head div {
 	padding-right: 12px;
 	font-family: "General Sans Medium";
 	font-size: 24px;
@@ -644,7 +644,7 @@ form {
 		width: 100%;
 	}
 	.plain > .container > h2,
-	.plain > .container > h2 > span{
+	.plain > .container > h2 > span {
 		font-size: 38px;
 	}
 }
