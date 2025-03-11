@@ -105,7 +105,7 @@
           {% if section.blocks != blank %}
             {%-  for block in section.blocks -%}
               <li>
-                <div onclick="jumpTo('{{ block.settings.faq_cat_title | upcase | remove: ' ' | remove: '<SPAN>' | join: '-' }}')">
+                <div onclick="scrollToAnchor('{{ block.settings.faq_cat_title | upcase | remove: ' ' | remove: '<SPAN>' | remove: '</SPAN>' }}')">
                   {{ block.settings.faq_cat_title }}
                 </div>
               </li>
@@ -116,7 +116,7 @@
       <div class="basic_item">
         {% if section.blocks != blank %}
           {%-  for block in section.blocks -%}
-            <h3 id="{{ block.settings.faq_cat_title | upcase | remove: ' ' | remove: '<SPAN>' | join: '-' }}">
+            <h3 id="{{ block.settings.faq_cat_title | upcase | remove: ' ' | remove: '<SPAN>' | remove: '</SPAN>' }}">
               {{ block.settings.faq_cat_title }}
             </h3>
             <div class="faq_wrap">
@@ -131,10 +131,14 @@
   </div>
 
   <script>
-    function jumpTo(id){
-      const element = document.getElementById(id);
-      element.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
-    }
+    function scrollToAnchor(id) {
+      const target = document.getElementById(id);
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+      });
+  }
   </script>
 
 {% schema %}
