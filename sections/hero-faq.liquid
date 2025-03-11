@@ -22,14 +22,18 @@
 {% endstyle %}
 
 <div class="container">
-  <div class="hero-label">Get answers to common questions here.</div>
+  <div class="hero-label">{{ section.settings.section_label }}</div>
   <h1 class="text-center">
-    Frequenty Asked <br>
-    <span>
-      Questions
-    </span>
+    {% if section.settings.section_title != blank %}
+      {{ section.settings.section_title }}
+    {% else %}
+      Frequenty Asked <br>
+      <span>
+        Questions
+      </span>
+    {% endif %}
   </h1>
-  <button class="scroll-btn">
+  <div class="scroll-btn">
     <svg width="149" height="148" viewBox="0 0 149 148" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g filter="url(#filter0_dd_389_18462)">
         <rect x="14.792" y="14" width="120" height="120" rx="60" fill="#3C2E25" />
@@ -65,12 +69,26 @@
         </clipPath>
       </defs>
     </svg>
-  </button>
+  </div>
 </div>
 
 {% schema %}
   {
     "tag": "section",
-    "class": "hero-faq"
+    "class": "hero-faq",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_label",
+        "label": "Section label",
+        "default": "Get answers to common questions here."
+      },
+      {
+        "type": "textarea",
+        "id": "section_title",
+        "label": "Section title",
+        "info": "Wrap italic font with <span>"
+      },
+    ]
   }
 {% endschema %}

@@ -178,6 +178,25 @@
 {% schema %}
   {
     "tag": "section",
-    "class": "faq-body"
+    "class": "faq-body",
+    "blocks": [
+      {
+        "name": "FAQ Category",
+        "type": "faq_cat",
+        "settings": [
+          {
+            "type": "text",
+            "id": "faq_cat_title",
+            "label": "FAQ category title"
+          },
+          {
+            "type": "metaobject_list",
+            "id": "faq_object",
+            "label": "FAQ list",
+            "metaobject_type": "faq"
+          },
+        ]
+      }
+    ],
   }
 {% endschema %}
