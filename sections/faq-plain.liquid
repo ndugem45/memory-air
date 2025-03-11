@@ -6,17 +6,33 @@
 
   <div class="container">
     <h2 class="text-center m-btm m-54">
-      Maintenance and <br>
-      <span>
-        Troubleshooting
-      </span>
+      {% if section.settings.section_title != blank %}
+        {{ section.settings.section_title }}
+      {% else %}
+        Maintenance and <br>
+        <span>
+          Troubleshooting
+        </span>
+      {% endif %}
     </h2>
     {% assign title = "Why isn't a diffuser enough to improve my memory?" %}
     <div class="faq_wrap">
-      {% render 'faq-accordion' with title %}
-      {% render 'faq-accordion' with title %}
-      {% render 'faq-accordion' with title %}
-      {% render 'faq-accordion' with title %}
+      {% if section.blocks != blank %}
+        {%-  for block in section.blocks -%}
+          {% render 'faq-accordion' with block.settings.faq_object %}
+        {% endfor %}
+      {% else %}
+        {% assign item = '' | split: '' %}
+        {% assign item = item | push: 'Title' | push: 'Description' %}
+        {% assign title = item[0] %}
+        {% assign description = item[1] %}
+  
+        {% render 'faq-accordion' with item %}
+        {% render 'faq-accordion' with item %}
+        {% render 'faq-accordion' with item %}
+        {% render 'faq-accordion' with item %}
+      {% endif %}
+      
       <a href="" class="btn is-black">
         Go to FAQ
       </a>
@@ -26,6 +42,28 @@
 {% schema %}
   {
     "tag": "section",
-    "class": "faq plain"
+    "class": "faq plain",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "section_title",
+        "label": "Section title",
+        "info": "Wrap italic font with <span>"
+      },
+    ],
+    "blocks": [
+      {
+        "name": "FAQ Item",
+        "type": "faq_item",
+        "settings": [
+          {
+            "type": "metaobject",
+            "id": "faq_object",
+            "label": "Faq item",
+            "metaobject_type": "faq"
+          },
+        ]
+      }
+    ],
   }
 {% endschema %}
