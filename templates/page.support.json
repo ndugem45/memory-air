@@ -55,7 +55,9 @@
         "faq_item_Qh9grq"
       ],
       "settings": {
-        "section_title": ""
+        "section_title": "",
+        "section_cta": "shopify://pages/faqs",
+        "section_cta_title": "Go to FAQ"
       }
     },
     "banner": {
