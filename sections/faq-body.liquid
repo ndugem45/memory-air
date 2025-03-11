@@ -81,6 +81,9 @@
     list-style: decimal;
     padding-left: 12px;
   }
+  #shopify-section-{{section.id}} .toc li{
+    padding-bottom: 8px;
+  }
   #shopify-section-{{section.id}} .toc li div{
     cursor: pointer;
   }
@@ -102,7 +105,7 @@
           {% if section.blocks != blank %}
             {%-  for block in section.blocks -%}
               <li>
-                <div onclick="jumpTo('{{ block.settings.faq_cat_title | upcase | remove: ' ' | join: '-' }}')">
+                <div onclick="jumpTo('{{ block.settings.faq_cat_title | upcase | remove: ' ' | remove: '<SPAN>' | join: '-' }}')">
                   {{ block.settings.faq_cat_title }}
                 </div>
               </li>
@@ -113,7 +116,7 @@
       <div class="basic_item">
         {% if section.blocks != blank %}
           {%-  for block in section.blocks -%}
-            <h3 id="{{ block.settings.faq_cat_title | upcase | remove: ' ' | join: '-' }}">
+            <h3 id="{{ block.settings.faq_cat_title | upcase | remove: ' ' | remove: '<SPAN>' | join: '-' }}">
               {{ block.settings.faq_cat_title }}
             </h3>
             <div class="faq_wrap">
