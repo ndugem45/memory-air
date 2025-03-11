@@ -367,7 +367,7 @@
                 $(event.currentTarget).hide();
             });
         
-            const acc = document.getElementsByClassName("head");
+            {% comment %} const acc = document.getElementsByClassName("head");
             let i;
         
             for (i = 0; i < acc.length; i++) {
@@ -380,7 +380,7 @@
                         panel.style.maxHeight = panel.scrollHeight + "px";
                     }
                 });
-            }
+            } {% endcomment %}
         });
     </script>
     
