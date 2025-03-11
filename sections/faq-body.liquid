@@ -18,10 +18,16 @@
   #shopify-section-{{section.id}}.faq-body .basic_item {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 64px;
     flex: 1;
     padding-left: 68px;
     border-left: 0.5px solid #000;
+  }
+  #shopify-section-{{section.id}}.faq-body .item-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    flex: 1;
   }
   @media only screen and (max-width: 990px) {
     #shopify-section-{{section.id}}.faq-body .basic_item {
@@ -116,7 +122,7 @@
       <div class="basic_item">
         {% if section.blocks != blank %}
           {%-  for block in section.blocks -%}
-            <div>
+            <div class="item-wrap">
               <h3 id="{{ block.settings.faq_cat_title | upcase | remove: ' ' | remove: '<SPAN>' | remove: '</SPAN>' }}">
                 {{ block.settings.faq_cat_title }}
               </h3>
