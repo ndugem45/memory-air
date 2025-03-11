@@ -29,10 +29,22 @@
               "how-does-memory-air-work"
             ]
           }
+        },
+        "faq_cat_HNKQEN": {
+          "type": "faq_cat",
+          "settings": {
+            "faq_cat_title": "Setup <span>and Usage</span>",
+            "faq_list": [
+              "what-is-memory-air",
+              "what-is-the-science-behind-olfactory-enrichment",
+              "how-does-memory-air-work"
+            ]
+          }
         }
       },
       "block_order": [
-        "faq_cat_PtdqXA"
+        "faq_cat_PtdqXA",
+        "faq_cat_HNKQEN"
       ],
       "settings": {}
     }
