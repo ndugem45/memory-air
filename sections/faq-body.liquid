@@ -133,12 +133,12 @@
   <script>
     function scrollToAnchor(id) {
       const target = document.getElementById(id);
-      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - 130;
       window.scrollTo({
           top: targetPosition,
           behavior: 'smooth'
       });
-  }
+    }
   </script>
 
 {% schema %}
