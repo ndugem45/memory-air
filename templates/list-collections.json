@@ -83,7 +83,9 @@
         "faq_item_aUCN7a"
       ],
       "settings": {
-        "section_title": ""
+        "section_title": "",
+        "section_cta": "shopify://pages/faqs",
+        "section_cta_title": "Go to FAQ"
       }
     }
   },
