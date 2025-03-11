@@ -14,7 +14,16 @@
 			rgba(251, 248, 247, 1) 100%
 		);
 	}
+	#shopify-section-{{section.id}}.nose::after{
+		position: absolute;
+		z-index: 2;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background: linear-gradient(180deg, #FBF9F8 0%, rgba(251, 249, 248, 0.00) 100%);	
+	}
 	#shopify-section-{{section.id}} .content {
+		margin-inline: auto;
 		margin-top: 42px;
 		display: flex;
 		flex-direction: column;
