@@ -42,7 +42,8 @@
   
     for (i = 0; i < acc.length; i++) {
       acc[i].addEventListener("click", function () {
-        console.log(event.currentTarget)
+        event.stopPropagation()
+        console.log(event.currentTarget.classList)
         event.currentTarget.classList.toggle("active");
         const panel = this.nextElementSibling;
         if (panel.style.maxHeight) {
