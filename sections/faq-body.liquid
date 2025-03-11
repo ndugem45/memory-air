@@ -116,13 +116,15 @@
       <div class="basic_item">
         {% if section.blocks != blank %}
           {%-  for block in section.blocks -%}
-            <h3 id="{{ block.settings.faq_cat_title | upcase | remove: ' ' | remove: '<SPAN>' | remove: '</SPAN>' }}">
-              {{ block.settings.faq_cat_title }}
-            </h3>
-            <div class="faq_wrap">
-              {%-  for item in block.settings.faq_list -%}
-                {% render 'faq-accordion' with item %}
-              {%- endfor -%}
+            <div>
+              <h3 id="{{ block.settings.faq_cat_title | upcase | remove: ' ' | remove: '<SPAN>' | remove: '</SPAN>' }}">
+                {{ block.settings.faq_cat_title }}
+              </h3>
+              <div class="faq_wrap">
+                {%-  for item in block.settings.faq_list -%}
+                  {% render 'faq-accordion' with item %}
+                {%- endfor -%}
+              </div>
             </div>
           {% endfor %}
         {% endif %}
