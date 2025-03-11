@@ -447,11 +447,11 @@ form {
 	margin: auto;
 	display: flex;
 	flex-direction: column;
-	gap: 40px;
+	gap: 24px;
 }
 @media only screen and (max-width: 990px) {
 	.faq_wrap {
-		gap: 24px;
+		gap: 14px;
 	}
 }
 .faq_wrap.faq_item {
@@ -474,8 +474,8 @@ form {
 	line-height: 130%;
 }
 @media only screen and (max-width: 990px) {
-	.faq_wrap .faq_item .head {
-		font-size: 20px;
+	.faq_wrap .faq_item .head div {
+		font-size: 18px;
 	}
 }
 .faq_wrap .faq_item .head svg {
@@ -492,6 +492,11 @@ form {
 	padding-right: 52px;
 	padding-top: 12px;
 	transition: all 200ms ease;
+}
+@media only screen and (max-width: 990px) {
+	.faq_wrap .faq_item .body {
+		font-size: 14px;
+	}
 }
 
 .memory-los {
