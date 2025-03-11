@@ -480,6 +480,7 @@ form {
 }
 .faq_wrap .faq_item .head svg {
 	transition: all 200ms ease;
+	flex-shrink: 0;
 }
 .faq_wrap .faq_item .head.active svg {
 	transform: rotate(135deg);
