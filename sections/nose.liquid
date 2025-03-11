@@ -1,6 +1,6 @@
 {% comment %} for healthcare page {% endcomment %}
 
-{% assign science-display = 'science-illus.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign video_section = 'Memory_Air_Video.mp4' | asset_url | append: '?v=' | append: 'timestamp' %}
 
 {% style %}
 
@@ -84,7 +84,9 @@
         </h2>
 
         <div class="content">
-        
+					<video controls autoplay>
+						<source src="{{ video_section }}" type="video/mp4">
+					</video>
         </div>
     </div>
     
