@@ -32,9 +32,9 @@
         {% render 'faq-accordion' with item %}
         {% render 'faq-accordion' with item %}
       {% endif %}
-      
-      <a href="" class="btn is-black">
-        Go to FAQ
+
+      <a href="{{ section.settings.section_cta }}" class="btn is-black">
+        {{ section.settings.section_cta_title }}
       </a>
     </div>
   </div>
@@ -49,6 +49,17 @@
         "id": "section_title",
         "label": "Section title",
         "info": "Wrap italic font with <span>"
+      },
+      {
+        "type": "url",
+        "id": "section_cta",
+        "label": "Section cta url"
+      },
+      {
+        "type": "text",
+        "id": "section_cta_title",
+        "label": "Section cta title",
+        "default": "Go to FAQ"
       },
     ],
     "blocks": [
