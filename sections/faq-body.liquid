@@ -9,6 +9,7 @@
     background-color: white;
     width: 100%;
     gap: 100px;
+    align-items: flex-start;
   }
   @media only screen and (max-width: 990px) {
     #shopify-section-{{section.id}}.faq-body .wrapper {
@@ -68,7 +69,13 @@
   }
   #shopify-section-{{section.id}} .toc{
     position: sticky;
-    top: 100px;
+    top: 130px;
+  }
+  @media only screen and (max-width: 990px) {
+    #shopify-section-{{section.id}} .toc{
+      position: relative;
+      top: 0;
+    }
   }
   #shopify-section-{{section.id}} .toc > div{
     font-family: "General Sans Medium";
