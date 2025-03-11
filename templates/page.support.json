@@ -61,14 +61,14 @@
     "banner": {
       "type": "banner",
       "settings": {
-        "cta_url": "",
-        "cta_title": ""
+        "cta_url": "shopify://pages/membership",
+        "cta_title": "Login to Member Portal"
       }
     },
     "banner-cta": {
       "type": "banner-cta",
       "settings": {
-        "cta_url": "",
+        "cta_url": "shopify://pages/contact",
         "cta_title": "Contact Us"
       }
     }
