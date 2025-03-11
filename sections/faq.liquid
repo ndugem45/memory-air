@@ -43,7 +43,7 @@
       elem.addEventListener("click", function () {
         event.stopPropagation()
         let panel = elem.nextElementSibling;
-        elem.classList.toggle("active");
+        $(elem).toggleClass('active')
         if (panel.style.maxHeight) {
           panel.style.maxHeight = null;
         } else {
