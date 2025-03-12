@@ -189,7 +189,8 @@
       {%- for block in section.blocks -%}
         {% for article in block.settings.news_blog.articles %}
           <a href="{{ article.url }}" class="news_item">
-            <img src="{{ article.img.src | img_url: 'medium' }}" alt="" class="video m-btm m-32">
+            {% comment %}<img src="{{ article.img.src | img_url: 'medium' }}" alt="" class="video m-btm m-32"> {% endcomment %}
+            <iframe width="560" height="315" class="video m-btm m-32" src="https://www.youtube.com/embed/z9rmilXhO6Q?si=MBsKR5s0EgxA0wkd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             
             {% comment %} <iframe width="560" height="315" class="video m-btm m-32" src="{{  block.metafields.settings.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> {% endcomment %}
             
