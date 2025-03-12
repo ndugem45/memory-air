@@ -189,8 +189,7 @@
       {%- for block in section.blocks -%}
         {% for article in block.settings.news_blog.articles %}
           <a href="{{ article.url }}" class="news_item">
-            {% comment %}<img src="{{ article.img.src | img_url: 'medium' }}" alt="" class="video m-btm m-32"> {% endcomment %}
-            <iframe width="560" height="315" class="video m-btm m-32" src="https://www.youtube.com/embed/z9rmilXhO6Q?si=MBsKR5s0EgxA0wkd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <img src="{{ article.img.src | img_url: 'medium' }}" alt="" class="video m-btm m-32">
             
             {% comment %} <iframe width="560" height="315" class="video m-btm m-32" src="{{  block.metafields.settings.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> {% endcomment %}
             
@@ -205,7 +204,10 @@
       {%- endfor -%}
     {% else %}
 			<div class="news_item">
-				<img src="{{ thumb1 }}" alt="" class="video m-btm m-32">
+				{% comment %}
+				  <img src="{{ thumb1 }}" alt="" class="video m-btm m-32">
+				{% endcomment %}
+                <iframe width="560" height="315" class="video m-btm m-32" src="https://www.youtube.com/embed/z9rmilXhO6Q?si=MBsKR5s0EgxA0wkd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 				<h3 class="m-btm m-12 p-horizontal p-12">
 					#1 Researcher for Olfactory Enrichment
 				</h3>
@@ -214,7 +216,11 @@
 				</p>
 			</div>
 			<div class="news_item">
-				<img src="{{ thumb2 }}" alt="" class="video m-btm m-32">
+                {% comment %}
+                  <img src="{{ thumb2 }}" alt="" class="video m-btm m-32">
+                {% endcomment %}
+				<iframe width="560" height="315" class="video m-btm m-32" src="https://www.youtube.com/embed/z9rmilXhO6Q?si=MBsKR5s0EgxA0wkd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				
 				<h3 class="m-btm m-12 p-horizontal p-12">
 					The Solution to Memory Loss is Right Under Our Nose
 				</h3>
