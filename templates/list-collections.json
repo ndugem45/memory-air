@@ -11,7 +11,12 @@
   "sections": {
     "hero-product": {
       "type": "hero-product",
-      "settings": {}
+      "settings": {
+        "section_title": "",
+        "section_desc": "",
+        "section_product": "",
+        "video_cta": ""
+      }
     },
     "how-it-work": {
       "type": "how-it-work",
@@ -19,7 +24,10 @@
     },
     "pricing": {
       "type": "pricing",
-      "settings": {}
+      "settings": {
+        "product_left": "memory-air-refills",
+        "product_right": "memory-air-refills"
+      }
     },
     "life": {
       "type": "life",
