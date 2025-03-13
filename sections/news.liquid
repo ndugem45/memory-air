@@ -56,7 +56,6 @@
   <div class="news_grid m-btm m-54">
     {% if section.blocks != blank %}
       {%- for article in section.blocks -%}
-        {% comment %} {% for article in block.settings.news_blog.articles %} {% endcomment %}
           <a href="{{ article.settings.news_blog.url }}" class="news_item">
             <img src="{{ article.settings.news_blog.img.src | img_url: 'medium' }}" alt="" class="video m-btm m-32">
             
@@ -65,11 +64,10 @@
             <h3 class="m-btm m-12 p-horizontal p-12">
               {{ article.settings.news_blog.title }}
             </h3>
-            <div class="m-top m-4 p-horizontal p-12">
-              {{ article.settings.news_blog.content }}
+            <div class="desc m-top m-4 p-horizontal p-12">
+              {{ article.settings.news_blog.excerpt }}
             </div>
           </a>
-        {% comment %} {% endfor %} {% endcomment %}
       {%- endfor -%}
     {% else %}
       <div class="news_item">
