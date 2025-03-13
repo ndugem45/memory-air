@@ -183,88 +183,42 @@
 			<div class="press_content">
 				<div class="press_tab-head m-btm m-78">
 					<h2 class="tab-head_text text-32">Press & Resources</h2>
-					{% comment %} <div class="tab-head_button-wrapper">
-
-                        <a class="tab-button button-scientific text-16 active" data-tab="scientific-content">Scientific Articles</a>
-                        <a class="tab-button button-press text-16" data-tab="press-content">Press</a>
-					</div> {% endcomment %}
+                    {% if section.blocks != blank %}
+                        <div class="tab-head_button-wrapper">
+                            {% comment %} <a class="tab-button button-scientific text-16 active" data-tab="scientific-content">Scientific Articles</a> {% endcomment %}
+                            {% for blog in section.blocks %}
+                                {{ blog | json }}
+                                <a class="tab-button button-press text-16" data-tab="press-content">Press</a>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
 				</div>
 				<div class="press_tab-body">
-                    <div class="tab-content press-content active">
-
-                        {% comment %} <div>
-                           <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
-                           {{ article.author }} @ {{ article.created_at }}
-                           <div>
-                             {% if article.excerpt.size > 0 %}
-                               {{ article.excerpt }}
-                             {% else %}
-                               <p>{{ article.content | strip_html | truncatewords: 100 }}</p>
-                             {% endif %}
-                           </div>
-                         </div> {% endcomment %}
-                        {% for article in blog.articles %}
-                           <div class="card_press p-2">
-                                <img src="{{ article.image.src | img_url: 'medium' }}" alt="">
-                                <div class="card_press-body m-top m-32">
-                                    <h3 class="card_press-body-text font-semibold m-btm m-12">
-                                        {{ article.title }}
-                                    </h3>
-                                    {% if article.excerpt.size > 0 %}
-                                        {{ article.excerpt }}
-                                    {% else %}
-                                        <p class="card_press-body-dsc font-medium text-16 m-btm m-12">{{ article.content | strip_html | truncatewords: 100 }}</p>
-                                    {% endif %}
-                                    <a class="card_press-body-link font-semibold" href="{{ article.url }}">
-                                        Read more
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="20" viewBox="0 0 8 20" fill="none">
-                                            <path d="M1.70801 6.5L5.70801 10.5L1.70801 14.5" stroke="#232323" stroke-width="1.5" />
-                                        </svg>
-                                    </a>
+                    {% for blog in section.blocks %}
+                        <div class="tab-content press-content">
+                            {% for article in block.settings.news_blog.articles %}
+                            <div class="card_press p-2">
+                                    <img src="{{ article.image.src | img_url: 'medium' }}" alt="">
+                                    <div class="card_press-body m-top m-32">
+                                        <h3 class="card_press-body-text font-semibold m-btm m-12">
+                                            {{ article.title }}
+                                        </h3>
+                                        {% if article.excerpt.size > 0 %}
+                                            {{ article.excerpt }}
+                                        {% else %}
+                                            <p class="card_press-body-dsc font-medium text-16 m-btm m-12">{{ article.content | strip_html | truncatewords: 100 }}</p>
+                                        {% endif %}
+                                        <a class="card_press-body-link font-semibold" href="{{ article.url }}">
+                                            Read more
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="20" viewBox="0 0 8 20" fill="none">
+                                                <path d="M1.70801 6.5L5.70801 10.5L1.70801 14.5" stroke="#232323" stroke-width="1.5" />
+                                            </svg>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                        {% endfor %}
-                        {% comment %} {% for article in (1..10) %}
-                        <div class="card_press p-2">
-                            <img src={{card-img}} alt="">
-                            <div class="card_press-body m-top m-32">
-                                <h3 class="card_press-body-text font-semibold m-btm m-12">Want to Improve Your Memory? Smell these
-                                    Scents While Sleeping</h3>
-                                <p class="card_press-body-dsc font-medium text-16 m-btm m-12">Stay updated with our latest press
-                                    releases and brand announcements. Get all the essential details and insights about our company’s
-                                    journey.</p>
-                                <a class="card_press-body-link font-semibold">
-                                    Read more
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="20" viewBox="0 0 8 20" fill="none">
-                                        <path d="M1.70801 6.5L5.70801 10.5L1.70801 14.5" stroke="#232323" stroke-width="1.5" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                        {% endfor %} {% endcomment %}
-
-                        
-                    </div> 
-
-                    {% comment %} <div class="tab-content scientific-content active">
-
-                        <div class="card_press p-2">
-                            <img src={{card-img2}} alt="">
-                            <div class="card_press-body m-top m-32">
-                                <h3 class="card_press-body-text font-semibold m-btm m-12">Novelty Determines the Effects of
-                                    Olfactory Enrichment on...</h3>
-                                <p class="card_press-body-dsc font-medium text-16 m-btm m-12">Effect of intensive olfactory training
-                                    for cognitive function in patients with dementia</p>
-                                <a class="card_press-body-link font-semibold">
-                                    Read more
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="20" viewBox="0 0 8 20" fill="none">
-                                        <path d="M1.70801 6.5L5.70801 10.5L1.70801 14.5" stroke="#232323" stroke-width="1.5" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-
-                    </div> {% endcomment %}
+                            {% endfor %}
+                        </div> 
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -293,6 +247,19 @@
     {% schema %}
         {
             "tag": "section",
-            "class": "press"
+            "class": "press",
+            "blocks": [
+                {
+                    "type": "blog_list",
+                    "name": "Blog Post",
+                    "settings": [
+                        {
+                            "type": "blog",
+                            "id": "news_blog",
+                            "label": "Select blog category"
+                        }
+                    ]
+                }
+            ],
         }
     {% endschema %}

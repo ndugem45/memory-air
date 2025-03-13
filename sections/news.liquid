@@ -55,8 +55,8 @@
   </h2>
   <div class="news_grid m-btm m-54">
     {% if section.blocks != blank %}
-      {%- for block in section.blocks -%}
-        {% for article in block.settings.news_blog.articles %}
+      {%- for article in section.blocks -%}
+        {% comment %} {% for article in block.settings.news_blog.articles %} {% endcomment %}
           <a href="{{ article.url }}" class="news_item">
             <img src="{{ article.img.src | img_url: 'medium' }}" alt="" class="video m-btm m-32">
             
@@ -69,7 +69,7 @@
               {{ article.content }}
             </div>
           </a>
-        {% endfor %}
+        {% comment %} {% endfor %} {% endcomment %}
       {%- endfor -%}
     {% else %}
       <div class="news_item">
@@ -131,7 +131,7 @@
         "name": "Blog Post",
         "settings": [
           {
-            "type": "blog",
+            "type": "article",
             "id": "news_blog",
             "label": "Select blog post"
           }
