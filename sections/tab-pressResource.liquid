@@ -26,11 +26,11 @@
 
 #shopify-section-{{section.id}} .card_press,
 #shopify-section-{{section.id}} .card_press-body{
-display: flex;
-flex-direction: column;
-justify-content: start;
-align-items: start;
-max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    max-width: 400px;
 }
 
 #shopify-section-{{section.id}} .card_press-body-text{
@@ -49,15 +49,15 @@ max-width: 400px;
 }
 
 #shopify-section-{{section.id}} .card_press-body-link{
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-gap: 8px;
-color: #3C2E25;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    color: #3C2E25;
 }
 #shopify-section-{{section.id}} .press_tab-body{
-width: 100%;
+    width: 100%;
 
 }
 
@@ -83,9 +83,13 @@ width: 100%;
 
 #shopify-section-{{section.id}} .tab-content {
     display: none; /* Sembunyikan semua tab */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
 }
 #shopify-section-{{section.id}} .tab-content.active {
-    display: flex; /* Hanya tampilkan tab yang aktif */
+    display: grid; /* Hanya tampilkan tab yang aktif */
 }
 #shopify-section-{{section.id}} .tab-button {
     cursor: pointer;
@@ -126,18 +130,18 @@ width: 100%;
 				<div class="press_tab-body">
                     <div class="tab-content press-content active">
 
+                        {% comment %} <div>
+                           <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+                           {{ article.author }} @ {{ article.created_at }}
+                           <div>
+                             {% if article.excerpt.size > 0 %}
+                               {{ article.excerpt }}
+                             {% else %}
+                               <p>{{ article.content | strip_html | truncatewords: 100 }}</p>
+                             {% endif %}
+                           </div>
+                         </div> {% endcomment %}
                         {% for article in blog.articles %}
-                          {% comment %} <div>
-                             <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
-                             {{ article.author }} @ {{ article.created_at }}
-                             <div>
-                               {% if article.excerpt.size > 0 %}
-                                 {{ article.excerpt }}
-                               {% else %}
-                                 <p>{{ article.content | strip_html | truncatewords: 100 }}</p>
-                               {% endif %}
-                             </div>
-                           </div> {% endcomment %}
                            <div class="card_press p-2">
                                 <img src={{card-img}} alt="">
                                 <div class="card_press-body m-top m-32">
@@ -158,40 +162,7 @@ width: 100%;
                                 </div>
                             </div>
                         {% endfor %}
-                        {% comment %} <div class="card_press p-2">
-                            <img src={{card-img}} alt="">
-                            <div class="card_press-body m-top m-32">
-                                <h3 class="card_press-body-text font-semibold m-btm m-12">Want to Improve Your Memory? Smell these
-                                    Scents While Sleeping</h3>
-                                <p class="card_press-body-dsc font-medium text-16 m-btm m-12">Stay updated with our latest press
-                                    releases and brand announcements. Get all the essential details and insights about our company’s
-                                    journey.</p>
-                                <a class="card_press-body-link font-semibold">
-                                    Read more
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="20" viewBox="0 0 8 20" fill="none">
-                                        <path d="M1.70801 6.5L5.70801 10.5L1.70801 14.5" stroke="#232323" stroke-width="1.5" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div> {% endcomment %}
-
-                        {% comment %} <div class="card_press p-2">
-                            <img src={{card-img}} alt="">
-                            <div class="card_press-body m-top m-32">
-                                <h3 class="card_press-body-text font-semibold m-btm m-12">Want to Improve Your Memory? Smell these
-                                    Scents While Sleeping</h3>
-                                <p class="card_press-body-dsc font-medium text-16 m-btm m-12">Stay updated with our latest press
-                                    releases and brand announcements. Get all the essential details and insights about our company’s
-                                    journey.</p>
-                                <a class="card_press-body-link font-semibold">
-                                    Read more
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="20" viewBox="0 0 8 20" fill="none">
-                                        <path d="M1.70801 6.5L5.70801 10.5L1.70801 14.5" stroke="#232323" stroke-width="1.5" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-
+                        {% comment %} {% for article in (1..10) %}
                         <div class="card_press p-2">
                             <img src={{card-img}} alt="">
                             <div class="card_press-body m-top m-32">
@@ -207,42 +178,13 @@ width: 100%;
                                     </svg>
                                 </a>
                             </div>
-                        </div> {% endcomment %}
+                        </div>
+                        {% endfor %} {% endcomment %}
+
+                        
                     </div> 
 
                     {% comment %} <div class="tab-content scientific-content active">
-
-                        <div class="card_press p-2">
-                            <img src={{card-img2}} alt="">
-                            <div class="card_press-body m-top m-32">
-                                <h3 class="card_press-body-text font-semibold m-btm m-12">Novelty Determines the Effects of
-                                    Olfactory Enrichment on...</h3>
-                                <p class="card_press-body-dsc font-medium text-16 m-btm m-12">Effect of intensive olfactory training
-                                    for cognitive function in patients with dementia</p>
-                                <a class="card_press-body-link font-semibold">
-                                    Read more
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="20" viewBox="0 0 8 20" fill="none">
-                                        <path d="M1.70801 6.5L5.70801 10.5L1.70801 14.5" stroke="#232323" stroke-width="1.5" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="card_press p-2">
-                            <img src={{card-img2}} alt="">
-                            <div class="card_press-body m-top m-32">
-                                <h3 class="card_press-body-text font-semibold m-btm m-12">Novelty Determines the Effects of
-                                    Olfactory Enrichment on...</h3>
-                                <p class="card_press-body-dsc font-medium text-16 m-btm m-12">Effect of intensive olfactory training
-                                    for cognitive function in patients with dementia</p>
-                                <a class="card_press-body-link font-semibold">
-                                    Read more
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="20" viewBox="0 0 8 20" fill="none">
-                                        <path d="M1.70801 6.5L5.70801 10.5L1.70801 14.5" stroke="#232323" stroke-width="1.5" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
 
                         <div class="card_press p-2">
                             <img src={{card-img2}} alt="">
