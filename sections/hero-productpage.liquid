@@ -364,11 +364,11 @@
                 <h2>{{ product.title }}</h2>
 
                 {% comment %} {{ product | json }} {% endcomment %}
-                {% if product.description != blank %}
+                {% comment %} {% if product.description != blank %}
                     <div class="desc">
                         {{ product.description | html }}
                     </div>
-                {% endif %}
+                {% endif %} {% endcomment %}
 
                 {% comment %} <div class="sealsubs-target-element" data-product="{{ product | json | escape }}" data-handle="{{ product.handle }}"></div> {% endcomment %}
 
