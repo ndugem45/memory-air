@@ -5,6 +5,7 @@
   #shopify-section-{{section.id}}.product{
     background-color: #46342C;
     color: white;
+    /* height: 200vh; */
   }
   #shopify-section-{{section.id}}.product .container{
     display: flex;
@@ -58,18 +59,35 @@
     gap: 18px;
     opacity: 0.2;
   }
+  @media only screen and (max-width: 480px) {
+    #shopify-section-{{section.id}}.product .right-content .item{
+      opacity: 1;
+    }
+  }
   #shopify-section-{{section.id}}.product .right-content .item.active{
     opacity: 1;
     padding-bottom: 323px;
+  }
+  @media only screen and (max-width: 480px) {
+    #shopify-section-{{section.id}}.product .right-content .item.active{
+      padding-bottom: unset;
+    }
   }
   #shopify-section-{{section.id}}.product .right-content .item svg{
     color: white;
     fill: var(--color-secondary);
     border-radius: 50%;
+    flex-shrink: 0;
   }
   #shopify-section-{{section.id}}.product .right-content .item.active svg{
     color: var(--color-secondary);
     fill: white;
+  }
+  @media only screen and (max-width: 480px) {
+    #shopify-section-{{section.id}}.product .right-content .item svg{
+      color: var(--color-secondary) !important;
+      fill: white !important;
+    }
   }
   #shopify-section-{{section.id}}.product .left-content video{
     width: 350px;
@@ -110,7 +128,7 @@
       {% endif %}
     </div>
     {% comment %} <img src="{{product_img}}" alt=""> {% endcomment %}
-    <video autoplay muted loop>
+    <video autoplay muted loop id="asset-product">
       <source src="{{ video_section }}" type="video/mp4">
     </video>
   </div>
@@ -129,6 +147,7 @@
         Track your progress through ongoing memory tests
       </div>
     </div>
+    
     <div class="item">
       <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="33.808" cy="33.6" r="33.1" stroke="currentColor" />
@@ -153,6 +172,7 @@
         Works while you sleep.
       </div>
     </div>
+
     <div class="item">
       <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="33.808" cy="33.9999" r="33" stroke="currentColor" stroke-width="1.2" />
@@ -203,6 +223,7 @@
         Natural, safe, and soothing scents for olfactory stimulation.
       </div>
     </div>
+
     <div class="item">
       <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="33.808" cy="34.2001" r="33" stroke="currentColor" stroke-width="1.2" />
@@ -232,6 +253,24 @@
     </div>
   </div>
 </div>
+
+<script>
+  {% comment %} gsap.registerPlugin(ScrollTrigger);
+
+  document.querySelectorAll(".right-content .item").forEach((section, index) => {
+      gsap.to(section, {
+          scrollTrigger: {
+              trigger: section,
+              start: "top center",
+              end: "+=100%",
+              scrub: true,
+              markers: true,
+              pin: section.querySelector(".right-content .item svg"),
+              pinSpacing: false,
+          },
+      });
+  }); {% endcomment %}
+</script>
 
 {% schema %}
   {
