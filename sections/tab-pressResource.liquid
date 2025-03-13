@@ -24,13 +24,16 @@
     font-family: "General Sans Regular";
 }
 
+#shopify-section-{{section.id}} .card_press{
+    height: 100%;
+}
+
 #shopify-section-{{section.id}} .card_press,
 #shopify-section-{{section.id}} .card_press-body{
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    max-width: 400px;
 }
 #shopify-section-{{section.id}} .card_press-body p{
     display: -webkit-box;
@@ -69,7 +72,6 @@
 }
 #shopify-section-{{section.id}} .press_tab-body{
     width: 100%;
-
 }
 
 #shopify-section-{{section.id}} .button-scientific.active,
@@ -98,6 +100,18 @@
     grid-template-rows: 1fr;
     grid-column-gap: 24px;
     grid-row-gap: 24px;
+}
+@media only screen and (max-width: 990px) {
+    #shopify-section-{{section.id}} .tab-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media only screen and (max-width: 480px) {
+    #shopify-section-{{section.id}} .tab-content {
+        grid-template-columns: repeat(1, 1fr);
+        grid-column-gap: 12px;
+        grid-row-gap: 12px;
+    }
 }
 #shopify-section-{{section.id}} .tab-content.active {
     display: grid; /* Hanya tampilkan tab yang aktif */
