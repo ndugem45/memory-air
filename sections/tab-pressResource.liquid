@@ -187,9 +187,9 @@
                         <div class="tab-head_button-wrapper">
                             {% for block in section.blocks %}
                                 {% if forloop.first %}
-                                    <a class="tab-button button-press text-16 active" data-tab="press-content">
+                                    <a class="tab-button button-press text-16 active" data-tab="press-content" data-tab="{{ block.settings.news_blog.title | remove: ' ' }}">
                                 {% else %}
-                                    <a class="tab-button button-press text-16" data-tab="press-content">
+                                    <a class="tab-button button-press text-16" data-tab="press-content" data-tab="{{ block.settings.news_blog.title | remove: ' ' }}">
                                 {% endif %}
                                     {{ block.settings.news_blog.title }}</a>
                             {% endfor %}
@@ -199,9 +199,9 @@
 				<div class="press_tab-body">
                     {% for blog in section.blocks %}
                         {% if forloop.first %}
-                            <div class="tab-content press-content active">
+                            <div class="tab-content press-content {{ block.settings.news_blog.title | remove: ' ' }} active">
                         {% else %}
-                            <div class="tab-content press-content">
+                            <div class="tab-content press-content {{ block.settings.news_blog.title | remove: ' ' }}">
                         {% endif %}
                             {% for article in blog.settings.news_blog.articles %}
                                 <div class="card_press p-2">
