@@ -17,13 +17,15 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	justify-content: space-between;
 	gap: 79px;
 }
 #shopify-section-{{section.id}}.hero-product .content {
-	max-width: 588px;
+	max-width: 500px;
 }
 #shopify-section-{{section.id}}.hero-product .illus {
-	width: 634px;
+	flex: 1;
+	border-radius: 16px;
 }
 
 
@@ -99,7 +101,8 @@
 					{% endif %}
 				</div>
     </div>
-  <img src={{science-display}} alt="" class="illus">
+  {% comment %} <img src={{science-display}} alt="" class="illus"> {% endcomment %}
+	<iframe class="illus" width="811" height="600" src="https://www.youtube.com/embed/_LpPE8kKyg8?si=ENjDsayoVX5J39yE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
     
     

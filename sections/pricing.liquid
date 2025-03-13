@@ -132,9 +132,15 @@
           Monthly replacement scent belt delivered to your door to continue & maintain your results.
         </div>
       </div>
-      <a href="" class="btn is-white">
-        Buy Now
-      </a>
+      {% if section.settings.product_left != blank %}
+        <a href="{{ section.settings.product_left.url }}" class="btn is-white">
+          Buy Now
+        </a>
+      {% else %}
+        <a href="" class="btn is-white">
+          Buy Now
+        </a>
+      {% endif %}
     </div>
 
     <div class="card">
@@ -162,9 +168,15 @@
           15% off monthly scent belt replacement when purchased annually.
         </div>
       </div>
-      <a href="" class="btn is-white">
-        Buy Now
-      </a>
+      {% if section.settings.product_right != blank %}
+        <a href="{{ section.settings.product_right.url }}" class="btn is-white">
+          Buy Now
+        </a>
+      {% else %}
+        <a href="" class="btn is-white">
+          Buy Now
+        </a>
+      {% endif %}
     </div>
   </div>
 </div>
@@ -172,6 +184,18 @@
 {% schema %}
   {
     "tag": "section",
-    "class": "pricing"
+    "class": "pricing",
+    "settings": [
+      {
+				"type": "product",
+				"id": "product_left",
+				"label": "Selected product left"
+			},
+      {
+				"type": "product",
+				"id": "product_right",
+				"label": "Selected product right"
+			},
+    ]
   }
 {% endschema %}
