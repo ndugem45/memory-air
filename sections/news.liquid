@@ -57,16 +57,16 @@
     {% if section.blocks != blank %}
       {%- for article in section.blocks -%}
         {% comment %} {% for article in block.settings.news_blog.articles %} {% endcomment %}
-          <a href="{{ article.url }}" class="news_item">
-            <img src="{{ article.img.src | img_url: 'medium' }}" alt="" class="video m-btm m-32">
+          <a href="{{ article.settings.news_blog.url }}" class="news_item">
+            <img src="{{ article.settings.news_blog.img.src | img_url: 'medium' }}" alt="" class="video m-btm m-32">
             
             {% comment %} <iframe width="560" height="315" class="video m-btm m-32" src="{{  block.metafields.settings.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> {% endcomment %}
             
             <h3 class="m-btm m-12 p-horizontal p-12">
-              {{ article.title }}
+              {{ article.settings.news_blog.title }}
             </h3>
             <div class="m-top m-4 p-horizontal p-12">
-              {{ article.content }}
+              {{ article.settings.news_blog.content }}
             </div>
           </a>
         {% comment %} {% endfor %} {% endcomment %}
