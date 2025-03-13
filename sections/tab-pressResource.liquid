@@ -186,15 +186,23 @@
                     {% if section.blocks != blank %}
                         <div class="tab-head_button-wrapper">
                             {% for block in section.blocks %}
-                                {{ block | json }}
-                                <a class="tab-button button-press text-16" data-tab="press-content">{{ block.settings.news_blog.title }}</a>
+                                {% if forloop.index = 0 %}
+                                    <a class="tab-button button-press text-16 active" data-tab="press-content">
+                                {% else %}
+                                    <a class="tab-button button-press text-16" data-tab="press-content">
+                                {% endif%}
+                                    {{ block.settings.news_blog.title }}</a>
                             {% endfor %}
                         </div>
                     {% endif %}
 				</div>
 				<div class="press_tab-body">
                     {% for blog in section.blocks %}
-                        <div class="tab-content press-content">
+                        {% if forloop.index = 0 %}
+                            <div class="tab-content press-content active">
+                        {% else %}
+                            <div class="tab-content press-content">
+                        {% endif %}
                             {% for article in blog.settings.news_blog.articles %}
                                 <div class="card_press p-2">
                                     <img src="{{ article.image.src | img_url: 'medium' }}" alt="">
@@ -217,6 +225,8 @@
                                 </div>
                             {% endfor %}
                         </div> 
+                        {% else %}
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
