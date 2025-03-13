@@ -89,7 +89,11 @@
 						<a class="btn" href="{{ section.settings.section_product.url }}" class="btn is-black">Buy Now</a>
 					{% endif %}
 					{% if section.settings.video_cta != blank %}
-						<button data-video="video_cta" onclick="togglePop()" class="btn is-bordered">
+						<button data-video="{{ section.settings.video_cta }}" onclick="togglePop()" class="btn is-bordered">
+							Watch video
+						</button>
+					{% else %}
+						<button data-video="https://www.youtube.com/embed/_LpPE8kKyg8?si=ENjDsayoVX5J39yE" onclick="togglePop()" class="btn is-bordered">
 							Watch video
 						</button>
 					{% endif %}
@@ -100,32 +104,31 @@
     
     
 {% schema %}
-    {
-        "tag": "section",
-        "class": "hero-product",
-				"settings":[
-					{
-						"type": "textarea",
-						"id": "section_title",
-						"label": "Section title",
-						"info": "Wrap italic font with <span>"
-					},
-					{
-						"type": "textarea",
-						"id": "section_desc",
-						"label": "Section description",
-					},
-					{
-						"type": "product",
-						"id": "section_product",
-						"label": "Selected product"
-					},
-					{
-						"type": "url",
-						"id": "video_cta",
-						"label": "Watch video url",
-						"default": "https://www.youtube.com/embed/_LpPE8kKyg8?si=ENjDsayoVX5J39yE"
-					},
-				]
-    }
+	{
+		"tag": "section",
+		"class": "hero-product",
+		"settings":[
+			{
+				"type": "textarea",
+				"id": "section_title",
+				"label": "Section title",
+				"info": "Wrap italic font with <span>"
+			},
+			{
+				"type": "textarea",
+				"id": "section_desc",
+				"label": "Section description",
+			},
+			{
+				"type": "product",
+				"id": "section_product",
+				"label": "Selected product"
+			},
+			{
+				"type": "url",
+				"id": "video_cta",
+				"label": "Watch video url"
+			},
+		]
+	}
 {% endschema %}
