@@ -52,78 +52,14 @@
                 </div>
             </div>
             <div class="detail-article-right">
-                <div>
-                    <h3 class="m-btm m-32">
-                        The science underlying Memory Air® is based upon 20 Studies and 2 Meta-analyses which show:
-                        <br>
-                        <br>
-                        ● Consistent Science<br>
-                        ● High Confidence<br>
-                        ● Causal, Not Just Correlative<br>
-                    </h3>
-                    <p>
-                        <h3>The “Super Highway” of Cognition.</h3>
-                        By itself olfactory enrichment (the stimulation of the ability to smell) can prevent and reverse cognitive loss in aging mice. It also increases hippocampal neurogenesis, the growth of new neurons in
-                        the main memory center of the brain (59;71). So could intensive exposure to multiple olfactory stimuli improve cognition in humans? 
-                        <br>
-                        <br>
-                        The olfactory system is the only sensory system that has direct projections to the brain’s cognitive control areas - the entorhinal/hippocampal complex (26). We refer to this direct access as the “Super Highway” of cognition. All other sensory systems have indirect connections to this region. They basically take the “side streets” via the thalamus to reach the brain’s memory areas. Therefore, the olfactory access to the cognitive and emotional systems in humans is unique. 
-                        <br>
-                        <br>
-                        <h3>Loss of olfactory ability and the deterioration of cognitive brain areas. </h3>
-                        As people age, the deterioration of their olfactory ability accompanies the deterioration of their cognitive ability (22;62). Hence the term “senior moments.”
-                        <br>
-                        <br>
-                        Additionally, olfactory loss results in a significant loss of both grey matter and white matter in cognitive areas of human brains (6;7;40;65;74). Covid-19 typically produces olfactory loss, and comparisons of MRI scans from individuals both pre-infection and post-infection have revealed neural deterioration that resembles a decade of aging in the cognitive regions that receive olfactory-system projections (21). Even chronic sinusitis has been shown to decrease grey matter in cognitive brain regions (33). 
-                        <br>
-                        <br>
-                        <h3>Loss of olfaction is predictive.</h3>
-                        Numerous studies have now shown that olfactory ability predicts all-cause mortality by middle age (14;18;23;29;45;54;64). Your ability to smell literally predicts whether you’ll live or die within the next 5 years after age 50.
-                        <br>
-                        <br>
-                        Olfactory loss also precedes cognitive loss in dementia. 
-                        <br>
-                        <br>
-                        Olfactory loss predicts the loss of grey matter in the hippocampus of older adults. The continuing loss of olfaction predicts the cognitive descending into mild cognitive impairment (MCI) (12). Moreover, degradation of olfactory ability predicts which individuals with MCI will descend further into Alzheimer’s disease (15). 
-                        <br>
-                        <br>
-                        Not only does olfactory dysfunction predict cognitive dysfunction in humans (13), but the loss of olfactory function precedes or parallels a wide variety of brain disorders such as: Alzheimer’s, MCI, Parkinson’s disease, Lewy body dementia, frontotemporal dementia, Creutzfeldt-Jakob disease, alcoholism, and schizophrenia (1;15;19;20;48;52;56;58;68).
-                        <br>
-                        <br>
-                        <h3>Increasing olfactory stimulation restores olfactory function.</h3>
-                        Olfactory enrichment improves olfactory loss due to post-infectious olfactory dysfunction, head trauma, Parkinson’s, or aging (16;27;31;35;41;53). These results were achieved with daily exposure to four odorants that represented the resinous, flowery, fruity, and aromatic odor groups. There are further improvements in olfactory ability with increased duration of exposure, increased concentration of the odorants, and an increased number of odorants (3;16;42).
-                        <br>
-                        <br>
-                        It appears, the more the better.
-                        <br>
-                        <br>
-                        <h3>Olfactory enrichment changes human brain anatomy.</h3> 
-                        Olfactory enrichment of human adults improved odor identification compared to that of visually enriched controls. Moreover, MRI analysis showed that olfactory enrichment led to increased cortical thickness in the right inferior frontal gyrus, the bilateral fusiform gyrus, and the entorhinal cortex compared to controls (2). 
-                        <br>
-                        <br>
-                        Olfactory enrichment then given to people with olfactory functional deficiencies increased grey matter volume in the hippocampus (28). Similarly, older adults given olfactory enrichment for 7 months using 4 odorants twice/day had improved odor identification skills and larger cortical grey matter relative to controls (32). 
-                        <br>
-                        <br>
-                        There are presently about 20 reports show that olfactory enrichment improves cognitive brain function and/or cognition in humans (70).
-                        <br>
-                        <br>
-                        <h3>Olfactory enrichment improves cognition and brain function at night.</h3>
-                        But we first determined whether we could get enhanced neural and cognitive outcomes after even minimal olfactory enrichment at night. The limitations of the available diffusion devices at the time forced us to use this minimal level of olfactory enrichment. We gave olfactory enrichment (N = 20) or control (N = 23) exposures to older adults (60-85 years old) for 2 hours every night over the course of 6 months, using a single odorant each night for controls, and rotating through seven pleasant scents a week (73). 
-                        <br>
-                        <br>
-                        Even with this minimal olfactory novelty of this randomized clinical trial, we were able to show clear, statistically significant differences between enriched and control older adults, using the Rey Auditory Verbal Learning Test (RAVLT).
-                        <br>
-                        <br>
-                        <h3>“We saw a 226% improvement in enriched individuals relative to controls. This is the largest improvement in memory ever reported in healthy seniors.”</h3>
-                    </p>
-                </div>
+                {{ article.content | html }}
             </div>
         </div>
     </div>
 
     {% render 'submission' %}
 
-    <div class="container m-top m-54 container_article-detail">
+    {% comment %} <div class="container m-top m-54 container_article-detail">
 
         <div class="detail-article_wraper">
             <div class="detail-article-left">
@@ -171,7 +107,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> {% endcomment %}
 
     
 
