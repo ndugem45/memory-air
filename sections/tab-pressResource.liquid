@@ -199,9 +199,9 @@
 				<div class="press_tab-body">
                     {% for blog in section.blocks %}
                         {% if forloop.first %}
-                            <div class="tab-content {{ block.settings.news_blog.title | remove: ' ' }} active">
+                            <div class="tab-content active" tab-data="{{ block.settings.news_blog.title | remove: ' ' }}">
                         {% else %}
-                            <div class="tab-content {{ block.settings.news_blog.title | remove: ' ' }}">
+                            <div class="tab-content" tab-data="{{ block.settings.news_blog.title | remove: ' ' }}">
                         {% endif %}
                             {% for article in blog.settings.news_blog.articles %}
                                 <div class="card_press p-2">
@@ -243,7 +243,7 @@
 
                     tabContents.forEach(content => content.classList.remove("active"));
 
-                    document.querySelector("." + targetTab).classList.add("active");
+                    document.querySelector(`[tab-data='${targetTab}']`).classList.add("active");
                 });
             });
         });
