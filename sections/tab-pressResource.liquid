@@ -185,8 +185,8 @@
 					<h2 class="tab-head_text text-32">Press & Resources</h2>
                     {% if section.blocks != blank %}
                         <div class="tab-head_button-wrapper">
-                            {% for blog in section.blocks %}
-                                <a class="tab-button button-press text-16" data-tab="press-content">{{ blog.title }}</a>
+                            {% for block in section.blocks %}
+                                <a class="tab-button button-press text-16" data-tab="press-content">{{ block.title }} - {{ block.id }}</a>
                             {% endfor %}
                         </div>
                     {% endif %}
