@@ -370,7 +370,7 @@
                     </div>
                 {% endif %}
 
-                <div class="sealsubs-target-element" data-product="{{ product | json | escape }}" data-handle="{{ product.handle }}"></div>
+                {% comment %} <div class="sealsubs-target-element" data-product="{{ product | json | escape }}" data-handle="{{ product.handle }}"></div> {% endcomment %}
 
                 {% if product.variants != blank%}
                     {% for variant in product.variants %}
