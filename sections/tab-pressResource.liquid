@@ -185,10 +185,8 @@
 					<h2 class="tab-head_text text-32">Press & Resources</h2>
                     {% if section.blocks != blank %}
                         <div class="tab-head_button-wrapper">
-                            {% comment %} <a class="tab-button button-scientific text-16 active" data-tab="scientific-content">Scientific Articles</a> {% endcomment %}
                             {% for blog in section.blocks %}
-                                {{ blog | json }}
-                                <a class="tab-button button-press text-16" data-tab="press-content">Press</a>
+                                <a class="tab-button button-press text-16" data-tab="press-content">{{ blog.title }}</a>
                             {% endfor %}
                         </div>
                     {% endif %}
@@ -197,7 +195,7 @@
                     {% for blog in section.blocks %}
                         <div class="tab-content press-content">
                             {% for article in block.settings.news_blog.articles %}
-                            <div class="card_press p-2">
+                                <div class="card_press p-2">
                                     <img src="{{ article.image.src | img_url: 'medium' }}" alt="">
                                     <div class="card_press-body m-top m-32">
                                         <h3 class="card_press-body-text font-semibold m-btm m-12">
