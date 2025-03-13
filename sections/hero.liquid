@@ -13,14 +13,19 @@
     padding-top: 233px;
     padding-bottom: 255px;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
   }
   #shopify-section-{{section.id}}.hero::before{
     content: '';
-    width: 40vw;
-    height: 40vw;
+    width: 700px;
+    height: 700px;
     position: absolute;
-    top: 7%;
-    right: 20%;
+    top: 1%;
+    display: block;
+    margin-right: -232px;
     background: url('{{ bg2 }}') no-repeat ;
     background-size: 100%;
     z-index: 2;
@@ -107,7 +112,7 @@
         <a class="btn" href="{{ section.settings.section_product.url }}">Buy Now</a>
       {% endif %}
       {% if section.settings.video_cta != blank %}
-        <a class="btn is-outline" href="{{ section.settings.video_cta }}">Watch video</a>
+        <button class="btn is-outline" data-video="{{ section.settings.video_cta }}">Watch video</button>
       {% endif %}
     </div>
   </div>
