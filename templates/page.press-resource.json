@@ -15,6 +15,17 @@
     },
     "tab-pressResource": {
       "type": "tab-pressResource",
+      "blocks": {
+        "blog_list_mbicTh": {
+          "type": "blog_list",
+          "settings": {
+            "news_blog": "health"
+          }
+        }
+      },
+      "block_order": [
+        "blog_list_mbicTh"
+      ],
       "settings": {}
     }
   },
