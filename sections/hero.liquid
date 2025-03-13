@@ -112,7 +112,7 @@
         <a class="btn" href="{{ section.settings.section_product.url }}">Buy Now</a>
       {% endif %}
       {% if section.settings.video_cta != blank %}
-        <button class="btn is-outline" data-video="{{ section.settings.video_cta }}">Watch video</button>
+        <button class="btn is-outline" onclick="togglePop()" data-video="{{ section.settings.video_cta }}">Watch video</button>
       {% endif %}
     </div>
   </div>
