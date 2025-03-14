@@ -691,7 +691,7 @@
         updater.abort();
       }
   
-      updater = $.get("/cart.js", function (data, status) {
+      {% comment %} updater = $.get("/cart.js", function (data, status) {
         let dataResult = typeof data === 'string' ? JSON.parse(data) : data;
         let dd = dataResult.items;
         cartData = dataResult;
@@ -712,10 +712,10 @@
         } else {
           $('#buy-btn').show()
           $('#cart-btn').hide()
-          
+
           $('nav .cart-menu .summary .btn').removeClass('active');
           $('#placer').append('<div>No data</div>');
-        }
+        } {% endcomment %}
       }).fail((jqXHR, textStatus, errorThrown) => {
         console.error("Error fetching cart data:", textStatus, errorThrown);
       });
