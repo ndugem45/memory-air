@@ -61,13 +61,15 @@
 
     <div class="container m-btm m-54 container_article-detail">
         <div class="detail-article_wraper">
-            <div class="detail-article-left">
-                <div class="detail-box">
-                    <span>
-                        {{ article.expert }}
-                    </span>
+            {% if article.metafields.custom.quote != blank %}
+                <div class="detail-article-left">
+                    <div class="detail-box">
+                        <span>
+                            {{ article.metafields.custom.quote }}
+                        </span>
+                    </div>
                 </div>
-            </div>
+            {% endif %}
             <div class="detail-article-right">
                 {{ article.content | html }}
             </div>
