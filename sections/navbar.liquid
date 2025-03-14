@@ -72,7 +72,8 @@
       gap: 32px;
   }
   @media only screen and (max-width:1200px) {
-    nav .menu{
+    nav .menu,
+    nav .btn {
       display: none;
     }
   }
@@ -196,7 +197,7 @@
       
     }
     nav .mobile-menu .content .btn{
-      /* display: block !important; */
+      display: block !important;
       text-align: center;
       margin-top: 32px;
     }
@@ -700,19 +701,20 @@
         $('#sub-total').html(formatCost(parseFloat(cartData.items_subtotal_price / 100)));
   
         if (dd.length) {
+          $('#buy-btn').hide()
+          $('#cart-btn').show()
+
           $('nav .cart-menu .summary .btn').addClass('active');
           dd.forEach((s) => {
             s.newPrice = formatCost(parseInt(s.price / 100));
             $('#placer').append(tmplt(s));
           });
-          
-          $('#buy-btn').hide()
-          $('#cart-btn').show()
         } else {
-          $('nav .cart-menu .summary .btn').removeClass('active');
-          $('#placer').append('<div>No data</div>');
           $('#buy-btn').show()
           $('#cart-btn').hide()
+          
+          $('nav .cart-menu .summary .btn').removeClass('active');
+          $('#placer').append('<div>No data</div>');
         }
       }).fail((jqXHR, textStatus, errorThrown) => {
         console.error("Error fetching cart data:", textStatus, errorThrown);
