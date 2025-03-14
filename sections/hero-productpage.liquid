@@ -379,12 +379,16 @@
                             <div class="option" onclick="check()">
                                 <label>
                                     <input type="radio" name="memory-air" id="{{  variant.id }}" value="{{  variant.id }}">
+                                    
                                     <div class="custom-checkbox"></div>
                                     <div class="option-content">
+                                    
                                     <span class="title">{{ variant.title }}</span>
+                                    
                                     {% if variant.metafields.custom.variant_description %}
                                         {{ variant.metafields.custom.variant_description | metafield_tag }}
                                     {% endif %}
+                                    
                                     <span class="price">{{ variant.metafields.custom.price_text }}</span>
                                     </div>
                                 </label>
@@ -412,7 +416,7 @@
 
 <script>
     function check(){
-        event.currentTarget.querySelector('input').checked = !event.currentTarget.querySelector('input').checked
+        event.currentTarget.querySelector('input').checked = true
     }
 
     const addThisProduct = () => {
