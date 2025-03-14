@@ -4,250 +4,258 @@
 {% assign card-img2 = 'press_card2.png' | asset_url | append: '?v=' | append: 'timestamp' %}
 
 {% style %}
-
-#shopify-section-{{section.id}} .press_tab-head{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-@media only screen and (max-width: 1200px) {
-    #shopify-section-{{section.id}} .container{
-        padding-inline: 40px !important;
+    #shopify-section-{{section.id}} .press_tab-head{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
     }
-}
-@media only screen and (max-width: 480px) {
-    #shopify-section-{{section.id}} .container{
-        padding-inline: 20px !important;
+
+    @media only screen and (max-width: 1200px) {
+        #shopify-section-{{section.id}} .container{
+            padding-inline: 40px !important;
+        }
     }
-}
+    @media only screen and (max-width: 480px) {
+        #shopify-section-{{section.id}} .container{
+            padding-inline: 20px !important;
+        }
+    }
 
-#shopify-section-{{section.id}} .tab-head_button-wrapper{
-    display: flex;
-    flex-direction: row;
-    gap: 32px;
-    justify-content: center;
-    align-items: center;
-}
-#shopify-section-{{section.id}} .tab-head_button-wrapper > span{
-    font-family: "General Sans Regular";
-}
+    #shopify-section-{{section.id}} .tab-head_button-wrapper{
+        display: flex;
+        flex-direction: row;
+        gap: 32px;
+        justify-content: center;
+        align-items: center;
+    }
+    #shopify-section-{{section.id}} .tab-head_button-wrapper > span{
+        font-family: "General Sans Regular";
+    }
 
-#shopify-section-{{section.id}} .card_press{
-    height: 100%;
-}
-#shopify-section-{{section.id}} .card_press img{
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 16px;
-}
-@media only screen and (max-width: 1200px) {
+    #shopify-section-{{section.id}} .card_press{
+        height: 100%;
+    }
     #shopify-section-{{section.id}} .card_press img{
-        height: 300px;
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 16px;
     }
-}
-@media only screen and (max-width: 480px) {
-    #shopify-section-{{section.id}} .card_press img{
-        height: 250px;
+    @media only screen and (max-width: 1200px) {
+        #shopify-section-{{section.id}} .card_press img{
+            height: 300px;
+        }
     }
-}
+    @media only screen and (max-width: 480px) {
+        #shopify-section-{{section.id}} .card_press img{
+            height: 250px;
+        }
+    }
 
-#shopify-section-{{section.id}} .card_press,
-#shopify-section-{{section.id}} .card_press-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-}
-#shopify-section-{{section.id}} .card_press-body p{
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;  
-    overflow: hidden;
-    margin-bottom: 24px;
-}
-@media only screen and (max-width: 1200px) {
+    #shopify-section-{{section.id}} .card_press,
+    #shopify-section-{{section.id}} .card_press-body{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
     #shopify-section-{{section.id}} .card_press-body p{
-        font-size: 16px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+        margin-bottom: 24px;
     }
-}
+    @media only screen and (max-width: 1200px) {
+        #shopify-section-{{section.id}} .card_press-body p{
+            font-size: 16px;
+        }
+    }
 
-#shopify-section-{{section.id}} .card_press-body-text{
-    color: #232323;
-    font-weight: 500;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;  
-    overflow: hidden;
-}
-@media only screen and (max-width: 1200px) {
     #shopify-section-{{section.id}} .card_press-body-text{
-        font-size: 22px;
+        color: #232323;
+        font-weight: 500;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
     }
-}
+    @media only screen and (max-width: 1200px) {
+        #shopify-section-{{section.id}} .card_press-body-text{
+            font-size: 22px;
+        }
+    }
 
-#shopify-section-{{section.id}} .card_press-body-dsc{
-    color: #3C2E25;
-    font-family: "General Sans Regular";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px; /* 150% */
-    letter-spacing: 0.1px;
-}
+    #shopify-section-{{section.id}} .card_press-body-dsc{
+        color: #3C2E25;
+        font-family: "General Sans Regular";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+        letter-spacing: 0.1px;
+    }
 
-#shopify-section-{{section.id}} .card_press-body-link{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    color: #3C2E25;
-}
-#shopify-section-{{section.id}} .press_tab-body{
-    width: 100%;
-}
+    #shopify-section-{{section.id}} .card_press-body-link{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        color: #3C2E25;
+    }
+    #shopify-section-{{section.id}} .press_tab-body{
+        width: 100%;
+    }
 
-#shopify-section-{{section.id}} .button-scientific.active,
-#shopify-section-{{section.id}} .button-press.active {
-    font-weight: bold;
-    border-bottom: 2px solid black;
-}
+    #shopify-section-{{section.id}} .button-scientific.active,
+    #shopify-section-{{section.id}} .button-press.active {
+        font-weight: bold;
+        border-bottom: 2px solid black;
+    }
 
-#shopify-section-{{section.id}} .tab-head_button-wrapper > a{
-    cursor: pointer;
-}
-#shopify-section-{{section.id}} .press-content,
-#shopify-section-{{section.id}} .scientific-content{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 32px;
-    flex-wrap: wrap;
-}
+    #shopify-section-{{section.id}} .tab-head_button-wrapper > a{
+        cursor: pointer;
+    }
+    #shopify-section-{{section.id}} .press-content,
+    #shopify-section-{{section.id}} .scientific-content{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        flex-wrap: wrap;
+    }
 
 
-#shopify-section-{{section.id}} .tab-content {
-    display: none; /* Sembunyikan semua tab */
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 24px;
-    grid-row-gap: 24px;
-}
-@media only screen and (max-width: 1200px) {
     #shopify-section-{{section.id}} .tab-content {
-        grid-template-columns: repeat(2, 1fr);
+        display: none; /* Sembunyikan semua tab */
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 24px;
+        grid-row-gap: 24px;
     }
-}
-@media only screen and (max-width: 480px) {
-    #shopify-section-{{section.id}} .tab-content {
-        grid-template-columns: repeat(1, 1fr);
-        grid-column-gap: 12px;
-        grid-row-gap: 12px;
+    @media only screen and (max-width: 1200px) {
+        #shopify-section-{{section.id}} .tab-content {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
-}
-#shopify-section-{{section.id}} .tab-content.active {
-    display: grid; /* Hanya tampilkan tab yang aktif */
-}
-#shopify-section-{{section.id}} .tab-button {
-    cursor: pointer;
-    color: rgba(35, 35, 35, 0.7);
-    text-align: center;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px; /* 150% */
-    letter-spacing: 0.1px;
-}
-#shopify-section-{{section.id}} .tab-button.active {
-    color: black;
-    text-style: underline;
-    text-align: center;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px; /* 150% */
-    letter-spacing: 0.1px;
-}
-
-    
-    {% endstyle %}
+    @media only screen and (max-width: 480px) {
+        #shopify-section-{{section.id}} .tab-content {
+            grid-template-columns: repeat(1, 1fr);
+            grid-column-gap: 12px;
+            grid-row-gap: 12px;
+        }
+    }
+    #shopify-section-{{section.id}} .tab-content.active {
+        display: grid; /* Hanya tampilkan tab yang aktif */
+    }
+    #shopify-section-{{section.id}} .tab-button {
+        cursor: pointer;
+        color: rgba(35, 35, 35, 0.7);
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+        letter-spacing: 0.1px;
+    }
+    #shopify-section-{{section.id}} .tab-button.active {
+        color: black;
+        text-style: underline;
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+        letter-spacing: 0.1px;
+    }
+{% endstyle %}
     
 	
 
-		<div class="container p-horizontal p-78">
-			<div class="press_content">
-				<div class="press_tab-head m-btm m-78">
-					<h2 class="tab-head_text text-32">Press & Resources</h2>
-                    {% if section.blocks != blank %}
-                        <div class="tab-head_button-wrapper">
-                            {% for block in section.blocks %}
-                                {% if forloop.first %}
-                                    <a class="tab-button button-press text-16 active" data-tab="{{ block.settings.news_blog.title | remove: ' ' }}">
-                                {% else %}
-                                    <a class="tab-button button-press text-16" data-tab="{{ block.settings.news_blog.title | remove: ' ' }}">
-                                {% endif %}
-                                    {{ block.settings.news_blog.title }}</a>
-                            {% endfor %}
-                        </div>
-                    {% endif %}
-				</div>
-				<div class="press_tab-body">
-                    {% for blog in section.blocks %}
-                        {% if forloop.first %}
-                            <div class="tab-content active" tab-data="{{ blog.settings.news_blog.title | remove: ' ' }}">
-                        {% else %}
-                            <div class="tab-content" tab-data="{{ blog.settings.news_blog.title | remove: ' ' }}">
-                        {% endif %}
-                            {% for article in blog.settings.news_blog.articles %}
-                                <div class="card_press p-2">
-                                    <img src="{{ article.image.src | img_url: 'medium' }}" alt="">
-                                    <div class="card_press-body m-top m-32">
-                                        <h3 class="card_press-body-text font-semibold m-btm m-12">
-                                            {{ article.title }}
-                                        </h3>
-                                        {% if article.excerpt.size > 0 %}
-                                            {{ article.excerpt }}
-                                        {% else %}
-                                            <p class="card_press-body-dsc font-medium text-16 m-btm m-12">{{ article.content | strip_html | truncatewords: 100 }}</p>
-                                        {% endif %}
-                                        <a class="card_press-body-link font-semibold" href="{{ article.url }}">
-                                            Read more
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="20" viewBox="0 0 8 20" fill="none">
-                                                <path d="M1.70801 6.5L5.70801 10.5L1.70801 14.5" stroke="#232323" stroke-width="1.5" />
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            {% endfor %}
-                        </div> 
-                    {% endfor %}
+    <div class="container p-horizontal p-78">
+        <div class="press_content">
+            <div class="press_tab-head m-btm m-78">
+                <div>
+                    <div class="tab-head_text text-32">Press & Resources</div>
+                    <select>
+                        <option>
+                            Newest
+                        </option>
+                        <option>
+                            Oldest
+                        </option>
+                    </select>
                 </div>
+                
+                {% if section.blocks != blank %}
+                    <div class="tab-head_button-wrapper">
+                        {% for block in section.blocks %}
+                            {% if forloop.first %}
+                                <a class="tab-button button-press text-16 active" data-tab="{{ block.settings.news_blog.title | remove: ' ' }}">
+                            {% else %}
+                                <a class="tab-button button-press text-16" data-tab="{{ block.settings.news_blog.title | remove: ' ' }}">
+                            {% endif %}
+                                {{ block.settings.news_blog.title }}</a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="press_tab-body">
+                {% for blog in section.blocks %}
+                    {% if forloop.first %}
+                        <div class="tab-content active" tab-data="{{ blog.settings.news_blog.title | remove: ' ' }}">
+                    {% else %}
+                        <div class="tab-content" tab-data="{{ blog.settings.news_blog.title | remove: ' ' }}">
+                    {% endif %}
+                        {% for article in blog.settings.news_blog.articles %}
+                            <div class="card_press p-2">
+                                <img src="{{ article.image.src | img_url: 'medium' }}" alt="">
+                                <div class="card_press-body m-top m-32">
+                                    <h3 class="card_press-body-text font-semibold m-btm m-12">
+                                        {{ article.title }}
+                                    </h3>
+                                    {% if article.excerpt.size > 0 %}
+                                        {{ article.excerpt }}
+                                    {% else %}
+                                        <p class="card_press-body-dsc font-medium text-16 m-btm m-12">{{ article.content | strip_html | truncatewords: 100 }}</p>
+                                    {% endif %}
+                                    <a class="card_press-body-link font-semibold" href="{{ article.url }}">
+                                        Read more
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="20" viewBox="0 0 8 20" fill="none">
+                                            <path d="M1.70801 6.5L5.70801 10.5L1.70801 14.5" stroke="#232323" stroke-width="1.5" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div> 
+                {% endfor %}
             </div>
         </div>
+    </div>
 
-        <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const tabButtons = document.querySelectorAll(".tab-button");
-            const tabContents = document.querySelectorAll(".tab-content");
+    <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const tabButtons = document.querySelectorAll(".tab-button");
+                const tabContents = document.querySelectorAll(".tab-content");
 
-            tabButtons.forEach(button => {
-                button.addEventListener("click", function () {
-                    tabButtons.forEach(btn => btn.classList.remove("active"));
-                    this.classList.add("active");
-                    let targetTab = this.getAttribute("data-tab");
+                tabButtons.forEach(button => {
+                    button.addEventListener("click", function () {
+                        tabButtons.forEach(btn => btn.classList.remove("active"));
+                        this.classList.add("active");
+                        let targetTab = this.getAttribute("data-tab");
 
-                    tabContents.forEach(content => content.classList.remove("active"));
+                        tabContents.forEach(content => content.classList.remove("active"));
 
-                    document.querySelector(`[tab-data='${targetTab}']`).classList.add("active");
+                        document.querySelector(`[tab-data='${targetTab}']`).classList.add("active");
+                    });
                 });
             });
-        });
-</script>
+    </script>
 
     
     
