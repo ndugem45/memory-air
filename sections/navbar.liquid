@@ -215,6 +215,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+  }
+  nav .cart-menu .content .head svg{
+    position: absolute;
+    left: 12px;
+  }
+  nav .cart-menu .content .head h3{
+    text-align: center;
   }
   nav .cart-menu .content .item-wrap {
     display: flex;
@@ -500,6 +508,10 @@
 <div class="cart-menu">
   <div class="content">
     <div class="head">
+      <svg id="close-cart" width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0.484299 6.6552C0.0937748 7.04572 0.0937748 7.67889 0.484299 8.06941L6.84826 14.4334C7.23878 14.8239 7.87195 14.8239 8.26247 14.4334C8.653 14.0428 8.653 13.4097 8.26247 13.0192L2.60562 7.3623L8.26247 1.70545C8.653 1.31493 8.653 0.681761 8.26247 0.291237C7.87195 -0.0992875 7.23878 -0.0992875 6.84826 0.291237L0.484299 6.6552ZM16.1914 6.3623L1.19141 6.3623V8.3623L16.1914 8.3623V6.3623Z" fill="black"/>
+      </svg>
+
       <h3>Cart</h3>
     </div>
     <div class="item-wrap" id="placer">
@@ -565,7 +577,6 @@
 
   $(document).ready(function(){
     const navbar = document.querySelector('nav');
-    load()
     
     $(".cart").click(() => {
       navbar.classList.remove('menu');
@@ -573,6 +584,13 @@
       menu[0].style.maxHeight = null;
       navbar.classList.toggle('open');
       load()
+    });
+
+    $("#close-cart").click(() => {
+      navbar.classList.remove('menu');
+      let menu = $('nav .mobile-menu');
+      menu[0].style.maxHeight = null;
+      navbar.classList.remove('open');
     });
 
     $(".menu-toggle").click(() => {
