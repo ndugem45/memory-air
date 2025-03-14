@@ -148,6 +148,17 @@
     flex-direction: row;
     gap: 12px;
     align-items: center; 
+    justify-content: flex-end;
+  }
+  #shopify-section-{{section.id}} .content .item .head.reserve{
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+  }
+  @media only screen and (max-width: 1200px) {
+    #shopify-section-{{section.id}} .content .item .head.reserve{
+      flex-direction: row;
+      justify-content: flex-end;
+    }
   }
   #shopify-section-{{section.id}} .content .item .head img{
     width: 54px;
@@ -165,7 +176,7 @@
   }
   #shopify-section-{{section.id}} .content .item .head span{
     font-family: "General Sans Medium";
-    font-size: 21px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 500;
     line-height: 130%;
@@ -286,7 +297,7 @@
       </div>
 
       <div class="item" id="item-2">
-        <div class="head">
+        <div class="head reverse">
           <span>
             Replacements delivered to your door
           </span>
@@ -330,7 +341,7 @@
       </div>
 
       <div class="item" id="item-4">
-        <div class="head">
+        <div class="head reverse">
           <span>
             Simple to get started
           </span>
@@ -368,7 +379,7 @@
       </div>
 
       <div class="item" id="item-6">
-        <div class="head">
+        <div class="head reverse">
           <span>
             Works While you Sleep
           </span>
@@ -390,7 +401,7 @@
       </div>
 
       <div class="item" id="item-7">
-        <div class="head">
+        <div class="head reverse">
           <span>
             The Proof is in the Progress
           </span>
