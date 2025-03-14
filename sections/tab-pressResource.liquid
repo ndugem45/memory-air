@@ -4,6 +4,9 @@
 {% assign card-img2 = 'press_card2.png' | asset_url | append: '?v=' | append: 'timestamp' %}
 
 {% style %}
+    #shopify-section-{{section.id}}{
+        padding-top: 0;
+    }
     #shopify-section-{{section.id}} .press_tab-head{
         display: flex;
         flex-direction: row;
