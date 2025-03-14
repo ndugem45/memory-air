@@ -177,6 +177,9 @@
         align-items: center;
         gap: 24px;
     }
+    #shopify-section-{{section.id}} .left-wrapper select{
+        font-size: 18px;
+    }
 {% endstyle %}
     
 	
@@ -187,10 +190,10 @@
                 <div class="left-wrapper">
                     <div class="tab-head_text text-32">Press & Resources</div>
                     <select>
-                        <option>
+                        <option value="new">
                             Newest
                         </option>
-                        <option>
+                        <option value="old">
                             Oldest
                         </option>
                     </select>
