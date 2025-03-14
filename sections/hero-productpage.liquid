@@ -412,7 +412,10 @@
 <script>
     const addThisProduct = () => {
         try{
-            const variantValue = document.querySelector('input[name="memory-air"]:checked').value
+            let variantValue
+            if(document.querySelector('input[name="memory-air"]:checked')){
+                variantValue = document.querySelector('input[name="memory-air"]:checked').value
+            }
             const prodValue = document.querySelector('.hidden').getAttribute('id')
             if(variantValue){
                 addThis([
