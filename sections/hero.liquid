@@ -1,12 +1,15 @@
 {% assign bg = 'hero_bg.png' | asset_url | append: '?v=' | append: 'timestamp' %}
 
+{% assign bgn1 = 'header_1.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign bgn2 = 'header_2.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+
 {% assign bg1 = 'bg-lv-1.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
 {% assign bg2 = 'bg-lv-2.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
 {% assign bg3 = 'bg-lv-3.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
 
 {% style %}
   #shopify-section-{{section.id}}.hero{
-    background: #375461 url('{{ bg1 }}') no-repeat ;
+    background: #375461 url('{{ bgn1 }}') no-repeat ;
     background-position: top center;
     background-size: auto 100%;
     color: white !important;
@@ -26,7 +29,7 @@
     top: 1%;
     display: block;
     margin-right: -232px;
-    background: url('{{ bg2 }}') no-repeat ;
+    background: url('{{ bgn2 }}') no-repeat ;
     background-size: 100%;
     z-index: 2;
     animation-name: spin;
