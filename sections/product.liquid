@@ -255,7 +255,7 @@
 </div>
 
 <script>
-  gsap.registerPlugin(ScrollTrigger);
+  {% comment %} gsap.registerPlugin(ScrollTrigger);
 
   document.querySelectorAll(".right-content .item").forEach((section, index) => {
       gsap.to(section, {
@@ -269,7 +269,7 @@
               pinSpacing: false,
           },
       });
-  });
+  }); {% endcomment %}
 </script>
 
 {% schema %}
