@@ -691,7 +691,7 @@
         updater.abort();
       }
   
-      {% comment %} updater = $.get("/cart.js", function (data, status) {
+      updater = $.get("/cart.js", function (data, status) {
         let dataResult = typeof data === 'string' ? JSON.parse(data) : data;
         let dd = dataResult.items;
         cartData = dataResult;
@@ -701,8 +701,10 @@
         $('#sub-total').html(formatCost(parseFloat(cartData.items_subtotal_price / 100)));
   
         if (dd.length) {
-          $('#buy-btn').hide()
-          $('#cart-btn').show()
+          if(window.innerWidth < 1200){
+            $('#buy-btn').hide()
+            $('#cart-btn').show()
+          }
 
           $('nav .cart-menu .summary .btn').addClass('active');
           dd.forEach((s) => {
@@ -710,12 +712,14 @@
             $('#placer').append(tmplt(s));
           });
         } else {
-          $('#buy-btn').show()
-          $('#cart-btn').hide()
-
+          if(window.innerWidth < 1200){
+            $('#buy-btn').show()
+            $('#cart-btn').hide()
+          }
+          
           $('nav .cart-menu .summary .btn').removeClass('active');
           $('#placer').append('<div>No data</div>');
-        } {% endcomment %}
+        }
       }).fail((jqXHR, textStatus, errorThrown) => {
         console.error("Error fetching cart data:", textStatus, errorThrown);
       });
