@@ -65,7 +65,7 @@ h1 span {
 	font-family: "Cormorant Garamond";
 	font-weight: 700;
 	font-style: italic;
-	font-size: 72px;
+	font-size: 62px;
 	line-height: 100%;
 	letter-spacing: 0%;
 }
@@ -89,7 +89,7 @@ h2 span {
 	font-family: "Cormorant Garamond";
 	font-weight: 700;
 	font-style: italic;
-	font-size: 72px;
+	font-size: 62px;
 	line-height: 100%;
 	letter-spacing: 0%;
 }
@@ -111,7 +111,7 @@ h3 {
 }
 h3 span {
 	font-family: "Cormorant Garamond";
-	font-size: 40px;
+	font-size: 30px;
 	font-style: italic;
 	font-weight: 700;
 	line-height: 100%;
