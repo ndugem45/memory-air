@@ -559,13 +559,12 @@
 
 
 <script>
-  let formatter,updater,cartData
-  let curr = '{{ shop.money_format }}'.split('{')[0]
-  let sym = '{{ cart.currency.iso_code }}'
+  var formatter,updater,cartData
+  var curr = '{{ shop.money_format }}'.split('{')[0]
+  var sym = '{{ cart.currency.iso_code }}'
 
   $(document).ready(function(){
     const navbar = document.querySelector('nav');
-    load()
     
     $(".cart").click(() => {
       navbar.classList.remove('menu');
@@ -701,22 +700,12 @@
         $('#sub-total').html(formatCost(parseFloat(cartData.items_subtotal_price / 100)));
   
         if (dd.length) {
-          if(window.innerWidth < 1200){
-            {% comment %} $('#buy-btn').hide()
-            $('#cart-btn').show() {% endcomment %}
-          }
-
           $('nav .cart-menu .summary .btn').addClass('active');
           dd.forEach((s) => {
             s.newPrice = formatCost(parseInt(s.price / 100));
             $('#placer').append(tmplt(s));
           });
         } else {
-          if(window.innerWidth < 1200){
-            {% comment %} $('#buy-btn').show()
-            $('#cart-btn').hide() {% endcomment %}
-          }
-          
           $('nav .cart-menu .summary .btn').removeClass('active');
           $('#placer').append('<div>No data</div>');
         }
