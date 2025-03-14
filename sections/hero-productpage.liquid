@@ -416,6 +416,7 @@
 
 <script>
     function check(){
+        event.stopPropagation()
         console.log(event.currentTarget.querySelector('input').checked)
         event.currentTarget.querySelector('input').checked = true
     }
