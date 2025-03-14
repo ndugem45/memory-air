@@ -564,8 +564,8 @@
   let sym = '{{ cart.currency.iso_code }}'
 
   $(document).ready(function(){
-    load()
     const navbar = document.querySelector('nav');
+    load()
     
     $(".cart").click(() => {
       navbar.classList.remove('menu');
@@ -702,8 +702,8 @@
   
         if (dd.length) {
           if(window.innerWidth < 1200){
-            $('#buy-btn').hide()
-            $('#cart-btn').show()
+            {% comment %} $('#buy-btn').hide()
+            $('#cart-btn').show() {% endcomment %}
           }
 
           $('nav .cart-menu .summary .btn').addClass('active');
@@ -713,8 +713,8 @@
           });
         } else {
           if(window.innerWidth < 1200){
-            $('#buy-btn').show()
-            $('#cart-btn').hide()
+            {% comment %} $('#buy-btn').show()
+            $('#cart-btn').hide() {% endcomment %}
           }
           
           $('nav .cart-menu .summary .btn').removeClass('active');
