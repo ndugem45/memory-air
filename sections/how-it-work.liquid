@@ -149,9 +149,18 @@
     gap: 12px;
     align-items: center; 
   }
+  #shopify-section-{{section.id}} .content .item .head img{
+    width: 66px;
+    object-fit: contain;
+  }
+  @media only screen and (max-width: 780px) {
+    #shopify-section-{{section.id}} .content .item .head img{
+      width: 42px;
+    }
+  }
   #shopify-section-{{section.id}} .content .item .head span{
     font-family: "General Sans Medium";
-    font-size: 22px;
+    font-size: 21px;
     font-style: normal;
     font-weight: 500;
     line-height: 130%;
