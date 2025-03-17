@@ -746,33 +746,7 @@
         }
       });
     
-      {% comment %} if (updater && typeof updater.abort === 'function') {
-        updater.abort();
-      } {% endcomment %}
       
-  
-      {% comment %} updater = $.get("/cart.js", function (data, status) {
-        let dataResult = typeof data === 'string' ? JSON.parse(data) : data;
-        let dd = dataResult.items;
-        cartData = dataResult;
-        updater = null;
-  
-        $('#total-price').html(formatCost(parseFloat(cartData.total_price / 100)));
-        $('#sub-total').html(formatCost(parseFloat(cartData.items_subtotal_price / 100)));
-  
-        if (dd.length) {
-          $('nav .cart-menu .summary .btn').addClass('active');
-          dd.forEach((s) => {
-            s.newPrice = formatCost(parseInt(s.price / 100));
-            $('#placer').append(tmplt(s));
-          });
-        } else {
-          $('nav .cart-menu .summary .btn').removeClass('active');
-          $('#placer').append('<div>No data</div>');
-        }
-      }).fail((jqXHR, textStatus, errorThrown) => {
-        console.error("Error fetching cart data:", textStatus, errorThrown);
-      }); {% endcomment %}
     } catch (e) {
       console.error("Load function error:", e);
     }

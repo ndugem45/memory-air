@@ -375,7 +375,8 @@
 
                 {% if product.variants != blank%}
                     {% for variant in product.variants %}
-                        {% if variant.requires_shipping == false %}
+                        {{ variant | json }}
+                        {% comment %} {% if variant.requires_shipping == false %} {% endcomment %}
                             <div class="option" onclick="check()">
                                 <label>
                                     <input type="radio" name="memory-air" id="{{  variant.id }}" value="{{  variant.id }}">
@@ -393,9 +394,9 @@
                                     </div>
                                 </label>
                             </div>
-                        {% else %}
+                        {% comment %} {% else %}
                             <div class="hidden" id="{{  variant.id }}"></div>
-                        {% endif %}
+                        {% endif %} {% endcomment %}
                     {% endfor %}
                 {% else %}
                     <div class="hidden" id="{{  product.id }}"></div>
