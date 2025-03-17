@@ -130,8 +130,8 @@
             
             const scene = new THREE.Scene();
             scene.background = new THREE.Color(0xaaaaaa);
-            
-            const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+{% comment %}             
+            const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000); {% endcomment %}
 
             const renderer = new THREE.WebGLRenderer({ antialias: true });
             renderer.setSize(container.clientWidth, container.clientHeight);
@@ -140,13 +140,20 @@
         
             const light = new THREE.AmbientLight(0xffffff, 1);
             scene.add(light);
-            {% comment %} camera.position.set(-0.005, 0.272, 1.324);  {% endcomment %}
+            {% comment %} camera.position.set(0, 0, 1.324);  {% endcomment %}
         
         
         
             const loader = new THREE.GLTFLoader();
             loader.load("{{ three_asset }}", function (gltf) {
-                console.log("Model berhasil dimuat");
+                const glbCamera = gltf.cameras[0]; 
+                if (glbCamera) {
+                    camera = glbCamera;
+                    console.log("Menggunakan kamera dari file GLB");
+                } else {
+                    console.warn("Tidak ada kamera dalam file GLB, menggunakan kamera default");
+                }
+
                 const model = gltf.scene;
                 model.scale.set(1, 1, 1);
                 scene.add(model);
@@ -165,8 +172,6 @@
             }, undefined, function (error) {
                 console.error("Gagal memuat model:", error);
             });
-        
-            camera.position.z = 1;
 
         });
         
