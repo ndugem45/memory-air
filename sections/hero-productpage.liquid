@@ -375,7 +375,7 @@
 
                 {% if product.variants != blank%}
                     {% for variant in product.variants %}
-                        {% if variant.selling_plan_allocations %}
+                        {% if variant.selling_plan_allocations[0] %}
                             <div class="option" onclick="check()" selling-plan="{{ variant | json }}">
                                 <label>
                                     <input type="radio" name="{{ variant.title }}" id="{{  variant.id }}" value="{{  variant.id }}">
