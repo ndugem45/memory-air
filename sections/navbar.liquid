@@ -575,8 +575,14 @@
 
   $(document).ready(function(){
     const cartData = getCart();
-    if(cartData){
-      console.log('ok')
+    if(cartData && window.innerWidth < 1200){
+      if(cartData.items.length){
+        $('#cart-btn').show()
+        $('#buy-btn').hide()
+      }else{
+        $('#buy-btn').show()
+        $('#cart-btn').hide()
+      }
     }
 
     const navbar = document.querySelector('nav');
