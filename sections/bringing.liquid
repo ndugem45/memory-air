@@ -164,15 +164,16 @@
                     renderer.render(scene, camera);
                 }
                 animate(); {% endcomment %}
+                $('#rotate-btn').click(()=>{
+                    model.rotation.y += 1;
+                })
+                
             }, undefined, function (error) {
                 console.error("Gagal memuat model:", error);
             });
         
             camera.position.z = 5;
 
-            $('#rotate-btn').click(()=>{
-                model.rotation.y += 1;
-            })
         });
         
     </script>
