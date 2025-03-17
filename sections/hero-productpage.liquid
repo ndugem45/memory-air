@@ -417,7 +417,7 @@
 <script>
     function check(e){
         event.stopPropagation()
-        console.log(JSON.parse(e).selling_plan_allocations[0].selling_plan_id)
+        console.log(e.selling_plan_allocations[0].selling_plan_id)
         console.log(event.currentTarget.querySelector('input').checked)
         event.currentTarget.querySelector('input').checked = true
     }
