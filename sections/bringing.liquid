@@ -160,7 +160,9 @@
                 const lights = [];
                 model.traverse((object) => {
                     if (object.isLight) {
+                        console.log(object)
                         object.intensity = 5;
+                        console.log(object)
                         lights.push(object);
                     }
                 });
