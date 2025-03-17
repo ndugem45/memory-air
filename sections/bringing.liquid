@@ -121,35 +121,27 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            console.log("Three.js script loaded");
         
             const container = document.getElementById("threejs-container");
+            container.appendChild(renderer.domElement);
+
             if (!container) {
-                console.error("Container tidak ditemukan!");
                 return;
             }
-            console.log("Container ditemukan");
         
             const scene = new THREE.Scene();
+            scene.background = new THREE.Color(0xaaaaaa);
+            
             const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
             const renderer = new THREE.WebGLRenderer({ antialias: true });
-            {% comment %} const camera = new THREE.OrthographicCamera( 200 / - 2, 200 / 2, 500 / 2,500 / - 2, 1, 1000 );
-            scene.add( camera ); {% endcomment %}
-
-            scene.background = new THREE.Color(0xaaaaaa); // Ubah warna latar belakang ke abu-abu
             renderer.setSize(container.clientWidth, container.clientHeight);
-            container.appendChild(renderer.domElement);
+
         
-            // Tambahkan pencahayaan
             const light = new THREE.AmbientLight(0xffffff, 1);
             scene.add(light);
-
             {% comment %} camera.position.set(-0.005, 0.272, 1.324);  {% endcomment %}
         
-            
         
-            // Pastikan path model tidak error
-            console.log("Memuat model dari:", "{{ three_asset }}");
         
             const loader = new THREE.GLTFLoader();
             loader.load("{{ three_asset }}", function (gltf) {
@@ -165,7 +157,7 @@
                 }
                 animate(); {% endcomment %}
                 $('#rotate-btn').click(()=>{
-                    model.rotation.y += 1;
+                    model.rotation.y += 0.5;
                     renderer.render(scene, camera);
                 })
 
@@ -173,7 +165,7 @@
                 console.error("Gagal memuat model:", error);
             });
         
-            {% comment %} camera.position.z = 5; {% endcomment %}
+            camera.position.z = 10;
 
         });
         
