@@ -158,12 +158,12 @@
                 model.scale.set(1, 1, 1);
                 scene.add(model);
         
-                function animate() {
+                {% comment %} function animate() {
                     requestAnimationFrame(animate);
                     model.rotation.y += 0.01;
                     renderer.render(scene, camera);
                 }
-                animate();
+                animate(); {% endcomment %}
             }, undefined, function (error) {
                 console.error("Gagal memuat model:", error);
             });
