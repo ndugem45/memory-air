@@ -132,19 +132,11 @@
             }
             
             scene = new THREE.Scene();
-            {% comment %} scene.background = new THREE.Color(0xaaaaaa); {% endcomment %}
-            {% comment %}             
-            const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000); {% endcomment %}
             
             renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
             renderer.setSize(container.clientWidth, container.clientHeight);
             renderer.setClearColor(0x000000, 0);
             container.appendChild(renderer.domElement);
-
-        
-            {% comment %} const light = new THREE.AmbientLight(0xffffff, 1);
-            scene.add(light); {% endcomment %}
-            {% comment %} camera.position.set(0, 0, 1.324);  {% endcomment %}
         
         
         
@@ -169,25 +161,17 @@
                 });
 
                 
-                fitModelToContainer(model, camera, container);
+                fitModelToContainer(model, camera, container, 0.9);
                 renderer.render(scene, camera);
 
                 $('#rotate-btn').click(()=>{
-                    if(model){
-                        model.children[0].rotation.y += 0.5;
-                    }
-                    renderer.render(scene, camera);
+                    rotateModelSmooth(model, "right");
                 })
 
             }, undefined, function (error) {
                 console.error("Gagal memuat model:", error);
             });
 
-
-            
-
-
-            // Rescale saat window di-resize
             window.addEventListener("resize", () => {
                 renderer.setSize(container.clientWidth, container.clientHeight);
                 fitModelToContainer(model, camera, container);
@@ -196,24 +180,41 @@
 
         });
 
-        function fitModelToContainer(model, camera, container) {
+        function rotateModelSmooth(model, direction = "right", duration = 1) {
+            if (!model) return;
+        
+            const targetRotation = model.rotation.y + (direction === "right" ? Math.PI / 2 : -Math.PI / 2);
+            const startRotation = model.rotation.y;
+            const startTime = performance.now();
+        
+            function animateRotation(time) {
+                const elapsed = (time - startTime) / (duration * 1000); // Konversi ke detik
+                if (elapsed < 1) {
+                    model.rotation.y = startRotation + (targetRotation - startRotation) * elapsed;
+                    requestAnimationFrame(animateRotation);
+                } else {
+                    model.rotation.y = targetRotation; // Pastikan tepat di 90°
+                }
+            }
+        
+            requestAnimationFrame(animateRotation);
+        }
+
+        function fitModelToContainer(model, camera, container, scale = 1.2) {
             const box = new THREE.Box3().setFromObject(model);
             const size = box.getSize(new THREE.Vector3());
             const center = box.getCenter(new THREE.Vector3());
     
-            // Hitung aspek rasio container
             const aspectRatio = container.clientWidth / container.clientHeight;
             camera.aspect = aspectRatio;
             camera.updateProjectionMatrix();
     
-            // Sesuaikan posisi kamera berdasarkan ukuran model
             const maxDim = Math.max(size.x, size.y, size.z);
             const fov = camera.fov * (Math.PI / 180);
-            const distance = maxDim / Math.tan(fov / 2); // Jarak optimal agar model fit di layar
+            const distance = maxDim / Math.tan(fov / 2);
     
-            camera.position.set(center.x, center.y, center.z + distance * 1.2); // Tambahkan sedikit offset
+            camera.position.set(center.x, center.y, center.z + distance * scale);
             camera.lookAt(center);
-            
         }
         
     </script>
