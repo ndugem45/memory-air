@@ -709,17 +709,18 @@
       updater.abort();
     }
 
-    $.ajax({
-      url: "/cart.js",
-      success: function(response) {
-        console.log(response); // See what you're receiving here
+    updater = jQuery.ajax({
+      type: 'GET',
+      url: window.Shopify.routes.root + "cart.js",
+      contentType: 'application/json',
+      dataType: 'json',
+      success: function(data) {
+        return data;
+      },
+      error: function(xhr, status, error) {
+        return false;
       }
     });
-    {% comment %} updater = $.get("/cart.js", function (data, status) {
-      return data;
-    }).fail((jqXHR, textStatus, errorThrown) => {
-      return false;
-    }); {% endcomment %}
   }
 
   const load = () => {
@@ -787,7 +788,7 @@
         updater.abort();
       }
   
-      updater = $.post("/cart/change.js", {
+      updater = $.post(window.Shopify.routes.root + "cart/change.js", {
         "id": id,
         "quantity": q ? 0 : $('#updates_' + id).val()
       }, function (data, status) {
@@ -808,7 +809,7 @@
       
       updater = jQuery.ajax({
         type: 'POST',
-        url: '/cart/add.js',
+        url: window.Shopify.routes.root + 'cart/add.js',
         data: JSON.stringify({
           'items': data
          }),
