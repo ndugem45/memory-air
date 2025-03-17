@@ -131,7 +131,7 @@
             const scene = new THREE.Scene();
             {% comment %} const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000); {% endcomment %}
             const renderer = new THREE.WebGLRenderer({ antialias: true });
-            const camera = new THREE.OrthographicCamera( width / - 2, width / 2, height / 2, height / - 2, 1, 1000 );
+            const camera = new THREE.OrthographicCamera( 200 / - 2, 200 / 2, 500 / 2,500 / - 2, 1, 1000 );
             scene.add( camera );
 
             scene.background = new THREE.Color(0xaaaaaa); // Ubah warna latar belakang ke abu-abu
