@@ -158,7 +158,7 @@
                     camera = glbCamera;
                 }
 
-                const lights = [];
+                {% comment %} const lights = [];
                 model.traverse((object) => {
                     if (object.isLight) {
                         console.log(object)
@@ -166,16 +166,16 @@
                         console.log(object)
                         lights.push(object);
                     }
-                });
+                }); {% endcomment %}
 
                 
                 renderer.render(scene, camera);
                 
-                {% comment %} function animate() {
+                function animate() {
                     requestAnimationFrame(animate);
                     model.rotation.y += 0.01;
                 }
-                animate(); {% endcomment %}
+                animate();
 
                 $('#rotate-btn').click(()=>{
                     model.rotation.y += 90;
