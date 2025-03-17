@@ -311,7 +311,8 @@
 			</div>
 
 			<div class="contactus_content-form">
-				<form action="">
+				{% comment %} <form action=""> {% endcomment %}
+				{% form 'contact' %}
 					<label for="" class="lable-form m-btm m-32">Interested in Finally Having a Memory Loss Answer for Your
 						Patients? We’re here to work with healthcare providers to get Memory Air to the people who need it most.
 						<br>Reach out for:
@@ -322,32 +323,33 @@
 
 					<div class="input-wrapper">
 						<div class="input-layout">
-							<input class="input-form" type="text" id="fname" name="firstname" placeholder="First Name">
-							<input class="input-form" type="text" id="lname" name="lastname" placeholder="Last Name">
+							<input class="input-form" type="text" id="fname" name="Firstname" placeholder="First Name">
+							<input class="input-form" type="text" id="lname" name="Lastname" placeholder="Last Name">
 						</div>
 
-						<input class="input-form" type="email" id="email" name="email" placeholder="Email">
+						<input class="input-form" type="email" id="email" name="Email" placeholder="Email">
 
 						<label class="checklist">
-							<input class=" " type="checkbox" name="Subscribe to the newsletter" id="subscribe"> Subscribe to the
+							<input type="checkbox" name="Subscribe to the newsletter" id="subscribe"> Subscribe to the
 							newsletter
 						</label>
 
-						<select class="input-form select-input" id="Select Topic" name="Select Topic">
+						<select class="input-form select-input" id="Select Topic" name="Topic">
 							<option value="">Select Topic</option>
 							<option value="professionalconsideration">Professional Consideration</option>
 							<option value="generalquestions">General Questions</option>
 												<option value="clinicaltrialinterest">Clinical Trial Interest</option>
 						</select>
 
-						<textarea class="input-form" placeholder="Comment"></textarea>
+						<textarea class="input-form" name="Comment" placeholder="Comment"></textarea>
 
 						<input type="submit" value="Send" class="btn is-black">
 					</div>
 
 					<label for="" class="lable-bottom-form m-top m-32">By signing in you agree with the Terms and Conditions and Privacy
 						Policy</label>
-				</form>
+				{% comment %} </form> {% endcomment %}
+				{% endform %}
 			</div>
 		</div>
 		<div class="contactus-title_btm m-top m-32">
