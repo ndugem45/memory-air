@@ -161,7 +161,7 @@
                 });
 
                 
-                fitModelToContainer(model, camera, container, 0.9);
+                fitModelToContainer(model, camera, container, 0.85);
                 renderer.render(scene, camera);
 
                 $('#rotate-btn').click(()=>{
@@ -195,6 +195,7 @@
                 } else {
                     model.rotation.y = targetRotation; // Pastikan tepat di 90°
                 }
+                renderer.render(scene, camera);
             }
         
             requestAnimationFrame(animateRotation);
