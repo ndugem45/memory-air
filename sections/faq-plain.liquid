@@ -33,9 +33,15 @@
         {% render 'faq-accordion' with item %}
       {% endif %}
 
-      <a href="{{ section.settings.section_cta }}" class="btn is-black">
-        {{ section.settings.section_cta_title }}
-      </a>
+      {% if section.settings.section_cta != blank %}
+        {% if section.settings.section_cta_size != blank %}
+          <a href="{{ section.settings.section_cta }}" class="btn is-black" >
+        {% else %}
+          <a href="{{ section.settings.section_cta }}" class="btn is-black" style="margin: auto;">
+        {% endif %}
+          {{ section.settings.section_cta_title }}
+        </a>
+      {% endif %}
     </div>
   </div>
   <script>
@@ -73,6 +79,12 @@
         "type": "url",
         "id": "section_cta",
         "label": "Section cta url"
+      },
+      {
+        "type": "checkbox",
+        "id": "section_cta_size",
+        "label": "Wide section CTA",
+        "default": true
       },
       {
         "type": "text",
