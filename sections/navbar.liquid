@@ -700,25 +700,6 @@
     document.querySelector('#' + id).classList.toggle('focus')
   }
 
-  function getCart(){
-    if (updater && typeof updater.abort === 'function') {
-      updater.abort();
-    }
-
-    updater = jQuery.ajax({
-      type: 'GET',
-      url: window.Shopify.routes.root + "cart.js",
-      contentType: 'application/json',
-      dataType: 'json',
-      success: function(data) {
-        return data;
-      },
-      error: function(xhr, status, error) {
-        return false;
-      }
-    });
-  }
-
   const load = () => {
     try {
       $('#placer').html('');
@@ -733,7 +714,7 @@
         contentType: 'application/json',
         dataType: 'json',
         success: function(data) {
-          let dataResult = typeof result === 'string' ? JSON.parse(result) : result;
+          let dataResult = typeof data === 'string' ? JSON.parse(data) : data;
           let dd = dataResult.items;
           cartData = dataResult;
           updater = null;
