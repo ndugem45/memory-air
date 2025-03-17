@@ -138,8 +138,8 @@
             container.appendChild(renderer.domElement);
 
         
-            const light = new THREE.AmbientLight(0xffffff, 1);
-            scene.add(light);
+            {% comment %} const light = new THREE.AmbientLight(0xffffff, 1);
+            scene.add(light); {% endcomment %}
             {% comment %} camera.position.set(0, 0, 1.324);  {% endcomment %}
         
         
@@ -147,7 +147,11 @@
             const loader = new THREE.GLTFLoader();
             loader.load("{{ three_asset }}", function (gltf) {
                 console.log(gltf);
-                
+
+                const model = gltf.scene;
+                model.scale.set(1, 1, 1);
+                scene.add(model);
+
                 const glbCamera = gltf.cameras[0]; 
                 if (glbCamera) {
                     camera = glbCamera;
@@ -156,9 +160,22 @@
                     console.warn("Tidak ada kamera dalam file GLB, menggunakan kamera default");
                 }
 
-                const model = gltf.scene;
-                model.scale.set(1, 1, 1);
-                scene.add(model);
+                const lights = [];
+                model.traverse((object) => {
+                    if (object.isLight) {
+                        lights.push(object);
+                    }
+                });
+
+                if (lights.length > 0) {
+                    console.log("Menggunakan lighting dari file GLB", lights);
+                } else {
+                    console.warn("Tidak ada lighting dalam file GLB, gunakan pencahayaan default");
+                    const defaultLight = new THREE.AmbientLight(0xffffff, 1);
+                    scene.add(defaultLight);
+                }
+
+                
                 renderer.render(scene, camera);
                 
                 {% comment %} function animate() {
