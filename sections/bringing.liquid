@@ -123,7 +123,7 @@
         let model, renderer, camera, scene;
         let lights = [];
 
-        function fitCameraToObject(camera, object, offset = 5) {
+        function fitCameraToObject(camera, object, offset = 0.9) {
             const box = new THREE.Box3().setFromObject(object);
             const size = box.getSize(new THREE.Vector3());
             const center = box.getCenter(new THREE.Vector3());
@@ -151,7 +151,7 @@
             const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000); {% endcomment %}
 
             renderer = new THREE.WebGLRenderer({ antialias: true });
-            {% comment %} renderer.setSize(container.clientWidth, container.clientHeight); {% endcomment %}
+            renderer.setSize(container.clientWidth, container.clientHeight);
             container.appendChild(renderer.domElement);
 
         
@@ -163,12 +163,12 @@
         
             const loader = new THREE.GLTFLoader();
             loader.load("{{ three_asset }}", function (gltf) {
-                console.log(gltf);
-                
 
                 model = gltf.scene;
                 model.scale.set(1, 1, 1);
                 scene.add(model);
+
+                fitCameraToObject(camera, model)
 
                 const glbCamera = gltf.cameras[0]; 
                 if (glbCamera) {
