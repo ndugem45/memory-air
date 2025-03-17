@@ -122,6 +122,21 @@
     <script>
         let model, renderer, camera, scene;
         let lights = [];
+
+        function fitCameraToObject(camera, object, offset = 5) {
+            const box = new THREE.Box3().setFromObject(object);
+            const size = box.getSize(new THREE.Vector3());
+            const center = box.getCenter(new THREE.Vector3());
+        
+            // Posisikan kamera agar model pas dalam frame
+            const maxSize = Math.max(size.x, size.y, size.z);
+            const fov = camera.fov * (Math.PI / 180);
+            let distance = Math.abs(maxSize / Math.sin(fov / 2));
+        
+            camera.position.set(center.x, center.y, center.z + distance * offset);
+            camera.lookAt(center);
+        }
+
         document.addEventListener("DOMContentLoaded", function () {
         
             const container = document.getElementById("threejs-container");
@@ -136,7 +151,7 @@
             const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000); {% endcomment %}
 
             renderer = new THREE.WebGLRenderer({ antialias: true });
-            renderer.setSize(container.clientWidth, container.clientHeight);
+            {% comment %} renderer.setSize(container.clientWidth, container.clientHeight); {% endcomment %}
             container.appendChild(renderer.domElement);
 
         
@@ -183,7 +198,7 @@
 
                 $('#rotate-btn').click(()=>{
                     if(model){
-                        model.children[0].rotation.y += 0.05;
+                        model.children[0].rotation.y += 0.5;
                     }
                     renderer.render(scene, camera);
                 })
