@@ -132,12 +132,13 @@
             }
             
             scene = new THREE.Scene();
-            scene.background = new THREE.Color(0xaaaaaa);
+            {% comment %} scene.background = new THREE.Color(0xaaaaaa); {% endcomment %}
             {% comment %}             
             const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000); {% endcomment %}
-
-            renderer = new THREE.WebGLRenderer({ antialias: true });
+            
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
             renderer.setSize(container.clientWidth, container.clientHeight);
+            renderer.setClearColor(0x000000, 0);
             container.appendChild(renderer.domElement);
 
         
