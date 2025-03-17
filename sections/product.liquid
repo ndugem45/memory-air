@@ -255,9 +255,32 @@
 </div>
 
 <script>
-  {% comment %} gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
 
-  document.querySelectorAll(".right-content .item").forEach((section, index) => {
+  const items = document.querySelectorAll(".right-content .item");
+
+  // Loop melalui setiap item di kiri untuk animasi scroll
+  items.forEach((item, index) => {
+      gsap.fromTo(
+          item,
+          { opacity: 0, y: 50 },
+          {
+              opacity: 1,
+              y: 0,
+              duration: 0.5,
+              scrollTrigger: {
+                  trigger: item,
+                  start: "top 60%",  // Animasi mulai ketika bagian atas item 60% dari viewport
+                  end: "top 40%",
+                  markers: true,
+                  toggleActions: "play reverse play reverse",
+                  scrub: true,
+              }
+          }
+      );
+  });
+
+  {% comment %} document.querySelectorAll(".right-content .item").forEach((section, index) => {
       gsap.to(section, {
           scrollTrigger: {
               trigger: section,
