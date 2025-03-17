@@ -120,6 +120,7 @@
     </div>
 
     <script>
+        let model;
         document.addEventListener("DOMContentLoaded", function () {
         
             const container = document.getElementById("threejs-container");
@@ -149,7 +150,7 @@
                 console.log(gltf);
                 let camera;
 
-                const model = gltf.scene;
+                model = gltf.scene;
                 model.scale.set(1, 1, 1);
                 scene.add(model);
 
@@ -158,15 +159,13 @@
                     camera = glbCamera;
                 }
 
-                {% comment %} const lights = [];
+                const lights = [];
                 model.traverse((object) => {
                     if (object.isLight) {
-                        console.log(object)
-                        object.intensity = 5;
-                        console.log(object)
+                        object.intensity = 0.1;
                         lights.push(object);
                     }
-                }); {% endcomment %}
+                });
 
                 
                 renderer.render(scene, camera);
@@ -175,6 +174,7 @@
                     requestAnimationFrame(animate);
                     model.rotation.y += 0.01;
                 }
+
                 animate();
 
                 $('#rotate-btn').click(()=>{
