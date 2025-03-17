@@ -106,7 +106,9 @@
         "faq_item_kPkmb9"
       ],
       "settings": {
-        "section_title": ""
+        "section_title": "",
+        "section_cta_title": "See All FAQs",
+        "section_cta": "shopify://pages/faqs"
       }
     }
   },
