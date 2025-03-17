@@ -123,18 +123,19 @@
         document.addEventListener("DOMContentLoaded", function () {
         
             const container = document.getElementById("threejs-container");
-            container.appendChild(renderer.domElement);
-
+            
             if (!container) {
                 return;
             }
-        
+            
             const scene = new THREE.Scene();
             scene.background = new THREE.Color(0xaaaaaa);
             
             const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+
             const renderer = new THREE.WebGLRenderer({ antialias: true });
             renderer.setSize(container.clientWidth, container.clientHeight);
+            container.appendChild(renderer.domElement);
 
         
             const light = new THREE.AmbientLight(0xffffff, 1);
