@@ -11,8 +11,8 @@
     display: flex;
     gap: 99px;
     align-items: flex-start;
-    /* position: sticky;
-    top: 25vh; */
+    position: sticky;
+    top: 25vh;
   }
   @media only screen and (max-width: 780px) {
     #shopify-section-{{section.id}}.product .container{
@@ -261,7 +261,8 @@
 
   const items = document.querySelectorAll(".right-content .item");
 
-  {% comment %} items.forEach((item, index) => {
+  // Loop melalui setiap item di kiri untuk animasi scroll
+  items.forEach((item, index) => {
       gsap.fromTo(
           item,
           { opacity: 0, y: 50 },
@@ -279,25 +280,21 @@
               }
           }
       );
-  }); {% endcomment %}
-
-  gsap.to(items, {
-      opacity: 1,
-      duration: 0.5,
-      stagger: {
-          each: 1.5, // Waktu sebelum item berikutnya muncul
-          repeat: -1, // Looping terus
-          yoyo: true, // Menghilang sebelum yang berikutnya muncul
-      },
-      scrollTrigger: {
-          trigger: ".left-content",
-          start: "top 40%",
-          end: "bottom 20%",
-          scrub: true,
-          pin: true,
-      }
   });
 
+  {% comment %} document.querySelectorAll(".right-content .item").forEach((section, index) => {
+      gsap.to(section, {
+          scrollTrigger: {
+              trigger: section,
+              start: "top center",
+              end: "+=100%",
+              scrub: true,
+              markers: true,
+              pin: section.querySelector(".right-content .item svg"),
+              pinSpacing: false,
+          },
+      });
+  }); {% endcomment %}
 </script>
 
 {% schema %}
