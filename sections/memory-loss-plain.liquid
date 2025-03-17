@@ -58,11 +58,11 @@
                 fade: true,
             });
 
-            $(".tab_btn button").click((e) => {
+            $(".memory-los_card .tab_btn button").click((e) => {
+              $(".memory-los_card .tab_btn button").removeClass("active");
                 const index = e.currentTarget.getAttribute("id").split("tab-btn-")[1];
-                $(".tab_btn button").removeClass("active");
-                $(e.currentTarget).addClass("active");
                 $("#memory-slide").slick("slickGoTo", index-1);
+                $(e.currentTarget).addClass("active");
             });
 
         });
