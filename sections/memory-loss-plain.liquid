@@ -40,7 +40,7 @@
                 Activate Memory Air® by pressing the button to start its sleep-enhancing features.
               </p>
             </button>
-            <a href="" class="btn is-black m-top m-32">
+            <a href="{{ section.settings.file_url }}" class="btn is-black m-top m-32">
               Download the Guide
             </a>
           </div>
@@ -71,6 +71,13 @@
     {% schema %}
         {
             "tag": "section",
-            "class": "memory-los plain"
+            "class": "memory-los plain",
+            "settings": [
+              {
+                "type": "url",
+                "id": "file_url",
+                "label": "File url button"
+              },
+            ]
         }
     {% endschema %}
