@@ -86,7 +86,7 @@
     <div class="container">
         <div class="healthcare_content">
             <div class="healthcare_content-img">
-                <div id="threejs-container" style="width: 500px; height: 500px;"></div>
+                <div id="threejs-container" style="width: 100%; height: 500px;"></div>
                 {% comment %} {% if section.settings.section_image != blank %}
                     <img src="{{ section.settings.section_image | img_url: 'medium' }}" alt="" class="image-display">
                 {% else %}
@@ -119,40 +119,48 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Cari elemen container
+            console.log("Three.js script loaded");
+        
             const container = document.getElementById("threejs-container");
-          
-            // Buat scene
+            if (!container) {
+                console.error("Container tidak ditemukan!");
+                return;
+            }
+            console.log("Container ditemukan");
+        
             const scene = new THREE.Scene();
             const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
             const renderer = new THREE.WebGLRenderer({ antialias: true });
             renderer.setSize(container.clientWidth, container.clientHeight);
             container.appendChild(renderer.domElement);
-          
+        
             // Tambahkan pencahayaan
             const light = new THREE.AmbientLight(0xffffff, 1);
             scene.add(light);
-          
-            // Tambahkan model 3D (gantilah 'model.glb' dengan path yang sesuai)
+        
+            // Pastikan path model tidak error
+            console.log("Memuat model dari:", "{{ three_asset }}");
+        
             const loader = new THREE.GLTFLoader();
-            
             loader.load("{{ three_asset }}", function (gltf) {
-              const model = gltf.scene;
-              model.scale.set(1, 1, 1);
-              scene.add(model);
-          
-              // Animasi render
-              function animate() {
-                requestAnimationFrame(animate);
-                model.rotation.y += 0.01; // Rotasi model
-                renderer.render(scene, camera);
-              }
-              animate();
+                console.log("Model berhasil dimuat");
+                const model = gltf.scene;
+                model.scale.set(1, 1, 1);
+                scene.add(model);
+        
+                function animate() {
+                    requestAnimationFrame(animate);
+                    model.rotation.y += 0.01;
+                    renderer.render(scene, camera);
+                }
+                animate();
+            }, undefined, function (error) {
+                console.error("Gagal memuat model:", error);
             });
-          
-            // Atur posisi kamera
+        
             camera.position.z = 5;
-        });          
+        });
+        
     </script>
     
     
