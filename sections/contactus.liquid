@@ -61,6 +61,12 @@
 		height: 800px;
 		background-size: 780px 800px;
 	}
+
+	#shopify-section-{{section.id}} .contactus_content-form .input-wrapper{
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
 	#shopify-section-{{section.id}} .contactus_img-head > img{
 		width: 572px;
 		height: 334px;
@@ -310,25 +316,32 @@
 						● Referral Pads & In-office Resources
 						<br>
 						● More information</label>
-					<div class="input-layout m-btm m-12">
-						<input class="input-form" type="text" id="fname" name="firstname" placeholder="First Name">
-						<input class="input-form" type="text" id="lname" name="lastname" placeholder="Last Name">
+
+					<div class="input-wrapper">
+						<div class="input-layout">
+							<input class="input-form" type="text" id="fname" name="firstname" placeholder="First Name">
+							<input class="input-form" type="text" id="lname" name="lastname" placeholder="Last Name">
+						</div>
+
+						<input class="input-form" type="email" id="email" name="email" placeholder="Email">
+
+						<label>
+							<input class=" " type="checkbox" name="Subscribe to the newsletter" id="subscribe"> Subscribe to the
+							newsletter
+						</label>
+
+						<select class="input-form select-input" id="Select Topic" name="Select Topic">
+							<option value="">Select Topic</option>
+							<option value="professionalconsideration">Professional Consideration</option>
+							<option value="generalquestions">General Questions</option>
+												<option value="clinicaltrialinterest">Clinical Trial Interest</option>
+						</select>
+
+						<textarea class="input-form" placeholder="Comment"></textarea>
+
+						<input type="submit" value="Send" class="btn is-black">
 					</div>
 
-					<input class="input-form m-btm m-12" type="email" id="email" name="email" placeholder="Email">
-					<label class="m-btm m-12">
-						<input class=" " type="checkbox" name="Subscribe to the newsletter" id="subscribe"> Subscribe to the
-						newsletter
-					</label>
-					<select class="input-form select-input m-btm m-12" id="Select Topic" name="Select Topic">
-						<option value="">Select Topic</option>
-						<option value="professionalconsideration">Professional Consideration</option>
-						<option value="generalquestions">General Questions</option>
-                      <option value="clinicaltrialinterest">Clinical Trial Interest</option>
-					</select>
-					<textarea class="input-form m-btm m-12" placeholder="Comment"></textarea>
-
-					<input type="submit" value="Send" class="btn is-black">
 					<label for="" class="lable-bottom-form m-top m-32">By signing in you agree with the Terms and Conditions and Privacy
 						Policy</label>
 				</form>
