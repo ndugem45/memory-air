@@ -120,7 +120,8 @@
     </div>
 
     <script>
-        let model, renderer;
+        let model, renderer, camera, scene;
+        let lights = [];
         document.addEventListener("DOMContentLoaded", function () {
         
             const container = document.getElementById("threejs-container");
@@ -129,9 +130,9 @@
                 return;
             }
             
-            const scene = new THREE.Scene();
+            scene = new THREE.Scene();
             scene.background = new THREE.Color(0xaaaaaa);
-{% comment %}             
+            {% comment %}             
             const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000); {% endcomment %}
 
             renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -148,7 +149,7 @@
             const loader = new THREE.GLTFLoader();
             loader.load("{{ three_asset }}", function (gltf) {
                 console.log(gltf);
-                let camera;
+                
 
                 model = gltf.scene;
                 model.scale.set(1, 1, 1);
@@ -159,7 +160,7 @@
                     camera = glbCamera;
                 }
 
-                const lights = [];
+                
                 model.traverse((object) => {
                     if (object.isLight) {
                         object.intensity = 0.1;
