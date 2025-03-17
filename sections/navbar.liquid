@@ -574,6 +574,11 @@
   var sym = '{{ cart.currency.iso_code }}'
 
   $(document).ready(function(){
+    const cartData = getCart();
+    if(cartData){
+      console.log('ok')
+    }
+
     const navbar = document.querySelector('nav');
     
     $(".cart").click(() => {
@@ -699,15 +704,51 @@
     document.querySelector('#' + id).classList.toggle('focus')
   }
 
+  function getCart(){
+    if (updater && typeof updater.abort === 'function') {
+      updater.abort();
+    }
+
+    updater = $.get("/cart.js", function (data, status) {
+      return data;
+    }).fail((jqXHR, textStatus, errorThrown) => {
+      return false;
+    });
+  }
+
   const load = () => {
     try {
       $('#placer').html('');
-    
-      if (updater && typeof updater.abort === 'function') {
-        updater.abort();
-      }
+
+      const result = getCart();
+
+      if(result){
+        let dataResult = typeof result === 'string' ? JSON.parse(result) : result;
+        let dd = dataResult.items;
+        cartData = dataResult;
+        updater = null;
   
-      updater = $.get("/cart.js", function (data, status) {
+        $('#total-price').html(formatCost(parseFloat(cartData.total_price / 100)));
+        $('#sub-total').html(formatCost(parseFloat(cartData.items_subtotal_price / 100)));
+  
+        if (dd.length) {
+          $('nav .cart-menu .summary .btn').addClass('active');
+          dd.forEach((s) => {
+            s.newPrice = formatCost(parseInt(s.price / 100));
+            $('#placer').append(tmplt(s));
+          });
+        } else {
+          $('nav .cart-menu .summary .btn').removeClass('active');
+          $('#placer').append('<div>No data</div>');
+        }
+      }
+    
+      {% comment %} if (updater && typeof updater.abort === 'function') {
+        updater.abort();
+      } {% endcomment %}
+      
+  
+      {% comment %} updater = $.get("/cart.js", function (data, status) {
         let dataResult = typeof data === 'string' ? JSON.parse(data) : data;
         let dd = dataResult.items;
         cartData = dataResult;
@@ -728,7 +769,7 @@
         }
       }).fail((jqXHR, textStatus, errorThrown) => {
         console.error("Error fetching cart data:", textStatus, errorThrown);
-      });
+      }); {% endcomment %}
     } catch (e) {
       console.error("Load function error:", e);
     }
