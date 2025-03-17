@@ -123,20 +123,6 @@
         let model, renderer, camera, scene;
         let lights = [];
 
-        function fitCameraToObject(camera, object, offset = 0.9) {
-            const box = new THREE.Box3().setFromObject(object);
-            const size = box.getSize(new THREE.Vector3());
-            const center = box.getCenter(new THREE.Vector3());
-        
-            // Posisikan kamera agar model pas dalam frame
-            const maxSize = Math.max(size.x, size.y, size.z);
-            const fov = camera.fov * (Math.PI / 180);
-            let distance = Math.abs(maxSize / Math.sin(fov / 2));
-        
-            camera.position.set(center.x, center.y, center.z + distance * offset);
-            camera.lookAt(center);
-        }
-
         document.addEventListener("DOMContentLoaded", function () {
         
             const container = document.getElementById("threejs-container");
@@ -168,8 +154,6 @@
                 model.scale.set(1, 1, 1);
                 scene.add(model);
 
-                fitCameraToObject(camera, model)
-
                 const glbCamera = gltf.cameras[0]; 
                 if (glbCamera) {
                     camera = glbCamera;
@@ -183,18 +167,8 @@
                     }
                 });
 
-                
-                {% comment %} renderer.render(scene, camera); {% endcomment %}
-                
-                function animate() {
-                    requestAnimationFrame(animate);
-                    if(model){
-                        model.children[0].rotation.y += 0.01;
-                    }
-                    renderer.render(scene, camera);
-                }
 
-                animate();
+                fitModelToContainer(model, camera, container);
 
                 $('#rotate-btn').click(()=>{
                     if(model){
@@ -205,6 +179,33 @@
 
             }, undefined, function (error) {
                 console.error("Gagal memuat model:", error);
+            });
+
+
+            function fitModelToContainer(model, camera, container) {
+                const box = new THREE.Box3().setFromObject(model);
+                const size = box.getSize(new THREE.Vector3());
+                const center = box.getCenter(new THREE.Vector3());
+        
+                // Hitung aspek rasio container
+                const aspectRatio = container.clientWidth / container.clientHeight;
+                camera.aspect = aspectRatio;
+                camera.updateProjectionMatrix();
+        
+                // Sesuaikan posisi kamera berdasarkan ukuran model
+                const maxDim = Math.max(size.x, size.y, size.z);
+                const fov = camera.fov * (Math.PI / 180);
+                const distance = maxDim / Math.tan(fov / 2); // Jarak optimal agar model fit di layar
+        
+                camera.position.set(center.x, center.y, center.z + distance * 1.2); // Tambahkan sedikit offset
+                camera.lookAt(center);
+            }
+
+
+            // Rescale saat window di-resize
+            window.addEventListener("resize", () => {
+                renderer.setSize(container.clientWidth, container.clientHeight);
+                fitModelToContainer(model, camera, container);
             });
 
         });
