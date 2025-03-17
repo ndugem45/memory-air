@@ -86,6 +86,7 @@
     <div class="container">
         <div class="healthcare_content">
             <div class="healthcare_content-img">
+                {{ three_asset }}
                 <div id="threejs-container" style="width: 200px; height: 500px;"></div>
                 {% comment %} {% if section.settings.section_image != blank %}
                     <img src="{{ section.settings.section_image | img_url: 'medium' }}" alt="" class="image-display">
@@ -136,7 +137,7 @@
             // Tambahkan model 3D (gantilah 'model.glb' dengan path yang sesuai)
             const loader = new THREE.GLTFLoader();
             
-            loader.load("{{ three_asset }}", function (gltf) {
+            loader.load("https://cdn.shopify.com/s/files/1/0745/3658/3442/files/Air_02.gltf?v=1742199622", function (gltf) {
               const model = gltf.scene;
               model.scale.set(1, 1, 1);
               scene.add(model);
