@@ -129,8 +129,11 @@
             console.log("Container ditemukan");
         
             const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+            {% comment %} const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000); {% endcomment %}
             const renderer = new THREE.WebGLRenderer({ antialias: true });
+            const camera = new THREE.OrthographicCamera( width / - 2, width / 2, height / 2, height / - 2, 1, 1000 );
+            scene.add( camera );
+
             scene.background = new THREE.Color(0xaaaaaa); // Ubah warna latar belakang ke abu-abu
             renderer.setSize(container.clientWidth, container.clientHeight);
             container.appendChild(renderer.domElement);
@@ -138,6 +141,7 @@
             // Tambahkan pencahayaan
             const light = new THREE.AmbientLight(0xffffff, 1);
             scene.add(light);
+
             camera.position.set(0, 2, 5);  // Naikkan sedikit posisi kamera
             camera.lookAt(0, 0, 0);  // Arahkan kamera ke tengah scene
         
