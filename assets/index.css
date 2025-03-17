@@ -345,6 +345,7 @@ button {
 	line-height: 140%;
 	letter-spacing: 0%;
 	color: var(--color-primary);
+	cursor: pointer;
 }
 .btn.is-outline-black {
 	border: 1px solid var(--color-primary);
