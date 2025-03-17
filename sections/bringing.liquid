@@ -147,6 +147,7 @@
             const loader = new THREE.GLTFLoader();
             loader.load("{{ three_asset }}", function (gltf) {
                 console.log(gltf);
+                let camera;
 
                 const model = gltf.scene;
                 model.scale.set(1, 1, 1);
@@ -177,7 +178,7 @@
                 animate(); {% endcomment %}
 
                 $('#rotate-btn').click(()=>{
-                    model.rotation.y += 0.5;
+                    model.rotation.y += 90;
                     renderer.render(scene, camera);
                 })
 
