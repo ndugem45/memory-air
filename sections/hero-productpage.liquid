@@ -375,11 +375,10 @@
 
                 {% if product.variants != blank%}
                     {% for variant in product.variants %}
-                        {{ variant | json }}
-                        {% comment %} {% if variant.requires_shipping == false %} {% endcomment %}
-                            <div class="option" onclick="check()">
+                        {% if variant.selling_plan_allocations[0] %}
+                            <div class="option" onclick="check({{ variant.selling_plan_allocations[0].selling_plan_id }})">
                                 <label>
-                                    <input type="radio" name="memory-air" id="{{  variant.id }}" value="{{  variant.id }}">
+                                    <input type="radio" name="{{ variant.title }}" id="{{  variant.id }}" value="{{  variant.id }}">
                                     
                                     <div class="custom-checkbox"></div>
                                     <div class="option-content">
@@ -394,9 +393,9 @@
                                     </div>
                                 </label>
                             </div>
-                        {% comment %} {% else %}
+                        {% else %}
                             <div class="hidden" id="{{  variant.id }}"></div>
-                        {% endif %} {% endcomment %}
+                        {% endif %}
                     {% endfor %}
                 {% else %}
                     <div class="hidden" id="{{  product.id }}"></div>
@@ -416,8 +415,9 @@
 	</div>
 
 <script>
-    function check(){
+    function check(e){
         event.stopPropagation()
+        console.log(e)
         console.log(event.currentTarget.querySelector('input').checked)
         event.currentTarget.querySelector('input').checked = true
     }
@@ -438,6 +438,7 @@
                     {
                         'id': variantValue,
                         'quantity': 1,
+                        'selling_plan': ""
                     }
                 ], (result)=>{
                     if(result){
