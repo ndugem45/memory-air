@@ -8,72 +8,79 @@
  * ------------------------------------------------------------
  */
 {
-	"sections": {
-		"memory-loss-plain": {
-			"type": "memory-loss-plain",
-			"settings": {}
-		},
-		"faq-plain": {
-			"type": "faq-plain",
-			"blocks": {
-				"faq_item_4FfKyy": {
-					"type": "faq_item",
-					"settings": {
-						"faq_object": "what-is-the-science-behind-olfactory-enrichment"
-					}
-				},
-				"faq_item_bPzim8": {
-					"type": "faq_item",
-					"settings": {
-						"faq_object": "what-if-i-dont-like-how-some-of-the-scents-smell"
-					}
-				},
-				"faq_item_EJhMKQ": {
-					"type": "faq_item",
-					"settings": {
-						"faq_object": "what-if-im-allergic-or-sensitive-to-certain-scents"
-					}
-				},
-				"faq_item_ATpqrY": {
-					"type": "faq_item",
-					"settings": {
-						"faq_object": "does-memory-air-have-side-effects"
-					}
-				},
-				"faq_item_Qh9grq": {
-					"type": "faq_item",
-					"settings": {
-						"faq_object": "what-if-i-dont-have-regular-sleep-hours-does-it-matter"
-					}
-				}
-			},
-			"block_order": [
-				"faq_item_4FfKyy",
-				"faq_item_bPzim8",
-				"faq_item_EJhMKQ",
-				"faq_item_ATpqrY",
-				"faq_item_Qh9grq"
-			],
-			"settings": {
-				"section_title": "",
-				"section_cta": "shopify://pages/faqs",
-				"section_cta_title": "Go to FAQ"
-			}
-		},
-		"banner": {
-			"type": "banner",
-			"settings": {
-				"cta_url": "shopify://pages/membership",
-				"cta_title": "Login to Member Portal"
-			}
-		},
-		"banner-cta": {
-			"type": "banner-cta",
-			"settings": {
-				"cta_url": "shopify://pages/contact",
-				"cta_title": "Contact Us"
-			}
-		}
-	},
-	"order": ["memory-loss-plain", "faq-plain", "banner", "banner-cta"]
+  "sections": {
+    "memory-loss-plain": {
+      "type": "memory-loss-plain",
+      "settings": {
+        "file_url": "https://cdn.shopify.com/s/files/1/0745/3658/3442/files/Memory_Air_quick_start_guide_4.9x4.9-1224.pdf?v=1742194154"
+      }
+    },
+    "faq-plain": {
+      "type": "faq-plain",
+      "blocks": {
+        "faq_item_4FfKyy": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "what-is-the-science-behind-olfactory-enrichment"
+          }
+        },
+        "faq_item_bPzim8": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "what-if-i-dont-like-how-some-of-the-scents-smell"
+          }
+        },
+        "faq_item_EJhMKQ": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "what-if-im-allergic-or-sensitive-to-certain-scents"
+          }
+        },
+        "faq_item_ATpqrY": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "does-memory-air-have-side-effects"
+          }
+        },
+        "faq_item_Qh9grq": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "what-if-i-dont-have-regular-sleep-hours-does-it-matter"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_4FfKyy",
+        "faq_item_bPzim8",
+        "faq_item_EJhMKQ",
+        "faq_item_ATpqrY",
+        "faq_item_Qh9grq"
+      ],
+      "settings": {
+        "section_title": "",
+        "section_cta": "shopify://pages/faqs",
+        "section_cta_title": "Go to FAQ"
+      }
+    },
+    "banner": {
+      "type": "banner",
+      "settings": {
+        "cta_url": "shopify://pages/membership",
+        "cta_title": "Login to Member Portal"
+      }
+    },
+    "banner-cta": {
+      "type": "banner-cta",
+      "settings": {
+        "cta_url": "shopify://pages/contact",
+        "cta_title": "Contact Us"
+      }
+    }
+  },
+  "order": [
+    "memory-loss-plain",
+    "faq-plain",
+    "banner",
+    "banner-cta"
+  ]
 }
