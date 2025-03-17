@@ -382,14 +382,13 @@
                                     
                                     <div class="custom-checkbox"></div>
                                     <div class="option-content">
+                                        <span class="title">{{ variant.title }}</span>
+                                        
+                                        {% if variant.metafields.custom.variant_description %}
+                                            {{ variant.metafields.custom.variant_description | metafield_tag }}
+                                        {% endif %}
                                     
-                                    <span class="title">{{ variant.title }}</span>
-                                    
-                                    {% if variant.metafields.custom.variant_description %}
-                                        {{ variant.metafields.custom.variant_description | metafield_tag }}
-                                    {% endif %}
-                                    
-                                    <span class="price">{{ variant.metafields.custom.price_text }}</span>
+                                        <span class="price">{{ variant.metafields.custom.price_text }}</span>
                                     </div>
                                 </label>
                             </div>
