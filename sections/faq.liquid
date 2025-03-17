@@ -35,9 +35,9 @@
 
     {% if section.settings.section_cta != blank %}
       {% if section.settings.section_cta_size != blank %}
-        <a href="{{ section.settings.section_cta }}" class="btn is-black" style="margin: auto;">
-      {% else %}
         <a href="{{ section.settings.section_cta }}" class="btn is-black" >
+      {% else %}
+        <a href="{{ section.settings.section_cta }}" class="btn is-black" style="margin: auto;">
       {% endif %}
         {{ section.settings.section_cta_title }}
       </a>
