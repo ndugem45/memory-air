@@ -146,6 +146,7 @@
         
             const loader = new THREE.GLTFLoader();
             loader.load("{{ three_asset }}", function (gltf) {
+                console.log(gltf)
                 const glbCamera = gltf.cameras[0]; 
                 if (glbCamera) {
                     camera = glbCamera;
