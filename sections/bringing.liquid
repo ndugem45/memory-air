@@ -143,8 +143,7 @@
             const light = new THREE.AmbientLight(0xffffff, 1);
             scene.add(light);
 
-            camera.position.set(0, 2, 5);  // Naikkan sedikit posisi kamera
-            camera.lookAt(0, 0, 0);  // Arahkan kamera ke tengah scene
+            camera.position.set(-0.005, 0.272, 1.324);  // Naikkan sedikit posisi kamera
         
             
         
@@ -157,17 +156,18 @@
                 const model = gltf.scene;
                 model.scale.set(1, 1, 1);
                 scene.add(model);
-        
+                renderer.render(scene, camera);
+                
                 {% comment %} function animate() {
                     requestAnimationFrame(animate);
                     model.rotation.y += 0.01;
-                    renderer.render(scene, camera);
                 }
                 animate(); {% endcomment %}
                 $('#rotate-btn').click(()=>{
                     model.rotation.y += 1;
+                    renderer.render(scene, camera);
                 })
-                
+
             }, undefined, function (error) {
                 console.error("Gagal memuat model:", error);
             });
