@@ -709,11 +709,17 @@
       updater.abort();
     }
 
-    updater = $.get("/cart.js", function (data, status) {
+    $.ajax({
+      url: "/cart.js",
+      success: function(response) {
+        console.log(response); // See what you're receiving here
+      }
+    });
+    {% comment %} updater = $.get("/cart.js", function (data, status) {
       return data;
     }).fail((jqXHR, textStatus, errorThrown) => {
       return false;
-    });
+    }); {% endcomment %}
   }
 
   const load = () => {
