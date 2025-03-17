@@ -167,6 +167,7 @@
                     }
                 });
 
+                renderer.render(scene, camera);
 
                 fitModelToContainer(model, camera, container);
 
@@ -182,24 +183,7 @@
             });
 
 
-            function fitModelToContainer(model, camera, container) {
-                const box = new THREE.Box3().setFromObject(model);
-                const size = box.getSize(new THREE.Vector3());
-                const center = box.getCenter(new THREE.Vector3());
-        
-                // Hitung aspek rasio container
-                const aspectRatio = container.clientWidth / container.clientHeight;
-                camera.aspect = aspectRatio;
-                camera.updateProjectionMatrix();
-        
-                // Sesuaikan posisi kamera berdasarkan ukuran model
-                const maxDim = Math.max(size.x, size.y, size.z);
-                const fov = camera.fov * (Math.PI / 180);
-                const distance = maxDim / Math.tan(fov / 2); // Jarak optimal agar model fit di layar
-        
-                camera.position.set(center.x, center.y, center.z + distance * 1.2); // Tambahkan sedikit offset
-                camera.lookAt(center);
-            }
+            
 
 
             // Rescale saat window di-resize
@@ -209,6 +193,25 @@
             });
 
         });
+
+        function fitModelToContainer(model, camera, container) {
+            const box = new THREE.Box3().setFromObject(model);
+            const size = box.getSize(new THREE.Vector3());
+            const center = box.getCenter(new THREE.Vector3());
+    
+            // Hitung aspek rasio container
+            const aspectRatio = container.clientWidth / container.clientHeight;
+            camera.aspect = aspectRatio;
+            camera.updateProjectionMatrix();
+    
+            // Sesuaikan posisi kamera berdasarkan ukuran model
+            const maxDim = Math.max(size.x, size.y, size.z);
+            const fov = camera.fov * (Math.PI / 180);
+            const distance = maxDim / Math.tan(fov / 2); // Jarak optimal agar model fit di layar
+    
+            camera.position.set(center.x, center.y, center.z + distance * 1.2); // Tambahkan sedikit offset
+            camera.lookAt(center);
+        }
         
     </script>
     
