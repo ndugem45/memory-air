@@ -173,6 +173,7 @@
                     function animate() {
                         requestAnimationFrame(animate);
                         mainObject.rotation.y += 0.005;
+                        fitModelToContainer(model, camera, container);
                         renderer.render(scene, camera);
                     }
                     animate();
