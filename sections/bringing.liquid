@@ -1,7 +1,7 @@
 {% comment %} for about us {% endcomment %}
 
 {% assign bringing-display = 'healthcare_hero-img.png' | asset_url | append: '?v=' | append: 'timestamp' %}
-{% assign three_asset = 'Air_Purifier2.glb' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign three_asset = 'Air_Purifier.glb' | asset_url | append: '?v=' | append: 'timestamp' %}
 {% comment %} {% assign three_asset = 'Air_02.gltf' | asset_url | append: '?v=' | append: 'timestamp' %} {% endcomment %}
 
 
@@ -124,7 +124,6 @@
         let lights = [];
 
         document.addEventListener("DOMContentLoaded", function () {
-        
             const container = document.getElementById("threejs-container");
             
             if (!container) {
@@ -138,8 +137,6 @@
             renderer.setClearColor(0x000000, 0);
             container.appendChild(renderer.domElement);
         
-        
-        
             const loader = new THREE.GLTFLoader();
             loader.load("{{ three_asset }}", function (gltf) {
 
@@ -151,7 +148,6 @@
                 if (glbCamera) {
                     camera = glbCamera;
                 }
-
                 
                 model.traverse((object) => {
                     if (object.isLight) {
@@ -160,24 +156,28 @@
                     }
                 });
 
+                lights[0].intensity = -0.01
+                lights[1].intensity = 3
+                lights[2].intensity = 3
+                lights[3].intensity = 3
                 
                 fitModelToContainer(model, camera, container, 0.85);
                 renderer.render(scene, camera);
-
-                $('#rotate-btn').click(()=>{
-                    rotateModelSmooth(model, "right");
-                })
-
+                
             }, undefined, function (error) {
                 console.error("Gagal memuat model:", error);
             });
-
+            
+            $('#rotate-btn').click(()=>{
+                rotateModelSmooth(model, "right");
+                renderer.render(scene, camera);
+            })
+            
             window.addEventListener("resize", () => {
                 renderer.setSize(container.clientWidth, container.clientHeight);
                 fitModelToContainer(model, camera, container);
                 renderer.render(scene, camera);
             });
-
         });
 
         function rotateModelSmooth(model, direction = "right", duration = 1) {
@@ -188,12 +188,12 @@
             const startTime = performance.now();
         
             function animateRotation(time) {
-                const elapsed = (time - startTime) / (duration * 1000); // Konversi ke detik
+                const elapsed = (time - startTime) / (duration * 1000);
                 if (elapsed < 1) {
                     model.rotation.y = startRotation + (targetRotation - startRotation) * elapsed;
                     requestAnimationFrame(animateRotation);
                 } else {
-                    model.rotation.y = targetRotation; // Pastikan tepat di 90°
+                    model.rotation.y = targetRotation;
                 }
                 renderer.render(scene, camera);
             }
@@ -217,7 +217,6 @@
             camera.position.set(center.x, center.y, center.z + distance * scale);
             camera.lookAt(center);
         }
-        
     </script>
     
     
