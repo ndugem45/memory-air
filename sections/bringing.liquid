@@ -151,10 +151,17 @@
                 
                 model.traverse((object) => {
                     if (object.isLight) {
-                        lights.intensity = 0.5;
+                        {% comment %} object.intensity = 0.5; {% endcomment %}
                         lights.push(object);
                     }
                 });
+
+                if(lights.length){
+                    lights[3].intensity = 0.5
+                    lights[2].intensity = 0.9
+                    lights[1].intensity = 0.9
+                    lights[0].intensity = 3
+                }
 
                 const mainObject = model.children[0];
                 if (mainObject) {
