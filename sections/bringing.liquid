@@ -155,9 +155,19 @@
                         lights.push(object);
                     }
                 });
+
+                const mainObject = model.children[0]; // Ambil objek utama dalam group
+                if (mainObject) {
+                    function animate() {
+                        requestAnimationFrame(animate);
+                        mainObject.rotation.y += 0.01;
+                        renderer.render(scene, camera);
+                    }
+                    animate();
+                }
                 
-                fitModelToContainer(model, camera, container, 0.85);
-                renderer.render(scene, camera);
+                {% comment %} fitModelToContainer(model, camera, container, 0.85);
+                renderer.render(scene, camera); {% endcomment %}
                 
             }, undefined, function (error) {
                 console.error("Gagal memuat model:", error);
