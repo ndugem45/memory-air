@@ -1,7 +1,7 @@
 {% comment %} for about us {% endcomment %}
 
 {% assign bringing-display = 'healthcare_hero-img.png' | asset_url | append: '?v=' | append: 'timestamp' %}
-{% assign three_asset = 'purifier.glb' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign three_asset = 'purifier2.gltf' | asset_url | append: '?v=' | append: 'timestamp' %}
 {% comment %} {% assign three_asset = 'Air_02.gltf' | asset_url | append: '?v=' | append: 'timestamp' %} {% endcomment %}
 
 
@@ -151,15 +151,9 @@
                 
                 model.traverse((object) => {
                     if (object.isLight) {
-                        {% comment %} object.intensity = 1; {% endcomment %}
                         lights.push(object);
                     }
                 });
-
-                {% comment %} lights[0].intensity = -0.01
-                lights[1].intensity = 3
-                lights[2].intensity = 3
-                lights[3].intensity = 3 {% endcomment %}
                 
                 fitModelToContainer(model, camera, container, 0.85);
                 renderer.render(scene, camera);
