@@ -73,7 +73,7 @@ h1 span {
 	letter-spacing: 0%;
 }
 h1 sup {
-	font-size: 16px;
+	font-size: 20px;
 }
 @media only screen and (max-width: 990px) {
 	h1 {
@@ -103,7 +103,7 @@ h2 span {
 	letter-spacing: 0%;
 }
 h2 sup {
-	font-size: 14px;
+	font-size: 20px;
 }
 @media only screen and (max-width: 990px) {
 	h2 {
@@ -113,7 +113,7 @@ h2 sup {
 		font-size: 32px !important;
 	}
 	h2 sup {
-		font-size: 12px;
+		font-size: 14px;
 	}
 }
 h3 {
