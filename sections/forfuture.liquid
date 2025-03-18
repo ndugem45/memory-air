@@ -101,12 +101,25 @@
 		position: absolute;
 		bottom: 0;
 		left: 0;
+		z-index: 1;
 	}
 	#shopify-section-{{section.id}} .forfuture_ornamennt2{
 		position: absolute;
 		top: 0;
 		right: 0;
+		z-index: 1;
 	}
+	#shopify-section-{{section.id}} .forfuture_wraper{
+		position: relative;
+		z-index: 2;
+	}
+
+@media (max-width: 1080px) {
+	#shopify-section-{{section.id}} .behind_content-cta {
+		flex-direction: column;
+		gap: 40px;
+	}
+}
 
 @media (max-width: 768px) {
 
@@ -130,10 +143,6 @@
         width: 120px;
         height: 120px;
         min-width: 120px;
-    }
-	#shopify-section-{{section.id}} .behind_content-cta {
-		flex-direction: column;
-		gap: 40px;
     }
 
     #shopify-section-{{section.id}} .behind_cta-text-title {
