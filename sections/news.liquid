@@ -60,8 +60,6 @@
           <div class="news_item">
             <img onclick="togglePop()" data-video="{{ article.settings.news_blog.metafields.custom.video_url }}" src="{{ article.settings.news_blog.img.src | img_url: 'medium' }}" alt="" class="video m-btm m-32">
             
-            {% comment %} <iframe width="560" height="315" class="video m-btm m-32" src="{{  block.metafields.settings.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> {% endcomment %}
-            
             <h3 class="m-btm m-12 p-horizontal p-12">
               <a href="{{ article.settings.news_blog.url }}">
                 {{ article.settings.news_blog.title }}
@@ -77,8 +75,6 @@
 
         <img onclick="togglePop()" data-video="https://www.youtube.com/embed/z9rmilXhO6Q?si=MBsKR5s0EgxA0wkd" src="{{ thumb1 }}" alt="" class="video m-btm m-32">
         
-        {% comment %} <iframe width="560" height="315" class="video m-btm m-32" src="https://www.youtube.com/embed/z9rmilXhO6Q?si=MBsKR5s0EgxA0wkd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> {% endcomment %}
-        
         <h3 class="m-btm m-12 p-horizontal p-12">
           #1 Researcher for Olfactory Enrichment
         </h3>
@@ -87,10 +83,7 @@
         </p>
       </div>
       <div class="news_item">
-        {% comment %} <img src="{{ thumb2 }}" alt="" class="video m-btm m-32"> {% endcomment %}
         <img onclick="togglePop()" data-video="https://www.youtube.com/embed/z111FbvY4f4?si=jYuCYh0wYtvpLD-i" src="{{ thumb2 }}" alt="" class="video m-btm m-32">
-
-        <iframe width="560" height="315" class="video m-btm m-32" src="https://www.youtube.com/embed/z111FbvY4f4?si=jYuCYh0wYtvpLD-i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
         <h3 class="m-btm m-12 p-horizontal p-12">
           The Solution to Memory Loss is Right Under Our Nose
