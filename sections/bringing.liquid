@@ -151,7 +151,6 @@
                 
                 model.traverse((object) => {
                     if (object.isLight) {
-                        {% comment %} object.intensity = 0.5; {% endcomment %}
                         lights.push(object);
                     }
                 });
@@ -163,7 +162,7 @@
                     lights[0].intensity = 3
                 }
 
-                const mainObject = model.children[0];
+                const mainObject = model.children[0].children[0];
                 if (mainObject) {
                     function animate() {
                         requestAnimationFrame(animate);
