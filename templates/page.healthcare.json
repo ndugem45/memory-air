@@ -15,7 +15,153 @@
     },
     "partner": {
       "type": "partner",
-      "settings": {}
+      "blocks": {
+        "partner_KQUj9C": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/everyday_bw_removebg_preview_1_4x_4d780077-91e9-4c18-89b7-066b66869958.webp"
+          }
+        },
+        "partner_y8TMjJ": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/npr_bw_4x_3e5b5863-ebfb-42ff-87c2-b75a883eaecd.webp"
+          }
+        },
+        "partner_bea48B": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/frontier_bw_removebg_preview_1_4x_38b47473-7dba-4e1d-be88-3bd713e0ef19.webp"
+          }
+        },
+        "partner_4Rmb7V": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/medscape_bw_remove_background_removebg_preview_1_4x_e4269c6a-b3dd-4537-9a17-be9c4d62dd93.webp"
+          }
+        },
+        "partner_ne8hqA": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/cbs_bw_4x_382a50c9-901f-419b-a713-c8206e845fac.webp"
+          }
+        },
+        "partner_HXTLjb": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/american_psychological_association_removebg_preview_1_4x_b864fba3-e47b-4792-b452-94a97c488a91.webp"
+          }
+        },
+        "partner_zMXfYn": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/bbc_removebg_preview_1_4x_04987404-b2b1-4afd-8882-b8203f4bf4f0.webp"
+          }
+        },
+        "partner_bf9d6p": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/cbs_news_modified_removebg_preview_1_4x_00949afd-d26e-45a8-88d8-1456854f402f.webp"
+          }
+        },
+        "partner_YzXdzm": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/cnn_modified_removebg_preview_1_4x_b6f07419-cc46-4c6f-a527-9739554d348c.webp"
+          }
+        },
+        "partner_gMkU3f": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/en_removebg_preview_1_4x_e857ed0f-9f99-44d3-93e2-e50e2eaa83bc.webp"
+          }
+        },
+        "partner_REbwxm": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/fox_news_modified_removebg_preview_1_4x_887c19e4-66ee-4b74-9a41-e014ae048c76.webp"
+          }
+        },
+        "partner_8ctp9c": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/geriatric_psychiatry_modified_removebg_preview_1_4x_c9e464f4-12cd-4ae8-bbc3-930f92727687.webp"
+          }
+        },
+        "partner_V3EFbt": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/gg_international_modified_removebg_preview_1_4x_6db12858-b666-4047-aa66-3099feeda234.webp"
+          }
+        },
+        "partner_MUHGEz": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/hbo_removebg_preview_1_4x_0d4b6c64-6f7c-4800-bd8f-9b094d43974d.webp"
+          }
+        },
+        "partner_ChNawK": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/nbc_modified_removebg_preview_1_4x_1462b18b-03cf-4552-a491-ca37bc459803.webp"
+          }
+        },
+        "partner_MEYieT": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/science_direct_removebg_preview_1_4x_c3bc7a2f-06dc-4acc-a2ab-76cfbbcc7990.webp"
+          }
+        },
+        "partner_6bcYpd": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/skynews_removebg_preview_1_4x_118346d9-c5c8-40ec-aa35-6fd03d2fa553.webp"
+          }
+        },
+        "partner_84dUbe": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/screenshot_2025_02_13_145524_removebg_preview_1_4x_e793e8e4-197e-44dc-a9bb-f35768de39ef.webp"
+          }
+        },
+        "partner_iC96QU": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/mask_group_4x_de96fe55-4990-4fda-b6d6-f5dc002b5d98.webp"
+          }
+        },
+        "partner_FLM4Lk": {
+          "type": "partner",
+          "settings": {
+            "image": "shopify://shop_images/aljazeera_modified_removebg_preview_1_4x_a7557b51-eb3e-4148-8214-0ae48fa8c221.webp"
+          }
+        }
+      },
+      "block_order": [
+        "partner_KQUj9C",
+        "partner_y8TMjJ",
+        "partner_bea48B",
+        "partner_4Rmb7V",
+        "partner_ne8hqA",
+        "partner_HXTLjb",
+        "partner_zMXfYn",
+        "partner_bf9d6p",
+        "partner_YzXdzm",
+        "partner_gMkU3f",
+        "partner_REbwxm",
+        "partner_8ctp9c",
+        "partner_V3EFbt",
+        "partner_MUHGEz",
+        "partner_ChNawK",
+        "partner_MEYieT",
+        "partner_6bcYpd",
+        "partner_84dUbe",
+        "partner_iC96QU",
+        "partner_FLM4Lk"
+      ],
+      "settings": {
+        "speed": 2500
+      }
     },
     "patients": {
       "type": "patients",
