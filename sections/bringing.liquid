@@ -151,12 +151,12 @@
                 
                 model.traverse((object) => {
                     if (object.isLight) {
-                        lights.intensity = 1;
+                        lights.intensity = 0.5;
                         lights.push(object);
                     }
                 });
 
-                const mainObject = model.children[0]; // Ambil objek utama dalam group
+                const mainObject = model.children[0];
                 if (mainObject) {
                     function animate() {
                         requestAnimationFrame(animate);
