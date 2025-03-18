@@ -151,6 +151,7 @@
                 
                 model.traverse((object) => {
                     if (object.isLight) {
+                        lights.intensity = 1;
                         lights.push(object);
                     }
                 });
