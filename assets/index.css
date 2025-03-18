@@ -150,6 +150,9 @@ button {
 	border: unset;
 	cursor: pointer;
 }
+sup {
+	font-size: 12px;
+}
 
 .text-primary {
 	color: var(--color-primary);
