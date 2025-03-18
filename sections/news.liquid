@@ -26,7 +26,6 @@
   #shopify-section-{{section.id}}.news .news_item{
     display: flex;
     flex-direction: column;
-    cursor: pointer;
     text-decoration: none;
     color: var(--color-primary);
   }
@@ -36,9 +35,11 @@
     background: var(--orange-light);
     height: 359px;
     object-fit: cover;
+    cursor: pointer;
   }
   #shopify-section-{{section.id}}.news .news_item:hover h3{
     text-decoration: underline;
+    cursor: pointer;
   }
 {% endstyle %}
 
