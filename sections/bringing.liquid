@@ -144,23 +144,23 @@
                 model.scale.set(1, 1, 1);
                 scene.add(model);
 
-                const glbCamera = gltf.cameras[0]; 
+                const glbCamera = gltf.children[0].cameras[0]; 
                 if (glbCamera) {
                     camera = glbCamera;
                 }
                 
-                model.traverse((object) => {
+                model.children[0].traverse((object) => {
                     if (object.isLight) {
                         lights.push(object);
                     }
                 });
 
-                if(lights.length){
+                {% comment %} if(lights.length){
                     lights[3].intensity = 0.5
                     lights[2].intensity = 0.9
                     lights[1].intensity = 0.9
                     lights[0].intensity = 3
-                }
+                } {% endcomment %}
 
                 const mainObject = model.children[0].children[0];
                 if (mainObject) {
