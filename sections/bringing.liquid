@@ -151,15 +151,15 @@
                 
                 model.traverse((object) => {
                     if (object.isLight) {
-                        object.intensity = 0.5;
+                        object.intensity = 1;
                         lights.push(object);
                     }
                 });
 
-                lights[0].intensity = -0.01
+                {% comment %} lights[0].intensity = -0.01
                 lights[1].intensity = 3
                 lights[2].intensity = 3
-                lights[3].intensity = 3
+                lights[3].intensity = 3 {% endcomment %}
                 
                 fitModelToContainer(model, camera, container, 0.85);
                 renderer.render(scene, camera);
