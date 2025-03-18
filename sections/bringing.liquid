@@ -1,7 +1,7 @@
 {% comment %} for about us {% endcomment %}
 
 {% assign bringing-display = 'healthcare_hero-img.png' | asset_url | append: '?v=' | append: 'timestamp' %}
-{% assign three_asset = 'purifier2.gltf' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign three_asset = 'air_purifier.gltf' | asset_url | append: '?v=' | append: 'timestamp' %}
 {% comment %} {% assign three_asset = 'Air_02.gltf' | asset_url | append: '?v=' | append: 'timestamp' %} {% endcomment %}
 
 
@@ -88,7 +88,7 @@
         <div class="healthcare_content">
             <div class="healthcare_content-img">
                 <div id="threejs-container" style="width: 100%; height: 600px;"></div>
-                <button id="rotate-btn" class="btn is-black">Rotate</button>
+                {% comment %} <button id="rotate-btn" class="btn is-black">Rotate</button> {% endcomment %}
                 {% comment %} {% if section.settings.section_image != blank %}
                     <img src="{{ section.settings.section_image | img_url: 'medium' }}" alt="" class="image-display">
                 {% else %}
@@ -156,7 +156,7 @@
                     }
                 });
 
-                const mainObject = model.children[0].children[0];
+                const mainObject = model.children[0];
                 if (mainObject) {
                     function animate() {
                         requestAnimationFrame(animate);
