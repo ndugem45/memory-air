@@ -87,7 +87,7 @@
     <div class="container">
         <div class="healthcare_content">
             <div class="healthcare_content-img">
-                <div id="threejs-container" style="width: 100%; height: 500px;"></div>
+                <div id="threejs-container" style="width: 100%; height: 600px;"></div>
                 <button id="rotate-btn" class="btn is-black">Rotate</button>
                 {% comment %} {% if section.settings.section_image != blank %}
                     <img src="{{ section.settings.section_image | img_url: 'medium' }}" alt="" class="image-display">
@@ -155,7 +155,7 @@
                 
                 model.traverse((object) => {
                     if (object.isLight) {
-                        object.intensity = 0.1;
+                        object.intensity = 0.5;
                         lights.push(object);
                     }
                 });
