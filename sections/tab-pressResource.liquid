@@ -230,7 +230,7 @@
                     {% endif %}
                         {% for article in blog.settings.news_blog.articles %}
                             <div class="card_press p-2">
-                                <img src="{{ article.image.src | img_url: 'medium' }}" alt="">
+                                <img src="{{ article.image.src | img_url: 'original' }}" alt="">
                                 <div class="card_press-body m-top m-32">
                                     <h3 class="card_press-body-text font-semibold m-btm m-12">
                                         {{ article.title }}

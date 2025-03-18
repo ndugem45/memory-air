@@ -55,6 +55,7 @@
   {% if section.blocks != blank%}
     {%- for block in section.blocks -%}
       <div>
+        img_url: 'original'
         {{ block.settings.image | image_url: width: 120 | image_tag }}
       </div>
     {%- endfor -%}
