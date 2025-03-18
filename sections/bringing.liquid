@@ -54,11 +54,17 @@
         letter-spacing: -0.4px;
     }
 
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
     #shopify-section-{{section.id}} .healthcare_content {
         flex-direction: column;
         text-align: start;
     }
+    #shopify-section-{{section.id}} .healthcare_content .threejs-container{
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
     #shopify-section-{{section.id}}.hero-healthcare {
         padding-top: 40px;
     }
