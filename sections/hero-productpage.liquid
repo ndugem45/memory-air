@@ -431,7 +431,7 @@
         event.preventDefault();
     
         var variantId = document.querySelector('input[name="id"]:checked').value;
-        var deviceId = document.querySelector('input[name="product"]').value;
+        {% comment %} var deviceId = document.querySelector('input[name="product"]').value; {% endcomment %}
         var quantity = document.getElementById('quantity').value;
 
         var sellingPlanSelect = document.getElementById('selling-id-' + variantId);
