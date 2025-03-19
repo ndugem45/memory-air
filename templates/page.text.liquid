@@ -17,16 +17,61 @@
         line-height: 100%;
         letter-spacing: 0%;
     }
+    .toc{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
 {% endstyle %}
 
 <section style="min-height: 70vh;padding-top: 20vh;" class="textbased">
     <div class="container">
         <h1 class="m-btm m-78">{{ page.title }}</h1>
         <div class="content">
-            <div class="toc">
+            <div class="toc-content">
 
             </div>
-            <div>{{ page.content }}</div>
+            <div class="main-content">{{ page.content }}</div>
         </div>
     </div>
 </section>
+
+<script>
+    // Fungsi untuk mengonversi teks menjadi ID Unix-friendly
+    function convertToUnixId(text) {
+        return text
+            .toLowerCase()                            // Mengubah semua huruf menjadi kecil
+            .replace(/[^\w\s-]/g, '')                  // Menghapus karakter selain huruf, angka, spasi, dan tanda hubung
+            .replace(/[\s_-]+/g, '-')                  // Mengganti spasi dan underscore dengan tanda hubung
+            .replace(/^-+|-+$/g, '');                  // Menghapus tanda hubung di awal dan akhir
+    }
+
+    // Fungsi untuk membuat daftar isi secara otomatis
+    function generateTableOfContents() {
+        // Ambil semua elemen <h2> dalam konten
+        const headings = document.querySelectorAll('.main-content h2');
+        const tocContent = document.getElementById('toc-content');
+
+        headings.forEach(function(heading) {
+            const headingText = heading.textContent.trim();
+            const unixId = convertToUnixId(headingText); // Mengonversi teks menjadi ID Unix
+
+            // Jika elemen <h2> belum memiliki ID, setel ID menggunakan teks yang diubah
+            if (!heading.id) {
+                heading.id = unixId;
+            }
+
+            // Buat anchor link untuk setiap <h2>
+            const anchor = document.createElement('a');
+            anchor.href = '#' + heading.id;  // Menggunakan ID Unix
+            anchor.textContent = headingText; // Gunakan teks dari <h2> sebagai label link
+
+            // Tambahkan anchor ke dalam daftar isi
+            tocContent.appendChild(anchor);
+        });
+    }
+
+    // Panggil fungsi untuk menghasilkan daftar isi
+    generateTableOfContents();
+
+</script>
