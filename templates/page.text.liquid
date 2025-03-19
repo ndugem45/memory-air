@@ -5,6 +5,11 @@
         gap: 42px;
         justify-content: space-between;
     }
+    @media only screen and (max-width: 680px) {
+        .textbased .content{
+            flex-direction: column;
+        }
+    }
     .textbased .content p {
         font-size: 14px !important;
     }
@@ -24,6 +29,10 @@
         width: 20%;
         flex-shrink: 0;
     }
+    .textbased .content .main-content{
+        border-left: 1px solid black;
+        padding-left: 24px;
+    }
     .textbased .content .toc-content a,
     .textbased .content .toc-content div{
         color: #000;
@@ -36,6 +45,7 @@
     .textbased .content .toc-content div{
         font-size: 18px;
         margin-bottom: 12px;
+        border-bottom: 1px solid black;
     }
 {% endstyle %}
 
@@ -52,41 +62,34 @@
 </section>
 
 <script>
-    // Fungsi untuk mengonversi teks menjadi ID Unix-friendly
     function convertToUnixId(text) {
         return text
-            .toLowerCase()                            // Mengubah semua huruf menjadi kecil
-            .replace(/[^\w\s-]/g, '')                  // Menghapus karakter selain huruf, angka, spasi, dan tanda hubung
-            .replace(/[\s_-]+/g, '-')                  // Mengganti spasi dan underscore dengan tanda hubung
-            .replace(/^-+|-+$/g, '');                  // Menghapus tanda hubung di awal dan akhir
+            .toLowerCase()
+            .replace(/[^\w\s-]/g, '')
+            .replace(/[\s_-]+/g, '-')
+            .replace(/^-+|-+$/g, '');
     }
 
-    // Fungsi untuk membuat daftar isi secara otomatis
     function generateTableOfContents() {
-        // Ambil semua elemen <h2> dalam konten
         const headings = document.querySelectorAll('.main-content h2');
         const tocContent = document.querySelector('.toc-content');
 
         headings.forEach(function(heading) {
             const headingText = heading.textContent.trim();
-            const unixId = convertToUnixId(headingText); // Mengonversi teks menjadi ID Unix
+            const unixId = convertToUnixId(headingText);
 
-            // Jika elemen <h2> belum memiliki ID, setel ID menggunakan teks yang diubah
             if (!heading.id) {
                 heading.id = unixId;
             }
 
-            // Buat anchor link untuk setiap <h2>
             const anchor = document.createElement('a');
-            anchor.href = '#' + heading.id;  // Menggunakan ID Unix
-            anchor.textContent = headingText; // Gunakan teks dari <h2> sebagai label link
+            anchor.href = '#' + heading.id;
+            anchor.textContent = headingText; 
 
-            // Tambahkan anchor ke dalam daftar isi
             tocContent.appendChild(anchor);
         });
     }
 
-    // Panggil fungsi untuk menghasilkan daftar isi
     generateTableOfContents();
 
 </script>
