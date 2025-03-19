@@ -380,7 +380,7 @@
                         <div class="radio-group">
                             {% for variant in product.variants %}
                                 {% if variant.selling_plan_allocations[0] %}
-                                    <div class="option" onclick="checkProduct()" form="AddToCartForm">
+                                    <div class="option" form="AddToCartForm">
                                         <input type="radio" name="id" id="{{  variant.id }}" value="{{  variant.id }}">
 
                                         <label for="{{ variant.id }}">
