@@ -1,7 +1,20 @@
+{% style %}
+    .textbased .content{
+        display: flex;
+        align-items: flex-start;
+        gap: 42px;
+        justify-content: space-between;
+    }
+{% endstyle %}
 
-<section style="min-height: 70vh;padding-top: 20vh;">
+<section style="min-height: 70vh;padding-top: 20vh;" class="textbased">
     <div class="container">
-        <h1>{{ page.title }}</h1>
-        <div>{{ page.content }}</div>
+        <h1 class="m-btm m-32">{{ page.title }}</h1>
+        <div class="content">
+            <div class="toc">
+
+            </div>
+            <div>{{ page.content }}</div>
+        </div>
     </div>
 </section>
