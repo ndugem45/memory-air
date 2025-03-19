@@ -437,7 +437,6 @@
 
         var sellingPlanSelect = document.getElementById('selling-id-' + variantId);
         var sellingPlanId = sellingPlanSelect ? sellingPlanSelect.value : null;
-    
         {% comment %} var formData = new FormData();
         formData.append('id', variantId);
         formData.append('quantity', quantity);
@@ -465,7 +464,6 @@
             }
         });
 
-    
         {% comment %} fetch('/cart/add.js', {
           method: 'POST',
           body: formData,
