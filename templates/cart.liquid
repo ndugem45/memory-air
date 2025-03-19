@@ -1,8 +1,34 @@
+{% style %}
+  .checkout-form{
+    max-width: 100%;
+  }
+  .checkout-form .thumbnail{
+    width: 100px;
+    border-radius: 12px;
+    height: 100px;
+    object-fit: cover;
+  }
+  .checkout-form form{
+    text-align: left;
+  }
+  .checkout-form form thead td{
+    border-bottom: 1px solid grey;
+  }
+  .checkout-form form td{
+    padding: 4px;
+  }
+  .checkout-form form td.product{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+{% endstyle %}
+
 <section style="min-height: 70vh;padding-top: 20vh;">
   <div class="container">
     {% if cart.item_count > 0 %}
       <h1>cart</h1>
-      <form action="/cart" method="post" novalidate>
+      <form action="/cart" method="post" class="checkout-form" novalidate>
         <table>
           <thead>
             <th colspan="2">Prod</th>
@@ -15,10 +41,10 @@
               <tr>
                 <td>
                   <a href="{{ item.url | within: collections.all }}">
-                    <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
+                    <img class="thumbnail" src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
                   </a>
                 </td>
-                <td>
+                <td class="product">
                   <a href="{{ item.url }}">{{ item.product.title }}</a>
                   {{ item.variant.title }}
                   <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">remove</a>

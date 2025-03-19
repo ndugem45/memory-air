@@ -410,8 +410,6 @@
                     {% endif %}
 
                     <div style="display: none !important;" class="sealsubs-target-element" data-product="{{ product | json | escape }}" data-handle="{{ product.handle }}"></div>
-                    
-                    <input type="hidden" id="quantity" name="quantity" value="1" min="1">
 
                     <button class="add-to-cart" type="submit" name="add" id="AddToCart">Add to cart</button>
                 </form>
@@ -433,7 +431,6 @@
     
         var variantId = document.querySelector('input[name="id"]:checked').value;
         var deviceId = document.querySelector('input[name="product"]').value;
-        var quantity = document.getElementById('quantity').value;
 
         var sellingPlanSelect = document.getElementById('selling-id-' + variantId);
         var sellingPlanId = sellingPlanSelect ? sellingPlanSelect.value : null;
@@ -454,94 +451,8 @@
                 document.querySelector('nav').classList.add('open');
             }
         });
-
-        
-        {% comment %} var formData = new FormData();
-        formData.append('id', variantId);
-        formData.append('quantity', quantity);
-
-        if (sellingPlanId) {
-            formData.append('selling_plan', sellingPlanId);
-        } {% endcomment %}
-
-        {% comment %} console.log(formData) {% endcomment %}
-
-        {% comment %} fetch('/cart/add.js', {
-          method: 'POST',
-          body: formData,
-        })
-        .then(response => response.json())
-        .then(data => {
-    
-          var bundleFormData = new FormData();
-          bundleFormData.append('id', deviceId);
-          bundleFormData.append('quantity', 1);
-          bundleFormData.append('selling_plan', deviceId);
-    
-          fetch('/cart/add.js', {
-            method: 'POST',
-            body: bundleFormData,
-          })
-          .then(response => response.json())
-          .then(bundleData => {
-            load();
-            document.querySelector('nav').classList.add('open');
-          })
-          .catch(error => {
-            console.error('Terjadi kesalahan saat menambahkan produk bundel:', error);
-          });
-        })
-        .catch(error => {
-          console.error('Terjadi kesalahan saat menambahkan produk:', error);
-        }); {% endcomment %}
     });
-      
-    function check(e){
-        event.stopPropagation()
-        console.log(e.selling_plan_allocations[0].selling_plan_id)
-        console.log(event.currentTarget.querySelector('input').checked)
-        event.currentTarget.querySelector('input').checked = true
-    }
 
-    const addThisProduct = () => {
-        try{
-            let variantValue
-            if(document.querySelector('input[name="memory-air"]:checked')){
-                variantValue = document.querySelector('input[name="memory-air"]:checked').value
-            }
-            const prodValue = document.querySelector('.hidden').getAttribute('id')
-            if(variantValue){
-                addThis([
-                    {
-                        'id': prodValue,
-                        'quantity': 1,
-                    },
-                    {
-                        'id': variantValue,
-                        'quantity': 1,
-                        'selling_plan': ""
-                    }
-                ], (result)=>{
-                    if(result){
-                        load();
-                        document.querySelector('nav').classList.add('open');
-                    }
-                });
-            }else{
-                addThis([{
-                    'id': prodValue,
-                    'quantity': 1
-                }], (result)=>{
-                    if(result){
-                        load();
-                        document.querySelector('nav').classList.add('open');
-                    }
-                });
-            }
-        }catch(e){
-            console.log(e)
-        }
-    }
 </script>
 
 {% schema %}
