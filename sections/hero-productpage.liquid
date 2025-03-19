@@ -379,7 +379,7 @@
                     {% if product.variants != blank%}
                         <div class="radio-group">
                             {% for variant in product.variants %}
-                                {% if variant.selling_plan_allocations[0] %}
+                                {% comment %} {% if variant.selling_plan_allocations[0] %} {% endcomment %}
                                     <div class="option" form="AddToCartForm">
                                         {% for selling_plan in variant.selling_plan_allocations %}
                                             <input type="hidden" id="selling-id-{{  variant.id }}" value="{{ selling_plan.selling_plan.id }}" />
@@ -400,9 +400,9 @@
                                             </div>
                                         </label>
                                     </div>
-                                {% else %}
+                                {% comment %} {% else %}
                                     <input type="hidden" id="product" name="product" value="{{  variant.id }}">
-                                 {% endif %}
+                                 {% endif %} {% endcomment %}
                             {% endfor %}
                         </div>
                     {% endif %}
