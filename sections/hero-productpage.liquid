@@ -374,65 +374,7 @@
             <div class="product-card">
                 <h2>{{ product.title }}</h2>
 
-                {% comment %} {{ product | json }} {% endcomment %}
-                {% comment %} {% if product.description != blank %}
-                    <div class="desc">
-                        {{ product.description | html }}
-                    </div>
-                {% endif %} {% endcomment %}
-
-                {% comment %} <div class="sealsubs-target-element" data-product="{{ product | json | escape }}" data-handle="{{ product.handle }}"></div> {% endcomment %}
-
-                {% comment %} {% if product.variants != blank%}
-                    {% for variant in product.variants %}
-                        {% if variant.selling_plan_allocations[0] %}
-                            <div class="option" onclick="check()" selling-plan="{{ variant.selling_plan_allocations | json }}">
-                                <label>
-                                    <input type="radio" name="{{ variant.title }}" id="{{  variant.id }}" value="{{  variant.id }}">
-                                    
-                                    <div class="custom-checkbox"></div>
-                                    <div class="option-content">
-                                        <span class="title">{{ variant.title }}</span>
-                                        
-                                        {% if variant.metafields.custom.variant_description %}
-                                            {{ variant.metafields.custom.variant_description | metafield_tag }}
-                                        {% endif %}
-                                    
-                                        <span class="price">{{ variant.metafields.custom.price_text }}</span>
-                                    </div>
-                                </label>
-                            </div>
-                        {% else %}
-                            <div class="hidden" id="{{  variant.id }}"></div>
-                        {% endif %}
-                    {% endfor %}
-                {% else %}
-                    <div class="hidden" id="{{  product.id }}"></div>
-                {% endif %} {% endcomment %}
-
                 <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
-
-                    {% comment %} <select name="id" id="productSelect">
-                      {% for variant in product.variants %}
-                        {% if variant.available %}
-                          <option value="{{ variant.id }}">
-                            {{ variant.title }} - {{ variant.price | money_with_currency }}
-                          </option>
-                        {% else %}
-                          <option disabled="disabled">
-                            {{ variant.title }} - sold out
-                          </option>
-                        {% endif %}
-                      {% endfor %}
-                    </select> {% endcomment %}
-                    {% for item in collections['monthly-subscription'].products %}
-                        <li>
-                          <a href="{{ item.url }}">
-                            <img src="{{ item.featured_image | img_url: 'medium' }}" alt="{{ item.title }}">
-                            <p>{{ item.title }}</p>
-                          </a>
-                        </li>
-                      {% endfor %}
 
                     {% if product.variants != blank%}
                         <div class="radio-group">
@@ -454,12 +396,14 @@
                                             </div>
                                         </label>
                                     </div>
+                                {% else %}
+                                    <input type="hidden" id="product" name="product" value="{{  variant.id }}">
                                 {% endif %}
                             {% endfor %}
                         </div>
                     {% endif %}
 
-                    <div class="sealsubs-target-element" data-product="{{ product | json | escape }}" data-handle="{{ product.handle }}"></div>
+                    <div style="display: none !important;" class="sealsubs-target-element" data-product="{{ product | json | escape }}" data-handle="{{ product.handle }}"></div>
                     
                     <input type="hidden" id="quantity" name="quantity" value="1" min="1">
 
@@ -477,14 +421,56 @@
 	</div>
 
 <script>
+
+    document.getElementById('AddToCartForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+    
+        var variantId = document.querySelector('input[name="id"]:checked').value;
+        var deviceId = document.querySelector('input[name="product"]').value;
+        var quantity = document.getElementById('quantity').value;
+    
+        var formData = new FormData();
+        formData.append('id', variantId);
+        formData.append('quantity', quantity);
+    
+        fetch('/cart/add.js', {
+          method: 'POST',
+          body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+          var bundleProductId = deviceId;
+          var bundleQuantity = 1;
+    
+          var bundleFormData = new FormData();
+          bundleFormData.append('id', bundleProductId);
+          bundleFormData.append('quantity', bundleQuantity);
+    
+          fetch('/cart/add.js', {
+            method: 'POST',
+            body: bundleFormData,
+          })
+          .then(response => response.json())
+          .then(bundleData => {
+            load();
+            document.querySelector('nav').classList.add('open');
+            
+            {% comment %} window.location.href = '/cart'; {% endcomment %}
+          })
+          .catch(error => {
+            console.error('Terjadi kesalahan saat menambahkan produk bundel:', error);
+          });
+        })
+        .catch(error => {
+          console.error('Terjadi kesalahan saat menambahkan produk:', error);
+        });
+    });
+      
     function check(e){
         event.stopPropagation()
         console.log(e.selling_plan_allocations[0].selling_plan_id)
         console.log(event.currentTarget.querySelector('input').checked)
         event.currentTarget.querySelector('input').checked = true
-    }
-
-    function checkProduct(){
     }
 
     const addThisProduct = () => {
