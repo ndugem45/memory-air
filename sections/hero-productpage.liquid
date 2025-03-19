@@ -425,6 +425,15 @@
                         {% endif %}
                       {% endfor %}
                     </select> {% endcomment %}
+                    {% for item in collections['monthly-subscription'].products %}
+                        <li>
+                          <a href="{{ item.url }}">
+                            <img src="{{ item.featured_image | img_url: 'medium' }}" alt="{{ item.title }}">
+                            <p>{{ item.title }}</p>
+                          </a>
+                        </li>
+                      {% endfor %}
+
                     {% if product.variants != blank%}
                         <div class="radio-group">
                             {% for variant in product.variants %}
