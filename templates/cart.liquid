@@ -22,6 +22,16 @@
     flex-direction: column;
     gap: 4px;
   }
+  .btm-total{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 42px;
+  }
+  .btm-total .btn-wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+  }
 {% endstyle %}
 
 <section style="min-height: 70vh;padding-top: 20vh;">
@@ -62,10 +72,12 @@
             {% endfor %}
           </tbody>
         </table>
-        <div>
+        <div class="btm-total">
           <p>sub total : {{ cart.total_price | money }}</p>
-          <button type="submit" name="update">Update</button>
-          <button type="submit" name="checkout">Checkout</button>
+          <div class="btn-wrapper">
+            <button type="submit" name="update">Update</button>
+            <button type="submit" name="checkout">Checkout</button>
+          </div>
         </div>
       </form>
     {% else %}
