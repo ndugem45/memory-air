@@ -428,9 +428,8 @@
                     {% if product.variants != blank%}
                         <div class="radio-group">
                             {% for variant in product.variants %}
-                                {{ variant | json | escape }}
-                                {% if variant.available %}
-                                    <div class="option" form="AddToCartForm">
+                                {% if variant.selling_plan_allocations[0] %}
+                                    <div class="option" onclick="checkProduct()" form="AddToCartForm">
                                         <input type="radio" name="id" id="{{  variant.id }}" value="{{  variant.id }}">
 
                                         <label for="{{ variant.id }}">
@@ -446,24 +445,19 @@
                                             </div>
                                         </label>
                                     </div>
+                                {% else %}
+                                    <input type="hidden" id="product" name="id" value="{{ variant.id }}" >
                                 {% endif %}
                             {% endfor %}
                         </div>
                     {% endif %}
 
                     <div class="sealsubs-target-element" data-product="{{ product | json | escape }}" data-handle="{{ product.handle }}"></div>
-
-                    {{ current_variant.price | money }}
                     
-                    {% comment %} <label for="Quantity">quantity</label> {% endcomment %}
-
-                    <input type="hidden" id="Quantity" name="quantity" value="1" min="1">
+                    <input type="hidden" id="quantity" name="quantity" value="1" min="1">
 
                     <button class="add-to-cart" type="submit" name="add" id="AddToCart">Add to cart</button>
                 </form>
-                
-            
-                {% comment %} <button class="add-to-cart" onclick="addThisProduct()">Add to Cart</button> {% endcomment %}
             
                 <p class="info-text">
                 Buying more than one Memory Air®?<br>
@@ -481,6 +475,9 @@
         console.log(e.selling_plan_allocations[0].selling_plan_id)
         console.log(event.currentTarget.querySelector('input').checked)
         event.currentTarget.querySelector('input').checked = true
+    }
+
+    function checkProduct(){
     }
 
     const addThisProduct = () => {
