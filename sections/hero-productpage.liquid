@@ -155,6 +155,7 @@
         display: flex;
         flex-direction: column;
         gap: 32px;
+        width: 100%;
     }
     #shopify-section-{{section.id}} .product-card form .radio-group{
         display: flex;
@@ -453,7 +454,7 @@
         .then(response => response.json())
         .then(data => {
     
-          var bundleFormData = new FormData();
+          {% comment %} var bundleFormData = new FormData();
           bundleFormData.append('id', deviceId);
           bundleFormData.append('quantity', 1);
           bundleFormData.append('selling_plan', deviceId);
@@ -471,7 +472,7 @@
           })
           .catch(error => {
             console.error('Terjadi kesalahan saat menambahkan produk bundel:', error);
-          });
+          }); {% endcomment %}
         })
         .catch(error => {
           console.error('Terjadi kesalahan saat menambahkan produk:', error);
