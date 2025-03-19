@@ -428,6 +428,7 @@
                     {% if product.variants != blank%}
                         <div class="radio-group">
                             {% for variant in product.variants %}
+                                {{ variant | json | escape }}
                                 {% if variant.available %}
                                     <div class="option" form="AddToCartForm">
                                         <input type="radio" name="id" id="{{  variant.id }}" value="{{  variant.id }}">
