@@ -114,23 +114,27 @@
         });
     }
 
-    
-    document.querySelectorAll('.toc-content .btn-wrap a').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            
-            const offset = 100;
-            
-            window.scrollTo({
-                top: targetElement.offsetTop + offset,
-                behavior: 'smooth'
+    function smoothScrollWithOffset() {
+        document.querySelectorAll('.toc-content .btn-wrap a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                const offset = 100;
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop + offset,
+                    behavior: 'smooth'
+                });
             });
         });
-    });
+    }
 
-    generateTableOfContents();
+    document.addEventListener('DOMContentLoaded', function () {
+        generateTableOfContents();
+        smoothScrollWithOffset();
+    });
 
 </script>
