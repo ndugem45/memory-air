@@ -50,7 +50,7 @@
     function generateTableOfContents() {
         // Ambil semua elemen <h2> dalam konten
         const headings = document.querySelectorAll('.main-content h2');
-        const tocContent = document.getElementById('toc-content');
+        const tocContent = document.querySelector('.toc-content');
 
         headings.forEach(function(heading) {
             const headingText = heading.textContent.trim();
