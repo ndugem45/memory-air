@@ -379,7 +379,7 @@
                     {% if product.variants != blank%}
                         <div class="radio-group">
                             {% for variant in product.variants %}
-                                {% comment %} {% if variant.selling_plan_allocations[0] %} {% endcomment %}
+                                {% if variant.selling_plan_allocations[0] %}
                                     <div class="option" form="AddToCartForm">
                                         {% for selling_plan in variant.selling_plan_allocations %}
                                             <input type="hidden" id="selling-id-{{  variant.id }}" value="{{ selling_plan.selling_plan.id }}" />
@@ -400,9 +400,9 @@
                                             </div>
                                         </label>
                                     </div>
-                                {% comment %} {% else %} {% endcomment %}
-                                    {% comment %} <input type="hidden" id="product" name="product" value="{{  variant.id }}"> {% endcomment %}
-                                {% comment %} {% endif %} {% endcomment %}
+                                {% else %} {% endcomment %}
+                                    <input type="hidden" id="product" name="product" value="{{  variant.id }}">
+                                 {% endif %}
                             {% endfor %}
                         </div>
                     {% endif %}
@@ -430,7 +430,7 @@
         event.preventDefault();
     
         var variantId = document.querySelector('input[name="id"]:checked').value;
-        {% comment %} var deviceId = document.querySelector('input[name="product"]').value; {% endcomment %}
+        var deviceId = document.querySelector('input[name="product"]').value;
         var quantity = document.getElementById('quantity').value;
 
         var sellingPlanSelect = document.getElementById('selling-id-' + variantId);
@@ -446,18 +446,17 @@
         console.log(formData)
 
     
-        {% comment %} fetch('/cart/add.js', {
+        fetch('/cart/add.js', {
           method: 'POST',
           body: formData,
         })
         .then(response => response.json())
         .then(data => {
-          var bundleProductId = deviceId;
-          var bundleQuantity = 1;
     
           var bundleFormData = new FormData();
-          bundleFormData.append('id', bundleProductId);
-          bundleFormData.append('quantity', bundleQuantity);
+          bundleFormData.append('id', deviceId);
+          bundleFormData.append('quantity', 1);
+          bundleFormData.append('selling_plan', deviceId);
     
           fetch('/cart/add.js', {
             method: 'POST',
@@ -476,7 +475,7 @@
         })
         .catch(error => {
           console.error('Terjadi kesalahan saat menambahkan produk:', error);
-        }); {% endcomment %}
+        });
     });
       
     function check(e){
