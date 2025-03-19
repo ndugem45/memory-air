@@ -28,10 +28,22 @@
         gap: 12px;
         width: 20%;
         flex-shrink: 0;
+        position: sticky;
+        top: 100px;
+    }
+    .textbased .content .toc-content .btn-wrap{
+        max-height: 80vh;
+        overflow: auto;
     }
     .textbased .content .main-content{
         border-left: 1px solid black;
         padding-left: 24px;
+    }
+    @media only screen and (max-width: 680px) {
+        .textbased .content .main-content{
+            border-left: unset;
+            padding-left: unset;
+        }
     }
     .textbased .content .toc-content a,
     .textbased .content .toc-content div{
@@ -42,7 +54,7 @@
         font-weight: 500;
         line-height: 130%;
     }
-    .textbased .content .toc-content div{
+    .textbased .content .toc-content .title{
         font-size: 18px;
         margin-bottom: 12px;
         border-bottom: 1px solid black;
@@ -54,7 +66,8 @@
         <h1 class="m-btm m-78">{{ page.title }}</h1>
         <div class="content">
             <div class="toc-content">
-                <div>Table Of Content</div>
+                <div class="title">Table Of Content</div>
+                <div class="btn-wrap"></div>
             </div>
             <div class="main-content">{{ page.content }}</div>
         </div>
@@ -72,7 +85,7 @@
 
     function generateTableOfContents() {
         const headings = document.querySelectorAll('.main-content h2');
-        const tocContent = document.querySelector('.toc-content');
+        const tocContent = document.querySelector('.toc-content .btn-wrap');
 
         headings.forEach(function(heading) {
             const headingText = heading.textContent.trim();
@@ -91,5 +104,21 @@
     }
 
     generateTableOfContents();
+
+    document.querySelectorAll('.toc-content .btn-wrap a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            const offset = 100;
+            
+            window.scrollTo({
+                top: targetElement.offsetTop - offset,
+                behavior: 'smooth'
+            });
+        });
+    });
 
 </script>
