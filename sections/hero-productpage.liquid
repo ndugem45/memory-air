@@ -373,7 +373,7 @@
 
                 {% comment %} <div class="sealsubs-target-element" data-product="{{ product | json | escape }}" data-handle="{{ product.handle }}"></div> {% endcomment %}
 
-                {% if product.variants != blank%}
+                {% comment %} {% if product.variants != blank%}
                     {% for variant in product.variants %}
                         {% if variant.selling_plan_allocations[0] %}
                             <div class="option" onclick="check()" selling-plan="{{ variant.selling_plan_allocations | json }}">
@@ -398,10 +398,37 @@
                     {% endfor %}
                 {% else %}
                     <div class="hidden" id="{{  product.id }}"></div>
-                {% endif %}
+                {% endif %} {% endcomment %}
+
+                <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
+
+                    <select name="id" id="productSelect">
+                      {% for variant in product.variants %}
+                        {% if variant.available %}
+                          <option value="{{ variant.id }}">
+                            {{ variant.title }} - {{ variant.price | money_with_currency }}
+                          </option>
+                        {% else %}
+                          <option disabled="disabled">
+                            {{ variant.title }} - sold out
+                          </option>
+                        {% endif %}
+                      {% endfor %}
+                    </select>
+
+                    <div class="sealsubs-target-element" data-product="{{ product | json | escape }}" data-handle="{{ product.handle }}"></div>
+
+                    {{ current_variant.price | money }}
+                    
+                    {% comment %} <label for="Quantity">quantity</label> {% endcomment %}
+
+                    <input type="hidden" id="Quantity" name="quantity" value="1" min="1">
+
+                    <button class="add-to-cart" type="submit" name="add" id="AddToCart">Add to cart</button>
+                </form>
                 
             
-                <button class="add-to-cart" onclick="addThisProduct()">Add to Cart</button>
+                {% comment %} <button class="add-to-cart" onclick="addThisProduct()">Add to Cart</button> {% endcomment %}
             
                 <p class="info-text">
                 Buying more than one Memory Air®?<br>
