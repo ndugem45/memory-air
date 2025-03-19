@@ -380,7 +380,7 @@
                     {% if product.variants != blank%}
                         <div class="radio-group">
                             {% for variant in product.variants %}
-                                {% comment %} {% if variant.selling_plan_allocations[0] %} {% endcomment %}
+                                {% if variant.selling_plan_allocations[0] %}
                                     <div class="option" form="AddToCartForm">
                                         {% for selling_plan in variant.selling_plan_allocations %}
                                             <input type="hidden" id="selling-id-{{  variant.id }}" value="{{ selling_plan.selling_plan.id }}" />
@@ -401,9 +401,9 @@
                                             </div>
                                         </label>
                                     </div>
-                                {% comment %} {% else %}
+                                {% else %}
                                     <input type="hidden" id="product" name="product" value="{{  variant.id }}">
-                                 {% endif %} {% endcomment %}
+                                 {% endif %}
                             {% endfor %}
                         </div>
                     {% endif %}
@@ -431,31 +431,48 @@
         event.preventDefault();
     
         var variantId = document.querySelector('input[name="id"]:checked').value;
-        //var deviceId = document.querySelector('input[name="product"]').value;
+        var deviceId = document.querySelector('input[name="product"]').value;
         var quantity = document.getElementById('quantity').value;
 
         var sellingPlanSelect = document.getElementById('selling-id-' + variantId);
         var sellingPlanId = sellingPlanSelect ? sellingPlanSelect.value : null;
     
-        var formData = new FormData();
+        {% comment %} var formData = new FormData();
         formData.append('id', variantId);
         formData.append('quantity', quantity);
 
         if (sellingPlanId) {
             formData.append('selling_plan', sellingPlanId);
-        }
+        } {% endcomment %}
 
         console.log(formData)
 
+        addThis([
+            {
+                'id': deviceId,
+                'quantity': 1,
+            },
+            {
+                'id': variantId,
+                'quantity': 1,
+                'selling_plan': sellingPlanId
+            }
+        ], (result)=>{
+            if(result){
+                load();
+                document.querySelector('nav').classList.add('open');
+            }
+        });
+
     
-        fetch('/cart/add.js', {
+        {% comment %} fetch('/cart/add.js', {
           method: 'POST',
           body: formData,
         })
         .then(response => response.json())
         .then(data => {
     
-          {% comment %} var bundleFormData = new FormData();
+          var bundleFormData = new FormData();
           bundleFormData.append('id', deviceId);
           bundleFormData.append('quantity', 1);
           bundleFormData.append('selling_plan', deviceId);
@@ -468,16 +485,14 @@
           .then(bundleData => {
             load();
             document.querySelector('nav').classList.add('open');
-            
-            {% comment %} window.location.href = '/cart'; {% endcomment %}
           })
           .catch(error => {
             console.error('Terjadi kesalahan saat menambahkan produk bundel:', error);
-          }); {% endcomment %}
+          });
         })
         .catch(error => {
           console.error('Terjadi kesalahan saat menambahkan produk:', error);
-        });
+        }); {% endcomment %}
     });
       
     function check(e){
