@@ -156,6 +156,7 @@
         flex-direction: column;
         gap: 32px;
         width: 100%;
+        max-width: 100%;
     }
     #shopify-section-{{section.id}} .product-card form .radio-group{
         display: flex;
@@ -445,7 +446,7 @@
             formData.append('selling_plan', sellingPlanId);
         } {% endcomment %}
 
-        console.log(formData)
+        {% comment %} console.log(formData) {% endcomment %}
 
         addThis([
             {
