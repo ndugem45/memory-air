@@ -17,9 +17,10 @@
   }
   .checkout-form table thead th{
     border-bottom: 1px solid grey;
+    padding: 12px;
   }
   .checkout-form table td{
-    padding: 4px;
+    padding: 12px;
   }
   .checkout-form table .product{
     display: flex;
@@ -63,7 +64,7 @@
                   <div class="product">
                     <a href="{{ item.url }}">{{ item.product.title }}</a>
                     {{ item.variant.title }}
-                    <a class="btn" href="/cart/change?line={{ forloop.index }}&amp;quantity=0">remove</a>
+                    <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">remove</a>
                   </div>
                 </td>
                 <td>{{ item.price | money }}</td>
