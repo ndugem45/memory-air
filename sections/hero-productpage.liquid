@@ -153,7 +153,13 @@
     #shopify-section-{{section.id}} .product-card form{
         padding: unset;
         display: flex;
+        flex-direction: column;
         gap: 32px;
+    }
+    #shopify-section-{{section.id}} .product-card form .radio-group{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
     }
     #shopify-section-{{section.id}} .product-card .desc{
         margin-bottom: 24px;
@@ -171,14 +177,13 @@
     #shopify-section-{{section.id}} .option {
         background: white;
         border-radius: 16px;
-        padding: 16px;
         margin-bottom: 12px;
         border: 1px solid #ddd;
         transition: all 0.3s ease-in-out;
     }
 
     #shopify-section-{{section.id}} .option:hover,
-    #shopify-section-{{section.id}} .option input:checked {
+    #shopify-section-{{section.id}} .option:has(input:checked)  {
         border-color: #E1A277;
         /* background: rgba(170, 126, 113, 0.1); */
         /* box-shadow: 0 4px 12px rgba(170, 126, 113, 0.2); */
@@ -190,6 +195,7 @@
         align-items: flex-start;
         gap: 20px;
         cursor: pointer;
+        padding: 16px;
     }
 
     #shopify-section-{{section.id}} .option input {
@@ -420,28 +426,29 @@
                         {% endif %}
                       {% endfor %}
                     </select> {% endcomment %}
-
                     {% if product.variants != blank%}
-                        {% for variant in product.variants %}
-                            {% if variant.available %}
-                                <div class="option" form="AddToCartForm">
-                                    <input type="radio" name="id" id="{{  variant.id }}" value="{{  variant.id }}">
+                        <div class="radio-group">
+                            {% for variant in product.variants %}
+                                {% if variant.available %}
+                                    <div class="option" form="AddToCartForm">
+                                        <input type="radio" name="id" id="{{  variant.id }}" value="{{  variant.id }}">
 
-                                    <label for="{{ variant.id }}">
-                                        <div class="custom-checkbox"></div>
-                                        <div class="option-content">
-                                            <span class="title">{{ variant.title }}</span>
+                                        <label for="{{ variant.id }}">
+                                            <div class="custom-checkbox"></div>
+                                            <div class="option-content">
+                                                <span class="title">{{ variant.title }}</span>
+                                                
+                                                {% if variant.metafields.custom.variant_description %}
+                                                    {{ variant.metafields.custom.variant_description | metafield_tag }}
+                                                {% endif %}
                                             
-                                            {% if variant.metafields.custom.variant_description %}
-                                                {{ variant.metafields.custom.variant_description | metafield_tag }}
-                                            {% endif %}
-                                        
-                                            <span class="price">{{ variant.metafields.custom.price_text }}</span>
-                                        </div>
-                                    </label>
-                                </div>
-                            {% endif %}
-                        {% endfor %}
+                                                <span class="price">{{ variant.metafields.custom.price_text }}</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
                     {% endif %}
 
                     <div class="sealsubs-target-element" data-product="{{ product | json | escape }}" data-handle="{{ product.handle }}"></div>
