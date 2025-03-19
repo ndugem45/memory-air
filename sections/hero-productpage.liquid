@@ -431,7 +431,7 @@
         event.preventDefault();
     
         var variantId = document.querySelector('input[name="id"]:checked').value;
-        {% comment %} var deviceId = document.querySelector('input[name="product"]').value; {% endcomment %}
+        //var deviceId = document.querySelector('input[name="product"]').value;
         var quantity = document.getElementById('quantity').value;
 
         var sellingPlanSelect = document.getElementById('selling-id-' + variantId);
@@ -444,7 +444,7 @@
         if (sellingPlanId) {
             formData.append('selling_plan', sellingPlanId);
         }
-        
+
         console.log(formData)
 
     
