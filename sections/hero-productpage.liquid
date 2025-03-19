@@ -407,7 +407,7 @@
 
                 <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
 
-                    <select name="id" id="productSelect">
+                    {% comment %} <select name="id" id="productSelect">
                       {% for variant in product.variants %}
                         {% if variant.available %}
                           <option value="{{ variant.id }}">
@@ -419,15 +419,15 @@
                           </option>
                         {% endif %}
                       {% endfor %}
-                    </select>
+                    </select> {% endcomment %}
 
                     {% if product.variants != blank%}
                         {% for variant in product.variants %}
                             {% if variant.available %}
-                                <div class="option" onclick="check()" selling-plan="{{ variant.selling_plan_allocations | json }}">
-                                    <label>
-                                        <input type="radio" name="id" id="{{  variant.id }}" value="{{  variant.id }}">
-                                        
+                                <div class="option" form="AddToCartForm">
+                                    <input type="radio" name="id" id="{{  variant.id }}" value="{{  variant.id }}">
+
+                                    <label for="{{ variant.id }}">
                                         <div class="custom-checkbox"></div>
                                         <div class="option-content">
                                             <span class="title">{{ variant.title }}</span>
