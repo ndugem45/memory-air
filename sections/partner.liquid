@@ -56,7 +56,8 @@
   {% if section.blocks != blank%}
     {%- for block in section.blocks -%}
       <div>
-        {{ block.settings.image | image_url: 'master' | image_tag }}
+        {% comment %} {{ block.settings.image | image_url: 'master' | image_tag }} {% endcomment %}
+        <img src="{{ block.settings.image | img_url: 'master' }}" width="120" />
       </div>
     {%- endfor -%}
   {% else %}
