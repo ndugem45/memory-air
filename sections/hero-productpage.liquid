@@ -396,6 +396,16 @@
                                             </div>
                                         </label>
                                     </div>
+                                    <div class="selling-plans">
+                                        <label for="selling-plan-{{ variant.id }}">Pilih Rencana Langganan:</label>
+                                        <select name="selling_plan" id="selling-plan-{{ variant.id }}">
+                                            {% for selling_plan in variant.selling_plan_allocations %}
+                                                <option value="{{ selling_plan.selling_plan.id }}">
+                                                    {{ selling_plan.selling_plan.name }} - {{ selling_plan.selling_plan.price_adjustment | money }}
+                                                </option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
                                 {% else %}
                                     <input type="hidden" id="product" name="product" value="{{  variant.id }}">
                                 {% endif %}
@@ -403,7 +413,7 @@
                         </div>
                     {% endif %}
 
-                    <div style="display: none !important;" class="sealsubs-target-element" data-product="{{ product | json | escape }}" data-handle="{{ product.handle }}"></div>
+                    <div class="sealsubs-target-element" data-product="{{ product | json | escape }}" data-handle="{{ product.handle }}"></div>
                     
                     <input type="hidden" id="quantity" name="quantity" value="1" min="1">
 
@@ -428,10 +438,17 @@
         var variantId = document.querySelector('input[name="id"]:checked').value;
         var deviceId = document.querySelector('input[name="product"]').value;
         var quantity = document.getElementById('quantity').value;
+
+        var sellingPlanSelect = document.getElementById('selling-plan-' + variantId);
+        var sellingPlanId = sellingPlanSelect ? sellingPlanSelect.value : null;
     
         var formData = new FormData();
         formData.append('id', variantId);
         formData.append('quantity', quantity);
+
+        if (sellingPlanId) {
+            formData.append('selling_plan', sellingPlanId);
+          }
     
         fetch('/cart/add.js', {
           method: 'POST',
