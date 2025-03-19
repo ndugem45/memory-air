@@ -1,4 +1,8 @@
 {% style %}
+  h1{
+    text-align: center;
+    margin-bottom: 42px;
+  }
   .checkout-form{
     max-width: 100%;
   }
@@ -17,7 +21,7 @@
   .checkout-form form td{
     padding: 4px;
   }
-  .checkout-form form td.product{
+  .checkout-form form td .product{
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -37,7 +41,7 @@
 <section style="min-height: 70vh;padding-top: 20vh;">
   <div class="container">
     {% if cart.item_count > 0 %}
-      <h1>cart</h1>
+      <h1>Shopping Cart</h1>
       <form action="/cart" method="post" class="checkout-form" novalidate>
         <table>
           <thead>
@@ -54,10 +58,12 @@
                     <img class="thumbnail" src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
                   </a>
                 </td>
-                <td class="product">
-                  <a href="{{ item.url }}">{{ item.product.title }}</a>
-                  {{ item.variant.title }}
-                  <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">remove</a>
+                <td>
+                  <div class="product">
+                    <a href="{{ item.url }}">{{ item.product.title }}</a>
+                    {{ item.variant.title }}
+                    <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">remove</a>
+                  </div>
                 </td>
                 <td>{{ item.price | money }}</td>
                 <td>
