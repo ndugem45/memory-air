@@ -437,15 +437,6 @@
 
         var sellingPlanSelect = document.getElementById('selling-id-' + variantId);
         var sellingPlanId = sellingPlanSelect ? sellingPlanSelect.value : null;
-        {% comment %} var formData = new FormData();
-        formData.append('id', variantId);
-        formData.append('quantity', quantity);
-
-        if (sellingPlanId) {
-            formData.append('selling_plan', sellingPlanId);
-        } {% endcomment %}
-
-        {% comment %} console.log(formData) {% endcomment %}
 
         addThis([
             {
@@ -463,6 +454,17 @@
                 document.querySelector('nav').classList.add('open');
             }
         });
+
+        
+        {% comment %} var formData = new FormData();
+        formData.append('id', variantId);
+        formData.append('quantity', quantity);
+
+        if (sellingPlanId) {
+            formData.append('selling_plan', sellingPlanId);
+        } {% endcomment %}
+
+        {% comment %} console.log(formData) {% endcomment %}
 
         {% comment %} fetch('/cart/add.js', {
           method: 'POST',
