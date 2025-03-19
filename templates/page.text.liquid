@@ -31,6 +31,13 @@
         position: sticky;
         top: 100px;
     }
+    @media only screen and (max-width: 680px) {
+        .textbased .content .toc-content{
+            width: 100%;
+            position: relative;
+            top: 0;
+        }
+    }
     .textbased .content .toc-content .btn-wrap{
         max-height: 80vh;
         overflow: auto;
@@ -123,7 +130,7 @@
             });
         });
     });
-    
+
     generateTableOfContents();
 
 </script>
