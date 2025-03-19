@@ -177,7 +177,6 @@
     #shopify-section-{{section.id}} .option {
         background: white;
         border-radius: 16px;
-        margin-bottom: 12px;
         border: 1px solid #ddd;
         transition: all 0.3s ease-in-out;
     }
@@ -214,14 +213,14 @@
     }
 
 
-    #shopify-section-{{section.id}} .option input:checked + .custom-checkbox {
+    #shopify-section-{{section.id}} .option input:checked + label .custom-checkbox {
         /* background: #aa7e71; */
         background: rgba(35, 35, 35, 1);
         border-color: #aa7e71;
         position: relative;
     }
 
-    #shopify-section-{{section.id}} .option input:checked + .custom-checkbox::after {
+    #shopify-section-{{section.id}} .option input:checked + label .custom-checkbox::after {
         content: "✔";
         color: white;
         font-size: 14px;
