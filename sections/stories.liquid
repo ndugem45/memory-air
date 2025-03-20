@@ -133,7 +133,7 @@
       {%-  for testi in section.settings.testi_list -%}
         <div class="stories_card-wrap">
           <div class="stories_card">
-            <img src="{{ testi.photo.file_img_url }}" alt="">
+            <img src="{{ testi.photo | file_img_url: 'master' }}" alt="">
             <div class="content">
               <div class="text-32 font-medium text-black">
                {{ testi.message | metafield_tag }}"
