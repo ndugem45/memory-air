@@ -133,14 +133,7 @@
       {%-  for testi in section.settings.testi_list -%}
         <div class="stories_card-wrap">
           <div class="stories_card">
-            {{ collection.media | json | escape }}
-
-            {% for media in product.media %}
-              {% if media.id == testi.photo %}
-                <img src="{{ media.preview_image.src | img_url: 'original' }}" alt="{{ media.alt }}">
-              {% endif %}
-            {% endfor %}
-
+            <img src="{{ testi.photo | image_url }}" alt="">
             <div class="content">
               <div class="text-32 font-medium text-black">
                {{ testi.message | metafield_tag }}"
