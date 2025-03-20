@@ -129,27 +129,27 @@
     {% endif %}
   </h2>
   <div class="stories_slider">
-    {% if section.blocks != blank %}
-      {%- for block in section.blocks -%}
+    {% if section.settings.testi_list != blank %}
+      {%-  for testi in section.settings.testi_list -%}
         <div class="stories_card-wrap">
           <div class="stories_card">
-            <img src="{{ block.settings.u_photo }}" alt="">
+            <img src="{{ testi.photo.url | img_url: 'master' }}" alt="">
             <div class="content">
               <p class="text-32 font-medium text-black">
-               "{{ block.settings.u_message }}"
+               "{{ testi.message }}"
               </p>
               <div class="user text-20">
                 <span class="text-black">
-                  {{ block.settings.u_name }}
+                  {{ testi.name }}
                 </span>
                 <span>
-                  {{ block.settings.u_pos }}
+                  {{ testi.title_position }}
                 </span>
               </div>
             </div>
           </div>
         </div>
-      {%- endfor -%}
+      {% endfor %}
     {% else %}
       <div class="stories_card-wrap">
         <div class="stories_card">
@@ -178,10 +178,10 @@
             </p>
             <div class="user text-20">
               <span class="text-black">
-                Nicole & Martin
+                Emily Everleigh
               </span>
               <span>
-                Owner at Louis Vuitton
+                Senior Innovation Strategist, Nexus Dynamics Ltd.
               </span>
             </div>
           </div>
@@ -206,6 +206,7 @@
         </div>
       </div>
     {% endif %}
+    
   </div>
   <div class="stories_navigation">
     <button class="stories-prev">
@@ -286,6 +287,12 @@
         "id": "section_title",
         "label": "Section title",
         "info": "Wrap italic font with <span>"
+      },
+      {
+        "type": "metaobject_list",
+        "id": "testi_list",
+        "label": "Testimonial list",
+        "metaobject_type": "testimonial"
       },
     ],
     "blocks": [
