@@ -200,7 +200,12 @@
     "stories": {
       "type": "stories",
       "settings": {
-        "section_title": ""
+        "section_title": "",
+        "testi_list": [
+          "arron-gladavich-ph-d-mph-faan",
+          "emily-everleigh",
+          "sophia-calloway"
+        ]
       }
     },
     "news": {
