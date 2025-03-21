@@ -11,7 +11,13 @@
   "sections": {
     "hero-product": {
       "type": "hero-product",
-      "settings": {}
+      "settings": {
+        "section_title": "",
+        "section_desc": "",
+        "section_product": "",
+        "video_cta": "",
+        "section_img": "shopify://shop_images/stand_alone_device.png"
+      }
     },
     "how-it-work": {
       "type": "how-it-work",
@@ -19,7 +25,10 @@
     },
     "pricing": {
       "type": "pricing",
-      "settings": {}
+      "settings": {
+        "product_left": "",
+        "product_right": ""
+      }
     },
     "life": {
       "type": "life",
@@ -30,7 +39,8 @@
     "stories": {
       "type": "stories",
       "settings": {
-        "section_title": ""
+        "section_title": "",
+        "testi_list": []
       }
     },
     "news": {
@@ -83,7 +93,10 @@
         "faq_item_aR68yn"
       ],
       "settings": {
-        "section_title": ""
+        "section_title": "",
+        "section_cta": "",
+        "section_cta_size": true,
+        "section_cta_title": "Go to FAQ"
       }
     }
   },
