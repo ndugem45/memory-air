@@ -15,7 +15,8 @@
         "section_title": "",
         "section_desc": "",
         "section_product": "",
-        "video_cta": ""
+        "video_cta": "",
+        "section_img": "shopify://shop_images/stand_alone_device.png"
       }
     },
     "how-it-work": {
@@ -38,7 +39,8 @@
     "stories": {
       "type": "stories",
       "settings": {
-        "section_title": ""
+        "section_title": "",
+        "testi_list": []
       }
     },
     "news": {
@@ -93,6 +95,7 @@
       "settings": {
         "section_title": "",
         "section_cta": "shopify://pages/faqs",
+        "section_cta_size": true,
         "section_cta_title": "Go to FAQ"
       }
     }
