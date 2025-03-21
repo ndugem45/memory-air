@@ -25,8 +25,8 @@
     "pricing": {
       "type": "pricing",
       "settings": {
-        "product_left": "memory-air-refills",
-        "product_right": "memory-air-refills"
+        "product_left": "memory-air-device",
+        "product_right": "memory-air-device"
       }
     },
     "life": {
@@ -47,7 +47,7 @@
       "settings": {
         "section_title": "",
         "cta_title": "",
-        "cta_url": ""
+        "cta_url": "shopify://pages/press-resources"
       }
     },
     "faq-plain": {
