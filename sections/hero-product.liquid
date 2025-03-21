@@ -105,8 +105,9 @@
 					{% endif %}
 				</div>
     </div>
-  {% comment %} <img src={{science-display}} alt="" class="illus"> {% endcomment %}
-	<iframe class="illus" width="811" height="600" src="https://www.youtube.com/embed/_LpPE8kKyg8?si=ENjDsayoVX5J39yE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <img src="{{ section.settings.section_img }}" alt="" class="illus">
+
+	{% comment %} <iframe class="illus" width="811" height="600" src="https://www.youtube.com/embed/_LpPE8kKyg8?si=ENjDsayoVX5J39yE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> {% endcomment %}
 </div>
     
     
@@ -135,6 +136,11 @@
 				"type": "url",
 				"id": "video_cta",
 				"label": "Watch video url"
+			},
+			{
+				"type": "image_picker",
+				"id": "section_img",
+				"label": "Section image"
 			},
 		]
 	}
