@@ -1,6 +1,7 @@
 {% comment %} for healthcare page {% endcomment %}
 
 {% assign science-display = 'product-vid-placeholder.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign product_display = 'healthcare_hero-img.png' | asset_url | append: '?v=' | append: 'timestamp' %}
 
 {% style %}
 
@@ -107,7 +108,11 @@
 					{% endif %}
 				</div>
     </div>
-  <img src="{{ section.settings.section_img | img_url }}" alt="" class="illus">
+		{% if section.settings.section_img != blank %}
+			<img src="{{ section.settings.section_img | img_url }}" alt="" class="illus">
+		{% else %}
+			<img src="{{ product_display }}" alt="" class="illus">
+		{% endif %}
 
 	{% comment %} <iframe class="illus" width="811" height="600" src="https://www.youtube.com/embed/_LpPE8kKyg8?si=ENjDsayoVX5J39yE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> {% endcomment %}
 </div>
