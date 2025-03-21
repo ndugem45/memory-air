@@ -56,7 +56,7 @@
   {% if section.settings.partner_object != blank%}
     {%- for partner in section.settings.partner_object -%}
       <div>
-        <img src="{{ partner.image | img_url }}" width="120" />
+        <img src="{{ partner.logo | img_url }}" width="120" />
       </div>
     {%- endfor -%}
   {% else %}
