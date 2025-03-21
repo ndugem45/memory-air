@@ -240,7 +240,7 @@
                                     {% else %}
                                         <p class="card_press-body-dsc font-medium text-16 m-btm m-12">{{ article.content | strip_html | truncatewords: 100 }}</p>
                                     {% endif %}
-                                    <a class="card_press-body-link font-semibold" target="_blank" href="{{ article.metafields.custom.pdf_file }}">
+                                    <a class="card_press-body-link font-semibold" target="_blank" href="{{ article.metafields.custom.pdf_file | file_url }}">
                                     {% comment %} <a class="card_press-body-link font-semibold" href="{{ article.url }}"> {% endcomment %}
                                         Read more
                                         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="20" viewBox="0 0 8 20" fill="none">
