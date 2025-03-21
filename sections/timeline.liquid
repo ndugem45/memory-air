@@ -206,7 +206,7 @@
                             Novelty Determines the Effects of Olfactory Enrichment on Memory and Neurogenesis Through Noradrenergic Mechanisms
                         </p>
                     </div>
-                    <a href="https://drive.google.com/file/d/1APH2sR8NydzdtZ_B1PZKBQtmudIbnJvz/view?pli=1" class="btn">
+                    <a href="{{ section.settings.url }}" target="_blank" class="btn">
                         View the Research <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -226,7 +226,7 @@
                             Brain Volume Changes in Hyposmic Patients Before and After Olfactory Training
                         </p>
                     </div>
-                    <a href="https://drive.google.com/file/d/1ANsIpa3ExH_sTkud0MHn4TLL989LIAV6/view" class="btn">
+                    <a href="{{ section.settings.url }}" target="_blank" class="btn">
                         View the Research <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -246,7 +246,7 @@
                             Odor Enrichment Increases Hippocampal Neuron Numbers in Mouse
                         </p>
                     </div>
-                    <a href="https://drive.google.com/file/d/1A8ldJW0K6W1D8JwkN8_FZczebZc4RPdS/view" class="btn">
+                    <a href="{{ section.settings.url }}" target="_blank" class="btn">
                         View the Research <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -266,7 +266,7 @@
                             Smell training improves olfactory function and alters brain structure
                         </p>
                     </div>
-                    <a href="https://drive.google.com/file/d/1AIbF_WsoeU-IMyVVEAwXKCR4bmnVviMN/view" class="btn">
+                    <a href="{{ section.settings.url }}" target="_blank" class="btn">
                         View the Research <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -286,7 +286,7 @@
                             Effect of intensive olfactory training for cognitive function in patients with dementia
                         </p>
                     </div>
-                    <a href="https://drive.google.com/file/d/1AJBAEWzejT_LC3c9b09ctXi93Ai5IXjr/view" class="btn">
+                    <a href="{{ section.settings.url }}" target="_blank" class="btn">
                         View the Research <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -304,7 +304,7 @@
                             Beyond Olfaction: Beneficial Effects of Olfactory Training Extend to Aging-Related Cognitive Decline
                         </p>
                     </div>
-                    <a href="http://drive.google.com/file/d/1ACfXiBgapdQ0jHGpGhXCF9j4fssLdqN5/view" class="btn">
+                    <a href="{{ section.settings.url }}" target="_blank" class="btn">
                         View the Research <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -324,7 +324,7 @@
                             Does Olfactory Training Improve Brain Function and Cognition? A Systematic Review
                         </p>
                     </div>
-                    <a href="" class="btn">
+                    <a href="{{ section.settings.url }}" target="_blank" class="btn">
                         View the Research <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -344,7 +344,7 @@
                             Aging and Olfactory Training: A Scoping Review
                         </p>
                     </div>
-                    <a href="https://drive.google.com/file/d/1ANeX1qKwP3fndt0bXOPWPc1OTpUF8Ddy/view" class="btn">
+                    <a href="{{ section.settings.url }}" target="_blank" class="btn">
                         View the Research <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -366,21 +366,6 @@
                 wrapper.style.maxHeight = wrapper.scrollHeight + "px";
                 $(event.currentTarget).hide();
             });
-        
-            {% comment %} const acc = document.getElementsByClassName("head");
-            let i;
-        
-            for (i = 0; i < acc.length; i++) {
-                acc[i].addEventListener("click", function () {
-                    this.classList.toggle("active");
-                    const panel = this.nextElementSibling;
-                    if (panel.style.maxHeight) {
-                        panel.style.maxHeight = null;
-                    } else {
-                        panel.style.maxHeight = panel.scrollHeight + "px";
-                    }
-                });
-            } {% endcomment %}
         });
     </script>
     
@@ -388,6 +373,14 @@
     {% schema %}
         {
             "tag": "section",
-            "class": "timeline"
+            "class": "timeline",
+            "settings": [
+                {
+                    "type": "url",
+                    "id": "url",
+                    "label": "PDF url for all button",
+                    "default": "https://drive.google.com/file/d/1ANeX1qKwP3fndt0bXOPWPc1OTpUF8Ddy/view"
+                },
+            ]
         }
     {% endschema %}
