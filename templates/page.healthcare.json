@@ -11,7 +11,10 @@
   "sections": {
     "hero-healthcare": {
       "type": "hero-healthcare",
-      "settings": {}
+      "settings": {
+        "section_product": "memory-air-device",
+        "contact_url": "shopify://pages/contact"
+      }
     },
     "partner": {
       "type": "partner",
