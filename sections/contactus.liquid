@@ -260,6 +260,11 @@
     #shopify-section-{{section.id}} .contactus-title_btm > p {
         font-size: 14px;
     }
+    #shopify-section-{{section.id}} .max-width-small{
+        max-width: 860px;
+    }
+
+
 }
 
 {% endstyle %}
@@ -268,7 +273,7 @@
 
 	<div class="container container-contactus" id="contactus">
 		<div>
-			<h1 class="m-btm m-54 text-center">
+			<h1 class="m-btm m-54 text-center max-width-small">
 				{% if section.settings.section_title != blank %}
 					{{ section.settings.section_title }}
 				{% else %}
