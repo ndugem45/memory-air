@@ -269,9 +269,12 @@
 	<div class="container container-contactus" id="contactus">
 		<div>
 			<h1 class="m-btm m-54">
-              <!-- Refer your patients to with confidence -->
-				Contact
-				<span>Us</span>
+				{% if section.settings.section_title != blank %}
+					{{ section.settings.section_title }}
+				{% else %}
+					Contact
+					<span>Us</span>
+				{% endif %}
 			</h1>
 		</div>
 		<div class="contactus_content">
@@ -372,7 +375,13 @@
         "type": "product",
         "id": "section_product",
         "label": "Selected product"
-      }
+      },
+			{
+				"type": "textarea",
+				"id": "section_title",
+				"label": "Section title",
+				"info": "Wrap italic font with <span>"
+			},
 		]
 	}
 {% endschema %}
