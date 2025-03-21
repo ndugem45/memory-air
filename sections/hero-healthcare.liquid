@@ -75,8 +75,12 @@
 				Now you can deliver real results to your patients and clients.
 			</p>
 			<div class="m-top m-32 btn-wrap">
-				<a class="btn is-black" href="">Buy Now</a>
-				<a class="btn is-bordered" href="">Contact Us for Bulk Ordering</a>
+				{% if section.settings.section_product != blank %}
+					<a class="btn is-black" href="{{ section.settings.section_product.url }}">Buy Now</a>
+				{% endif %}
+				{% if section.settings.contact_url != blank %}
+					<a class="btn is-bordered" href="{{ section.settings.contact_url }}">Contact Us for Bulk Ordering</a>
+				{% endif %}
 			</div>
 		</div>
 		<div class="healthcare_content-img">
@@ -89,6 +93,18 @@
 {% schema %}
 	{
 		"tag": "section",
-		"class": "hero-healthcare"
+		"class": "hero-healthcare",
+		"settings": [
+			{
+        "type": "product",
+        "id": "section_product",
+        "label": "Selected product"
+      },
+			{
+        "type": "url",
+        "id": "contact_url",
+        "label": "Second CTA url"
+      },
+		]
 	}
 {% endschema %}
