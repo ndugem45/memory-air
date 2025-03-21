@@ -54,10 +54,9 @@
 
 <div class="container">
   {% if section.blocks != blank%}
-    {%- for block in section.blocks -%}
+    {%- for partner in section.settings.partner_object -%}
       <div>
-        {% comment %} {{ block.settings.image | image_url: 'master' | image_tag }} {% endcomment %}
-        <img src="{{ block.settings.image | img_url: 'master' }}" width="120" />
+        <img src="{{ partner.image | img_url }}" width="120" />
       </div>
     {%- endfor -%}
   {% else %}
@@ -156,19 +155,6 @@
         "label": "Partner list",
         "metaobject_type": "partners"
       },
-    ],
-    "blocks": [
-      {
-        "name": "Partner",
-        "type": "partner",
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Partner logo"
-          }
-        ]
-      }
     ],
     "presets": [
       {
