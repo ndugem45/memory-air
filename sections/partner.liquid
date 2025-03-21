@@ -53,7 +53,7 @@
 {% endstyle %}
 
 <div class="container">
-  {% if section.blocks != blank%}
+  {% if section.settings.partner_object != blank%}
     {%- for partner in section.settings.partner_object -%}
       <div>
         <img src="{{ partner.image | img_url }}" width="120" />
