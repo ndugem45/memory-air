@@ -23,7 +23,9 @@
     },
     "timeline": {
       "type": "timeline",
-      "settings": {}
+      "settings": {
+        "url": "https://drive.google.com/file/d/1ANeX1qKwP3fndt0bXOPWPc1OTpUF8Ddy/view"
+      }
     },
     "introduce": {
       "type": "introduce",
@@ -61,7 +63,10 @@
         "faq_item_Y8FUNk"
       ],
       "settings": {
-        "section_title": ""
+        "section_title": "",
+        "section_cta_title": "",
+        "section_cta": "",
+        "section_cta_size": true
       }
     }
   },
