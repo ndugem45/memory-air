@@ -76,8 +76,12 @@
             <img src="{{ science_display }}" alt="">
         </div>
         <div class="btn-wrap m-top m-32">
-            <a class="btn is-black" href="">Explore Our Product</a>
-            <a class="btn is-outline-black" href="">Buy Now</a>
+            {% if section.settings.explore_cta != blank %}
+                <a class="btn is-black" href="{{ section.settings.explore_cta }}">Explore Our Product</a>
+            {% endif %}
+            {% if section.settings.section_product != blank %}
+                <a class="btn is-outline-black" href="{{ section.settings.section_product }}">Buy Now</a>
+        {% endif %}
         </div>
     </div>
     <script>
@@ -100,6 +104,18 @@
     {% schema %}
         {
             "tag": "section",
-            "class": "introduce"
+            "class": "introduce",
+            "settings": [
+                {
+                    "type": "product",
+                    "id": "section_product",
+                    "label": "Selected product"
+                },
+                {
+                    "type": "url",
+                    "id": "explore_cta",
+                    "label": "Explore CTA url"
+                },
+            ]
         }
     {% endschema %}
