@@ -29,7 +29,10 @@
     },
     "introduce": {
       "type": "introduce",
-      "settings": {}
+      "settings": {
+        "section_product": "memory-air-device",
+        "explore_cta": "shopify://collections"
+      }
     },
     "review": {
       "type": "review",
