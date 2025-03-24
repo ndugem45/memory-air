@@ -273,6 +273,10 @@
 
 	<div class="container container-contactus" id="contactus">
 		<div>
+			{% if section.settings.section_label != blank %}
+			<span class="text-primary text-center text-16 m-btm m-32 ">{{ section.settings.section_label }}</span>
+			{% endif %}
+			
 			<h1 class="m-btm m-54 text-center max-width-small">
 				{% if section.settings.section_title != blank %}
 					{{ section.settings.section_title }}
@@ -381,6 +385,11 @@
         "id": "section_product",
         "label": "Selected product"
       },
+			{
+				"type": "text",
+				"id": "section_label",
+				"label": "Section label"
+			},
 			{
 				"type": "textarea",
 				"id": "section_title",
