@@ -497,10 +497,12 @@
         <a href="">for healthcare professsional</a>
         <a href="">press & Resources</a>
       {% endif %}
+      <a href="/cart">Cart</a>
+      <a href="{{ section.settings.section_product.url }}">Buy Now </a>
     </div>
-    <a href="{{ section.settings.section_product.url }}" class="btn is-black">
+    {% comment %} <a href="{{ section.settings.section_product.url }}" class="btn is-black">
       Buy Now 
-    </a>
+    </a> {% endcomment %}
   </div>
 </div>
 
