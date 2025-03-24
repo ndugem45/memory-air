@@ -22,8 +22,8 @@
         "type": "footer",
         "settings": {
           "footer_desc": "",
-          "foot_menu_column1": "menu-left",
-          "foot_menu_column2": "menu-right",
+          "foot_menu_column1": "footer-col-1",
+          "foot_menu_column2": "footer-col-2",
           "foot_address": "Science Lab 3, 6619 South Dixie Highway, #251 Miami, FL 33143",
           "foot_menu_btm": ""
         }
