@@ -355,16 +355,21 @@
                 </div>
             </div>
         </div>
-        <button id="timeline-toggle" class="btn is-outline-black">See more</button>
+        <button id="timeline-toggle" class="btn is-outline-black">Show more</button>
     </div>
 
     <script>
         $(document).ready(() => {
             $("#timeline-toggle").click(() => {
                 const wrapper = document.querySelector(".timeline .item-wrap");
-                wrapper.classList.add("active");
-                wrapper.style.maxHeight = wrapper.scrollHeight + "px";
-                $(event.currentTarget).hide();
+                wrapper.classList.toggle("active");
+                if(wrapper.style.maxHeight == null){
+                    $(event.currentTarget).text('Show Less');
+                    wrapper.style.maxHeight = wrapper.scrollHeight + "px";
+                }else{
+                    $(event.currentTarget).text('Show More');
+                    wrapper.style.maxHeight = null;
+                }
             });
         });
     </script>
