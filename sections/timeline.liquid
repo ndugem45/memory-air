@@ -362,13 +362,14 @@
         $(document).ready(() => {
             $("#timeline-toggle").click(() => {
                 const wrapper = document.querySelector(".timeline .item-wrap");
-                wrapper.classList.toggle("active");
-                if(wrapper.style.maxHeight == null){
+                if(wrapper.className.includes('active')){
+                    wrapper.classList.remove("active");
+                    $(event.currentTarget).text('Show More');
+                    wrapper.style.maxHeight = "500px";
+                }else{
+                    wrapper.classList.add("active");
                     $(event.currentTarget).text('Show Less');
                     wrapper.style.maxHeight = wrapper.scrollHeight + "px";
-                }else{
-                    $(event.currentTarget).text('Show More');
-                    wrapper.style.maxHeight = null;
                 }
             });
         });
