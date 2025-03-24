@@ -127,8 +127,6 @@
   document.addEventListener("DOMContentLoaded", function () {
     const customForm = document.getElementById("klaviyo-form");
     const messageDiv = document.getElementById("klaviyo-message");
-
-    console.log(customForm)
   
     customForm.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -141,32 +139,35 @@
         return;
       }
   
-      const klaviyoForm = document.querySelector(".klaviyo-form-TMQFaZ form");
+      // Tunggu hingga form Klaviyo dimuat
+      const checkKlaviyoForm = setInterval(() => {
+        const klaviyoForm = document.querySelector(".klaviyo-form-TMQFaZ form");
+        if (klaviyoForm) {
+          clearInterval(checkKlaviyoForm); // Hentikan pengecekan setelah ditemukan
   
-      if (klaviyoForm) {
-        const klaviyoEmailInput = klaviyoForm.querySelector('input[type="email"]');
+          const klaviyoEmailInput = klaviyoForm.querySelector('input[type="email"]');
+          if (klaviyoEmailInput) {
+            klaviyoEmailInput.value = email;
+            klaviyoEmailInput.dispatchEvent(new Event("input", { bubbles: true })); // Simulasi input event
+            klaviyoEmailInput.dispatchEvent(new Event("change", { bubbles: true }));
   
-        if (klaviyoEmailInput) {
-          console.log(klaviyoEmailInput.value)
-          klaviyoEmailInput.value = email;
-          console.log(klaviyoEmailInput.value)
-  
-          const submitButton = klaviyoForm.querySelector('button[type="button"]');
-          if (submitButton) {
-            submitButton.click();
-            messageDiv.textContent = "Submitting...";
+            // Klik tombol submit Klaviyo setelah email diisi
+            setTimeout(() => {
+              const submitButton = klaviyoForm.querySelector('button[type="button"]');
+              if (submitButton) {
+                submitButton.click();
+                messageDiv.textContent = "Submitting...";
+              } else {
+                messageDiv.textContent = "Error: Submit button not found.";
+              }
+            }, 500);
           } else {
-            messageDiv.textContent = "Error: Cannot find submit button.";
+            messageDiv.textContent = "Error: Email input not found in Klaviyo form.";
           }
-        } else {
-          messageDiv.textContent = "Error: Cannot find email input in Klaviyo form.";
         }
-      } else {
-        messageDiv.textContent = "Error: Klaviyo form not found.";
-      }
+      }, 500); // Cek setiap 500ms hingga form muncul
     });
-  });
-  
+  });  
 </script>
 
 {% comment %} {% schema %}
