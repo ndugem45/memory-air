@@ -56,6 +56,15 @@
       position: relative;
       z-index: 2;
   }
+  @media only screen and (max-width:1200px) {
+    nav .container{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+    }
+  }
   nav .logo{
       width: 121px;
       object-fit: contain;
@@ -82,10 +91,20 @@
       align-items: center;
       gap: 71px;
   }
+  @media only screen and (max-width:1200px) {
+    nav .left{
+      justify-content: center;
+    }
+  }
   nav .right{
       display: flex;
       align-items: center;
       gap: 54px;
+  }
+  @media only screen and (max-width:1200px) {
+    nav .right{
+      justify-content: flex-end;
+    }
   }
   nav .menu a{
       color: white;
