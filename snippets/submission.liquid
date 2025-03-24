@@ -99,11 +99,11 @@
     <p class="m-top m-12 opacity-60">
       We’ll keep you informed about our ongoing scientific research & results.
     </p>
+    <div id="klaviyo-message"></div>
     <form action="" id="klaviyo-form" class="klaviyo-form">
       <input type="email" name="email" placeholder="Your email" required>
       <button class="btn is-brown" type="submit">Sign up</button>
     </form>
-    <div id="klaviyo-message"></div>
     <div class="klaviyo-form-TMQFaZ"></div>
   </div>
 
@@ -114,6 +114,7 @@
     <p class="m-top m-12 opacity-60">
       Share this revolutionary way to reverse memory loss with the important people in your life.
     </p>
+    <div id="klaviyo-message-2"></div>
     <form action="">
       <input type="email" name="email" placeholder="Loved-One’s Email" required>
       <button class="btn is-brown" type="submit">Submit</button>
@@ -138,18 +139,15 @@
         return;
       }
   
-      // Coba cari form embed asli Klaviyo
       const klaviyoForm = document.querySelector(".klaviyo-form-TMQFaZ form");
   
       if (klaviyoForm) {
         const klaviyoEmailInput = klaviyoForm.querySelector('input[type="email"]');
   
         if (klaviyoEmailInput) {
-          // Salin email ke form embed Klaviyo
           klaviyoEmailInput.value = email;
   
-          // Simulasikan klik submit pada form embed Klaviyo
-          const submitButton = klaviyoForm.querySelector('input[type="submit"]');
+          const submitButton = klaviyoForm.querySelector('button[type="button"]');
           if (submitButton) {
             submitButton.click();
             messageDiv.textContent = "Submitting...";
