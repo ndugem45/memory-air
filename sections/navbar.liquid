@@ -751,7 +751,7 @@
           $('#sub-total').html(formatCost(parseFloat(cartData.items_subtotal_price / 100)));
     
           if (dd.length) {
-            if(window.innerWidth < 1200 && window.innerWidth > 480){
+            if(window.innerWidth < 1200){
               $('#cart-btn').show()
               $('#buy-btn').hide()
             }
@@ -761,7 +761,7 @@
               $('#placer').append(tmplt(s));
             });
           } else {
-            if(window.innerWidth < 1200 && window.innerWidth > 480){
+            if(window.innerWidth < 1200){
               $('#cart-btn').hide()
               $('#buy-btn').show()
             }
