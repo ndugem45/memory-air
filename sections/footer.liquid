@@ -312,6 +312,19 @@
             {% endif %}
           </div>
         </div>
+
+        <div class="menu-wrap">
+          <p class="text-16">
+            {{ section.settings.foot_address }}
+          </p>
+          {% if section.blocks != blank %}
+            {%- for block in section.blocks -%}
+              <a href="{{ block.settings.social_url }}" target="_blank">
+                {{ block.settings.social_img | image_url: width: 19 | image_tag }}
+              </a>
+            {%- endfor -%}
+          {% endif %}
+        </div>
       </div>
     </div>
   </div>
