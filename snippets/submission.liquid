@@ -166,6 +166,17 @@
           }
         }
       }, 500); // Cek setiap 500ms hingga form muncul
+
+      const checkSuccessMessage = setInterval(() => {
+        const successMessage = [...document.querySelectorAll(".klaviyo-form-TMQFaZ *")].find(el => el.textContent.includes("Thanks for subscribing!"));
+  
+        if (successMessage) {
+          messageDiv.textContent = "✅ Success! Thanks for subscribing!";
+          messageDiv.style.color = "green";
+          emailInput.value = ""; // Kosongkan input setelah sukses
+          clearInterval(checkSuccessMessage);
+        }
+      }, 500);
     });
   });  
 </script>
