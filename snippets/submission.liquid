@@ -94,11 +94,12 @@
     <p class="m-top m-12 opacity-60">
       We’ll keep you informed about our ongoing scientific research & results.
     </p>
-    <form action="" id="klaviyo-form" class="klaviyo-form">
+    {% comment %} <form action="" id="klaviyo-form" class="klaviyo-form">
       <input type="email" name="email" placeholder="Your email" required>
       <button class="btn is-brown" type="submit">Sign up</button>
     </form>
-    <div id="klaviyo-message"></div>
+    <div id="klaviyo-message"></div> {% endcomment %}
+    <div class="klaviyo-form-TMQFaZ"></div>
   </div>
 
   <div class="submission_card">
@@ -117,7 +118,7 @@
 </section>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  {% comment %} document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("klaviyo-form");
     const messageDiv = document.getElementById("klaviyo-message");
   
@@ -158,7 +159,7 @@
         messageDiv.textContent = "Gagal terhubung ke Klaviyo.";
       }
     });
-  });  
+  });   {% endcomment %}
 </script>
 
 {% comment %} {% schema %}
