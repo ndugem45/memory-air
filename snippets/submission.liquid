@@ -149,7 +149,7 @@
           klaviyoEmailInput.value = email;
   
           // Simulasikan klik submit pada form embed Klaviyo
-          const submitButton = klaviyoForm.querySelector('button[type="submit"]');
+          const submitButton = klaviyoForm.querySelector('input[type="submit"]');
           if (submitButton) {
             submitButton.click();
             messageDiv.textContent = "Submitting...";
