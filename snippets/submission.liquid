@@ -82,6 +82,11 @@
   .submission .submission_card:nth-child(2) form{
     background-color: var(--grey-light);
   }
+  .submission_card .klaviyo-form-TMQFaZ{
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
 {% endstyle %}
 
 <section class="submission">
@@ -94,11 +99,11 @@
     <p class="m-top m-12 opacity-60">
       We’ll keep you informed about our ongoing scientific research & results.
     </p>
-    {% comment %} <form action="" id="klaviyo-form" class="klaviyo-form">
+    <form action="" id="klaviyo-form" class="klaviyo-form">
       <input type="email" name="email" placeholder="Your email" required>
       <button class="btn is-brown" type="submit">Sign up</button>
     </form>
-    <div id="klaviyo-message"></div> {% endcomment %}
+    <div id="klaviyo-message"></div>
     <div class="klaviyo-form-TMQFaZ"></div>
   </div>
 
@@ -118,48 +123,48 @@
 </section>
 
 <script>
-  {% comment %} document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("klaviyo-form");
+  document.addEventListener("DOMContentLoaded", function () {
+    const customForm = document.getElementById("klaviyo-form");
     const messageDiv = document.getElementById("klaviyo-message");
   
-    form.addEventListener("submit", async function (e) {
+    customForm.addEventListener("submit", function (e) {
       e.preventDefault();
   
-      const formData = new FormData(form);
-      const email = formData.get("email");
+      const emailInput = customForm.querySelector('input[name="email"]');
+      const email = emailInput.value.trim();
   
       if (!email) {
-        messageDiv.textContent = "Email wajib diisi!";
+        messageDiv.textContent = "Please enter a valid email!";
         return;
       }
   
-      try {
-        {% comment %} const response = await fetch("https://a.klaviyo.com/api/identify", { {% endcomment %}
-        const response = await fetch("https://a.klaviyo.com/api/v2/list/TpdAkf/subscribe?api_key=pk_fc660e15c837515467a64b5dd33dc7490f", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            profiles: [
-              {
-                email: email,
-              },
-            ],
-          }),
-        });
+      // Coba cari form embed asli Klaviyo
+      const klaviyoForm = document.querySelector(".klaviyo-form-TMQFaZ form");
   
-        if (response.ok) {
-          messageDiv.textContent = "Berhasil ditambahkan ke Klaviyo!";
-          form.reset();
+      if (klaviyoForm) {
+        const klaviyoEmailInput = klaviyoForm.querySelector('input[type="email"]');
+  
+        if (klaviyoEmailInput) {
+          // Salin email ke form embed Klaviyo
+          klaviyoEmailInput.value = email;
+  
+          // Simulasikan klik submit pada form embed Klaviyo
+          const submitButton = klaviyoForm.querySelector('button[type="submit"]');
+          if (submitButton) {
+            submitButton.click();
+            messageDiv.textContent = "Submitting...";
+          } else {
+            messageDiv.textContent = "Error: Cannot find submit button.";
+          }
         } else {
-          messageDiv.textContent = "Terjadi kesalahan, coba lagi.";
+          messageDiv.textContent = "Error: Cannot find email input in Klaviyo form.";
         }
-      } catch (error) {
-        messageDiv.textContent = "Gagal terhubung ke Klaviyo.";
+      } else {
+        messageDiv.textContent = "Error: Klaviyo form not found.";
       }
     });
-  });   {% endcomment %}
+  });
+  
 </script>
 
 {% comment %} {% schema %}
