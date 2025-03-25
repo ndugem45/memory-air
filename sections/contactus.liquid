@@ -234,7 +234,7 @@
     }
 
     #shopify-section-{{section.id}} .contactus_text-title {
-        font-size: 24px;
+        font-size: 24px !important;
         line-height: 140%;
         margin-bottom: 16px;
     }
@@ -244,7 +244,7 @@
     }
 
     #shopify-section-{{section.id}} .contactus_text-list {
-        font-size: 16px;
+        font-size: 16px !important;
     }
 
     #shopify-section-{{section.id}} .contactus_text-list-dsc {
@@ -349,9 +349,17 @@
 
 						<select class="input-form select-input" id="Select Topic" name="Topic">
 							<option value="">Select Topic</option>
-							<option value="professionalconsideration">Professional Consideration</option>
-							<option value="generalquestions">General Questions</option>
-												<option value="clinicaltrialinterest">Clinical Trial Interest</option>
+							<option value="Professional Consideration">Professional Consideration</option>
+							<option value="General Questions">General Questions</option>
+							<option value="Clinical Trial Interest">Clinical Trial Interest</option>
+						</select>
+
+						<select class="input-form select-input" id="Professional Practitioners" name="Practitioners">
+							<option value="">Professional Practitioners</option>
+							<option value="Medical Practitioners">Medical Practitioners</option>
+							<option value="Mental Health Practitioners">Mental Health Practitioners</option>
+							<option value="Healthcare Support Practitioners">Healthcare Support Practitioners</option>
+							<option value="Dental and Specialized Practitioners">Dental and Specialized Practitioners</option>
 						</select>
 
 						<textarea class="input-form" name="Comment" placeholder="Comment"></textarea>
@@ -359,17 +367,13 @@
 						<input type="submit" value="Send" class="btn is-black">
 					</div>
 
-					<label for="" class="lable-bottom-form m-top m-32">By signing in you agree with the Terms and Conditions and Privacy
-						Policy</label>
+					<label for="" class="lable-bottom-form m-top m-32">By signing in you agree with the Terms and Conditions and Privacy Policy</label>
 				{% comment %} </form> {% endcomment %}
 				{% endform %}
 			</div>
 		</div>
 		<div class="contactus-title_btm m-top m-32">
-			<p>Memory Air® has been designed based upon the science of olfactory enrichment. The device itself, however, has
-				not been tested to replicate the results of these 20 underlying studies. It is not required to be approved by
-				the FDA for yourself and your family since it does not treat diseases. As does the underlying science, it has
-				been designed to alleviate the symptoms of diseases and conditions.</p>
+			<p>Memory Air® has been designed based upon the science of olfactory enrichment. The device itself, however, has not been tested to replicate the results of these 20 underlying studies. It is not required to be approved by the FDA for yourself and your family since it does not treat diseases. As does the underlying science, it has been designed to alleviate the symptoms of diseases and conditions.</p>
 		</div>
 	</div>
 
