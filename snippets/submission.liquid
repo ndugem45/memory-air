@@ -65,6 +65,7 @@
   .submission_card .klaviyo-form.active .notes{
     line-height: 300%;
     margin: auto;
+    color: black;
   }
   @media only screen and (max-width: 360px) {
     .submission .submission_card form input{
@@ -132,7 +133,6 @@
       <div class="notes" id="klaviyo-success"></div>
       <button class="btn is-brown" type="submit">Sign up</button>
     </form>
-    {% comment %} <div class="klaviyo-form-TMQFaZ"></div> {% endcomment %}
   </div>
 
   <div class="submission_card">
@@ -159,9 +159,14 @@
     let notes1 = document.getElementById("klaviyo-message");
     let notes2 = document.getElementById("klaviyo-message-2");
 
-    function submit(email, label, info, text){
+    function submit(form, info, text){
       var klaviyoAPIKey = 'UkKEks';
       var segmentId = 'TpdAkf';
+
+      const emailInput = form.querySelector('input[name="email"]');
+      let label = form.querySelector('.notes');
+      let btn = form.querySelector('button[type="submit"]');
+      const email = emailInput.value.trim();
 
       var apiUrl = 'https://a.klaviyo.com/client/profiles/?company_id=';
       var data = {
@@ -172,7 +177,9 @@
               }
           }
       };
-      // https://a.klaviyo.com/client/profiles/?company_id=UkKEks
+
+      btn.setAttribute('disabled', true);
+      btn.innerText = 'Sending...';
 
       $.ajax({
         url: apiUrl+klaviyoAPIKey,
@@ -187,9 +194,12 @@
           document.querySelector(".klaviyo-form").classList.add('active')
           label.innerText = text;
           info.innerText = '';
+          btn.setAttribute('disabled', false);
         },
         error: function(xhr, status, error) {
           info.innerText = 'Please input correct email!';
+          btn.setAttribute('disabled', false);
+          btn.innerText = 'Submit';
         }
       });
     }
@@ -197,19 +207,13 @@
     customForm.addEventListener("submit", function (e) {
       e.preventDefault();
   
-      const emailInput = customForm.querySelector('input[name="email"]');
-      const email = emailInput.value.trim();
-  
-      submit(email, document.getElementById("klaviyo-success"), notes1, 'Thank you! You are now signed up!');
+      submit(customForm, notes1, 'Thank you! You are now signed up!');
     });
 
     customForm2.addEventListener("submit", function (e) {
       e.preventDefault();
   
-      const emailInput = customForm2.querySelector('input[name="email"]');
-      const email = emailInput.value.trim();
-  
-      submit(email, document.getElementById("klaviyo-success-2"), notes2, 'Thank you! We’ll send them an email right away!');
+      submit(customForm2, notes2, 'Thank you! We’ll send them an email right away!');
     });
   });  
 </script>
