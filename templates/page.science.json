@@ -8,78 +8,74 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {
-    "hero-science": {
-      "type": "hero-science",
-      "settings": {}
-    },
-    "memory-loss": {
-      "type": "memory-loss",
-      "settings": {}
-    },
-    "nose": {
-      "type": "nose",
-      "settings": {}
-    },
-    "timeline": {
-      "type": "timeline",
-      "settings": {
-        "url": "https://drive.google.com/file/d/1ANeX1qKwP3fndt0bXOPWPc1OTpUF8Ddy/view"
-      }
-    },
-    "introduce": {
-      "type": "introduce",
-      "settings": {
-        "section_product": "memory-air-device",
-        "explore_cta": "shopify://collections"
-      }
-    },
-    "review": {
-      "type": "review",
-      "settings": {}
-    },
-    "faq": {
-      "type": "faq",
-      "blocks": {
-        "faq_item_khmrxz": {
-          "type": "faq_item",
-          "settings": {
-            "faq_object": "what-is-the-science-behind-olfactory-enrichment"
-          }
-        },
-        "faq_item_acMJHX": {
-          "type": "faq_item",
-          "settings": {
-            "faq_object": "what-are-the-most-commonly-reported-benefits-of-memory-air"
-          }
-        },
-        "faq_item_Y8FUNk": {
-          "type": "faq_item",
-          "settings": {
-            "faq_object": "what-if-i-dont-like-how-some-of-the-scents-smell"
-          }
-        }
-      },
-      "block_order": [
-        "faq_item_khmrxz",
-        "faq_item_acMJHX",
-        "faq_item_Y8FUNk"
-      ],
-      "settings": {
-        "section_title": "",
-        "section_cta_title": "",
-        "section_cta": "",
-        "section_cta_size": true
-      }
-    }
-  },
-  "order": [
-    "hero-science",
-    "memory-loss",
-    "nose",
-    "timeline",
-    "introduce",
-    "review",
-    "faq"
-  ]
+	"sections": {
+		"hero-science": {
+			"type": "hero-science",
+			"settings": {}
+		},
+		// "memory-loss": {
+		//   "type": "memory-loss",
+		//   "settings": {}
+		// },
+		"nose": {
+			"type": "nose",
+			"settings": {}
+		},
+		"timeline": {
+			"type": "timeline",
+			"settings": {
+				"url": "https://drive.google.com/file/d/1ANeX1qKwP3fndt0bXOPWPc1OTpUF8Ddy/view"
+			}
+		},
+		"introduce": {
+			"type": "introduce",
+			"settings": {
+				"section_product": "memory-air-device",
+				"explore_cta": "shopify://collections"
+			}
+		},
+		"review": {
+			"type": "review",
+			"settings": {}
+		},
+		"faq": {
+			"type": "faq",
+			"blocks": {
+				"faq_item_khmrxz": {
+					"type": "faq_item",
+					"settings": {
+						"faq_object": "what-is-the-science-behind-olfactory-enrichment"
+					}
+				},
+				"faq_item_acMJHX": {
+					"type": "faq_item",
+					"settings": {
+						"faq_object": "what-are-the-most-commonly-reported-benefits-of-memory-air"
+					}
+				},
+				"faq_item_Y8FUNk": {
+					"type": "faq_item",
+					"settings": {
+						"faq_object": "what-if-i-dont-like-how-some-of-the-scents-smell"
+					}
+				}
+			},
+			"block_order": ["faq_item_khmrxz", "faq_item_acMJHX", "faq_item_Y8FUNk"],
+			"settings": {
+				"section_title": "",
+				"section_cta_title": "",
+				"section_cta": "",
+				"section_cta_size": true
+			}
+		}
+	},
+	"order": [
+		"hero-science",
+		// "memory-loss",
+		"nose",
+		"timeline",
+		"introduce",
+		"review",
+		"faq"
+	]
 }
