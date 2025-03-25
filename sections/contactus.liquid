@@ -58,8 +58,8 @@
 		display: flex;
 		align-items: start;
 		justify-content: center;
-		height: 800px;
-		background-size: 780px 800px;
+		height: 850px;
+		background-size: 780px 840px;
 	}
 
 	#shopify-section-{{section.id}} .contactus_content-form .input-wrapper{
@@ -319,15 +319,14 @@
 				<div class="m-vertical m-32 btn-wrap">
 					<a class="btn is-black btn-full" href="{{ section.settings.section_product.url }}">Buy Now</a>
 				</div>
-				<span class="contactus_img-text-btm">Order Memory Air now to start your patients on the road to memory
+				<span class="contactus_img-text-btm text-center">Order Memory Air now to start your patients on the road to memory
 					improvement.</span>
 			</div>
 
 			<div class="contactus_content-form">
 				{% comment %} <form action=""> {% endcomment %}
 				{% form 'contact' %}
-					<label for="" class="lable-form m-btm m-32">Interested in Finally Having a Memory Loss Answer for Your
-						Patients? We’re here to work with healthcare providers to get Memory Air to the people who need it most.
+					<label for="" class="lable-form m-btm m-32">Interested in Finally Having a Memory Loss Answer for Your Patients? We’re here to work with healthcare providers to get Memory Air to the people who need it most.
 						<br>Reach out for:
 						<br>
 						● Referral Pads & In-office Resources
@@ -367,7 +366,7 @@
 						<input type="submit" value="Send" class="btn is-black">
 					</div>
 
-					<label for="" class="lable-bottom-form m-top m-32">By signing in you agree with the Terms and Conditions and Privacy Policy</label>
+					<label class="lable-bottom-form m-top m-32 text-center">By signing in you agree with the Terms and Conditions and Privacy Policy</label>
 				{% comment %} </form> {% endcomment %}
 				{% endform %}
 			</div>
