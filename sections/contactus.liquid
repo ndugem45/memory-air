@@ -335,25 +335,25 @@
 
 					<div class="input-wrapper">
 						<div class="input-layout">
-							<input class="input-form" type="text" id="fname" name="Firstname" placeholder="First Name" required>
-							<input class="input-form" type="text" id="lname" name="Lastname" placeholder="Last Name" required>
+							<input class="input-form" type="text" id="fname" name="contact[firstname]" placeholder="First Name" required>
+							<input class="input-form" type="text" id="lname" name="contact[lastname]" placeholder="Last Name" required>
 						</div>
 
-						<input class="input-form" type="email" id="email" name="Email" placeholder="Email" required>
+						<input class="input-form" type="email" id="email" name="contact[email]" placeholder="Email" required>
 
 						<label class="checklist">
-							<input type="checkbox" name="Subscribe to the newsletter" id="subscribe"> Subscribe to the
+							<input type="checkbox" name="contact[subscribe]" id="subscribe"> Subscribe to the
 							newsletter
 						</label>
 
-						<select class="input-form select-input" id="Select Topic" name="Topic">
+						<select class="input-form select-input" id="Select Topic" name="contact[topic]">
 							<option value="">Select Topic</option>
 							<option value="Professional Consideration">Professional Consideration</option>
 							<option value="General Questions">General Questions</option>
 							<option value="Clinical Trial Interest">Clinical Trial Interest</option>
 						</select>
 
-						<select class="input-form select-input" id="Professional Practitioners" name="Practitioners">
+						<select class="input-form select-input" id="Professional Practitioners" name="contact[practitioners]">
 							<option value="">Professional Practitioners</option>
 							<option value="Medical Practitioners">Medical Practitioners</option>
 							<option value="Mental Health Practitioners">Mental Health Practitioners</option>
@@ -361,7 +361,7 @@
 							<option value="Dental and Specialized Practitioners">Dental and Specialized Practitioners</option>
 						</select>
 
-						<textarea class="input-form" name="Comment" placeholder="Comment"></textarea>
+						<textarea class="input-form" name="contact[body]" placeholder="Comment"></textarea>
 
 						
 						{% if form.posted_successfully? %}

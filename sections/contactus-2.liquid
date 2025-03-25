@@ -323,7 +323,6 @@
 			</div>
 
 			<div class="contactus_content-form">
-				{% comment %} <form action=""> {% endcomment %}
 				{% form 'contact' %}
 					<label for="" class="lable-form m-btm m-32">
 						Interested in Finally Having a Memory Loss Answer for Your Patients? We’re here to work with healthcare providers to get Memory Air to the people who need it most.
@@ -331,31 +330,30 @@
 						<br>
 						● Referral Pads & In-office Resources
 						<br>
-						● More information</label>
-
+						● More information
+					</label>
+				
 					<div class="input-wrapper">
 						<div class="input-layout">
-							<input class="input-form" type="text" id="fname" name="Firstname" placeholder="First Name" required>
-							<input class="input-form" type="text" id="lname" name="Lastname" placeholder="Last Name" required>
+							<input class="input-form" type="text" id="fname" name="contact[firstname]" placeholder="First Name" required>
+							<input class="input-form" type="text" id="lname" name="contact[lastname]" placeholder="Last Name" required>
 						</div>
-
-						<input class="input-form" type="email" id="email" name="Email" placeholder="Email" required>
-
+				
+						<input class="input-form" type="email" id="email" name="contact[email]" placeholder="Email" required>
+				
 						<label class="checklist">
-							<input type="checkbox" name="Subscribe to the newsletter" id="subscribe"> Subscribe to the
-							newsletter
+							<input type="checkbox" name="contact[subscribe]" id="subscribe"> Subscribe to the newsletter
 						</label>
-
-						<select class="input-form select-input" id="Select Topic" name="Topic">
+				
+						<select class="input-form select-input" id="Select Topic" name="contact[topic]">
 							<option value="">Select Topic</option>
 							<option value="professionalconsideration">Professional Consideration</option>
 							<option value="generalquestions">General Questions</option>
-												<option value="clinicaltrialinterest">Clinical Trial Interest</option>
+							<option value="clinicaltrialinterest">Clinical Trial Interest</option>
 						</select>
-
-						<textarea class="input-form" name="Comment" placeholder="Comment"></textarea>
-
-						{% comment %} <input type="submit" value="Send" class="btn is-black"> {% endcomment %}
+				
+						<textarea class="input-form" name="contact[body]" placeholder="Comment"></textarea>
+				
 						{% if form.posted_successfully? %}
 							<div class="btn is-black">
 								Thank you! Your message has been submitted!
@@ -368,11 +366,10 @@
 							<input type="submit" value="Send" class="btn is-black">
 						{% endif %}
 					</div>
-
-					<label for="" class="lable-bottom-form m-top m-32 text-center">By signing in you agree with the Terms and Conditions and Privacy
-						Policy</label>
-				{% comment %} </form> {% endcomment %}
+				
+					<label for="" class="lable-bottom-form m-top m-32 text-center">By signing in you agree with the Terms and Conditions and Privacy Policy</label>
 				{% endform %}
+				
 			</div>
 		</div>
 		<div class="contactus-title_btm m-top m-32">
