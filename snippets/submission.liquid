@@ -149,7 +149,7 @@
     let notes1 = document.getElementById("klaviyo-message");
     let notes2 = document.getElementById("klaviyo-message-2");
 
-    function submit(email){
+    function submit(email, button, info, text){
       var klaviyoAPIKey = 'UkKEks';
       var segmentId = 'TpdAkf';
 
@@ -174,11 +174,11 @@
         },
         data: JSON.stringify(data),
         success: function(response) {
-          button.innerText = 'Thank you! You are now signed up!'
-          notes1.innerText = ''
+          button.innerText = text;
+          info.innerText = '';
         },
         error: function(xhr, status, error) {
-          notes1.innerText = 'Please input correct email!'
+          info.innerText = 'Please input correct email!';
         }
       });
     }
@@ -190,7 +190,7 @@
       let button = customForm.querySelector('button[type="submit"]');
       const email = emailInput.value.trim();
   
-      submit(email, button, notes1);
+      submit(email, button, notes1, 'Thank you! You are now signed up!');
     });
 
     customForm2.addEventListener("submit", function (e) {
@@ -200,7 +200,7 @@
       let button = customForm2.querySelector('button[type="submit"]');
       const email = emailInput.value.trim();
   
-      submit(email, btn, notes2);
+      submit(email, btn, notes2, 'Thank you! We’ll send them an email right away!');
     });
   });  
 </script>
