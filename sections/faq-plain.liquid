@@ -46,6 +46,12 @@
   </div>
   <script>
     $(document).ready(() => {
+      const bodyElements = document.querySelectorAll('.faq_item .body');
+
+      bodyElements.forEach((element) => {
+        element.innerHTML = element.innerHTML.replace(/®/g, '<sup>®</sup>');
+      });
+      
       const acc = document.querySelectorAll(".faq_item .head");
       let i;
     
