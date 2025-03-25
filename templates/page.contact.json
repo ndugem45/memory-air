@@ -8,15 +8,13 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {
-    "contactus": {
-      "type": "contactus",
-      "settings": {
-        "section_product": "memory-air-device"
-      }
-    }
-  },
-  "order": [
-    "contactus"
-  ]
+	"sections": {
+		"contactus": {
+			"type": "contactus-2",
+			"settings": {
+				"section_product": "memory-air-device"
+			}
+		}
+	},
+	"order": ["contactus"]
 }
