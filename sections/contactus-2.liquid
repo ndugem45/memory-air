@@ -355,7 +355,18 @@
 
 						<textarea class="input-form" name="Comment" placeholder="Comment"></textarea>
 
-						<input type="submit" value="Send" class="btn is-black">
+						{% comment %} <input type="submit" value="Send" class="btn is-black"> {% endcomment %}
+						{% if form.posted_successfully? %}
+							<div class="btn is-black">
+								Thank you! Your message has been submitted!
+							</div>
+						{% elsif form.errors %}
+							<div class="error-message text-center">
+								There was an error while submitting the form. Make sure all fields are filled in correctly.
+							</div>
+						{% else %}
+							<input type="submit" value="Send" class="btn is-black">
+						{% endif %}
 					</div>
 
 					<label for="" class="lable-bottom-form m-top m-32 text-center">By signing in you agree with the Terms and Conditions and Privacy
