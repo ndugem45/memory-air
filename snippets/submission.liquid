@@ -156,7 +156,7 @@
       var klaviyoAPIKey = 'UkKEks';
       var segmentId = 'TpdAkf';
 
-      var apiUrl = 'https://a.klaviyo.com/api/people/';
+      var apiUrl = 'https://a.klaviyo.com/client/profiles/?company_id=';
       var data = {
           data: {
               type: "profile",
@@ -165,24 +165,25 @@
               }
           }
       };
-      
+      // https://a.klaviyo.com/client/profiles/?company_id=UkKEks
+
       $.ajax({
-          url: apiUrl + 'add-to-list/',
-          type: 'POST',
-          headers: {
-            'accept': 'application/vnd.api+json',
-            'revision': '2025-01-15',
-            'content-type': 'application/vnd.api+json',
-            'Authorization': 'Klaviyo-API-Key ' + klaviyoAPIKey
-          },
-          data: JSON.stringify(data),
-          success: function(response) {
-              console.log('User successfully added to Klaviyo list/segment:', response);
-          },
-          error: function(xhr, status, error) {
-              console.error('Error adding user to segment:', error);
-          }
+        url: apiUrl+klaviyoAPIKey,
+        type: 'POST',
+        headers: {
+          'accept': 'application/vnd.api+json',
+          'revision': '2025-01-15',
+          'content-type': 'application/vnd.api+json'
+        },
+        data: JSON.stringify(data),
+        success: function(response) {
+          console.log(response); // handle the success response here
+        },
+        error: function(xhr, status, error) {
+          console.error('Error:', error); // handle error here
+        }
       });
+      
 
     });
   });  
