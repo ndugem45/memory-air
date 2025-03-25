@@ -134,7 +134,7 @@
       Share this revolutionary way to reverse memory loss with the important people in your life.
     </p>
     <div id="klaviyo-message-2"></div>
-    <form action="">
+    <form action="" id="klaviyo-form-2" class="klaviyo-form">
       <input type="email" name="email" placeholder="Loved-One’s Email" required>
       <button class="btn is-brown" type="submit">Submit</button>
     </form>
@@ -145,14 +145,11 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const customForm = document.getElementById("klaviyo-form");
-    const messageDiv = document.getElementById("klaviyo-message");
-  
-    customForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-  
-      const emailInput = customForm.querySelector('input[name="email"]');
-      const email = emailInput.value.trim();
-  
+    const customForm2 = document.getElementById("klaviyo-form-2");
+    let notes1 = document.getElementById("klaviyo-message");
+    let notes2 = document.getElementById("klaviyo-message-2");
+
+    function submit(email){
       var klaviyoAPIKey = 'UkKEks';
       var segmentId = 'TpdAkf';
 
@@ -177,14 +174,33 @@
         },
         data: JSON.stringify(data),
         success: function(response) {
-          console.log(response); // handle the success response here
+          button.innerText = 'Thank you! You are now signed up!'
+          notes1.innerText = ''
         },
         error: function(xhr, status, error) {
-          console.error('Error:', error); // handle error here
+          notes1.innerText = 'Please input correct email!'
         }
       });
-      
+    }
+  
+    customForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+  
+      const emailInput = customForm.querySelector('input[name="email"]');
+      let button = customForm.querySelector('button[type="submit"]');
+      const email = emailInput.value.trim();
+  
+      submit(email, button, notes1);
+    });
 
+    customForm2.addEventListener("submit", function (e) {
+      e.preventDefault();
+  
+      const emailInput = customForm2.querySelector('input[name="email"]');
+      let button = customForm2.querySelector('button[type="submit"]');
+      const email = emailInput.value.trim();
+  
+      submit(email, btn, notes2);
     });
   });  
 </script>
