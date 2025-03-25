@@ -62,6 +62,10 @@
   .submission_card .klaviyo-form.active button{
     display: none;
   }
+  .submission_card .klaviyo-form.active .notes{
+    line-height: 300%;
+    margin: auto;
+  }
   @media only screen and (max-width: 360px) {
     .submission .submission_card form input{
       padding: 8px;
@@ -125,7 +129,7 @@
     <div id="klaviyo-message"></div>
     <form action="" id="klaviyo-form" class="klaviyo-form">
       <input type="email" name="email" placeholder="Your email" required>
-      <div id="klaviyo-success"></div>
+      <div class="notes" id="klaviyo-success"></div>
       <button class="btn is-brown" type="submit">Sign up</button>
     </form>
     {% comment %} <div class="klaviyo-form-TMQFaZ"></div> {% endcomment %}
@@ -141,7 +145,7 @@
     <div id="klaviyo-message-2"></div>
     <form action="" id="klaviyo-form-2" class="klaviyo-form">
       <input type="email" name="email" placeholder="Loved-One’s Email" required>
-      <div id="klaviyo-success-2"></div>
+      <div class="notes" id="klaviyo-success-2"></div>
       <button class="btn is-brown" type="submit">Submit</button>
     </form>
   </div>
