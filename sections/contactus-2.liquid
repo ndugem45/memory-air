@@ -196,6 +196,11 @@
 		font-weight: 400;
 		line-height: 160%; /* 25.6px */
 	}
+	#shopify-section-{{section.id}} .contactus_dot-wrapper{
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
 	
 @media (max-width: 768px) {
     #shopify-section-{{section.id}} .hero-contact {
@@ -299,35 +304,29 @@
 				<div class="contactus_img-text">
 					<h2 class="contactus_text-title">Order Memory Air <span>®</span> Today!</h2>
 
-					<h3 class="contactus_text-list">● Works while you sleep</h3>
-					<span class="contactus_text-list-dsc">Works while you sleep to enhance memory without interrupting daily
-						activities.</span>
+					<div class="contactus_dot-wrapper">
+						<h3 class="contactus_text-list">● Works while you sleep</h3>
 
-					<h3 class="contactus_text-list ">● 100% automated with timing and dosage delivery</h3>
-					<span class="contactus_text-list-dsc">Fully automated with precise timing and dosage delivery.</span>
+						<h3 class="contactus_text-list ">● 100% automated with timing and dosage delivery</h3>
 
-					<h3 class="contactus_text-list">● All-natural, safe, pleasant scents for olfactory stimulation</h3>
-					<span class="contactus_text-list-dsc">Safe, natural, and pleasant scents to stimulate the sense of
-						smell.</span>
+						<h3 class="contactus_text-list">● All-natural, safe, pleasant scents for olfactory stimulation</h3>
 
-					<h3 class="contactus_text-list">● Monthly refills delivered right to their door</h3>
-					<span class="contactus_text-list-dsc">Easy and convenient.</span>
+						<h3 class="contactus_text-list">● Monthly refills delivered right to their door</h3>
 
-					<h3 class="contactus_text-list">● Tracks progress</h3>
-					<span class="contactus_text-list-dsc">Monitors memory progress through tests every 4 months.</span>
+						<h3 class="contactus_text-list">● Tracks progress</h3>
+					</div>
 				</div>
 				<div class="m-vertical m-32 btn-wrap">
 					<a class="btn is-black btn-full" href="{{ section.settings.section_product.url }}">Buy Now</a>
 				</div>
-				<span class="contactus_img-text-btm">Order Memory Air now to start your patients on the road to memory
-					improvement.</span>
+				<span class="contactus_img-text-btm">Order Memory Air now to start your patients on the road to memory improvement.</span>
 			</div>
 
 			<div class="contactus_content-form">
 				{% comment %} <form action=""> {% endcomment %}
 				{% form 'contact' %}
-					<label for="" class="lable-form m-btm m-32">Interested in Finally Having a Memory Loss Answer for Your
-						Patients? We’re here to work with healthcare providers to get Memory Air to the people who need it most.
+					<label for="" class="lable-form m-btm m-32">
+						Interested in Finally Having a Memory Loss Answer for Your Patients? We’re here to work with healthcare providers to get Memory Air to the people who need it most.
 						<br>Reach out for:
 						<br>
 						● Referral Pads & In-office Resources
@@ -366,10 +365,7 @@
 			</div>
 		</div>
 		<div class="contactus-title_btm m-top m-32">
-			<p>Memory Air® has been designed based upon the science of olfactory enrichment. The device itself, however, has
-				not been tested to replicate the results of these 20 underlying studies. It is not required to be approved by
-				the FDA for yourself and your family since it does not treat diseases. As does the underlying science, it has
-				been designed to alleviate the symptoms of diseases and conditions.</p>
+			<p>Memory Air® has been designed based upon the science of olfactory enrichment. The device itself, however, has not been tested to replicate the results of these 20 underlying studies. It is not required to be approved by the FDA for yourself and your family since it does not treat diseases. As does the underlying science, it has been designed to alleviate the symptoms of diseases and conditions.</p>
 		</div>
 	</div>
 

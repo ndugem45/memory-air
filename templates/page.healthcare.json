@@ -8,48 +8,48 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {
-    "hero-healthcare": {
-      "type": "hero-healthcare",
-      "settings": {
-        "section_product": "memory-air-device",
-        "contact_url": "shopify://pages/contact"
-      }
-    },
-    "partner": {
-      "type": "partner",
-      "settings": {
-        "speed": 2500,
-        "partner_object": []
-      }
-    },
-    "patients": {
-      "type": "patients",
-      "settings": {}
-    },
-    "finaly": {
-      "type": "finaly",
-      "settings": {}
-    },
-    "behind": {
-      "type": "behind",
-      "settings": {}
-    },
-    "contactus": {
-      "type": "contactus",
-      "settings": {
-        "section_product": "memory-air-device",
-        "section_label": "Interested in Providing Memory Air®?",
-        "section_title": "<span>Refer Your Patients to</span>\n<br> Memory Air® with Confidence"
-      }
-    }
-  },
-  "order": [
-    "hero-healthcare",
-    "partner",
-    "patients",
-    "finaly",
-    "behind",
-    "contactus"
-  ]
+	"sections": {
+		"hero-healthcare": {
+			"type": "hero-healthcare",
+			"settings": {
+				"section_product": "memory-air-device",
+				"contact_url": "shopify://pages/contact"
+			}
+		},
+		"partner": {
+			"type": "partner",
+			"settings": {
+				"speed": 2500,
+				"partner_object": []
+			}
+		},
+		"patients": {
+			"type": "patients",
+			"settings": {}
+		},
+		"finaly": {
+			"type": "finaly",
+			"settings": {}
+		},
+		"behind": {
+			"type": "behind",
+			"settings": {}
+		},
+		"contactus": {
+			"type": "contactus-2",
+			"settings": {
+				"section_product": "memory-air-device",
+				"section_label": "Interested in Providing Memory Air®?",
+				"section_title": "<span>Refer Your Patients to</span>\n<br> Memory Air® with Confidence"
+			}
+		}
+	},
+	"order": [
+		"hero-healthcare",
+		"partner",
+		"patients",
+		"finaly",
+		"behind",
+		"contactus"
+	]
 }
