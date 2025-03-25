@@ -120,8 +120,11 @@
       font-size: 16px;
       color: white;
   }
+  footer .menu-wrap.mobile{
+    display: none;
+  }
 
-@media (max-width: 768px) {
+@media (max-width: 990px) {
   footer .container {
       padding-inline: 24px;
   }
@@ -207,6 +210,9 @@
 
   footer .right .menu-btm p{
     text-align: center;
+  }
+  footer .menu-wrap.mobile{
+    display: flex;
   }
 }
 
@@ -313,7 +319,7 @@
           </div>
         </div>
 
-        <div class="menu-wrap">
+        <div class="menu-wrap mobile">
           <p class="text-16 text-center" style="width: 60%;margin: auto;">
             {{ section.settings.foot_address }}
           </p>
