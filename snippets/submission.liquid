@@ -161,14 +161,15 @@
 
     function submit(form, info, text){
       var klaviyoAPIKey = 'UkKEks';
-      var segmentId = 'TpdAkf';
-
+      var segmentId = 'TpdAkf';  // The Klaviyo list ID or segment ID for subscription
+  
       const emailInput = form.querySelector('input[name="email"]');
       let label = form.querySelector('.notes');
       let btn = form.querySelector('button[type="submit"]');
       const email = emailInput.value.trim();
-
-      var apiUrl = 'https://a.klaviyo.com/client/profiles/?company_id=';
+  
+      var apiUrl = 'https://a.klaviyo.com/api/profiles/';
+      var listUrl = `https://a.klaviyo.com/api/lists/${segmentId}/members/`;
       var data = {
           data: {
               type: "profile",
@@ -177,32 +178,56 @@
               }
           }
       };
-
+  
       btn.setAttribute('disabled', true);
       btn.innerText = 'Sending...';
-
+  
       $.ajax({
-        url: apiUrl+klaviyoAPIKey,
-        type: 'POST',
-        headers: {
-          'accept': 'application/vnd.api+json',
-          'revision': '2025-01-15',
-          'content-type': 'application/vnd.api+json'
-        },
-        data: JSON.stringify(data),
-        success: function(response) {
-          document.querySelector(".klaviyo-form").classList.add('active')
-          label.innerText = text;
-          info.innerText = '';
-          btn.setAttribute('disabled', false);
-        },
-        error: function(xhr, status, error) {
-          info.innerText = 'Please input correct email!';
-          btn.setAttribute('disabled', false);
-          btn.innerText = 'Submit';
-        }
+          url: apiUrl + '?api_key=' + klaviyoAPIKey,
+          type: 'POST',
+          headers: {
+              'accept': 'application/vnd.api+json',
+              'revision': '2025-01-15',
+              'content-type': 'application/vnd.api+json'
+          },
+          data: JSON.stringify(data),
+          success: function(response) {
+              var subscribeData = {
+                  profiles: [{
+                      email: email
+                  }]
+              };
+  
+              $.ajax({
+                  url: listUrl + '?api_key=' + klaviyoAPIKey,
+                  type: 'POST',
+                  headers: {
+                      'accept': 'application/vnd.api+json',
+                      'revision': '2025-01-15',
+                      'content-type': 'application/vnd.api+json'
+                  },
+                  data: JSON.stringify(subscribeData),
+                  success: function() {
+                      document.querySelector(".klaviyo-form").classList.add('active');
+                      label.innerText = text;
+                      info.innerText = '';
+                      btn.setAttribute('disabled', false);
+                  },
+                  error: function(xhr, status, error) {
+                      info.innerText = 'Failed to subscribe to the list!';
+                      btn.setAttribute('disabled', false);
+                      btn.innerText = 'Submit';
+                  }
+              });
+          },
+          error: function(xhr, status, error) {
+              info.innerText = 'Please input correct email!';
+              btn.setAttribute('disabled', false);
+              btn.innerText = 'Submit';
+          }
       });
-    }
+  }
+  
   
     customForm.addEventListener("submit", function (e) {
       e.preventDefault();
