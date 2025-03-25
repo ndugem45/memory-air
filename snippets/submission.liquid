@@ -165,15 +165,16 @@
               }
           }
       };
-
+      
       $.ajax({
           url: apiUrl + 'add-to-list/',
           type: 'POST',
           headers: {
-              'Authorization': 'Klaviyo-API-Key ' + klaviyoAPIKey
+            'accept': 'application/vnd.api+json',
+            'revision': '2025-01-15',
+            'content-type': 'application/vnd.api+json',
+            'Authorization': 'Klaviyo-API-Key ' + klaviyoAPIKey
           },
-          contentType: 'application/json',
-          dataType: 'json',
           data: JSON.stringify(data),
           success: function(response) {
               console.log('User successfully added to Klaviyo list/segment:', response);
