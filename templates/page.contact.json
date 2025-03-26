@@ -14,7 +14,10 @@
 			"settings": {
 				"section_product": "memory-air-device"
 			}
+		},
+		"fda-text": {
+			"type": "fda-text"
 		}
 	},
-	"order": ["contactus"]
+	"order": ["contactus", "fda-text"]
 }
