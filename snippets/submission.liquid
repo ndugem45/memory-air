@@ -168,8 +168,8 @@
       let btn = form.querySelector('button[type="submit"]');
       const email = emailInput.value.trim();
   
-      var apiUrl = 'https://a.klaviyo.com/api/profiles/';
-      var listUrl = `https://a.klaviyo.com/api/lists/${segmentId}/members/`;
+      var apiUrl = 'https://a.klaviyo.com/client/profiles/?company_id=';
+      var listUrl = 'https://a.klaviyo.com/client/lists/' + listId + '/subscribe/'; 
       var data = {
           data: {
               type: "profile",
@@ -183,7 +183,7 @@
       btn.innerText = 'Sending...';
   
       $.ajax({
-          url: apiUrl + '?api_key=' + klaviyoAPIKey,
+          url: apiUrl + klaviyoAPIKey,
           type: 'POST',
           headers: {
               'accept': 'application/vnd.api+json',
@@ -199,7 +199,7 @@
               };
   
               $.ajax({
-                  url: listUrl + '?api_key=' + klaviyoAPIKey,
+                  url: listUrl,
                   type: 'POST',
                   headers: {
                       'accept': 'application/vnd.api+json',

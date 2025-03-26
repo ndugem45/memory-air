@@ -8,97 +8,101 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {
-    "hero-product": {
-      "type": "hero-product",
-      "settings": {
-        "section_title": "",
-        "section_desc": "",
-        "section_product": "",
-        "video_cta": ""
-      }
-    },
-    "how-it-work": {
-      "type": "how-it-work",
-      "settings": {}
-    },
-    "pricing": {
-      "type": "pricing",
-      "settings": {
-        "product_left": "",
-        "product_right": ""
-      }
-    },
-    "life": {
-      "type": "life",
-      "settings": {
-        "section_title": ""
-      }
-    },
-    "stories": {
-      "type": "stories",
-      "settings": {
-        "section_title": "",
-        "testi_list": []
-      }
-    },
-    "news": {
-      "type": "news",
-      "settings": {
-        "section_title": "",
-        "cta_title": "",
-        "cta_url": ""
-      }
-    },
-    "faq-plain": {
-      "type": "faq-plain",
-      "blocks": {
-        "faq_item_jkLbLz": {
-          "type": "faq_item",
-          "settings": {
-            "faq_object": "what-is-memory-air"
-          }
-        },
-        "faq_item_wkX4De": {
-          "type": "faq_item",
-          "settings": {
-            "faq_object": "what-if-im-allergic-or-sensitive-to-certain-scents"
-          }
-        },
-        "faq_item_8D4CRP": {
-          "type": "faq_item",
-          "settings": {
-            "faq_object": "how-long-will-it-take-to-feel-results"
-          }
-        },
-        "faq_item_diMQK8": {
-          "type": "faq_item",
-          "settings": {
-            "faq_object": "what-is-the-science-behind-olfactory-enrichment"
-          }
-        }
-      },
-      "block_order": [
-        "faq_item_jkLbLz",
-        "faq_item_wkX4De",
-        "faq_item_8D4CRP",
-        "faq_item_diMQK8"
-      ],
-      "settings": {
-        "section_title": "",
-        "section_cta": "",
-        "section_cta_size": true,
-        "section_cta_title": "Go to FAQ"
-      }
-    }
-  },
-  "order": [
-    "hero-product",
-    "how-it-work",
-    "pricing",
-    "life",
-    "stories",
-    "news",
-    "faq-plain"
-  ]
+	"sections": {
+		"hero-product": {
+			"type": "hero-product",
+			"settings": {
+				"section_title": "",
+				"section_desc": "",
+				"section_product": "",
+				"video_cta": ""
+			}
+		},
+		"how-it-work": {
+			"type": "how-it-work",
+			"settings": {}
+		},
+		"pricing": {
+			"type": "pricing",
+			"settings": {
+				"product_left": "",
+				"product_right": ""
+			}
+		},
+		"life": {
+			"type": "life",
+			"settings": {
+				"section_title": ""
+			}
+		},
+		"stories": {
+			"type": "stories",
+			"settings": {
+				"section_title": "",
+				"testi_list": []
+			}
+		},
+		"news": {
+			"type": "news",
+			"settings": {
+				"section_title": "",
+				"cta_title": "",
+				"cta_url": ""
+			}
+		},
+		"faq-plain": {
+			"type": "faq-plain",
+			"blocks": {
+				"faq_item_jkLbLz": {
+					"type": "faq_item",
+					"settings": {
+						"faq_object": "what-is-memory-air"
+					}
+				},
+				"faq_item_wkX4De": {
+					"type": "faq_item",
+					"settings": {
+						"faq_object": "what-if-im-allergic-or-sensitive-to-certain-scents"
+					}
+				},
+				"faq_item_8D4CRP": {
+					"type": "faq_item",
+					"settings": {
+						"faq_object": "how-long-will-it-take-to-feel-results"
+					}
+				},
+				"faq_item_diMQK8": {
+					"type": "faq_item",
+					"settings": {
+						"faq_object": "what-is-the-science-behind-olfactory-enrichment"
+					}
+				}
+			},
+			"block_order": [
+				"faq_item_jkLbLz",
+				"faq_item_wkX4De",
+				"faq_item_8D4CRP",
+				"faq_item_diMQK8"
+			],
+			"settings": {
+				"section_title": "",
+				"section_cta": "",
+				"section_cta_size": true,
+				"section_cta_title": "Go to FAQ"
+			}
+		},
+		"fda-text": {
+			"type": "fda-text"
+		}
+	},
+	"order": [
+		"hero-product",
+		"how-it-work",
+		"pricing",
+		"life",
+		"stories",
+		"news",
+		"faq-plain",
+		"fda-text"
+	]
 }

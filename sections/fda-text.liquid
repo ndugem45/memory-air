@@ -1,0 +1,30 @@
+{% style %}
+  #shopify-section-{{section.id}} p {
+		color: #232323;
+		text-align: justify;
+		font-family: "General Sans Regular";
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 160%; /* 25.6px */
+	}
+
+  @media (max-width: 768px) {
+    #shopify-section-{{section.id}} p {
+        font-size: 14px;
+    }
+  }
+{% endstyle %}
+
+<div class="container">
+  <div class="contactus-title_btm m-top m-32">
+    <p>Memory Air® has been designed based upon the science of olfactory enrichment. The device itself, however, has not been tested to replicate the results of these 20 underlying studies. It is not required to be approved by the FDA for yourself and your family since it does not treat diseases. As does the underlying science, it has been designed to alleviate the symptoms of diseases and conditions.</p>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "tag": "section",
+    "class": "fda"
+  }
+{% endschema %}
