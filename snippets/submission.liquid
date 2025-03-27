@@ -192,13 +192,13 @@
           },
           data: JSON.stringify(data),
           success: function(response) {
-              var subscribeData = {
+              {% comment %} var subscribeData = {
                   profiles: [{
                       email: email
                   }]
-              };
+              }; {% endcomment %}
   
-              $.ajax({
+              {% comment %} $.ajax({
                   url: listUrl,
                   type: 'POST',
                   headers: {
@@ -218,7 +218,11 @@
                       btn.setAttribute('disabled', false);
                       btn.innerText = 'Submit';
                   }
-              });
+              }); {% endcomment %}
+              document.querySelector(".klaviyo-form").classList.add('active');
+              label.innerText = text;
+              info.innerText = '';
+              btn.setAttribute('disabled', false);
           },
           error: function(xhr, status, error) {
               info.innerText = 'Please input correct email!';
