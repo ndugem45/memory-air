@@ -63,6 +63,7 @@
         var darkFavicon = document.getElementById("favicon-dark");
   
         if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          console.log('ok')
           if (darkFavicon) {
             darkFavicon.rel = "icon";
             lightFavicon.rel = "icon alternate";
