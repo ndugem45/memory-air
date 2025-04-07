@@ -633,13 +633,13 @@
 
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {
-        if (location.pathname === '/') {
+        {% comment %} if (location.pathname === '/') {
           if(window.scrollY > (document.querySelector('.hero').offsetHeight-50)){
             navbar.classList.add('white');
           }else{
             navbar.classList.remove('white');
           }
-        }
+        } {% endcomment %}
         navbar.classList.add('scrolled');
       } else {
         navbar.classList.remove('scrolled');
