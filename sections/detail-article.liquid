@@ -72,6 +72,21 @@
         margin-top: 42px;
         padding-inline: 42px;
     }
+    @media only screen and (max-width: 990px) {
+        #shopify-section-{{section.id}} .banner-cta{
+            padding-block: 54px;
+            background: var(--Light-3, #F4EDE4);
+        }
+        #shopify-section-{{section.id}} .banner-cta a,
+        #shopify-section-{{section.id}} .banner-cta h2{
+            width: 100%;
+        }
+        #shopify-section-{{section.id}} .banner-cta p,
+        #shopify-section-{{section.id}} .banner-cta h2{
+            text-align: center;
+        }
+    }
+
     #shopify-section-{{section.id}} .banner-cta p{
         color: var(--color-secondary);
         font-family: "General Sans Regular";
