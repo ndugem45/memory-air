@@ -106,19 +106,20 @@
             {% endif %}
             <div class="detail-article-right">
                 {{ article.content | html }}
+                
+                <div class="banner-cta">
+                    <h2>
+                        Want to <span>Dive Deeper?</span>
+                    </h2>
+                    <p>
+                        Access the full article for detailed insights and a deeper understanding. Download the complete PDF now.
+                    </p>
+                    <a href="{{  section.settings.cta_url }}" class="btn is-brown">
+                        Download PDF
+                    </a>
+                </div>
             </div>
             
-            <div class="banner-cta">
-                <h2>
-                    Want to <span>Dive Deeper?</span>
-                </h2>
-                <p>
-                    Access the full article for detailed insights and a deeper understanding. Download the complete PDF now.
-                </p>
-                <a href="{{  section.settings.cta_url }}" class="btn is-brown">
-                    Download PDF
-                </a>
-            </div>
         </div>
 
     </div>
