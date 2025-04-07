@@ -99,19 +99,19 @@
                 {{ article.content | html }}
             </div>
             
+            <div class="banner-cta">
+                <h2>
+                  Need <span>Help?</span>
+                </h2>
+                <p>
+                  Contact us and we will answer your questions within 24-48 hours.
+                </p>
+                <a href="{{  section.settings.cta_url }}" class="btn is-brown">
+                  {{  section.settings.cta_title }}
+                </a>
+            </div>
         </div>
 
-        <div class="banner-cta">
-            <h2>
-              Need <span>Help?</span>
-            </h2>
-            <p>
-              Contact us and we will answer your questions within 24-48 hours.
-            </p>
-            <a href="{{  section.settings.cta_url }}" class="btn is-brown">
-              {{  section.settings.cta_title }}
-            </a>
-          </div>
     </div>
 
     {% render 'submission' %}
