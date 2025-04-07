@@ -67,15 +67,9 @@
         box-shadow: -4px -4px 10px 0px rgba(238, 238, 238, 0.25), 4px 4px 10px 0px rgba(238, 238, 238, 0.25);
         padding: 80px 100px;
         gap: 32px;
-        width: 70%;
-        margin: auto;
+        width: 100%;
         margin-top: 42px;
         padding-inline: 42px;
-    }
-    @media only screen and (max-width: 990px) {
-        #shopify-section-{{section.id}} .banner-cta{
-            max-width: 100%;
-        }
     }
     #shopify-section-{{section.id}} .banner-cta p{
         color: var(--color-secondary);
@@ -106,7 +100,7 @@
             {% endif %}
             <div class="detail-article-right">
                 {{ article.content | html }}
-                
+
                 <div class="banner-cta">
                     <h2>
                         Want to <span>Dive Deeper?</span>
@@ -119,9 +113,7 @@
                     </a>
                 </div>
             </div>
-            
         </div>
-
     </div>
 
     {% render 'submission' %}
