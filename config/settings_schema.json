@@ -1,5 +1,4 @@
 [
-<<<<<<< HEAD
 	{
 		"name": "theme_info",
 		"theme_name": "Themekit template theme",
@@ -9,43 +8,13 @@
 		"theme_support_url": "https://github.com/Shopify/themekit/issues"
 	},
 	{
-		"name": "Favicon Settings",
+		"name": "Favicon",
 		"settings": [
 			{
 				"type": "image_picker",
-				"id": "favicon_light",
-				"label": "Upload Light Mode Favicon"
-			},
-			{
-				"type": "image_picker",
-				"id": "favicon_dark",
-				"label": "Upload Dark Mode Favicon"
+				"id": "favicon",
+				"label": "Upload Favicon"
 			}
 		]
 	}
-=======
-  {
-    "name": "theme_info",
-    "theme_name": "Themekit template theme",
-    "theme_version": "1.0.0",
-    "theme_author": "Shopify",
-    "theme_documentation_url": "https://github.com/Shopify/themekit",
-    "theme_support_url": "https://github.com/Shopify/themekit/issues"
-  },
-  {
-    "name": "Favicon Settings",
-    "settings": [
-      {
-        "type": "image_picker",
-        "id": "favicon_light",
-        "label": "Upload Light Mode Favicon"
-      },
-      {
-        "type": "image_picker",
-        "id": "favicon_dark",
-        "label": "Upload Dark Mode Favicon"
-      }
-    ]
-  }
->>>>>>> 3384cdd54aa0d00efa76aab6ea8c8ab3231bde8a
 ]
