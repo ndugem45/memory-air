@@ -1,4 +1,4 @@
-{% comment %} for detail article{% endcomment %}
+{% assign bg = 'banner-bg2.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
 
 
 {% style %}
@@ -57,6 +57,31 @@
         }
     }
 
+    #shopify-section-{{section.id}} .banner-cta.container .card{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; 
+        border-radius: 16px;
+        background: var(--Light-3, #F4EDE4) url('{{bg}}') no-repeat;
+        background-position: top right;
+        box-shadow: -4px -4px 10px 0px rgba(238, 238, 238, 0.25), 4px 4px 10px 0px rgba(238, 238, 238, 0.25);
+        padding: 80px 100px;
+        gap: 32px;
+    }
+    #shopify-section-{{section.id}} .banner-cta.container .card p{
+        color: var(--color-secondary);
+        font-family: "General Sans Regular";
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 133%;
+        letter-spacing: -0.1px;
+        max-width: 540px;
+    }
+    #shopify-section-{{section.id}} .banner-cta.container .card .btn{
+        margin-bottom: 8px;
+    }
+
 {% endstyle %}
 
     <div class="container m-btm m-54 container_article-detail">
@@ -73,8 +98,22 @@
             <div class="detail-article-right">
                 {{ article.content | html }}
             </div>
+            
         </div>
     </div>
+    <div class="container banner-cta">
+        <div class="card">
+          <h2>
+            Need <span>Help?</span>
+          </h2>
+          <p>
+            Contact us and we will answer your questions within 24-48 hours.
+          </p>
+          <a href="{{  section.settings.cta_url }}" class="btn is-brown">
+            {{  section.settings.cta_title }}
+          </a>
+        </div>
+      </div>
 
     {% render 'submission' %}
     
