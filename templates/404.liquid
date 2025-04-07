@@ -1,3 +1,5 @@
+{% assign bg = '404-bg.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+
 {% style %}
   .not-found{
     background: linear-gradient(0deg, #F6EFDC 24.28%, #FFF 100%);
@@ -15,6 +17,9 @@
     max-width: 500px;
     margin: auto;
     gap: 24px;
+    background: url('{{bg}}') no-repeat;
+    background-position: center;
+    background-size: contain;
   }
   .not-found h1{
     color: #3C2E25;
