@@ -67,6 +67,15 @@
         box-shadow: -4px -4px 10px 0px rgba(238, 238, 238, 0.25), 4px 4px 10px 0px rgba(238, 238, 238, 0.25);
         padding: 80px 100px;
         gap: 32px;
+        width: 70%;
+        margin: auto;
+        margin-top: 42px;
+        padding-inline: 42px;
+    }
+    @media only screen and (max-width: 990px) {
+        #shopify-section-{{section.id}} .banner-cta{
+            max-width: 100%;
+        }
     }
     #shopify-section-{{section.id}} .banner-cta p{
         color: var(--color-secondary);
@@ -101,13 +110,13 @@
             
             <div class="banner-cta">
                 <h2>
-                  Need <span>Help?</span>
+                    Want to <span>Dive Deeper?</span>
                 </h2>
                 <p>
-                  Contact us and we will answer your questions within 24-48 hours.
+                    Access the full article for detailed insights and a deeper understanding. Download the complete PDF now.
                 </p>
                 <a href="{{  section.settings.cta_url }}" class="btn is-brown">
-                  {{  section.settings.cta_title }}
+                    Download PDF
                 </a>
             </div>
         </div>
