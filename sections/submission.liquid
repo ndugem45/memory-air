@@ -1,8 +1,256 @@
 
-{% render 'submission' %}
+{% style %}
+  .submission{
+    background: var(--orange-light);
+    padding-block: 64px;
+  }
+  .submission .container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+  }
+  @media only screen and (max-width: 990px) {
+    .submission .container{
+      grid-template-columns: 1fr;
+    }
+  }
+  .submission .submission_card{
+    display: flex;
+    width: 100%;
+    min-height: 340px;
+    padding: 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 32px;
+    background: var(--color-secondary);
+    color: white;
+  }
+  @media only screen and (max-width: 990px) {
+    .submission .submission_card{
+      padding: 24px;
+    }
+  }
+  .submission .submission_card h2{
+    font-family: "Cormorant Garamond";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 175%;
+    letter-spacing: -0.64px;
+  }
+  .submission .submission_card p{
+    flex: 1;
+    font-family: "General Sans Regular";
+  }
+  .submission .submission_card form{
+    width: 100%;
+    display: flex;
+    padding: 4px 4px 4px 16px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    border-radius: 9999px;
+    background: #FFF;
+    max-width: 100%;
+  }
+  .submission .submission_card form button{
+    flex-shrink: 0;
+  }
+  .submission_card .klaviyo-form.active input,
+  .submission_card .klaviyo-form.active button{
+    display: none;
+  }
+  .submission_card .klaviyo-form.active .notes{
+    line-height: 300%;
+    margin: auto;
+    color: black;
+  }
+  @media only screen and (max-width: 360px) {
+    .submission .submission_card form input{
+      padding: 8px;
+    }
+    .submission .submission_card form{
+      flex-direction: column;
+      height: auto;
+      gap: 24px;
+      border-radius: 16px;
+      padding: 8px;
+      margin-top: 24px;
+    }
+  }
+  .submission .submission_card form input{
+    flex: 1;
+    padding-inline: 12px;
+    width: 80%;
+  }
+  .submission .submission_card:nth-child(2){
+    background-color: white;
+    color: var(--color-tertiary);
+  }
+  .submission .submission_card:nth-child(2) form{
+    background-color: var(--grey-light);
+  }
+  .submission_card .klaviyo-form-TMQFaZ{
+    width: 100%;
+  }
+  .submission_card .klaviyo-form-TMQFaZ input{
+    background-color: transparent;
+    margin: unset;
+    padding: unset;
+    border: unset;
+    color: var(--color-secondary);
+    font-family: General Sans Medium;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+  }
+  .submission_card .klaviyo-form-TMQFaZ form > div > div:first-child{
+    flex: 1;
+    padding-inline: 12px;
+    width: 80%;
+  }
+  .submission_card .klaviyo-form-TMQFaZ form button[type='button']{
+    
+  }
+{% endstyle %}
+
+<section class="submission">
+<div class="container">
+  
+  <div class="submission_card">
+    <h2 class="m-btm m-12">
+      Stay Up-to-date!
+    </h2>
+    <p class="m-top m-12 opacity-60">
+      We’ll keep you informed about our ongoing scientific research & results.
+    </p>
+    <div id="klaviyo-message"></div>
+    <form action="" id="klaviyo-form" class="klaviyo-form">
+      <input type="email" name="email" placeholder="Your email" required>
+      <div class="notes" id="klaviyo-success"></div>
+      <button class="btn is-brown" type="submit">Sign up</button>
+    </form>
+  </div>
+
+  <div class="submission_card">
+    <h2 class="m-btm m-12">
+      Tell a Loved-one About Memory Air<sup>®</sup>
+    </h2>
+    <p class="m-top m-12 opacity-60">
+      Share this revolutionary way to reverse memory loss with the important people in your life.
+    </p>
+    <div id="klaviyo-message-2"></div>
+    <form action="" id="klaviyo-form-2" class="klaviyo-form">
+      <input type="email" name="email" placeholder="Loved-One’s Email" required>
+      <div class="notes" id="klaviyo-success-2"></div>
+      <button class="btn is-brown" type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const customForm = document.getElementById("klaviyo-form");
+    const customForm2 = document.getElementById("klaviyo-form-2");
+    let notes1 = document.getElementById("klaviyo-message");
+    let notes2 = document.getElementById("klaviyo-message-2");
+
+    function submit(form, info, text){
+      var klaviyoAPIKey = 'UkKEks';
+      var listId = 'TpdAkf';  // The Klaviyo list ID or segment ID for subscription
+  
+      const emailInput = form.querySelector('input[name="email"]');
+      let label = form.querySelector('.notes');
+      let btn = form.querySelector('button[type="submit"]');
+      const email = emailInput.value.trim();
+  
+      var apiUrl = 'https://a.klaviyo.com/client/profiles/?company_id=';
+      var listUrl = 'https://a.klaviyo.com/client/lists/' + listId + '/subscribe/'; 
+      var data = {
+          data: {
+              type: "profile",
+              attributes: {
+                  email: email
+              }
+          }
+      };
+  
+      btn.setAttribute('disabled', true);
+      btn.innerText = 'Sending...';
+  
+      $.ajax({
+          url: apiUrl + klaviyoAPIKey,
+          type: 'POST',
+          headers: {
+              'accept': 'application/vnd.api+json',
+              'revision': '2025-01-15',
+              'content-type': 'application/vnd.api+json'
+          },
+          data: JSON.stringify(data),
+          success: function(response) {
+              {% comment %} var subscribeData = {
+                  profiles: [{
+                      email: email
+                  }]
+              }; {% endcomment %}
+  
+              {% comment %} $.ajax({
+                  url: listUrl,
+                  type: 'POST',
+                  headers: {
+                      'accept': 'application/vnd.api+json',
+                      'revision': '2025-01-15',
+                      'content-type': 'application/vnd.api+json'
+                  },
+                  data: JSON.stringify(subscribeData),
+                  success: function() {
+                      document.querySelector(".klaviyo-form").classList.add('active');
+                      label.innerText = text;
+                      info.innerText = '';
+                      btn.setAttribute('disabled', false);
+                  },
+                  error: function(xhr, status, error) {
+                      info.innerText = 'Failed to subscribe to the list!';
+                      btn.setAttribute('disabled', false);
+                      btn.innerText = 'Submit';
+                  }
+              }); {% endcomment %}
+              document.querySelector(".klaviyo-form").classList.add('active');
+              label.innerText = text;
+              info.innerText = '';
+              btn.setAttribute('disabled', false);
+          },
+          error: function(xhr, status, error) {
+              info.innerText = 'Please input correct email!';
+              btn.setAttribute('disabled', false);
+              btn.innerText = 'Submit';
+          }
+      });
+  }
+  
+  
+    customForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+  
+      submit(customForm, notes1, 'Thank you! You are now signed up!');
+    });
+
+    customForm2.addEventListener("submit", function (e) {
+      e.preventDefault();
+  
+      submit(customForm2, notes2, 'Thank you! We’ll send them an email right away!');
+    });
+  });  
+</script>
 
 {% schema %}
   {
-    "tag": "div",
+    "tag": "section",
+    "class": "submission"
   }
 {% endschema %}
