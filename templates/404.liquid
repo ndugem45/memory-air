@@ -1,4 +1,46 @@
-<section style="min-height: 70vh;padding-top: 20vh;">
+{% style %}
+  .not-found{
+    background: linear-gradient(0deg, #F6EFDC 24.28%, #FFF 100%);
+    height: 100vh;
+  }
+  .not-found .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    max-width: 479px;
+    margin: auto;
+    gap: 24px;
+  }
+  .not-found h1{
+    color: #3C2E25;
+    text-align: center;
+
+    /* Header 1.5 */
+    font-family: "Cormorant Garamond";
+    font-size: 72px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 100%; /* 72px */
+  }
+  .not-found p{
+    color: #3C2E25;
+    text-align: center;
+
+    /* Body 1 */
+    font-family: "General Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 30px */
+  }
+  .not-found .btn-wrap{
+    justify-content: center;
+    margin-top: 8px;
+  }
+{% endstyle %}
+
+<section class="not-found" style="min-height: 70vh;padding-top: 20vh;">
   <div class="container">
     <h1>Lost in a Dream?</h1>
     <p>This page has drifted away into dreamland...
