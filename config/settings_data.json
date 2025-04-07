@@ -9,6 +9,7 @@
  */
 {
   "current": {
+    "favicon_light": "shopify://shop_images/favicon-memory-air.png",
     "favicon": "shopify://shop_images/favicon-memory-air.png",
     "sections": {
       "navbar": {
