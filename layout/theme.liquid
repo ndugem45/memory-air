@@ -7,9 +7,12 @@
     <meta name="description" content="{{ page_description | escape }}">
     <link rel="canonical" href="{{ canonical_url }}">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    
-    {% if settings.favicon %}
-      <link rel="icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png" />
+
+    {% if settings.favicon_light %}
+      <link rel="icon" href="{{ settings.favicon_light | img_url: '32x32' }}" type="image/png" id="favicon-light">
+    {% endif %}
+    {% if settings.favicon_dark %}
+      <link rel="icon" href="{{ settings.favicon_dark | img_url: '32x32' }}" type="image/png" id="favicon-dark">
     {% endif %}
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,6 +56,25 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var lightFavicon = document.getElementById("favicon-light");
+        var darkFavicon = document.getElementById("favicon-dark");
+  
+        if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          if (darkFavicon) {
+            darkFavicon.rel = "icon";
+            lightFavicon.rel = "icon alternate";
+          }
+        } else {
+          if (lightFavicon) {
+            lightFavicon.rel = "icon";
+            darkFavicon.rel = "icon alternate";
+          }
+        }
+      });
+    </script>
   </head>
   <body>
 
