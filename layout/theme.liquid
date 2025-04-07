@@ -79,15 +79,15 @@
   </head>
   <body>
 
-    {% if template == 'index' %}
+    {% comment %} {% if template == 'index' %}
       <nav>
         {% section 'navbar' %}
       </nav>
-    {% else %}
+    {% else %} {% endcomment %}
       <nav class="black">
         {% section 'navbar' %}
       </nav>
-    {% endif %}
+    {% comment %} {% endif %} {% endcomment %}
     
     <main role="main">
       {{ content_for_layout }}
