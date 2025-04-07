@@ -1,8 +1,27 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "404": {
       "title": "Not found",
       "subtext_html": "The page you were looking for does not exist"
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "shipping": {
+        "shipping_method_notice": "Shipping"
+      },
+      "contact": {
+        "contact_method_title": "WE ARE CURRENTLY NOT TAKING ORDERS. WE WILL BE READY TO TAKE PRE-ORDERS WITHIN THE NEXT FEW WEEKS. THANK YOU FOR YOUR UNDERSTANDING. "
+      }
     }
   }
 }
