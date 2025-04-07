@@ -240,12 +240,12 @@
                                     {% else %}
                                         <p class="card_press-body-dsc font-medium text-16 m-btm m-12">{{ article.content | strip_html | truncatewords: 100 }}</p>
                                     {% endif %}
-                                    <a class="card_press-body-link font-semibold" target="_blank" href="{{ article.metafields.custom.pdf_file | file_url }}">
-                                    {% comment %} <a class="card_press-body-link font-semibold" href="{{ article.url }}"> {% endcomment %}
-                                        Read more
+                                    {% comment %} <a class="card_press-body-link font-semibold" target="_blank" href="{{ article.metafields.custom.pdf_file | file_url }}"> {% endcomment %}
+                                    <a class="card_press-body-link font-semibold" href="{{ article.url }}">
+                                        {% comment %} Read more
                                         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="20" viewBox="0 0 8 20" fill="none">
                                             <path d="M1.70801 6.5L5.70801 10.5L1.70801 14.5" stroke="#232323" stroke-width="1.5" />
-                                        </svg>
+                                        </svg> {% endcomment %}
                                     </a>
                                 </div>
                             </div>
