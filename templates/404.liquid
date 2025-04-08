@@ -1,4 +1,8 @@
 {% assign bg = '404-bg.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign pattern_t_r = 'pattern-top-right.svg' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign pattern_t_l = 'pattern-top-left.svg' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign pattern_b_r = 'pattern-bot-right.svg' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign pattern_b_l = 'pattern-bot-left.svg' | asset_url | append: '?v=' | append: 'timestamp' %}
 
 {% style %}
   .not-found{
@@ -40,6 +44,7 @@
     font-weight: 400;
     line-height: 150%;
     max-width: 500px;
+    margin: auto;
   }
   .not-found .btn-wrap{
     justify-content: center;
@@ -51,6 +56,7 @@
 {% endstyle %}
 
 <section class="not-found" style="min-height: 70vh;padding-top: 20vh;">
+  <img src="" alt="" />
   <div class="container">
     <h1>Lost in a Dream?</h1>
     <p>This page has drifted away into dreamland...
