@@ -14,6 +14,8 @@
     padding: unset !important;
   }
   .not-found .container{
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,6 +27,11 @@
     background: url('{{bg}}') no-repeat;
     background-position: center;
     background-size: contain;
+  }
+  @media only screen and (max-width:480px) {
+    .not-found .container{
+      background-size: cover;
+    }
   }
   .not-found h1{
     color: #3C2E25;
@@ -53,10 +60,19 @@
   .not-found .btn-wrap .is-white{
     border: 1px solid #3C2E25 !important;
   }
+  .not-found .pattern{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
 {% endstyle %}
 
 <section class="not-found" style="min-height: 70vh;padding-top: 20vh;">
-  <img src="" alt="" />
+  <img src="{{ pattern_t_r }}" alt="" class="pattern"/>
+  <img src="{{ pattern_t_l }}" alt="" class="pattern"/>
+  <img src="{{ pattern_b_r }}" alt="" class="pattern"/>
+  <img src="{{ pattern_b_l }}" alt="" class="pattern"/>
   <div class="container">
     <h1>Lost in a Dream?</h1>
     <p>This page has drifted away into dreamland...
