@@ -63,7 +63,7 @@
         var darkFavicon = document.getElementById("favicon-dark");
   
         if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-          console.log('ok')
+          
           if (darkFavicon) {
             darkFavicon.rel = "icon";
             lightFavicon.rel = "icon alternate";
@@ -79,21 +79,25 @@
   </head>
   <body>
 
-    {% if template == 'index' %}
-      <nav class="black home">
-        {% section 'navbar' %}
-      </nav>
-    {% else %}
-      <nav class="black">
-        {% section 'navbar' %}
-      </nav>
+    {% if template != '404' %}
+      {% if template == 'index' %}
+        <nav class="black home">
+          {% section 'navbar' %}
+        </nav>
+      {% else %}
+        <nav class="black">
+          {% section 'navbar' %}
+        </nav>
+      {% endif %}
     {% endif %}
     
     <main role="main">
       {{ content_for_layout }}
     </main>
     
-    {% section 'footer' %}
+    {% if template != '404' %}
+      {% section 'footer' %}
+    {% endif %}
 
 
     <script async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=UkKEks"></script>
