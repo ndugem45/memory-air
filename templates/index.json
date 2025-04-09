@@ -94,7 +94,9 @@
     },
     "submission": {
       "type": "submission",
-      "settings": {}
+      "settings": {
+        "section_product": "memory-air-device"
+      }
     },
     "faq": {
       "type": "faq",
