@@ -379,7 +379,7 @@ button {
 	color: var(--color-primary);
 }
 .btn.is-white.outline {
-	border: 1px solid rgba(255, 255, 255, 1);
+	border: 1px solid #3c2e25;
 }
 .btn.is-outline {
 	border: 1px solid #ffffff;
