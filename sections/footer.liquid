@@ -62,6 +62,15 @@
       border: 1px solid white;
       color: white;
   }
+  footer form.active input,
+  footer form.active button{
+    display: none;
+  }
+  footer form.active .notes{
+    line-height: 300%;
+    margin: auto;
+    color: black;
+  }
   footer form input{
       font-family: "General Sans Regular";
       font-size: 18px;
@@ -232,8 +241,9 @@
           Join our newsletter to stay up to date on the latest in memory care
         {% endif %}
       </p>
-      <form action="">
-        <input type="text" placeholder="Email">
+      <form action="" id="klaviyo-footer-form">
+        <input type="email" placeholder="Email">
+        <div class="notes" id="klaviyo-footer-success"></div>
         <button type="submit">
           <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -399,6 +409,56 @@
       const date = new window.Date.getFullYear();
       $('#footer_year').text(date)
     }catch(e){}
+
+    const footerForm = document.getElementById("klaviyo-footer-form");
+  
+    footerForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+  
+      var klaviyoAPIKey = 'UkKEks';
+      var listId = 'TpdAkf';
+  
+      const emailInput = form.querySelector('input[name="email"]');
+      let label = form.querySelector('#klaviyo-footer-success');
+      let btn = form.querySelector('button[type="submit"]');
+      const email = emailInput.value.trim();
+  
+      var apiUrl = 'https://a.klaviyo.com/client/profiles/?company_id=';
+      var listUrl = 'https://a.klaviyo.com/client/lists/' + listId + '/subscribe/'; 
+      var data = {
+          data: {
+              type: "profile",
+              attributes: {
+                  email: email
+              }
+          }
+      };
+  
+      btn.setAttribute('disabled', true);
+      btn.innerText = 'Sending...';
+  
+      $.ajax({
+          url: apiUrl + klaviyoAPIKey,
+          type: 'POST',
+          headers: {
+              'accept': 'application/vnd.api+json',
+              'revision': '2025-01-15',
+              'content-type': 'application/vnd.api+json'
+          },
+          data: JSON.stringify(data),
+          success: function(response) {
+              form.classList.add('active');
+              label.innerText = 'Thank you! You are now subscribed!';
+              info.innerText = '';
+              btn.setAttribute('disabled', false);
+          },
+          error: function(xhr, status, error) {
+              info.innerText = 'Please input correct email!';
+              btn.setAttribute('disabled', false);
+              btn.innerText = 'Submit';
+          }
+      });
+    });
   })
 </script>
 
