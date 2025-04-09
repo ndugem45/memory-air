@@ -195,6 +195,11 @@
                 of leading neuroscience research
             </span>
         </h2>
+        {% for metaobject in shop.metaobjects.timeline %}
+            <div>
+              <h3>{{ metaobject | json | escape }}</h3>
+            </div>
+          {% endfor %}
         <div class="item-wrap">
             {% if section.settings.timeline_object != blank%}
                 {%- for timeline in section.settings.timeline_object -%}
