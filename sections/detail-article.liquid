@@ -125,7 +125,7 @@
                         <p>
                             Access the full article for detailed insights and a deeper understanding. Download the complete PDF now.
                         </p>
-                        <a target="_blank" href="{{ article.metafields.custom.pdf_file | file_url }}" class="btn is-brown" download="myfile.pdf">
+                        <a target="_blank" href="{{ article.metafields.custom.pdf_file | file_url }}" class="btn is-brown" download="{{ article.metafields.custom.pdf_file | file_url }}">
                             Download PDF
                         </a>
                     </div>
