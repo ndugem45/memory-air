@@ -418,9 +418,9 @@
       var klaviyoAPIKey = 'UkKEks';
       var listId = 'TpdAkf';
   
-      const emailInput = form.querySelector('input[name="email"]');
-      let label = form.querySelector('#klaviyo-footer-success');
-      let btn = form.querySelector('button[type="submit"]');
+      const emailInput = footerForm.querySelector('input[name="email"]');
+      let label = footerForm.querySelector('#klaviyo-footer-success');
+      let btn = footerForm.querySelector('button[type="submit"]');
       const email = emailInput.value.trim();
   
       var apiUrl = 'https://a.klaviyo.com/client/profiles/?company_id=';
@@ -447,7 +447,7 @@
           },
           data: JSON.stringify(data),
           success: function(response) {
-              form.classList.add('active');
+            footerForm.classList.add('active');
               label.innerText = 'Thank you! You are now subscribed!';
               info.innerText = '';
               btn.setAttribute('disabled', false);
