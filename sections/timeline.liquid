@@ -202,7 +202,7 @@
         </h2>
         <div class="item-wrap">
             {% if section.settings.timeline_object != blank%}
-                {%- assign sorted_timeline = section.settings.timeline_object | sort: 'date_field' -%}
+                {%- assign sorted_timeline = section.settings.timeline_object | sort: 'year' -%}
                 {%- for timeline in sorted_timeline -%}
                   <div class="item">
                     <div class="content">
