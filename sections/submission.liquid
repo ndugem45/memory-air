@@ -116,9 +116,14 @@
   .submission_card .klaviyo-form-TMQFaZ form button[type='button']{
     
   }
+  .submission .buy-wrap{
+    margin: auto;
+    width: fit-content;
+    margin-top: 50px;
+  }
 {% endstyle %}
 
-<section class="submission">
+{% comment %} <section class="submission"> {% endcomment %}
   <div class="container">
     <div class="submission_card">
       <h2 class="m-btm m-12">
@@ -150,12 +155,12 @@
       </form>
     </div>
   </div>
-  <div>
-    {% if section.settings.section_product != blank %}
-      <a class="btn is-white" href="{{ section.settings.section_product.url }}">Buy Now</a>
+  {% if section.settings.section_product != blank %}
+      <div class="buy-wrap">
+        <a class="btn is-white outline" href="{{ section.settings.section_product.url }}">Buy Now</a>
+      </div>
     {% endif %}
-  </div>
-</section>
+{% comment %} </section> {% endcomment %}
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
