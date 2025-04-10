@@ -614,9 +614,9 @@
 
 
 <script>
-  var formatter,updater,cartData
-  var curr = '{{ shop.money_format }}'.split('{')[0]
-  var sym = '{{ cart.currency.iso_code }}'
+  let formatter,updater,cartData
+  let curr = '{{ shop.money_format }}'.split('{')[0]
+  let sym = '{{ cart.currency.iso_code }}'
 
   $(document).ready(function(){
     const navbar = document.querySelector('nav');

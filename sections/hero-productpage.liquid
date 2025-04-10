@@ -425,32 +425,41 @@
 	</div>
 
 <script>
+    $(document).ready(function(){
+        if(cartData.items.length){
+            document.querySelector('#AddToCart').setAttribute('disabled', false);
+            document.querySelector('#AddToCart').innerText = "You already have items in cart!";
+        }
+    })
+
 
     document.getElementById('AddToCartForm').addEventListener('submit', function(event) {
         event.preventDefault();
-    
-        var variantId = document.querySelector('input[name="id"]:checked').value;
-        var deviceId = document.querySelector('input[name="product"]').value;
 
-        var sellingPlanSelect = document.getElementById('selling-id-' + variantId);
-        var sellingPlanId = sellingPlanSelect ? sellingPlanSelect.value : null;
+        if(!cartData.items.length){
+            var variantId = document.querySelector('input[name="id"]:checked').value;
+            var deviceId = document.querySelector('input[name="product"]').value;
 
-        addThis([
-            {
-                'id': deviceId,
-                'quantity': 1,
-            },
-            {
-                'id': variantId,
-                'quantity': 1,
-                'selling_plan': sellingPlanId
-            }
-        ], (result)=>{
-            if(result){
-                load();
-                document.querySelector('nav').classList.add('open');
-            }
-        });
+            var sellingPlanSelect = document.getElementById('selling-id-' + variantId);
+            var sellingPlanId = sellingPlanSelect ? sellingPlanSelect.value : null;
+
+            addThis([
+                {
+                    'id': deviceId,
+                    'quantity': 1,
+                },
+                {
+                    'id': variantId,
+                    'quantity': 1,
+                    'selling_plan': sellingPlanId
+                }
+            ], (result)=>{
+                if(result){
+                    load();
+                    document.querySelector('nav').classList.add('open');
+                }
+            });
+        }
     });
 
 </script>
