@@ -171,22 +171,45 @@
 
     function submit(form, info, text){
       var klaviyoAPIKey = 'UkKEks';
-      var listId = 'TpdAkf';  // The Klaviyo list ID or segment ID for subscription
+      var listId = 'TpdAkf';
   
       const emailInput = form.querySelector('input[name="email"]');
       let label = form.querySelector('.notes');
       let btn = form.querySelector('button[type="submit"]');
       const email = emailInput.value.trim();
   
-      var apiUrl = 'https://a.klaviyo.com/client/profiles/?company_id=';
+      var apiUrl = "https://a.klaviyo.com/client/subscriptions?company_id=";//'https://a.klaviyo.com/client/profiles/?company_id=';
       var listUrl = 'https://a.klaviyo.com/client/lists/' + listId + '/subscribe/'; 
       var data = {
-          data: {
-              type: "profile",
-              attributes: {
-                  email: email
+        data: {
+          type: "subscription",
+          attributes: {
+            profile: {
+              data: {
+                type: "profile",
+                attributes: {
+                  email: email,
+                  subscriptions: {
+                    email: {
+                      marketing: {
+                        consent: "SUBSCRIBED",
+                        consented_at: new Date().toISOString()
+                      }
+                    }
+                  }
+                }
               }
+            }
+          },
+          relationships: {
+            list: {
+              data: {
+                type: "list",
+                id: listId
+              }
+            }
           }
+        }
       };
   
       btn.setAttribute('disabled', true);
@@ -202,33 +225,6 @@
           },
           data: JSON.stringify(data),
           success: function(response) {
-              {% comment %} var subscribeData = {
-                  profiles: [{
-                      email: email
-                  }]
-              }; {% endcomment %}
-  
-              {% comment %} $.ajax({
-                  url: listUrl,
-                  type: 'POST',
-                  headers: {
-                      'accept': 'application/vnd.api+json',
-                      'revision': '2025-01-15',
-                      'content-type': 'application/vnd.api+json'
-                  },
-                  data: JSON.stringify(subscribeData),
-                  success: function() {
-                      document.querySelector(".klaviyo-form").classList.add('active');
-                      label.innerText = text;
-                      info.innerText = '';
-                      btn.setAttribute('disabled', false);
-                  },
-                  error: function(xhr, status, error) {
-                      info.innerText = 'Failed to subscribe to the list!';
-                      btn.setAttribute('disabled', false);
-                      btn.innerText = 'Submit';
-                  }
-              }); {% endcomment %}
               document.querySelector(".klaviyo-form").classList.add('active');
               label.innerText = text;
               info.innerText = '';
