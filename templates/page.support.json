@@ -12,7 +12,7 @@
     "memory-loss-plain": {
       "type": "memory-loss-plain",
       "settings": {
-        "file_url": "https://cdn.shopify.com/s/files/1/0745/3658/3442/files/Memory_Air_quick_start_guide_4.9x4.9-1224.pdf?v=1742194154"
+        "file_url": "https://cdn.shopify.com/s/files/1/0745/3658/3442/files/Memory_Air_new_user_guide_5x7-2025.pdf?v=1744279455"
       }
     },
     "faq-plain": {
@@ -59,6 +59,7 @@
       "settings": {
         "section_title": "",
         "section_cta": "shopify://pages/faqs",
+        "section_cta_size": true,
         "section_cta_title": "Go to FAQ"
       }
     },
