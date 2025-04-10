@@ -454,9 +454,18 @@
                 }
               }
             }
+          },
+          relationships: {
+            list: {
+              data: {
+                type: "list",
+                id: listId
+              }
+            }
           }
         }
       };
+      
       
   
       btn.setAttribute('disabled', true);
@@ -480,7 +489,7 @@
           error: function(xhr, status, error) {
               info.innerText = 'Please input correct email!';
               btn.setAttribute('disabled', false);
-              info.innerText = '';
+              btn.innerText = '';
               setTimeout(()=>{
                 btn.insertAdjacentHTML('afterbegin', `<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd"
