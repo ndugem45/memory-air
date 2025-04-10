@@ -435,13 +435,29 @@
       var apiUrl = "https://a.klaviyo.com/client/subscriptions?company_id=";//'https://a.klaviyo.com/client/profiles/?company_id=';
       var listUrl = 'https://a.klaviyo.com/client/lists/' + listId + '/subscribe/'; 
       var data = {
-          data: {
-              type: "subscription",
-              attributes: {
-                  email: email
+        data: {
+          type: "subscription",
+          attributes: {
+            profile: {
+              data: {
+                type: "profile",
+                attributes: {
+                  email: email,
+                  subscriptions: {
+                    email: {
+                      marketing: {
+                        consent: "SUBSCRIBED",
+                        consented_at: new Date().toISOString()
+                      }
+                    }
+                  }
+                }
               }
+            }
           }
+        }
       };
+      
   
       btn.setAttribute('disabled', true);
       btn.innerText = 'Sending...';
@@ -464,11 +480,14 @@
           error: function(xhr, status, error) {
               info.innerText = 'Please input correct email!';
               btn.setAttribute('disabled', false);
-              btn.insertAdjacentHTML('afterbegin', `<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M16.0577 18.1001L12.6623 15.8149L11.2931 16.9629L10.737 14.519L16.6667 9.32576L9.55683 13.4098L6.20801 10.9936L19.208 7.1001L16.0577 18.1001Z"
-              fill="currentColor" />
-          </svg>`);
+              info.innerText = '';
+              setTimeout(()=>{
+                btn.insertAdjacentHTML('afterbegin', `<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M16.0577 18.1001L12.6623 15.8149L11.2931 16.9629L10.737 14.519L16.6667 9.32576L9.55683 13.4098L6.20801 10.9936L19.208 7.1001L16.0577 18.1001Z"
+                    fill="currentColor" />
+                </svg>`);
+              },100)
           }
       });
     });
