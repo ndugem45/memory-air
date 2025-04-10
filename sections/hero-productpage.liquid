@@ -428,7 +428,7 @@
     $(document).ready(function(){
         let countP = document.querySelectorAll('.cart-menu .item-wrap .item')
     
-        if(countP.length){
+        if(!countP.length){
             document.querySelector('#AddToCart').setAttribute('disabled', true);
             document.querySelector('#AddToCart').innerText = "You already have items in cart!";
         }
