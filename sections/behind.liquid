@@ -305,7 +305,7 @@
 						</div>
 					</div>
 					<div class="behind_content-btn m-top m-54">
-						<a href="/pages/science" class="btn is-white">
+						<a href="{{ section.settings.url }}" class="btn is-white">
 							Read The Full Report
 						</a>
 					</div>
@@ -318,6 +318,13 @@
 	{% schema %}
 			{
 					"tag": "section",
-					"class": "behind"
+					"class": "behind",
+					"settings": [
+						{
+							"type": "url",
+							"id": "card_cta-url",
+							"label":"CTA Dr Leon URL"
+						}
+					]
 			}
 	{% endschema %}
