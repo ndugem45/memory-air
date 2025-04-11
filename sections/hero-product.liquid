@@ -96,28 +96,12 @@
         </p>
 				<div class="btn-wrap m-top m-54">
 					{% if section.settings.section_product != blank %}
-						<a class="btn" href="{{ section.settings.section_product.url }}" class="btn is-black">Buy Now</a>
-					{% endif %}
-					{% if section.settings.video_cta != blank %}
-						<button data-video="{{ section.settings.video_cta }}" onclick="togglePop()" class="btn is-bordered">
-							Watch Video
-						</button>
-					{% else %}
-						<button data-video="https://www.youtube.com/embed/_LpPE8kKyg8?si=ENjDsayoVX5J39yE" onclick="togglePop()" class="btn is-bordered">
-							Watch Video
-						</button>
+						<a class="btn is-black" href="{{ section.settings.section_product.url }}">Buy Now</a>
 					{% endif %}
 				</div>
     </div>
 
-		{% comment %} {% if section.settings.section_img != blank %}
-			<img src="{{ section.settings.section_img | img_url }}" alt="" class="illus">
-		{% else %}
-			<img src="{{ product_display }}" alt="" class="illus">
-		{% endif %} {% endcomment %}
 		<div id="threejs-container" style="width: 80%;height: 600px;" class="illus"></div>
-
-	{% comment %} <iframe class="illus" width="811" height="600" src="https://www.youtube.com/embed/_LpPE8kKyg8?si=ENjDsayoVX5J39yE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> {% endcomment %}
 </div>
 
 <script>
