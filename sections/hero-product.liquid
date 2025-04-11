@@ -2,7 +2,7 @@
 
 {% assign science-display = 'product-vid-placeholder.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
 {% assign product_display = 'healthcare_hero-img.png' | asset_url | append: '?v=' | append: 'timestamp' %}
-{% assign three_asset = 'air_purifier.gltf' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign video_section = 'Memory_Air.mp4' | asset_url | append: '?v=' | append: 'timestamp' %}
 
 {% style %}
 
@@ -115,121 +115,12 @@
 		{% else %}
 			<img src="{{ product_display }}" alt="" class="illus">
 		{% endif %} {% endcomment %}
-		<div id="threejs-container" style="width: 100%; height: 600px;"></div>
+		<video autoplay muted loop id="asset-product" class="illus">
+      <source src="{{ video_section }}" type="video/mp4">
+    </video>
 
 	{% comment %} <iframe class="illus" width="811" height="600" src="https://www.youtube.com/embed/_LpPE8kKyg8?si=ENjDsayoVX5J39yE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> {% endcomment %}
 </div>
-
-<script>
-	let model, renderer, camera, scene;
-	let lights = [];
-
-	document.addEventListener("DOMContentLoaded", function () {
-			const container = document.getElementById("threejs-container");
-			
-			if (!container) {
-					return;
-			}
-			
-			scene = new THREE.Scene();
-			
-			renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-			renderer.setSize(container.clientWidth, container.clientHeight);
-			renderer.setClearColor(0x000000, 0);
-			container.appendChild(renderer.domElement);
-	
-			const loader = new THREE.GLTFLoader();
-			loader.load("{{ three_asset }}", function (gltf) {
-
-					model = gltf.scene;
-					model.scale.set(1, 1, 1);
-					scene.add(model);
-
-					const glbCamera = gltf.cameras[0]; 
-					if (glbCamera) {
-							camera = glbCamera;
-					}
-					
-					model.children[0].traverse((object) => {
-							if (object.isLight) {
-									lights.push(object);
-							}
-					});
-
-					if(lights.length){
-							lights[3].intensity = 0.5
-							lights[2].intensity = 0.9
-							lights[1].intensity = 0.9
-							lights[0].intensity = 3
-					}
-
-					const mainObject = model.children[0].children[0];
-					if (mainObject) {
-							function animate() {
-									requestAnimationFrame(animate);
-									mainObject.rotation.y += 0.005;
-									renderer.render(scene, camera);
-							}
-							animate();
-					}
-					
-					{% comment %} fitModelToContainer(model, camera, container, 0.85);
-					renderer.render(scene, camera); {% endcomment %}
-					
-			}, undefined, function (error) {
-					console.error("Gagal memuat model:", error);
-			});
-			
-			$('#rotate-btn').click(()=>{
-					rotateModelSmooth(model, "right");
-					renderer.render(scene, camera);
-			})
-			
-			window.addEventListener("resize", () => {
-					renderer.setSize(container.clientWidth, container.clientHeight);
-					fitModelToContainer(model, camera, container);
-					renderer.render(scene, camera);
-			});
-	});
-
-	function rotateModelSmooth(model, direction = "right", duration = 1) {
-			if (!model) return;
-	
-			const targetRotation = model.rotation.y + (direction === "right" ? Math.PI / 2 : -Math.PI / 2);
-			const startRotation = model.rotation.y;
-			const startTime = performance.now();
-	
-			function animateRotation(time) {
-					const elapsed = (time - startTime) / (duration * 1000);
-					if (elapsed < 1) {
-							model.rotation.y = startRotation + (targetRotation - startRotation) * elapsed;
-							requestAnimationFrame(animateRotation);
-					} else {
-							model.rotation.y = targetRotation;
-					}
-					renderer.render(scene, camera);
-			}
-	
-			requestAnimationFrame(animateRotation);
-	}
-
-	function fitModelToContainer(model, camera, container, scale = 1.2) {
-			const box = new THREE.Box3().setFromObject(model);
-			const size = box.getSize(new THREE.Vector3());
-			const center = box.getCenter(new THREE.Vector3());
-
-			const aspectRatio = container.clientWidth / container.clientHeight;
-			camera.aspect = aspectRatio;
-			camera.updateProjectionMatrix();
-
-			const maxDim = Math.max(size.x, size.y, size.z);
-			const fov = camera.fov * (Math.PI / 180);
-			const distance = maxDim / Math.tan(fov / 2);
-
-			camera.position.set(center.x, center.y, center.z + distance * scale);
-			camera.lookAt(center);
-	}
-</script>
     
     
 {% schema %}
