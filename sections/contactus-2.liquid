@@ -159,6 +159,10 @@
 		font-weight: 400;
 		line-height: 145%;
 	}
+
+    select:valid {
+      color: black;
+    }
 	
 	textarea {
 		height: 134px !important;
@@ -345,8 +349,8 @@
 							<input type="checkbox" name="contact[subscribe]" id="subscribe"> Subscribe to the newsletter
 						</label>
 				
-						<select class="input-form select-input" id="Select Topic" name="contact[topic]">
-							<option value="">Select Topic</option>
+						<select class="input-form select-input" id="Select Topic" name="contact[topic]" required>
+							<option value="" disabled selected hidden>Select Topic</option>
 							<option value="professionalconsideration">Professional Consideration</option>
 							<option value="generalquestions">General Questions</option>
 							<option value="clinicaltrialinterest">Clinical Trial Interest</option>
