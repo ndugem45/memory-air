@@ -115,7 +115,7 @@
 		{% else %}
 			<img src="{{ product_display }}" alt="" class="illus">
 		{% endif %} {% endcomment %}
-		<div id="threejs-container" style="height: 600px;" class="illus"></div>
+		<div id="threejs-container" style="width: 80%;height: 600px;" class="illus"></div>
 
 	{% comment %} <iframe class="illus" width="811" height="600" src="https://www.youtube.com/embed/_LpPE8kKyg8?si=ENjDsayoVX5J39yE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> {% endcomment %}
 </div>
@@ -170,8 +170,8 @@
 									mainObject.rotation.y += 0.005;
 									renderer.render(scene, camera);
 							}
-							fitModelToContainer(model, camera, container);
 							animate();
+							fitModelToContainer(model, camera, container);
 					}
 					
 					
