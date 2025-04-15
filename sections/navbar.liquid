@@ -760,7 +760,7 @@
         contentType: 'application/json',
         dataType: 'json',
         success: function(data) {
-          let dataResult = typeof data === 'string' ? JSON.parse(data) : data;
+          let dataResult = JSON.parse(data);
           let dd = dataResult.items;
           cartData = dataResult;
           updater = null;
@@ -819,7 +819,7 @@
           "quantity": q ? 0 : $('#updates_' + id).val()
         },
         success: function(data) {
-          // load();
+          load();
         },
         error: function(xhr, status, error) {
           console.error("Error updating cart:", status, error);
