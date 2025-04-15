@@ -757,8 +757,6 @@
       updater = jQuery.ajax({
         type: 'GET',
         url: window.Shopify.routes.root + "cart.js",
-        contentType: 'application/json',
-        dataType: 'json',
         success: function(data) {
           let dataResult;
 
@@ -784,10 +782,7 @@
             $('nav .cart-menu .summary .btn').addClass('active');
             dd.forEach((s) => {
               s.newPrice = formatCost(parseInt(s.price / 100));
-              try{
-                
               $('#placer').append(tmplt(s));
-              }catch(e){console.log(e)}
             });
           } else {
             if(window.innerWidth < 1200){
