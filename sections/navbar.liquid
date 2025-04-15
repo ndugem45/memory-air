@@ -800,8 +800,6 @@
   
   const updateThis = (id, q) => {
     try {
-      checkCart()
-      
       if (updater && typeof updater.abort === 'function') {
         updater.abort();
       }
