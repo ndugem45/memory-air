@@ -773,13 +773,11 @@
           cartData = dataResult;
           updater = null;
           
-          try {
-            $('#total-price').html(formatCost(parseFloat(cartData.total_price / 100)));
-            $('#sub-total').html(formatCost(parseFloat(cartData.items_subtotal_price / 100)));
-          } catch (e) {
-            console.error('err:', e);
-          }
+          $('#total-price').html(formatCost(parseFloat(cartData.total_price / 100)));
+          $('#sub-total').html(formatCost(parseFloat(cartData.items_subtotal_price / 100)));
           
+          
+          try {
           if (dd.length > 0) {
             if(window.innerWidth < 1200){
               $('#cart-btn').show()
@@ -797,6 +795,9 @@
             }
             $('nav .cart-menu .summary .btn').removeClass('active');
             $('#placer').append(`<div>No data</div>`);
+          }
+            } catch (e) {
+            console.error('err:', e);
           }
 
           let countP = document.querySelectorAll('.cart-menu .item-wrap .item')
