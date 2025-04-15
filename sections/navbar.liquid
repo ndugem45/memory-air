@@ -772,10 +772,14 @@
           let dd = dataResult.items;
           cartData = dataResult;
           updater = null;
-    
-          $('#total-price').html(formatCost(parseFloat(cartData.total_price / 100)));
-          $('#sub-total').html(formatCost(parseFloat(cartData.items_subtotal_price / 100)));
-    
+          
+          try {
+            $('#total-price').html(formatCost(parseFloat(cartData.total_price / 100)));
+            $('#sub-total').html(formatCost(parseFloat(cartData.items_subtotal_price / 100)));
+          } catch (e) {
+            console.error('err:', e);
+          }
+          
           if (dd.length) {
             if(window.innerWidth < 1200){
               $('#cart-btn').show()
