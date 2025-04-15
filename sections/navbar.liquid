@@ -827,7 +827,11 @@
           "quantity": q ? 0 : $('#updates_' + id).val()
         },
         success: function(data) {
+          try {
           load();
+            } catch (e) {
+      console.error("Updasdasda");
+    }
         },
         error: function(xhr, status, error) {
           console.error("Error updating cart:", status, error);
