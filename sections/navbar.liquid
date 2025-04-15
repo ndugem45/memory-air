@@ -810,15 +810,6 @@
       if (updater && typeof updater.abort === 'function') {
         updater.abort();
       }
-  
-      // updater = $.post(window.Shopify.routes.root + "cart/change.js", {
-      //   "id": id,
-      //   "quantity": q ? 0 : $('#updates_' + id).val()
-      // }, function (data, status) {
-      //   load();
-      // }).fail((jqXHR, textStatus, errorThrown) => {
-      //   console.error("Error updating cart:", textStatus, errorThrown);
-      // });
       
       updater = jQuery.ajax({
         type: 'POST',
@@ -828,7 +819,7 @@
           "quantity": q ? 0 : $('#updates_' + id).val()
         },
         success: function(data) {
-          load();
+          // load();
         },
         error: function(xhr, status, error) {
           console.error("Error updating cart:", status, error);
