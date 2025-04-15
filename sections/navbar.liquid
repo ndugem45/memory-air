@@ -760,7 +760,15 @@
         contentType: 'application/json',
         dataType: 'json',
         success: function(data) {
-          let dataResult = JSON.parse(data);
+          let dataResult;
+
+          try {
+            dataResult = typeof data === 'string' ? JSON.parse(data) : data;
+          } catch (e) {
+            console.error('Failed to parse JSON:', e);
+            return;
+          }
+          
           let dd = dataResult.items;
           cartData = dataResult;
           updater = null;
