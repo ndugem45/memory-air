@@ -784,7 +784,10 @@
             $('nav .cart-menu .summary .btn').addClass('active');
             dd.forEach((s) => {
               s.newPrice = formatCost(parseInt(s.price / 100));
+              try{
+                
               $('#placer').append(tmplt(s));
+              }catch(e){console.log(e)}
             });
           } else {
             if(window.innerWidth < 1200){
@@ -792,7 +795,7 @@
               $('#buy-btn').show()
             }
             $('nav .cart-menu .summary .btn').removeClass('active');
-            // $('#placer').append(`<div>No data</div>`);
+            $('#placer').append(`<div>No data</div>`);
           }
 
           let countP = document.querySelectorAll('.cart-menu .item-wrap .item')
