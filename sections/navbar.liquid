@@ -810,6 +810,7 @@
       if (updater && typeof updater.abort === 'function') {
         updater.abort();
       }
+  
       
       updater = jQuery.ajax({
         type: 'POST',
@@ -824,7 +825,7 @@
           load();
         },
         error: function(xhr, status, error) {
-          console.error("Error updating cart:", textStatus, errorThrown);
+          console.error("Error updating cart:", status, error);
         }
       });
     } catch (e) {
