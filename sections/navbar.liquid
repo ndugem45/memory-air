@@ -822,12 +822,10 @@
       updater = jQuery.ajax({
         type: 'POST',
         url: window.Shopify.routes.root + 'cart/change.js',
-        data: JSON.stringify({
-          "id": parseInt(id),
-          "quantity": q ? 0 : parseInt($('#updates_' + id).val())
-        }),
-        contentType: 'application/json',
-        dataType: 'json',
+        data: {
+          "id": id,
+          "quantity": q ? 0 : $('#updates_' + id).val()
+        },
         success: function(data) {
           load();
         },
