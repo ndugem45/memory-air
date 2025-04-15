@@ -822,6 +822,8 @@
       updater = jQuery.ajax({
         type: 'POST',
         url: window.Shopify.routes.root + 'cart/change.js',
+        contentType: 'application/json',
+        dataType: 'json',
         data: {
           "id": id,
           "quantity": q ? 0 : $('#updates_' + id).val()
