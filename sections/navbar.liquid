@@ -811,16 +811,22 @@
         updater.abort();
       }
   
+      // updater = $.post(window.Shopify.routes.root + "cart/change.js", {
+      //   "id": id,
+      //   "quantity": q ? 0 : $('#updates_' + id).val()
+      // }, function (data, status) {
+      //   load();
+      // }).fail((jqXHR, textStatus, errorThrown) => {
+      //   console.error("Error updating cart:", textStatus, errorThrown);
+      // });
       
       updater = jQuery.ajax({
         type: 'POST',
         url: window.Shopify.routes.root + 'cart/change.js',
-        data: JSON.stringify({
+        data: {
           "id": id,
           "quantity": q ? 0 : $('#updates_' + id).val()
-        }),
-        contentType: 'application/json',
-        dataType: 'json',
+        },
         success: function(data) {
           load();
         },
