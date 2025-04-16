@@ -25,6 +25,10 @@
 		width: 100%;
 	}
 
+    #shopify-section-{{section.id}} .healthcare_content-img .illus{
+      width: 80%;
+    }
+
 @media (max-width: 768px) {
     #shopify-section-{{section.id}} .healthcare_content {
         flex-direction: column;
@@ -46,6 +50,10 @@
 
     #shopify-section-{{section.id}} .healthcare_content-img {
         max-width: 100%;
+    }
+
+    #shopify-section-{{section.id}} .healthcare_content-img .illus{
+      width: 100%;
     }
 
     #shopify-section-{{section.id}} .healthcare_content-img > img {
@@ -86,7 +94,7 @@
 		</div>
 		<div class="healthcare_content-img">
 			<!-- <img src="{{ healthcareHero }}" alt="" class="illus"> -->
-            <div id="threejs-container" style="width: 80%;height: 600px;" class="illus"></div>
+            <div id="threejs-container" style="height: 600px;" class="illus"></div>
 		</div>
 	</div>
 </div>
