@@ -109,6 +109,10 @@
 <script>
 	let model, renderer, camera, scene;
 	let lights = [];
+    let scale = 0.6
+    if(window.innerWidth < 768){
+      scale = 0.9
+    }
 
 	document.addEventListener("DOMContentLoaded", function () {
 			const container = document.getElementById("threejs-container");
@@ -198,7 +202,7 @@
 			requestAnimationFrame(animateRotation);
 	}
 
-	function fitModelToContainer(model, camera, container, scale = 0.6) {
+	function fitModelToContainer(model, camera, container) {
 			const box = new THREE.Box3().setFromObject(model);
 			const size = box.getSize(new THREE.Vector3());
 			const center = box.getCenter(new THREE.Vector3());
