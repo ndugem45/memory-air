@@ -5,77 +5,75 @@
 {% assign three_asset = 'air_purifier.gltf' | asset_url | append: '?v=' | append: 'timestamp' %}
 
 {% style %}
-
-#shopify-section-{{section.id}}.hero-product {
-	padding-bottom: unset;
-	padding-top: 164px;
-	background: linear-gradient(
-			180deg,
-			rgba(170, 126, 113, 0.1) 0%,
-			rgba(170, 126, 113, 0.0) 100%
-		), #fff;
-}
-#shopify-section-{{section.id}}.hero-product .container {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
-	gap: 79px;
-}
-#shopify-section-{{section.id}}.hero-product .content {
-	max-width: 500px;
-}
-#shopify-section-{{section.id}}.hero-product .illus {
-	flex: 1;
-	border-radius: 16px;
-	object-fit: contain;
-	height: 400px;
-    width: 80%;
-}
-
-@media only screen and (max-width: 990px) {
-		#shopify-section-{{section.id}}.hero-product .illus {
-			width: 100%;
-			max-width: 100%;
-			flex: unset;
-			height: 400px;
-		}
-		#shopify-section-{{section.id}}.hero-product .container {
-			flex-direction: column;
-			gap: 40px;
-		}
-		#shopify-section-{{section.id}}.hero-product .content {
-			max-width: 100%;
-		}
-	}
-
-
-@media (max-width: 768px) {
-	#shopify-section-{{section.id}}.hero-product {
-		padding-top: 120px;
-	}
-
-	#shopify-section-{{section.id}}.hero-product .content {
-		max-width: 100%;
-		padding: 0 0;
-	}
-	#shopify-section-{{section.id}}.hero-product .content > h1{
-		font-size: 40px;
-	}
-	#shopify-section-{{section.id}}.hero-product .content > h1 > span{
-		font-size: 40px;
-	}
-	#shopify-section-{{section.id}}.hero-product .content > p{
-		font-size: 16px;
-	}
-
-	#shopify-section-{{section.id}}.hero-product .illus {
-		height: 250px;
-        width: 100%;
-	}
-}
-
-    {% endstyle %}
+  #shopify-section-{{section.id}}.hero-product {
+  	padding-bottom: unset;
+  	padding-top: 164px;
+  	background: linear-gradient(
+  			180deg,
+  			rgba(170, 126, 113, 0.1) 0%,
+  			rgba(170, 126, 113, 0.0) 100%
+  		), #fff;
+  }
+  #shopify-section-{{section.id}}.hero-product .container {
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: space-between;
+  	gap: 79px;
+  }
+  #shopify-section-{{section.id}}.hero-product .content {
+  	max-width: 500px;
+  }
+  #shopify-section-{{section.id}}.hero-product .illus {
+  	flex: 1;
+  	border-radius: 16px;
+  	object-fit: contain;
+  	height: 400px;
+      width: 80%;
+  }
+  
+  @media only screen and (max-width: 990px) {
+  		#shopify-section-{{section.id}}.hero-product .illus {
+  			width: 100%;
+  			max-width: 100%;
+  			flex: unset;
+  			height: 400px;
+  		}
+  		#shopify-section-{{section.id}}.hero-product .container {
+  			flex-direction: column;
+  			gap: 40px;
+  		}
+  		#shopify-section-{{section.id}}.hero-product .content {
+  			max-width: 100%;
+  		}
+  	}
+  
+  
+  @media (max-width: 768px) {
+  	#shopify-section-{{section.id}}.hero-product {
+  		padding-top: 120px;
+  	}
+  
+  	#shopify-section-{{section.id}}.hero-product .content {
+  		max-width: 100%;
+  		padding: 0 0;
+  	}
+  	#shopify-section-{{section.id}}.hero-product .content > h1{
+  		font-size: 40px;
+  	}
+  	#shopify-section-{{section.id}}.hero-product .content > h1 > span{
+  		font-size: 40px;
+  	}
+  	#shopify-section-{{section.id}}.hero-product .content > p{
+  		font-size: 16px;
+  	}
+  
+  	#shopify-section-{{section.id}}.hero-product .illus {
+  		height: 250px;
+          width: 100%;
+  	}
+  }
+{% endstyle %}
     
 <div class="container">
     <div class="content">
