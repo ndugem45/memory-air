@@ -269,7 +269,11 @@
                 {% endfor %}
             </div>
 
-                                              <!-- pagine here -->
+            {% if articles.size > per_page %}
+                <div class="show-more-wrapper m-top m-32">
+                    <button id="showMoreBtn" class="btn show-more">Show More</button>
+                </div>
+            {% endif %}
         </div>
     </div>
 
@@ -288,6 +292,23 @@
 
                         document.querySelector(`[tab-data='${targetTab}']`).classList.add("active");
                     });
+                });
+
+                const items = document.querySelectorAll('.article-item');
+                const showMoreBtn = document.getElementById('showMoreBtn');
+                const perPage = 12;
+                let currentVisible = perPage;
+        
+                showMoreBtn.addEventListener('click', function () {
+                    for (let i = currentVisible; i < currentVisible + perPage; i++) {
+                        if (items[i]) {
+                            items[i].classList.remove('hidden');
+                        }
+                    }
+                    currentVisible += perPage;
+                    if (currentVisible >= items.length) {
+                        showMoreBtn.style.display = 'none';
+                    }
                 });
             });
     </script>
