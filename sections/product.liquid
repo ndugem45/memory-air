@@ -290,7 +290,11 @@
                     markers: true,
                     toggleActions: "play reverse play reverse",
                     scrub: false,
-                }
+                    onEnter: () => item.classList.add("active"),
+                    onLeave: () => item.classList.remove("active"),
+                    onEnterBack: () => item.classList.add("active"),
+                    onLeaveBack: () => item.classList.remove("active"),
+                },
             }
         );
     });
