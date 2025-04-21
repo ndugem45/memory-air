@@ -264,11 +264,11 @@
   items.forEach((item, index) => {
       gsap.fromTo(
           item,
-          { opacity: 0, y: 50 },
+          { opacity: 0.7, y: 0 },
           {
               opacity: 1,
               y: 0,
-              duration: 0.5,
+              duration: 0.3,
               scrollTrigger: {
                   trigger: item,
                   start: "top 60%",  // Animasi mulai ketika bagian atas item 60% dari viewport
@@ -280,6 +280,15 @@
           }
       );
   });
+
+  ScrollTrigger.create({
+      trigger: ".product .left-content",
+      start:"top 30%",
+      end: "bottom 30%",
+      markers: true,
+      pin: true,
+  })
+
 
   // document.querySelectorAll(".right-content .item").forEach((section, index) => {
   //     gsap.to(section, {
