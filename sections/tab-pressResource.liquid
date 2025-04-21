@@ -192,6 +192,14 @@
         font-size: 18px;
     }
 {% endstyle %}
+
+
+
+{% assign articles = blog.settings.news_blog.articles %}
+{% assign per_page = 12 %}
+{% assign current_page = request.params.page | default: 1 | plus: 0 %}
+{% assign offset = per_page | times: current_page | minus: per_page %}
+{% assign paginated_articles = articles | slice: offset, per_page %}
     
 	
 
@@ -230,7 +238,7 @@
                     {% else %}
                         <div class="tab-content" tab-data="{{ blog.settings.news_blog.title | remove: ' ' }}">
                     {% endif %}
-                        {% for article in blog.settings.news_blog.articles %}
+                        {% for article in paginated_articles %}
                             <div class="card_press p-2">
                                 <a href="{{ article.url }}"> 
                                     <img src="{{ article.image.src | img_url: 'master' }}" alt="">
