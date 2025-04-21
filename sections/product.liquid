@@ -72,6 +72,15 @@
     background: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(237, 221, 83, 0) 100%);
     opacity: 0;
   }
+  #shopify-section-{{section.id}}.product .right-content .item:before{
+    content: '';
+    position: absolute;
+    height: 7px;
+    width: 7px;
+    left: calc( calc( 66px / 2 ) - 1px ); 
+    top: 0;
+    background: #ffffff;
+  }
   #shopify-section-{{section.id}}.product .right-content .item.active:after{
     opacity: 1;
   }
