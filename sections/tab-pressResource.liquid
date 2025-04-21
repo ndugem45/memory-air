@@ -3,6 +3,12 @@
 {% assign card-img = 'press_card.png' | asset_url | append: '?v=' | append: 'timestamp' %}
 {% assign card-img2 = 'press_card2.png' | asset_url | append: '?v=' | append: 'timestamp' %}
 
+{% assign articles = blog.settings.news_blog.articles %}
+{% assign per_page = 12 %}
+{% assign current_page = request.params.page | default: 1 | plus: 0 %}
+{% assign offset = per_page | times: current_page | minus: per_page %}
+{% assign paginated_articles = articles | slice: offset, per_page %}
+
 {% style %}
     #shopify-section-{{section.id}}{
         padding-top: 0;
@@ -192,14 +198,6 @@
         font-size: 18px;
     }
 {% endstyle %}
-
-
-
-{% assign articles = blog.settings.news_blog.articles %}
-{% assign per_page = 12 %}
-{% assign current_page = request.params.page | default: 1 | plus: 0 %}
-{% assign offset = per_page | times: current_page | minus: per_page %}
-{% assign paginated_articles = articles | slice: offset, per_page %}
     
 	
 
@@ -216,6 +214,9 @@
                             Oldest
                         </option>
                     </select> {% endcomment %}
+                    {{ current_page }}
+                    {{ articles | json | escape }}
+                    {{ offset }}
                 </div>
                 
                 {% if section.blocks != blank %}
