@@ -266,6 +266,21 @@
                     </div> 
                 {% endfor %}
             </div>
+                                              
+            {% assign total_pages = articles.size | divided_by: per_page | ceil %}
+
+            {% if total_pages > 1 %}
+                <div class="pagination">
+                    {% for i in (1..total_pages) %}
+                        {% if i == current_page %}
+                            <span class="page-number active">{{ i }}</span>
+                        {% else %}
+                            <a class="page-number" href="?page={{ i }}">{{ i }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+            
         </div>
     </div>
 
