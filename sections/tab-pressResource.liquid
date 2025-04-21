@@ -237,7 +237,7 @@
                         <div class="tab-content" tab-data="{{ blog.settings.news_blog.title | remove: ' ' }}">
                     {% endif %}
                   
-                        {% for article in articles %}
+                        {% for article in paginated_articles %}
                             <div class="card_press p-2">
                                 <a href="{{ article.url }}"> 
                                     <img src="{{ article.image.src | img_url: 'master' }}" alt="">
