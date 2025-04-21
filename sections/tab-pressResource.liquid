@@ -296,19 +296,16 @@
 
                 
                 const showMoreBtn = document.getElementById('showMoreBtn');
-                const perPage = 12;
-                let currentVisible = perPage;
         
                 showMoreBtn.addEventListener('click', function () {
                     const items = document.querySelectorAll('.tab-content.active .card_press');
+                    const perPage = 12;
+                    let currentVisible = document.querySelectorAll('.tab-content.active .card_press:not(.hidden)');
+                  
                     for (let i = currentVisible; i < currentVisible + perPage; i++) {
                         if (items[i]) {
                             items[i].classList.remove('hidden');
                         }
-                    }
-                    currentVisible += perPage;
-                    if (currentVisible >= items.length) {
-                        showMoreBtn.style.display = 'none';
                     }
                 });
             });
