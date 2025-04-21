@@ -260,27 +260,26 @@
 
   const items = document.querySelectorAll(".right-content .item");
 
-  // Loop melalui setiap item di kiri untuk animasi scroll
-  items.forEach((item, index) => {
-      gsap.fromTo(
-          item,
-          { opacity: 0, y: 50 },
-          {
-              opacity: 1,
-              y: 0,
-              duration: 0.5,
-              scrollTrigger: {
-                  trigger: item,
-                  start: "top 60%",  // Animasi mulai ketika bagian atas item 60% dari viewport
-                  end: "top 40%",
-                  toggleActions: "play reverse play reverse",
-                  scrub: true,
-              }
-          }
-      );
-  });
+  // items.forEach((item, index) => {
+  //     gsap.fromTo(
+  //         item,
+  //         { opacity: 0, y: 50 },
+  //         {
+  //             opacity: 1,
+  //             y: 0,
+  //             duration: 0.5,
+  //             scrollTrigger: {
+  //                 trigger: item,
+  //                 start: "top 60%",  // Animasi mulai ketika bagian atas item 60% dari viewport
+  //                 end: "top 40%",
+  //                 toggleActions: "play reverse play reverse",
+  //                 scrub: true,
+  //             }
+  //         }
+  //     );
+  // });
 
-  {% comment %} document.querySelectorAll(".right-content .item").forEach((section, index) => {
+  document.querySelectorAll(".right-content .item").forEach((section, index) => {
       gsap.to(section, {
           scrollTrigger: {
               trigger: section,
@@ -292,7 +291,7 @@
               pinSpacing: false,
           },
       });
-  }); {% endcomment %}
+  });
 </script>
 
 {% schema %}
