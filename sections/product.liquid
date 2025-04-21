@@ -22,7 +22,7 @@
   #shopify-section-{{section.id}}.product .left-content{
     display: flex;
     gap: 28px;
-    padding-bottom: 45px;
+    padding-bottom: 64px;
     /* position: sticky;
     top: 25vh; */
   }
@@ -310,7 +310,7 @@
                     trigger: item,
                     start: index == 0 ? "-100% center" : "30% center",
                     end: index+1 < items.length ? "120% center" : "400% center",
-                    markers: false,
+                    markers: true,
                     toggleActions: "play reverse play reverse",
                     scrub: false,
                     onEnter: () => item.classList.add("active"),
