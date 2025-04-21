@@ -101,36 +101,71 @@
     "faq": {
       "type": "faq",
       "blocks": {
-        "faq_item_RbUbgy": {
+        "faq_item_tbbfmb": {
           "type": "faq_item",
           "settings": {
-            "faq_object": "how-does-memory-air-work"
+            "faq_object": "does-memory-air-sup-sup-really-work"
           }
         },
-        "faq_item_9PXGjb": {
+        "faq_item_mBL9bQ": {
           "type": "faq_item",
           "settings": {
-            "faq_object": "how-long-will-it-take-to-feel-results"
+            "faq_object": "why-isnt-a-diffuser-enought-to-improve-my-memory"
           }
         },
-        "faq_item_RyhqKH": {
+        "faq_item_NEqgLX": {
           "type": "faq_item",
           "settings": {
-            "faq_object": "will-memory-air-work-outside-the-united-states"
+            "faq_object": "how-is-memory-air-sup-sup-different-from-aromatherapy"
           }
         },
-        "faq_item_kPkmb9": {
+        "faq_item_4pdNmg": {
           "type": "faq_item",
           "settings": {
-            "faq_object": "what-should-i-do-with-my-memory-air-if-i-go-on-vacation"
+            "faq_object": "how-long-will-it-take-for-my-memory-to-get-better"
+          }
+        },
+        "faq_item_J6yhG8": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "will-it-harm-my-pets"
+          }
+        },
+        "faq_item_kwNEkT": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "will-memory-air-sup-sup-help-to-improve-my-sense-of-smell"
+          }
+        },
+        "faq_item_h73fRx": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "will-memory-air-sup-sup-distrub-my-sleep"
+          }
+        },
+        "faq_item_4FXLPf": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "what-does-memory-air-sup-sup-smell-like"
+          }
+        },
+        "faq_item_ATCCAU": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "what-if-im-bothered-by-certain-scents"
           }
         }
       },
       "block_order": [
-        "faq_item_RbUbgy",
-        "faq_item_9PXGjb",
-        "faq_item_RyhqKH",
-        "faq_item_kPkmb9"
+        "faq_item_tbbfmb",
+        "faq_item_mBL9bQ",
+        "faq_item_NEqgLX",
+        "faq_item_4pdNmg",
+        "faq_item_J6yhG8",
+        "faq_item_kwNEkT",
+        "faq_item_h73fRx",
+        "faq_item_4FXLPf",
+        "faq_item_ATCCAU"
       ],
       "settings": {
         "section_title": "",
