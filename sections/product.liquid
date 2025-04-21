@@ -263,11 +263,11 @@
     items.forEach((item, index) => {
         gsap.fromTo(
             item,
-            { opacity: 0.3, marginBottom: 24 },
+            { opacity: 0.3, paddingBottom: 24 },
             {
                 opacity: 1,
                 duration: 0.3,
-                marginBottom: index+1 < items.length ? 150 : 0,
+                paddingBottom: index+1 < items.length ? 150 : 0,
                 scrollTrigger: {
                     trigger: item,
                     start: index == 0 ? "-30% center" : "top center",
