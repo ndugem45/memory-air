@@ -278,15 +278,14 @@
     items.forEach((item, index) => {
         gsap.fromTo(
             item,
-            { opacity: 0.3, paddingBottom: 0, paddingTop: 0 },
+            { opacity: 0.3, paddingBottom: 24 },
             {
                 opacity: 1,
                 duration: 0.3,
-                paddingBottom: index == 0 ? 0 : 24,
-                paddingTop: index > 0 ? 150 : 0,
+                paddingBottom: index+1 < items.length ? 150 : 24,
                 scrollTrigger: {
                     trigger: item,
-                    start: index == 0 ? "-100% center" : "30% center",
+                    start: index == 0 ? "100% center" : "30% center",
                     end: index+1 < items.length ? "130% center" : "400% center",
                     markers: true,
                     toggleActions: "play reverse play reverse",
