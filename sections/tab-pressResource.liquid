@@ -46,6 +46,9 @@
     #shopify-section-{{section.id}} .card_press{
         height: 100%;
     }
+    #shopify-section-{{section.id}} .card_press.hidden{
+      display: none;
+    }
     #shopify-section-{{section.id}} .card_press img{
         width: 100%;
         height: 350px;
@@ -225,20 +228,19 @@
             </div>
             <div class="press_tab-body">
                 {% for blog in section.blocks %}
-                    {% assign articles = blog.settings.news_blog.articles %}
-                    {% assign per_page = 12 %}
-                    {% assign current_page = request.params.page | default: 1 | plus: 0 %}
-                    {% assign offset = per_page | times: current_page | minus: per_page %}
-                    {% assign paginated_articles = articles | slice: offset, per_page %}
                   
                     {% if forloop.first %}
                         <div class="tab-content active" tab-data="{{ blog.settings.news_blog.title | remove: ' ' }}">
                     {% else %}
                         <div class="tab-content" tab-data="{{ blog.settings.news_blog.title | remove: ' ' }}">
                     {% endif %}
+
+                        {% assign articles = blog.settings.news_blog.articles %}
+                        {% assign per_page = 12 %}
                   
-                        {% for article in paginated_articles %}
-                            <div class="card_press p-2">
+                        {% for article in articles %}
+                            {% assign index = forloop.index0 %}
+                            <div class="card_press p-2 {% if index >= per_page %} hidden{% endif %}">
                                 <a href="{{ article.url }}"> 
                                     <img src="{{ article.image.src | img_url: 'master' }}" alt="">
                                 </a>
@@ -266,21 +268,8 @@
                     </div> 
                 {% endfor %}
             </div>
-                                              
-            {% assign total_pages = articles.size | divided_by: per_page | ceil %}
 
-            {% if total_pages > 1 %}
-                <div class="pagination">
-                    {% for i in (1..total_pages) %}
-                        {% if i == current_page %}
-                            <span class="page-number active">{{ i }}</span>
-                        {% else %}
-                            <a class="page-number" href="?page={{ i }}">{{ i }}</a>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-            {% endif %}
-            
+                                              <!-- pagine here -->
         </div>
     </div>
 
