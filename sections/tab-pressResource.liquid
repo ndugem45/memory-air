@@ -300,7 +300,7 @@
                 showMoreBtn.addEventListener('click', function () {
                     const items = document.querySelectorAll('.tab-content.active .card_press');
                     const perPage = 12;
-                    let currentVisible = document.querySelectorAll('.tab-content.active .card_press:not(.hidden)');
+                    let currentVisible = document.querySelectorAll('.tab-content.active .card_press:not(.hidden)').length;
                   
                     for (let i = currentVisible; i < currentVisible + perPage; i++) {
                         if (items[i]) {
