@@ -50,7 +50,6 @@
   #shopify-section-{{section.id}}.product .right-content{
     display: flex;
     flex-direction: column;
-    gap: 24px;
     flex: 1;
     /* height: 700px; */
   }
@@ -264,7 +263,7 @@
     items.forEach((item, index) => {
         gsap.fromTo(
             item,
-            { opacity: 0.3, marginBottom: 0 },
+            { opacity: 0.3, marginBottom: 24 },
             {
                 opacity: 1,
                 duration: 0.3,
