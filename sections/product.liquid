@@ -265,11 +265,12 @@
     items.forEach((item, index) => {
         gsap.fromTo(
             item,
-            { opacity: 0.3, y: 0 },
+            { opacity: 0.3, y: 0, height: 0 },
             {
                 opacity: 1,
                 y: 0,
                 duration: 0.3,
+                height: 150,
                 scrollTrigger: {
                     trigger: item,
                     start: "top 60%",  // Animasi mulai ketika bagian atas item 60% dari viewport
