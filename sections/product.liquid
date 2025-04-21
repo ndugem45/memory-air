@@ -68,7 +68,12 @@
     width: 1px;
     left: calc( calc( 66px / 2 ) - 1px ); 
     top: 0;
-    background-color: white;
+    background: #ffffff;
+    background: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(237, 221, 83, 0) 100%);
+    opacity: 0;
+  }
+  #shopify-section-{{section.id}}.product .right-content .item.active:after{
+    opacity: 1;
   }
   #shopify-section-{{section.id}}.product .right-content .item:last-child::after{
     display: none;
