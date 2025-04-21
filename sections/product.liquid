@@ -52,7 +52,7 @@
     flex-direction: column;
     gap: 24px;
     flex: 1;
-    /* height: 3000px; */
+    height: 700px;
   }
   #shopify-section-{{section.id}}.product .right-content .item{
     display: flex;
@@ -273,7 +273,7 @@
                     trigger: item,
                     start: "-20% center",
                     end: "80% center",
-                    markers: true,
+                    markers: false,
                     toggleActions: "play reverse play reverse",
                     scrub: false,
                 }
@@ -284,8 +284,8 @@
     ScrollTrigger.create({
         trigger: ".product .left-content",
         start:"top center",
-        end: "60% center",
-        markers: false,
+        end: "center center",
+        markers: true,
         pin: true,
     })
   
