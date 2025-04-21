@@ -300,8 +300,11 @@
                 let currentVisible = perPage;
         
                 showMoreBtn.addEventListener('click', function () {
+                    console.log(1)
                     for (let i = currentVisible; i < currentVisible + perPage; i++) {
+                      console.log(2)
                         if (items[i]) {
+                          console.log(3)
                             items[i].classList.remove('hidden');
                         }
                     }
