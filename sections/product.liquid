@@ -272,7 +272,7 @@
                 scrollTrigger: {
                     trigger: item,
                     start: "-20% center",
-                    end: "80% center",
+                    end: index+1 < items.length ? "80% center" : "120% center",
                     markers: false,
                     toggleActions: "play reverse play reverse",
                     scrub: false,
@@ -281,13 +281,13 @@
         );
     });
   
-    ScrollTrigger.create({
-        trigger: ".product .left-content",
-        start:"center center",
-        end: "60% center",
-        markers: true,
-        pin: true,
-    })
+    // ScrollTrigger.create({
+    //     trigger: ".product .left-content",
+    //     start:"center center",
+    //     end: "60% center",
+    //     markers: true,
+    //     pin: true,
+    // })
   
   
     // document.querySelectorAll(".right-content .item").forEach((section, index) => {
