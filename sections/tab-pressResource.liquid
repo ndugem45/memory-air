@@ -307,6 +307,10 @@
                             items[i].classList.remove('hidden');
                         }
                     }
+                    currentVisible += perPage;
+                    if (currentVisible >= items.length) {
+                        showMoreBtn.style.display = 'none';
+                    }
                 });
             });
     </script>
