@@ -248,13 +248,11 @@
                         
                         {% for article in articles %}
                           {% if article.metafields.custom.level != null %}
-                            {% assign articles_with_level = articles_with_level | push: article %}
+                            {% assign articles_with_level = articles_with_level | concat: article %}
                           {% else %}
-                            {% assign articles_without_level = articles_without_level | push: article %}
+                            {% assign articles_without_level = articles_without_level | concat: article %}
                           {% endif %}
                         {% endfor %}
-                  
-                        {{ articles_without_level | json | escape }}
                         
                         {%- assign sorted_articles_with_level = articles_with_level | sort: "metafields.custom.level" -%}
                         {%- assign sorted_articles_with_level = sorted_articles_with_level | reverse -%}
