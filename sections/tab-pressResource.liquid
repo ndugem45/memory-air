@@ -242,50 +242,36 @@
                     {% endif %}
 
                         {% assign articles = blog.settings.news_blog.articles %}
-
-                        {% assign articles_with_level = "" | split: "" %}
-                        {% assign articles_without_level = "" | split: "" %}
-                        
-                        {% for article in articles %}
-                          {% if article.metafields.custom.level != null %}
-                            {% assign articles_with_level = articles_with_level | concat: article %}
-                          {% else %}
-                            {% assign articles_without_level = articles_without_level | concat: article %}
-                          {% endif %}
-                        {% endfor %}
-                        
-                        {%- assign sorted_articles_with_level = articles_with_level | sort: "metafields.custom.level" -%}
-                        {%- assign sorted_articles_with_level = sorted_articles_with_level | reverse -%}
-                        {%- assign all_articles_sorted = sorted_articles_with_level | concat: articles_without_level -%}
-                        
                         {% assign per_page = 12 %}
-                        
-                        {% for article in all_articles_sorted %}
-                            {% assign index = forloop.index0 %}
-                            <div class="card_press p-2 {% if index >= per_page %} hidden{% endif %}">
-                                <a href="{{ article.url }}"> 
-                                    <img src="{{ article.image.src | img_url: 'master' }}" alt="">
-                                </a>
-                                <div class="card_press-body m-top m-32">
-                                    <h3 class="card_press-body-text font-semibold m-btm m-12">
-                                        <a href="{{ article.url }}"> 
-                                            {{ article.title }}
-                                        </a>
-                                    </h3>
-                                    {% if article.excerpt.size > 0 %}
-                                        {{ article.excerpt }}
-                                    {% else %}
-                                        <p class="card_press-body-dsc font-medium text-16 m-btm m-12">{{ article.content | strip_html | truncatewords: 100 }}</p>
-                                    {% endif %}
-                                    <a class="card_press-body-link font-semibold" href="{{ article.url }}">
-                                        Read more
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="20" viewBox="0 0 8 20" fill="none">
-                                            <path d="M1.70801 6.5L5.70801 10.5L1.70801 14.5" stroke="#232323" stroke-width="1.5" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
+
+                        {% for article in articles %}
+                          {% assign level = article.metafields.custom.level.value | default: 0 %}
+                          {% assign index = forloop.index0 %}
+                          <div class="card_press p-2 {% if index >= per_page %} hidden{% endif %}" data-level="{{ level }}">
+                              <a href="{{ article.url }}"> 
+                                  <img src="{{ article.image.src | img_url: 'master' }}" alt="">
+                              </a>
+                              <div class="card_press-body m-top m-32">
+                                  <h3 class="card_press-body-text font-semibold m-btm m-12">
+                                      <a href="{{ article.url }}">{{ article.title }}</a>
+                                  </h3>
+                                  {% if article.excerpt.size > 0 %}
+                                      {{ article.excerpt }}
+                                  {% else %}
+                                      <p class="card_press-body-dsc font-medium text-16 m-btm m-12">
+                                        {{ article.content | strip_html | truncatewords: 100 }}
+                                      </p>
+                                  {% endif %}
+                                  <a class="card_press-body-link font-semibold" href="{{ article.url }}">
+                                      Read more
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="20" viewBox="0 0 8 20" fill="none">
+                                          <path d="M1.70801 6.5L5.70801 10.5L1.70801 14.5" stroke="#232323" stroke-width="1.5" />
+                                      </svg>
+                                  </a>
+                              </div>
+                          </div>
                         {% endfor %}
+
 
                     </div> 
                 {% endfor %}
