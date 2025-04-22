@@ -89,10 +89,6 @@
         "section_label": "Interested in Providing Memory Air®?",
         "section_title": "<span>Refer Your Patients to</span>\n<br> Memory Air® with Confidence"
       }
-    },
-    "fda-text": {
-      "type": "fda-text",
-      "settings": {}
     }
   },
   "order": [
@@ -101,7 +97,6 @@
     "patients",
     "finaly",
     "behind",
-    "contactus",
-    "fda-text"
+    "contactus"
   ]
 }
