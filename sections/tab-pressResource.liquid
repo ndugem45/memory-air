@@ -287,8 +287,20 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+          
+        
           const tabButtons = document.querySelectorAll(".tab-button");
           const tabContents = document.querySelectorAll(".tab-content");
+          const currentHide = document.querySelectorAll('.tab-content.active .card_press.hidden').length;
+          const showMoreBtn = document.getElementById('showMoreBtn');
+
+          function checkHide(){
+              if (currentHide > 0) {
+                showMoreBtn.style.display = 'block';
+              }else{
+                showMoreBtn.style.display = 'none';
+              }            
+          }
 
           tabButtons.forEach(button => {
               button.addEventListener("click", function () {
@@ -299,17 +311,19 @@
                   tabContents.forEach(content => content.classList.remove("active"));
 
                   document.querySelector(`[tab-data='${targetTab}']`).classList.add("active");
+                
+                  checkHide();
               });
           });
 
           
-          const showMoreBtn = document.getElementById('showMoreBtn');
+          
   
           showMoreBtn.addEventListener('click', function () {
               const items = document.querySelectorAll('.tab-content.active .card_press');
               const perPage = 12;
               const currentVisible = document.querySelectorAll('.tab-content.active .card_press:not(.hidden)').length;
-              const currentHide = document.querySelectorAll('.tab-content.active .card_press.hidden').length;
+              
             
               for (let i = currentVisible; i < currentVisible + perPage; i++) {
                   if (items[i]) {
@@ -317,11 +331,7 @@
                   }
               }
             
-              if (currentHide > 0) {
-                showMoreBtn.style.display = 'block';
-              }else{
-                showMoreBtn.style.display = 'none';
-              }
+              checkHide();              
           });
 
           function sortArticles(){
