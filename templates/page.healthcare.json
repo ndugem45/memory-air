@@ -49,7 +49,7 @@
           "type": "medical_card",
           "settings": {
             "medical_title": "Therapists and Counselors",
-            "medical_content": "<ul><li>Psychologist</li><li>Psychotherapist</li><li>PhD</li><li>Marriage, Family, Child Counselor (MFCC or MFC)</li><li>Licensed Clinical Social Worker (LCSW)</li><li>Religious or Pastoral Clinician (Priests, Pastors, Rabbis, Imams, etc.)</li></ul>"
+            "medical_content": "<ul><li>Psychologist</li><li>Psychotherapist</li><li>PhD</li><li>Marriage, Family, Child Counselor (MFCC or MFC)</li><li>Licensed Clinical Social Worker (LCSW)</li><li>Religious or Pastoral Clinician (Priest, Pastor, Rabbi, Imam, etc.)</li></ul>"
           }
         },
         "medical_card_nTWmYm": {
