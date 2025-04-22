@@ -325,7 +325,7 @@
           });
 
           function sortArticles(){
-            document.querySelector('.tab-content.active').style.display = 'none';
+            document.querySelector('.tab-content.active').style.opacity = 0;
             
             containers.forEach((container)=>{
               const articles = Array.from(container.querySelectorAll('.card_press'));
@@ -335,13 +335,11 @@
                 const levelB = parseInt(b.getAttribute('data-level')) || 0;
                 return levelB - levelA;
               });
-              console.log(1)
               
               sorted.forEach(article => container.appendChild(article));
             })
           
-            document.querySelector('.tab-content.active').style.display = 'grid';
-            console.log(2)
+            document.querySelector('.tab-content.active').style.opacity = 1;
           }
 
           const containers = document.querySelectorAll('.tab-content');
