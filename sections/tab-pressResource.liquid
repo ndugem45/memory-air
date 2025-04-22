@@ -327,7 +327,7 @@
           function sortArticles(){
             const containers = document.querySelectorAll('.tab-content');
             containers.forEach((container)=>{
-              container.style.display = 'none';
+              container.classList.remove('active')
               const articles = Array.from(container.querySelectorAll('.card_press'));
               
               const sorted = articles.sort((a, b) => {
@@ -338,7 +338,7 @@
               
               sorted.forEach(article => container.appendChild(article));
             })
-            document.querySelector('.tab-content.active').style.display = 'grid';
+            containers[0].classList.add('active')
           }
       
           sortArticles()
