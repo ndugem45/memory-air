@@ -325,7 +325,6 @@
           });
 
           function sortArticles(){
-            
             containers.forEach((container)=>{
               const articles = Array.from(container.querySelectorAll('.card_press'));
               
@@ -337,6 +336,7 @@
               
               sorted.forEach(article => container.appendChild(article));
             })
+            document.querySelector('.tab-content.active').style.display = 'grid';
           }
 
           const containers = document.querySelectorAll('.tab-content');
