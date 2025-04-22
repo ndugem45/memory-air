@@ -194,6 +194,12 @@
     #shopify-section-{{section.id}} .left-wrapper select{
         font-size: 18px;
     }
+
+    #shopify-section-{{section.id}} .show-more-wrapper{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 {% endstyle %}
     
 	
@@ -271,7 +277,7 @@
 
             {% if articles.size > per_page %}
                 <div class="show-more-wrapper m-top m-32">
-                    <button id="showMoreBtn" class="btn show-more">Show More</button>
+                    <button id="showMoreBtn" class="btn show-more is-black">Show More</button>
                 </div>
             {% endif %}
         </div>
