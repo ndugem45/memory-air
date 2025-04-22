@@ -325,6 +325,7 @@
           });
 
           function sortArticles(){
+            const containers = document.querySelectorAll('.tab-content');
             containers.forEach((container)=>{
               const articles = Array.from(container.querySelectorAll('.card_press'));
               
@@ -338,8 +339,6 @@
             })
             document.querySelector('.tab-content.active').style.display = 'grid';
           }
-
-          const containers = document.querySelectorAll('.tab-content');
       
           sortArticles()
       });
