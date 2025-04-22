@@ -30,6 +30,18 @@
     },
     "patients": {
       "type": "patients",
+      "blocks": {
+        "medical_card_qacj78": {
+          "type": "medical_card",
+          "settings": {
+            "medical_title": "Medical Practitioners",
+            "medical_content": "<ul><li>Neurologist</li><li>Gerontologist</li><li>Psychiatrist</li><li>Family Practitioner</li><li>Internist</li><li>Gynecologist</li><li>General Practitioner</li><li>Naturopath</li><li>Integrative Medicine Specialist</li><li>Other Physician</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "medical_card_qacj78"
+      ],
       "settings": {}
     },
     "finaly": {
