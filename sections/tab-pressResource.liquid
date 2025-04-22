@@ -247,6 +247,7 @@
                         {% assign articles_without_level = "" | split: "" %}
                         
                         {% for article in articles %}
+                          {{ article.metafields | json | escape }}
                           {% if article.metafields.custom.level != null %}
                             {% assign articles_with_level = articles_with_level | push: article %}
                           {% else %}
