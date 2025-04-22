@@ -325,7 +325,6 @@
                 });
 
                 const containers = document.querySelectorAll('.tab-content');
-                const articles = Array.from(container.querySelectorAll('.card_press'));
             
                 
                 const sorted = articles.sort((a, b) => {
@@ -335,6 +334,7 @@
                 });
             
                 containers.forEach((container)=>{
+                  const articles = Array.from(container.querySelectorAll('.card_press'));
                   sorted.forEach(article => container.appendChild(article));
                 })
             });
