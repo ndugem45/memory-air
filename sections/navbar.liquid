@@ -684,7 +684,7 @@
 
   function tmplt(item) {
     return `<div class="item">
-        <button class="close" onclick="updateThis(${item.id}, true)">
+        <button class="close" onclick="updateMultipleItems()">
           <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
             <line x1="0.927772" y1="0.694298" x2="12.2415" y2="12.008" stroke="#232323" stroke-opacity="0.5" />
             <line x1="12.545" y1="0.894569" x2="1.23125" y2="12.2083" stroke="#232323" stroke-opacity="0.5" />
@@ -821,6 +821,37 @@
         },
         success: function(data) {
           load();
+        },
+        error: function(xhr, status, error) {
+          console.error("Error updating cart:", status, error);
+        }
+      });
+    } catch (e) {
+      console.error("Update function error:", e);
+    }
+  };
+
+  const updateMultipleItems = () => {
+    try {
+      if (updater && typeof updater.abort === 'function') {
+        updater.abort();
+      }
+  
+      const updates = {};
+      const items = cartData.items;
+      items.forEach(item => {
+        updates[item.id] = item.quantity;
+      });
+  
+      updater = jQuery.ajax({
+        type: 'POST',
+        url: window.Shopify.routes.root + 'cart/update.js',
+        data: {
+          updates: updates
+        },
+        dataType: 'json',
+        success: function(data) {
+          load(); 
         },
         error: function(xhr, status, error) {
           console.error("Error updating cart:", status, error);
