@@ -338,8 +338,9 @@
               
               sorted.forEach(article => container.appendChild(article));
             })
-          
-            document.querySelector('.tab-content.active').style.opacity = 1;
+            setTimeout(()=>{
+              document.querySelector('.tab-content.active').style.opacity = 1;
+            },200)
           }
 
           const containers = document.querySelectorAll('.tab-content');
