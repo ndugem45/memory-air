@@ -324,18 +324,19 @@
                     }
                 });
 
-                const container = document.querySelector('.tab-content.active');
+                const containers = document.querySelectorAll('.tab-content');
                 const articles = Array.from(container.querySelectorAll('.card_press'));
             
-                // Sort by data-level in descending order
+                
                 const sorted = articles.sort((a, b) => {
                   const levelA = parseInt(a.getAttribute('data-level')) || 0;
                   const levelB = parseInt(b.getAttribute('data-level')) || 0;
                   return levelB - levelA;
                 });
             
-                // Re-append sorted elements
-                sorted.forEach(article => container.appendChild(article));
+                containers.forEach((container)=>{
+                  sorted.forEach(article => container.appendChild(article));
+                })
             });
     </script>
 
