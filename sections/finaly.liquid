@@ -32,8 +32,14 @@
 		max-width: 1083px;
 	}
 	#shopify-section-{{section.id}} .finaly_wraper-img{
-		width: 100%;
+		width: 80%;
 	}
+    @media (max-width: 480px) {
+      #shopify-section-{{section.id}} .finaly_wraper-img{
+  		width: 100%;
+      }
+    }
+  
 	#shopify-section-{{section.id}} .finaly_wraper-img-card{
 		display: flex;
 		flex-direction: column;
