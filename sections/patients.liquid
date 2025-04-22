@@ -270,8 +270,31 @@
 	
 	
 	{% schema %}
-			{
-					"tag": "section",
-					"class": "patient"
-			}
+      {
+        "tag": "section",
+        "class": "patient",
+        "blocks": [
+          {
+            "name": "Medical card",
+            "type": "medical_card",
+            "settings": [
+              {
+                "type": "text",
+                "id": "medical_title",
+                "label": "Medical card title"
+              },
+              {
+                "type": "image_picker",
+                "id": "medical_image",
+                "label": "Medical card image"
+              },
+              {
+                "type": "richtext",
+                "id": "medical_content",
+                "label": "Medical card content"
+              }
+            ]
+          }
+        ]
+      }
 	{% endschema %}
