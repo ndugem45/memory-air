@@ -335,11 +335,13 @@
                 const levelB = parseInt(b.getAttribute('data-level')) || 0;
                 return levelB - levelA;
               });
+              console.log(1)
               
               sorted.forEach(article => container.appendChild(article));
             })
           
             document.querySelector('.tab-content.active').style.display = 'grid';
+            console.log(2)
           }
 
           const containers = document.querySelectorAll('.tab-content');
