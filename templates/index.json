@@ -75,6 +75,7 @@
     },
     "stories": {
       "type": "stories",
+      "disabled": true,
       "settings": {
         "section_title": "",
         "testi_list": [
