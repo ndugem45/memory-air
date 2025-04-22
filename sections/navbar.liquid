@@ -697,19 +697,6 @@
           <span>
             ${item.newPrice}
           </span>
-          <div class="stepper">
-            <button class="stepper-btn" onclick="stepperUp(false,${item.id})">-</button>
-            <input 
-              type="number" 
-              value="${item.quantity}" 
-              min="1"
-              id="updates_${item.id}" 
-              onchange="updateThis(${item.id})" 
-              onfocusin="focusMe('cartStepper-${item.id}')"
-              onfocusout="focusMe('cartStepper-${item.id}')"
-              >
-            <button class="stepper-btn" onclick="stepperUp(true,${item.id})">+</button>
-          </div>
         </div>
       </div>`
   }
