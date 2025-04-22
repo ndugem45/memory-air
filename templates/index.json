@@ -88,8 +88,8 @@
       "type": "news",
       "settings": {
         "section_title": "",
-        "cta_title": "",
-        "cta_url": "shopify://pages/press-resources"
+        "cta_title": "Buy Now",
+        "cta_url": "shopify://products/memory-air-device"
       }
     },
     "submission": {
