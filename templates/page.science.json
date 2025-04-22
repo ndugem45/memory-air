@@ -36,8 +36,10 @@
     "introduce": {
       "type": "introduce",
       "settings": {
-        "section_product": "memory-air-device",
-        "explore_cta": "shopify://pages/our-product"
+        "left_cta_title": "Buy Now",
+        "left_cta_url": "shopify://products/memory-air-device",
+        "right_cta_title": "Explore Our Product",
+        "right_cta_url": "shopify://pages/our-product"
       }
     },
     "review": {
