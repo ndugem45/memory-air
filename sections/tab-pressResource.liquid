@@ -327,7 +327,7 @@
                 const containers = document.querySelectorAll('.tab-content');
             
                 
-            
+                document.querySelector('.tab-content.active').style.display = 'none';
                 containers.forEach((container)=>{
                   const articles = Array.from(container.querySelectorAll('.card_press'));
                   const sorted = articles.sort((a, b) => {
@@ -336,6 +336,7 @@
                     return levelB - levelA;
                   });
                   sorted.forEach(article => container.appendChild(article));
+                  document.querySelector('.tab-content.active').style.display = 'grid';
                 })
             });
     </script>
