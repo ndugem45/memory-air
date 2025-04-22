@@ -253,7 +253,7 @@
                 centerMode: true,
                 variableWidth: true,
                 autoplay: true,
-                autoplaySpeed: 2000,
+                autoplaySpeed: parseInt({{ section.settings.slider_speed }})*1000,
             });
         
             $("#review-slider").on("afterChange", (event, slick, currentSlide) => {
@@ -277,6 +277,18 @@
     {% schema %}
         {
             "tag": "section",
-            "class": "review"
+            "class": "review",
+            "settings": [
+              {
+                "type": "range",
+                "id": "slider_speed",
+                "min": 1,
+                "max": 20,
+                "step": 1,
+                "unit": "Sec",
+                "label": "Slider speed",
+                "default": 2
+              }
+            ]
         }
     {% endschema %}
