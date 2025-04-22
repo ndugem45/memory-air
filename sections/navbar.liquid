@@ -837,18 +837,18 @@
         updater.abort();
       }
   
-      const updates = {};
+      const updates = [];
       const items = cartData.items;
       items.forEach(item => {
-        updates[item.id] = item.quantity;
+        updates.push({
+          item.id: item.quantity
+        });
       });
   
       updater = jQuery.ajax({
         type: 'POST',
         url: window.Shopify.routes.root + 'cart/update.js',
-        data: {
-          updates: updates
-        },
+        data: JSON.stringify({updates}),
         dataType: 'json',
         success: function(data) {
           load(); 
