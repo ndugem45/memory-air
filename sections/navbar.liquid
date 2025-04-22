@@ -841,7 +841,7 @@
       const items = cartData.items;
       items.forEach(item => {
         updates.push({
-          item.id: item.quantity
+          `${item.id}` : `${item.quantity}`
         });
       });
   
