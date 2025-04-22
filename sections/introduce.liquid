@@ -76,11 +76,11 @@
             <img src="{{ science_display }}" alt="">
         </div>
         <div class="btn-wrap m-top m-32">
-            {% if section.settings.explore_cta != blank %}
-                <a class="btn is-black" href="{{ section.settings.explore_cta }}">Explore Our Product</a>
+            {% if section.settings.left_cta_url != blank %}
+                <a class="btn is-black" href="{{ section.settings.left_cta_url }}">{{ section.settings.left_cta_title }}</a>
             {% endif %}
-            {% if section.settings.section_product != blank %}
-                <a class="btn is-outline-black" href="{{ section.settings.section_product.url }}">Buy Now</a>
+            {% if section.settings.right_cta_url != blank %}
+                <a class="btn is-outline-black" href="{{ section.settings.right_cta_url }}">{{ section.settings.right_cta_title }}</a>
         {% endif %}
         </div>
     </div>
@@ -107,14 +107,26 @@
             "class": "introduce",
             "settings": [
                 {
-                    "type": "product",
-                    "id": "section_product",
-                    "label": "Selected product"
+                    "type": "text",
+                    "id": "left_cta_title",
+                    "label": "Left CTA title",
+                    "default": "Explore Our Product"
                 },
                 {
                     "type": "url",
-                    "id": "explore_cta",
-                    "label": "Explore CTA url"
+                    "id": "left_cta_url",
+                    "label": "Left CTA URL"
+                },
+                {
+                    "type": "text",
+                    "id": "right_cta_title",
+                    "label": "Right CTA title",
+                    "default": "Buy Now"
+                },
+                {
+                    "type": "url",
+                    "id": "right_cta_url",
+                    "label": "Right CTA URL"
                 },
             ]
         }
