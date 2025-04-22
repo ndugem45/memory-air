@@ -16,22 +16,22 @@
     "tab-pressResource": {
       "type": "tab-pressResource",
       "blocks": {
-        "blog_list_mbicTh": {
-          "type": "blog_list",
-          "settings": {
-            "news_blog": "health"
-          }
-        },
         "blog_list_3DYj6Q": {
           "type": "blog_list",
           "settings": {
             "news_blog": "news"
           }
+        },
+        "blog_list_mbicTh": {
+          "type": "blog_list",
+          "settings": {
+            "news_blog": "health"
+          }
         }
       },
       "block_order": [
-        "blog_list_mbicTh",
-        "blog_list_3DYj6Q"
+        "blog_list_3DYj6Q",
+        "blog_list_mbicTh"
       ],
       "settings": {}
     }
