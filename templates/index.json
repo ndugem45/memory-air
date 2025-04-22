@@ -95,6 +95,7 @@
     "submission": {
       "type": "submission",
       "settings": {
+        "section_reverse_order": true,
         "section_product": ""
       }
     },
