@@ -241,6 +241,8 @@
                         <div class="tab-content" tab-data="{{ blog.settings.news_blog.title | remove: ' ' }}">
                     {% endif %}
 
+                        {% assign articles = blog.settings.news_blog.articles %}
+
                         {% assign articles_with_level = "" | split: "" %}
                         {% assign articles_without_level = "" | split: "" %}
                         
