@@ -327,6 +327,7 @@
           function sortArticles(){
             const containers = document.querySelectorAll('.tab-content');
             containers.forEach((container)=>{
+              container.style.display = 'none';
               const articles = Array.from(container.querySelectorAll('.card_press'));
               
               const sorted = articles.sort((a, b) => {
