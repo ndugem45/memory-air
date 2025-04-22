@@ -35,6 +35,7 @@
           "type": "medical_card",
           "settings": {
             "medical_title": "Medical Practitioners",
+            "medical_image": "shopify://shop_images/icon_head-1.png",
             "medical_content": "<ul><li>Neurologist</li><li>Gerontologist</li><li>Psychiatrist</li><li>Family Practitioner</li><li>Internist</li><li>Gynecologist</li><li>General Practitioner</li><li>Naturopath</li><li>Integrative Medicine Specialist</li><li>Other Physician</li></ul>"
           }
         },
@@ -42,6 +43,7 @@
           "type": "medical_card",
           "settings": {
             "medical_title": "Nurses and PAs",
+            "medical_image": "shopify://shop_images/icon_head-2.png",
             "medical_content": "<ul><li>PA's</li><li>Registered Nurse</li><li>Gerontological Nurse (AGNP)</li><li>Memory Care Nurse</li><li>Home Health Nurse</li><li>Rehabilitation Nurse</li><li>Nurse Educator</li><li>Physicians Assistant</li><li>Licensed Nurse Practitioner</li><li>Licensed Vocational Nurse (LVN)</li></ul>"
           }
         },
@@ -49,6 +51,7 @@
           "type": "medical_card",
           "settings": {
             "medical_title": "Therapists and Counselors",
+            "medical_image": "shopify://shop_images/icon_head-3.png",
             "medical_content": "<ul><li>Psychologist</li><li>Psychotherapist</li><li>PhD</li><li>Marriage, Family, Child Counselor (MFCC or MFC)</li><li>Licensed Clinical Social Worker (LCSW)</li><li>Religious or Pastoral Clinician (Priest, Pastor, Rabbi, Imam, etc.)</li></ul>"
           }
         },
@@ -56,6 +59,7 @@
           "type": "medical_card",
           "settings": {
             "medical_title": "Wellness Practitioners",
+            "medical_image": "shopify://shop_images/icon_head-4.png",
             "medical_content": "<ul><li>Chiropractor</li><li>Holistic Provider</li><li>Aromatherapist</li></ul>"
           }
         }
