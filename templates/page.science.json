@@ -44,7 +44,9 @@
     },
     "review": {
       "type": "review",
-      "settings": {}
+      "settings": {
+        "slider_speed": 5
+      }
     },
     "faq": {
       "type": "faq",
