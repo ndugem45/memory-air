@@ -291,10 +291,10 @@
         
           const tabButtons = document.querySelectorAll(".tab-button");
           const tabContents = document.querySelectorAll(".tab-content");
-          const currentHide = document.querySelectorAll('.tab-content.active .card_press.hidden').length;
           const showMoreBtn = document.getElementById('showMoreBtn');
 
           function checkHide(){
+              const currentHide = document.querySelectorAll('.tab-content.active .card_press.hidden').length;
               if (currentHide > 0) {
                 showMoreBtn.style.display = 'block';
               }else{
