@@ -105,7 +105,20 @@
 					<h2 class="patient_title">Support Your Patients
 							<span class="patient_title-span">I’m a...</span>
 					</h2>
-					<div class="patient_card-wrapper">
+                    <div class="patient_card-wrapper">
+                  {% if section.blocks != blank %}
+                    {%- for block in section.blocks -%}
+                      <div class="card_patient">
+                          <div class="card_patient-head">
+                              <h3 class="head_text">{{ block.settings.medical_title }}</h3>
+                              <img class="icon_head" src="{{ block.settings.medical_image.src | img_url: "original" }}" alt="">
+                          </div>
+                          <div class="card_patient-body">
+                              {{ block.settings.medical_content }}
+                          </div>
+                      </div>
+                    {%- endfor -%}
+                  {% else %}
 
 							<div class="card_patient">
 									<div class="card_patient-head">
@@ -263,8 +276,9 @@
 									</ul>
 								</div>
 							</div>
+                  {% endif %}
 				</div>
-			</div>
+            </div>
 	</div>
 
 	
