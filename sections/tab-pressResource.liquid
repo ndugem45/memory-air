@@ -327,14 +327,14 @@
                 const containers = document.querySelectorAll('.tab-content');
             
                 
-                const sorted = articles.sort((a, b) => {
-                  const levelA = parseInt(a.getAttribute('data-level')) || 0;
-                  const levelB = parseInt(b.getAttribute('data-level')) || 0;
-                  return levelB - levelA;
-                });
             
                 containers.forEach((container)=>{
                   const articles = Array.from(container.querySelectorAll('.card_press'));
+                  const sorted = articles.sort((a, b) => {
+                    const levelA = parseInt(a.getAttribute('data-level')) || 0;
+                    const levelB = parseInt(b.getAttribute('data-level')) || 0;
+                    return levelB - levelA;
+                  });
                   sorted.forEach(article => container.appendChild(article));
                 })
             });
