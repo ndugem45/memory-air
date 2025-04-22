@@ -27,6 +27,7 @@
     border-radius: 32px;
     background: var(--color-secondary);
     color: white;
+    direction: ltr;
   }
   @media only screen and (max-width: 990px) {
     .submission .submission_card{
@@ -124,22 +125,7 @@
 {% endstyle %}
 
 {% comment %} <section class="submission"> {% endcomment %}
-  <div class="container">
-    <div class="submission_card">
-      <h2 class="m-btm m-12">
-        Tell a Loved-one About Memory Air<sup>®</sup>
-      </h2>
-      <p class="m-top m-12 opacity-60">
-        Share this revolutionary way to reverse memory loss with the important people in your life.
-      </p>
-      <div id="klaviyo-message-2"></div>
-      <form action="" id="klaviyo-form-2" class="klaviyo-form">
-        <input type="email" name="email" placeholder="Loved-One’s Email" required>
-        <div class="notes" id="klaviyo-success-2"></div>
-        <button class="btn is-brown" type="submit">Submit</button>
-      </form>
-    </div>
-    
+  <div class="container" style="{% if section.settings.section_reverse_order == true %} grid-auto-flow: dense; direction: rtl; {% endif %}">
     <div class="submission_card">
       <h2 class="m-btm m-12">
         Stay Up-to-date
@@ -152,6 +138,21 @@
         <input type="email" name="email" placeholder="Your email" required>
         <div class="notes" id="klaviyo-success"></div>
         <button class="btn is-brown" type="submit">Sign up</button>
+      </form>
+    </div>
+
+    <div class="submission_card">
+      <h2 class="m-btm m-12">
+        Tell a Loved-one About Memory Air<sup>®</sup>
+      </h2>
+      <p class="m-top m-12 opacity-60">
+        Share this revolutionary way to reverse memory loss with the important people in your life.
+      </p>
+      <div id="klaviyo-message-2"></div>
+      <form action="" id="klaviyo-form-2" class="klaviyo-form">
+        <input type="email" name="email" placeholder="Loved-One’s Email" required>
+        <div class="notes" id="klaviyo-success-2"></div>
+        <button class="btn is-brown" type="submit">Submit</button>
       </form>
     </div>
   </div>
@@ -258,6 +259,11 @@
     "tag": "section",
     "class": "submission",
     "settings": [
+      {
+        "type": "checkbox",
+        "id": "section_reverse_order",
+        "label": "Switch card order"
+      },
       {
         "type": "product",
         "id": "section_product",
