@@ -54,36 +54,71 @@
     "faq-plain": {
       "type": "faq-plain",
       "blocks": {
-        "faq_item_jkLbLz": {
-          "type": "faq_item",
-          "settings": {
-            "faq_object": "what-is-memory-air"
-          }
-        },
-        "faq_item_wkX4De": {
-          "type": "faq_item",
-          "settings": {
-            "faq_object": "what-if-im-allergic-or-sensitive-to-certain-scents"
-          }
-        },
-        "faq_item_8D4CRP": {
-          "type": "faq_item",
-          "settings": {
-            "faq_object": "how-long-will-it-take-to-feel-results"
-          }
-        },
         "faq_item_diMQK8": {
           "type": "faq_item",
           "settings": {
-            "faq_object": "what-is-the-science-behind-olfactory-enrichment"
+            "faq_object": "how-does-memory-air-work"
+          }
+        },
+        "faq_item_U8hKeT": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "why-isnt-a-diffuser-enought-to-improve-my-memory"
+          }
+        },
+        "faq_item_jzUbPj": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "how-is-memory-air-sup-sup-different-from-aromatherapy"
+          }
+        },
+        "faq_item_b3Ghec": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "how-long-will-it-take-for-my-memory-to-get-better"
+          }
+        },
+        "faq_item_YXRLFg": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "will-it-harm-my-pets"
+          }
+        },
+        "faq_item_6LdcqG": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "will-memory-air-sup-sup-help-to-improve-my-sense-of-smell"
+          }
+        },
+        "faq_item_jpfmGY": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "will-memory-air-sup-sup-distrub-my-sleep"
+          }
+        },
+        "faq_item_PDq4QV": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "what-does-memory-air-sup-sup-smell-like"
+          }
+        },
+        "faq_item_tThz9K": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "what-if-im-bothered-by-certain-scents"
           }
         }
       },
       "block_order": [
-        "faq_item_jkLbLz",
-        "faq_item_wkX4De",
-        "faq_item_8D4CRP",
-        "faq_item_diMQK8"
+        "faq_item_diMQK8",
+        "faq_item_U8hKeT",
+        "faq_item_jzUbPj",
+        "faq_item_b3Ghec",
+        "faq_item_YXRLFg",
+        "faq_item_6LdcqG",
+        "faq_item_jpfmGY",
+        "faq_item_PDq4QV",
+        "faq_item_tThz9K"
       ],
       "settings": {
         "section_title": "",
