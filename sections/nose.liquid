@@ -114,7 +114,7 @@
     </div>
     <div class="content">
         <video autoplay muted loop>
-            <source src="{{ video_section }}" type="video/mp4">
+            <source src="{{ section.settings.video.video_source | asset_url }}" type="video/mp4">
         </video>
     </div>
     
@@ -127,7 +127,12 @@
           {
             "type":"video",
             "id": "video",
-            "label":"Background video"
+            "label":"Background video (desktop)"
+          },
+          {
+            "type":"video",
+            "id": "video_mobile",
+            "label":"Background video (mobile)"
           }
         ]
       }
