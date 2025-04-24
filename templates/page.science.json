@@ -15,7 +15,9 @@
     },
     "nose": {
       "type": "nose",
-      "settings": {}
+      "settings": {
+        "video": "shopify://files/videos/Desktop 2x longer.mp4"
+      }
     },
     "timeline": {
       "type": "timeline",
