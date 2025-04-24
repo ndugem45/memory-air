@@ -128,7 +128,11 @@
         {% endif %}
       </h3>
       <div class="price">
-        $799 + $39/mo
+        {% if section.settings.left_card_pricing != blank %}
+          {{ section.settings.left_card_pricing }}
+        {% else %}
+          $799 + $39/mo
+        {% endif %}
       </div>
       <div class="list">
         {{ section.settings.card_left_content }}
@@ -168,7 +172,11 @@
         {% endif %}
       </h3>
       <div class="price">
-        $799 + $397/yr
+        {% if section.settings.right_card_pricing != blank %}
+          {{ section.settings.right_card_pricing }}
+        {% else %}
+          $799 + $397/yr
+        {% endif %}
       </div>
       <div class="list">
         {{ section.settings.card_right_content }}
@@ -215,6 +223,11 @@
         "label": "Left card title"
       },
       {
+        "type":"inline_richtext",
+        "id": "left_card_pricing",
+        "label": "Left card pricing"
+      },
+      {
           "type": "text",
           "id": "product_left_title",
           "label": "Left CTA title"
@@ -237,6 +250,11 @@
         "type":"inline_richtext",
         "id": "right_card_title",
         "label": "Right card title"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "right_card_pricing",
+        "label": "Right card pricing"
       },
       {
           "type": "text",
