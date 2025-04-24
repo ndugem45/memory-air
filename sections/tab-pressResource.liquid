@@ -235,10 +235,11 @@
                         <div class="tab-content" tab-data="{{ blog.settings.news_blog.title | remove: ' ' }}">
                     {% endif %}
 
-                        {% assign articles = blog.settings.news_blog.articles %}
+                        {% assign articles = blog.settings.news_blog.articles | sort: 'published_at' %}
                         {% assign per_page = 12 %}
 
                         {% for article in articles %}
+                          {{  }}
                           {% assign level = article.metafields.custom.level.value | default: 0 %}
                           {% assign index = forloop.index0 %}
                           <div class="card_press p-2 {% if index >= per_page %} hidden{% endif %}" data-level="{{ level }}">
@@ -345,7 +346,7 @@
             containers[0].classList.add('active')
           }
       
-          sortArticles()
+          // sortArticles()
       });
     </script>
 
