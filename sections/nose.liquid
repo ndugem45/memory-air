@@ -99,6 +99,23 @@
 		line-height: 130%;
 		text-align: start;
 	}
+    #shopify-section-{{section.id}} .desktop-video {
+      display: block;
+    }
+  
+    #shopify-section-{{section.id}} .mobile-video {
+      display: none;
+    }
+  
+    @media screen and (max-width: 767px) {
+      #shopify-section-{{section.id}} .desktop-video {
+        display: none;
+      }
+  
+      #shopify-section-{{section.id}} .mobile-video {
+        display: block;
+      }
+    }
 }
 
 
@@ -114,17 +131,23 @@
     </div>
     <div class="content">
       {% if section.settings.video != blank %}
-        <video autoplay muted loop playsinline poster="{{ section.settings.video.preview_image.src | img_url: 'master' }}">
+        <video class="desktop-video" autoplay muted loop playsinline poster="{{ section.settings.video.preview_image.src | img_url: 'master' }}">
           {% for source in section.settings.video.sources %}
             <source src="{{ source.url }}" type="{{ source.mime_type }}">
           {% endfor %}
           Your browser does not support the video tag.
         </video>
-      {% else %}
-        <p>Video tidak tersedia.</p>
+      {% endif %}
+    
+      {% if section.settings.video_mobile != blank %}
+        <video class="mobile-video" autoplay muted loop playsinline poster="{{ section.settings.video_mobile.preview_image.src | img_url: 'master' }}">
+          {% for source in section.settings.video_mobile.sources %}
+            <source src="{{ source.url }}" type="{{ source.mime_type }}">
+          {% endfor %}
+          Your browser does not support the video tag.
+        </video>
       {% endif %}
     </div>
-    
     
     {% schema %}
       {
