@@ -33,7 +33,7 @@
         "right_card_title": "<strong>Save 15% </strong>Paying Yearly",
         "right_card_pricing": "$799 + $397/yr",
         "product_right_title": "Buy Now",
-        "card_right_content": "<ul><li>$799 One - Time Charge for Device and One Belt</li><li>$397 pay Yearly ($33 vs $39)</li></ul>",
+        "card_right_content": "<ul><li>$799 One - Time Charge for Device and One Belt</li><li>$397 pay Yearly</li></ul>",
         "product_right": "shopify://products/memory-air-device"
       }
     },
