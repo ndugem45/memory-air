@@ -170,7 +170,7 @@
         "faq_item_ATCCAU"
       ],
       "settings": {
-        "section_title": "",
+        "section_title": "Frequently Asked <br> <span>Questions</span>",
         "section_cta_title": "See All FAQs",
         "section_cta": "shopify://pages/faqs",
         "section_cta_size": false
