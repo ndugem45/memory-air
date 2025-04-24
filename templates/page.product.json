@@ -29,8 +29,8 @@
         "product_left_title": "Buy Now",
         "card_left_content": "<ul><li>$799 One - Time Charge for Device and One Belt</li><li>$39 Per month replacement belts starting in month 2</li></ul>",
         "product_left": "shopify://products/memory-air-device",
-        "right_card_title": "",
-        "product_right_title": "",
+        "right_card_title": "<strong>Save 15% </strong>Paying Yearly",
+        "product_right_title": "Buy Now",
         "card_right_content": "<ul><li>$799 One - Time Charge for Device and One Belt</li><li>$397 pay Yearly ($33 vs $39)</li></ul>",
         "product_right": ""
       }
