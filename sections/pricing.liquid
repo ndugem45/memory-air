@@ -136,7 +136,7 @@
         </div>
       </div>
       {% if section.settings.product_left != blank %}
-        <a href="{{ section.settings.product_left.url }}" class="btn is-white">
+        <a href="{{ section.settings.product_left }}" class="btn is-white">
           Buy Now
         </a>
       {% else %}
@@ -167,11 +167,11 @@
             <path d="M4 13.86L8.66667 19.25L17.7433 8.75" stroke="white" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M15.9219 19.25L24.9985 8.75" stroke="white" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          $397 pay Yearly ($33 vs $39 strikeout) 
+          $397 pay Yearly ($33 vs <strike>$39</strike>) 
         </div>
       </div>
       {% if section.settings.product_right != blank %}
-        <a href="{{ section.settings.product_right.url }}" class="btn is-white">
+        <a href="{{ section.settings.product_right }}" class="btn is-white">
           Buy Now
         </a>
       {% else %}
@@ -189,15 +189,15 @@
     "class": "pricing",
     "settings": [
       {
-				"type": "product",
-				"id": "product_left",
-				"label": "Selected product left"
-			},
+          "type": "url",
+          "id": "product_left",
+          "label": "Left CTA url"
+      },
       {
-				"type": "product",
-				"id": "product_right",
-				"label": "Selected product right"
-			},
+          "type": "url",
+          "id": "product_right",
+          "label": "Reft CTA url"
+      },
     ]
   }
 {% endschema %}
