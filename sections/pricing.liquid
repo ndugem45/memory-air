@@ -114,13 +114,18 @@
     <div class="card">
       <img src="{{ btm-left }}" alt="">
       <h3>
-        Pay Monthly <br> As You Go
+        {% if section.settings.left_card_title != blank %}
+          {{ section.settings.left_card_title }}
+        {% else %}
+          Pay Monthly <br> As You Go
+        {% endif %}
       </h3>
       <div class="price">
         $799 + $39/mo
       </div>
       <div class="list">
-        <div class="list-item">
+        {{ section.settings.card_left_content }}
+        <!-- <div class="list-item">
           <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M4 13.86L8.66667 19.25L17.7433 8.75" stroke="white" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M15.9219 19.25L24.9985 8.75" stroke="white" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
@@ -133,7 +138,7 @@
             <path d="M15.9219 19.25L24.9985 8.75" stroke="white" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           $39 Per month replacement belts starting in month 2 
-        </div>
+        </div> -->
       </div>
       {% if section.settings.product_left != blank %}
         <a href="{{ section.settings.product_left }}" class="btn is-white">
@@ -149,13 +154,18 @@
     <div class="card">
       <img src="{{ btm-right }}" alt="">
       <h3>
-        <strong>Save 15%</strong> <br> Paying Yearly 
+        {% if section.settings.right_card_title != blank %}
+          {{ section.settings.right_card_title }}
+        {% else %}
+          <strong>Save 15%</strong> <br> Paying Yearly 
+        {% endif %}
       </h3>
       <div class="price">
         $799 + $397/yr
       </div>
       <div class="list">
-        <div class="list-item">
+        {{ section.settings.card_right_content }}
+        <!-- <div class="list-item">
           <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M4 13.86L8.66667 19.25L17.7433 8.75" stroke="white" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M15.9219 19.25L24.9985 8.75" stroke="white" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
@@ -168,7 +178,7 @@
             <path d="M15.9219 19.25L24.9985 8.75" stroke="white" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           $397 pay Yearly ($33 vs <strike>$39</strike>) 
-        </div>
+        </div> -->
       </div>
       {% if section.settings.product_right != blank %}
         <a href="{{ section.settings.product_right }}" class="btn is-white">
@@ -189,14 +199,52 @@
     "class": "pricing",
     "settings": [
       {
+        "type": "header",
+        "content": "Left card"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "left_card_title",
+        "label": "Left card title"
+      },
+      {
+          "type": "text",
+          "id": "product_left_title",
+          "label": "Left CTA title"
+      },
+      {
+        "type":"richtext",
+        "id":"card_left_content",
+        "label":"Left content"
+      },
+      {
           "type": "url",
           "id": "product_left",
           "label": "Left CTA url"
       },
       {
+        "type": "header",
+        "content": "Right card"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "right_card_title",
+        "label": "Right card title"
+      },
+      {
+          "type": "text",
+          "id": "product_right_title",
+          "label": "Right CTA title"
+      },
+      {
+        "type":"richtext",
+        "id":"card_right_content",
+        "label":"Right content"
+      },
+      {
           "type": "url",
           "id": "product_right",
-          "label": "Reft CTA url"
+          "label": "Right CTA url"
       },
     ]
   }
