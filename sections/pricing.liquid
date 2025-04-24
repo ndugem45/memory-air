@@ -80,6 +80,7 @@
     margin: auto;
     gap: 16px;
     margin-bottom: 40px;
+    color: white;
   }
   #shopify-section-{{section.id}} .list-item{
     color: #FFF;
@@ -142,7 +143,7 @@
       </div>
       {% if section.settings.product_left != blank %}
         <a href="{{ section.settings.product_left }}" class="btn is-white">
-          Buy Now
+          {{ section.settings.product_left_title }}
         </a>
       {% else %}
         <a href="" class="btn is-white">
@@ -182,7 +183,7 @@
       </div>
       {% if section.settings.product_right != blank %}
         <a href="{{ section.settings.product_right }}" class="btn is-white">
-          Buy Now
+          {{ section.settings.product_right_title }}
         </a>
       {% else %}
         <a href="" class="btn is-white">
