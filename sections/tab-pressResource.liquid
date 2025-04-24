@@ -235,7 +235,7 @@
                         <div class="tab-content" tab-data="{{ blog.settings.news_blog.title | remove: ' ' }}">
                     {% endif %}
 
-                        {% assign articles = blog.settings.news_blog.articles | sort: 'published_at' %}
+                        {% assign articles = blog.settings.news_blog.articles | sort: 'updated_at' %}
                         {% assign per_page = 12 %}
 
                         {% for article in articles %}
