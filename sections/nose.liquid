@@ -113,9 +113,16 @@
         </h2>
     </div>
     <div class="content">
-        <video autoplay muted loop poster="{{ section.settings.video.preview_image.src | img_url }}">
-            <source src="{{ section.settings.video | json | escape }}" type="video/mp4">
+      {% if section.settings.video != blank %}
+        <video autoplay muted loop playsinline poster="{{ section.settings.video.preview_image.src | img_url: 'master' }}">
+          {% for source in section.settings.video.sources %}
+            <source src="{{ source.url }}" type="{{ source.mime_type }}">
+          {% endfor %}
+          Your browser does not support the video tag.
         </video>
+      {% else %}
+        <p>Video tidak tersedia.</p>
+      {% endif %}
     </div>
     
     
