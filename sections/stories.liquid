@@ -71,8 +71,13 @@
   #shopify-section-{{section.id}}.stories .stories_card .content p{
     color: #000;
     font-family: "General Sans Regular";
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
+  }
+  @media only screen and (max-width: 990px) {
+    #shopify-section-{{section.id}}.stories .stories_card .content p{
+      font-size: 16px;
+    }
   }
   #shopify-section-{{section.id}}.stories .stories_card .user{
     display: flex;
