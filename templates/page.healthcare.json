@@ -36,7 +36,7 @@
           "settings": {
             "medical_title": "Medical Practitioners",
             "medical_image": "shopify://shop_images/icon_head-1.png",
-            "medical_content": "<ul><li>Neurologist</li><li>Gerontologist</li><li>Psychiatrist</li><li>Family Practitioner</li><li>Internist</li><li>Gynecologist</li><li>General Practitioner</li><li>Naturopath</li><li>Integrative Medicine Specialist</li><li>Other Physician</li></ul>"
+            "medical_content": "<ul><li>Neurologist</li><li>Gerontologist</li><li>Psychiatrist</li><li>Family Practitioner</li><li>Internist</li><li>Gynecologist</li><li>General Practitioner</li><li>Naturopath</li><li>Integrative Medicine Specialist</li><li>Other Physician or Surgeon</li></ul>"
           }
         },
         "medical_card_xraRnF": {
