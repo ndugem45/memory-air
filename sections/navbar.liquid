@@ -843,7 +843,7 @@
         url: window.Shopify.routes.root + 'cart/clear.js',
         dataType: 'json',
         success: function(data) {
-          load(); 
+          window.location.reload();
         },
         error: function(xhr, status, error) {
           console.error("Error updating cart:", status, error);
