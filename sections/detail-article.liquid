@@ -125,9 +125,11 @@
                         <p>
                             Access the full article for detailed insights and a deeper understanding. Download the complete PDF now.
                         </p>
-                        <p>
-                            Rusznák, et al, Exp. Neurobiol. 2018 Apr; 27(2):94-102.
-                        </p>
+                        {% if article.metafields.custom.paper_notes != blank %}
+                          <p>
+                              {{ article.metafields.custom.paper_notes | html }}
+                          </p>
+                        {% endif %}
                         <a target="_blank" href="{{ article.metafields.custom.pdf_file | file_url }}" class="btn is-brown" download="{{ article.metafields.custom.pdf_file | file_url | split: '?' | first | split: '/' | last }}">
                             Download PDF
                         </a>
