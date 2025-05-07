@@ -102,8 +102,12 @@
     {% endif %}
   </h2>
   <p class="science_text-dsc">
-    Improving your brain by improving your sense of smell
-    (We don’t tell people we’re working on their sense of smell until much later. They don’t know what olfaction is.)
+    {% if section.settings.section_desc != blank %}
+        {{ section.settings.section_desc }}
+    {% else %}
+      Improving your brain by improving your sense of smell
+      (We don’t tell people we’re working on their sense of smell until much later. They don’t know what olfaction is.)
+    {% endif %}
   </p>
   <div class="science_content">
     <div class="science_video">
@@ -151,6 +155,11 @@
         "id": "section_title",
         "label": "Section title",
         "info": "Wrap italic font with <span>"
+      },
+      {
+        "type": "textarea",
+        "id": "section_desc",
+        "label": "Section desc",
       },
       {
         "type": "url",
