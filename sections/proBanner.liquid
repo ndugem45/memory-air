@@ -1,6 +1,168 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
-{% endschema %}
+
+{% assign behind-cta = 'behind_img-cta.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign pattern = 'pattern-brown.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
+	
+{% style %}
+
+	#shopify-section-{{section.id}}.behind{
+		padding-block: 80px;
+	}
+
+	#shopify-section-{{section.id}} .behind_cta{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		border-radius: 16px;
+		padding: 80px 40px;
+		margin-top: 80px;
+		background: #3C2E25 url({{ pattern }}) no-repeat;
+		background-size: cover;
+	}
+
+	#shopify-section-{{section.id}} .behind_cta-title > h2{
+		color: #FFF;
+		text-align: center;
+		font-family: "Cormorant Garamond";
+		font-size: 52px;
+		font-style: italic;
+		font-weight: 500;
+		line-height: 120%; /* 62.4px */
+		letter-spacing: -0.52px;
+		max-width: 700px;
+		width: 100%;
+	}
+
+	#shopify-section-{{section.id}} .behind_cta-items{
+		display: flex;
+		align-content: center;
+		justify-content: center;
+		align-items: center;
+		gap: 18px;
+	}
+
+	#shopify-section-{{section.id}} .behind_cta-img{
+		border-radius: 100%;
+		overflow: hidden;
+		display: flex;
+		width: 200px;
+		height: 200px;
+		min-width: 200px;
+	}
+
+	#shopify-section-{{section.id}} .behind_cta-img > img{
+		width: 100%;
+	}
+
+	#shopify-section-{{section.id}} .behind_cta-text{
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+	#shopify-section-{{section.id}} .behind_cta-text-title{
+		color: #FFF;
+		font-family: "General Sans";
+		font-size: 36px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 140%; /* 50.4px */
+	}
+	#shopify-section-{{section.id}} .behind_cta-text-dsc{
+		color: #FFF;
+		font-family: "General Sans";
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 160%; /* 32px */
+		width: 100%;
+		max-width: 360px;
+	}
+
+@media (max-width: 768px) {
+    #shopify-section-{{section.id}}.behind {
+        padding-block: 40px;
+    }
+
+    #shopify-section-{{section.id}} .behind_cta {
+        padding: 40px 20px;
+        margin-top: 40px;
+    }
+
+    #shopify-section-{{section.id}} .behind_content-cta {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+    }
+
+    #shopify-section-{{section.id}} .behind_cta-title > h2 {
+        font-size: 28px;
+        line-height: 140%;
+    }
+
+    #shopify-section-{{section.id}} .behind_cta-items {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    #shopify-section-{{section.id}} .behind_cta-img {
+        width: 150px;
+        height: 150px;
+        min-width: 150px;
+    }
+
+    #shopify-section-{{section.id}} .behind_cta-text-title {
+        font-size: 24px;
+    }
+
+    #shopify-section-{{section.id}} .behind_cta-text-dsc {
+        font-size: 16px;
+        max-width: 100%;
+    }
+}
+
+
+
+	{% endstyle %}
+	
+
+	<div class="container">
+			<div class="behind_wraper">
+				<div class="behind_cta">
+					<div class="behind_content-cta">
+						<div class="behind_cta-title">
+							<h2>“As far as we know, this is the largest improvement in healthy adults ever reported.”</h2>
+						</div>
+						<div class="behind_cta-items">
+							<div class="behind_cta-img">
+									<img src={{behind-cta}} alt="">
+							</div>
+							<div class="behind_cta-text">
+								<h3 class="behind_cta-text-title">Dr. Michael Leon</h3>
+								<p class="behind_cta-text-dsc">Chief Science Officer of Memory Air and Professor Emeritus of Neurobiology & Behavior, University of California Irvine </p>
+							</div>
+						</div>
+					</div>
+					<div class="behind_content-btn m-top m-54">
+						<a target="_blank" href="{{ section.settings.card_cta_url }}" class="btn is-white">
+							Read The Full Report
+						</a>
+					</div>
+				</div>
+			</div>
+	</div>
+
+	
+	
+	{% schema %}
+      {
+        "tag": "section",
+        "class": "pro-banner",
+        "settings": [
+            {
+                "type": "url",
+                "id": "card_cta_url",
+                "label":"CTA Dr Leon URL"
+            }
+        ]
+      }
+	{% endschema %}
