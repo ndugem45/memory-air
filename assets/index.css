@@ -56,6 +56,10 @@ textarea {
 	padding-inline: 20px;
 }
 
+.text-link:hover{
+  text-decoration: underline;
+}
+
 sup {
 	font-size: 12px;
 }
