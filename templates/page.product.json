@@ -43,6 +43,10 @@
         "section_title": ""
       }
     },
+    "behind": {
+      "type": "behind",
+      "settings": {}
+    },
     "stories": {
       "type": "stories",
       "settings": {
@@ -148,6 +152,7 @@
     "how-it-work",
     "pricing",
     "life",
+    "behind",
     "stories",
     "news",
     "faq-plain",
