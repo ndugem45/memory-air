@@ -8,16 +8,23 @@
  * ------------------------------------------------------------
  */
 {
-	"sections": {
-		"contactus": {
-			"type": "contactus-2",
-			"settings": {
-				"section_product": "memory-air-device"
-			}
-		},
-		"fda-text": {
-			"type": "fda-text"
-		}
-	},
-	"order": ["contactus", "fda-text"]
+  "sections": {
+    "contactus": {
+      "type": "contactus-2",
+      "settings": {
+        "section_product": "memory-air-device",
+        "section_label": "",
+        "section_title": "",
+        "support_url": "shopify://pages/support"
+      }
+    },
+    "fda-text": {
+      "type": "fda-text",
+      "settings": {}
+    }
+  },
+  "order": [
+    "contactus",
+    "fda-text"
+  ]
 }
