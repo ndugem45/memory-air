@@ -81,7 +81,7 @@
       "settings": {}
     },
     "pro-banner": {
-      "type": "behind",
+      "type": "pro-banner",
       "settings": {}
     },
     "contactus": {
