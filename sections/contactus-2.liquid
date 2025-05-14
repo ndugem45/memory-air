@@ -331,7 +331,7 @@
 					<label for="" class="lable-form m-btm m-32">
 						● Thank you for choosing Memory Air
 						<br>
-						● For customer support please visit our support page
+						● For customer support please visit our <a href="{{ section.settings.support_url }}">support page</a>
 						<br>
 						● For general Inquiries please contact us below
 					</label>
@@ -399,6 +399,11 @@
 				"id": "section_title",
 				"label": "Section title",
 				"info": "Wrap italic font with <span>"
+			},
+            {
+				"type": "url",
+				"id": "support_url",
+				"label": "Support URL"
 			},
 		]
 	}
