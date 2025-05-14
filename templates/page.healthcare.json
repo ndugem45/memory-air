@@ -78,9 +78,11 @@
     },
     "behind": {
       "type": "behind",
-      "settings": {
-        "card_cta_url": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2023.1200448/full"
-      }
+      "settings": {}
+    },
+    "pro-banner": {
+      "type": "behind",
+      "settings": {}
     },
     "contactus": {
       "type": "contactus",
@@ -97,6 +99,7 @@
     "patients",
     "finaly",
     "behind",
+    "pro-banner",
     "contactus"
   ]
 }
