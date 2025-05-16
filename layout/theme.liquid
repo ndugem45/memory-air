@@ -8,11 +8,11 @@
     <link rel="canonical" href="{{ canonical_url }}">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
 
-    {% if settings.favicon_light %}
-      <link rel="icon" href="{{ settings.favicon_light | img_url: '32x32' }}" type="image/png" id="favicon-light">
-    {% endif %}
     {% if settings.favicon_dark %}
       <link rel="icon" href="{{ settings.favicon_dark | img_url: '32x32' }}" type="image/png" id="favicon-dark">
+    {% endif %}
+    {% if settings.favicon_light %}
+      <link rel="icon" href="{{ settings.favicon_light | img_url: '32x32' }}" type="image/png" id="favicon-light">
     {% endif %}
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
