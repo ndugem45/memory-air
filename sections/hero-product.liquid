@@ -164,7 +164,7 @@
         if (mainObject) {
           function animate() {
             requestAnimationFrame(animate);
-            // mainObject.rotation.y += 0.005;
+            mainObject.rotation.y += 0.005;
             renderer.render(scene, camera);
           }
           animate();
