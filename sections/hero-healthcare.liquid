@@ -148,13 +148,13 @@
             requestAnimationFrame(animate);
             mainObject.rotation.y += 0.005;
             renderer.render(scene, camera);
+            console.log('selesai');
           }
           animate();
           fitModelToContainer(model, camera, container);
         }
       },
       function () {
-        console.log('selesai');
         container.style.background = null;
       },
       function (error) {
