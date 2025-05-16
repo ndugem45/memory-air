@@ -105,7 +105,11 @@
     </div>
   </div>
 
-  <div id="threejs-container" style="height: 600px;background: url({{ three_preload }}) no-repeat;" class="illus"></div>
+  <div
+    id="threejs-container"
+    style="height: 600px;background: url({{ three_preload }}) no-repeat;background-position: center;background-size: contain;"
+    class="illus"
+  ></div>
 </div>
 
 <script>
@@ -167,7 +171,9 @@
           fitModelToContainer(model, camera, container);
         }
       },
-      undefined,
+      function () {
+        document.querySelector('#threejs-container').style.background = null;
+      },
       function (error) {
         console.error('Gagal memuat model:', error);
       }

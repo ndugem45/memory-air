@@ -1,230 +1,232 @@
 {% comment %} for healthcare page {% endcomment %}
 {% assign healthcareHero = 'healthcare_hero-img.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign three_preload = 'preload_3d.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
 {% assign three_asset = 'air_purifier.gltf' | asset_url | append: '?v=' | append: 'timestamp' %}
 
 {% style %}
-	#shopify-section-{{section.id}} .healthcare_content{
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-		width: 100%;
-	}
+  	#shopify-section-{{section.id}} .healthcare_content{
+  		display: flex;
+  		flex-direction: row;
+  		justify-content: space-between;
+  		align-items: center;
+  		width: 100%;
+  	}
 
-	#shopify-section-{{section.id}} .healthcare_content-text{
-		max-width: 640px;
-		width: 100%;
-	}
+  	#shopify-section-{{section.id}} .healthcare_content-text{
+  		max-width: 640px;
+  		width: 100%;
+  	}
 
-	#shopify-section-{{section.id}} .healthcare_content-img{
-		max-width: 650px;
-		width: 100%;
-	}
-	#shopify-section-{{section.id}} .healthcare_content-img > img{
-		max-width: 650px;
-		width: 100%;
-	}
+  	#shopify-section-{{section.id}} .healthcare_content-img{
+  		max-width: 650px;
+  		width: 100%;
+  	}
+  	#shopify-section-{{section.id}} .healthcare_content-img > img{
+  		max-width: 650px;
+  		width: 100%;
+  	}
 
-    #shopify-section-{{section.id}} .healthcare_content-img .illus{
-      width: 80%;
-    }
+      #shopify-section-{{section.id}} .healthcare_content-img .illus{
+        width: 80%;
+      }
 
-@media (max-width: 768px) {
-    #shopify-section-{{section.id}} .healthcare_content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 24px;
-		padding-top: 40px;
-		
-    }
+  @media (max-width: 768px) {
+      #shopify-section-{{section.id}} .healthcare_content {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 24px;
+  		padding-top: 40px;
 
-    #shopify-section-{{section.id}} .healthcare_content-text {
-        max-width: 100%;
-    }
+      }
 
-	#shopify-section-{{section.id}} .healthcare_content-text > h1,
-	#shopify-section-{{section.id}} .healthcare_content-text > h1 > span {
-        font-size: 48px;
-    }
+      #shopify-section-{{section.id}} .healthcare_content-text {
+          max-width: 100%;
+      }
 
-    #shopify-section-{{section.id}} .healthcare_content-img {
-        max-width: 100%;
-    }
+  	#shopify-section-{{section.id}} .healthcare_content-text > h1,
+  	#shopify-section-{{section.id}} .healthcare_content-text > h1 > span {
+          font-size: 48px;
+      }
 
-    #shopify-section-{{section.id}} .healthcare_content-img .illus{
-      width: 100%;
-    }
+      #shopify-section-{{section.id}} .healthcare_content-img {
+          max-width: 100%;
+      }
 
-    #shopify-section-{{section.id}} .healthcare_content-img > img {
-        max-width: 100%;
-        height: auto;
-    }
-	#shopify-section-{{section.id}} .btn-wrap > a {
-        font-size: 16px;
-		padding-inline: 20px;
-    }
-}
+      #shopify-section-{{section.id}} .healthcare_content-img .illus{
+        width: 100%;
+      }
 
-
-
+      #shopify-section-{{section.id}} .healthcare_content-img > img {
+          max-width: 100%;
+          height: auto;
+      }
+  	#shopify-section-{{section.id}} .btn-wrap > a {
+          font-size: 16px;
+  		padding-inline: 20px;
+      }
+  }
 {% endstyle %}
 
 <div class="container">
-	<div class="healthcare_content">
-		<div class="healthcare_content-text">
-			<h1 class="m-btm m-32">
-				<span>
-					Deliver Real Results<br>
-				</span>
-				to Your Patients and Clients
-			</h1>
-			<p>
-				Memory Air® was created by a world-famous scientist ranked in the top 2% by the Stanford School of Medicine.
-				Now you can deliver real results to your patients and clients.
-			</p>
-			<div class="m-top m-32 btn-wrap">
-				{% if section.settings.section_product != blank %}
-					<a class="btn is-black" href="{{ section.settings.section_product.url }}">Buy Now</a>
-				{% endif %}
-				{% if section.settings.contact_url != blank %}
-					<a class="btn is-bordered" href="{{ section.settings.contact_url }}">Contact Us for Bulk Ordering</a>
-				{% endif %}
-			</div>
-		</div>
-		<div class="healthcare_content-img">
-			<!-- <img src="{{ healthcareHero }}" alt="" class="illus"> -->
-            <div id="threejs-container" style="height: 600px;" class="illus"></div>
-		</div>
-	</div>
+  <div class="healthcare_content">
+    <div class="healthcare_content-text">
+      <h1 class="m-btm m-32">
+        <span> Deliver Real Results<br></span>
+        to Your Patients and Clients
+      </h1>
+      <p>
+        Memory Air® was created by a world-famous scientist ranked in the top 2% by the Stanford School of Medicine. Now
+        you can deliver real results to your patients and clients.
+      </p>
+      <div class="m-top m-32 btn-wrap">
+        {% if section.settings.section_product != blank %}
+          <a class="btn is-black" href="{{ section.settings.section_product.url }}">Buy Now</a>
+        {% endif %}
+        {% if section.settings.contact_url != blank %}
+          <a class="btn is-bordered" href="{{ section.settings.contact_url }}">Contact Us for Bulk Ordering</a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="healthcare_content-img">
+      <div
+        id="threejs-container"
+        style="height: 600px;background: url({{ three_preload }}) no-repeat;background-position: center;background-size: contain;"
+        class="illus"
+      ></div>
+    </div>
+  </div>
 </div>
 
 <script>
-	let model, renderer, camera, scene;
-	let lights = [];
+  let model, renderer, camera, scene;
+  let lights = [];
 
-	document.addEventListener("DOMContentLoaded", function () {
-			const container = document.getElementById("threejs-container");
-			
-			if (!container) {
-					return;
-			}
-			
-			scene = new THREE.Scene();
-			
-			renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-			renderer.setSize(container.clientWidth, container.clientHeight);
-			renderer.setClearColor(0x000000, 0);
-			container.appendChild(renderer.domElement);
-	
-			const loader = new THREE.GLTFLoader();
-			loader.load("{{ three_asset }}", function (gltf) {
+  document.addEventListener('DOMContentLoaded', function () {
+    const container = document.getElementById('threejs-container');
 
-					model = gltf.scene;
-					model.scale.set(1, 1, 1);
-					scene.add(model);
+    if (!container) {
+      return;
+    }
 
-					const glbCamera = gltf.cameras[0]; 
-					if (glbCamera) {
-							camera = glbCamera;
-					}
-					
-					model.children[0].traverse((object) => {
-							if (object.isLight) {
-									lights.push(object);
-							}
-					});
+    scene = new THREE.Scene();
 
-					if(lights.length){
-							lights[3].intensity = 0.5
-							lights[2].intensity = 0.9
-							lights[1].intensity = 0.9
-							lights[0].intensity = 3
-					}
+    renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setClearColor(0x000000, 0);
+    container.appendChild(renderer.domElement);
 
-					const mainObject = model.children[0].children[0];
-					if (mainObject) {
-							function animate() {
-									requestAnimationFrame(animate);
-									mainObject.rotation.y += 0.005;
-									renderer.render(scene, camera);
-							}
-							animate();
-							fitModelToContainer(model, camera, container);
-					}
-					
-					
-			}, undefined, function (error) {
-					console.error("Gagal memuat model:", error);
-			});
-			
-			$('#rotate-btn').click(()=>{
-					rotateModelSmooth(model, "right");
-					renderer.render(scene, camera);
-			})
-			
-			window.addEventListener("resize", () => {
-					renderer.setSize(container.clientWidth, container.clientHeight);
-					fitModelToContainer(model, camera, container);
-					renderer.render(scene, camera);
-			});
-	});
+    const loader = new THREE.GLTFLoader();
+    loader.load(
+      '{{ three_asset }}',
+      function (gltf) {
+        model = gltf.scene;
+        model.scale.set(1, 1, 1);
+        scene.add(model);
 
-	function rotateModelSmooth(model, direction = "right", duration = 1) {
-			if (!model) return;
-	
-			const targetRotation = model.rotation.y + (direction === "right" ? Math.PI / 2 : -Math.PI / 2);
-			const startRotation = model.rotation.y;
-			const startTime = performance.now();
-	
-			function animateRotation(time) {
-					const elapsed = (time - startTime) / (duration * 1000);
-					if (elapsed < 1) {
-							model.rotation.y = startRotation + (targetRotation - startRotation) * elapsed;
-							requestAnimationFrame(animateRotation);
-					} else {
-							model.rotation.y = targetRotation;
-					}
-					renderer.render(scene, camera);
-			}
-	
-			requestAnimationFrame(animateRotation);
-	}
+        const glbCamera = gltf.cameras[0];
+        if (glbCamera) {
+          camera = glbCamera;
+        }
 
-	function fitModelToContainer(model, camera, container, scale = 0.8) {
-			const box = new THREE.Box3().setFromObject(model);
-			const size = box.getSize(new THREE.Vector3());
-			const center = box.getCenter(new THREE.Vector3());
+        model.children[0].traverse((object) => {
+          if (object.isLight) {
+            lights.push(object);
+          }
+        });
 
-			const aspectRatio = container.clientWidth / container.clientHeight;
-			camera.aspect = aspectRatio;
-			camera.updateProjectionMatrix();
+        if (lights.length) {
+          lights[3].intensity = 0.5;
+          lights[2].intensity = 0.9;
+          lights[1].intensity = 0.9;
+          lights[0].intensity = 3;
+        }
 
-			const maxDim = Math.max(size.x, size.y, size.z);
-			const fov = camera.fov * (Math.PI / 180);
-			const distance = maxDim / Math.tan(fov / 2);
+        const mainObject = model.children[0].children[0];
+        if (mainObject) {
+          function animate() {
+            requestAnimationFrame(animate);
+            mainObject.rotation.y += 0.005;
+            renderer.render(scene, camera);
+          }
+          animate();
+          fitModelToContainer(model, camera, container);
+        }
+      },
+      function () {
+        document.querySelector('#threejs-container').style.background = null;
+      },
+      function (error) {
+        console.error('Gagal memuat model:', error);
+      }
+    );
 
-			camera.position.set(center.x, center.y, center.z + distance * scale);
-			camera.lookAt(center);
-	}
+    $('#rotate-btn').click(() => {
+      rotateModelSmooth(model, 'right');
+      renderer.render(scene, camera);
+    });
+
+    window.addEventListener('resize', () => {
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      fitModelToContainer(model, camera, container);
+      renderer.render(scene, camera);
+    });
+  });
+
+  function rotateModelSmooth(model, direction = 'right', duration = 1) {
+    if (!model) return;
+
+    const targetRotation = model.rotation.y + (direction === 'right' ? Math.PI / 2 : -Math.PI / 2);
+    const startRotation = model.rotation.y;
+    const startTime = performance.now();
+
+    function animateRotation(time) {
+      const elapsed = (time - startTime) / (duration * 1000);
+      if (elapsed < 1) {
+        model.rotation.y = startRotation + (targetRotation - startRotation) * elapsed;
+        requestAnimationFrame(animateRotation);
+      } else {
+        model.rotation.y = targetRotation;
+      }
+      renderer.render(scene, camera);
+    }
+
+    requestAnimationFrame(animateRotation);
+  }
+
+  function fitModelToContainer(model, camera, container, scale = 0.8) {
+    const box = new THREE.Box3().setFromObject(model);
+    const size = box.getSize(new THREE.Vector3());
+    const center = box.getCenter(new THREE.Vector3());
+
+    const aspectRatio = container.clientWidth / container.clientHeight;
+    camera.aspect = aspectRatio;
+    camera.updateProjectionMatrix();
+
+    const maxDim = Math.max(size.x, size.y, size.z);
+    const fov = camera.fov * (Math.PI / 180);
+    const distance = maxDim / Math.tan(fov / 2);
+
+    camera.position.set(center.x, center.y, center.z + distance * scale);
+    camera.lookAt(center);
+  }
 </script>
 
-
 {% schema %}
-	{
-		"tag": "section",
-		"class": "hero-healthcare",
-		"settings": [
-			{
-        "type": "product",
-        "id": "section_product",
-        "label": "Selected product"
-      },
-			{
-        "type": "url",
-        "id": "contact_url",
-        "label": "Second CTA url"
-      },
-		]
-	}
+{
+  "tag": "section",
+  "class": "hero-healthcare",
+  "settings": [
+    {
+      "type": "product",
+      "id": "section_product",
+      "label": "Selected product"
+    },
+    {
+      "type": "url",
+      "id": "contact_url",
+      "label": "Second CTA url"
+    }
+  ]
+}
 {% endschema %}
