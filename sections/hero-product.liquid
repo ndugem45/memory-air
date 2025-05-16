@@ -169,12 +169,10 @@
           }
           animate();
           fitModelToContainer(model, camera, container);
+          container.style.background = null;
         }
       },
-      function () {
-        console.log('selesai');
-        container.style.background = null;
-      },
+      undefined,
       function (error) {
         console.error('Gagal memuat model:', error);
       }
