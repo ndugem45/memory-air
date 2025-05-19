@@ -66,7 +66,7 @@
     "banner": {
       "type": "banner",
       "settings": {
-        "cta_url": "shopify://pages/membership",
+        "cta_url": "https://memoryair.com/a/subscriptions/login",
         "cta_title": "Login to Member Portal"
       }
     },
