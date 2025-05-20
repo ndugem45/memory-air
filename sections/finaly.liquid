@@ -133,6 +133,12 @@
 		gap: 24px;
         width: 100%;
 	}
+  
+	#shopify-section-{{section.id}} .finaly_text-number_wrapper{
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
 
     #shopify-section-{{section.id}} .finaly_text-number.first{
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -251,14 +257,16 @@
 						</div>
 						<div class="finaly_wraper-text">
 							<h2>...and Published in Peer-reviewed, Scientific Journals</h2>
-							<div class="finaly_text-number first">
-								<span class="text-number_percent">226%</span>
-								<span class="text-number_dsc">Memory Improvement in Seniors</span>
-							</div>
-							<div class="finaly_text-number">
-								<span class="text-number_percent">300%</span>
-								<span class="text-number_dsc">Memory Improvement in People with Dementia/Alzheimer's</span>
-							</div>
+                            <div class="finaly_text-number_wrapper">
+    							<div class="finaly_text-number first">
+    								<span class="text-number_percent">226%</span>
+    								<span class="text-number_dsc">Memory Improvement in Seniors</span>
+    							</div>
+    							<div class="finaly_text-number">
+    								<span class="text-number_percent">300%</span>
+    								<span class="text-number_dsc">Memory Improvement in People with Dementia/Alzheimer's</span>
+    							</div>
+                            </div>
 						</div>
 					</div>
 
