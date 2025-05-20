@@ -1,7 +1,7 @@
 {% comment %} for healthcare page {% endcomment %}
 
 
-{% assign finaly-img = 'finaly-img.png' | asset_url | append: '?v=' | append: 'timestamp' %}
+{% assign finaly-img = 'finaly-img.png' | asset_url: 'large' | append: '?v=' | append: 'timestamp' %}
 
 	
 {% style %}
