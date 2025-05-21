@@ -48,6 +48,7 @@
       "type": "science",
       "settings": {
         "section_title": "",
+        "section_desc": "",
         "video_url": "",
         "percent1": "226%",
         "label_percent1": "Memory Improvement in Seniors",
@@ -70,7 +71,7 @@
         "section_title": "",
         "section_desc": "",
         "cta_btn_title": "Explore Memory Air®",
-        "cta_btn_url": "shopify://collections"
+        "cta_btn_url": "shopify://pages/our-product"
       }
     },
     "stories": {
