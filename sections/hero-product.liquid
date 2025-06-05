@@ -99,8 +99,8 @@
       {% endif %}
     </p>
     <div class="btn-wrap m-top m-54">
-      {% if section.settings.section_product != blank %}
-        <a class="btn is-black" href="{{ section.settings.section_product.url }}">Buy Now</a>
+      {% if section.settings.section_cta_title != blank %}
+        <a class="btn is-black" href="{{ section.settings.section_cta_url }}">{{ section.settings.section_cta_title }}</a>
       {% endif %}
     </div>
   </div>
@@ -244,11 +244,6 @@
       "type": "textarea",
       "id": "section_desc",
       "label": "Section description"
-    },
-    {
-      "type": "product",
-      "id": "section_product",
-      "label": "Selected product"
     },
     {
       "type": "text",
