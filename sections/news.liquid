@@ -57,7 +57,7 @@
   <div class="news_grid m-btm m-54">
     {% if section.blocks != blank %}      
       {%- for article in section.blocks -%}
-        {% case block.type %}
+        {% case article.type %}
           {% when 'blog' %}
              <div class="news_item">
               <img onclick="togglePop()" data-video="{{ article.settings.news_blog.metafields.custom.video_url }}" src="{{ article.settings.news_blog.img.src | img_url: 'medium' }}" alt="" class="video m-btm m-32">
