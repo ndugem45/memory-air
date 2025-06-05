@@ -120,13 +120,14 @@
       {% endif %}
     </p>
     <div class="btn-wrap">
-      {% if section.settings.section_product != blank %}
-        <a class="btn" href="{{ section.settings.section_product.url }}">Buy Now</a>
+      {% if section.settings.left_cta_title != blank %}
+        <a class="btn" href="{{ section.settings.left_cta_url }}">{{ section.settings.left_cta_title }}</a>
       {% endif %}
       {% if section.settings.video_cta != blank %}
-        <button class="btn is-outline" onclick="togglePop()" data-video="{{ section.settings.video_cta }}">Watch Video</button>
+        <button class="btn is-outline" onclick="togglePop()" data-video="{{ section.settings.video_cta }}">{{ section.settings.right_cta_title }}</button>
       {% else %}
-        <button class="btn is-outline" onclick="togglePop()" data-video="https://www.youtube.com/embed/z111FbvY4f4?si=jYuCYh0wYtvpLD-i">Watch Video</button>
+        <a class="btn is-outline" href="{{ section.settings.right_cta_url }}">{{ section.settings.right_cta_title }}</a>
+        <!-- <button class="btn is-outline" onclick="togglePop()" data-video="https://www.youtube.com/embed/z111FbvY4f4?si=jYuCYh0wYtvpLD-i">{{ section.settings.right_cta_title }}</button> -->
       {% endif %}
     </div>
   </div>
@@ -149,15 +150,32 @@
         "label": "Section description",
       },
       {
-        "type": "product",
-        "id": "section_product",
-        "label": "Selected product"
+        "type": "text",
+        "id": "left_cta_title",
+        "label": "Left CTA title",
+        "default": "Buy Now"
+      },
+      {
+        "type": "url",
+        "id": "left_cta_url",
+        "label": "Left CTA URL"
+      },
+      {
+        "type": "url",
+        "id": "right_cta_url",
+        "label": "Right CTA URL"
+      },
+      {
+        "type": "text",
+        "id": "right_cta_title",
+        "label": "Right CTA title",
+        "default": "Watch video url"
       },
       {
         "type": "url",
         "id": "video_cta",
         "label": "Watch video url"
-      },
+      }
     ]
   }
 {% endschema %}
