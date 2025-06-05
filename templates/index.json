@@ -96,10 +96,17 @@
             "video_url": "https://www.youtube.com/embed/z111FbvY4f4?si=jYuCYh0wYtvpLD-i&start=12",
             "video_thumbnail": "shopify://shop_images/science_thumbnail_10.webp"
           }
+        },
+        "blog_GNBXCK": {
+          "type": "blog",
+          "settings": {
+            "news_blog": "news/exposure-to-certain-smells-builds-your-brain"
+          }
         }
       },
       "block_order": [
-        "news_item_KDGtAL"
+        "news_item_KDGtAL",
+        "blog_GNBXCK"
       ],
       "settings": {
         "section_title": "",
