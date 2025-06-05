@@ -78,13 +78,20 @@
   <div class="healthcare_content">
     <div class="healthcare_content-text">
       <h1 class="m-btm m-32">
-        <span> Deliver Real Results<br></span>
-        to Your Patients and Clients
+        {% if section.settings.section_title != blank %}
+          {{ section.settings.section_title }}
+        {% else %}
+          <span> Deliver Real Results<br></span> to Your Patients and Clients
+        {% endif %}
       </h1>
-      <p>
-        Memory Air® was created by a world-famous scientist ranked in the top 2% by the Stanford School of Medicine. Now
-        you can deliver real results to your patients and clients.
-      </p>
+      {% if section.settings.section_desc != blank %}
+        {{ section.settings.section_desc }}
+      {% else %}
+        <p>
+          Memory Air® was created by a world-famous scientist ranked in the top 2% by the Stanford School of Medicine. Now
+          you can deliver real results to your patients and clients.
+        </p>
+      {% endif %}
       <div class="m-top m-32 btn-wrap">
         {% if section.settings.section_product != blank %}
           <a class="btn is-black" href="{{ section.settings.section_product.url }}">Buy Now</a>
@@ -222,6 +229,22 @@
   "tag": "section",
   "class": "hero-healthcare",
   "settings": [
+    {
+      "type": "textarea",
+      "id": "section_title",
+      "label": "Section title",
+      "info": "Wrap italic font with <span>"
+    },
+    {
+      "type": "richtext",
+      "id": "section_desc",
+      "label": "Section description"
+    },
+    {
+      "type": "image_picker",
+      "id": "section_image",
+      "label": "Section image"
+    },
     {
       "type": "product",
       "id": "section_product",
