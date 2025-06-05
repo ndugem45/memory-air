@@ -62,11 +62,15 @@
     <div class="container">
         <div class="content">
           <h1 class="m-btm m-32">
-            Memory Air<sup>®</sup> works. <br>
-            It’s backed by <br>
-            <span>
-                world class science.
-            </span>
+            {% if section.settings.section_desc != blank %}
+              {{ section.settings.section_title }}
+            {% else %}
+              Memory Air<sup>®</sup> works. <br>
+              It’s backed by <br>
+              <span>
+                  world class science.
+              </span>
+            {% endif %}
           </h1>
           <p>
             {% if section.settings.section_desc != blank %}
