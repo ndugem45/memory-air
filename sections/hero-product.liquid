@@ -104,12 +104,16 @@
       {% endif %}
     </div>
   </div>
-
-  <div
-    id="threejs-container"
-    style="height: 600px;background: url({{ three_preload }}) no-repeat;background-position: center;background-size: auto 95%;"
-    class="illus"
-  ></div>
+  
+  {% if section.settings.section_img != blank %}
+    
+  {% else %}
+    <div
+      id="threejs-container"
+      style="height: 600px;background: url({{ three_preload }}) no-repeat;background-position: center;background-size: auto 95%;"
+      class="illus"
+    ></div>
+  {% endif %}
 </div>
 
 <script>
