@@ -11,7 +11,10 @@
   "sections": {
     "hero-science": {
       "type": "hero-science",
-      "settings": {}
+      "settings": {
+        "section_title": "",
+        "section_desc": ""
+      }
     },
     "nose": {
       "type": "nose",
@@ -39,6 +42,8 @@
     "introduce": {
       "type": "introduce",
       "settings": {
+        "section_title": "",
+        "section_desc": "<p>asd,as nas,nd asd asda s</p>",
         "left_cta_title": "Buy Now",
         "left_cta_url": "shopify://products/memory-air-device",
         "right_cta_title": "Explore Our Product",
