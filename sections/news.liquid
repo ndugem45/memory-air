@@ -71,7 +71,19 @@
                 {{ article.settings.news_blog.excerpt }}
               </div>
             </div>
-      {% when 'news_item' %}
+          
+          {% when 'news_item' %}
+            <div class="news_item">
+              <img onclick="togglePop()" data-video="{{ article.settings.video_url }}" src="{{ article.settings.video_thumbnail | img_url: 'medium' }}" alt="" class="video m-btm m-32">
+              
+              <h3 class="m-btm m-12 p-horizontal p-12">
+                {{ article.settings.news_title }}
+              </h3>
+              <div class="desc m-top m-4 p-horizontal p-12">
+                {{ article.settings.news_desc }}
+              </div>
+            </div>
+    
         {% endcase %}
       {%- endfor -%}
     {% else %}
@@ -158,6 +170,11 @@
             "type": "url",
             "id": "video_url",
             "label": "Video URL"
+          },
+          {
+            "type": "image_picker",
+            "id": "video_thumbnail",
+            "label": "Video thumbnail"
           }
         ]
       }
