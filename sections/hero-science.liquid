@@ -82,9 +82,27 @@
     </div>
     
     
-    {% schema %}
+{% schema %}
+    {
+      "tag": "section",
+      "class": "hero2",
+      "settings": [
         {
-            "tag": "section",
-            "class": "hero2"
-        }
-    {% endschema %}
+            "type": "textarea",
+            "id": "section_title",
+            "label": "Section title",
+            "info": "Wrap italic font with <span>",
+        },
+        {
+            "type": "textarea",
+            "id": "section_desc",
+            "label": "Section description",
+        },
+        {
+            "type": "image_picker",
+            "id": "section_image",
+            "label": "Section image",
+        },
+      ]
+    }
+{% endschema %}
