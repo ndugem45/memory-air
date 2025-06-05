@@ -12,6 +12,12 @@
     "hero-healthcare": {
       "type": "hero-healthcare",
       "settings": {
+        "section_title": "",
+        "section_desc": "",
+        "left_cta": "Buy Now",
+        "left_cta_url": "shopify://products/memory-air-device",
+        "right_cta": "Contact Us for Bulk Ordering",
+        "right_cta_url": "shopify://pages/contact",
         "section_product": "memory-air-device",
         "contact_url": "shopify://pages/contact"
       }
@@ -74,7 +80,9 @@
     },
     "finaly": {
       "type": "finaly",
-      "settings": {}
+      "settings": {
+        "section_cta_url": ""
+      }
     },
     "behind": {
       "type": "behind",
