@@ -61,14 +61,14 @@
     
     <div class="container">
         <div class="content">
-            <h1 class="m-btm m-32">
+          <h1 class="m-btm m-32">
             Memory Air<sup>®</sup> works. <br>
             It’s backed by <br>
             <span>
                 world class science.
             </span>
-            </h1>
-            <p>
+          </h1>
+          <p>
             Developed in partnership with Professor Emeritus of Neurobiology at University of California Irvine. Dr.
             Michael Leon is one of the world’s leading neuroscientists.
             <br>
@@ -76,9 +76,9 @@
             Memory Air<sup>®</sup> was designed using proven science:<br>
             <strong>• 226%</strong> memory improvement in adults aged 60-85.<br>
             <strong>• 300%</strong> memory improvement in patients with Dementia/Alzheimer's.
-            </p>
+          </p>
         </div>
-    <img src={{science-display}} alt="" class="illus">
+      <img src="{% if section.settings.section_image != blank %} {{ section.settings.section_image.src | img_url: 'original' }} {% else %} {{ science-display}} {% endif %}" alt="" class="illus">
     </div>
     
     
