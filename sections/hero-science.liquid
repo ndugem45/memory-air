@@ -69,13 +69,17 @@
             </span>
           </h1>
           <p>
-            Developed in partnership with Professor Emeritus of Neurobiology at University of California Irvine. Dr.
-            Michael Leon is one of the world’s leading neuroscientists.
-            <br>
-            <br>
-            Memory Air<sup>®</sup> was designed using proven science:<br>
-            <strong>• 226%</strong> memory improvement in adults aged 60-85.<br>
-            <strong>• 300%</strong> memory improvement in patients with Dementia/Alzheimer's.
+            {% if section.settings.section_desc != blank %}
+              {{ section.settings.section_desc | html_tag }}
+            {% else %}
+              Developed in partnership with Professor Emeritus of Neurobiology at University of California Irvine. Dr.
+              Michael Leon is one of the world’s leading neuroscientists.
+              <br>
+              <br>
+              Memory Air<sup>®</sup> was designed using proven science:<br>
+              <strong>• 226%</strong> memory improvement in adults aged 60-85.<br>
+              <strong>• 300%</strong> memory improvement in patients with Dementia/Alzheimer's.
+            {% endif %}
           </p>
         </div>
       <img src="{% if section.settings.section_image != blank %} {{ section.settings.section_image.src | img_url: 'original' }} {% else %} {{ science-display}} {% endif %}" alt="" class="illus">
@@ -94,7 +98,7 @@
             "info": "Wrap italic font with <span>",
         },
         {
-            "type": "textarea",
+            "type": "richtext",
             "id": "section_desc",
             "label": "Section description",
         },
