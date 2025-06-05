@@ -3,155 +3,161 @@
 {% assign science_display = 'new_product-intro.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
 
 {% style %}
+  #shopify-section-{{section.id}}.introduce .container {
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  }
+  #shopify-section-{{section.id}}.introduce p {
+  	text-align: center;
+  	font-family: "General Sans";
+  	font-size: 24px;
+  	font-style: normal;
+  	font-weight: 400;
+  	line-height: 150%;
+  	max-width: 820px;
+  	margin-top: 28px;
+  	margin-bottom: 32px;
+  }
+  #shopify-section-{{section.id}} .img-wrap {
+  	width: 100%;
+  	margin-bottom: 32px;
+  	cursor: pointer;
+  }
+  #shopify-section-{{section.id}} .img-wrap img {
+  	width: 100%;
+  	height: auto;
+  	object-fit: cover;
+  	border-radius: 64px;
+  }
 
+  @media (max-width: 768px) {
+      #shopify-section-{{section.id}}.introduce p {
+          font-size: 16px;
+          line-height: 140%;
+          max-width: 100%;
+          margin-top: 20px;
+          margin-bottom: 24px;
+          padding: 0 16px;
+      }
+      #shopify-section-{{section.id}}.introduce .container > h2,
+      #shopify-section-{{section.id}}.introduce .container > h2 > span {
+          font-size: 32px;
+          margin-bottom: 24px;
+      }
 
-#shopify-section-{{section.id}}.introduce .container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-#shopify-section-{{section.id}}.introduce p {
-	text-align: center;
-	font-family: "General Sans";
-	font-size: 24px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: 150%;
-	max-width: 820px;
-	margin-top: 28px;
-	margin-bottom: 32px;
-}
-#shopify-section-{{section.id}} .img-wrap {
-	width: 100%;
-	margin-bottom: 32px;
-	cursor: pointer;
-}
-#shopify-section-{{section.id}} .img-wrap img {
-	width: 100%;
-	height: auto;
-	object-fit: cover;
-	border-radius: 64px;
-}
+      #shopify-section-{{section.id}} .img-wrap img {
+          height: auto;
+          max-height: 450px;
+          border-radius: 24px;
+      }
+  }
+{% endstyle %}
 
-@media (max-width: 768px) {
-    #shopify-section-{{section.id}}.introduce p {
-        font-size: 16px;
-        line-height: 140%;
-        max-width: 100%;
-        margin-top: 20px;
-        margin-bottom: 24px;
-        padding: 0 16px;
-    }
-    #shopify-section-{{section.id}}.introduce .container > h2,
-    #shopify-section-{{section.id}}.introduce .container > h2 > span {
-        font-size: 32px;
-        margin-bottom: 24px;
-    } 
-
-    #shopify-section-{{section.id}} .img-wrap img {
-        height: auto;
-        max-height: 450px;
-        border-radius: 24px;
-    }
-}
-
-
-    
-    {% endstyle %}
-    
-    <div class="container">
-        <h2 class="text-center">
-          {% if section.settings.section_title != blank %}
-            {{ section.settings.section_title }}
-          {% else %}
-            Introducing Memory Air® <br>
-            <span>
-            the All-in-One Olfactory Enrichment Device
-            </span>
-          {% endif %}
-        </h2>
-        <p>
-          {% if section.settings.section_desc != blank %}
-            {{ section.settings.section_desc | html_tag }}
-          {% else %}
-            Memory Air® brings this science-backed olfactory enrichment approach to your home in an easy-to-use device that works while you sleep.
-          {% endif %}
-        </p>
-        <div class="img-wrap m-top m-54" id="introduce-slider">
-            <img src="{{ science_display }}" alt="">
-            <img src="{{ science_display }}" alt="">
-            <img src="{{ science_display }}" alt="">
-            <img src="{{ science_display }}" alt="">
-        </div>
-        <div class="btn-wrap m-top m-32">
-            {% if section.settings.left_cta_url != blank %}
-                <a class="btn is-black" href="{{ section.settings.left_cta_url }}">{{ section.settings.left_cta_title }}</a>
-            {% endif %}
-            {% if section.settings.right_cta_url != blank %}
-                <a class="btn is-outline-black" href="{{ section.settings.right_cta_url }}">{{ section.settings.right_cta_title }}</a>
-        {% endif %}
-        </div>
-    </div>
-    <script>
-    $(document).ready(() => {
-
-        $("#introduce-slider").slick({
-            arrows: false,
-            dots: false,
-            fade: true,
-        });
-
-        $("#introduce-slider").click(() => {
-            $("#introduce-slider").slick("slickNext");
-        });
-
-
+<div class="container">
+  <h2 class="text-center">
+    {% if section.settings.section_title != blank %}
+      {{ section.settings.section_title }}
+    {% else %}
+      Introducing Memory Air® <br>
+      <span> the All-in-One Olfactory Enrichment Device </span>
+    {% endif %}
+  </h2>
+  <p>
+    {% if section.settings.section_desc != blank %}
+      {{ section.settings.section_desc | html_tag }}
+    {% else %}
+      Memory Air® brings this science-backed olfactory enrichment approach to your home in an easy-to-use device that
+      works while you sleep.
+    {% endif %}
+  </p>
+  <div class="img-wrap m-top m-54" id="introduce-slider">
+    <img src="{{ science_display }}" alt="">
+    <img src="{{ science_display }}" alt="">
+    <img src="{{ science_display }}" alt="">
+    <img src="{{ science_display }}" alt="">
+  </div>
+  <div class="btn-wrap m-top m-32">
+    {% if section.settings.left_cta_url != blank %}
+      <a class="btn is-black" href="{{ section.settings.left_cta_url }}">{{ section.settings.left_cta_title }}</a>
+    {% endif %}
+    {% if section.settings.right_cta_url != blank %}
+      <a class="btn is-outline-black" href="{{ section.settings.right_cta_url }}">
+        {{- section.settings.right_cta_title -}}
+      </a>
+    {% endif %}
+  </div>
+</div>
+<script>
+  $(document).ready(() => {
+    $('#introduce-slider').slick({
+      arrows: false,
+      dots: false,
+      fade: true,
     });
-    </script>
-    
-    {% schema %}
+
+    $('#introduce-slider').click(() => {
+      $('#introduce-slider').slick('slickNext');
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "tag": "section",
+  "class": "introduce",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "section_title",
+      "label": "Section title",
+      "info": "Wrap italic font with <span>"
+    },
+    {
+      "type": "richtext",
+      "id": "section_desc",
+      "label": "Section description"
+    },
+    {
+      "type": "image_picker",
+      "id": "section_image",
+      "label": "Section image"
+    },
+    {
+      "type": "text",
+      "id": "left_cta_title",
+      "label": "Left CTA title",
+      "default": "Explore Our Product"
+    },
+    {
+      "type": "url",
+      "id": "left_cta_url",
+      "label": "Left CTA URL"
+    },
+    {
+      "type": "text",
+      "id": "right_cta_title",
+      "label": "Right CTA title",
+      "default": "Buy Now"
+    },
+    {
+      "type": "url",
+      "id": "right_cta_url",
+      "label": "Right CTA URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "blog",
+      "name": "Blog Post",
+      "settings": [
         {
-            "tag": "section",
-            "class": "introduce",
-            "settings": [
-                {
-                    "type": "textarea",
-                    "id": "section_title",
-                    "label": "Section title",
-                    "info": "Wrap italic font with <span>",
-                },
-                {
-                    "type": "richtext",
-                    "id": "section_desc",
-                    "label": "Section description",
-                },
-                {
-                    "type": "image_picker",
-                    "id": "section_image",
-                    "label": "Section image",
-                },
-                {
-                    "type": "text",
-                    "id": "left_cta_title",
-                    "label": "Left CTA title",
-                    "default": "Explore Our Product"
-                },
-                {
-                    "type": "url",
-                    "id": "left_cta_url",
-                    "label": "Left CTA URL"
-                },
-                {
-                    "type": "text",
-                    "id": "right_cta_title",
-                    "label": "Right CTA title",
-                    "default": "Buy Now"
-                },
-                {
-                    "type": "url",
-                    "id": "right_cta_url",
-                    "label": "Right CTA URL"
-                },
-            ]
+          "type": "article",
+          "id": "news_blog",
+          "label": "Select blog post"
         }
-    {% endschema %}
+      ]
+    }
+  ]
+}
+{% endschema %}
