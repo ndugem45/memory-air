@@ -106,7 +106,7 @@
   </div>
   
   {% if section.settings.section_img != blank %}
-    
+    <img src="{{ section.settings.section_img.src | img_url: 'original' }}" class="illus">
   {% else %}
     <div
       id="threejs-container"
