@@ -74,13 +74,13 @@
           
           {% when 'news_item' %}
             <div class="news_item">
-              <img onclick="togglePop()" data-video="{{ article.settings.news_item.video_url }}" src="{{ article.settings.news_item.video_thumbnail | img_url: 'medium' }}" alt="" class="video m-btm m-32">
+              <img onclick="togglePop()" data-video="{{ article.settings.video_url }}" src="{{ article.settings.video_thumbnail | img_url: 'medium' }}" alt="" class="video m-btm m-32">
               
               <h3 class="m-btm m-12 p-horizontal p-12">
-                {{ article.settings.news_item.news_title }}
+                {{ article.settings.news_title }}
               </h3>
               <div class="desc m-top m-4 p-horizontal p-12">
-                {{ article.settings.news_item.news_desc }}
+                {{ article.settings.news_desc }}
               </div>
             </div>
     
