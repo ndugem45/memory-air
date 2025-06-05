@@ -3,114 +3,113 @@
 {% assign science-display = 'science-illus-n.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
 
 {% style %}
+  #shopify-section-{{section.id}}.hero2 {
+  	padding-bottom: 64px;
+  	padding-top: 135px;
+  	background: linear-gradient(
+  			180deg,
+  			rgba(170, 126, 113, 0.1) 0%,
+  			rgba(170, 126, 113, 0.0) 100%
+  		), #fff;
+  }
+  #shopify-section-{{section.id}}.hero2 .container {
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	gap: 79px;
+  }
+  #shopify-section-{{section.id}}.hero2 .content {
+  	max-width: 588px;
+  }
+  #shopify-section-{{section.id}}.hero2 .illus {
+  	width: 634px;
+  }
 
-#shopify-section-{{section.id}}.hero2 {
-	padding-bottom: 64px;
-	padding-top: 135px;
-	background: linear-gradient(
-			180deg,
-			rgba(170, 126, 113, 0.1) 0%,
-			rgba(170, 126, 113, 0.0) 100%
-		), #fff;
-}
-#shopify-section-{{section.id}}.hero2 .container {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 79px;
-}
-#shopify-section-{{section.id}}.hero2 .content {
-	max-width: 588px;
-}
-#shopify-section-{{section.id}}.hero2 .illus {
-	width: 634px;
-}
 
+  @media (max-width: 768px) {
+  	#shopify-section-{{section.id}}.hero2 {
+  		padding-top: 120px;
+  	}
 
-@media (max-width: 768px) {
-	#shopify-section-{{section.id}}.hero2 {
-		padding-top: 120px;
-	}
+  	#shopify-section-{{section.id}}.hero2 .container {
+  		flex-direction: column;
+  		gap: 40px;
+  	}
 
-	#shopify-section-{{section.id}}.hero2 .container {
-		flex-direction: column;
-		gap: 40px;
-	}
+  	#shopify-section-{{section.id}}.hero2 .content {
+  		max-width: 100%;
+  		padding: 0 0;
+  	}
+  	#shopify-section-{{section.id}}.hero2 .content > h1{
+  		font-size: 40px;
+  	}
+  	#shopify-section-{{section.id}}.hero2 .content > h1 > span{
+  		font-size: 40px;
+  	}
+  	#shopify-section-{{section.id}}.hero2 .content > p{
+  		font-size: 16px;
+  	}
 
-	#shopify-section-{{section.id}}.hero2 .content {
-		max-width: 100%;
-		padding: 0 0;
-	}
-	#shopify-section-{{section.id}}.hero2 .content > h1{
-		font-size: 40px;
-	}
-	#shopify-section-{{section.id}}.hero2 .content > h1 > span{
-		font-size: 40px;
-	}
-	#shopify-section-{{section.id}}.hero2 .content > p{
-		font-size: 16px;
-	}
+  	#shopify-section-{{section.id}}.hero2 .illus {
+  		width: 80%;
+  		max-width: 400px;
+  	}
+  }
+{% endstyle %}
 
-	#shopify-section-{{section.id}}.hero2 .illus {
-		width: 80%;
-		max-width: 400px;
-	}
-}
+<div class="container">
+  <div class="content">
+    <h1 class="m-btm m-32">
+      {% if section.settings.section_desc != blank %}
+        {{ section.settings.section_title }}
+      {% else %}
+        Memory Air<sup>®</sup> works. <br>
+        It’s backed by <br>
+        <span> world class science. </span>
+      {% endif %}
+    </h1>
+    <p>
+      {% if section.settings.section_desc != blank %}
+        {{ section.settings.section_desc | html_tag }}
+      {% else %}
+        Developed in partnership with Professor Emeritus of Neurobiology at University of California Irvine. Dr. Michael
+        Leon is one of the world’s leading neuroscientists.
+        <br>
+        <br>
+        Memory Air<sup>®</sup> was designed using proven science:<br>
+        <strong>• 226%</strong> memory improvement in adults aged 60-85.<br>
+        <strong>• 300%</strong> memory improvement in patients with Dementia/Alzheimer's.
+      {% endif %}
+    </p>
+  </div>
+  <img
+    src="{% if section.settings.section_image != blank %} {{ section.settings.section_image.src | img_url: 'original' }} {% else %} {{ science-display}} {% endif %}"
+    alt=""
+    class="illus"
+  >
+</div>
 
-    {% endstyle %}
-    
-    <div class="container">
-        <div class="content">
-          <h1 class="m-btm m-32">
-            {% if section.settings.section_desc != blank %}
-              {{ section.settings.section_title }}
-            {% else %}
-              Memory Air<sup>®</sup> works. <br>
-              It’s backed by <br>
-              <span>
-                  world class science.
-              </span>
-            {% endif %}
-          </h1>
-          <p>
-            {% if section.settings.section_desc != blank %}
-              {{ section.settings.section_desc | html_tag }}
-            {% else %}
-              Developed in partnership with Professor Emeritus of Neurobiology at University of California Irvine. Dr.
-              Michael Leon is one of the world’s leading neuroscientists.
-              <br>
-              <br>
-              Memory Air<sup>®</sup> was designed using proven science:<br>
-              <strong>• 226%</strong> memory improvement in adults aged 60-85.<br>
-              <strong>• 300%</strong> memory improvement in patients with Dementia/Alzheimer's.
-            {% endif %}
-          </p>
-        </div>
-      <img src="{% if section.settings.section_image != blank %} {{ section.settings.section_image.src | img_url: 'original' }} {% else %} {{ science-display}} {% endif %}" alt="" class="illus">
-    </div>
-    
-    
 {% schema %}
+{
+  "tag": "section",
+  "class": "hero2",
+  "settings": [
     {
-      "tag": "section",
-      "class": "hero2",
-      "settings": [
-        {
-            "type": "textarea",
-            "id": "section_title",
-            "label": "Section title",
-            "info": "Wrap italic font with <span>",
-        },
-        {
-            "type": "richtext",
-            "id": "section_desc",
-            "label": "Section description",
-        },
-        {
-            "type": "image_picker",
-            "id": "section_image",
-            "label": "Section image",
-        },
-      ]
+      "type": "textarea",
+      "id": "section_title",
+      "label": "Section title",
+      "info": "Wrap italic font with <span>"
+    },
+    {
+      "type": "richtext",
+      "id": "section_desc",
+      "label": "Section description"
+    },
+    {
+      "type": "image_picker",
+      "id": "section_image",
+      "label": "Section image"
     }
+  ]
+}
 {% endschema %}
