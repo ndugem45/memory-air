@@ -49,19 +49,23 @@
       {{ section.settings.section_title }}
     {% else %}
       Memory Air<sup>®</sup> <br>
-      <span>
-        in the News
-      </span>
+      <span> in the News </span>
     {% endif %}
   </h2>
   <div class="news_grid m-btm m-54">
-    {% if section.blocks != blank %}      
+    {% if section.blocks != blank %}
       {%- for article in section.blocks -%}
         {% case article.type %}
           {% when 'blog' %}
-             <div class="news_item">
-              <img onclick="togglePop()" data-video="{{ article.settings.news_blog.metafields.custom.video_url }}" src="{{ article.settings.news_blog.image.src | img_url: 'medium' }}" alt="" class="video m-btm m-32">
-              
+            <div class="news_item">
+              <img
+                onclick="togglePop()"
+                data-video="{{ article.settings.news_blog.metafields.custom.video_url }}"
+                src="{{ article.settings.news_blog.image.src | img_url: 'medium' }}"
+                alt=""
+                class="video m-btm m-32"
+              >
+
               <h3 class="m-btm m-12 p-horizontal p-12">
                 <a href="{{ article.settings.news_blog.url }}" style="color: rgb(35, 35, 35);">
                   {{ article.settings.news_blog.title }}
@@ -71,11 +75,17 @@
                 {{ article.settings.news_blog.excerpt }}
               </div>
             </div>
-          
+
           {% when 'news_item' %}
             <div class="news_item">
-              <img onclick="togglePop()" data-video="{{ article.settings.video_url }}" src="{{ article.settings.video_thumbnail | img_url: 'medium' }}" alt="" class="video m-btm m-32">
-              
+              <img
+                onclick="togglePop()"
+                data-video="{{ article.settings.video_url }}"
+                src="{{ article.settings.video_thumbnail | img_url: 'medium' }}"
+                alt=""
+                class="video m-btm m-32"
+              >
+
               <h3 class="m-btm m-12 p-horizontal p-12">
                 {{ article.settings.news_title }}
               </h3>
@@ -83,30 +93,34 @@
                 {{ article.settings.news_desc }}
               </div>
             </div>
-    
         {% endcase %}
       {%- endfor -%}
     {% else %}
       <div class="news_item">
+        <img
+          onclick="togglePop()"
+          data-video="https://www.youtube.com/embed/z9rmilXhO6Q?si=MBsKR5s0EgxA0wkd"
+          src="{{ thumb1 }}"
+          alt=""
+          class="video m-btm m-32"
+        >
 
-        <img onclick="togglePop()" data-video="https://www.youtube.com/embed/z9rmilXhO6Q?si=MBsKR5s0EgxA0wkd" src="{{ thumb1 }}" alt="" class="video m-btm m-32">
-        
-        <h3 class="m-btm m-12 p-horizontal p-12">
-          #1 Researcher for Olfactory Enrichment
-        </h3>
+        <h3 class="m-btm m-12 p-horizontal p-12">#1 Researcher for Olfactory Enrichment</h3>
         <p class="m-top m-4 p-horizontal p-12">
           And Ranked in the Top 2% of All Scientists in the World by a Stanford School of Medicine Study.
         </p>
       </div>
       <div class="news_item">
-        <img onclick="togglePop()" data-video="https://www.youtube.com/embed/z111FbvY4f4?si=jYuCYh0wYtvpLD-i&start=12" src="{{ thumb2 }}" alt="" class="video m-btm m-32">
+        <img
+          onclick="togglePop()"
+          data-video="https://www.youtube.com/embed/z111FbvY4f4?si=jYuCYh0wYtvpLD-i&start=12"
+          src="{{ thumb2 }}"
+          alt=""
+          class="video m-btm m-32"
+        >
 
-        <h3 class="m-btm m-12 p-horizontal p-12">
-          The Solution to Memory Loss is Right Under Our Nose
-        </h3>
-        <p class="m-top m-4 p-horizontal p-12">
-          Dr. Michael Leon’s TED talk on the importance of smell in memory.
-        </p>
+        <h3 class="m-btm m-12 p-horizontal p-12">The Solution to Memory Loss is Right Under Our Nose</h3>
+        <p class="m-top m-4 p-horizontal p-12">Dr. Michael Leon’s TED talk on the importance of smell in memory.</p>
       </div>
     {% endif %}
   </div>
@@ -118,72 +132,72 @@
 </div>
 
 {% schema %}
-  {
-    "tag": "section",
-    "class": "news",
-    "settings": [
-      {
-        "type": "textarea",
-        "id": "section_title",
-        "label": "Section title",
-        "info": "Wrap italic font with <span>"
-      },
-      {
-        "type": "text",
-        "id": "cta_title",
-        "label": "CTA button title",
-        "default": "More Press & Resources"
-      },
-      {
-        "type": "url",
-        "id": "cta_url",
-        "label": "CTA button url",
-      },
-    ],
-    "blocks": [
-      {
-        "type": "blog",
-        "name": "Blog Post",
-        "settings": [
-          {
-            "type": "article",
-            "id": "news_blog",
-            "label": "Select blog post"
-          }
-        ]
-      },
-      {
-        "type": "news_item",
-        "name": "News Item",
-        "settings": [
-          {
-            "type": "textarea",
-            "id": "news_title",
-            "label": "News title"
-          },
-          {
-            "type": "textarea",
-            "id": "news_desc",
-            "label": "News description"
-          },
-          {
-            "type": "url",
-            "id": "video_url",
-            "label": "Video URL"
-          },
-          {
-            "type": "image_picker",
-            "id": "video_thumbnail",
-            "label": "Video thumbnail"
-          }
-        ]
-      }
-    ],
-    "max_blocks": 2,
-    "presets": [
-      {
-        "name": "News section"
-      }
-    ]
-  }
+{
+  "tag": "section",
+  "class": "news",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "section_title",
+      "label": "Section title",
+      "info": "Wrap italic font with <span>"
+    },
+    {
+      "type": "text",
+      "id": "cta_title",
+      "label": "CTA button title",
+      "default": "More Press & Resources"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA button url"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "blog",
+      "name": "Blog Post",
+      "settings": [
+        {
+          "type": "article",
+          "id": "news_blog",
+          "label": "Select blog post"
+        }
+      ]
+    },
+    {
+      "type": "news_item",
+      "name": "News Item",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "news_title",
+          "label": "News title"
+        },
+        {
+          "type": "textarea",
+          "id": "news_desc",
+          "label": "News description"
+        },
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "Video URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "video_thumbnail",
+          "label": "Video thumbnail"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 2,
+  "presets": [
+    {
+      "name": "News section"
+    }
+  ]
+}
 {% endschema %}
