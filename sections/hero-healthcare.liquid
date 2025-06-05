@@ -93,11 +93,11 @@
         </p>
       {% endif %}
       <div class="m-top m-32 btn-wrap">
-        {% if section.settings.section_product != blank %}
-          <a class="btn is-black" href="{{ section.settings.section_product.url }}">Buy Now</a>
+        {% if section.settings.left_cta != blank %}
+          <a class="btn is-black" href="{{ section.settings.left_cta_url }}">{{ section.settings.left_cta }}</a>
         {% endif %}
-        {% if section.settings.contact_url != blank %}
-          <a class="btn is-bordered" href="{{ section.settings.contact_url }}">Contact Us for Bulk Ordering</a>
+        {% if section.settings.right_cta != blank %}
+          <a class="btn is-bordered" href="{{ section.settings.right_cta_url }}">{{ section.settings.right_cta }}</a>
         {% endif %}
       </div>
     </div>
@@ -248,7 +248,8 @@
     {
       "type": "text",
       "id": "left_cta",
-      "label": "Left CTA"
+      "label": "Left CTA",
+      "default": "Buy Now"
     },
     {
       "type": "url",
@@ -258,7 +259,8 @@
     {
       "type": "text",
       "id": "right_cta",
-      "label": "Right CTA"
+      "label": "Right CTA",
+      "default": "Contact Us for Bulk Ordering"
     },
     {
       "type": "url",
