@@ -87,27 +87,6 @@
     },
     "news": {
       "type": "news",
-      "blocks": {
-        "news_item_KDGtAL": {
-          "type": "news_item",
-          "settings": {
-            "news_title": "adasdasdasdasd",
-            "news_desc": "asda dasd hjkashdkj ashdkj adhskja hdjkahsjk dahsk djasd",
-            "video_url": "https://www.youtube.com/embed/z111FbvY4f4?si=jYuCYh0wYtvpLD-i&start=12",
-            "video_thumbnail": "shopify://shop_images/science_thumbnail_10.webp"
-          }
-        },
-        "blog_g63fCm": {
-          "type": "blog",
-          "settings": {
-            "news_blog": "news/exposure-to-certain-smells-builds-your-brain"
-          }
-        }
-      },
-      "block_order": [
-        "news_item_KDGtAL",
-        "blog_g63fCm"
-      ],
       "settings": {
         "section_title": "",
         "cta_title": "Buy Now",
