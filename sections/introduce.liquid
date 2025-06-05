@@ -61,13 +61,21 @@
     
     <div class="container">
         <h2 class="text-center">
+          {% if section.settings.section_title != blank %}
+            {{ section.settings.section_title }}
+          {% else %}
             Introducing Memory Air® <br>
             <span>
             the All-in-One Olfactory Enrichment Device
             </span>
+          {% endif %}
         </h2>
         <p>
+          {% if section.settings.section_desc != blank %}
+            {{ section.settings.section_desc | html_tag }}
+          {% else %}
             Memory Air® brings this science-backed olfactory enrichment approach to your home in an easy-to-use device that works while you sleep.
+          {% endif %}
         </p>
         <div class="img-wrap m-top m-54" id="introduce-slider">
             <img src="{{ science_display }}" alt="">
@@ -106,22 +114,22 @@
             "tag": "section",
             "class": "introduce",
             "settings": [
-              {
-            "type": "textarea",
-            "id": "section_title",
-            "label": "Section title",
-            "info": "Wrap italic font with <span>",
-        },
-        {
-            "type": "richtext",
-            "id": "section_desc",
-            "label": "Section description",
-        },
-        {
-            "type": "image_picker",
-            "id": "section_image",
-            "label": "Section image",
-        },
+                {
+                    "type": "textarea",
+                    "id": "section_title",
+                    "label": "Section title",
+                    "info": "Wrap italic font with <span>",
+                },
+                {
+                    "type": "richtext",
+                    "id": "section_desc",
+                    "label": "Section description",
+                },
+                {
+                    "type": "image_picker",
+                    "id": "section_image",
+                    "label": "Section image",
+                },
                 {
                     "type": "text",
                     "id": "left_cta_title",
