@@ -72,10 +72,16 @@
     {% endif %}
   </p>
   <div class="img-wrap m-top m-54" id="introduce-slider">
-    <img src="{{ science_display }}" alt="">
-    <img src="{{ science_display }}" alt="">
-    <img src="{{ science_display }}" alt="">
-    <img src="{{ science_display }}" alt="">
+    {% if section.blocks != blank %}
+      {%- for image in section.blocks -%}
+        <img src="{{ image.settings.image.src | img_url: 'original' }}" alt="">
+      {% endfor %}
+    {% else %}
+      <img src="{{ science_display }}" alt="">
+      <img src="{{ science_display }}" alt="">
+      <img src="{{ science_display }}" alt="">
+      <img src="{{ science_display }}" alt="">
+    {% endif %}
   </div>
   <div class="btn-wrap m-top m-32">
     {% if section.settings.left_cta_url != blank %}
@@ -148,13 +154,13 @@
   ],
   "blocks": [
     {
-      "type": "blog",
-      "name": "Blog Post",
+      "type": "image_list",
+      "name": "Image list",
       "settings": [
         {
-          "type": "article",
-          "id": "news_blog",
-          "label": "Select blog post"
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
         }
       ]
     }
