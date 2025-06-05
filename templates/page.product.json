@@ -14,8 +14,9 @@
       "settings": {
         "section_title": "",
         "section_desc": "",
-        "section_product": "memory-air-device",
-        "video_cta": ""
+        "section_cta_title": "Buy Now",
+        "section_cta_url": "shopify://products/memory-air-device",
+        "asset_url": ""
       }
     },
     "how-it-work": {
