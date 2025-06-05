@@ -104,7 +104,7 @@
     <div class="healthcare_content-img">
       <div
         id="threejs-container"
-        style="height: 600px;background: url({{ three_preload }}) no-repeat;background-position: center;background-size: auto 75%;"
+        style="height: 600px;background: url({% if section.settings.model_asset_url != blank %} {{ section.settings.model_asset_url }} {% else %} {{ three_preload }} {% endif %}) no-repeat;background-position: center;background-size: auto 75%;"
         class="illus"
       ></div>
     </div>
@@ -266,6 +266,11 @@
       "type": "url",
       "id": "right_cta_url",
       "label": "Right CTA URL"
+    },
+    {
+      "type": "url",
+      "id": "model_asset_url",
+      "label": "3D asset URL"
     }
   ]
 }
