@@ -15,8 +15,7 @@
         "section_title": "",
         "section_desc": "",
         "section_cta_title": "Buy Now",
-        "section_cta_url": "shopify://products/memory-air-device",
-        "asset_url": ""
+        "section_cta_url": "shopify://products/memory-air-device"
       }
     },
     "how-it-work": {
@@ -38,15 +37,15 @@
         "product_right": "shopify://products/memory-air-device"
       }
     },
+    "behind": {
+      "type": "behind",
+      "settings": {}
+    },
     "life": {
       "type": "life",
       "settings": {
         "section_title": ""
       }
-    },
-    "behind": {
-      "type": "behind",
-      "settings": {}
     },
     "stories": {
       "type": "stories",
@@ -152,8 +151,8 @@
     "hero-product",
     "how-it-work",
     "pricing",
-    "life",
     "behind",
+    "life",
     "stories",
     "news",
     "faq-plain",
