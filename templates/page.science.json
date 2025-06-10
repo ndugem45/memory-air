@@ -53,7 +53,7 @@
     "review": {
       "type": "review",
       "settings": {
-        "slider_speed": 5
+        "slider_speed": 8
       }
     },
     "faq": {
