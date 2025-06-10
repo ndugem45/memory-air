@@ -159,6 +159,12 @@
           "settings": {
             "faq_object": "what-if-im-bothered-by-certain-scents"
           }
+        },
+        "faq_item_G7Mje6": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "how-do-i-know-its-working"
+          }
         }
       },
       "block_order": [
@@ -170,7 +176,8 @@
         "faq_item_kwNEkT",
         "faq_item_h73fRx",
         "faq_item_4FXLPf",
-        "faq_item_ATCCAU"
+        "faq_item_ATCCAU",
+        "faq_item_G7Mje6"
       ],
       "settings": {
         "section_title": "Frequently Asked <br> <span>Questions</span>",
