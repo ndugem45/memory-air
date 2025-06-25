@@ -64,7 +64,7 @@
           "settings": {
             "medical_title": "Wellness Practitioners",
             "medical_image": "shopify://shop_images/icon_head-4.png",
-            "medical_content": "<ul><li>Chiropractor</li><li>Holistic Provider</li><li>Aromatherapist</li></ul>"
+            "medical_content": "<ul><li>Chiropractor</li><li>Holistic Medicine Provider</li><li>Naturopathic Medicine Provider</li><li>Aromatherapist</li></ul>"
           }
         }
       },
