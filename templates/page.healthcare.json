@@ -17,9 +17,7 @@
         "left_cta": "Buy Now",
         "left_cta_url": "shopify://products/memory-air-device",
         "right_cta": "Contact Us for Bulk Ordering",
-        "right_cta_url": "shopify://pages/contact",
-        "section_product": "memory-air-device",
-        "contact_url": "shopify://pages/contact"
+        "right_cta_url": "shopify://pages/contact"
       }
     },
     "partner": {
@@ -50,7 +48,7 @@
           "settings": {
             "medical_title": "Nurses and PAs",
             "medical_image": "shopify://shop_images/icon_head-2.png",
-            "medical_content": "<ul><li>PA's</li><li>Registered Nurse</li><li>Gerontological Nurse (AGNP)</li><li>Memory Care Nurse</li><li>Home Health Nurse</li><li>Rehabilitation Nurse</li><li>Nurse Educator</li><li>Physicians Assistant</li><li>Licensed Nurse Practitioner</li><li>Licensed Vocational Nurse (LVN)</li></ul>"
+            "medical_content": "<ul><li>Physician Assistant</li><li>Registered Nurse</li><li>Gerontological Nurse (AGNP)</li><li>Memory Care Nurse</li><li>Home Health Nurse</li><li>Rehabilitation Nurse</li><li>Nurse Educator</li><li>Licensed Nurse Practitioner</li><li>Licensed Vocational Nurse (LVN)</li></ul>"
           }
         },
         "medical_card_a7Hntn": {
