@@ -17,7 +17,8 @@
         "left_cta": "Buy Now",
         "left_cta_url": "shopify://products/memory-air-device",
         "right_cta": "Contact Us for Bulk Ordering",
-        "right_cta_url": "shopify://pages/contact"
+        "right_cta_url": "shopify://pages/contact",
+        "model_asset_url": ""
       }
     },
     "partner": {
@@ -96,8 +97,8 @@
       "type": "contactus",
       "settings": {
         "section_product": "memory-air-device",
-        "section_label": "Interested in Providing Memory Air®?",
-        "section_title": "<span>Refer Your Patients and Clients to</span>\n<br> Memory Air<sup>®</sup> with Confidence"
+        "section_label": "Interested in Providing Memory Air™?",
+        "section_title": "<span>Refer Your Patients and Clients to</span>\n<br> Memory Air<sup>™</sup> with Confidence"
       }
     }
   },
