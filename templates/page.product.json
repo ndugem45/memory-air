@@ -68,6 +68,14 @@
             "item-desc-title": "Memory Air<sup>™</sup>  is based upon science with proven results:",
             "item-desc": ""
           }
+        },
+        "work_item_pfp9hz": {
+          "type": "work-item",
+          "settings": {
+            "item-title": "Based on Revolutionary Neuroscience",
+            "item-desc-title": "Memory Air<sup>™</sup>  is based upon science with proven results:",
+            "item-desc": ""
+          }
         }
       },
       "block_order": [
@@ -76,7 +84,8 @@
         "work_item_reQmxc",
         "work_item_hng6Kc",
         "work_item_3GGViQ",
-        "work_item_x8tRcC"
+        "work_item_x8tRcC",
+        "work_item_pfp9hz"
       ],
       "settings": {
         "section_title": ""
