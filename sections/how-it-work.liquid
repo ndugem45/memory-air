@@ -279,7 +279,7 @@
 
     <div class="item-wrap">
       {% for block in section.blocks %}
-        <div class="item" id="item-{{ forloop.index | plus: 1 }}">
+        <div class="item" id="item-{{ forloop.index }}">
           <div class="head">
             <span>
               {{ block.settings.item-title }}

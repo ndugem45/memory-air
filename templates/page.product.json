@@ -20,7 +20,67 @@
     },
     "how-it-work": {
       "type": "how-it-work",
-      "settings": {}
+      "blocks": {
+        "work_item_kpbwek": {
+          "type": "work-item",
+          "settings": {
+            "item-title": "Based on Revolutionary Neuroscience",
+            "item-desc-title": "Memory Air<sup>™</sup>  is based upon science with proven results:",
+            "item-desc": ""
+          }
+        },
+        "work_item_yqqNqq": {
+          "type": "work-item",
+          "settings": {
+            "item-title": "Based on Revolutionary Neuroscience",
+            "item-desc-title": "Memory Air<sup>™</sup>  is based upon science with proven results:",
+            "item-desc": ""
+          }
+        },
+        "work_item_reQmxc": {
+          "type": "work-item",
+          "settings": {
+            "item-title": "Based on Revolutionary Neuroscience",
+            "item-desc-title": "Memory Air<sup>™</sup>  is based upon science with proven results:",
+            "item-desc": ""
+          }
+        },
+        "work_item_hng6Kc": {
+          "type": "work-item",
+          "settings": {
+            "item-title": "Based on Revolutionary Neuroscience",
+            "item-desc-title": "Memory Air<sup>™</sup>  is based upon science with proven results:",
+            "item-desc": ""
+          }
+        },
+        "work_item_3GGViQ": {
+          "type": "work-item",
+          "settings": {
+            "item-title": "Based on Revolutionary Neuroscience",
+            "item-desc-title": "Memory Air<sup>™</sup>  is based upon science with proven results:",
+            "item-desc": ""
+          }
+        },
+        "work_item_x8tRcC": {
+          "type": "work-item",
+          "settings": {
+            "item-title": "Based on Revolutionary Neuroscience",
+            "item-desc-title": "Memory Air<sup>™</sup>  is based upon science with proven results:",
+            "item-desc": ""
+          }
+        }
+      },
+      "block_order": [
+        "work_item_kpbwek",
+        "work_item_yqqNqq",
+        "work_item_reQmxc",
+        "work_item_hng6Kc",
+        "work_item_3GGViQ",
+        "work_item_x8tRcC"
+      ],
+      "settings": {
+        "section_title": ""
+      }
     },
     "pricing": {
       "type": "pricing",
