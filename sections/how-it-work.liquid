@@ -268,7 +268,11 @@
 
 <div class="container">
   <h2 class="text-center">
-    How Memory Air<sup>™</sup> <span>Works</span>
+    {% if section.settings.section_title != blank %}
+      {{ section.settings.section_title }}
+    {% else %}
+      How Memory Air<sup>™</sup> <span>Works</span>
+    {% endif %}
   </h2>
   <div class="content">
     <img src="{{ product_img }}" alt="" class="product"/>
@@ -433,5 +437,13 @@
   {
     "tag": "section",
     "class": "how-it-work",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "section_title",
+        "label": "Section title",
+        "info": "Wrap italic font with <span>",
+      }
+    ]
   }
 {% endschema %}
