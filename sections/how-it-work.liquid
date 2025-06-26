@@ -278,7 +278,24 @@
     <img src="{{ product_img }}" alt="" class="product"/>
 
     <div class="item-wrap">
-      <div class="item" id="item-1">
+      {% for block in section.blocks %}
+        <div class="item" id="item-{{ forloop.index | plus: 1 }}">
+          <div class="head">
+            <span>
+              {{ block.item-title }}
+            </span>
+            <img src="{{ hiw1 }}" alt=""/>
+          </div>
+          <div class="body">
+            <p>
+              {{ block.settings.item-desc-title }}
+            </p>
+            {{ block.settings.item-desc | html }}
+          </div>
+        </div>
+      {% endfor %}
+      
+      <!-- <div class="item" id="item-1">
         <div class="head">
           <span>
             Based on Revolutionary Neuroscience
@@ -428,7 +445,7 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
@@ -443,6 +460,32 @@
         "id": "section_title",
         "label": "Section title",
         "info": "Wrap italic font with <span>",
+      }
+    ],
+    "max_blocks": 7,
+    "blocks": [
+      {
+        "type": "work-item",
+        "name": "Item",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "item-title",
+            "label": "Item label",
+            "default": "Based on Revolutionary Neuroscience"
+          },
+          {
+            "type": "textarea",
+            "id": "item-desc-title",
+            "label": "Item desc title",
+            "default": "Memory Air<sup>™</sup>  is based upon science with proven results:"
+          },
+          {
+            "type": "richtext",
+            "id": "item-desc",
+            "label": "Item desc"
+          }
+        ]
       }
     ]
   }
