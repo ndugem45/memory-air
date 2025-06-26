@@ -278,9 +278,10 @@
     <img src="{{ product_img }}" alt="" class="product"/>
 
     <div class="item-wrap">
-      {% for block in section.blocks %}
+      {%- for block in section.blocks -%}
+        {% assign mod = forloop.index | modulo: 2 %}
         <div class="item" id="item-{{ forloop.index }}">
-          <div class="head">
+          <div class="head{% if mod == 0 %} reverse{% endif %}">
             <span>
               {{ block.settings.item-title }}
             </span>
@@ -290,7 +291,8 @@
             {{ block.settings.item-desc | html }}
           </div>
         </div>
-      {% endfor %}
+      {%- endfor -%}
+
       
       <!-- <div class="item" id="item-1">
         <div class="head">
