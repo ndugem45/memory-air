@@ -282,7 +282,7 @@
         <div class="item" id="item-{{ forloop.index | plus: 1 }}">
           <div class="head">
             <span>
-              {{ block.item-title }}
+              {{ block.settings.item-title }}
             </span>
             <img src="{{ hiw1 }}" alt=""/>
           </div>
@@ -471,7 +471,7 @@
           {
             "type": "textarea",
             "id": "item-title",
-            "label": "Item label",
+            "label": "Item title",
             "default": "Based on Revolutionary Neuroscience"
           },
           {
