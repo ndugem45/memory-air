@@ -285,7 +285,11 @@
             <span>
               {{ block.settings.item-title }}
             </span>
-            <img src="{{ block.settings.item-icon.src | img_url: 'original' }}" alt=""/>
+            {% if block.settings.item-icon != blank %}
+              <img src="{{ "ico-work-1.svg" | asset_url: 'original' }}" alt=""/>
+            {% else %}
+              <img src="{{ block.settings.item-icon.src | img_url: 'original' }}" alt=""/>
+            {% endif %}
           </div>
           <div class="body">
             {{ block.settings.item-desc | html }}
