@@ -286,9 +286,24 @@
               {{ block.settings.item-title }}
             </span>
             {% if block.settings.item-icon != blank %}
-              <img src="{{ "ico-work-1.svg" | asset_url: 'original' }}" alt=""/>
-            {% else %}
               <img src="{{ block.settings.item-icon.src | img_url: 'original' }}" alt=""/>
+            {% else %}
+              {% case forloop.index %}
+                {% when 1 %}
+                  <img src="{{ hiw1 }}" alt=""/>
+                {% when 2 %}
+                  <img src="{{ hiw2 }}" alt=""/>
+                {% when 3 %}
+                  <img src="{{ hiw3 }}" alt=""/>
+                {% when 4 %}
+                  <img src="{{ hiw4 }}" alt=""/>
+                {% when 5 %}
+                  <img src="{{ hiw5 }}" alt=""/>
+                {% when 6 %}
+                  <img src="{{ hiw6 }}" alt=""/>
+                {% else %}
+                  <img src="{{ hiw7 }}" alt=""/>
+              {% endcase %}
             {% endif %}
           </div>
           <div class="body">
