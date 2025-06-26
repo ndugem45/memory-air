@@ -285,7 +285,7 @@
             <span>
               {{ block.settings.item-title }}
             </span>
-            <img src="{{ hiw1 }}" alt=""/>
+            <img src="{{ block.settings.item-icon.src | img_url: 'original' }}" alt=""/>
           </div>
           <div class="body">
             {{ block.settings.item-desc | html }}
@@ -472,6 +472,11 @@
             "id": "item-title",
             "label": "Item title",
             "default": "Based on Revolutionary Neuroscience"
+          },
+          {
+            "type": "image_picker",
+            "id": "item-icon",
+            "label": "Item icon",
           },
           {
             "type": "richtext",
