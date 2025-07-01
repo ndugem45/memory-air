@@ -118,7 +118,13 @@
 	<div class="container">
 			<div class="behind_wraper">
 				<div class="behind_title">
-					<h2>The Science Behind Memory Air<sup>™</sup></h2>
+					<h2>
+                      {% if section.settings.section_title != blank %}
+                        {{ section.settings.section_title }}
+                      {% else %}
+                        The Science Behind Memory Air<sup>™</sup>
+                      {% endif %}
+                    </h2>
 				</div>
 				<div class="behind_content m-top m-78">
                     {%- for block in section.blocks -%}
@@ -216,6 +222,12 @@
         "tag": "section",
         "class": "behind",
         "settings": [
+          {
+            "type": "textarea",
+            "id": "section_title",
+            "label": "Section title",
+            "info": "Wrap italic font with <span>",
+          }
         ],
         "blocks": [
         {
