@@ -103,15 +103,31 @@
         "item_Ec3EwX": {
           "type": "item",
           "settings": {
-            "item_title": "",
-            "item_desc": ""
+            "item_title": "Smelling more scents restores olfactory abilities",
+            "item_desc": "<p>Smelling a variety of different scents can reverse loss of olfactory abilities. Results were achieved with daily exposure to four odorants: resinous, flowery, fruity, and aromatic. But that’s just the tip of the iceberg. Further olfactory improvements are achieved by increasing duration of exposure, concentration, and a much larger number of odorants.</p>"
+          }
+        },
+        "item_kTcLRT": {
+          "type": "item",
+          "settings": {
+            "item_title": "Olfactory enrichment improves cognition and brain function at while you sleep",
+            "item_desc": "<p>In our study, a group of older adults received olfactory enrichment for 2 hours every night over the course of 6 months.</p><p>This resulted in a 226% improvement in cognitive ability compared to a control group. This is the largest improvement in memory ever reported in healthy seniors. Nothing else has ever come close.</p>"
+          }
+        },
+        "item_hwX4j7": {
+          "type": "item",
+          "settings": {
+            "item_title": "Memory Air® provides 80 different Olfactory Stimulations every night",
+            "item_desc": "<p>Trying to smell 40 scents twice a day on your own is simply not practical. Imagine opening 80 bottles and separately loading each one into a device so you can smell it (and doing this every day!) Add memory issues to the equation, and the problem is compounded.</p><p>Memory Air® automatically dispenses 80 olfactory stimulations per night and works while you sleep.</p>"
           }
         }
       },
       "block_order": [
         "item_UxXCR8",
         "item_XQiDbE",
-        "item_Ec3EwX"
+        "item_Ec3EwX",
+        "item_kTcLRT",
+        "item_hwX4j7"
       ],
       "settings": {
         "section_title": ""
