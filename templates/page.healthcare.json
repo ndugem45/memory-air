@@ -90,6 +90,7 @@
           "type": "item",
           "settings": {
             "item_title": "The “Super Highway” of Cognition",
+            "item_image": "shopify://shop_images/Image_3.png",
             "item_desc": "<p>The olfactory system is the only sensory system that has a direct path to the brain’s cognitive control areas. All other senses must travel through \"side streets\" thus having milder effects. We refer to this direct access as the “Super Highway” to the brain.</p>"
           }
         },
@@ -97,6 +98,7 @@
           "type": "item",
           "settings": {
             "item_title": "Losing your sense of smell can indicate cognitive decline",
+            "item_image": "shopify://shop_images/Image_2.png",
             "item_desc": "<p>As we age, and various health conditions emerge, we start to lose our sense of smell, which can mean a deterioration in our cognitive ability. </p>"
           }
         },
@@ -104,6 +106,7 @@
           "type": "item",
           "settings": {
             "item_title": "Smelling more scents restores olfactory abilities",
+            "item_image": "shopify://shop_images/Image_4.png",
             "item_desc": "<p>Smelling a variety of different scents can reverse loss of olfactory abilities. Results were achieved with daily exposure to four odorants: resinous, flowery, fruity, and aromatic. But that’s just the tip of the iceberg. Further olfactory improvements are achieved by increasing duration of exposure, concentration, and a much larger number of odorants.</p>"
           }
         },
@@ -111,6 +114,7 @@
           "type": "item",
           "settings": {
             "item_title": "Olfactory enrichment improves cognition and brain function at while you sleep",
+            "item_image": "shopify://shop_images/Image_5.png",
             "item_desc": "<p>In our study, a group of older adults received olfactory enrichment for 2 hours every night over the course of 6 months.</p><p>This resulted in a 226% improvement in cognitive ability compared to a control group. This is the largest improvement in memory ever reported in healthy seniors. Nothing else has ever come close.</p>"
           }
         },
@@ -118,6 +122,7 @@
           "type": "item",
           "settings": {
             "item_title": "Memory Air® provides 80 different Olfactory Stimulations every night",
+            "item_image": "shopify://shop_images/Image_6.png",
             "item_desc": "<p>Trying to smell 40 scents twice a day on your own is simply not practical. Imagine opening 80 bottles and separately loading each one into a device so you can smell it (and doing this every day!) Add memory issues to the equation, and the problem is compounded.</p><p>Memory Air® automatically dispenses 80 olfactory stimulations per night and works while you sleep.</p>"
           }
         }
