@@ -79,50 +79,47 @@
 		width: 100%;
 	}
 
-@media (max-width: 768px) {
-    #shopify-section-{{section.id}}.behind {
-        padding-block: 40px;
+    @media (max-width: 768px) {
+        #shopify-section-{{section.id}}.behind {
+            padding-block: 40px;
+        }
+    
+        #shopify-section-{{section.id}} .behind_title > h2 {
+            font-size: 32px;
+            line-height: 120%;
+        }
+    
+        #shopify-section-{{section.id}} .behind_content {
+            gap: 40px;
+        }
+    
+        #shopify-section-{{section.id}} .behind_content-items {
+            flex-direction: row;
+            gap: 16px;
+            align-items: start;
+            text-align: center;
+        }
+    
+        #shopify-section-{{section.id}} .behind_content-img > img {
+            width: 100px;
+            height: 100px;
+        }
+    
+        #shopify-section-{{section.id}} .behind_content-text {
+            gap: 16px;
+        }
+    
+        #shopify-section-{{section.id}} .behind_content-text-title {
+            font-size: 20px;
+    		text-align: start;
+        }
+    
+        #shopify-section-{{section.id}} .behind_content-text-dsc {
+            font-size: 16px;
+    		text-align: start;
+        }
     }
-
-    #shopify-section-{{section.id}} .behind_title > h2 {
-        font-size: 32px;
-        line-height: 120%;
-    }
-
-    #shopify-section-{{section.id}} .behind_content {
-        gap: 40px;
-    }
-
-    #shopify-section-{{section.id}} .behind_content-items {
-        flex-direction: row;
-        gap: 16px;
-        align-items: start;
-        text-align: center;
-    }
-
-    #shopify-section-{{section.id}} .behind_content-img > img {
-        width: 100px;
-        height: 100px;
-    }
-
-    #shopify-section-{{section.id}} .behind_content-text {
-        gap: 16px;
-    }
-
-    #shopify-section-{{section.id}} .behind_content-text-title {
-        font-size: 20px;
-		text-align: start;
-    }
-
-    #shopify-section-{{section.id}} .behind_content-text-dsc {
-        font-size: 16px;
-		text-align: start;
-    }
-}
-
-
-
-	{% endstyle %}
+{% endstyle %}
 	
 
 	<div class="container">
