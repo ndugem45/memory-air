@@ -131,9 +131,6 @@
                       {% assign mod = forloop.index | modulo: 2 %}
                         <div class="behind_content-items">
                             {% if mod == 0 %}
-        						<div class="behind_content-img">
-                                    <img src={{block.settings.item_image.src | img_url: 'original'}} alt="">
-        						</div>
         						<div class="behind_content-text">
         							<h3 class="behind_content-text-title">
                                       {{ block.settings.item_title }}
@@ -141,8 +138,14 @@
         							<p class="behind_content-text-dsc">
                                       {{ block.settings.item_desc }}
                                     </p>
+        						</div>
+        						<div class="behind_content-img">
+                                    <img src={{block.settings.item_image.src | img_url: 'original'}} alt="">
         						</div>
                             {% else %}
+        						<div class="behind_content-img">
+                                    <img src={{block.settings.item_image.src | img_url: 'original'}} alt="">
+        						</div>
         						<div class="behind_content-text">
         							<h3 class="behind_content-text-title">
                                       {{ block.settings.item_title }}
@@ -150,9 +153,6 @@
         							<p class="behind_content-text-dsc">
                                       {{ block.settings.item_desc }}
                                     </p>
-        						</div>
-        						<div class="behind_content-img">
-                                    <img src={{block.settings.item_image.src | img_url: 'original'}} alt="">
         						</div>
                             {% endif %}
     					</div>
