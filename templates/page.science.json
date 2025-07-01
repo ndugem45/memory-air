@@ -44,6 +44,8 @@
       "settings": {
         "section_title": "",
         "section_desc": "",
+        "image": "shopify://shop_images/Group_20.png",
+        "image_mobile": "shopify://shop_images/Frame_2147227151.png",
         "left_cta_title": "Buy Now",
         "left_cta_url": "shopify://products/memory-air-device",
         "right_cta_title": "Explore Our Product",
