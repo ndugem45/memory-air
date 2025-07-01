@@ -135,14 +135,14 @@
                       {% assign mod = forloop.index | modulo: 2 %}
                         <div class="behind_content-items">
     						<div class="behind_content-img">
-                                <img src={{block.settings.image.src | img_url: 'original'}} alt="">
+                                <img src={{block.settings.item_image.src | img_url: 'original'}} alt="">
     						</div>
     						<div class="behind_content-text">
     							<h3 class="behind_content-text-title">
-                                  The “Super Highway” of Cognition 
+                                  {{ block.settings.item_title }}
                                 </h3>
     							<p class="behind_content-text-dsc">
-                                  The olfactory system is the only sensory system that has a direct path to the brain’s cognitive control areas. All other senses must travel through "side streets" thus having milder effects. We refer to this direct access as the “Super Highway” to the brain.
+                                  {{ block.settings.item_desc }}
                                 </p>
     						</div>
     					</div>
@@ -221,18 +221,17 @@
           "settings": [
             {
               "type": "textarea",
-              "id": "item-title",
-              "label": "Item title",
-              "default": "Based on Revolutionary Neuroscience"
+              "id": "item_title",
+              "label": "Item title"
             },
             {
               "type": "image_picker",
-              "id": "item-icon",
-              "label": "Item icon",
+              "id": "item_image",
+              "label": "Item image"
             },
             {
               "type": "richtext",
-              "id": "item-desc",
+              "id": "item_desc",
               "label": "Item desc"
             }
           ]
