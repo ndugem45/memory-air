@@ -19,7 +19,7 @@
     "nose": {
       "type": "nose",
       "settings": {
-        "video": "shopify://files/videos/Desktop 2x longer.mp4",
+        "video": "shopify://files/videos/Desktop 2x longer_Match Source - Adaptive Low Bitrate_Match Source - Adaptive Low Bitrate.mp4",
         "video_mobile": "shopify://files/videos/Mobile.mp4"
       }
     },
