@@ -1,7 +1,5 @@
 {% comment %} for healthcare page {% endcomment %}
 
-{% assign science_display = 'new_product-intro.webp' | asset_url | append: '?v=' | append: 'timestamp' %}
-
 {% style %}
   #shopify-section-{{section.id}}.introduce .container {
   	display: flex;
@@ -71,14 +69,9 @@
       </p>
     {% endif %}
   <div class="img-wrap m-top m-54" id="introduce-slider">
-    {% if section.blocks != blank %}
-      {%- for image in section.blocks -%}
-        <img src="{{ image.settings.image.src | img_url: 'original' }}" alt="">
-      {% endfor %}
+    {% if section.settings.image != blank %}
+        <img src="{{ section.settings.image.src | img_url: 'original' }}" alt="">
     {% else %}
-      <img src="{{ science_display }}" alt="">
-      <img src="{{ science_display }}" alt="">
-      <img src="{{ science_display }}" alt="">
       <img src="{{ science_display }}" alt="">
     {% endif %}
   </div>
