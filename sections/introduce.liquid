@@ -28,6 +28,12 @@
   	object-fit: cover;
   	border-radius: 64px;
   }
+  #shopify-section-{{section.id}} .img-wrap img.desktop {
+    display: block;
+  }
+  #shopify-section-{{section.id}} .img-wrap img.mobile {
+    display: none;
+  }
 
   @media (max-width: 768px) {
       #shopify-section-{{section.id}}.introduce p {
@@ -49,6 +55,12 @@
           max-height: 450px;
           border-radius: 24px;
       }
+      #shopify-section-{{section.id}} .img-wrap img.desktop {
+        display: none;
+      }
+      #shopify-section-{{section.id}} .img-wrap img.mobile {
+        display: block;
+      }
   }
 {% endstyle %}
 
@@ -69,11 +81,8 @@
       </p>
     {% endif %}
   <div class="img-wrap m-top m-54" id="introduce-slider">
-    {% if section.settings.image != blank %}
-        <img src="{{ section.settings.image.src | img_url: 'original' }}" alt="">
-    {% else %}
-      <img src="{{ science_display }}" alt="">
-    {% endif %}
+      <img src="{{ section.settings.image.src | img_url: 'original' }}" alt="" class="desktop">
+      <img src="{{ section.settings.image_mobile.src | img_url: 'original' }}" alt="" class="mobile">
   </div>
   <div class="btn-wrap m-top m-32">
     {% if section.settings.left_cta_url != blank %}
@@ -86,19 +95,6 @@
     {% endif %}
   </div>
 </div>
-<script>
-  $(document).ready(() => {
-    $('#introduce-slider').slick({
-      arrows: false,
-      dots: false,
-      fade: true,
-    });
-
-    $('#introduce-slider').click(() => {
-      $('#introduce-slider').slick('slickNext');
-    });
-  });
-</script>
 
 {% schema %}
 {
@@ -120,6 +116,16 @@
       "type": "image_picker",
       "id": "section_image",
       "label": "Section image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Main image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Main image mobile"
     },
     {
       "type": "text",
