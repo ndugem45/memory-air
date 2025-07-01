@@ -131,8 +131,24 @@
 					<h2>The Science Behind Memory Air<sup>™</sup></h2>
 				</div>
 				<div class="behind_content m-top m-78">
-
-					<div class="behind_content-items">
+                    {%- for block in section.blocks -%}
+                      {% assign mod = forloop.index | modulo: 2 %}
+                        <div class="behind_content-items">
+    						<div class="behind_content-img">
+                                <img src={{block.settings.image.src | img_url: 'original'}} alt="">
+    						</div>
+    						<div class="behind_content-text">
+    							<h3 class="behind_content-text-title">
+                                  The “Super Highway” of Cognition 
+                                </h3>
+    							<p class="behind_content-text-dsc">
+                                  The olfactory system is the only sensory system that has a direct path to the brain’s cognitive control areas. All other senses must travel through "side streets" thus having milder effects. We refer to this direct access as the “Super Highway” to the brain.
+                                </p>
+    						</div>
+    					</div>
+                    {% endfor %}
+                    
+					<!-- <div class="behind_content-items">
 						<div class="behind_content-img">
 								<img src={{behind-img1}} alt="">
 						</div>
@@ -173,7 +189,7 @@
 						</div>
 					</div>
 
-					<div class="behind_content-items">
+					<div class="behind_content-items"> -->
 						<div class="behind_content-img">
 								<img src={{behind-img5}} alt="">
 						</div>
@@ -197,6 +213,30 @@
         "tag": "section",
         "class": "behind",
         "settings": [
-        ]
+        ],
+        "blocks": [
+        {
+          "type": "item",
+          "name": "Item",
+          "settings": [
+            {
+              "type": "textarea",
+              "id": "item-title",
+              "label": "Item title",
+              "default": "Based on Revolutionary Neuroscience"
+            },
+            {
+              "type": "image_picker",
+              "id": "item-icon",
+              "label": "Item icon",
+            },
+            {
+              "type": "richtext",
+              "id": "item-desc",
+              "label": "Item desc"
+            }
+          ]
+        }
+      ]
       }
 	{% endschema %}
