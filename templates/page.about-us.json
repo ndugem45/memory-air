@@ -8,70 +8,70 @@
  * ------------------------------------------------------------
  */
 {
-	"sections": {
-		"hero-aboutus": {
-			"type": "hero-aboutus",
-			"settings": {
-				"section_label": "About Memory Air<sup>™</sup>",
-				"section_title": ""
-			}
-		},
-		"partner": {
-			"type": "partner",
-			"settings": {
-				"speed": 2500,
-				"partner_object": []
-			}
-		},
-		"bringing": {
-			"type": "bringing",
-			"settings": {
-				"section_title": "",
-				"section_desc": ""
-			}
-		},
-		"officer": {
-			"type": "officer",
-			"settings": {
-				"section_label": "Memory Air™ Chief Science Officer",
-				"officer_name": "Michael Leon, PhD",
-				"officer_title": "Professor Emeritus, Neurobiology and Behavior, <br> University of California Irvine",
-				"officer_bio": ""
-			}
-		},
-		"forfuture": {
-			"type": "forfuture",
-			"settings": {
-				"section_title": "",
-				"user_name": "Alan Bernstein",
-				"user_title": "Chief Executive Officer of Memory Air<sup>™</sup>",
-				"user_message": ""
-			}
-		},
-		"technical": {
-			"type": "technical",
-			"settings": {
-				"section_title": "",
-				"section_dec": ""
-			}
-		},
-		"message": {
-			"type": "message",
-			"settings": {
-				"section_title": "",
-				"section_dec": "",
-				"user_name": "Alan Bernstein, CEO",
-				"user_title": "Science Lab 3, Makers of MemoryAir<sup>™</sup>"
-			}
-		}
-	},
-	"order": [
-		"hero-aboutus",
-		"partner",
-		"bringing",
-		"officer",
-		"forfuture",
-		"technical",
-		"message"
-	]
+  "sections": {
+    "hero-aboutus": {
+      "type": "hero-aboutus",
+      "settings": {
+        "section_label": "About Science Lab 3™",
+        "section_title": ""
+      }
+    },
+    "partner": {
+      "type": "partner",
+      "settings": {
+        "speed": 2500,
+        "partner_object": []
+      }
+    },
+    "bringing": {
+      "type": "bringing",
+      "settings": {
+        "section_title": "",
+        "section_desc": ""
+      }
+    },
+    "officer": {
+      "type": "officer",
+      "settings": {
+        "section_label": "Memory Air™ Chief Science Officer",
+        "officer_name": "Michael Leon, PhD",
+        "officer_title": "Professor Emeritus, Neurobiology and Behavior, <br> University of California Irvine",
+        "officer_bio": ""
+      }
+    },
+    "forfuture": {
+      "type": "forfuture",
+      "settings": {
+        "section_title": "",
+        "user_name": "Alan Bernstein",
+        "user_title": "Chief Executive Officer of Memory Air<sup>™</sup>",
+        "user_message": ""
+      }
+    },
+    "technical": {
+      "type": "technical",
+      "settings": {
+        "section_title": "",
+        "section_dec": ""
+      }
+    },
+    "message": {
+      "type": "message",
+      "settings": {
+        "section_title": "",
+        "section_dec": "",
+        "user_name": "Alan Bernstein, CEO",
+        "user_title": "Science Lab 3, Makers of MemoryAir<sup>™</sup>"
+      }
+    }
+  },
+  "order": [
+    "hero-aboutus",
+    "partner",
+    "bringing",
+    "officer",
+    "forfuture",
+    "technical",
+    "message"
+  ]
 }
