@@ -78,11 +78,7 @@
   <div class="healthcare_content">
     <div class="healthcare_content-text">
       <h1 class="m-btm m-32">
-        {% if section.settings.section_title != blank %}
-          {{ section.settings.section_title }}
-        {% else %}
-          <span> Deliver Real Results<br></span> to Your Patients and Clients
-        {% endif %}
+        {{ section.settings.section_title }}
       </h1>
       {% if section.settings.section_desc != blank %}
         {{ section.settings.section_desc }}
@@ -237,7 +233,8 @@
       "type": "textarea",
       "id": "section_title",
       "label": "Section title",
-      "info": "Wrap italic font with <span>"
+      "info": "Wrap italic font with <span>",
+      "default": "<span> Deliver Real Results<br></span> to Your Patients and Clients"
     },
     {
       "type": "richtext",
