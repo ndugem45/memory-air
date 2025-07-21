@@ -50,8 +50,6 @@
     "message": {
       "type": "message",
       "settings": {
-        "section_title": "",
-        "section_dec": "",
         "user_name": "Alan Bernstein, CEO",
         "user_title": "Science Lab 3, Makers of MemoryAir<sup>™</sup>"
       }
