@@ -100,11 +100,7 @@
     {{ section.settings.section_title }}}
   </h2>
   <p class="science_text-dsc">
-    {% if section.settings.section_desc != blank %}
-        {{ section.settings.section_desc }}
-    {% else %}
-      Improving your brain by improving your sense of smell
-    {% endif %}
+    {{ section.settings.section_desc }}
   </p>
   <div class="science_content">
     <div class="science_video">
@@ -158,6 +154,7 @@
         "type": "textarea",
         "id": "section_desc",
         "label": "Section desc",
+        "default": "Improving your brain by improving your sense of smell"
       },
       {
         "type": "url",
