@@ -45,12 +45,7 @@
 
 <div class="container">
   <h2 class="text-center m-btm m-54">
-    {% if section.settings.section_title != blank %}
-      {{ section.settings.section_title }}
-    {% else %}
-      Memory Air<sup>™</sup> <br>
-      <span> in the News </span>
-    {% endif %}
+    {{ section.settings.section_title }}
   </h2>
   <div class="news_grid m-btm m-54">
     {% if section.blocks != blank %}
@@ -140,7 +135,8 @@
       "type": "textarea",
       "id": "section_title",
       "label": "Section title",
-      "info": "Wrap italic font with <span>"
+      "info": "Wrap italic font with <span>",
+      "default": "Memory Air<sup>™</sup> <br><span> in the News </span>"
     },
     {
       "type": "text",

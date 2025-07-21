@@ -89,7 +89,6 @@
     "news": {
       "type": "news",
       "settings": {
-        "section_title": "",
         "cta_title": "Buy Now",
         "cta_url": "shopify://products/memory-air-device"
       }
