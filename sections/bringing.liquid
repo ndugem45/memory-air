@@ -103,13 +103,7 @@
                     {{ section.settings.section_title }}
                 </h2>
                 <p class="bringing_text-dsc">
-                    {% if section.settings.section_desc != blank %}
-                        {{ section.settings.section_desc }}
-                    {% else %}
-                        <span>Science Lab 3<sup>™</sup></span> is dedicated to revolutionizing brain and memory care based directly on high-quality, consistent science that is causal, not just correlative.<br><br>
-                        That means we have high confidence in the science. By marrying simple, easy-to-use design with this powerful science, we are committed to bringing customers real results in a space overrun with claims that just can’t be backed up.<br><br>
-                        With <span>Memory Air<sup>™</sup></span>, you'll be able to track your own real results.
-                    {% endif %}
+                    {{ section.settings.section_desc }}
                 </p>
             </div>
         </div>
@@ -243,6 +237,7 @@
                     "type": "textarea",
                     "id": "section_desc",
                     "label": "Section description",
+                    "default": "<span>Science Lab 3<sup>™</sup></span> is dedicated to revolutionizing brain and memory care based directly on high-quality, consistent science that is causal, not just correlative.<br><br>That means we have high confidence in the science. By marrying simple, easy-to-use design with this powerful science, we are committed to bringing customers real results in a space overrun with claims that just can’t be backed up.<br><br>With <span>Memory Air<sup>™</sup></span>, you'll be able to track your own real results."
                 },
                 {
                     "type": "image_picker",
