@@ -12,6 +12,8 @@
     "hero-product": {
       "type": "hero-product",
       "settings": {
+        "section_title": "Improve Your <br><span>Memory...</span> <br>While You <span>Sleep</span>",
+        "section_desc": "The revolutionary new product that improves memory while you sleep. Created by a world famous Neuroscientist.",
         "section_cta_title": "Buy Now",
         "section_cta_url": "shopify://products/memory-air-device"
       }
@@ -79,6 +81,7 @@
         "work_item_pfp9hz"
       ],
       "settings": {
+        "section_title": "How Memory Air<sup>™</sup> <span>Works</span>"
       }
     },
     "pricing": {
@@ -100,11 +103,19 @@
       "type": "behind",
       "disabled": true,
       "settings": {
+        "section_title": "The Science Behind Memory Air<sup>™</sup>"
       }
     },
     "life": {
       "type": "life",
       "settings": {
+        "section_title": "Life is Better <br><span>with the Memory Air<sup>™</sup> device</span>",
+        "section_list_item": [
+          "feel-younger",
+          "regain-maintain-confidence-in-daily-life",
+          "improved-mental-clarity-focus",
+          "live-free-reduce-dependency-on-others"
+        ]
       }
     },
     "stories": {
