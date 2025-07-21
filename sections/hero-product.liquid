@@ -86,11 +86,7 @@
       {{ section.settings.section_title }}
     </h1>
     <p>
-      {% if section.settings.section_desc != blank %}
-        {{ section.settings.section_desc }}
-      {% else %}
-        The revolutionary new product that improves memory while you sleep. Created by a world famous Neuroscientist.
-      {% endif %}
+      {{ section.settings.section_desc }}
     </p>
     <div class="btn-wrap m-top m-54">
       {% if section.settings.section_cta_title != blank %}
@@ -242,7 +238,8 @@
     {
       "type": "textarea",
       "id": "section_desc",
-      "label": "Section description"
+      "label": "Section description",
+      "default": "The revolutionary new product that improves memory while you sleep. Created by a world famous Neuroscientist."
     },
     {
       "type": "text",
