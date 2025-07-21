@@ -105,28 +105,10 @@
   <div class="life_slider">
     {%-  for life_item in section.settings.section_list_item -%}
       <div class="slider_item-wrap">
-          <div class="slider_item">
-            {{ block.settings.image | image_url: width: 411 | image_tag }}
-            <div class="font-medium text-32">
-              {{  block.settings.text }}
-            </div>
-          </div>
-        </div>
-      <div class="stories_card-wrap">
-        <div class="stories_card">
-          <img src="{{ testi.photo | image_url }}" alt="">
-          <div class="content">
-            <div class="text-32 font-medium text-black">
-             {{ testi.message | metafield_tag }}
-            </div>
-            <div class="user text-20">
-              <span class="text-black">
-                {{ testi.name }}
-              </span>
-              <span>
-                {{ testi.title_position }}
-              </span>
-            </div>
+        <div class="slider_item">
+          {{ life_item.image | image_url: width: 411 | image_tag }}
+          <div class="font-medium text-32">
+            {{  life_item.title }}
           </div>
         </div>
       </div>
