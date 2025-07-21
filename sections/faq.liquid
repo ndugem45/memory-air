@@ -6,14 +6,7 @@
 
 <div class="container">
   <h2 class="text-center m-btm m-54">
-    {% if section.settings.section_title != blank %}
-      {{ section.settings.section_title }}
-    {% else %}
-      Frequenty Asked <br>
-      <span>
-        Questions
-      </span>
-    {% endif %}
+    {{ section.settings.section_title }}
   </h2>
   {% assign title = "Why isn't a diffuser enough to improve my memory?" %}
   <div class="faq_wrap">
@@ -80,7 +73,8 @@
         "type": "textarea",
         "id": "section_title",
         "label": "Section title",
-        "info": "Wrap italic font with <span>"
+        "info": "Wrap italic font with <span>",
+        "default": "Frequenty Asked <br><span>Questions</span>"
       },
       {
         "type": "text",
