@@ -74,15 +74,7 @@
         <div class="healthcare_content-text">
             <span>{{section.settings.section_label}}</span>
             <h1 class="m-btm m-32">
-                {% if section.settings.section_title != blank %}
-                    {{ section.settings.section_title }}
-                {% else %}
-                    <span>
-                        Using Science to <br>
-                        Help You<br>
-                    </span>
-                    Live Your Best Life
-                {% endif %}
+              {{ section.settings.section_title }}
             </h1>
         </div>
         <div class="healthcare_content-img">
@@ -111,6 +103,7 @@
       "id": "section_title",
       "label": "Section title",
       "info": "Wrap italic font with <span>",
+      "default": "<span>Using Science to <br>Help You<br></span>Live Your Best Life"
     },
     {
       "type": "image_picker",
