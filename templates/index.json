@@ -12,8 +12,6 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "section_title": "",
-        "section_desc": "",
         "left_cta_title": "Buy Now",
         "left_cta_url": "shopify://products/memory-air-device",
         "right_cta_url": "",
