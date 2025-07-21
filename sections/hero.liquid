@@ -121,11 +121,7 @@
       {% endif %}
     </h1>
     <p class="hero_desc m-btm m-98">
-      {% if section.settings.section_desc != blank %}
-        {{ section.settings.section_desc }}
-      {% else %}
-        The Biggest Improvement in Human Memory Ever Discovered.
-      {% endif %}
+      {{ section.settings.section_desc }}
     </p>
     <div class="btn-wrap">
       {% if section.settings.left_cta_title != blank %}
@@ -161,6 +157,7 @@
         "type": "textarea",
         "id": "section_desc",
         "label": "Section description",
+        "default": "The Biggest Improvement in Human Memory Ever Discovered."
       },
       {
         "type": "text",
