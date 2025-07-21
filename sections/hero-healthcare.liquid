@@ -80,14 +80,7 @@
       <h1 class="m-btm m-32">
         {{ section.settings.section_title }}
       </h1>
-      {% if section.settings.section_desc != blank %}
-        {{ section.settings.section_desc }}
-      {% else %}
-        <p>
-          Memory Air<sup>™</sup> was created by a world-famous scientist ranked in the top 2% by the Stanford School of Medicine. Now
-          you can deliver real results to your patients and clients.
-        </p>
-      {% endif %}
+      {{ section.settings.section_desc }}
       <div class="m-top m-32 btn-wrap">
         {% if section.settings.left_cta != blank %}
           <a class="btn is-black" href="{{ section.settings.left_cta_url }}">{{ section.settings.left_cta }}</a>
@@ -237,9 +230,10 @@
       "default": "<span> Deliver Real Results<br></span> to Your Patients and Clients"
     },
     {
-      "type": "richtext",
+      "type": "textarea",
       "id": "section_desc",
-      "label": "Section description"
+      "label": "Section description",
+      "default": "Memory Air<sup>™</sup> was created by a world-famous scientist ranked in the top 2% by the Stanford School of Medicine. Now you can deliver real results to your patients and clients."
     },
     {
       "type": "image_picker",
