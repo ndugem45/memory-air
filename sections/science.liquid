@@ -97,14 +97,7 @@
 
 <div class="container">
   <h2 class="text-center m-btm m-32 text-primary">
-    {% if section.settings.section_title != blank %}
-      {{ section.settings.section_title }}
-    {% else %}
-      Memory Air<sup>™</sup> is based on the <br>
-      <span>
-        Science of Olfactory Enrichment
-      </span>
-    {% endif %}
+    {{ section.settings.section_title }}}
   </h2>
   <p class="science_text-dsc">
     {% if section.settings.section_desc != blank %}
@@ -158,7 +151,8 @@
         "type": "textarea",
         "id": "section_title",
         "label": "Section title",
-        "info": "Wrap italic font with <span>"
+        "info": "Wrap italic font with <span>",
+        "default": "Memory Air<sup>™</sup> is based on the <br><span>Science of Olfactory Enrichment</span>"
       },
       {
         "type": "textarea",
