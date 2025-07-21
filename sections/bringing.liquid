@@ -100,14 +100,7 @@
             </div>
             <div class="healthcare_content-text bringing_content-text">
                 <h2 class="m-btm m-32">
-                    {% if section.settings.section_title != blank %}
-                        {{ section.settings.section_title }}
-                    {% else %}
-                        Bringing Innovative Science <br>
-                        <span>
-                            Directly to your Door
-                        </span>
-                    {% endif %}
+                    {{ section.settings.section_title }}
                 </h2>
                 <p class="bringing_text-dsc">
                     {% if section.settings.section_desc != blank %}
@@ -244,6 +237,7 @@
                     "id": "section_title",
                     "label": "Section title",
                     "info": "Wrap italic font with <span>",
+                    "default": "Bringing Innovative Science <br><span>Directly to your Door</span>"
                 },
                 {
                     "type": "textarea",
