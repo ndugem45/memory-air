@@ -268,11 +268,7 @@
 
 <div class="container">
   <h2 class="text-center">
-    {% if section.settings.section_title != blank %}
-      {{ section.settings.section_title }}
-    {% else %}
-      How Memory Air<sup>™</sup> <span>Works</span>
-    {% endif %}
+    {{ section.settings.section_title }}
   </h2>
   <div class="content">
     <img src="{{ product_img }}" alt="" class="product"/>
@@ -325,6 +321,7 @@
         "id": "section_title",
         "label": "Section title",
         "info": "Wrap italic font with <span>",
+        "default": "How Memory Air<sup>™</sup> <span>Works</span>"
       }
     ],
     "max_blocks": 7,
