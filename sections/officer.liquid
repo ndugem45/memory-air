@@ -174,13 +174,7 @@
 		</span>
 
 		<p class="officer_text-dsc">
-			{% if section.settings.officer_bio != blank %}
-				{{ section.settings.officer_bio }}
-			{% else %}
-              Michael Leon was ranked in the top 2% of scientists in the world in a recent analysis from Stanford University.  His innovative work in olfactory enrichment has been published worldwide in scientific journals. Memory Air® is built on the strong foundation of Dr. Leon’s pioneering work.
-                <br><br>
-              With this simple to use, compact product, the benefits of this science can be experienced in the comfort of your own home.
-			{% endif %}
+          {{ section.settings.officer_bio }}
 		</p>
 	</div>
 
@@ -263,6 +257,7 @@
       "type": "textarea",
       "id": "officer_bio",
       "label": "Officer bio",
+      "default": "Michael Leon was ranked in the top 2% of scientists in the world in a recent analysis from Stanford University.  His innovative work in olfactory enrichment has been published worldwide in scientific journals. Memory Air® is built on the strong foundation of Dr. Leon’s pioneering work.<br><br>With this simple to use, compact product, the benefits of this science can be experienced in the comfort of your own home."
     },
 	],
 	"blocks": [
