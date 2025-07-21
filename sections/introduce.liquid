@@ -68,13 +68,9 @@
   <h2 class="text-center">
     {{ section.settings.section_title }}
   </h2>
-    {% if section.settings.section_desc != blank %}
-      {{ section.settings.section_desc }}
-    {% else %}
-      <p>
-        
-      </p>
-    {% endif %}
+  <p>
+    {{ section.settings.section_desc }}
+  </p>
   <div class="img-wrap m-top m-54" id="introduce-slider">
       <img src="{{ section.settings.image.src | img_url: 'original' }}" alt="" class="desktop">
       <img src="{{ section.settings.image_mobile.src | img_url: 'original' }}" alt="" class="mobile">
