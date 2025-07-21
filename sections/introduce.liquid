@@ -69,8 +69,7 @@
     {% if section.settings.section_title != blank %}
       {{ section.settings.section_title }}
     {% else %}
-      Introducing Memory Air<sup>™</sup> <br>
-      <span> the All-in-One Olfactory Enrichment Device </span>
+      
     {% endif %}
   </h2>
     {% if section.settings.section_desc != blank %}
@@ -105,7 +104,8 @@
       "type": "textarea",
       "id": "section_title",
       "label": "Section title",
-      "info": "Wrap italic font with <span>"
+      "info": "Wrap italic font with <span>",
+      "default": "Introducing Memory Air<sup>™</sup> <br><span> the All-in-One Olfactory Enrichment Device </span>"
     },
     {
       "type": "richtext",
