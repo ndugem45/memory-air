@@ -91,14 +91,7 @@
 
 <div class="container">
   <h2 class="m-btm m-78 text-primary">
-    {% if section.settings.section_title != blank %}
-      {{ section.settings.section_title }}
-    {% else %}
-      Life is Better <br>
-      <span>
-        with the Memory Air<sup>™</sup> device
-      </span>
-    {% endif %}
+    {{ section.settings.section_title }}
   </h2>
 </div>
 <div class="container btm">
@@ -177,7 +170,8 @@
         "type": "textarea",
         "id": "section_title",
         "label": "Section title",
-        "info": "Wrap italic font with <span>"
+        "info": "Wrap italic font with <span>",
+        "default": "Life is Better <br><span>with the Memory Air<sup>™</sup> device</span>"
       },
       {
         "type": "metaobject_list",
