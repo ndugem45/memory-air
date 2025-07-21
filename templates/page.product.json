@@ -105,7 +105,6 @@
     "life": {
       "type": "life",
       "settings": {
-        "section_title": ""
       }
     },
     "stories": {
