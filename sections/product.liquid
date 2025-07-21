@@ -147,11 +147,7 @@
         </h2>
       </div>
       <p class="text-16 font-regular">
-        {% if section.settings.section_desc != blank %}
-          {{section.settings.section_desc}}
-        {% else %}
-          Sits on your nightstand next to your bed.
-        {% endif %}
+        {{section.settings.section_desc}}
       </p>
       {% if section.settings.cta_btn_url != blank %}
         <a href="{{ section.settings.cta_btn_url }}" class="btn">
@@ -363,6 +359,7 @@
         "type": "textarea",
         "id": "section_desc",
         "label": "Section description",
+        "default": "Sits on your nightstand next to your bed."
       },
       {
         "type": "text",
