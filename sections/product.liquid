@@ -143,14 +143,7 @@
           {{section.settings.section_label}}
         </span>
         <h2 class="m-top m-12">
-          {% if section.settings.section_title != blank %}
-            {{ section.settings.section_title }}
-          {% else %}
-            Effortless to use <br>
-            <span>
-              Trackable results
-            </span>
-          {% endif %}
+          {{ section.settings.section_title }}
         </h2>
       </div>
       <p class="text-16 font-regular">
@@ -363,7 +356,8 @@
         "type": "textarea",
         "id": "section_title",
         "label": "Section title",
-        "info": "Wrap italic font with <span>"
+        "info": "Wrap italic font with <span>",
+        "default": "Effortless to use <br><span>Trackable results</span>"
       },
       {
         "type": "textarea",
