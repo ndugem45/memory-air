@@ -100,7 +100,6 @@
       "type": "behind",
       "disabled": true,
       "settings": {
-        "section_title": ""
       }
     },
     "life": {
