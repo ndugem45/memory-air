@@ -103,6 +103,26 @@
 </div>
 <div class="container btm">
   <div class="life_slider">
+    {%-  for testi in section.settings.testi_list -%}
+        <div class="stories_card-wrap">
+          <div class="stories_card">
+            <img src="{{ testi.photo | image_url }}" alt="">
+            <div class="content">
+              <div class="text-32 font-medium text-black">
+               {{ testi.message | metafield_tag }}
+              </div>
+              <div class="user text-20">
+                <span class="text-black">
+                  {{ testi.name }}
+                </span>
+                <span>
+                  {{ testi.title_position }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
     {% if section.blocks != blank %}
       {%- for block in section.blocks -%}
         <div class="slider_item-wrap">
