@@ -203,11 +203,7 @@
 					<div class="behind_content-cta">
 						<div class="behind_cta-title">
 							<p>
-								{% if section.settings.user_message != blank %}
-									"{{ section.settings.user_message }}"
-								{% else %}
-									“We are particularly committed to making Memory Air<sup>™</sup> affordable to the poor around the nation and around the world.”
-								{% endif %}
+                              "{{ section.settings.user_message }}"
 							</p>
 						</div>
 						<div class="behind_cta-items">
@@ -262,6 +258,7 @@
 					"type": "textarea",
 					"id": "user_message",
 					"label": "User message",
+                    "default": "“We are particularly committed to making Memory Air<sup>™</sup> affordable to the poor around the nation and around the world.”"
 				},
 				{
 					"type": "image_picker",
