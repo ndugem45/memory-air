@@ -13,8 +13,6 @@
       "type": "contactus-2",
       "settings": {
         "section_product": "memory-air-device",
-        "section_label": "",
-        "section_title": "",
         "support_url": "shopify://pages/support"
       }
     },
