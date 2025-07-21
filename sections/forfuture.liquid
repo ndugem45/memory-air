@@ -196,12 +196,7 @@
 			<div class="forfuture_wraper">
 				<div class="forfuture_title">
 					<h2>
-						{% if section.settings.section_title != blank %}
-							{{ section.settings.section_title }}
-					{% else %}
-						At Science Lab 3<sup>™</sup> <br>
-						<span>We’re Building for the Future </span>
-					{% endif %}
+                      {{ section.settings.section_title }}
 					</h2>
 				</div>
 				<div class="forfuture_cta">
@@ -249,6 +244,7 @@
 					"id": "section_title",
 					"label": "Section title",
 					"info": "Wrap italic font with <span>",
+                    "default": "At Science Lab 3<sup>™</sup> <br><span>We’re Building for the Future </span>"
 				},
 				{
 					"type": "text",
