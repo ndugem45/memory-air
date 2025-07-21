@@ -64,7 +64,10 @@
     "life": {
       "type": "life",
       "settings": {
-        "section_title": ""
+        "section_title": "",
+        "section_list_item": [
+          "feel-younger"
+        ]
       }
     },
     "product": {
