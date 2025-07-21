@@ -287,12 +287,7 @@
 			{% endif %}
 			
 			<h1 class="m-btm m-54 text-center max-width-small">
-				{% if section.settings.section_title != blank %}
-					{{ section.settings.section_title }}
-				{% else %}
-					Contact
-					<span>Us</span>
-				{% endif %}
+                {{ section.settings.section_title }}
 			</h1>
 		</div>
 		<div class="contactus_content">
@@ -392,7 +387,8 @@
 				"type": "textarea",
 				"id": "section_title",
 				"label": "Section title",
-				"info": "Wrap italic font with <span>"
+				"info": "Wrap italic font with <span>",
+                "default": "Contact<span>Us</span>"
 			},
             {
 				"type": "url",
