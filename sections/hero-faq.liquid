@@ -24,14 +24,7 @@
 <div class="container">
   <div class="hero-label">{{ section.settings.section_label }}</div>
   <h1 class="text-center">
-    {% if section.settings.section_title != blank %}
-      {{ section.settings.section_title }}
-    {% else %}
-      Frequenty Asked <br>
-      <span>
-        Questions
-      </span>
-    {% endif %}
+    {{ section.settings.section_title }}
   </h1>
   <div class="scroll-btn">
     <svg width="149" height="148" viewBox="0 0 149 148" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -87,7 +80,8 @@
         "type": "textarea",
         "id": "section_title",
         "label": "Section title",
-        "info": "Wrap italic font with <span>"
+        "info": "Wrap italic font with <span>",
+        "default": "Frequenty Asked <br><span>Questions</span>"
       },
     ]
   }
