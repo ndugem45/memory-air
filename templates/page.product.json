@@ -120,7 +120,6 @@
     "news": {
       "type": "news",
       "settings": {
-        "section_title": "",
         "cta_title": "",
         "cta_url": ""
       }
