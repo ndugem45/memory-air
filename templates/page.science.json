@@ -12,8 +12,6 @@
     "hero-science": {
       "type": "hero-science",
       "settings": {
-        "section_title": "",
-        "section_desc": ""
       }
     },
     "nose": {
