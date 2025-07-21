@@ -12,8 +12,6 @@
     "hero-healthcare": {
       "type": "hero-healthcare",
       "settings": {
-        "section_title": "",
-        "section_desc": "",
         "left_cta": "Buy Now",
         "left_cta_url": "shopify://products/memory-air-device",
         "right_cta": "Contact Us for Bulk Ordering",
