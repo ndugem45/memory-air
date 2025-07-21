@@ -141,29 +141,28 @@
     {% endif %}
   </h2>
   <div class="stories_slider">
-    {% if section.settings.testi_list != blank %}
-      {%-  for testi in section.settings.testi_list -%}
-        <div class="stories_card-wrap">
-          <div class="stories_card">
-            <img src="{{ testi.photo | image_url }}" alt="">
-            <div class="content">
-              <div class="text-32 font-medium text-black">
-               {{ testi.message | metafield_tag }}
-              </div>
-              <div class="user text-20">
-                <span class="text-black">
-                  {{ testi.name }}
-                </span>
-                <span>
-                  {{ testi.title_position }}
-                </span>
-              </div>
+    {%-  for testi in section.settings.testi_list -%}
+      <div class="stories_card-wrap">
+        <div class="stories_card">
+          <img src="{{ testi.photo | image_url }}" alt="">
+          <div class="content">
+            <div class="text-32 font-medium text-black">
+             {{ testi.message | metafield_tag }}
+            </div>
+            <div class="user text-20">
+              <span class="text-black">
+                {{ testi.name }}
+              </span>
+              <span>
+                {{ testi.title_position }}
+              </span>
             </div>
           </div>
         </div>
-      {% endfor %}
-    {% else %}
-      <div class="stories_card-wrap">
+      </div>
+    {% endfor %}
+    
+      <!-- <div class="stories_card-wrap">
         <div class="stories_card">
           <img src="{{ stories1 }}" alt="">
           <div class="content">
@@ -216,8 +215,7 @@
             </div>
           </div>
         </div>
-      </div>
-    {% endif %}
+      </div> -->
 
   </div>
   <div class="stories_navigation">
