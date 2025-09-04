@@ -91,7 +91,7 @@
   (function () {
       // Coframe config
       const config = {
-          projectId: '66f1e736e17fbf2a6daf6430',
+          projectId: '68b8c1de0fd489086af09552',
           startTime: Date.now(),
           timeoutMs: 1000,
           currentUrl: window.location.href,
@@ -116,7 +116,7 @@
       (window.CFQ = window.CFQ || []).push({ config });
       
       // Install Coframe SDK
-      const edgeUrl = new URL('https://edge.stage.cofra.me');
+      const edgeUrl = new URL('https://edge.cofra.me');
       edgeUrl.searchParams.set('config', encodeURIComponent(JSON.stringify(config)));
       const script = document.createElement('script');
       script.id = script_id;
@@ -126,6 +126,7 @@
       document.head.appendChild(script);
   })();
 </script>
+
 
   </head>
   <body>
