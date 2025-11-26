@@ -9,10 +9,6 @@
  */
 {
   "sections": {
-    "1764164856be473dd6": {
-      "type": "_blocks",
-      "settings": {}
-    },
     "hero": {
       "type": "hero",
       "settings": {
@@ -198,7 +194,6 @@
     }
   },
   "order": [
-    "1764164856be473dd6",
     "hero",
     "partner",
     "science",
