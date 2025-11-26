@@ -9,9 +9,40 @@
  */
 {
   "sections": {
+    "1764164856be473dd6": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_b1c77e9_MVYx6b": {
+          "type": "ai_gen_block_b1c77e9",
+          "settings": {
+            "message": "Black Friday Sale: Save 10% on all orders!",
+            "link_text": "Shop Now",
+            "link_url": "",
+            "show_icon": true,
+            "icon_type": "tag",
+            "icon_size": 20,
+            "background_color": "#000000",
+            "text_color": "#ffffff",
+            "link_color": "#ffcc00",
+            "link_hover_color": "#ffd633",
+            "font_size": 14,
+            "font_weight": "500",
+            "padding": 12,
+            "dismissible": true
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_b1c77e9_MVYx6b"
+      ],
+      "settings": {}
+    },
     "hero": {
       "type": "hero",
       "settings": {
+        "section_title": "Prevent & Reverse <br><span>Memory Loss...</span><br>...While you sleep!",
+        "section_desc": "The Biggest Improvement in Human Memory Ever Discovered.",
         "left_cta_title": "Buy Now",
         "left_cta_url": "shopify://products/memory-air-device",
         "right_cta_url": "",
@@ -48,6 +79,8 @@
     "science": {
       "type": "science",
       "settings": {
+        "section_title": "Memory Air<sup>™</sup> is based on the <br><span>Science of Olfactory Enrichment</span>",
+        "section_desc": "Improving your brain by improving your sense of smell",
         "video_url": "",
         "percent1": "226%",
         "label_percent1": "Memory Improvement in Seniors",
@@ -60,6 +93,7 @@
     "life": {
       "type": "life",
       "settings": {
+        "section_title": "Life is Better <br><span>with the Memory Air<sup>™</sup> device</span>",
         "section_list_item": [
           "feel-younger",
           "regain-maintain-confidence-in-daily-life",
@@ -72,6 +106,8 @@
       "type": "product",
       "settings": {
         "section_label": "Memory Air™ is a standalone device",
+        "section_title": "Effortless to use <br><span>Trackable results</span>",
+        "section_desc": "Sits on your nightstand next to your bed.",
         "cta_btn_title": "Explore Memory Air™",
         "cta_btn_url": "shopify://pages/our-product"
       }
@@ -79,6 +115,7 @@
     "stories": {
       "type": "stories",
       "settings": {
+        "section_title": "Success <br><span>Stories</span>",
         "testi_list": [
           "arron-gladavich-ph-d-mph-faan",
           "emily-everleigh",
@@ -89,6 +126,7 @@
     "news": {
       "type": "news",
       "settings": {
+        "section_title": "Memory Air<sup>™</sup> <br><span> in the News </span>",
         "cta_title": "Buy Now",
         "cta_url": "shopify://products/memory-air-device"
       }
@@ -185,6 +223,7 @@
     }
   },
   "order": [
+    "1764164856be473dd6",
     "hero",
     "partner",
     "science",
