@@ -11,31 +11,6 @@
   "sections": {
     "1764164856be473dd6": {
       "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_b1c77e9_MVYx6b": {
-          "type": "ai_gen_block_b1c77e9",
-          "settings": {
-            "message": "Black Friday Sale: Save 10% on all orders!",
-            "link_text": "Shop Now",
-            "link_url": "",
-            "show_icon": true,
-            "icon_type": "tag",
-            "icon_size": 20,
-            "background_color": "#000000",
-            "text_color": "#ffffff",
-            "link_color": "#ffcc00",
-            "link_hover_color": "#ffd633",
-            "font_size": 14,
-            "font_weight": "500",
-            "padding": 12,
-            "dismissible": true
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_b1c77e9_MVYx6b"
-      ],
       "settings": {}
     },
     "hero": {
