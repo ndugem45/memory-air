@@ -18,6 +18,12 @@
     "faq-plain": {
       "type": "faq-plain",
       "blocks": {
+        "faq_item_VcfkDq": {
+          "type": "faq_item",
+          "settings": {
+            "faq_object": "where-can-i-find-a-video-tutorial"
+          }
+        },
         "faq_item_4FfKyy": {
           "type": "faq_item",
           "settings": {
@@ -50,6 +56,7 @@
         }
       },
       "block_order": [
+        "faq_item_VcfkDq",
         "faq_item_4FfKyy",
         "faq_item_bPzim8",
         "faq_item_EJhMKQ",
@@ -57,6 +64,7 @@
         "faq_item_Qh9grq"
       ],
       "settings": {
+        "section_title": "Maintenance and <br><span>Troubleshooting</span>",
         "section_cta": "shopify://pages/faqs",
         "section_cta_size": true,
         "section_cta_title": "Go to FAQs"
