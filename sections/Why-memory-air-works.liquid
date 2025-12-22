@@ -1,96 +1,78 @@
 <section class="why-memory">
-    <div class="container">
-        <div class="why-inner">
-            {% if section.settings.wmw_titlet != blank %}
-            <div class="heading">
-                <h2>
-                   {{ section.settings.wmw_titlet }}
-                </h2>
-            </div>
-            {% endif %}
-            <div class="why-flex">
-                <div class="why-width">
-                    {% if section.settings.wmw_intro_text != blank %}
-                    <p>{{ section.settings.wmw_intro_text }}</p>
+            <div class="container">
+                <div class="why-inner">
+                    {% if section.settings.wmw_titlet != blank %}
+                    <div class="heading">
+                        <h2>{{ section.settings.wmw_titlet}}</h2>
+                    </div>
+                {% endif %}
+                    <div class="why-flex">
+                        {% if section.settings.wmw_leftText != blank %}
+                        <div class="why-width">
+                           {{ section.settings.wmw_leftText }}
+                        </div>
                     {% endif %}
-                    <ul>
-                        {% for block in section.blocks %}
-                            {% if block.type == 'wmw_feature_list_1' %}
-                                <li>
-                                    <strong>{{ block.settings.wmw_title }}</strong>
-                                    {{ block.settings.wmw_description }}
-                                </li>
-                            {% endif %}
-                        {% endfor %}
-                    </ul>
-                </div>
-
-                <div class="why-width1">
-                    <img src="{{ section.settings.wmw_image_1 | image_url }}" alt="#">
+                    {% if section.settings.wmw_image_1 != blank %}
+                        <div class="why-width1">
+                            <img src="{{ section.settings.wmw_image_1 | image_url }}" alt="{{ section.settings.wmw_image_1.alt }}" height="" width="">
+                        </div>
+                    {% endif %}
+                    </div>
+                    <div class="why-flex">
+                        
+                        <div class="why-width1">
+                            <img src="images/break.png" alt="#">
+                        </div>
+                        <div class="why-width">
+                            <p>Developed by Dr. Michael Leon, ranked in the Top 1% of Scientists Worldwide.</p>
+                            <ul>
+                                <li>The biggest improvement in human memory ever discovered</li>
+                                <li>226% improvement in memory in seniors</li>
+                                <li>Reduced feelings of depression</li>
+                                <li>People feel 6 years younger at age 50 compared to control group</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="why-content">
+                        <p class="arrows">This product is intended as a general wellness device for mental acuity and is not a medical device cleared by the fda.</p>
+                        <ul>
+                            <li>improve memory in seniors</li>
+                            <li>reduce the risk of memory loss</li>
+                            <li>designed based upon olfactory enrichment concepts</li>
+                        </ul>
+                        <p> This device is not intended to diagnose, treat, cure, or prevent disease.</p>
+                    </div>
                 </div>
             </div>
-
-            <div class="why-flex">
-                <div class="why-width1">
-                    <img src="{{ section.settings.wmw_image_2 | image_url }}" alt="#">
-                </div>
-
-                <div class="why-width">
-                    <p>{{ section.settings.wmw_secondary_text }}</p>
-                    <ul>
-                        {% for block in section.blocks %}
-                            {% if block.type == 'wmw_feature_list_2' %}
-                                <li>{{ block.settings.wmw_text }}</li>
-                            {% endif %}
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-
-            <div class="why-content">
-                <p class="arrows">{{ section.settings.wmw_disclaimer_top }}</p>
-                <ul>
-                    {% for block in section.blocks %}
-                        {% if block.type == 'wmw_disclaimer_list' %}
-                            <li>{{ block.settings.wmw_text }}</li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-                <p>{{ section.settings.wmw_disclaimer_bottom }}</p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
+        </section>
 {% schema %}
 {
   "name": "Why Memory Air Works",
   "settings": [
     {
-      "type": "text",
+      "type": "html",
       "id": "wmw_titlet",
       "label": "Title"
     },
     {
-      "type": "textarea",
-      "id": "wmw_intro_text",
-      "label": "Intro Paragraph"
+      "type": "richtext",
+      "id": "wmw_leftText",
+      "label": "Left Text"
     },
     {
       "type": "image_picker",
       "id": "wmw_image_1",
-      "label": "First Image"
+      "label": "Right Image"
     },
     {
-      "type": "textarea",
-      "id": "wmw_secondary_text",
-      "label": "Secondary Paragraph"
+      "type": "richtext",
+      "id": "wmw_rightText",
+      "label": "Rigth Text"
     },
     {
       "type": "image_picker",
       "id": "wmw_image_2",
-      "label": "Second Image"
+      "label": "Left Image"
     },
     {
       "type": "textarea",
