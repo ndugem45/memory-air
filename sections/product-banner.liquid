@@ -43,7 +43,7 @@
     </div>
     {% if section.settings.pbm_bannerimg != blank %}
     <div class="banner-width1">
-      <img src="{{ section.settings.pbm_bannerimg }}" alt="{{ section.settings.pbm_bannerimg.alt }}" height="" width="">
+      <img src="{{ section.settings.pbm_bannerimg | image_url }}" alt="{{ section.settings.pbm_bannerimg.alt }}" height="" width="">
     </div>
     {% endif %}
   </div>
