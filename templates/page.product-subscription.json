@@ -98,11 +98,7 @@
         "asf_Title": "As seen in & Featured on"
       }
     },
-    "hero-productpage": {
-      "type": "hero-productpage",
-      "disabled": true,
-      "settings": {}
-    },
+   
     "our_customers_think_MnzVhG": {
       "type": "our-customers-think",
       "name": "Our Customers Think",
@@ -241,7 +237,6 @@
   "order": [
     "product_banner_jKGhPX",
     "as_seen_VBTiYz",
-    "hero-productpage",
     "our_customers_think_MnzVhG",
     "why_people_talking_pHC8ix",
     "how_memory_air_works_ky8kgR",
