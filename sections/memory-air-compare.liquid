@@ -1,37 +1,40 @@
 <section class="compare-section">
-    <div class="container">
-        <div class="compare-wrapper">
-
-            <div class="heading">
-                <h2>{{ section.settings.hdmac_heading_text }} <span>{{ section.settings.hdmac_heading_highlight }}</span></h2>
-            </div>
-
-            <div class="compare-table">
-                <div class="table-row table-head">
-                    <div class="cell feature">{{ section.settings.hdmac_column_feature }}</div>
-                    {% for col in section.blocks %}
-                        {% if col.type == 'hdmac_column' %}
-                            <div class="cell {% if col.settings.hdmac_highlight %}highlight{% endif %}">{{ col.settings.hdmac_title }}</div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-
-                {% for row in section.rows %}
-                    <div class="table-row">
-                        <div class="cell feature">{{ row.hdmac_feature }}</div>
-                        {% for col_status in row.hdmac_statuses %}
-                            <div class="cell {% if col_status.highlight %}highlight{% endif %}">
-                                <span class="icon {% if col_status.check %}check{% else %}cross{% endif %}">
-                                    <img src="{{ col_status.image | image_url }}" alt="#">
-                                </span>
-                            </div>
-                        {% endfor %}
-                    </div>
-                {% endfor %}
-
-            </div>
+  <div class="container">
+    <div class="compare-wrapper">
+      {% if section.settings.hdmac_heading_text != blank %}
+        <div class="heading">
+          <h2>{{ section.settings.hdmac_heading_text }}</h2>
         </div>
+      {% endif %}
+      <div class="compare-table">
+        <div class="table-row table-head">
+            {% if section.settings.hdmac_column_feature != blank %}
+          <div class="cell feature">{{ section.settings.hdmac_column_feature }}</div>
+            {% endif %}
+          {% for col in section.blocks %}
+            {% if col.type == 'hdmac_column' %}
+              <div class="cell {% if col.settings.hdmac_highlight %}highlight{% endif %}">
+                {{ col.settings.hdmac_title }}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        {% for row in section.rows %}
+          <div class="table-row">
+            <div class="cell feature">{{ row.hdmac_feature }}</div>
+            {% for col_status in row.hdmac_statuses %}
+              <div class="cell {% if col_status.highlight %}highlight{% endif %}">
+                <span class="icon {% if col_status.check %}check{% else %}cross{% endif %}">
+                  <img src="{{ col_status.image | image_url }}" alt="#">
+                </span>
+              </div>
+            {% endfor %}
+          </div>
+        {% endfor %}
+      </div>
     </div>
+  </div>
 </section>
 
 {% schema %}
@@ -39,17 +42,11 @@
   "name": "Memory Air Compare",
   "settings": [
     {
-      "type": "text",
+      "type": "html",
       "id": "hdmac_heading_text",
-      "label": "Heading Text",
-      "default": "How Does Memory Air"
+      "label": "Title"
     },
-    {
-      "type": "text",
-      "id": "hdmac_heading_highlight",
-      "label": "Heading Highlight",
-      "default": "Compare?"
-    },
+
     {
       "type": "text",
       "id": "hdmac_column_feature",
@@ -85,17 +82,18 @@
 {% endschema %}
 
 {% javascript %}
-<script>
-  // Dynamic table rows data for admin-editable JSON
-  {% assign table_rows = 
-    '[ 
-      { "hdmac_feature":"Major Memory Improvement", "hdmac_statuses":[{"check":true,"highlight":true,"image":"images/green.png"},{"check":false,"highlight":false,"image":"images/red.svg"},{"check":false,"highlight":false,"image":"images/red.svg"},{"check":false,"highlight":false,"image":"images/red.svg"}] },
-      { "hdmac_feature":"80 Rotating Neuroscents", "hdmac_statuses":[{"check":true,"highlight":true,"image":"images/green.png"},{"check":false,"highlight":false,"image":"images/red.svg"},{"check":false,"highlight":false,"image":"images/red.svg"},{"check":false,"highlight":false,"image":"images/red.svg"}] },
-      { "hdmac_feature":"Neuroscientist-Designed", "hdmac_statuses":[{"check":true,"highlight":true,"image":"images/green.png"},{"check":false,"highlight":false,"image":"images/red.svg"},{"check":true,"highlight":false,"image":"images/green.png"},{"check":false,"highlight":false,"image":"images/red.svg"}] },
-      { "hdmac_feature":"Completely Natural", "hdmac_statuses":[{"check":true,"highlight":true,"image":"images/green.png"},{"check":true,"highlight":false,"image":"images/green.png"},{"check":true,"highlight":false,"image":"images/green.png"},{"check":false,"highlight":false,"image":"images/red.svg"}] },
-      { "hdmac_feature":"Requires Nothing to Remember", "hdmac_statuses":[{"check":true,"highlight":true,"image":"images/green.png"},{"check":false,"highlight":false,"image":"images/red.svg"},{"check":false,"highlight":false,"image":"images/red.svg"},{"check":false,"highlight":false,"image":"images/red.svg"}] }
-    ]' | parse_json %}
-
-  {% assign rows = table_rows %}
-</script>
+ 
 {% endjavascript %}
+ {% comment %} <script>
+    // Dynamic table rows data for admin-editable JSON
+    {% assign table_rows =
+      '[
+        { "hdmac_feature":"Major Memory Improvement", "hdmac_statuses":[{"check":true,"highlight":true,"image":"images/green.png"},{"check":false,"highlight":false,"image":"images/red.svg"},{"check":false,"highlight":false,"image":"images/red.svg"},{"check":false,"highlight":false,"image":"images/red.svg"}] },
+        { "hdmac_feature":"80 Rotating Neuroscents", "hdmac_statuses":[{"check":true,"highlight":true,"image":"images/green.png"},{"check":false,"highlight":false,"image":"images/red.svg"},{"check":false,"highlight":false,"image":"images/red.svg"},{"check":false,"highlight":false,"image":"images/red.svg"}] },
+        { "hdmac_feature":"Neuroscientist-Designed", "hdmac_statuses":[{"check":true,"highlight":true,"image":"images/green.png"},{"check":false,"highlight":false,"image":"images/red.svg"},{"check":true,"highlight":false,"image":"images/green.png"},{"check":false,"highlight":false,"image":"images/red.svg"}] },
+        { "hdmac_feature":"Completely Natural", "hdmac_statuses":[{"check":true,"highlight":true,"image":"images/green.png"},{"check":true,"highlight":false,"image":"images/green.png"},{"check":true,"highlight":false,"image":"images/green.png"},{"check":false,"highlight":false,"image":"images/red.svg"}] },
+        { "hdmac_feature":"Requires Nothing to Remember", "hdmac_statuses":[{"check":true,"highlight":true,"image":"images/green.png"},{"check":false,"highlight":false,"image":"images/red.svg"},{"check":false,"highlight":false,"image":"images/red.svg"},{"check":false,"highlight":false,"image":"images/red.svg"}] }
+      ]' | parse_json %}
+
+    {% assign rows = table_rows %}
+  </script> {% endcomment %}
