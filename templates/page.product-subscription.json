@@ -264,6 +264,44 @@
       "settings": {
         "woes_heading_text": "What our<span> Experts</span> say"
       }
+    },
+    "what_our_customers_say_YCFXKG": {
+      "type": "what-our-customers-say",
+      "blocks": {
+        "wocs_testimonial_cXMnFJ": {
+          "type": "wocs_testimonial",
+          "settings": {
+            "wocs_image": "shopify://shop_images/our1.png",
+            "wocs_quote": "“As a clinical nurse coordinator of pharmaceutical studies of Alzheimer’s drugs, I believe Memory Air will have a transformative impact on your memory loss. This simple and safe solution available without a prescription promises to surpass any results I witnessed as a sub-nvestigator of FDA studies.”",
+            "wocs_author": "Nancy W."
+          }
+        },
+        "wocs_testimonial_cYg8CH": {
+          "type": "wocs_testimonial",
+          "settings": {
+            "wocs_image": "shopify://shop_images/our2.png",
+            "wocs_quote": "BLISSFUL...we are sleeping very well with no sleep aids, gummies, or gimmicks!  Thank YOU!",
+            "wocs_author": "Jim (12 years with Parkinson's)  & Colette Scott"
+          }
+        },
+        "wocs_testimonial_xkRUHf": {
+          "type": "wocs_testimonial",
+          "settings": {
+            "wocs_image": "shopify://shop_images/our3.png",
+            "wocs_quote": "I’ve been using the Memory Air device for a month and have been sleeping better. My wife says I wake up in a better mood. I love that there are no side effects, and all I need to do is sleep for therapy. It’s an excellent device, and I’m excited to see the benefits over time.",
+            "wocs_author": "Ricky R."
+          }
+        }
+      },
+      "block_order": [
+        "wocs_testimonial_cXMnFJ",
+        "wocs_testimonial_cYg8CH",
+        "wocs_testimonial_xkRUHf"
+      ],
+      "name": "What Our Customers Say",
+      "settings": {
+        "wocs_heading_text": "What our <span>Customers</span> say"
+      }
     }
   },
   "order": [
@@ -273,6 +311,7 @@
     "why_people_talking_pHC8ix",
     "how_memory_air_works_ky8kgR",
     "why_memory_air_works_JaThqT",
-    "what_our_experts_say_n8fKqC"
+    "what_our_experts_say_n8fKqC",
+    "what_our_customers_say_YCFXKG"
   ]
 }
