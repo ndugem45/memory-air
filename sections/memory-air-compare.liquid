@@ -1,14 +1,14 @@
 <section class="compare-section">
   <div class="container">
     <div class="compare-wrapper">
-
+        {% if section.settings.hdmac_heading != blank %}
       <div class="heading">
         <h2>
           {{ section.settings.hdmac_heading }}
-          <span>{{ section.settings.hdmac_heading_highlight }}</span>
+         
         </h2>
       </div>
-
+    {% endif %}
       <div class="compare-table">
 
         <div class="table-row table-head">
@@ -60,16 +60,9 @@
   "name": "Memory Air Compare Table",
   "settings": [
     {
-      "type": "text",
+      "type": "html",
       "id": "hdmac_heading",
-      "label": "Heading Text",
-      "default": "How Does Memory Air"
-    },
-    {
-      "type": "text",
-      "id": "hdmac_heading_highlight",
-      "label": "Highlighted Text",
-      "default": "Compare?"
+      "label": "Title"
     },
     {
       "type": "text",
