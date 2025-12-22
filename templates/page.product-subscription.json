@@ -452,6 +452,106 @@
     },
     "product_faq_M4Ftja": {
       "type": "product-faq",
+      "blocks": {
+        "faq_EwYVwD": {
+          "type": "faq",
+          "settings": {
+            "fq_question": "How does Memory Air™ work?",
+            "fq_answer": "<p>According to the latest peer-reviewed research on the underlying science upon which Memory Air™is based, yes it does.<br/><br/>One user of our science even confided privately, \"In every way, my memory has been greatly enhanced. Where I used to search the Internet for information partially remembered, I can now most often retrieve the information myself. I no longer have to write down phone numbers or pin codes as I am completely confident I will remember them.<br/><br/>I am also amazed at the ease with which I can retrieve names and events occurring scores of years ago. Also, my sleep has improved markedly. The difference before and after the regimen of olfactory enhancement on my memory, cognition and sleep is astonishing.<br/><br/>Importantly, the process is completely passive and requires no ingestion of medication nor possible side effects. Bottom line, the upside of this process is staggering, and there is practically no downside.\"</p>"
+          }
+        },
+        "faq_pRC33e": {
+          "type": "faq",
+          "settings": {
+            "fq_question": "How Is Memory Air™ Different From Aromatherapy?",
+            "fq_answer": ""
+          }
+        },
+        "faq_8dKrr3": {
+          "type": "faq",
+          "settings": {
+            "fq_question": "Why Isn't A Diffuser Enough To Improve My Memory?",
+            "fq_answer": ""
+          }
+        },
+        "faq_iX7Eji": {
+          "type": "faq",
+          "settings": {
+            "fq_question": "How Long Will It Take For My Memory To Get Better?",
+            "fq_answer": ""
+          }
+        },
+        "faq_eWcmER": {
+          "type": "faq",
+          "settings": {
+            "fq_question": " Can I give it with other meds or supplements?",
+            "fq_answer": ""
+          }
+        },
+        "faq_P7MRyn": {
+          "type": "faq",
+          "settings": {
+            "fq_question": "Will It Harm My Pets?",
+            "fq_answer": ""
+          }
+        },
+        "faq_Ue3r8g": {
+          "type": "faq",
+          "settings": {
+            "fq_question": "Will Memory Air™ Help To Improve My Sense Of Smell?",
+            "fq_answer": ""
+          }
+        },
+        "faq_Jh7XWW": {
+          "type": "faq",
+          "settings": {
+            "fq_question": "What happens if I miss a day?",
+            "fq_answer": ""
+          }
+        },
+        "faq_dFb8E9": {
+          "type": "faq",
+          "settings": {
+            "fq_question": "Will Memory Air™ Disturb My Sleep?",
+            "fq_answer": ""
+          }
+        },
+        "faq_Kyza6w": {
+          "type": "faq",
+          "settings": {
+            "fq_question": "What Does Memory Air™ Smell Like?",
+            "fq_answer": ""
+          }
+        },
+        "faq_XTbWGw": {
+          "type": "faq",
+          "settings": {
+            "fq_question": "What If I'm Bothered By Certain Scents?",
+            "fq_answer": ""
+          }
+        },
+        "faq_y76pq9": {
+          "type": "faq",
+          "settings": {
+            "fq_question": "How Do I Know It’s Working?",
+            "fq_answer": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_EwYVwD",
+        "faq_pRC33e",
+        "faq_8dKrr3",
+        "faq_iX7Eji",
+        "faq_eWcmER",
+        "faq_P7MRyn",
+        "faq_Ue3r8g",
+        "faq_Jh7XWW",
+        "faq_dFb8E9",
+        "faq_Kyza6w",
+        "faq_XTbWGw",
+        "faq_y76pq9"
+      ],
       "name": "FAQ Section",
       "settings": {
         "fq_heading": "Frequently<br> asked<br> <span>Questions</span>",
