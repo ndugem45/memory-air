@@ -1,0 +1,135 @@
+<section class="need-to-know">
+  <div class="container">
+    <div class="inner-content-need">
+      {% if section.settings.wyntk_heading_text != blank %}
+        <div class="heading">
+          <h2>{{ section.settings.wyntk_heading_text }}</h2>
+        </div>
+      {% endif %}
+      <div
+        class="know-banner"
+        style="background-image: url({{ section.settings.wyntk_background_image | image_url }});"
+      >
+        <div class="know-flex">
+          <div class="know-width">
+            <ul>
+              {% for block in section.blocks %}
+                {% if block.type == 'wyntk_left_item' %}
+                  <li>
+                    <div class="title-bulets">{{ block.settings.wyntk_title }}</div>
+                    {% if block.settings.wyntk_arrow != blank %}
+                      <div class="arrow-imgs">
+                        <img src="{{ block.settings.wyntk_arrow | image_url }}" alt="#" width="" height="">
+                      </div>
+                    {% endif %}
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+          {% if section.settings.wyntk_center_image != blank %}
+            <div class="know-width2">
+              <div class="center-imgss">
+                <img src="{{ section.settings.wyntk_center_image | image_url }}" alt="#" width="" height="">
+              </div>
+            </div>
+          {% endif %}
+          <div class="know-width3">
+            <ul>
+              {% for block in section.blocks %}
+                {% if block.type == 'wyntk_right_item' %}
+                  <li>
+                    {% if block.settings.wyntk_arrow != blank %}
+                      <div class="arrow-imgs">
+                        <img src="{{ block.settings.wyntk_arrow | image_url }}" alt="#" width="" height="">
+                      </div>
+                    {% endif %}
+                    <div class="title-bulets">{{ block.settings.wyntk_title }}</div>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+      {% if section.settings.wyntk_button_text != blank %}
+        <div class="buy-know-btn">
+          <a href="{{ section.settings.wyntk_button_link }}">{{ section.settings.wyntk_button_text }}</a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "What You Need to Know",
+  "settings": [
+    {
+      "type": "html",
+      "id": "wyntk_heading_text",
+      "label": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "wyntk_background_image",
+      "label": "Banner Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "wyntk_center_image",
+      "label": "Center Image"
+    },
+    {
+      "type": "text",
+      "id": "wyntk_button_text",
+      "label": "Button Text",
+      "default": "Buy Now"
+    },
+    {
+      "type": "url",
+      "id": "wyntk_button_link",
+      "label": "Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "wyntk_left_item",
+      "name": "Left Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "wyntk_title",
+          "label": "Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "wyntk_arrow",
+          "label": "Arrow Image"
+        }
+      ]
+    },
+    {
+      "type": "wyntk_right_item",
+      "name": "Right Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "wyntk_title",
+          "label": "Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "wyntk_arrow",
+          "label": "Arrow Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "What You Need to Know"
+    }
+  ]
+}
+{% endschema %}
