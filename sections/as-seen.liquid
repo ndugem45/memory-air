@@ -1,0 +1,59 @@
+<section class="marquees-sl">
+  <div class="partners-flex">
+    <div class="partenr-width">
+        {% if section.settings.asf_Title != blank %}
+      <p>{{ section.settings.asf_Title }}</p>
+        {% endif %}
+    </div>
+    <div class="partenr-width1">
+      <div class="marquee-swiper swiper">
+        <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+                {% if block.type == 'asf_features' %}
+                    {% if block.settings.asf_bimg != blank %}
+                     <div class="swiper-slide"><img src="{{ block.settings.asf_bimg | image_url }}" alt="#" width="" height=""></div>
+                    {% endif %}
+            {% endif %}
+          {% endfor %}
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Product Banner",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+   
+    {
+      "type": "text",
+      "id": "asf_Title",
+      "label": "Title",
+      "default": "As seen in & Featured on"
+    },
+   
+  ],
+  "blocks": [
+    {
+      "type": "asf_features",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "asf_bimg",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Banner"
+    }
+  ]
+}
+{% endschema %}
