@@ -122,25 +122,38 @@
       "blocks": {
         "wpt_video_card_BUWgjN": {
           "type": "wpt_video_card",
-          "settings": {}
+          "settings": {
+            "wpt_video": "shopify://files/videos/Desktop 2x longer_Match Source - Adaptive Low Bitrate_Match Source - Adaptive Low Bitrate.mp4"
+          }
         },
         "wpt_video_card_B6wtxx": {
           "type": "wpt_video_card",
-          "settings": {}
+          "settings": {
+            "wpt_video": "shopify://files/videos/Desktop 2x longer_Match Source - Adaptive Low Bitrate_Match Source - Adaptive Low Bitrate.mp4"
+          }
         },
         "wpt_video_card_cL74hq": {
           "type": "wpt_video_card",
-          "settings": {}
+          "settings": {
+            "wpt_video": "shopify://files/videos/Desktop 2x longer_Match Source - Adaptive Low Bitrate_Match Source - Adaptive Low Bitrate.mp4"
+          }
+        },
+        "wpt_video_card_XcwWhr": {
+          "type": "wpt_video_card",
+          "settings": {
+            "wpt_video": "shopify://files/videos/Desktop 2x longer_Match Source - Adaptive Low Bitrate_Match Source - Adaptive Low Bitrate.mp4"
+          }
         }
       },
       "block_order": [
         "wpt_video_card_BUWgjN",
         "wpt_video_card_B6wtxx",
-        "wpt_video_card_cL74hq"
+        "wpt_video_card_cL74hq",
+        "wpt_video_card_XcwWhr"
       ],
       "name": "Why People Are Talking About Memory Air",
       "settings": {
-        "wpt_section_title": "Why People Are <em>Talking</em> About Memory Air"
+        "wpt_section_title": "Why People Are Talking About Memory Air"
       }
     }
   },
