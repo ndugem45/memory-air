@@ -1,0 +1,81 @@
+<section class="faqs-section">
+  <div class="container">
+    <div class="faqs-flex">
+      <div class="faqs-width">
+        <div class="heading">
+          <h2>{{ section.settings.fq_heading | default: 'Frequently<br> asked<br> <span>Questions</span>' }}</h2>
+        </div>
+        <p>{{ section.settings.fq_subheading | default: 'Answered in no-time.' }}</p>
+      </div>
+      <div class="faqs-width1">
+        {% for block in section.blocks %}
+          <div class="faqs-content">
+            <div class="question-faqs">
+              <h4>{{ block.settings.fq_question }}</h4>
+              <div class="faqs-arrow">
+                <img src="images/arrow-down.png" alt="#">
+              </div>
+            </div>
+            <div class="faqs-answer">
+              <p>{{ block.settings.fq_answer }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "FAQ Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "fq_heading",
+      "label": "Heading",
+      "default": "Frequently<br> asked<br> <span>Questions</span>"
+    },
+    {
+      "type": "text",
+      "id": "fq_subheading",
+      "label": "Subheading",
+      "default": "Answered in no-time."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "fq_question",
+          "label": "Question",
+          "default": "How does Memory Air™ work?"
+        },
+        {
+          "type": "textarea",
+          "id": "fq_answer",
+          "label": "Answer",
+          "default": "Aromatherapy believes that a specific odor produces a specific health benefit. The science behind Memory Air™ shows that the improvement in memory is based upon rotating odors - with the more odors, the better. The specific odors do not matter. Memory Air™ science is called Olfactory Enrichment."
+        }
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "FAQ Section",
+      "category": "FAQ",
+      "blocks": [
+        {
+          "type": "faq"
+        },
+        {
+          "type": "faq"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
