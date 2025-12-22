@@ -369,54 +369,72 @@
     "memory_air_compare_JW4EBr": {
       "type": "memory-air-compare",
       "blocks": {
-        "hdmac_column_dmFUje": {
-          "type": "hdmac_column",
+        "row_krpCW6": {
+          "type": "row",
           "settings": {
-            "hdmac_title": "Memory Air",
-            "hdmac_highlight": true
+            "hdmac_feature": "Major Memory Improvement",
+            "hdmac_col1_icon": "shopify://shop_images/green_mark.svg",
+            "hdmac_col2_icon": "shopify://shop_images/cross-red.svg",
+            "hdmac_col3_icon": "shopify://shop_images/cross-red.svg",
+            "hdmac_col4_icon": "shopify://shop_images/cross-red.svg"
           }
         },
-        "hdmac_column_pK3QKT": {
-          "type": "hdmac_column",
+        "row_EpDYgd": {
+          "type": "row",
           "settings": {
-            "hdmac_title": "Supplements",
-            "hdmac_highlight": false
+            "hdmac_feature": "80 Rotating Neuroscents",
+            "hdmac_col1_icon": "shopify://shop_images/green_mark.svg",
+            "hdmac_col2_icon": "shopify://shop_images/cross-red.svg",
+            "hdmac_col3_icon": "shopify://shop_images/cross-red.svg",
+            "hdmac_col4_icon": "shopify://shop_images/cross-red.svg"
           }
         },
-        "hdmac_column_64BExY": {
-          "type": "hdmac_column",
+        "row_8jKV3K": {
+          "type": "row",
           "settings": {
-            "hdmac_title": "Brain Games",
-            "hdmac_highlight": false
+            "hdmac_feature": "Neuroscientist-Designed",
+            "hdmac_col1_icon": "shopify://shop_images/green_mark.svg",
+            "hdmac_col2_icon": "shopify://shop_images/cross-red.svg",
+            "hdmac_col3_icon": "shopify://shop_images/green_mark.svg",
+            "hdmac_col4_icon": "shopify://shop_images/cross-red.svg"
           }
         },
-        "hdmac_column_L3PdbV": {
-          "type": "hdmac_column",
+        "row_4XznYh": {
+          "type": "row",
           "settings": {
-            "hdmac_title": "Drugs",
-            "hdmac_highlight": false
+            "hdmac_feature": "Completely Natural",
+            "hdmac_col1_icon": "shopify://shop_images/green_mark.svg",
+            "hdmac_col2_icon": "shopify://shop_images/green_mark.svg",
+            "hdmac_col3_icon": "shopify://shop_images/green_mark.svg",
+            "hdmac_col4_icon": "shopify://shop_images/cross-red.svg"
           }
         },
-        "hdmac_column_TfiKdd": {
-          "type": "hdmac_column",
+        "row_w4mN4t": {
+          "type": "row",
           "settings": {
-            "hdmac_title": "",
-            "hdmac_highlight": false
+            "hdmac_feature": "Requires Nothing to Remember",
+            "hdmac_col1_icon": "shopify://shop_images/green_mark.svg",
+            "hdmac_col2_icon": "shopify://shop_images/cross-red.svg",
+            "hdmac_col3_icon": "shopify://shop_images/cross-red.svg",
+            "hdmac_col4_icon": "shopify://shop_images/cross-red.svg"
           }
         }
       },
       "block_order": [
-        "hdmac_column_dmFUje",
-        "hdmac_column_pK3QKT",
-        "hdmac_column_64BExY",
-        "hdmac_column_L3PdbV",
-        "hdmac_column_TfiKdd"
+        "row_krpCW6",
+        "row_EpDYgd",
+        "row_8jKV3K",
+        "row_4XznYh",
+        "row_w4mN4t"
       ],
-      "disabled": true,
       "name": "Memory Air Compare Table",
       "settings": {
-        "hdmac_heading_text": "How Does Memory Air <span>Compare?</span>",
-        "hdmac_column_feature": "Feature"
+        "hdmac_heading": "How Does Memory Air <span>Compare?</span>",
+        "hdmac_col_feature": "Feature",
+        "hdmac_col_1": "Memory Air",
+        "hdmac_col_2": "Supplements",
+        "hdmac_col_3": "Brain Games",
+        "hdmac_col_4": "Drugs"
       }
     },
     "track_memory_progress_x3zVUL": {
