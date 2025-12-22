@@ -13,15 +13,15 @@
         <div class="custmr-width">
           <div class="inner-flx">
             <div class="flx-win">
-              {% if section.settings.oct_customer_image %}
-                <img src="{{ section.settings.oct_customer_image | image_url }}" alt="Customer Image">
+              {% if section.settings.oct_customer_image != blank %}
+                <img src="{{ section.settings.oct_customer_image | image_url }}" alt="{{ section.settings.oct_customer_image.alt }}" height="" width="">
               {% endif %}
             </div>
 
             <div class="flx-win">
-              {% if section.settings.oct_quote_image %}
-                <img src="{{ section.settings.oct_quote_image | image_url }}" alt="Quote">
-              {% endif %}
+              
+                <img src="{{ 'quote.png' | asset_url }}" alt="*">
+             
               <span>{{ section.settings.oct_customer_name }}</span>
               <p>{{ section.settings.oct_customer_status }}</p>
             </div>
@@ -67,11 +67,6 @@
       "type": "image_picker",
       "id": "oct_customer_image",
       "label": "Customer Image"
-    },
-    {
-      "type": "image_picker",
-      "id": "oct_quote_image",
-      "label": "Quote Icon Image"
     },
     {
       "type": "text",
