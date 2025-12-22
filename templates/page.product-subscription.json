@@ -449,6 +449,14 @@
         "tump_button_text": "Buy Now",
         "tump_image_main": "shopify://shop_images/two-mobile.png"
       }
+    },
+    "product_faq_M4Ftja": {
+      "type": "product-faq",
+      "name": "FAQ Section",
+      "settings": {
+        "fq_heading": "Frequently<br> asked<br> <span>Questions</span>",
+        "fq_subheading": "Answered in no-time."
+      }
     }
   },
   "order": [
@@ -462,6 +470,7 @@
     "what_our_customers_say_YCFXKG",
     "need_to_know_jAiRKK",
     "memory_air_compare_JW4EBr",
-    "track_memory_progress_x3zVUL"
+    "track_memory_progress_x3zVUL",
+    "product_faq_M4Ftja"
   ]
 }
