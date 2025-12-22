@@ -33,11 +33,11 @@
                             {% endfor %}
                         </ul>
                     </div>
-
+                    {% if section.settings.hmw_center_image != blank %}
                     <div class="works-width-center">
-                        <img src="{{ section.settings.hmw_center_image | image_url }}" alt="#">
+                        <img src="{{ section.settings.hmw_center_image | image_url }}" alt="{{ section.settings.hmw_center_image }}" height="" width="">
                     </div>
-
+                {% endif %}
                     <div class="works-inner-width2">
                         <ul>
                             {% for block in section.blocks %}
