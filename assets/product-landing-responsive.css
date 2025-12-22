@@ -1,18 +1,499 @@
+@media screen and (max-width: 1100px) {
+.banner-width {
+  padding-left: 15px;
+}
+h1, .h1,h3, .h2 {
+  font-size: 36px!important;
+  line-height: 42px!important;
+}
+section.customer-says {
+  padding: 40px 0;
+}
+.video-testimonials {
+  padding: 40px 0px;
+}
+.video-card {
+  width: 220px;
+  height: 260px;
+}
+section.how-works-section {
+  padding: 40px 0;
+}
+.works-width,.works-width1 {
+  width: 100%;
+}
+section.why-memory {
+  padding-bottom: 40px;
+}
+.why-flex {
+  margin-top: 20px;
+}
+section.expert-says {
+  background: #FAFAFA;
+  padding: 40px 0;
+}
+section.what-our {
+  padding: 40px 0;
+}
+.know-width ul li:nth-child(1) {
+  left: 100px;
+}
+.know-width ul li:nth-child(2) {
+  left: 30px;
+}
+.know-width ul li:nth-child(3) {
+  left: 60px;
+}
+.know-width3 ul li:nth-child(1) {
+  left: -20px;
+}
+.know-width3 ul li:nth-child(2) {
+  left: 10px;
+}
+.know-width3 ul li:nth-child(3) {
+  left: -23px;
+}
+section.need-to-know {
+  padding-bottom: 0px;
+}
+.compare-section {
+  padding: 40px 0px;
+}
+section.faqs-section {
+  padding: 40px 0;
+}
+}
 
-@media screen and (max-width: 375px) {
-section#all-banner h1 {
-  font-size: 28px;
-  line-height: 40px;
+@media screen and (max-width: 992px) {
+.banner-width {
+  padding-left: 20px;
 }
-section#blog-detailed .desination-img {
+p.arrows {
+  max-width: 70%;
+}
+h1, .h1 {
+  font-size: 32px!important;
+  line-height: 38px !important;
+}
+.banner-width,.banner-width1{
+  width: 100%;
+}
+.banner-flex {
+  flex-wrap: wrap;
+}
+.banner-width{
+    margin: 40px 0;
+}
+section.banner-section {
+  background-size: cover;
+}
+.partenr-width p {
   position: relative;
-  top: -95px;
-  margin-bottom: -95px;
+  right: -10px;
 }
-.heading-banner {
-  padding-top: 96px;
+section.customer-says {
+  padding: 50px 0;
 }
-.detailed {
-  top: -30px;
+.custmr-width1 {
+  width: 55%;
 }
+.video-testimonials {
+  padding: 0px 20px;
+}
+.video-card {
+  width: 180px;
+  height: 250px;
+}
+.video-grid {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.works-width,.works-width1 {
+  width: 100%;
+}
+.box-content {
+  width: 170px;
+}
+.inner-box p {
+  font-size: 12px;
+}
+.works-width .heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+section.how-works-section {
+  padding: 40px 0;
+}
+section.why-memory {
+  padding-bottom: 30px;
+}
+section.expert-says {
+  background: #FAFAFA;
+  padding: 40px 0;
+}
+section.what-our {
+  padding: 40px 0;
+}
+.know-width ul li div.title-bulets {
+  padding: 10px;
+}
+.know-width ul li:nth-child(1) {
+  left: 50px;
+}
+.know-width ul li:nth-child(3) {
+  left: 50px;
+}
+.know-width3 ul li:nth-child(1) {
+  left: -10px;
+}
+.know-width3 ul li:nth-child(3) {
+  left: -10px;
+}
+section.need-to-know {
+  padding-bottom: 40px;
+}
+.compare-section {
+  padding: 0px 20px;
+}
+h2, .h2 {
+  font-size: 30px !important;
+  line-height: 33px !important;
+}
+.track-width p {
+  font-size: 14px;
+  margin-top: 5px;
+}
+.track-width ul {
+  margin: 5px 0;
+}
+.track-width ul li {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.buy-now-btns a {
+  display: flex;
+  width: 180px;
+  height: auto;
+  font-size: 16px;
+}
+section.faqs-section {
+  padding: 40px 0;
+}
+.faqs-arrow {
+  width: 38px;
+  height: 38px;
+}
+.faqs-answer p {
+  font-size: 14px;
+}
+.question-faqs h4 {
+  font-size: 18px;
+}
+.faqs-content {
+  padding: 10px 0;
+}
+.improve-inner p {
+  font-size: 16px;
+  padding-top: 8px;
+  max-width: 80%;
+}
+}
+@media screen and (max-width: 767px) {
+  .banner-width {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.banner-flex {
+  flex-wrap: wrap;
+}
+.banner-width,.banner-width1,.custmr-width,.custmr-width1{
+  width: 100%;
+}
+.banner-flex {
+  flex-direction: column-reverse;
+}
+h1,h2 {
+  font-size: 28px!important;
+  line-height: 36px !important;
+}
+.banner-width h1 {
+  margin: 10px 0;
+}
+.banner-width {
+  margin: 20px 0;
+}
+.two-btns {
+  margin: 20px 0;
+}
+.two-btns a{
+    padding: 8px 24px;
+    font-size: 14px;
+    width: auto;
+    height: auto;
+}
+.baner-list ul {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.partners-flex {
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.partenr-width {
+  width: 100%;
+  justify-content: center;
+}
+
+.partenr-width1,.works-width,.works-width1,.why-width,.why-width1 {
+  width: 100%;
+}
+
+.partenr-width p {
+  left: 0;
+  margin-bottom: 10px;
+}
+.partenr-width1{
+  padding-left: 0px;
+}
+section.customer-says {
+  padding: 30px 0;
+}
+.customer-box {
+  padding: 0px;
+}
+.custom-flx {
+  flex-wrap: wrap;
+}
+.custmr-width {
+  margin-bottom: 20px;
+}
+.flx-win span {
+  margin: 16px 0 0px;
+}
+.message-box {
+  padding: 16px;
+}
+.message-box p {
+  font-size: 14px;
+}
+.video-testimonials {
+  padding: 0px 10px;
+}
+.video-card {
+  width: 100%;
+  max-width: 100%;
+  height: 300px;
+}
+.section-title {
+  margin-bottom: 15px;
+}
+.works-flexss {
+  display: block;
+}
+.works-inner-width ul li:nth-child(2),.works-inner-width ul li:nth-child(3),.works-inner-width2 ul li:nth-child(2),.works-inner-width2 ul li:nth-child(1),.works-inner-width2 ul li:nth-child(3) {
+  position: relative;
+  left: 0px;
+}
+.works-inner-width ul li:nth-child(2) .arrow-box,.works-inner-width ul li:nth-child(3) .arrow-box {
+  position: unset;
+}
+.arrow-box{
+  display: none;
+}
+.works-inner-width ul,.works-inner-width2 ul {
+  gap: 20px;
+}
+.box-content {
+  width: 100%;
+}
+.works-width-center img {
+  margin: 0 auto;
+  display: block;
+}
+.works-inner-width2 {
+  margin-top: 30px;
+}
+section.how-works-section {
+  padding: 30px 0;
+}
+.works-width .heading {
+  margin-bottom: 15px;
+  text-align: center;
+}
+.why-flex {
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+}
+p.arrows::before,p.arrows::after{
+  display: none;
+}
+.why-content ul {
+  flex-wrap: wrap;
+}
+
+.why-content p {
+  padding: 10px;
+  font-size: 14px;
+}
+.why-content ul li {
+  font-size: 14px;
+  width: 100%;
+  list-style: none;
+}
+section.why-memory {
+  padding-bottom: 30px;
+}
+section.expert-says {
+  background: #FAFAFA;
+  padding: 30px 0;
+}
+.experts-width {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.experts-width p {
+  font-size: 14px;
+  margin-top: 8px;
+  padding-bottom: 15px;
+}
+.expert-coments {
+  border-top: 1px solid #E6E6E6;
+  padding-top: 15px;
+}
+section.what-our {
+  padding: 30px 0;
+}
+.whats-width {
+  width: 100%;
+}
+.whats-our-flex {
+  flex-wrap: wrap;
+}
+.whats-width {
+  width: 100%;
+}
+
+.whats-our-flex {
+  flex-wrap: wrap;
+}
+
+.know-width,.know-width2,.know-width3,.track-width {
+  width: 100%;
+}
+.know-width ul,.know-width3 ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.know-flex {
+  flex-wrap: wrap;
+}
+.know-width ul li:nth-child(1),.know-width ul li:nth-child(2),.know-width ul li:nth-child(3),.know-width3 ul li:nth-child(1),.know-width3 ul li:nth-child(2),.know-width3 ul li:nth-child(3){
+  position: unset;
+}
+.arrow-imgs{
+  display: none;
+}
+.know-width,.know-width3 {
+  justify-content: center;
+}
+.know-banner {
+  padding: 40px 0 18px;
+}
+
+.know-width ul li div.title-bulets {
+  padding: 13px;
+}
+section.need-to-know {
+  padding-bottom: 30px;
+}
+.compare-section {
+  padding: 0px 20px;
+  background: #ffffff;
+}
+.compare-wrapper {
+  padding: 10px;
+}
+.compare-section {
+  padding: 0px 0px;
+  background: #ffffff;
+}
+.compare-table {
+  overflow: scroll;
+}
+section.track {
+  padding: 30px 0 0;
+}
+.track-width ul {
+  margin: 20px 0;
+}
+.track-width ul li {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.track-width ul {
+  margin: 15px 0;
+}
+.track-width .buy-now-btns {
+  margin-bottom: 20px;
+}
+section.faqs-section {
+  padding: 30px 0;
+}
+.faqs-width,.faqs-width1 {
+  width: 100%;
+}
+.heading br {
+  display: none;
+}
+.faqs-width .heading{
+  text-align: center;
+}
+
+.faqs-width p {
+  text-align: center;
+  margin-top: 5px;
+}
+.faqs-arrow {
+  width: 28px;
+  height: 28px;
+}
+.faqs-answer p {
+  font-size: 14px;
+  max-width: 100%;
+}
+.question-faqs h4 {
+  font-size: 18px;
+}
+.improve-inner {
+  padding-top: 30px;
+}
+.improve-inner p {
+  font-size: 14px;
+  padding-top: 8px;
+  max-width: 90%;
+}
+
+.improve-inner .baner-list {
+  padding: 16px 0px;
+  margin-top: 30px;
+  border: 0px;
+}
+.baner-list ul li {
+  font-size: 14px;
+}
+section.banner-section {
+  background-position: bottom;
+  background-size: cover;
+}
+
+
 }
