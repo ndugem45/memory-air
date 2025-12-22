@@ -21,7 +21,7 @@
                     <div class="why-flex">
                         {% if section.settings.wmw_image_2 != blank %}
                         <div class="why-width1">
-                            <img src="{{ section.settings.wmw_image_2 }}" alt="{{  section.settings.wmw_image_2.alt }}" height="" width="">
+                            <img src="{{ section.settings.wmw_image_2 | image_url }}" alt="{{  section.settings.wmw_image_2.alt }}" height="" width="">
                         </div>
                     {% endif %}
                         {% if section.settings.wmw_rightText != blank %}
