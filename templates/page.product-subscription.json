@@ -365,6 +365,90 @@
         "wyntk_button_text": "Buy Now",
         "wyntk_button_link": ""
       }
+    },
+    "memory_air_compare_JW4EBr": {
+      "type": "memory-air-compare",
+      "blocks": {
+        "hdmac_column_dmFUje": {
+          "type": "hdmac_column",
+          "settings": {
+            "hdmac_title": "Memory Air",
+            "hdmac_highlight": true
+          }
+        },
+        "hdmac_column_pK3QKT": {
+          "type": "hdmac_column",
+          "settings": {
+            "hdmac_title": "Supplements",
+            "hdmac_highlight": false
+          }
+        },
+        "hdmac_column_64BExY": {
+          "type": "hdmac_column",
+          "settings": {
+            "hdmac_title": "Brain Games",
+            "hdmac_highlight": false
+          }
+        },
+        "hdmac_column_L3PdbV": {
+          "type": "hdmac_column",
+          "settings": {
+            "hdmac_title": "Drugs",
+            "hdmac_highlight": false
+          }
+        },
+        "hdmac_column_TfiKdd": {
+          "type": "hdmac_column",
+          "settings": {
+            "hdmac_title": "",
+            "hdmac_highlight": false
+          }
+        }
+      },
+      "block_order": [
+        "hdmac_column_dmFUje",
+        "hdmac_column_pK3QKT",
+        "hdmac_column_64BExY",
+        "hdmac_column_L3PdbV",
+        "hdmac_column_TfiKdd"
+      ],
+      "disabled": true,
+      "name": "Memory Air Compare Table",
+      "settings": {
+        "hdmac_heading_text": "How Does Memory Air <span>Compare?</span>",
+        "hdmac_column_feature": "Feature"
+      }
+    },
+    "track_memory_progress_x3zVUL": {
+      "type": "track-memory-progress",
+      "blocks": {
+        "tump_list_item_A4Yn9n": {
+          "type": "tump_list_item",
+          "settings": {
+            "tump_image": "shopify://shop_images/Medal.svg",
+            "tump_text": "Free With Every Subscription"
+          }
+        },
+        "tump_list_item_MeAf8G": {
+          "type": "tump_list_item",
+          "settings": {
+            "tump_image": "shopify://shop_images/CheckCircle.svg",
+            "tump_text": "Complete on-the-go or at home"
+          }
+        }
+      },
+      "block_order": [
+        "tump_list_item_A4Yn9n",
+        "tump_list_item_MeAf8G"
+      ],
+      "name": "Track Your Memory Progress",
+      "settings": {
+        "tump_heading": "Track Your Memory Progress Over Time",
+        "tump_subtext": "No need to trust us, see for yourself.",
+        "tump_button_link": "",
+        "tump_button_text": "Buy Now",
+        "tump_image_main": "shopify://shop_images/two-mobile.png"
+      }
     }
   },
   "order": [
@@ -376,6 +460,8 @@
     "why_memory_air_works_JaThqT",
     "what_our_experts_say_n8fKqC",
     "what_our_customers_say_YCFXKG",
-    "need_to_know_jAiRKK"
+    "need_to_know_jAiRKK",
+    "memory_air_compare_JW4EBr",
+    "track_memory_progress_x3zVUL"
   ]
 }
