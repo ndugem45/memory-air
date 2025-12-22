@@ -443,7 +443,7 @@
       ],
       "name": "Track Your Memory Progress",
       "settings": {
-        "tump_heading": "Track Your Memory Progress Over Time",
+        "tump_heading": "Track Your Memory<br> <span>Progress</span> Over Time",
         "tump_subtext": "No need to trust us, see for yourself.",
         "tump_button_link": "",
         "tump_button_text": "Buy Now",
