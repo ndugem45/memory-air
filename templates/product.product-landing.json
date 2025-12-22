@@ -13,8 +13,10 @@
       "type": "product-banner",
       "name": "Product Banner",
       "settings": {
+        "pbm_bgimg": "shopify://shop_images/banner-back.png",
+        "pbm_bannerimg": "shopify://shop_images/banner-img.png",
         "pbm_pretitle": "Biggest Improvement in Human Memory Ever Discovered",
-        "pbm_title": "",
+        "pbm_title": "Improve Your Memory<br> &amp; Brain Health<br>\n                        <span class=\"italic\">...While You Sleep</span>",
         "pbm_desc": "",
         "pbm_btn_one": "Buy Now",
         "pbm_btn_oneLink": "",
