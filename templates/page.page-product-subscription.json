@@ -1,0 +1,65 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero-aboutus": {
+      "type": "hero-aboutus",
+      "settings": {
+        "section_label": "About Science Lab 3™"
+      }
+    },
+    "partner": {
+      "type": "partner",
+      "settings": {
+        "speed": 2500,
+        "partner_object": []
+      }
+    },
+    "bringing": {
+      "type": "bringing",
+      "settings": {}
+    },
+    "officer": {
+      "type": "officer",
+      "settings": {
+        "section_label": "Science Lab 3™ Chief Science Officer",
+        "officer_name": "Michael Leon, PhD",
+        "officer_title": "Professor Emeritus, Neurobiology and Behavior,  University of California Irvine"
+      }
+    },
+    "forfuture": {
+      "type": "forfuture",
+      "settings": {
+        "user_name": "Alan Bernstein",
+        "user_title": "Chief Executive Officer of Science Lab 3, Makers of Memory Air™"
+      }
+    },
+    "technical": {
+      "type": "technical",
+      "settings": {}
+    },
+    "message": {
+      "type": "message",
+      "settings": {
+        "user_name": "Alan Bernstein, CEO",
+        "user_title": "Science Lab 3, Makers of MemoryAir<sup>™</sup>"
+      }
+    }
+  },
+  "order": [
+    "hero-aboutus",
+    "partner",
+    "bringing",
+    "officer",
+    "forfuture",
+    "technical",
+    "message"
+  ]
+}
