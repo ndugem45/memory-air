@@ -116,12 +116,39 @@
         "oct_review_title": "I Sleep Deeper and Better!!",
         "oct_review_text": "I've been using Memory Air for a few months with a break while I waited for an updated device. What I noticed while I have the device active is that I sleep deeper and better. I find myself being the one to remember names and details more often than before I used it. Words seem to come more easily now. When I had the break between devices my sleep was not as sound and the memory benefits seemed to hold.  These are subtle but noticeable changes that are making a positive difference on a daily basis."
       }
+    },
+    "why_people_talking_pHC8ix": {
+      "type": "why-people-talking",
+      "blocks": {
+        "wpt_video_card_BUWgjN": {
+          "type": "wpt_video_card",
+          "settings": {}
+        },
+        "wpt_video_card_B6wtxx": {
+          "type": "wpt_video_card",
+          "settings": {}
+        },
+        "wpt_video_card_cL74hq": {
+          "type": "wpt_video_card",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "wpt_video_card_BUWgjN",
+        "wpt_video_card_B6wtxx",
+        "wpt_video_card_cL74hq"
+      ],
+      "name": "Why People Are Talking About Memory Air",
+      "settings": {
+        "wpt_section_title": "Why People Are <em>Talking</em> About Memory Air"
+      }
     }
   },
   "order": [
     "product_banner_jKGhPX",
     "as_seen_VBTiYz",
     "hero-productpage",
-    "our_customers_think_MnzVhG"
+    "our_customers_think_MnzVhG",
+    "why_people_talking_pHC8ix"
   ]
 }
