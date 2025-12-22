@@ -1,0 +1,100 @@
+<section class="track">
+  <div class="container">
+    <div class="track-flex">
+      <div class="track-width">
+        {% if section.settings.tump_heading != blank %}
+          <div class="heading">
+            <h2>{{ section.settings.tump_heading }}</h2>
+          </div>
+        {% endif %}
+        {% if section.settings.tump_subtext != blank %}
+          <p>{{ section.settings.tump_subtext | escape }}</p>
+        {% endif %}
+        <ul>
+          {% for block in section.blocks %}
+            <li>
+              {% if block.settings.tump_image != blank %}
+                <img src="{{ block.settings.tump_image | image_url }}" alt="#">
+              {% endif %}
+              {{ block.settings.tump_text }}
+            </li>
+          {% endfor %}
+        </ul>
+        {% if section.settings.tump_button_text != blank %}
+        <div class="buy-now-btns">
+          <a href="{{ section.settings.tump_button_link }}">{{ section.settings.tump_button_text }}</a>
+        </div>
+    {% endif %}
+      </div>
+{% if section.settings.tump_image_main != blank %}
+      <div class="track-width">
+        <div class="two-mobiles">
+          
+            <img src="{{ section.settings.tump_image_main | image_url }}" alt="{{ section.settings.tump_image_main.alt }}" height="" width="">
+         
+        </div>
+      </div>
+ {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Track Memory Progress",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tump_heading",
+      "label": "Title"
+    },
+
+    {
+      "type": "text",
+      "id": "tump_subtext",
+      "label": "Subtext",
+      "default": "No need to trust us, see for yourself."
+    },
+    {
+      "type": "url",
+      "id": "tump_button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "tump_button_text",
+      "label": "Button Text",
+      "default": "Buy Now"
+    },
+    {
+      "type": "image_picker",
+      "id": "tump_image_main",
+      "label": "Main Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tump_list_item",
+      "name": "List Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "tump_image",
+          "label": "List Icon"
+        },
+        {
+          "type": "text",
+          "id": "tump_text",
+          "label": "List Text",
+          "default": "Free With Every Subscription"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Track Your Memory Progress"
+    }
+  ]
+}
+{% endschema %}
