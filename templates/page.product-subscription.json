@@ -302,6 +302,69 @@
       "settings": {
         "wocs_heading_text": "What our <span>Customers</span> say"
       }
+    },
+    "need_to_know_jAiRKK": {
+      "type": "need-to-know",
+      "blocks": {
+        "wyntk_left_item_7HmCxc": {
+          "type": "wyntk_left_item",
+          "settings": {
+            "wyntk_title": "Works with CPAP",
+            "wyntk_arrow": "shopify://shop_images/ar1.png"
+          }
+        },
+        "wyntk_left_item_wNCYzj": {
+          "type": "wyntk_left_item",
+          "settings": {
+            "wyntk_title": "No maintenance required",
+            "wyntk_arrow": "shopify://shop_images/ar2.png"
+          }
+        },
+        "wyntk_left_item_G3Lqfg": {
+          "type": "wyntk_left_item",
+          "settings": {
+            "wyntk_title": "Easy one-button setup",
+            "wyntk_arrow": "shopify://shop_images/ar3.png"
+          }
+        },
+        "wyntk_right_item_GqeKER": {
+          "type": "wyntk_right_item",
+          "settings": {
+            "wyntk_title": "80 rotating natural scents",
+            "wyntk_arrow": "shopify://shop_images/ar4.png"
+          }
+        },
+        "wyntk_right_item_jBYHM4": {
+          "type": "wyntk_right_item",
+          "settings": {
+            "wyntk_title": "Ultra-quiet",
+            "wyntk_arrow": "shopify://shop_images/ar5.png"
+          }
+        },
+        "wyntk_right_item_pkTDrY": {
+          "type": "wyntk_right_item",
+          "settings": {
+            "wyntk_title": "Automatic nightly (or daily schedule)",
+            "wyntk_arrow": "shopify://shop_images/ar6.png"
+          }
+        }
+      },
+      "block_order": [
+        "wyntk_left_item_7HmCxc",
+        "wyntk_left_item_wNCYzj",
+        "wyntk_left_item_G3Lqfg",
+        "wyntk_right_item_GqeKER",
+        "wyntk_right_item_jBYHM4",
+        "wyntk_right_item_pkTDrY"
+      ],
+      "name": "What You Need to Know",
+      "settings": {
+        "wyntk_heading_text": "What You Need to <span>Know</span>",
+        "wyntk_background_image": "shopify://shop_images/know-banner.png",
+        "wyntk_center_image": "shopify://shop_images/cntr-im.png",
+        "wyntk_button_text": "Buy Now",
+        "wyntk_button_link": ""
+      }
     }
   },
   "order": [
@@ -312,6 +375,7 @@
     "how_memory_air_works_ky8kgR",
     "why_memory_air_works_JaThqT",
     "what_our_experts_say_n8fKqC",
-    "what_our_customers_say_YCFXKG"
+    "what_our_customers_say_YCFXKG",
+    "need_to_know_jAiRKK"
   ]
 }
