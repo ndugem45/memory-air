@@ -30,7 +30,7 @@
           {% if section.settings.wyntk_center_image != blank %}
             <div class="know-width2">
               <div class="center-imgss">
-                <img src="{{ section.settings.wyntk_center_image | image_url }}" alt="#" width="" height="">
+                <img src="{{ section.settings.wyntk_center_image | image_url }}" alt="{{ section.settings.wyntk_center_image.alt }}" width="" height="">
               </div>
             </div>
           {% endif %}
