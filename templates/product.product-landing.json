@@ -9,11 +9,6 @@
  */
 {
   "sections": {
-    "hero-productpage": {
-      "type": "hero-productpage",
-      "disabled": true,
-      "settings": {}
-    },
     "product_banner_jKGhPX": {
       "type": "product-banner",
       "name": "Product Banner",
@@ -26,10 +21,15 @@
         "pbm_btn_two": "Learn More",
         "pbm_btn_twoLink": ""
       }
+    },
+    "hero-productpage": {
+      "type": "hero-productpage",
+      "disabled": true,
+      "settings": {}
     }
   },
   "order": [
-    "hero-productpage",
-    "product_banner_jKGhPX"
+    "product_banner_jKGhPX",
+    "hero-productpage"
   ]
 }
