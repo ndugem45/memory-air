@@ -2,24 +2,30 @@
   <div class="container">
     <div class="faqs-flex">
       <div class="faqs-width">
+        {% if section.settings.fq_heading != blank %}
         <div class="heading">
-          <h2>{{ section.settings.fq_heading | default: 'Frequently<br> asked<br> <span>Questions</span>' }}</h2>
+          <h2>{{ section.settings.fq_heading }}</h2>
         </div>
-        <p>{{ section.settings.fq_subheading | default: 'Answered in no-time.' }}</p>
+        {% endif %}
+        {% if section.settings.fq_subheading != blank %}
+        <p>{{ section.settings.fq_subheading }}</p>
+        {% endif %}
       </div>
       <div class="faqs-width1">
         {% for block in section.blocks %}
+            {% if block.type == 'faq' %}
           <div class="faqs-content">
             <div class="question-faqs">
               <h4>{{ block.settings.fq_question }}</h4>
               <div class="faqs-arrow">
-                <img src="images/arrow-down.png" alt="#">
+                <img src="{{'arrow-down.png' | asset_url}} " alt="#" height="" width="">
               </div>
             </div>
             <div class="faqs-answer">
               <p>{{ block.settings.fq_answer }}</p>
             </div>
           </div>
+          {% endif %}
         {% endfor %}
       </div>
     </div>
@@ -30,10 +36,9 @@
   "name": "FAQ Section",
   "settings": [
     {
-      "type": "text",
+      "type": "html",
       "id": "fq_heading",
-      "label": "Heading",
-      "default": "Frequently<br> asked<br> <span>Questions</span>"
+      "label": "Title"
     },
     {
       "type": "text",
