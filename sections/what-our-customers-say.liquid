@@ -1,0 +1,64 @@
+<section class="what-our">
+    <div class="container">
+        {% if section.settings.wocs_heading_text != blak %}
+        <div class="heading">
+            <h2>{{ section.settings.wocs_heading_text }}</h2>
+        </div>
+    {% endif %}
+        <div class="whats-our-flex">
+            {% for block in section.blocks %}
+                {% if block.type == 'wocs_testimonial' %}
+                <div class="whats-width">
+                    {% if block.settings.wocs_image != blank %}
+                    <img src="{{ block.settings.wocs_image | image_url }}" alt="#" height="" width="">
+                    {% endif %}
+                    <p>{{ block.settings.wocs_quote }}</p>
+                    <span>{{ block.settings.wocs_author }}</span>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "What Our Customers Say",
+  "settings": [
+    {
+      "type": "html",
+      "id": "wocs_heading_text",
+      "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "wocs_testimonial",
+      "name": "Customer Testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "wocs_image",
+          "label": "Customer Image"
+        },
+        {
+          "type": "textarea",
+          "id": "wocs_quote",
+          "label": "Customer Quote"
+        },
+        {
+          "type": "text",
+          "id": "wocs_author",
+          "label": "Customer Name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "What Our Customers Say",
+      "category": "Testimonials"
+    }
+  ]
+}
+{% endschema %}
