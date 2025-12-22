@@ -1,4 +1,4 @@
-<section class="banner-section" style="background-image: url(images/banner-back.png);">
+<section class="banner-section" style="background-image: url({{ section.settings.pbm_bgimg | image_url }});">
   <div class="banner-flex">
     <div class="banner-width">
         {% if section.settings.pbm_pretitle != blank %}
@@ -49,6 +49,11 @@
         "groups": ["header", "footer"]
         },
         "settings": [
+            {
+                "type": "image_picker",
+                "id": "pbm_bgimg",
+                "label": "Background Image"
+            },
             {
                 "type": "image_picker",
                 "id": "pbm_bannerimg",
