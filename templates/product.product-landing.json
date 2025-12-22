@@ -155,6 +155,75 @@
       "settings": {
         "wpt_section_title": "Why People Are Talking About Memory Air"
       }
+    },
+    "how_memory_air_works_ky8kgR": {
+      "type": "how-memory-air-works",
+      "blocks": {
+        "left_item_AqbM4R": {
+          "type": "left_item",
+          "settings": {
+            "hmw_icon": "shopify://shop_images/Wind.svg",
+            "hmw_text": "Smell has the biggest highway to the main memory center of the brain.",
+            "hmw_arrow": "shopify://shop_images/arrow1.png"
+          }
+        },
+        "left_item_Jbnyyf": {
+          "type": "left_item",
+          "settings": {
+            "hmw_icon": "shopify://shop_images/Lightning.svg",
+            "hmw_text": "Over time, this improves memory, sleep, and mental sharpness.",
+            "hmw_arrow": "shopify://shop_images/arrow2.png"
+          }
+        },
+        "left_item_qKeUcP": {
+          "type": "left_item",
+          "settings": {
+            "hmw_icon": "shopify://shop_images/Repeat.svg",
+            "hmw_text": "Refill monthly to maintain the potency of the therapy.",
+            "hmw_arrow": "shopify://shop_images/arrow3.png"
+          }
+        },
+        "right_item_iMgPBB": {
+          "type": "right_item",
+          "settings": {
+            "hmw_icon": "shopify://shop_images/Brain.svg",
+            "hmw_text": "People lose their ability to smell with age, disease, trauma.",
+            "hmw_arrow": "shopify://shop_images/arrow4.png"
+          }
+        },
+        "right_item_TikcHi": {
+          "type": "right_item",
+          "settings": {
+            "hmw_icon": "shopify://shop_images/MoonStars.svg",
+            "hmw_text": "Gentle pulses of 80 scents are released during sleep (or even daytime.)",
+            "hmw_arrow": "shopify://shop_images/arrow5.png"
+          }
+        },
+        "right_item_84icCA": {
+          "type": "right_item",
+          "settings": {
+            "hmw_icon": "shopify://shop_images/ShieldCheck.svg",
+            "hmw_text": "These improve your ability to smell and activate memory-related neural pathways.",
+            "hmw_arrow": "shopify://shop_images/arrow6.png"
+          }
+        }
+      },
+      "block_order": [
+        "left_item_AqbM4R",
+        "left_item_Jbnyyf",
+        "left_item_qKeUcP",
+        "right_item_iMgPBB",
+        "right_item_TikcHi",
+        "right_item_84icCA"
+      ],
+      "name": "How Memory Air Works",
+      "settings": {
+        "hmw_title": "<span>How</span> Memory Air Works",
+        "hmw_background_image": "shopify://shop_images/bck-round.png",
+        "hmw_center_image": "shopify://shop_images/bck-im.png",
+        "hmw_button_text": "Buy Now",
+        "hmw_button_link": ""
+      }
     }
   },
   "order": [
@@ -162,6 +231,7 @@
     "as_seen_VBTiYz",
     "hero-productpage",
     "our_customers_think_MnzVhG",
-    "why_people_talking_pHC8ix"
+    "why_people_talking_pHC8ix",
+    "how_memory_air_works_ky8kgR"
   ]
 }
