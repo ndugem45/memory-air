@@ -1,0 +1,156 @@
+<section class="how-works-section">
+    <div class="container">
+        <div class="works-flex">
+            <div class="works-width">
+                <div class="heading">
+                    {% if section.settings.hmw_title != blank %}
+                    <h2>
+                       {{ section.settings.hmw_title }}
+                    </h2>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="works-width1">
+                <div class="works-flexss" style="background-image: url({{ section.settings.hmw_background_image | image_url }});">
+                    
+                    <div class="works-inner-width">
+                        <ul>
+                            {% for block in section.blocks %}
+                                {% if block.type == 'left_item' %}
+                                <li>
+                                    <div class="box-content">
+                                        <div class="inner-box">
+                                            <img src="{{ block.settings.hmw_icon | image_url }}" alt="#">
+                                            <p>{{ block.settings.hmw_text }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="arrow-box">
+                                        <img src="{{ block.settings.hmw_arrow | image_url }}" alt="#">
+                                    </div>
+                                </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="works-width-center">
+                        <img src="{{ section.settings.hmw_center_image | image_url }}" alt="#">
+                    </div>
+
+                    <div class="works-inner-width2">
+                        <ul>
+                            {% for block in section.blocks %}
+                                {% if block.type == 'right_item' %}
+                                <li>
+                                    <div class="arrow-box">
+                                        <img src="{{ block.settings.hmw_arrow | image_url }}" alt="#">
+                                    </div>
+                                    <div class="box-content">
+                                        <div class="inner-box">
+                                            <img src="{{ block.settings.hmw_icon | image_url }}" alt="#">
+                                            <p>{{ block.settings.hmw_text }}</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="buy-know-btn">
+            <a href="{{ section.settings.hmw_button_link }}">
+                {{ section.settings.hmw_button_text }}
+            </a>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "How Memory Air Works",
+  "settings": [
+    {
+      "type": "html",
+      "id": "hmw_title",
+      "label": "Title"
+    },
+   
+    {
+      "type": "image_picker",
+      "id": "hmw_background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "hmw_center_image",
+      "label": "Center Image"
+    },
+    {
+      "type": "text",
+      "id": "hmw_button_text",
+      "label": "Button Text",
+      "default": "Buy Now"
+    },
+    {
+      "type": "url",
+      "id": "hmw_button_link",
+      "label": "Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "left_item",
+      "name": "Left Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "hmw_icon",
+          "label": "Icon Image"
+        },
+        {
+          "type": "textarea",
+          "id": "hmw_text",
+          "label": "Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "hmw_arrow",
+          "label": "Arrow Image"
+        }
+      ]
+    },
+    {
+      "type": "right_item",
+      "name": "Right Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "hmw_icon",
+          "label": "Icon Image"
+        },
+        {
+          "type": "textarea",
+          "id": "hmw_text",
+          "label": "Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "hmw_arrow",
+          "label": "Arrow Image"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "How Memory Air Works"
+    }
+  ]
+}
+{% endschema %}
