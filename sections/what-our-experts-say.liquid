@@ -1,0 +1,82 @@
+<section class="expert-says">
+    <div class="container">
+        {% if section.settings.woes_heading_text != blank %}
+        <div class="heading">
+            <h2>{{ section.settings.woes_heading_text }}</h2>
+        </div>
+        {% endif %}
+        <div class="experts-flex">
+            {% for block in section.blocks %}
+                {% if block.type == 'woes_expert' %}
+                <div class="experts-width">
+                    <h4>{{ block.settings.woes_title }}</h4>
+                    <p>{{ block.settings.woes_quote }}</p>
+                    <div class="expert-coments">
+                        <div class="expert-logo">
+                            <img src="{{ block.settings.woes_image | image_url }}" alt="#" width="" height="">
+                        </div>
+                        <div class="expert-content">
+                            <span>{{ block.settings.woes_name }}</span>
+                            <p>{{ block.settings.woes_position }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "What Experts Say",
+  "settings": [
+    {
+      "type": "html",
+      "id": "woes_heading_text",
+      "label": "Title"
+    }
+    
+  ],
+  "blocks": [
+    {
+      "type": "woes_expert",
+      "name": "Expert",
+      "settings": [
+        {
+          "type": "text",
+          "id": "woes_title",
+          "label": "Title",
+          "default": "\"Improve quality of life\""
+        },
+        {
+          "type": "textarea",
+          "id": "woes_quote",
+          "label": "Quote"
+        },
+        {
+          "type": "image_picker",
+          "id": "woes_image",
+          "label": "Expert Image"
+        },
+        {
+          "type": "text",
+          "id": "woes_name",
+          "label": "Expert Name"
+        },
+        {
+          "type": "textarea",
+          "id": "woes_position",
+          "label": "Expert Position / Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "What Experts Say",
+      "category": "Testimonials"
+    }
+  ]
+}
+{% endschema %}
