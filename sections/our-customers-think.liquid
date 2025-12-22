@@ -1,0 +1,128 @@
+<section class="customer-says">
+  <div class="container">
+    <div class="customer-box">
+      
+      <h1>
+        {{ section.settings.oct_heading }}
+        <span>{{ section.settings.oct_heading_highlight }}</span>
+      </h1>
+
+      <div class="custom-flx">
+
+        <!-- Customer Info -->
+        <div class="custmr-width">
+          <div class="inner-flx">
+            <div class="flx-win">
+              {% if section.settings.oct_customer_image %}
+                <img src="{{ section.settings.oct_customer_image | image_url }}" alt="Customer Image">
+              {% endif %}
+            </div>
+
+            <div class="flx-win">
+              {% if section.settings.oct_quote_image %}
+                <img src="{{ section.settings.oct_quote_image | image_url }}" alt="Quote">
+              {% endif %}
+              <span>{{ section.settings.oct_customer_name }}</span>
+              <p>{{ section.settings.oct_customer_status }}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Message Box -->
+        <div class="custmr-width1">
+          <div class="message-box">
+
+            <!-- Stars -->
+            <ul>
+              {% for i in (1..section.settings.oct_rating) %}
+                <li>
+                  {% if section.settings.oct_star_image %}
+                    <img src="{{ section.settings.oct_star_image | image_url }}" alt="Star">
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+
+            <span>{{ section.settings.oct_review_title }}</span>
+            <p>{{ section.settings.oct_review_text }}</p>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Our Customers Think",
+  "settings": [
+    {
+      "type": "text",
+      "id": "oct_heading",
+      "label": "Main Heading",
+      "default": "What Do Our Customers"
+    },
+    {
+      "type": "text",
+      "id": "oct_heading_highlight",
+      "label": "Highlighted Heading Text",
+      "default": "Think?"
+    },
+    {
+      "type": "image_picker",
+      "id": "oct_customer_image",
+      "label": "Customer Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "oct_quote_image",
+      "label": "Quote Icon Image"
+    },
+    {
+      "type": "text",
+      "id": "oct_customer_name",
+      "label": "Customer Name",
+      "default": "Nancy Steele"
+    },
+    {
+      "type": "text",
+      "id": "oct_customer_status",
+      "label": "Customer Status",
+      "default": "Verified User"
+    },
+    {
+      "type": "image_picker",
+      "id": "oct_star_image",
+      "label": "Star Image"
+    },
+    {
+      "type": "range",
+      "id": "oct_rating",
+      "label": "Star Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "oct_review_title",
+      "label": "Review Title",
+      "default": "I Sleep Deeper and Better!!"
+    },
+    {
+      "type": "textarea",
+      "id": "oct_review_text",
+      "label": "Review Content",
+      "default": "I've been using Memory Air for a few months..."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Our Customers Think"
+    }
+  ]
+}
+{% endschema %}
