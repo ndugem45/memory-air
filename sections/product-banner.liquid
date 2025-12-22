@@ -1,0 +1,86 @@
+<section class="banner-section" style="background-image: url(images/banner-back.png);">
+  <div class="banner-flex">
+    <div class="banner-width">
+        {% if section.settings.pbm_pretitle != blank %}
+      <span>{{ section.settings.pbm_pretitle }}</span>
+        {% endif %}
+        {% if section.settings.pbm_title != blank %}
+      <h1>
+       {{ section.settings.pbm_title }}
+      </h1>
+    {% endif %}
+    {% if section.settings.pbm_desc != blank %}
+      <p>{{ section.settings.pbm_desc }}</p>
+    {% endif %}
+      <div class="two-btns">
+        {% if section.settings.pbm_btn_one != blank %}
+        <a href="{{section.settings.pbm_btn_oneLink}}">{{ section.settings.pbm_btn_one }}</a>
+        {% endif %}
+        <a class="learn-btn" href="#">Learn More</a>
+      </div>
+      <div class="baner-list">
+        <ul>
+          <li><img src="images/Frame.png" alt="#">Improves Your Mood</li>
+          <li><img src="images/Frame.png" alt="#">Feel Younger</li>
+          <li><img src="images/Frame.png" alt="#">I60-night risk free trial</li>
+        </ul>
+      </div>
+    </div>
+    <div class="banner-width1">
+      <img src="images/banner-img.png" alt="#">
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Product Banner",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "pbm_pretitle",
+      "label": "Pre title",
+      "default": "Biggest Improvement in Human Memory Ever Discovered"
+    },
+    {
+      "type": "html",
+      "id": "pbm_title",
+      "label": "Title"
+    },
+    {
+        "type": "richtext",
+        "id":"pbm_desc",
+        "label": "Description"
+    },
+    {
+        "type": "text",
+        "id": "pbm_btn_one",
+        "label": "Button One Label",
+        "default":"Buy Now"
+    },
+    {
+        "type": "url",
+        "id": "pbm_btn_oneLink",
+        "label": "Button One Link"
+    },
+    {
+        "type": "text",
+        "id": "pbm_btn_two",
+        "label": "Button Two Label",
+        "default":"Learn More"
+    },
+    {
+        "type": "url",
+        "id": "pbm_btn_twoLink",
+        "label": "Button Two Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Banner"
+    }
+  ]
+}
+{% endschema %}
