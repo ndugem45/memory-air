@@ -23,7 +23,9 @@
                 <img src="{{ 'quote.png' | asset_url }}" alt="*" height="" width="">
              
               <span>{{ section.settings.oct_customer_name }}</span>
-              <p>{{ section.settings.oct_customer_status }}</p>
+              {% if section.settings.oct_customer_status %}
+              <p>Verified User</p>
+              {% endif %}
             </div>
             {% endif %}
           </div>
@@ -76,10 +78,9 @@
       "default": "Nancy Steele"
     },
     {
-      "type": "text",
+      "type": "checkbox",
       "id": "oct_customer_status",
-      "label": "Customer Status",
-      "default": "Verified User"
+      "label": "Customer Status"
     },
     {
       "type": "image_picker",
