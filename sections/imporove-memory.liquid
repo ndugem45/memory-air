@@ -1,0 +1,104 @@
+<section class="imporove-memory">
+  <div class="container">
+    <div
+      class="improve-inner"
+      style="background-image: url({{ section.settings.imfa_background_image | image_url }});"
+    >
+        {% if section.settings.imfa_heading != blank %}
+      <h2>{{ section.settings.imfa_heading }}</h2>
+        {% endif %}
+        {% if section.settings.imfa_description != blank %}
+      <p>{{ section.settings.imfa_description }}</p>
+        {% endif %}
+        {% if section.settings.imfa_button_text != blank %}
+      <div class="buy-know-btn">
+        <a href="{{ section.settings.imfa_button_link }}">
+          {{ section.settings.imfa_button_text }}
+        </a>
+      </div>
+    {% endif %}
+      <div class="baner-list">
+        <ul>
+          {% for block in section.blocks %}
+            <li>
+                {% if block.settings.imfa_icon != blank %}
+              <img
+                src="{{ block.settings.imfa_icon | image_url }}"
+                alt="#" height="" width=""
+              >
+              {% endif %}
+              {{ block.settings.imfa_text }}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Improve Memory Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "imfa_background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "imfa_heading",
+      "label": "Heading",
+      "default": "Improve Memory, Mood and Focus - With Memory Air."
+    },
+    {
+      "type": "textarea",
+      "id": "imfa_description",
+      "label": "Description",
+      "default": "Strengthen your memory networks and protect your brain health performance with an easy, sleep-based nightly routine."
+    },
+    {
+      "type": "text",
+      "id": "imfa_button_text",
+      "label": "Button Text",
+      "default": "Buy Now"
+    },
+    {
+      "type": "url",
+      "id": "imfa_button_link",
+      "label": "Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "imfa_icon",
+          "label": "Icon Image"
+        },
+        {
+          "type": "text",
+          "id": "imfa_text",
+          "label": "Text",
+          "default": "Improves Your Mood"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 5,
+  "presets": [
+    {
+      "name": "Improve Memory (IMFA)",
+      "blocks": [
+        { "type": "feature" },
+        { "type": "feature" },
+        { "type": "feature" }
+      ]
+    }
+  ]
+}
+{% endschema %}
