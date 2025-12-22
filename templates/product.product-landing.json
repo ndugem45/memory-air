@@ -52,6 +52,52 @@
         "pbm_btn_twoLink": ""
       }
     },
+    "as_seen_VBTiYz": {
+      "type": "as-seen",
+      "blocks": {
+        "asf_features_334YWb": {
+          "type": "asf_features",
+          "settings": {
+            "asf_bimg": "shopify://shop_images/im1.png"
+          }
+        },
+        "asf_features_x33BUe": {
+          "type": "asf_features",
+          "settings": {
+            "asf_bimg": "shopify://shop_images/im3.png"
+          }
+        },
+        "asf_features_VrVLEJ": {
+          "type": "asf_features",
+          "settings": {
+            "asf_bimg": "shopify://shop_images/im2.png"
+          }
+        },
+        "asf_features_mY9qtX": {
+          "type": "asf_features",
+          "settings": {
+            "asf_bimg": "shopify://shop_images/im5.png"
+          }
+        },
+        "asf_features_n78HkL": {
+          "type": "asf_features",
+          "settings": {
+            "asf_bimg": "shopify://shop_images/im4.png"
+          }
+        }
+      },
+      "block_order": [
+        "asf_features_334YWb",
+        "asf_features_x33BUe",
+        "asf_features_VrVLEJ",
+        "asf_features_mY9qtX",
+        "asf_features_n78HkL"
+      ],
+      "name": "As seen in & Featured",
+      "settings": {
+        "asf_Title": "As seen in & Featured on"
+      }
+    },
     "hero-productpage": {
       "type": "hero-productpage",
       "disabled": true,
@@ -60,6 +106,7 @@
   },
   "order": [
     "product_banner_jKGhPX",
+    "as_seen_VBTiYz",
     "hero-productpage"
   ]
 }
