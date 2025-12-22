@@ -1,0 +1,152 @@
+<section class="why-memory">
+    <div class="container">
+        <div class="why-inner">
+            {% if section.settings.wmw_titlet != blank %}
+            <div class="heading">
+                <h2>
+                   {{ section.settings.wmw_titlet }}
+                </h2>
+            </div>
+            {% endif %}
+            <div class="why-flex">
+                <div class="why-width">
+                    {% if section.settings.wmw_intro_text != blank %}
+                    <p>{{ section.settings.wmw_intro_text }}</p>
+                    {% endif %}
+                    <ul>
+                        {% for block in section.blocks %}
+                            {% if block.type == 'wmw_feature_list_1' %}
+                                <li>
+                                    <strong>{{ block.settings.wmw_title }}</strong>
+                                    {{ block.settings.wmw_description }}
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="why-width1">
+                    <img src="{{ section.settings.wmw_image_1 | image_url }}" alt="#">
+                </div>
+            </div>
+
+            <div class="why-flex">
+                <div class="why-width1">
+                    <img src="{{ section.settings.wmw_image_2 | image_url }}" alt="#">
+                </div>
+
+                <div class="why-width">
+                    <p>{{ section.settings.wmw_secondary_text }}</p>
+                    <ul>
+                        {% for block in section.blocks %}
+                            {% if block.type == 'wmw_feature_list_2' %}
+                                <li>{{ block.settings.wmw_text }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="why-content">
+                <p class="arrows">{{ section.settings.wmw_disclaimer_top }}</p>
+                <ul>
+                    {% for block in section.blocks %}
+                        {% if block.type == 'wmw_disclaimer_list' %}
+                            <li>{{ block.settings.wmw_text }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <p>{{ section.settings.wmw_disclaimer_bottom }}</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Why Memory Air Works",
+  "settings": [
+    {
+      "type": "text",
+      "id": "wmw_titlet",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "wmw_intro_text",
+      "label": "Intro Paragraph"
+    },
+    {
+      "type": "image_picker",
+      "id": "wmw_image_1",
+      "label": "First Image"
+    },
+    {
+      "type": "textarea",
+      "id": "wmw_secondary_text",
+      "label": "Secondary Paragraph"
+    },
+    {
+      "type": "image_picker",
+      "id": "wmw_image_2",
+      "label": "Second Image"
+    },
+    {
+      "type": "textarea",
+      "id": "wmw_disclaimer_top",
+      "label": "Top Disclaimer Text"
+    },
+    {
+      "type": "textarea",
+      "id": "wmw_disclaimer_bottom",
+      "label": "Bottom Disclaimer Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "wmw_feature_list_1",
+      "name": "Feature List (Top)",
+      "settings": [
+        {
+          "type": "text",
+          "id": "wmw_title",
+          "label": "Bold Title"
+        },
+        {
+          "type": "textarea",
+          "id": "wmw_description",
+          "label": "Description"
+        }
+      ]
+    },
+    {
+      "type": "wmw_feature_list_2",
+      "name": "Feature List (Bottom)",
+      "settings": [
+        {
+          "type": "text",
+          "id": "wmw_text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "wmw_disclaimer_list",
+      "name": "Disclaimer Bullet",
+      "settings": [
+        {
+          "type": "text",
+          "id": "wmw_text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Why Memory Air Works"
+    }
+  ]
+}
+{% endschema %}
