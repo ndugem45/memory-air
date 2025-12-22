@@ -2,31 +2,33 @@
   <div class="container">
     <div class="customer-box">
       {% if section.settings.oct_heading != blank %}
-      <h1>
-        {{ section.settings.oct_heading }}
-      
-      </h1>
-    {% endif %}
+        <h1>
+          {{ section.settings.oct_heading }}
+        </h1>
+      {% endif %}
       <div class="custom-flx">
-
         <!-- Customer Info -->
         <div class="custmr-width">
           <div class="inner-flx">
             <div class="flx-win">
               {% if section.settings.oct_customer_image != blank %}
-                <img src="{{ section.settings.oct_customer_image | image_url }}" alt="{{ section.settings.oct_customer_image.alt }}" height="" width="">
+                <img
+                  src="{{ section.settings.oct_customer_image | image_url }}"
+                  alt="{{ section.settings.oct_customer_image.alt }}"
+                  height=""
+                  width=""
+                >
               {% endif %}
             </div>
-            {% if section.settings.oct_customer_name != blank  %}
-            <div class="flx-win">
-              
+            {% if section.settings.oct_customer_name != blank %}
+              <div class="flx-win">
                 <img src="{{ 'quote.png' | asset_url }}" alt="*" height="" width="">
-             
-              <span>{{ section.settings.oct_customer_name }}</span>
-              {% if section.settings.oct_customer_status %}
-              <p>Verified User</p>
-              {% endif %}
-            </div>
+
+                <span>{{ section.settings.oct_customer_name }}</span>
+                {% if section.settings.oct_customer_status %}
+                  <p>Verified User</p>
+                {% endif %}
+              </div>
             {% endif %}
           </div>
         </div>
@@ -34,7 +36,6 @@
         <!-- Message Box -->
         <div class="custmr-width1">
           <div class="message-box">
-
             <!-- Stars -->
             <ul>
               {% for i in (1..section.settings.oct_rating) %}
@@ -46,15 +47,13 @@
               {% endfor %}
             </ul>
             {% if section.settings.oct_review_title != blank %}
-            <span>{{ section.settings.oct_review_title }}</span>
+              <span>{{ section.settings.oct_review_title }}</span>
             {% endif %}
             {% if section.settings.oct_review_text != blank %}
-            <p>{{ section.settings.oct_review_text }}</p>
+              <p>{{ section.settings.oct_review_text }}</p>
             {% endif %}
-
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -84,7 +83,7 @@
       "type": "checkbox",
       "id": "oct_customer_status",
       "label": "Customer Status",
-      "default":false
+      "default": false
     },
     {
       "type": "image_picker",
