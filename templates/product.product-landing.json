@@ -11,10 +11,25 @@
   "sections": {
     "hero-productpage": {
       "type": "hero-productpage",
+      "disabled": true,
       "settings": {}
+    },
+    "product_banner_jKGhPX": {
+      "type": "product-banner",
+      "name": "Product Banner",
+      "settings": {
+        "pbm_pretitle": "Biggest Improvement in Human Memory Ever Discovered",
+        "pbm_title": "",
+        "pbm_desc": "",
+        "pbm_btn_one": "Buy Now",
+        "pbm_btn_oneLink": "",
+        "pbm_btn_two": "Learn More",
+        "pbm_btn_twoLink": ""
+      }
     }
   },
   "order": [
-    "hero-productpage"
+    "hero-productpage",
+    "product_banner_jKGhPX"
   ]
 }
