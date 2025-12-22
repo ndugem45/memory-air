@@ -20,63 +20,98 @@
       </div>
       <div class="baner-list">
         <ul>
-          <li><img src="images/Frame.png" alt="#">Improves Your Mood</li>
-          <li><img src="images/Frame.png" alt="#">Feel Younger</li>
-          <li><img src="images/Frame.png" alt="#">I60-night risk free trial</li>
+            {% for block in section.blocks %}
+                {% if block.type == 'pb_features' %}
+                    {% if block.settings.pbm_btext != blank or block.settings.pbm_bimg != blank %}
+                        <li>
+                            {% if block.settings.pbm_bimg != blank %}
+                                <img src="{{ block.settings.pbm_bimg | image_url }}" alt="{{ block.settings.pbm_btext }}" width="" height="">
+                            {% endif %}
+                            {{ block.settings.pbm_btext }}
+                        </li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
         </ul>
       </div>
     </div>
+    {% if section.settings.pbm_bannerimg != blank %}
     <div class="banner-width1">
-      <img src="images/banner-img.png" alt="#">
+      <img src="{{ section.settings.pbm_bannerimg }}" alt="{{ section.settings.pbm_bannerimg.alt }}" height="" width="">
     </div>
+    {% endif %}
   </div>
 </section>
 {% schema %}
 {
-  "name": "Product Banner",
-  "disabled_on": {
+    "name": "Product Banner",
+    "disabled_on": {
     "groups": ["header", "footer"]
-  },
-  "settings": [
-    {
-      "type": "text",
-      "id": "pbm_pretitle",
-      "label": "Pre title",
-      "default": "Biggest Improvement in Human Memory Ever Discovered"
     },
-    {
-      "type": "html",
-      "id": "pbm_title",
-      "label": "Title"
-    },
-    {
-        "type": "richtext",
-        "id":"pbm_desc",
-        "label": "Description"
-    },
-    {
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "pbm_bannerimg",
+            "label": "Banner Image"
+ 		},
+        {
         "type": "text",
-        "id": "pbm_btn_one",
-        "label": "Button One Label",
-        "default":"Buy Now"
-    },
-    {
-        "type": "url",
-        "id": "pbm_btn_oneLink",
-        "label": "Button One Link"
-    },
-    {
-        "type": "text",
-        "id": "pbm_btn_two",
-        "label": "Button Two Label",
-        "default":"Learn More"
-    },
-    {
-        "type": "url",
-        "id": "pbm_btn_twoLink",
-        "label": "Button Two Link"
-    }
-  ],
+        "id": "pbm_pretitle",
+        "label": "Pre title",
+        "default": "Biggest Improvement in Human Memory Ever Discovered"
+        },
+        {
+        "type": "html",
+        "id": "pbm_title",
+        "label": "Title"
+        },
+        {
+            "type": "richtext",
+            "id":"pbm_desc",
+            "label": "Description"
+        },
+        {
+            "type": "text",
+            "id": "pbm_btn_one",
+            "label": "Button One Label",
+            "default":"Buy Now"
+        },
+        {
+            "type": "url",
+            "id": "pbm_btn_oneLink",
+            "label": "Button One Link"
+        },
+        {
+            "type": "text",
+            "id": "pbm_btn_two",
+            "label": "Button Two Label",
+            "default":"Learn More"
+        },
+        {
+            "type": "url",
+            "id": "pbm_btn_twoLink",
+            "label": "Button Two Link"
+        },
+    ],
+    "blocks": [
+		{
+ 			"type": "pb_features",
+ 			"name": "Feature",
+ 			"settings": [
+				{
+					"type": "image_picker",
+					"id": "pbm_bimg",
+					"label": "Image"
+ 				},
+				{
+					"type": "text",
+					"id": "pbm_btext",
+					"label": "Text"
+				}
+
+ 			]
+ 		}
+	],
   "presets": [
     {
       "name": "Product Banner"
