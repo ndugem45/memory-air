@@ -29,9 +29,11 @@
                         <p>{{ block.settings.hmw_text }}</p>
                       </div>
                     </div>
-                    <div class="arrow-box">
-                      <img src="{{ block.settings.hmw_arrow | image_url }}" alt="#" height="" width="">
-                    </div>
+                    {% if block.settings.hmw_arrow != blank %}
+                      <div class="arrow-box">
+                        <img src="{{ block.settings.hmw_arrow | image_url }}" alt="#" height="" width="">
+                      </div>
+                    {% endif %}
                   </li>
                 {% endif %}
               {% endfor %}
@@ -58,12 +60,12 @@
                       </div>
                     {% endif %}
                     <div class="box-content">
-                      {% if block.settings.hmw_icon != blank %}
-                        <div class="inner-box">
+                      <div class="inner-box">
+                        {% if block.settings.hmw_icon != blank %}
                           <img src="{{ block.settings.hmw_icon | image_url }}" alt="#" width="" height="">
-                          <p>{{ block.settings.hmw_text }}</p>
-                        </div>
-                      {% endif %}
+                        {% endif %}
+                        <p>{{ block.settings.hmw_text }}</p>
+                      </div>
                     </div>
                   </li>
                 {% endif %}
