@@ -102,11 +102,25 @@
       "type": "hero-productpage",
       "disabled": true,
       "settings": {}
+    },
+    "our_customers_think_MnzVhG": {
+      "type": "our-customers-think",
+      "name": "Our Customers Think",
+      "settings": {
+        "oct_heading": "What Do Our Customers",
+        "oct_heading_highlight": "Think?",
+        "oct_customer_name": "Nancy Steele",
+        "oct_customer_status": "Verified User",
+        "oct_rating": 5,
+        "oct_review_title": "I Sleep Deeper and Better!!",
+        "oct_review_text": "I've been using Memory Air for a few months..."
+      }
     }
   },
   "order": [
     "product_banner_jKGhPX",
     "as_seen_VBTiYz",
-    "hero-productpage"
+    "hero-productpage",
+    "our_customers_think_MnzVhG"
   ]
 }
