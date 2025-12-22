@@ -45,9 +45,12 @@
                 </li>
               {% endfor %}
             </ul>
-
+            {% if section.settings.oct_review_title != blank %}
             <span>{{ section.settings.oct_review_title }}</span>
+            {% endif %}
+            {% if section.settings.oct_review_text != blank %}
             <p>{{ section.settings.oct_review_text }}</p>
+            {% endif %}
 
           </div>
         </div>
