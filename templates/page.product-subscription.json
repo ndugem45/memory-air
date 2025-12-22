@@ -9,57 +9,242 @@
  */
 {
   "sections": {
-    "hero-aboutus": {
-      "type": "hero-aboutus",
+    "product_banner_jKGhPX": {
+      "type": "product-banner",
+      "blocks": {
+        "pb_features_yWKbXL": {
+          "type": "pb_features",
+          "settings": {
+            "pbm_bimg": "shopify://shop_images/Frame.png",
+            "pbm_btext": "Improves Your Mood"
+          }
+        },
+        "pb_features_iBprRa": {
+          "type": "pb_features",
+          "settings": {
+            "pbm_bimg": "shopify://shop_images/Frame_1.png",
+            "pbm_btext": "Feel Younger"
+          }
+        },
+        "pb_features_cNEegY": {
+          "type": "pb_features",
+          "settings": {
+            "pbm_bimg": "shopify://shop_images/Frame_2.png",
+            "pbm_btext": "60-night risk free trial"
+          }
+        }
+      },
+      "block_order": [
+        "pb_features_yWKbXL",
+        "pb_features_iBprRa",
+        "pb_features_cNEegY"
+      ],
+      "name": "Product Banner",
       "settings": {
-        "section_label": "About Science Lab 3™"
+        "pbm_bgimg": "shopify://shop_images/banner-back.png",
+        "pbm_bannerimg": "shopify://shop_images/banner-img.png",
+        "pbm_pretitle": "Biggest Improvement in Human Memory Ever Discovered",
+        "pbm_title": "Improve Your Memory<br> &amp; Brain Health<br>\n                        <span class=\"italic\">...While You Sleep</span>",
+        "pbm_desc": "",
+        "pbm_btn_one": "Buy Now",
+        "pbm_btn_oneLink": "",
+        "pbm_btn_two": "Learn More",
+        "pbm_btn_twoLink": ""
       }
     },
-    "partner": {
-      "type": "partner",
+    "as_seen_VBTiYz": {
+      "type": "as-seen",
+      "blocks": {
+        "asf_features_334YWb": {
+          "type": "asf_features",
+          "settings": {
+            "asf_bimg": "shopify://shop_images/im1.png"
+          }
+        },
+        "asf_features_x33BUe": {
+          "type": "asf_features",
+          "settings": {
+            "asf_bimg": "shopify://shop_images/im3.png"
+          }
+        },
+        "asf_features_VrVLEJ": {
+          "type": "asf_features",
+          "settings": {
+            "asf_bimg": "shopify://shop_images/im2.png"
+          }
+        },
+        "asf_features_mY9qtX": {
+          "type": "asf_features",
+          "settings": {
+            "asf_bimg": "shopify://shop_images/im5.png"
+          }
+        },
+        "asf_features_n78HkL": {
+          "type": "asf_features",
+          "settings": {
+            "asf_bimg": "shopify://shop_images/im4.png"
+          }
+        }
+      },
+      "block_order": [
+        "asf_features_334YWb",
+        "asf_features_x33BUe",
+        "asf_features_VrVLEJ",
+        "asf_features_mY9qtX",
+        "asf_features_n78HkL"
+      ],
+      "name": "As seen in & Featured",
       "settings": {
-        "speed": 2500,
-        "partner_object": []
+        "asf_Title": "As seen in & Featured on"
       }
     },
-    "bringing": {
-      "type": "bringing",
+    "hero-productpage": {
+      "type": "hero-productpage",
+      "disabled": true,
       "settings": {}
     },
-    "officer": {
-      "type": "officer",
+    "our_customers_think_MnzVhG": {
+      "type": "our-customers-think",
+      "name": "Our Customers Think",
       "settings": {
-        "section_label": "Science Lab 3™ Chief Science Officer",
-        "officer_name": "Michael Leon, PhD",
-        "officer_title": "Professor Emeritus, Neurobiology and Behavior,  University of California Irvine"
+        "oct_heading": "What Do Our Customers <span>Think?</span>",
+        "oct_customer_image": "shopify://shop_images/customer.png",
+        "oct_customer_name": "Nancy Steele",
+        "oct_customer_status": true,
+        "oct_star_image": "shopify://shop_images/Star.png",
+        "oct_rating": 5,
+        "oct_review_title": "I Sleep Deeper and Better!!",
+        "oct_review_text": "I've been using Memory Air for a few months with a break while I waited for an updated device. What I noticed while I have the device active is that I sleep deeper and better. I find myself being the one to remember names and details more often than before I used it. Words seem to come more easily now. When I had the break between devices my sleep was not as sound and the memory benefits seemed to hold.  These are subtle but noticeable changes that are making a positive difference on a daily basis."
       }
     },
-    "forfuture": {
-      "type": "forfuture",
+    "why_people_talking_pHC8ix": {
+      "type": "why-people-talking",
+      "blocks": {
+        "wpt_video_card_BUWgjN": {
+          "type": "wpt_video_card",
+          "settings": {
+            "wpt_video": "shopify://files/videos/Desktop 2x longer_Match Source - Adaptive Low Bitrate_Match Source - Adaptive Low Bitrate.mp4"
+          }
+        },
+        "wpt_video_card_B6wtxx": {
+          "type": "wpt_video_card",
+          "settings": {
+            "wpt_video": "shopify://files/videos/Desktop 2x longer_Match Source - Adaptive Low Bitrate_Match Source - Adaptive Low Bitrate.mp4"
+          }
+        },
+        "wpt_video_card_cL74hq": {
+          "type": "wpt_video_card",
+          "settings": {
+            "wpt_video": "shopify://files/videos/Desktop 2x longer_Match Source - Adaptive Low Bitrate_Match Source - Adaptive Low Bitrate.mp4"
+          }
+        },
+        "wpt_video_card_XcwWhr": {
+          "type": "wpt_video_card",
+          "settings": {
+            "wpt_video": "shopify://files/videos/Desktop 2x longer_Match Source - Adaptive Low Bitrate_Match Source - Adaptive Low Bitrate.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "wpt_video_card_BUWgjN",
+        "wpt_video_card_B6wtxx",
+        "wpt_video_card_cL74hq",
+        "wpt_video_card_XcwWhr"
+      ],
+      "name": "Why People Are Talking About Memory Air",
       "settings": {
-        "user_name": "Alan Bernstein",
-        "user_title": "Chief Executive Officer of Science Lab 3, Makers of Memory Air™"
+        "wpt_section_title": "Why People Are Talking About Memory Air"
       }
     },
-    "technical": {
-      "type": "technical",
-      "settings": {}
-    },
-    "message": {
-      "type": "message",
+    "how_memory_air_works_ky8kgR": {
+      "type": "how-memory-air-works",
+      "blocks": {
+        "left_item_AqbM4R": {
+          "type": "left_item",
+          "settings": {
+            "hmw_icon": "shopify://shop_images/Wind.svg",
+            "hmw_text": "Smell has the biggest highway to the main memory center of the brain.",
+            "hmw_arrow": "shopify://shop_images/arrow1.png"
+          }
+        },
+        "left_item_Jbnyyf": {
+          "type": "left_item",
+          "settings": {
+            "hmw_icon": "shopify://shop_images/Lightning.svg",
+            "hmw_text": "Over time, this improves memory, sleep, and mental sharpness.",
+            "hmw_arrow": "shopify://shop_images/arrow2.png"
+          }
+        },
+        "left_item_qKeUcP": {
+          "type": "left_item",
+          "settings": {
+            "hmw_icon": "shopify://shop_images/Repeat.svg",
+            "hmw_text": "Refill monthly to maintain the potency of the therapy.",
+            "hmw_arrow": "shopify://shop_images/arrow3.png"
+          }
+        },
+        "right_item_iMgPBB": {
+          "type": "right_item",
+          "settings": {
+            "hmw_icon": "shopify://shop_images/Brain.svg",
+            "hmw_text": "People lose their ability to smell with age, disease, trauma.",
+            "hmw_arrow": "shopify://shop_images/arrow4.png"
+          }
+        },
+        "right_item_TikcHi": {
+          "type": "right_item",
+          "settings": {
+            "hmw_icon": "shopify://shop_images/MoonStars.svg",
+            "hmw_text": "Gentle pulses of 80 scents are released during sleep (or even daytime.)",
+            "hmw_arrow": "shopify://shop_images/arrow5.png"
+          }
+        },
+        "right_item_84icCA": {
+          "type": "right_item",
+          "settings": {
+            "hmw_icon": "shopify://shop_images/ShieldCheck.svg",
+            "hmw_text": "These improve your ability to smell and activate memory-related neural pathways.",
+            "hmw_arrow": "shopify://shop_images/arrow6.png"
+          }
+        }
+      },
+      "block_order": [
+        "left_item_AqbM4R",
+        "left_item_Jbnyyf",
+        "left_item_qKeUcP",
+        "right_item_iMgPBB",
+        "right_item_TikcHi",
+        "right_item_84icCA"
+      ],
+      "name": "How Memory Air Works",
       "settings": {
-        "user_name": "Alan Bernstein, CEO",
-        "user_title": "Science Lab 3, Makers of MemoryAir<sup>™</sup>"
+        "hmw_title": "<span>How</span> Memory Air Works",
+        "hmw_background_image": "shopify://shop_images/bck-round.png",
+        "hmw_center_image": "shopify://shop_images/bck-im.png",
+        "hmw_button_text": "Buy Now",
+        "hmw_button_link": ""
+      }
+    },
+    "why_memory_air_works_JaThqT": {
+      "type": "Why-memory-air-works",
+      "name": "Why Memory Air Works",
+      "settings": {
+        "wmw_titlet": "<span>Why</span> Memory Air works",
+        "wmw_leftText": "<p>Because scent is the only sense that connects directly to the brain’s memory centres - creating a powerful pathway to strengthen cognitive performance, especially during sleep.</p><ul><li><strong>1. Olfactory enrichment activates four key brain regions</strong>Linked to memory, emotion, and learning (hippocampus, amygdala, temporal lobe, frontal lobe).</li><li><strong>2. Developed by a top 1% neuroscientist</strong>Based on breakthrough research at UC Irvine and Stanford School of Medicine.</li><li><strong>3. Clinically validated results</strong>The underlying science demonstrated a 226% improvement in memory in seniors and 300% improvement in people with dementia.</li><li><strong>4. Supports mood and cognitive clarity</strong>4 research studies showed a improvement in depression scores.</li><li><strong>5. A drug-free, sleep-based method</strong>Your brain receives the stimulation while you sleep, and you never consciously notice any scents</li></ul>",
+        "wmw_image_1": "shopify://shop_images/support.png",
+        "wmw_rightText": "<p>Developed by Dr. Michael Leon, ranked in the Top 1% of Scientists Worldwide.</p><ul><li>The biggest improvement in human memory ever discovered</li><li>226% improvement in memory in seniors</li><li>Reduced feelings of depression</li><li>People feel 6 years younger at age 50 compared to control group</li></ul>",
+        "wmw_image_2": "shopify://shop_images/break.png",
+        "wmw_btmText": "<p>This product is intended as a general wellness device for mental acuity and is not a medical device cleared by the fda.</p><ul><li>improve memory in seniors</li><li>reduce the risk of memory loss</li><li>designed based upon olfactory enrichment concepts</li></ul><p>This device is not intended to diagnose, treat, cure, or prevent disease.</p>"
       }
     }
   },
   "order": [
-    "hero-aboutus",
-    "partner",
-    "bringing",
-    "officer",
-    "forfuture",
-    "technical",
-    "message"
+    "product_banner_jKGhPX",
+    "as_seen_VBTiYz",
+    "hero-productpage",
+    "our_customers_think_MnzVhG",
+    "why_people_talking_pHC8ix",
+    "how_memory_air_works_ky8kgR",
+    "why_memory_air_works_JaThqT"
   ]
 }
