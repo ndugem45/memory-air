@@ -15,15 +15,19 @@
         {% for block in section.blocks %}
             {% if block.type == 'faq' %}
           <div class="faqs-content">
+            {% if block.settings.fq_question != blank %}
             <div class="question-faqs">
               <h4>{{ block.settings.fq_question }}</h4>
               <div class="faqs-arrow">
                 <img src="{{'arrow-down.png' | asset_url}} " alt="#" height="" width="">
               </div>
             </div>
+            {% endif %}
+            {% if block.settings.fq_answer != blank %}
             <div class="faqs-answer">
-              <p>{{ block.settings.fq_answer }}</p>
+             {{ block.settings.fq_answer }}
             </div>
+        {% endif %}
           </div>
           {% endif %}
         {% endfor %}
@@ -59,10 +63,9 @@
           "default": "How does Memory Air™ work?"
         },
         {
-          "type": "textarea",
+          "type": "richtext",
           "id": "fq_answer",
-          "label": "Answer",
-          "default": "Aromatherapy believes that a specific odor produces a specific health benefit. The science behind Memory Air™ shows that the improvement in memory is based upon rotating odors - with the more odors, the better. The specific odors do not matter. Memory Air™ science is called Olfactory Enrichment."
+          "label": "Answer"
         }
       ]
     }
