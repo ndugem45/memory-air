@@ -19,19 +19,16 @@
                     {% endif %}
                     </div>
                     <div class="why-flex">
-                        
+                        {% if section.settings.wmw_image_2 != blank %}
                         <div class="why-width1">
-                            <img src="images/break.png" alt="#">
+                            <img src="{{ section.settings.wmw_image_2 }}" alt="{{  section.settings.wmw_image_2.alt }}" height="" width="">
                         </div>
+                    {% endif %}
+                        {% if section.settings.wmw_rightText != blank %}
                         <div class="why-width">
-                            <p>Developed by Dr. Michael Leon, ranked in the Top 1% of Scientists Worldwide.</p>
-                            <ul>
-                                <li>The biggest improvement in human memory ever discovered</li>
-                                <li>226% improvement in memory in seniors</li>
-                                <li>Reduced feelings of depression</li>
-                                <li>People feel 6 years younger at age 50 compared to control group</li>
-                            </ul>
+                            {{ section.settings.wmw_rightText }}
                         </div>
+                    {% endif %}
                     </div>
                     <div class="why-content">
                         <p class="arrows">This product is intended as a general wellness device for mental acuity and is not a medical device cleared by the fda.</p>
