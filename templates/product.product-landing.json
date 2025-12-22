@@ -11,6 +11,34 @@
   "sections": {
     "product_banner_jKGhPX": {
       "type": "product-banner",
+      "blocks": {
+        "pb_features_yWKbXL": {
+          "type": "pb_features",
+          "settings": {
+            "pbm_bimg": "shopify://shop_images/Frame.png",
+            "pbm_btext": "Improves Your Mood"
+          }
+        },
+        "pb_features_iBprRa": {
+          "type": "pb_features",
+          "settings": {
+            "pbm_bimg": "shopify://shop_images/Frame_1.png",
+            "pbm_btext": "Feel Younger"
+          }
+        },
+        "pb_features_cNEegY": {
+          "type": "pb_features",
+          "settings": {
+            "pbm_bimg": "shopify://shop_images/Frame_2.png",
+            "pbm_btext": "60-night risk free trial"
+          }
+        }
+      },
+      "block_order": [
+        "pb_features_yWKbXL",
+        "pb_features_iBprRa",
+        "pb_features_cNEegY"
+      ],
       "name": "Product Banner",
       "settings": {
         "pbm_bgimg": "shopify://shop_images/banner-back.png",
