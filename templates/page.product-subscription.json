@@ -98,7 +98,6 @@
         "asf_Title": "As seen in & Featured on"
       }
     },
-   
     "our_customers_think_MnzVhG": {
       "type": "our-customers-think",
       "name": "Our Customers Think",
@@ -232,6 +231,39 @@
         "wmw_image_2": "shopify://shop_images/break.png",
         "wmw_btmText": "<p>This product is intended as a general wellness device for mental acuity and is not a medical device cleared by the fda.</p><ul><li>improve memory in seniors</li><li>reduce the risk of memory loss</li><li>designed based upon olfactory enrichment concepts</li></ul><p>This device is not intended to diagnose, treat, cure, or prevent disease.</p>"
       }
+    },
+    "what_our_experts_say_n8fKqC": {
+      "type": "what-our-experts-say",
+      "blocks": {
+        "woes_expert_zBft7Q": {
+          "type": "woes_expert",
+          "settings": {
+            "woes_title": "\"Improve quality of life\"",
+            "woes_quote": "“This well designed clinical trial provides convincing evidence of benefit in memory performance and, impressively, structural changes in a part of the brain that plays a key role in memory performance. This relatively simple intervention has the potential to improve the quality of life for a broad spectrum of the population.”",
+            "woes_image": "shopify://shop_images/expert1.png",
+            "woes_name": "Dr. David Thom, MD, PhD, MPH",
+            "woes_position": "Clinical Professor Emeritus of Medicine, Stanford University School of Medicine. Vice Chair for Research, Family Medicine, University of California San Francisco."
+          }
+        },
+        "woes_expert_KaQ9AK": {
+          "type": "woes_expert",
+          "settings": {
+            "woes_title": "\"Significantly improved cognitive function and memory”",
+            "woes_quote": "“The new study published in Frontiers of Neuroscience is very exciting because it shows that a bedside device that alternates natural scents while a person sleeps significantly improved cognitive function and memory. It may seem hard to believe that an approach in healthy adults that requires no active participation can have such beneficial effects, but the scientific rationale is based on decades of research. This is a pivotal finding.”",
+            "woes_image": "shopify://shop_images/Ellipse_10.png",
+            "woes_name": "Dr. Lorene Nelson, PhD, MS",
+            "woes_position": "Associate Professor of Epidemiology, Faculty Research Director, Stanford University School of Medicine."
+          }
+        }
+      },
+      "block_order": [
+        "woes_expert_zBft7Q",
+        "woes_expert_KaQ9AK"
+      ],
+      "name": "What Experts Say",
+      "settings": {
+        "woes_heading_text": "What our<span> Experts</span> say"
+      }
     }
   },
   "order": [
@@ -240,6 +272,7 @@
     "our_customers_think_MnzVhG",
     "why_people_talking_pHC8ix",
     "how_memory_air_works_ky8kgR",
-    "why_memory_air_works_JaThqT"
+    "why_memory_air_works_JaThqT",
+    "what_our_experts_say_n8fKqC"
   ]
 }
