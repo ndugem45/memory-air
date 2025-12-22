@@ -1,0 +1,18 @@
+
+@media screen and (max-width: 375px) {
+section#all-banner h1 {
+  font-size: 28px;
+  line-height: 40px;
+}
+section#blog-detailed .desination-img {
+  position: relative;
+  top: -95px;
+  margin-bottom: -95px;
+}
+.heading-banner {
+  padding-top: 96px;
+}
+.detailed {
+  top: -30px;
+}
+}
