@@ -557,6 +557,45 @@
         "fq_heading": "Frequently<br> asked<br> <span>Questions</span>",
         "fq_subheading": "Answered in no-time."
       }
+    },
+    "imporove_memory_dQgBXm": {
+      "type": "imporove-memory",
+      "blocks": {
+        "feature_PBa3Qn": {
+          "type": "feature",
+          "settings": {
+            "imfa_icon": "shopify://shop_images/Frame.svg",
+            "imfa_text": "Improves Your Mood"
+          }
+        },
+        "feature_3iLQBD": {
+          "type": "feature",
+          "settings": {
+            "imfa_icon": "shopify://shop_images/Frame_1.svg",
+            "imfa_text": "Feel Younger"
+          }
+        },
+        "feature_A7cNjR": {
+          "type": "feature",
+          "settings": {
+            "imfa_icon": "shopify://shop_images/Frame_2.svg",
+            "imfa_text": "60-night risk free trial"
+          }
+        }
+      },
+      "block_order": [
+        "feature_PBa3Qn",
+        "feature_3iLQBD",
+        "feature_A7cNjR"
+      ],
+      "name": "Improve Memory",
+      "settings": {
+        "imfa_background_image": "shopify://shop_images/improve-bck.png",
+        "imfa_heading": "Improve Memory, Mood and Focus - With Memory Air.",
+        "imfa_description": "Strengthen your memory networks and protect your brain health performance with an easy, sleep-based nightly routine.",
+        "imfa_button_text": "Buy Now",
+        "imfa_button_link": ""
+      }
     }
   },
   "order": [
@@ -571,6 +610,7 @@
     "need_to_know_jAiRKK",
     "memory_air_compare_JW4EBr",
     "track_memory_progress_x3zVUL",
-    "product_faq_M4Ftja"
+    "product_faq_M4Ftja",
+    "imporove_memory_dQgBXm"
   ]
 }
