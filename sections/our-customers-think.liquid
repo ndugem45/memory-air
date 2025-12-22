@@ -1,12 +1,12 @@
 <section class="customer-says">
   <div class="container">
     <div class="customer-box">
-      
+      {% if section.settings.oct_heading != blank %}
       <h1>
         {{ section.settings.oct_heading }}
-        <span>{{ section.settings.oct_heading_highlight }}</span>
+      
       </h1>
-
+    {% endif %}
       <div class="custom-flx">
 
         <!-- Customer Info -->
@@ -59,16 +59,9 @@
   "name": "Our Customers Think",
   "settings": [
     {
-      "type": "text",
+      "type": "html",
       "id": "oct_heading",
-      "label": "Main Heading",
-      "default": "What Do Our Customers"
-    },
-    {
-      "type": "text",
-      "id": "oct_heading_highlight",
-      "label": "Highlighted Heading Text",
-      "default": "Think?"
+      "label": "Main Heading"
     },
     {
       "type": "image_picker",
