@@ -159,7 +159,7 @@
       {{ content_for_layout }}
     </main>
     
-    {% if template != '404' %}
+    {% if template != '404' or page.handle == 'memory-air-subscriptions' %}
       {% section 'footer' %}
     {% endif %}
 
