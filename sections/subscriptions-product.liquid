@@ -62,31 +62,31 @@
             <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
               {% if product.variants != blank %}
                 <div class="flex justify-between">
-               <!-- One-Time Purchase Option -->
-<div class="option" form="AddToCartForm">
-  <label class="image-checkbox" for="{{ one_time_variant_id }}">
-    <input type="radio" name="id" id="{{ one_time_variant_id }}" value="{{ one_time_variant_id }}">
+                  <!-- One-Time Purchase Option -->
+                  <div class="option" form="AddToCartForm">
+                    <label class="image-checkbox" for="{{ one_time_variant_id }}">
+                      <input type="radio" name="id" id="{{ one_time_variant_id }}" value="{{ one_time_variant_id }}">
 
-    <div class="total-data">
-      <div class="uper-flex">
-        <span class="lala">
-          <img src="{{ 'flame.png' | asset_url }}" alt="#" width="" height="">
-        </span>
-      </div>
+                      <div class="total-data">
+                        <div class="uper-flex">
+                          <span class="lala">
+                            <img src="{{ 'flame.png' | asset_url }}" alt="#" width="" height="">
+                          </span>
+                        </div>
 
-      <span class="title1">
-        <span class="metafield-single_line_text_field">{{ one_time_product.title }}</span>
-      </span>
+                        <span class="title1">
+                          <span class="metafield-single_line_text_field">{{ one_time_product.title }}</span>
+                        </span>
 
-      <div class="price-flx">
-        <span class="price1">
-          <span class="metafield-single_line_text_field">{{ one_time_product.price | money }}</span>
-          <p><span class="metafield-single_line_text_field">One Time</span></p>
-        </span>
-      </div>
-    </div>
-  </label>
-</div>
+                        <div class="price-flx">
+                          <span class="price1">
+                            <span class="metafield-single_line_text_field">{{ one_time_product.price | money }}</span>
+                            <p><span class="metafield-single_line_text_field">One Time</span></p>
+                          </span>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
 
                   {% for variant in product.variants %}
                     {% if variant.selling_plan_allocations[0] %}
