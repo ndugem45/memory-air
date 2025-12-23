@@ -52,9 +52,9 @@
           src: url( {{'avenir.ttf' | asset_url | append: '?v=' | append: 'timestamp'}} );
       }
     {% endstyle %}
-
+{% unless page.handle == 'memory-air-subscriptions' %}
     {{ 'index.css' | asset_url | stylesheet_tag }}
-
+{% endunless %}
     {{ content_for_header }}
     {% if page.handle == 'memory-air-subscriptions' %}
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css"
