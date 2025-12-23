@@ -110,7 +110,9 @@
     "subscriptions_product_ihFyVG": {
       "type": "subscriptions-product",
       "name": "Subscriptions Product",
-      "settings": {}
+      "settings": {
+        "sp_product": "memory-air-device"
+      }
     },
     "our_customers_think_MnzVhG": {
       "type": "our-customers-think",
