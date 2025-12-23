@@ -56,7 +56,14 @@
     {{ 'index.css' | asset_url | stylesheet_tag }}
 
     {{ content_for_header }}
-    
+    {% if page.handle == 'memory-air-subscriptions' %}
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css"
+        integrity="sha512-pmAAV1X4Nh5jA9m+jcvwJXFQvCBi3T17aZ1KWkqXr7g/O2YMvO8rfaa5ETWDuBvRq6fbDjlw4jHL44jNTScaKg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Custom CSS -->
+      <link rel="stylesheet" type="text/css" href="{{'product-landing.css' | asset_url}}">
+      <link rel="stylesheet" type="text/css" href="{{'product-landing-responsive.css' | asset_url}}">
+    {% endif %}
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 
