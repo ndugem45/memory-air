@@ -76,21 +76,18 @@
                           <input type="radio" name="car" value="yearly">
                           <div class="total-data">
                             <div class="uper-flex">
-                              <span class="lala"
-                                ><img src="{{'flame.png' | asset_url}}" alt="#" width="" height=""
-                              ></span>
+                              <span class="lala"><img src="{{'flame.png' | asset_url}}" alt="#" width="" height=""></span>
                               <div class="populer">
                                 <span>Most Popular</span>
                               </div>
                             </div>
                             <span class="title1">Yearly</span>
                             <div class="price-flx">
-                              <span class="price1">{{ variant.metafields.custom.price_text }} </span>
+                              <span class="price1"
+                                >{{ variant.metafields.custom.price_text }}
+                              </span>
                               <div class="save-text">
-                                {% assign original_price = variant.price | divided_by: 100 %}
-                                {% assign discount_amount = original_price | times: 0.15 %}
-                                {% assign discounted_price = original_price | minus: discount_amount %}
-                                <p>Save {{ discount_amount | money }}</p>
+                                <p>Save 15%</p>
                               </div>
                             </div>
                             {% if variant.metafields.custom.variant_description %}
