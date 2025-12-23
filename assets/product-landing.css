@@ -559,7 +559,8 @@ section.customer-says {
   text-transform: capitalize;
 }
 
-p.arrows {
+p.arrows,
+.why-content p:first-child {
   position: relative;
  
   display: inline-block;
@@ -585,7 +586,8 @@ p.arrows {
   text-transform: capitalize;
 }
 
-p.arrows::after {
+p.arrows::after,
+.why-content p:first-child::after {
   position: absolute;
   content: "";
   background-image: url(https://cdn.shopify.com/s/files/1/0745/3658/3442/files/left-arw.png?v=1766467392);
@@ -595,7 +597,8 @@ p.arrows::after {
   top: 20px;
   background-size: contain;
 }
-p.arrows::before {
+p.arrows::before,
+.why-content p:first-child::before {
   position: absolute;
   content: "";
   background-image: url(https://cdn.shopify.com/s/files/1/0745/3658/3442/files/right-arw.png?v=1766467415);
