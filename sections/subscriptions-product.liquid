@@ -91,15 +91,11 @@
                                 <p>Save 15%</p>
                               </div>
                             </div>
-
-                            <div class="content-listss">
-                              <ul>
-                                <li>Shipped on a monthly Basis</li>
-                                <li>No commitment, Cancel anytime</li>
-                                <li>Belt is included Free for first month</li>
-                                <li>Free Shipping</li>
-                              </ul>
-                            </div>
+                            {% if variant.metafields.custom.variant_description %}
+                              <div class="content-listss">
+                                {{ variant.metafields.custom.variant_description | metafield_tag }}
+                              </div>
+                            {% endif %}
                           </div>
                         </label>
                       </div>
