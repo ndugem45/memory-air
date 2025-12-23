@@ -109,10 +109,39 @@
     },
     "subscriptions_product_ihFyVG": {
       "type": "subscriptions-product",
+      "blocks": {
+        "ps_features_c4Md9x": {
+          "type": "ps_features",
+          "settings": {
+            "ps_bimg": "shopify://shop_images/Frame.svg",
+            "ps_btext": "Improves Your Mood"
+          }
+        },
+        "ps_features_rwePLL": {
+          "type": "ps_features",
+          "settings": {
+            "ps_bimg": "shopify://shop_images/Frame_1.svg",
+            "ps_btext": "Feel Younger"
+          }
+        },
+        "ps_features_YDpkRX": {
+          "type": "ps_features",
+          "settings": {
+            "ps_bimg": "shopify://shop_images/Frame_2.svg",
+            "ps_btext": "60-night risk free trial"
+          }
+        }
+      },
+      "block_order": [
+        "ps_features_c4Md9x",
+        "ps_features_rwePLL",
+        "ps_features_YDpkRX"
+      ],
       "name": "Subscriptions Product",
       "settings": {
         "sp_product": "memory-air-device",
-        "sp_text": "<p>The Biggest Improvement Ever Discovered for Human Memory.</p><p>Developed by Dr. Michael Leon, ranked top 1% of the scientists in the world</p><ul><li>Greatly Improves Memory While You Sleep</li><li>Strengthens long term brain health</li><li>Effortless nightly routine</li><li>Endorsed by professors, doctors, nurses and people like you</li><li>60 night risk free trial</li></ul>"
+        "sp_text": "<p>The Biggest Improvement Ever Discovered for Human Memory.</p><p>Developed by Dr. Michael Leon, ranked top 1% of the scientists in the world</p><ul><li>Greatly Improves Memory While You Sleep</li><li>Strengthens long term brain health</li><li>Effortless nightly routine</li><li>Endorsed by professors, doctors, nurses and people like you</li><li>60 night risk free trial</li></ul>",
+        "sp_stocktext": "Limited Stock Available - Sells Out Often"
       }
     },
     "our_customers_think_MnzVhG": {
