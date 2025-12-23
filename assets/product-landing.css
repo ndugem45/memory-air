@@ -1983,3 +1983,7 @@ span.price-main {
 nav.black {
     display: none;
 }
+.products-sec .mySwiper .swiper-slide img {
+    min-height: 108px;
+    object-fit: contain;
+}
