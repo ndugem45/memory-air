@@ -1987,3 +1987,12 @@ nav.black {
     height: 108px;
     object-fit: contain;
 }
+.flex.justify-between .option {  
+  width: 48%;
+}
+section.marquees-sl {
+  position: relative;   top: -7px;
+}
+section.products-sec {
+    padding-top: 100px;
+}
