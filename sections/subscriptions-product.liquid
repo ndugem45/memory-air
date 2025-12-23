@@ -58,9 +58,12 @@
           <div class="radio-content">
             <p>Subscription Options :</p>
             <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
-              <div class="option" form="AddToCartForm">
+              
+              {% if product.variants != blank %}
+                <div class="flex justify-between">
+                  <div class="option" form="AddToCartForm">
                         
-                          <input type="hidden" id="selling-id-51061765832978" value="51061765832978">
+                          
                         
 
                         
@@ -89,9 +92,6 @@
                           </div>
                         </label>
                       </div>
-              {% if product.variants != blank %}
-                <div class="flex justify-between">
-                  
                   {% for variant in product.variants %}
                     {% if variant.selling_plan_allocations[0] %}
                       <div class="option" form="AddToCartForm">
