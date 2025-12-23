@@ -1,0 +1,55 @@
+<header id="header">
+  <div class="container">
+    <div class="header-flex">
+      {% if section.settings.hc_logo != blank %}
+        <div class="site-logo">
+          <a href="{{ section.settings.hc_logo_link }}">
+            <img src="{{ section.settings.hc_logo | image_url }}" alt="">
+          </a>
+        </div>
+      {% endif %}
+      {% if section.settings.hc_button_text != blank %}
+        <div class="header-btn">
+          <a href="{{ section.settings.hc_button_link }}">
+            {{ section.settings.hc_button_text }}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Subscriptions Page Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hc_logo",
+      "label": "Logo Image"
+    },
+    {
+      "type": "url",
+      "id": "hc_logo_link",
+      "label": "Logo Link",
+      "default": "/"
+    },
+    {
+      "type": "text",
+      "id": "hc_button_text",
+      "label": "Button Text",
+      "default": "Buy Now"
+    },
+    {
+      "type": "url",
+      "id": "hc_button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Subscriptions Page"
+    }
+  ]
+}
+{% endschema %}
