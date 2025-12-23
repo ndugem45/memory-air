@@ -56,7 +56,7 @@
             </div>
           {% endif %}
           <div class="radio-content">
-            <p>Subscription Options :</p>
+            <p>Options :</p>
             <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
               
               {% if product.variants != blank %}
@@ -72,11 +72,11 @@
                         
                           <div class="total-data">
                             <div class="uper-flex">
-                              <span class="lala"><img src="//memoryair.com/cdn/shop/t/7/assets/flame.png?v=28220411432103547641766475755" alt="#" width="" height=""></span>
+                              <span class="lala"><img src="{{'flame.png' | asset_url}}" alt="#" width="" height=""></span>
                               
                             </div>
                             
-                              <span class="title1"><span class="metafield-single_line_text_field">One Time</span></span>
+                              <span class="title1"><span class="metafield-single_line_text_field">Buy Now Pay Letter</span></span>
                             
                             <div class="price-flx">
                               
