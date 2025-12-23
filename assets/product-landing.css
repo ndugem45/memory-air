@@ -599,7 +599,7 @@ p.arrows {
 p.arrows::after {
   position: absolute;
   content: "";
-  background-image: url(../images/left-arw.png);
+  background-image: url(https://cdn.shopify.com/s/files/1/0745/3658/3442/files/left-arw.png?v=1766467392);
   width: 66px;
   height: 18px;
   left: -60px;
@@ -609,7 +609,7 @@ p.arrows::after {
 p.arrows::before {
   position: absolute;
   content: "";
-  background-image: url(../images/right-arw.png);
+  background-image: url(https://cdn.shopify.com/s/files/1/0745/3658/3442/files/right-arw.png?v=1766467415);
   width: 66px;
   height: 18px;
   right: -60px;
