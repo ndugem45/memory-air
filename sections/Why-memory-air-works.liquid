@@ -24,6 +24,11 @@
                             <img src="{{ section.settings.wmw_image_2 | image_url }}" alt="{{  section.settings.wmw_image_2.alt }}" height="" width="">
                         </div>
                     {% endif %}
+                    {% if section.settings.wmw_stocktext != blank %}
+            <div class="rich-texxt">
+              <p>{{ section.settings.wmw_stocktext }}</p>
+            </div>
+          {% endif %}
                         {% if section.settings.wmw_rightText != blank %}
                         <div class="why-width">
                             {{ section.settings.wmw_rightText }}
@@ -66,6 +71,12 @@
       "type": "image_picker",
       "id": "wmw_image_2",
       "label": "Left Image"
+    },
+    {
+      "type": "textarea",
+      "id": "wmw_stocktext",
+      "label": "Text",
+      "default": "Backed by Clinical Research at University of California Irvine"
     },
     {
       "type": "richtext",
