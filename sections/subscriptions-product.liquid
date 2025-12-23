@@ -6,48 +6,38 @@
         <div class="swiper mySwiper2">
           <div class="swiper-wrapper">
             {% for image in product.images %}
-            <div class="swiper-slide">
-              <img src="{{ image | image_url }}" alt="{{ product.title }}" height="" width="">
-            </div>
-           {% endfor %}
-           
-          
-           
-            
-            
-           
-            
-           
+              <div class="swiper-slide">
+                <img src="{{ image | image_url }}" alt="{{ product.title }}" height="" width="">
+              </div>
+            {% endfor %}
           </div>
-          <div class="swiper-button-next"><img src="{{'slider-right.png' | asset_url}}" alt="#" height="" width=""></div>
+          <div class="swiper-button-next">
+            <img src="{{'slider-right.png' | asset_url}}" alt="#" height="" width="">
+          </div>
           <div class="swiper-button-prev"><img src="{{'slider-left.png' | asset_url}}" alt="#" height="" width=""></div>
         </div>
         <div thumbsSlider="" class="swiper mySwiper">
           <div class="swiper-wrapper">
-
             {% for image in product.images %}
-            <div class="swiper-slide">
-              <img src="{{ image | image_url }}" alt="{{ product.title }}" height="" width="">
-            </div>
-           {% endfor %}
-           
-            
+              <div class="swiper-slide">
+                <img src="{{ image | image_url }}" alt="{{ product.title }}" height="" width="">
+              </div>
+            {% endfor %}
           </div>
         </div>
         <div class="as-seen">
           {% if section.settings.asn_title != blank %}
-          <p>{{ section.settings.asn_title }}</p>
+            <p>{{ section.settings.asn_title }}</p>
           {% endif %}
           <ul>
             {% for block in section.blocks %}
               {% if block.type == 'asfi_features' %}
                 {% if block.settings.asfi_bimg != blank %}
-            <li><img src="{{ block.settings.asfi_bimg | image_url }}" alt="#" width="" height=""></li>
+                  <li><img src="{{ block.settings.asfi_bimg | image_url }}" alt="#" width="" height=""></li>
                 {% endif %}
-            <li><img src="{{ 'star_icon2.svg' | asset_url}}" alt="#" width="" height=""></li>
-            {% endif %}
-          {% endfor %}
-            
+                <li><img src="{{ 'star_icon2.svg' | asset_url}}" alt="#" width="" height=""></li>
+              {% endif %}
+            {% endfor %}
           </ul>
         </div>
       </div>
@@ -57,14 +47,14 @@
             <h2>{{ product.title }}</h2>
             <span class="price-main">{{ product.price | money }}</span>
             {% if section.settings.sp_text != blank %}
-            {{ section.settings.sp_text }}
+              {{ section.settings.sp_text }}
             {% endif %}
           </div>
           {% if section.settings.sp_stocktext != blank %}
-          <div class="rich-texxt">
-            <p>{{section.settings.sp_stocktext }}</p>
-          </div>
-        {% endif %}
+            <div class="rich-texxt">
+              <p>{{ section.settings.sp_stocktext }}</p>
+            </div>
+          {% endif %}
           <div class="radio-content">
             <p>Subscription Options :</p>
             <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
@@ -74,7 +64,6 @@
                   <div class="total-data">
                     <div class="uper-flex">
                       <span class="lala"><img src="{{'flame.png' | asset_url}}" alt="#"></span>
-                      
                     </div>
                     <span class="title1">Daily</span>
                     <div class="price-flx">
@@ -102,7 +91,6 @@
                   <div class="total-data">
                     <div class="uper-flex">
                       <span class="lala"><img src="{{'flame.png' | asset_url}} " alt="#"></span>
-                      
                     </div>
                     <span class="title1">Monthly</span>
                     <div class="price-flx">
@@ -162,28 +150,27 @@
             </form>
           </div>
           {% if section.settings.sp_pymntIcn %}
-          <div class="payment-imgs">
-            <img src="{{'payment_icons.svg' | asset_url}}" alt="#" width="" height="">
-          </div>
+            <div class="payment-imgs">
+              <img src="{{'payment_icons.svg' | asset_url}}" alt="#" width="" height="">
+            </div>
           {% endif %}
           <div class="last-dtas">
             <div class="baner-list">
               <ul>
                 {% for block in section.blocks %}
-                {% if block.type == 'ps_features' %}
-                     {% if block.settings.ps_btext != blank or block.settings.ps_bimg != blank %}
-                        
-                <li>
-                    {% if block.settings.ps_bimg != blank %}
-                    <img src="{{ block.settings.ps_bimg | image_url }}" alt="#" width="" height="">
+                  {% if block.type == 'ps_features' %}
+                    {% if block.settings.ps_btext != blank or block.settings.ps_bimg != blank %}
+                      <li>
+                        {% if block.settings.ps_bimg != blank %}
+                          <img src="{{ block.settings.ps_bimg | image_url }}" alt="#" width="" height="">
+                        {% endif %}
+                        {% if block.settings.ps_btext != blank %}
+                          {{ block.settings.ps_btext }}
+                        {% endif %}
+                      </li>
                     {% endif %}
-                    {% if block.settings.ps_btext != blank %}
-                    {{block.settings.ps_btext }}
-                    {% endif %}
-                </li>
-                {% endif %}
-                {% endif %}
-            {% endfor %}
+                  {% endif %}
+                {% endfor %}
               </ul>
             </div>
           </div>
@@ -240,48 +227,47 @@
       "label": "Select Product"
     },
     {
-        "type": "richtext",
-        "id": "sp_text",
-        "label": "Add Text"
+      "type": "richtext",
+      "id": "sp_text",
+      "label": "Add Text"
     },
     {
-        "type": "textarea",
-        "id": "sp_stocktext",
-        "label": "Stock Text",
-        "default":"Limited Stock Available - Sells Out Often"
+      "type": "textarea",
+      "id": "sp_stocktext",
+      "label": "Stock Text",
+      "default": "Limited Stock Available - Sells Out Often"
     },
     {
-        "type": "checkbox",
-        "id": "sp_pymntIcn",
-        "label": "Show/Hide Payment Icons",
-        "default":false
+      "type": "checkbox",
+      "id": "sp_pymntIcn",
+      "label": "Show/Hide Payment Icons",
+      "default": false
     },
     {
       "type": "text",
-      "id":"asn_title",
+      "id": "asn_title",
       "label": "As seen Title",
-      "default":"As seen in"
+      "default": "As seen in"
     }
   ],
-     "blocks": [
-            {
-                "type": "ps_features",
-                "name": "Feature",
-                "settings": [
-                    {
-                        "type": "image_picker",
-                        "id": "ps_bimg",
-                        "label": "Image"
-                    },
-                    {
-                        "type": "text",
-                        "id": "ps_btext",
-                        "label": "Text"
-                    }
-
-                ]
-            },
-              {
+  "blocks": [
+    {
+      "type": "ps_features",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "ps_bimg",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "ps_btext",
+          "label": "Text"
+        }
+      ]
+    },
+    {
       "type": "asfi_features",
       "name": "As seen Feature Image",
       "settings": [
@@ -292,7 +278,7 @@
         }
       ]
     }
-        ],
+  ],
   "presets": [
     {
       "name": "Subscriptions Product"
