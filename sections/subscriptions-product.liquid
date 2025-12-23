@@ -62,7 +62,7 @@
                 <div class="flex justify-between">
                     {%- comment -%} 🔹 ONE-TIME PURCHASE OPTION {%- endcomment -%}
     <div class="option">
-      <label class="image-checkbox">
+      <label class="image-checkbox" for="{{ product.selected_or_first_available_variant.id }}">
         <input
           type="radio"
           name="purchase_type"
