@@ -35,7 +35,9 @@
           </div>
         </div>
         <div class="as-seen">
-          <p>As seen in</p>
+          {% if section.settings.asn_title != blank %}
+          <p>{{ section.settings.asn_title }}</p>
+          {% endif %}
           <ul>
             {% for block in section.blocks %}
               {% if block.type == 'asfi_features' %}
@@ -253,6 +255,12 @@
         "id": "sp_pymntIcn",
         "label": "Show/Hide Payment Icons",
         "default":false
+    },
+    {
+      "type": "text",
+      "id":"asn_title",
+      "label": "As seen Title",
+      "default":"As seen in"
     }
   ],
      "blocks": [
