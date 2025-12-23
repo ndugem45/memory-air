@@ -1,11 +1,11 @@
 // Initialize Swiper
-const swiper = new Swiper(".marquee-swiper", {
+const marqueeSwiper = new Swiper(".marquee-swiper", {
   spaceBetween: 0,
   centeredSlides: true,
-  speed: 3000, // smoother marquee feel
+  speed: 3000,
   autoplay: {
     delay: 0,
-    disableOnInteraction: false, // allows autoplay to continue after hover
+    disableOnInteraction: false,
   },
   loop: true,
   slidesPerView: 'auto',
@@ -16,12 +16,13 @@ const swiper = new Swiper(".marquee-swiper", {
 const marqueeEl = document.querySelector('.marquee-swiper');
 
 marqueeEl.addEventListener('mouseenter', () => {
-  swiper.autoplay.stop(); // ✅ Corrected this
+  marqueeSwiper.autoplay.stop();
 });
 
 marqueeEl.addEventListener('mouseleave', () => {
-  swiper.autoplay.start(); // ✅ And this
+  marqueeSwiper.autoplay.start();
 });
+
 
 
 jQuery(document).ready(function ($) {
@@ -84,8 +85,8 @@ document.querySelectorAll('.video-card').forEach(card => {
     e.stopPropagation();
     video.muted = !video.muted;
     volumeIcon.src = video.muted
-      ? 'https://cdn.shopify.com/s/files/1/0745/3658/3442/files/volume-off.png'
-      : 'https://cdn.shopify.com/s/files/1/0745/3658/3442/files/volume-on.png';
+      ? 'images/volume-off.png'
+      : 'images/volume-on.png';
   });
 
   video.addEventListener('ended', () => {
@@ -93,6 +94,7 @@ document.querySelectorAll('.video-card').forEach(card => {
     card.classList.add('paused');
   });
 });
+
 
 
 
