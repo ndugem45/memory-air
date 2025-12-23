@@ -9,6 +9,15 @@
  */
 {
   "sections": {
+    "subscriptions_header_cKqPVh": {
+      "type": "subscriptions-header",
+      "name": "Subscriptions Page Header",
+      "settings": {
+        "hc_logo": "shopify://shop_images/header_logo_1.png",
+        "hc_button_text": "Buy Now",
+        "hc_button_link": ""
+      }
+    },
     "product_banner_jKGhPX": {
       "type": "product-banner",
       "blocks": {
@@ -617,6 +626,7 @@
     }
   },
   "order": [
+    "subscriptions_header_cKqPVh",
     "product_banner_jKGhPX",
     "as_seen_VBTiYz",
     "our_customers_think_MnzVhG",
