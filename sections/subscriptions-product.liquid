@@ -81,7 +81,9 @@
                                 <span>Most Popular</span>
                               </div>
                             </div>
-                            <span class="title1">Yearly</span>
+                            {% if variant.metafields.custom.plan_name %}
+                            <span class="title1">{{ variant.metafields.custom.plan_name | metafield_tag }}</span>
+                            {% endif %}
                             <div class="price-flx">
                               <span class="price1"
                                 >{{ variant.metafields.custom.price_text }}
