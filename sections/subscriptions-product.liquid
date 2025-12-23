@@ -77,9 +77,11 @@
                           <div class="total-data">
                             <div class="uper-flex">
                               <span class="lala"><img src="{{'flame.png' | asset_url}}" alt="#" width="" height=""></span>
+                              {% if  variant.metafields.popularity %}
                               <div class="populer">
-                                <span>Most Popular</span>
+                                <span>{{ variant.metafields.popularity | metafield_tag }}</span>
                               </div>
+                              {% endif %}
                             </div>
                             {% if variant.metafields.custom.plan_name %}
                             <span class="title1">{{ variant.metafields.custom.plan_name | metafield_tag }}</span>
