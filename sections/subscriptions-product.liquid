@@ -1,5 +1,5 @@
 {% assign product = all_products[section.settings.sp_product] %}
-<section class="products-sec" >
+<section class="products-sec">
   <div class="container" id="prod_box">
     <div class="product-flex">
       <div class="produt-width">
@@ -58,40 +58,9 @@
           <div class="radio-content">
             <p>Options :</p>
             <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
-              
               {% if product.variants != blank %}
                 <div class="flex justify-between">
-                  <div class="option" form="AddToCartForm">
-                        
-                          
-                        
-
-                        
-                        <label class="image-checkbox" for="51061765832978">
-                          <input type="radio" name="id" id="51061765832978" value="51061765832978">
-                        
-                          <div class="total-data">
-                            <div class="uper-flex">
-                              <span class="lala"><img src="{{'flame.png' | asset_url}}" alt="#" width="" height=""></span>
-                              
-                            </div>
-                            
-                              <span class="title1"><span class="metafield-single_line_text_field">Buy Now Pay Letter</span></span>
-                            
-                            <div class="price-flx">
-                              
-                              <span class="price1"><span class="metafield-single_line_text_field">$39.00</span>  <p> <span class="metafield-single_line_text_field">One Time</span></p></span>
-                              
-                              
-                            </div>
-                            
-                              {% comment %} <div class="content-listss">
-                                <div class="metafield-rich_text_field"><ul><li>Shipped on a monthly Basis</li><li>No commitment, Cancel anytime</li><li>Belt is included Free for first month</li><li><strong>Free Shipping</strong></li></ul></div>
-                              </div> {% endcomment %}
-                            
-                          </div>
-                        </label>
-                      </div>
+               
                   {% for variant in product.variants %}
                     {% if variant.selling_plan_allocations[0] %}
                       <div class="option" form="AddToCartForm">
@@ -103,10 +72,9 @@
                           >
                         {% endfor %}
 
-                        
                         <label class="image-checkbox" for="{{ variant.id }}">
                           <input type="radio" name="id" id="{{ variant.id }}" value="{{ variant.id }}">
-                        
+
                           <div class="total-data">
                             <div class="uper-flex">
                               <span class="lala"
@@ -123,7 +91,12 @@
                             {% endif %}
                             <div class="price-flx">
                               {% if variant.metafields.custom.plan_price %}
-                              <span class="price1">{{ variant.metafields.custom.plan_price | metafield_tag }}  {% if variant.metafields.custom.plan_name %}<p>Per {{ variant.metafields.custom.plan_name | metafield_tag }}</p>{% endif %}</span>
+                                <span class="price1">
+                                  {{- variant.metafields.custom.plan_price | metafield_tag }}
+                                  {% if variant.metafields.custom.plan_name %}
+                                    <p>Per {{ variant.metafields.custom.plan_name | metafield_tag }}</p>
+                                  {% endif -%}
+                                </span>
                               {% endif %}
                               {% if variant.metafields.custom.save %}
                                 <div class="save-text">
@@ -309,8 +282,7 @@
   });
 </script>
 <script>
-document.querySelectorAll('span.price1 span.metafield-single_line_text_field')
-  .forEach(el => {
+  document.querySelectorAll('span.price1 span.metafield-single_line_text_field').forEach((el) => {
     el.textContent = el.textContent.replace(/ly/g, '');
   });
 </script>
