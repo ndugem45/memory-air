@@ -257,7 +257,7 @@
 }
 {% endschema %}
 
-<script>
+{% comment %} <script>
   $(document).ready(function () {
     let countP = document.querySelectorAll('.cart-menu .item-wrap .item');
 
@@ -307,6 +307,49 @@
       );
     }
   });
+</script> {% endcomment %}
+<script>
+  document.getElementById('AddToCartForm').addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  if (!cartData.items.length) {
+    const selectedInput = document.querySelector('input[name="id"]:checked');
+    if (!selectedInput) return alert('Please select an option');
+
+    const variantId = selectedInput.value;
+
+    const deviceInput = document.querySelector('input[name="product"]');
+    const deviceId = deviceInput ? deviceInput.value : null;
+
+    const sellingPlanSelect = document.getElementById('selling-id-' + variantId);
+    const sellingPlanId = sellingPlanSelect ? sellingPlanSelect.value : null;
+
+    // Build cart items array
+    let cartItems = [];
+
+    // Include deviceId if exists (for subscription variants without selling plan)
+    if (deviceId) {
+      cartItems.push({ id: deviceId, quantity: 1 });
+    }
+
+    // Add the selected variant
+    let variantItem = { id: variantId, quantity: 1 };
+    if (sellingPlanId) variantItem.selling_plan = sellingPlanId;
+    cartItems.push(variantItem);
+
+    // Add to cart
+    addThis(cartItems, (result) => {
+      if (result) {
+        load();
+        document.querySelector('nav').classList.add('open');
+        document.querySelector('#AddToCart').setAttribute('disabled', true);
+        document.querySelector('#AddToCart').innerText = 'You already have items in cart!';
+        window.location.href = '/cart';
+      }
+    });
+  }
+});
+
 </script>
 <script>
   document.querySelectorAll('span.price1 span.metafield-single_line_text_field').forEach((el) => {
