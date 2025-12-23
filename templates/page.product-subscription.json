@@ -107,6 +107,11 @@
         "asf_Title": "As seen in & Featured on"
       }
     },
+    "subscriptions_product_ihFyVG": {
+      "type": "subscriptions-product",
+      "name": "Subscriptions Product",
+      "settings": {}
+    },
     "our_customers_think_MnzVhG": {
       "type": "our-customers-think",
       "name": "Our Customers Think",
@@ -629,6 +634,7 @@
     "subscriptions_header_cKqPVh",
     "product_banner_jKGhPX",
     "as_seen_VBTiYz",
+    "subscriptions_product_ihFyVG",
     "our_customers_think_MnzVhG",
     "why_people_talking_pHC8ix",
     "how_memory_air_works_ky8kgR",
