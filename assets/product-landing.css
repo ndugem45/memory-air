@@ -1646,3 +1646,6 @@ span.icon.check img {
     padding: 15px 10px;
   }
 }
+nav.black {
+    display: none;
+}
