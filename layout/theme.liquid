@@ -143,7 +143,8 @@
    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    <!-- End Google Tag Manager (noscript) -->
 
-    {% if template != '404' %}
+    {% comment %} {% if template != '404' %} {% endcomment %}
+     {% unless template == '404' or page.handle == 'memory-air-subscriptions' %}
       {% if template == 'index' %}
         <nav class="black home">
           {% section 'navbar' %}
@@ -153,7 +154,8 @@
           {% section 'navbar' %}
         </nav>
       {% endif %}
-    {% endif %}
+      {% endunless %}
+    {% comment %} {% endif %} {% endcomment %}
     
     <main role="main">
       {{ content_for_layout }}
