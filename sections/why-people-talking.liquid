@@ -14,12 +14,14 @@
         <div class="video-card" {{ block.shopify_attributes }}>
 
           {% if block.settings.wpt_video != blank %}
-            <video
-              src="{{ block.settings.wpt_video | video_tag }}"
-              playsinline
-              preload="metadata">
-            </video>
-          {% endif %}
+  {{
+    block.settings.wpt_video
+    | video_tag:
+      playsinline: true,
+      preload: 'metadata',
+      controls: false
+  }}
+{% endif %}
 
           <!-- Play / Pause -->
           <div class="video-overlay control-btn play-btn">
