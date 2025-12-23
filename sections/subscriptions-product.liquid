@@ -32,7 +32,7 @@
             {% endfor %}
         </div>
     {% endif %}
-
+ <input type="hidden" name="return_to" value="/cart">
     <div style="display: none !important;" class="sealsubs-target-element" data-product="{{ product | json | escape }}" data-handle="{{ product.handle }}"></div>
 
     <button class="add-to-cart" type="submit" name="add" id="AddToCart">Add to cart</button>
