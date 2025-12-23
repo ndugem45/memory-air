@@ -56,7 +56,7 @@
         "pbm_title": "Improve Your Memory<br> &amp; Brain Health<br>\n                        <span class=\"italic\">...While You Sleep</span>",
         "pbm_desc": "",
         "pbm_btn_one": "Buy Now",
-        "pbm_btn_oneLink": "",
+        "pbm_btn_oneLink": "#prod_box",
         "pbm_btn_two": "Learn More",
         "pbm_btn_twoLink": ""
       }
@@ -163,7 +163,8 @@
         "sp_product": "memory-air-device",
         "sp_text": "<p>The Biggest Improvement Ever Discovered for Human Memory.</p><p>Developed by Dr. Michael Leon, ranked top 1% of the scientists in the world</p><ul><li>Greatly Improves Memory While You Sleep</li><li>Strengthens long term brain health</li><li>Effortless nightly routine</li><li>Endorsed by professors, doctors, nurses and people like you</li><li>60 night risk free trial</li></ul>",
         "sp_stocktext": "Limited Stock Available - Sells Out Often",
-        "sp_pymntIcn": true
+        "sp_pymntIcn": true,
+        "asn_title": "As seen in"
       }
     },
     "our_customers_think_MnzVhG": {
@@ -285,7 +286,7 @@
         "hmw_background_image": "shopify://shop_images/bck-round.png",
         "hmw_center_image": "shopify://shop_images/bck-im.png",
         "hmw_button_text": "Buy Now",
-        "hmw_button_link": ""
+        "hmw_button_link": "#prod_box"
       }
     },
     "why_memory_air_works_JaThqT": {
@@ -297,6 +298,7 @@
         "wmw_image_1": "shopify://shop_images/support.png",
         "wmw_rightText": "<p>Developed by Dr. Michael Leon, ranked in the Top 1% of Scientists Worldwide.</p><ul><li>The biggest improvement in human memory ever discovered</li><li>226% improvement in memory in seniors</li><li>Reduced feelings of depression</li><li>People feel 6 years younger at age 50 compared to control group</li></ul>",
         "wmw_image_2": "shopify://shop_images/break.png",
+        "wmw_stocktext": "Backed by Clinical Research at University of California Irvine",
         "wmw_btmText": "<p>This product is intended as a general wellness device for mental acuity and is not a medical device cleared by the fda.</p><ul><li>improve memory in seniors</li><li>reduce the risk of memory loss</li><li>designed based upon olfactory enrichment concepts</li></ul><p>This device is not intended to diagnose, treat, cure, or prevent disease.</p>"
       }
     },
@@ -431,7 +433,7 @@
         "wyntk_background_image": "shopify://shop_images/know-banner.png",
         "wyntk_center_image": "shopify://shop_images/cntr-im.png",
         "wyntk_button_text": "Buy Now",
-        "wyntk_button_link": ""
+        "wyntk_button_link": "#prod_box"
       }
     },
     "memory_air_compare_JW4EBr": {
@@ -531,7 +533,7 @@
       "settings": {
         "tump_heading": "Track Your Memory<br> <span>Progress</span> Over Time",
         "tump_subtext": "No need to trust us, see for yourself.",
-        "tump_button_link": "",
+        "tump_button_link": "#prod_box",
         "tump_button_text": "Buy Now",
         "tump_image_main": "shopify://shop_images/two-mobile.png"
       }
@@ -680,7 +682,7 @@
         "imfa_heading": "Improve Memory, Mood and Focus - With Memory Air.",
         "imfa_description": "Strengthen your memory networks and protect your brain health performance with an easy, sleep-based nightly routine.",
         "imfa_button_text": "Buy Now",
-        "imfa_button_link": ""
+        "imfa_button_link": "#prod_box"
       }
     }
   },
