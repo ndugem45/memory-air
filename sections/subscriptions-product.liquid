@@ -62,36 +62,44 @@
                 <div class="flex justify-between">
                   {% for variant in product.variants %}
                     {% if variant.selling_plan_allocations[0] %}
-                      <label class="image-checkbox" title="Yearly">
-                        <input type="radio" name="car" value="yearly">
-                        <div class="total-data">
-                          <div class="uper-flex">
-                            <span class="lala"><img src="{{'flame.png' | asset_url}}" alt="#"></span>
-                            <div class="populer">
-                              <span>Most Popular</span>
-                            </div>
-                          </div>
-                          <span class="title1">Yearly</span>
-                          <div class="price-flx">
-                            <span class="price1"
-                              >$397.00
-                              <p>Per Year</p>
-                            </span>
-                            <div class="save-text">
-                              <p>Save 15%</p>
-                            </div>
-                          </div>
+                      <div class="option" form="AddToCartForm">
+                        {% for selling_plan in variant.selling_plan_allocations %}
+                          <input
+                            type="hidden"
+                            id="selling-id-{{ variant.id }}"
+                            value="{{ selling_plan.selling_plan.id }}"
+                          >
+                        {% endfor %}
 
-                          <div class="content-listss">
-                            <ul>
-                              <li>Shipped on a monthly Basis</li>
-                              <li>No commitment, Cancel anytime</li>
-                              <li>Belt is included Free for first month</li>
-                              <li>Free Shipping</li>
-                            </ul>
+                        <input type="radio" name="id" id="{{ variant.id }}" value="{{ variant.id }}">
+                        <label class="image-checkbox" for="{{ variant.id }}">
+                          <input type="radio" name="car" value="yearly">
+                          <div class="total-data">
+                            <div class="uper-flex">
+                              <span class="lala"><img src="{{'flame.png' | asset_url}}" alt="#"></span>
+                              <div class="populer">
+                                <span>Most Popular</span>
+                              </div>
+                            </div>
+                            <span class="title1">Yearly</span>
+                            <div class="price-flx">
+                              <span class="price1"
+                                >$397.00
+                                <p>Per Year</p>
+                              </span>
+                              <div class="save-text">
+                                <p>Save 15%</p>
+                              </div>
+                            </div>
+
+                            <div class="content-listss">
+                              {{ variant.metafields.custom.price_text }}
+                            </div>
                           </div>
-                        </div>
-                      </label>
+                        </label>
+                      </div>
+                    {% else %}
+                      <input type="hidden" id="product" name="product" value="{{ variant.id }}">
                     {% endif %}
                   {% endfor %}
                 </div>
