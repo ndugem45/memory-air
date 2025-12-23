@@ -130,12 +130,33 @@
             "ps_bimg": "shopify://shop_images/Frame_2.svg",
             "ps_btext": "60-night risk free trial"
           }
+        },
+        "asfi_features_jnLdqA": {
+          "type": "asfi_features",
+          "settings": {
+            "asfi_bimg": "shopify://shop_images/image_438.png"
+          }
+        },
+        "asfi_features_ryzFYE": {
+          "type": "asfi_features",
+          "settings": {
+            "asfi_bimg": "shopify://shop_images/image_440.png"
+          }
+        },
+        "asfi_features_QUWmn7": {
+          "type": "asfi_features",
+          "settings": {
+            "asfi_bimg": "shopify://shop_images/image_437.png"
+          }
         }
       },
       "block_order": [
         "ps_features_c4Md9x",
         "ps_features_rwePLL",
-        "ps_features_YDpkRX"
+        "ps_features_YDpkRX",
+        "asfi_features_jnLdqA",
+        "asfi_features_ryzFYE",
+        "asfi_features_QUWmn7"
       ],
       "name": "Subscriptions Product",
       "settings": {
