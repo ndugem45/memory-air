@@ -257,7 +257,7 @@
 }
 {% endschema %}
 
-<script>
+{% comment %} <script>
   $(document).ready(function () {
     let countP = document.querySelectorAll('.cart-menu .item-wrap .item');
 
@@ -307,7 +307,67 @@
       );
     }
   });
+</script> {% endcomment %}
+<script>
+$(document).ready(function () {
+
+  let countP = document.querySelectorAll('.cart-menu .item-wrap .item');
+
+  if (countP.length > 0) {
+    document.querySelector('#AddToCart').disabled = true;
+    document.querySelector('#AddToCart').innerText = 'You already have items in cart!';
+  }
+
+});
+
+/* 🔹 MAIN SUBMIT HANDLER */
+document.getElementById('AddToCartForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  if (cartData.items.length) return;
+
+  const selectedVariant = document.querySelector('input[name="id"]:checked');
+  const purchaseType = document.querySelector('input[name="purchase_type"]:checked').value;
+
+  if (!selectedVariant) return;
+
+  const variantId = selectedVariant.value;
+  const deviceId = document.querySelector('input[name="product"]').value;
+
+  let sellingPlanId = null;
+
+  /* 🔹 Subscription ke liye only */
+  if (purchaseType === 'subscription') {
+    const sellingInput = document.getElementById('selling-id-' + variantId);
+    sellingPlanId = sellingInput ? sellingInput.value : null;
+  }
+
+  let items = [
+    { id: deviceId, quantity: 1 }
+  ];
+
+  let mainItem = {
+    id: variantId,
+    quantity: 1
+  };
+
+  if (sellingPlanId) {
+    mainItem.selling_plan = sellingPlanId;
+  }
+
+  items.push(mainItem);
+
+  addThis(items, function (result) {
+    if (result) {
+      load();
+      document.querySelector('#AddToCart').disabled = true;
+      document.querySelector('#AddToCart').innerText = 'You already have items in cart!';
+      window.location.href = '/cart';
+    }
+  });
+});
 </script>
+
 <script>
 document.querySelectorAll('span.price1 span.metafield-single_line_text_field')
   .forEach(el => {
