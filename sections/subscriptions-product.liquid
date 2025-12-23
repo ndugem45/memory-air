@@ -60,7 +60,10 @@
             <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
               {% if product.variants != blank %}
                 <div class="flex justify-between">
-                  <div class="option" form="AddToCartForm">
+                  
+                  {% for variant in product.variants %}
+                    {% if variant.selling_plan_allocations[0] %}
+                      <div class="option" form="AddToCartForm">
                         
                           <input type="hidden" id="selling-id-51061765832978" value="691274023186">
                         
@@ -91,9 +94,6 @@
                           </div>
                         </label>
                       </div>
-                  {% for variant in product.variants %}
-                    {% if variant.selling_plan_allocations[0] %}
-                      
                       <div class="option" form="AddToCartForm">
                         {% for selling_plan in variant.selling_plan_allocations %}
                           <input
