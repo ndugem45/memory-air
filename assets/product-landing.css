@@ -1,16 +1,16 @@
 @font-face {
     font-family: "Avenir";
-    src: url(../fonts/AvenirLTStd-Black.woff);
+    src: url(https://cdn.shopify.com/s/files/1/0745/3658/3442/files/AvenirLTStd-Black.woff?v=1766466654);
   }
 
 
   @font-face {
     font-family: "General Sans";
-    src: url(../fonts/GeneralSans-Regular.woff);
+    src: url(https://cdn.shopify.com/s/files/1/0745/3658/3442/files/GeneralSans-Regular.woff?v=1766466655);
   }
   @font-face {
     font-family: 'AvenirLTStd-Medium';
-    src: url(../fonts/AvenirLTStd-Medium.otf);
+    src: url(https://cdn.shopify.com/s/files/1/0745/3658/3442/files/AvenirLTStd-Medium.woff?v=1766466655);
   }
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
 
