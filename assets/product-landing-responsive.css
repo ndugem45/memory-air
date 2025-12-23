@@ -1,3 +1,9 @@
+@media (max-width: 1024px) {
+  .video-card {
+    width: 240px;
+    height: 390px;
+  }
+}
 @media screen and (max-width: 1100px) {
 .banner-width {
   padding-left: 15px;
@@ -198,6 +204,44 @@ section.faqs-section {
   font-size: 16px;
   padding-top: 8px;
   max-width: 80%;
+}
+.compare-wrapper {
+  padding: 25px;
+}
+
+.compare-title {
+  font-size: 28px;
+}
+
+.cell {
+  font-size: 14px;
+  padding: 15px 10px;
+}
+.produt-width,.produt-width1{
+  width: 100%;
+}
+.product-flex {
+  flex-wrap: wrap;
+}
+.flex.justify-between {
+  flex-wrap: wrap;
+}
+label.image-checkbox {
+  width: 49%;
+  margin-bottom: 20px;
+}
+.rich-texxt p::before,.rich-texxt p::after{
+    display: none;
+}
+.products-sec .mySwiper2 {
+  height: 100%;
+}
+
+.payment-imgs img {
+  max-width: 70%;
+}
+.as-seen {
+  bottom: 230px;
 }
 }
 @media screen and (max-width: 767px) {
@@ -494,6 +538,37 @@ section.banner-section {
   background-position: bottom;
   background-size: cover;
 }
+.video-grid {
+  gap: 16px;
+}
 
-
+.video-card {
+  width: 100%;
+  max-width: 320px;
+  height: 420px;
+}
+.produt-width,.produt-width1{
+  width: 100%;
+}
+.product-flex {
+  flex-wrap: wrap;
+}
+.flex.justify-between {
+  flex-wrap: wrap;
+}
+label.image-checkbox {
+  width: 100%;
+}
+.rich-texxt p::before,.rich-texxt p::after{
+    display: none;
+}
+.products-sec .mySwiper2 {
+  height: 100%;
+}
+.payment-imgs img {
+  width: 100%;
+}
+.as-seen {
+  bottom: 122px;
+}
 }
