@@ -1,48 +1,58 @@
 <section class="why-memory">
-            <div class="container">
-                <div class="why-inner">
-                    {% if section.settings.wmw_titlet != blank %}
-                    <div class="heading">
-                        <h2>{{ section.settings.wmw_titlet}}</h2>
-                    </div>
-                {% endif %}
-                    <div class="why-flex">
-                        {% if section.settings.wmw_leftText != blank %}
-                        <div class="why-width">
-                           {{ section.settings.wmw_leftText }}
-                        </div>
-                    {% endif %}
-                    {% if section.settings.wmw_image_1 != blank %}
-                        <div class="why-width1">
-                            <img src="{{ section.settings.wmw_image_1 | image_url }}" alt="{{ section.settings.wmw_image_1.alt }}" height="" width="">
-                        </div>
-                    {% endif %}
-                    </div>
-                    <div class="why-flex">
-                        {% if section.settings.wmw_image_2 != blank %}
-                        <div class="why-width1">
-                            <img src="{{ section.settings.wmw_image_2 | image_url }}" alt="{{  section.settings.wmw_image_2.alt }}" height="" width="">
-                        </div>
-                    {% endif %}
-                    {% if section.settings.wmw_stocktext != blank %}
+  <div class="container">
+    <div class="why-inner">
+      {% if section.settings.wmw_titlet != blank %}
+        <div class="heading">
+          <h2>{{ section.settings.wmw_titlet }}</h2>
+        </div>
+      {% endif %}
+      <div class="why-flex">
+        {% if section.settings.wmw_leftText != blank %}
+          <div class="why-width">
+            {{ section.settings.wmw_leftText }}
+          </div>
+        {% endif %}
+        {% if section.settings.wmw_image_1 != blank %}
+          <div class="why-width1">
+            <img
+              src="{{ section.settings.wmw_image_1 | image_url }}"
+              alt="{{ section.settings.wmw_image_1.alt }}"
+              height=""
+              width=""
+            >
+          </div>
+        {% endif %}
+      </div>
+      <div class="why-flex">
+        {% if section.settings.wmw_image_2 != blank %}
+          <div class="why-width1">
+            <img
+              src="{{ section.settings.wmw_image_2 | image_url }}"
+              alt="{{  section.settings.wmw_image_2.alt }}"
+              height=""
+              width=""
+            >
+          </div>
+        {% endif %}
+        <div class="why-width">
+          {% if section.settings.wmw_stocktext != blank %}
             <div class="rich-texxt">
               <p>{{ section.settings.wmw_stocktext }}</p>
             </div>
           {% endif %}
-                        {% if section.settings.wmw_rightText != blank %}
-                        <div class="why-width">
-                            {{ section.settings.wmw_rightText }}
-                        </div>
-                    {% endif %}
-                    </div>
-                    {% if section.settings.wmw_btmText != blank %}
-                    <div class="why-content">
-                       {{ section.settings.wmw_btmText }}
-                    </div>
-                {% endif %}
-                </div>
-            </div>
-        </section>
+          {% if section.settings.wmw_rightText != blank %}
+            {{ section.settings.wmw_rightText }}
+          {% endif %}
+        </div>
+      </div>
+      {% if section.settings.wmw_btmText != blank %}
+        <div class="why-content">
+          {{ section.settings.wmw_btmText }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
 {% schema %}
 {
   "name": "Why Memory Air Works",
@@ -82,10 +92,9 @@
       "type": "richtext",
       "id": "wmw_btmText",
       "label": "Bottom Text"
-    },
-   
+    }
   ],
- 
+
   "presets": [
     {
       "name": "Why Memory Air Works"
