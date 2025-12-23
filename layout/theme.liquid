@@ -158,10 +158,13 @@
     <main role="main">
       {{ content_for_layout }}
     </main>
-    
-    {% if template != '404' %}
+    {% unless template == '404' or page.handle == 'memory-air-subscriptions' %}
+  {% section 'footer' %}
+{% endunless %}
+
+    {% comment %} {% if template != '404' %}
       {% section 'footer' %}
-    {% endif %}
+    {% endif %} {% endcomment %}
 
 {% if page.handle == 'memory-air-subscriptions' %} 
   <script src="{{'jquery-3.4.1.js' | asset_url }}"></script>
