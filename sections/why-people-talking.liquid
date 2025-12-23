@@ -16,10 +16,7 @@
           {% if block.settings.wpt_video != blank %}
   {{
     block.settings.wpt_video
-    | video_tag:
-      playsinline: true,
-      preload: 'metadata',
-      controls: false
+    | video_tag
   }}
 {% endif %}
 
