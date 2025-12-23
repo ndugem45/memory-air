@@ -246,7 +246,7 @@
 }
 {% endschema %}
 
-<script>
+{% comment %} <script>
   $(document).ready(function () {
     let countP = document.querySelectorAll('.cart-menu .item-wrap .item');
 
@@ -296,7 +296,59 @@
       );
     }
   });
+</script> {% endcomment %}
+<script>
+$(document).ready(function () {
+  // Disable Add to Cart if items already in cart
+  let countP = document.querySelectorAll('.cart-menu .item-wrap .item');
+  if (countP.length > 0) {
+    document.querySelector('#AddToCart').disabled = true;
+    document.querySelector('#AddToCart').innerText = 'You already have items in cart!';
+  }
+});
+
+document.getElementById('AddToCartForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // Prevent adding if cart already has items
+  if (cartData.items.length) return;
+
+  // Selected variant
+  const selectedInput = document.querySelector('input[name="id"]:checked');
+  if (!selectedInput) return;
+
+  const variantId = selectedInput.value;
+  const purchaseType = selectedInput.dataset.type; // 'one_time' or 'subscription'
+  const deviceId = document.querySelector('input[name="product"]')?.value;
+
+  // Build cart items
+  let items = [];
+  if (deviceId) {
+    items.push({ id: deviceId, quantity: 1 });
+  }
+
+  let mainItem = { id: variantId, quantity: 1 };
+
+  // Only add selling_plan if subscription
+  if (purchaseType === 'subscription') {
+    const sellingPlanInput = document.getElementById('selling-id-' + variantId);
+    if (sellingPlanInput) mainItem.selling_plan = sellingPlanInput.value;
+  }
+
+  items.push(mainItem);
+
+  // Add to cart
+  addThis(items, function(result) {
+    if (result) {
+      load();
+      document.querySelector('#AddToCart').disabled = true;
+      document.querySelector('#AddToCart').innerText = 'You already have items in cart!';
+      window.location.href = '/cart';
+    }
+  });
+});
 </script>
+
 <script>
 document.querySelectorAll('span.price1 span.metafield-single_line_text_field')
   .forEach(el => {
