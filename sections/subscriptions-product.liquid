@@ -64,37 +64,6 @@
                   {% for variant in product.variants %}
                     {% if variant.selling_plan_allocations[0] %}
                       <div class="option" form="AddToCartForm">
-                        
-                          <input type="hidden" id="selling-id-51061765832978" value="691274023186">
-                        
-
-                        
-                        <label class="image-checkbox" for="51061765832978">
-                          <input type="radio" name="id" id="51061765832978" value="51061765832978">
-                        
-                          <div class="total-data">
-                            <div class="uper-flex">
-                              <span class="lala"><img src="//memoryair.com/cdn/shop/t/7/assets/flame.png?v=28220411432103547641766475755" alt="#" width="" height=""></span>
-                              
-                            </div>
-                            
-                              <span class="title1"><span class="metafield-single_line_text_field">One Time</span></span>
-                            
-                            <div class="price-flx">
-                              
-                              <span class="price1"><span class="metafield-single_line_text_field">$39.00</span>  <p> <span class="metafield-single_line_text_field">One Time</span></p></span>
-                              
-                              
-                            </div>
-                            
-                              <div class="content-listss">
-                                <div class="metafield-rich_text_field"><ul><li>Shipped on a monthly Basis</li><li>No commitment, Cancel anytime</li><li>Belt is included Free for first month</li><li><strong>Free Shipping</strong></li></ul></div>
-                              </div>
-                            
-                          </div>
-                        </label>
-                      </div>
-                      <div class="option" form="AddToCartForm">
                         {% for selling_plan in variant.selling_plan_allocations %}
                           <input
                             type="hidden"
