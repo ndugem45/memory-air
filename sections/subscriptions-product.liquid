@@ -59,60 +59,8 @@
             <p>Subscription Options :</p>
             <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
               <div class="flex justify-between">
-                <label class="image-checkbox" title="Daily">
-                  <input type="radio" name="car" value="daily">
-                  <div class="total-data">
-                    <div class="uper-flex">
-                      <span class="lala"><img src="{{'flame.png' | asset_url}}" alt="#"></span>
-                    </div>
-                    <span class="title1">Daily</span>
-                    <div class="price-flx">
-                      <span class="price1"
-                        >$39.00
-                        <p>Per Month</p>
-                      </span>
-                      <div class="save-text">
-                        <p>Save 15%</p>
-                      </div>
-                    </div>
-
-                    <div class="content-listss">
-                      <ul>
-                        <li>Shipped on a monthly Basis</li>
-                        <li>No commitment, Cancel anytime</li>
-                        <li>Belt is included Free for first month</li>
-                        <li>Free Shipping</li>
-                      </ul>
-                    </div>
-                  </div>
-                </label>
-                <label class="image-checkbox" title="Monthly">
-                  <input type="radio" name="car" value="monthly">
-                  <div class="total-data">
-                    <div class="uper-flex">
-                      <span class="lala"><img src="{{'flame.png' | asset_url}} " alt="#"></span>
-                    </div>
-                    <span class="title1">Monthly</span>
-                    <div class="price-flx">
-                      <span class="price1"
-                        >$39.00
-                        <p>Per Month</p>
-                      </span>
-                      <div class="save-text">
-                        <p>Save 15%</p>
-                      </div>
-                    </div>
-
-                    <div class="content-listss">
-                      <ul>
-                        <li>Shipped on a monthly Basis</li>
-                        <li>No commitment, Cancel anytime</li>
-                        <li>Belt is included Free for first month</li>
-                        <li>Free Shipping</li>
-                      </ul>
-                    </div>
-                  </div>
-                </label>
+                {% for variant in product.variants %}
+        {% if variant.selling_plan_allocations[0] %}
                 <label class="image-checkbox" title="Yearly">
                   <input type="radio" name="car" value="yearly">
                   <div class="total-data">
@@ -143,6 +91,8 @@
                     </div>
                   </div>
                 </label>
+                {% endif %}
+                {% endfor %}
               </div>
               <div
                 style="display: none !important;"
