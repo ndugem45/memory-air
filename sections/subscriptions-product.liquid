@@ -93,12 +93,14 @@
             {{ section.settings.sp_text }}
             {% endif %}
           </div>
+          {% if section.settings.sp_stocktext != blank %}
           <div class="rich-texxt">
-            <p>Limited Stock Available - Sells Out Often</p>
+            <p>{{section.settings.sp_stocktext }}</p>
           </div>
+        {% endif %}
           <div class="radio-content">
             <p>Subscription Options :</p>
-            <form>
+            <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
               <div class="flex justify-between">
                 <label class="image-checkbox" title="Daily">
                   <input type="radio" name="car" value="daily">
@@ -264,6 +266,12 @@
         "type": "richtext",
         "id": "sp_text",
         "label": "Add Text"
+    },
+    {
+        "type": "textarea",
+        "id": "sp_stocktext",
+        "label": "Stock Text",
+        "default":"Limited Stock Available - Sells Out Often"
     }
   ],
   "presets": [
