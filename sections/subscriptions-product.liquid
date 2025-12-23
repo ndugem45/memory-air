@@ -144,6 +144,12 @@
                   </div>
                 </label>
               </div>
+              <div
+                style="display: none !important;"
+                class="sealsubs-target-element"
+                data-product="{{ product | json | escape }}"
+                data-handle="{{ product.handle }}"
+              ></div>
               <div class="submit-btns">
                 <button class="add-to-cart" type="submit" name="add" id="AddToCart">Add to Cart</button>
               </div>
@@ -179,7 +185,6 @@
     </div>
   </div>
 </section>
-
 
 {% schema %}
 {
