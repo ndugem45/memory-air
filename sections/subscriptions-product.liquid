@@ -60,43 +60,43 @@
             <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
               {% if product.variants != blank %}
                 <div class="flex justify-between">
-               <div class="option" form="AddToCartForm">
-  <label class="image-checkbox" for="10274605924626">
-    <input type="radio" name="id" id="10274605924626" value="10274605924626">
+                  <div class="option" form="AddToCartForm">
+                    <label class="image-checkbox" for="10274605924626">
+                      <input type="radio" name="id" id="10274605924626" value="10274605924626">
 
-    <div class="total-data">
-      <div class="uper-flex">
-        <span class="lala">
-          <img src="{{ 'flame.png' | asset_url }}" alt="#" width="" height="">
-        </span>
-      </div>
+                      <div class="total-data">
+                        <div class="uper-flex">
+                          <span class="lala">
+                            <img src="{{ 'flame.png' | asset_url }}" alt="#" width="" height="">
+                          </span>
+                        </div>
 
-      <span class="title1">
-        <span class="metafield-single_line_text_field">Buy Now Pay Letter</span>
-      </span>
+                        <span class="title1">
+                          <span class="metafield-single_line_text_field">Buy Now Pay Letter</span>
+                        </span>
 
-      <div class="price-flx">
-        <span class="price1">
-          <span class="metafield-single_line_text_field">{{ product.price | money }}</span>
-          <p><span class="metafield-single_line_text_field">One Time</span></p>
-        </span>
-      </div>
+                        <div class="price-flx">
+                          <span class="price1">
+                            <span class="metafield-single_line_text_field">{{ product.price | money }}</span>
+                            <p><span class="metafield-single_line_text_field">One Time</span></p>
+                          </span>
+                        </div>
 
-      {% comment %}
-        <div class="content-listss">
-          <div class="metafield-rich_text_field">
-            <ul>
-              <li>Shipped on a monthly Basis</li>
-              <li>No commitment, Cancel anytime</li>
-              <li>Belt is included Free for first month</li>
-              <li><strong>Free Shipping</strong></li>
-            </ul>
-          </div>
-        </div>
-      {% endcomment %}
-    </div>
-  </label>
-</div>
+                        {% comment %}
+                          <div class="content-listss">
+                            <div class="metafield-rich_text_field">
+                              <ul>
+                                <li>Shipped on a monthly Basis</li>
+                                <li>No commitment, Cancel anytime</li>
+                                <li>Belt is included Free for first month</li>
+                                <li><strong>Free Shipping</strong></li>
+                              </ul>
+                            </div>
+                          </div>
+                        {% endcomment %}
+                      </div>
+                    </label>
+                  </div>
 
                   {% for variant in product.variants %}
                     {% if variant.selling_plan_allocations[0] %}
