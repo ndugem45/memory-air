@@ -1672,7 +1672,7 @@ border: 1px solid #DDDFE1;
   background: rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(8px);
   position: absolute;
-  bottom: 160px;
+  bottom: 129px;
   z-index: 1;
   padding: 16px 24px;
 }
