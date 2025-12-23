@@ -60,38 +60,23 @@
             <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
               {% if product.variants != blank %}
                 <div class="flex justify-between">
-                    {%- comment -%} 🔹 ONE-TIME PURCHASE OPTION {%- endcomment -%}
-    <div class="option">
-      <label class="image-checkbox" for="{{ product.selected_or_first_available_variant.id }}">
-        <input
-          type="radio"
-          name="purchase_type"
-          value="one_time"
-          checked
-        >
-
-        <input
-          type="radio"
-          name="id"
-          value="{{ product.selected_or_first_available_variant.id }}"
-          data-type="one_time"
-          checked
-          hidden
-        >
-
-        <div class="total-data">
-          <span class="title1">One-time Purchase</span>
-          <div class="price-flx">
-            <span class="price1">{{ product.price | money }}</span>
-          </div>
-          <div class="content-listss">
-            No subscription. Pay once.
-          </div>
-        </div>
-      </label>
+                  {%- comment -%} 🔹 ONE-TIME PURCHASE OPTION {%- endcomment -%}
+<div class="option">
+  <label class="image-checkbox">
+    <input type="radio" name="purchase_type" value="one_time" checked>
+    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" data-type="one_time">
+    <div class="total-data">
+      <span class="title1">One-time Purchase</span>
+      <div class="price-flx">
+        <span class="price1">{{ product.price | money }}</span>
+      </div>
+      <div class="content-listss">
+        No subscription. Pay once.
+      </div>
     </div>
+  </label>
+</div>
 
-    {%- comment -%} 🔹 SUBSCRIPTION OPTIONS (EXISTING) {%- endcomment -%}
                   {% for variant in product.variants %}
                     {% if variant.selling_plan_allocations[0] %}
                       <div class="option" form="AddToCartForm">
@@ -309,55 +294,34 @@
   });
 </script> {% endcomment %}
 <script>
-$(document).ready(function () {
-
-  let countP = document.querySelectorAll('.cart-menu .item-wrap .item');
-
-  if (countP.length > 0) {
-    document.querySelector('#AddToCart').disabled = true;
-    document.querySelector('#AddToCart').innerText = 'You already have items in cart!';
-  }
-
-});
-
-/* 🔹 MAIN SUBMIT HANDLER */
-document.getElementById('AddToCartForm').addEventListener('submit', function (e) {
+document.getElementById('AddToCartForm').addEventListener('submit', function(e) {
   e.preventDefault();
 
   if (cartData.items.length) return;
 
-  const selectedVariant = document.querySelector('input[name="id"]:checked');
   const purchaseType = document.querySelector('input[name="purchase_type"]:checked').value;
+  const selectedInput = document.querySelector('input[name="id"][data-type="' + purchaseType + '"]');
 
-  if (!selectedVariant) return;
+  if (!selectedInput) return;
 
-  const variantId = selectedVariant.value;
-  const deviceId = document.querySelector('input[name="product"]').value;
+  const variantId = selectedInput.value;
+  const deviceId = document.querySelector('input[name="product"]')?.value;
 
-  let sellingPlanId = null;
-
-  /* 🔹 Subscription ke liye only */
-  if (purchaseType === 'subscription') {
-    const sellingInput = document.getElementById('selling-id-' + variantId);
-    sellingPlanId = sellingInput ? sellingInput.value : null;
+  let items = [];
+  if (deviceId) {
+    items.push({ id: deviceId, quantity: 1 });
   }
 
-  let items = [
-    { id: deviceId, quantity: 1 }
-  ];
+  let mainItem = { id: variantId, quantity: 1 };
 
-  let mainItem = {
-    id: variantId,
-    quantity: 1
-  };
-
-  if (sellingPlanId) {
-    mainItem.selling_plan = sellingPlanId;
+  if (purchaseType === 'subscription') {
+    const sellingPlanInput = document.getElementById('selling-id-' + variantId);
+    if (sellingPlanInput) mainItem.selling_plan = sellingPlanInput.value;
   }
 
   items.push(mainItem);
 
-  addThis(items, function (result) {
+  addThis(items, function(result) {
     if (result) {
       load();
       document.querySelector('#AddToCart').disabled = true;
