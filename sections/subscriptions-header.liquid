@@ -3,7 +3,7 @@
     <div class="header-flex">
       {% if section.settings.hc_logo != blank %}
         <div class="site-logo">
-          <a href="{{ section.settings.hc_logo_link }}">
+          <a href="{{ routes.root_url }}">
             <img src="{{ section.settings.hc_logo | image_url }}" alt="">
           </a>
         </div>
@@ -27,12 +27,6 @@
       "type": "image_picker",
       "id": "hc_logo",
       "label": "Logo Image"
-    },
-    {
-      "type": "url",
-      "id": "hc_logo_link",
-      "label": "Logo Link",
-      "default": "/"
     },
     {
       "type": "text",
