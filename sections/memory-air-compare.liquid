@@ -22,30 +22,34 @@
         {% for block in section.blocks %}
           <div class="table-row">
             <div class="cell feature">{{ block.settings.hdmac_feature }}</div>
-
+            {% if block.settings.hdmac_col1_icon != blank %}
             <div class="cell highlight">
               <span class="icon">
-                <img src="{{ block.settings.hdmac_col1_icon | image_url }}" alt="#">
+                <img src="{{ block.settings.hdmac_col1_icon | image_url }}" alt="#" height="" width="">
               </span>
             </div>
-
+            {% endif %}
+            {% if block.settings.hdmac_col2_icon != blank %}
             <div class="cell">
               <span class="icon">
-                <img src="{{ block.settings.hdmac_col2_icon | image_url }}" alt="#">
+                <img src="{{ block.settings.hdmac_col2_icon | image_url }}" alt="#" height="" width="">
               </span>
             </div>
-
+            {% endif %}
+            {% if block.settings.hdmac_col3_icon != blank %}
             <div class="cell">
               <span class="icon">
-                <img src="{{ block.settings.hdmac_col3_icon | image_url }}" alt="#">
+                <img src="{{ block.settings.hdmac_col3_icon | image_url }}" alt="#" height="" width="">
               </span>
             </div>
-
+            {% endif %}
+            {% if block.settings.hdmac_col4_icon != blank %}
             <div class="cell">
               <span class="icon">
-                <img src="{{ block.settings.hdmac_col4_icon | image_url }}" alt="#">
+                <img src="{{ block.settings.hdmac_col4_icon | image_url }}" alt="#" height="" width="">
               </span>
             </div>
+            {% endif %}
           </div>
         {% endfor %}
 
