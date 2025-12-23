@@ -60,12 +60,12 @@
             <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
               {% if product.variants != blank %}
                 <div class="flex justify-between">
-                  <div class="option">
+  <div class="option">
   <label class="image-checkbox">
     <input 
       type="radio" 
       name="id" 
-      value="{{ product.selected_or_first_available_variant.id }}" 
+      value="51061765832978"  <!-- fixed variant ID -->
       data-type="one_time"
       checked
     >
@@ -80,6 +80,7 @@
     </div>
   </label>
 </div>
+
 
                   {% for variant in product.variants %}
                     {% if variant.selling_plan_allocations[0] %}
