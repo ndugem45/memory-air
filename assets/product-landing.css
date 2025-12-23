@@ -570,7 +570,8 @@ section.customer-says {
   text-transform: capitalize;
 }
 
-p.arrows {
+p.arrows,
+.why-content p:first-child {
   position: relative;
  
   display: inline-block;
