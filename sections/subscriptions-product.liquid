@@ -24,36 +24,14 @@
         </div>
         <div thumbsSlider="" class="swiper mySwiper">
           <div class="swiper-wrapper">
+
+            {% for image in product.images %}
             <div class="swiper-slide">
-              <img src="images/sl1.png" alt="#">
+              <img src="{{ image | image_url }}" alt="{{ product.title }}">
             </div>
-            <div class="swiper-slide">
-              <img src="images/sl2.png">
-            </div>
-            <div class="swiper-slide">
-              <img src="images/sl3.png">
-            </div>
-            <div class="swiper-slide">
-              <img src="images/sl4.png">
-            </div>
-            <div class="swiper-slide">
-              <img src="images/sl5.png">
-            </div>
-            <div class="swiper-slide">
-              <img src="images/sl1.png">
-            </div>
-            <div class="swiper-slide">
-              <img src="images/sl2.png">
-            </div>
-            <div class="swiper-slide">
-              <img src="images/sl3.png">
-            </div>
-            <div class="swiper-slide">
-              <img src="images/sl4.png">
-            </div>
-            <div class="swiper-slide">
-              <img src="images/sl5.png">
-            </div>
+           {% endfor %}
+           
+            
           </div>
         </div>
         <div class="as-seen">
