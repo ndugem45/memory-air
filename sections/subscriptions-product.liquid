@@ -274,3 +274,9 @@
     }
   });
 </script>
+<script>
+document.querySelectorAll('span.price1 span.metafield-single_line_text_field')
+  .forEach(el => {
+    el.textContent = el.textContent.replace(/ly/g, '');
+  });
+</script>
