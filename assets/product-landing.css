@@ -1993,6 +1993,9 @@ nav.black {
 section.marquees-sl {
   position: relative;   top: -7px;
 }
+.why-width .rich-texxt p:after {
+    display: none;
+}
 section.products-sec {
     padding-top: 100px;
 }
