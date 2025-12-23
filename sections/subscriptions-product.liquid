@@ -60,6 +60,38 @@
             <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
               {% if product.variants != blank %}
                 <div class="flex justify-between">
+                    {%- comment -%} 🔹 ONE-TIME PURCHASE OPTION {%- endcomment -%}
+    <div class="option">
+      <label class="image-checkbox">
+        <input
+          type="radio"
+          name="purchase_type"
+          value="one_time"
+          checked
+        >
+
+        <input
+          type="radio"
+          name="id"
+          value="{{ product.selected_or_first_available_variant.id }}"
+          data-type="one_time"
+          checked
+          hidden
+        >
+
+        <div class="total-data">
+          <span class="title1">One-time Purchase</span>
+          <div class="price-flx">
+            <span class="price1">{{ product.price | money }}</span>
+          </div>
+          <div class="content-listss">
+            No subscription. Pay once.
+          </div>
+        </div>
+      </label>
+    </div>
+
+    {%- comment -%} 🔹 SUBSCRIPTION OPTIONS (EXISTING) {%- endcomment -%}
                   {% for variant in product.variants %}
                     {% if variant.selling_plan_allocations[0] %}
                       <div class="option" form="AddToCartForm">
