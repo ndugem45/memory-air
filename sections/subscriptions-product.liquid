@@ -60,10 +60,7 @@
           <div class="radio-content">
             <p>Options :</p>
             <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
-              {% if product.variants != blank %}
-                <div class="flex justify-between">
-                  <!-- One-Time Purchase Option -->
-                  <div class="option" form="AddToCartForm">
+               <div class="option" form="AddToCartForm">
                     <label class="image-checkbox" for="{{ one_time_variant_id }}">
                       <input type="radio" name="id" id="{{ one_time_variant_id }}" value="{{ one_time_variant_id }}">
 
@@ -87,6 +84,10 @@
                       </div>
                     </label>
                   </div>
+              {% if product.variants != blank %}
+                <div class="flex justify-between">
+                  <!-- One-Time Purchase Option -->
+                 
 
                   {% for variant in product.variants %}
                     {% if variant.selling_plan_allocations[0] %}
