@@ -89,7 +89,9 @@
                               <span class="title1">{{ variant.metafields.custom.plan_name | metafield_tag }}</span>
                             {% endif %}
                             <div class="price-flx">
-                              <span class="price1">{{ variant.metafields.custom.price_text }} </span>
+                              {% if variant.metafields.custom.plan_price %}
+                              <span class="price1">{{ variant.metafields.custom.plan_price | metafield_tag }} <p>Per Month</p></span>
+                              {% endif %}
                               {% if variant.metafields.custom.save %}
                                 <div class="save-text">
                                   <p>Save {{ variant.metafields.custom.save | metafield_tag }}</p>
