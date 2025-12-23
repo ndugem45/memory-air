@@ -27,7 +27,7 @@
 
             {% for image in product.images %}
             <div class="swiper-slide">
-              <img src="{{ image | image_url }}" alt="{{ product.title }}" height="" width="">
+              <img src="{{ image | image_url }}" alt="{{ product.title }}" height="108px" width="">
             </div>
            {% endfor %}
            
@@ -37,11 +37,15 @@
         <div class="as-seen">
           <p>As seen in</p>
           <ul>
-            <li><img src="images/as1.png" alt="#"></li>
-            <li><img src="images/plus.png" alt="#"></li>
-            <li><img src="images/as2.png" alt="#"></li>
-            <li><img src="images/plus.png" alt="#"></li>
-            <li><img src="images/as3.png" alt="#"></li>
+            {% for block in section.blocks %}
+              {% if block.type == 'asfi_features' %}
+                {% if block.settings.asfi_bimg != blank %}
+            <li><img src="{{ block.settings.asfi_bimg | image_url }}" alt="#" width="" height=""></li>
+                {% endif %}
+            <li><img src="{{ 'star_icon2.sbg' | asset_url}}" alt="#" width="" height=""></li>
+            {% endif %}
+          {% endfor %}
+            
           </ul>
         </div>
       </div>
@@ -268,7 +272,18 @@
                     }
 
                 ]
-            }
+            },
+              {
+      "type": "asfi_features",
+      "name": "As seen Feature Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "asfi_bimg",
+          "label": "Image"
+        }
+      ]
+    }
         ],
   "presets": [
     {
