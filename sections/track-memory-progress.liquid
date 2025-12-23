@@ -15,7 +15,7 @@
             {% if block.type == 'tump_list_item' %}
             <li>
               {% if block.settings.tump_image != blank %}
-                <img src="{{ block.settings.tump_image | image_url }}" alt="#">
+                <img src="{{ block.settings.tump_image | image_url }}" alt="#" height="" width="">
               {% endif %}
               {{ block.settings.tump_text }}
             </li>
