@@ -195,14 +195,26 @@
             </form>
           </div>
           <div class="payment-imgs">
-            <img src="{{'payment_icons.svg' | asset_url}}" alt="#">
+            <img src="{{'payment_icons.svg' | asset_url}}" alt="#" width="" height="">
           </div>
           <div class="last-dtas">
             <div class="baner-list">
               <ul>
-                <li><img src="images/Frame.png" alt="#">Improves Your Mood</li>
-                <li><img src="images/Frame.png" alt="#">Feel Younger</li>
-                <li><img src="images/Frame.png" alt="#">I60-night risk free trial</li>
+                {% for block in section.blocks %}
+                {% if block.type == 'ps_features' %}
+                     {% if block.settings.ps_btext != blank or block.settings.ps_bimg != blank %}
+                        
+                <li>
+                    {% if block.settings.ps_bimg != blank %}
+                    <img src="{{ block.settings.ps_bimg | image_url }}" alt="#" width="" height="">
+                    {% endif %}
+                    {% if block.settings.ps_btext != blank %}
+                    {{block.settings.ps_btext }}
+                    {% endif %}
+                </li>
+                {% endif %}
+                {% endif %}
+            {% endfor %}
               </ul>
             </div>
           </div>
@@ -270,6 +282,25 @@
         "default":"Limited Stock Available - Sells Out Often"
     }
   ],
+     "blocks": [
+            {
+                "type": "ps_features",
+                "name": "Feature",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "ps_bimg",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "ps_btext",
+                        "label": "Text"
+                    }
+
+                ]
+            }
+        ],
   "presets": [
     {
       "name": "Subscriptions Product"
