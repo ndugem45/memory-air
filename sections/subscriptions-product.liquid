@@ -111,3 +111,268 @@
     });
 
 </script>
+<script>
+  let formatter,cartData;
+  let updater = null;
+  let curr = '{{ shop.money_format }}'.split('{')[0];
+  let sym = '{{ cart.currency.iso_code }}';
+
+  $(document).ready(function(){
+    const navbar = document.querySelector('nav');
+    load();
+    
+    $(".cart").click(() => {
+      navbar.classList.remove('menu');
+      let menu = $('nav .mobile-menu');
+      menu[0].style.maxHeight = null;
+      navbar.classList.toggle('open');
+      load()
+    });
+
+    $("#close-cart").click(() => {
+      navbar.classList.remove('menu');
+      let menu = $('nav .mobile-menu');
+      menu[0].style.maxHeight = null;
+      navbar.classList.remove('open');
+    });
+
+    $(".menu-toggle").click(() => {
+      navbar.classList.remove('open');
+      navbar.classList.toggle('menu');
+      let menu = $('nav .mobile-menu');
+      if (menu[0].style.maxHeight) {
+        menu[0].style.maxHeight = null;
+      } else {
+        menu[0].style.maxHeight = menu[0].scrollHeight + "px";
+      }
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        {% comment %} if (location.pathname === '/') {
+          if(window.scrollY > (document.querySelector('.hero').offsetHeight-50)){
+            navbar.classList.add('white');
+          }else{
+            navbar.classList.remove('white');
+          }
+        } {% endcomment %}
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  });
+
+  function togglePop(){
+    let vid = document.querySelector('nav #popup-video');
+    const popup = document.querySelector('nav .popup');
+    const elem = event.currentTarget
+    vid.setAttribute('src', '')
+    setTimeout(()=>{
+      if(elem.getAttribute('data-video')){
+        vid.setAttribute('src', elem.getAttribute('data-video'))
+      }
+      popup.classList.toggle('active')
+    },100)
+  }
+
+  function tmplt(item) {
+    return `<div class="item">
+        <button class="close" onclick="clearCart()">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0.927772" y1="0.694298" x2="12.2415" y2="12.008" stroke="#232323" stroke-opacity="0.5" />
+            <line x1="12.545" y1="0.894569" x2="1.23125" y2="12.2083" stroke="#232323" stroke-opacity="0.5" />
+          </svg>
+        </button>
+
+        <img src="${item.image}" alt="">
+        <div class="item_content">
+          <h4>${item.variant_title && item.variant_title != 'null' ? item.variant_title : item.title}</h4>
+          <span>
+            ${item.newPrice}
+          </span>
+        </div>
+      </div>`
+  }
+
+  const formatCost = (cost) => {
+    let formatter = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: sym,
+    })
+
+    if (sym === 'SGD') {
+      formatter = new Intl.NumberFormat('en-US', {
+        style: 'decimal',
+      })
+      return 'S$' + formatter.format(cost)
+    }
+
+    return formatter.format(cost)
+  }
+
+  function stepperUp(s, id) {
+    var q_elem
+    if (s) {
+      q_elem = $(event.currentTarget).prev()[0]
+  
+      q_elem.value = parseInt(q_elem.value) + 1
+    } else {
+      q_elem = $(event.currentTarget).next()[0]
+  
+      if ((parseInt(q_elem.value) - 1) >= 1) {
+        q_elem.value = parseInt(q_elem.value) - 1
+      }
+    } 
+    updateThis(id)
+  }
+
+  const focusMe = (id) => {
+    document.querySelector('#' + id).classList.toggle('focus')
+  }
+
+  const load = () => {
+    try {
+      $('#placer').html('');
+
+      if (updater && typeof updater.abort === 'function') {
+        updater.abort();
+      }
+  
+      updater = jQuery.ajax({
+        type: 'GET',
+        url: window.Shopify.routes.root + "cart.js",
+        contentType: 'application/json',
+        dataType: 'json',
+        success: function(data) {
+          let dataResult;
+
+          try {
+            dataResult = typeof data === 'string' ? JSON.parse(data) : data;
+          } catch (e) {
+            console.error('Failed to parse JSON:', e);
+            return;
+          }
+          
+          let dd = dataResult.items;
+          cartData = dataResult;
+          updater = null;
+          
+          $('#total-price').html(formatCost(parseFloat(cartData.total_price / 100)));
+          $('#sub-total').html(formatCost(parseFloat(cartData.items_subtotal_price / 100)));
+          
+          if (dd.length > 0) {
+            if(window.innerWidth < 1200){
+              $('#cart-btn').show()
+              $('#buy-btn').hide()
+            }
+            $('nav .cart-menu .summary .btn').addClass('active');
+            dd.forEach((s) => {
+              s.newPrice = formatCost(parseInt(s.price / 100));
+              $('#placer').append(tmplt(s));
+            });
+          } else {
+            if(window.innerWidth < 1200){
+              $('#cart-btn').hide()
+              $('#buy-btn').show()
+            }
+            $('nav .cart-menu .summary .btn').removeClass('active');
+            $('#placer').append(`<div>No data</div>`);
+          }
+
+          try{
+            let countP = document.querySelectorAll('.cart-menu .item-wrap .item')
+          
+            if(countP.length > 0){
+                document.querySelector('#AddToCart').setAttribute('disabled', true);
+                document.querySelector('#AddToCart').innerText = "You already have items in cart!";
+            }
+          }catch(e){}
+        },
+        error: function(xhr, status, error) {
+          return false;
+        }
+      });
+    
+      
+    } catch (e) {
+      console.error("Load function error:", e);
+    }
+  };
+  
+  const updateThis = (id, q) => {
+    try {
+      if (updater && typeof updater.abort === 'function') {
+        updater.abort();
+      }
+      
+      updater = jQuery.ajax({
+        type: 'POST',
+        url: window.Shopify.routes.root + 'cart/change.js',
+        data: {
+          "id": id,
+          "quantity": q ? 0 : $('#updates_' + id).val()
+        },
+        success: function(data) {
+          load();
+        },
+        error: function(xhr, status, error) {
+          console.error("Error updating cart:", status, error);
+        }
+      });
+    } catch (e) {
+      console.error("Update function error:", e);
+    }
+  };
+
+  const clearCart = () => {
+    try {
+      if (updater && typeof updater.abort === 'function') {
+        updater.abort();
+      }
+
+  
+      updater = jQuery.ajax({
+        type: 'POST',
+        url: window.Shopify.routes.root + 'cart/clear.js',
+        dataType: 'json',
+        success: function(data) {
+          window.location.reload();
+        },
+        error: function(xhr, status, error) {
+          console.error("Error updating cart:", status, error);
+        }
+      });
+    } catch (e) {
+      console.error("Update function error:", e);
+    }
+  };
+  
+  const addThis = (data, callback) => {
+    try {
+      if (updater && typeof updater.abort === 'function') {
+        updater.abort();
+      }
+      
+      updater = jQuery.ajax({
+        type: 'POST',
+        url: window.Shopify.routes.root + 'cart/add.js',
+        data: JSON.stringify({
+          'items': data
+         }),
+        contentType: 'application/json',
+        dataType: 'json',
+        success: function(data) {
+          callback(true);
+        },
+        error: function(xhr, status, error) {
+          callback(false);
+        }
+      });
+    } catch (e) {
+      console.error("Add function error:", e);
+      callback(false);
+    }
+  };
+  
+</script>
