@@ -1993,8 +1993,8 @@ nav.black {
 section.marquees-sl {
   position: relative;   top: -7px;
 }
-.why-width .rich-texxt p {
-    text-align:left;
+.why-width .rich-texxt  {
+    justify-content: left;
 }
 .why-width .rich-texxt p:after {
     display: none;
