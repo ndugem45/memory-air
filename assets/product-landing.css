@@ -501,12 +501,12 @@ section.customer-says {
 
 .why-width ul li strong {
   color: #232323;
-  font-family: "General Sans";
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 160%; /* 25.6px */
   display: block;
+      font-family: General Sans Medium;
 }
 
 .why-flex:last-child {
