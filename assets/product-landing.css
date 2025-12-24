@@ -1980,9 +1980,9 @@ span.price-main {
   text-align: center;
 }
 
-nav.black {
+/* nav.black {
     display: none;
-}
+} */
 .products-sec .mySwiper .swiper-slide img {
     height: 108px;
     object-fit: contain;
