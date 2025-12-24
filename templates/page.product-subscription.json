@@ -283,7 +283,7 @@
       ],
       "name": "How Memory Air Works",
       "settings": {
-        "hmw_title": "<span>How</span> Memory Air Works",
+        "hmw_title": "<span>How</span><br> Memory Air<br> Works",
         "hmw_background_image": "shopify://shop_images/bck-round.png",
         "hmw_center_image": "shopify://shop_images/bck-im.png",
         "hmw_button_text": "Buy Now",
