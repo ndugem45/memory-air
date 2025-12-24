@@ -657,4 +657,7 @@ span.price-main {
 .last-dtas .baner-list {
     padding: 10px 6px;
 }
+.baner-list ul li:nth-child(2) {
+    border-right: 0px;
+}
 }
