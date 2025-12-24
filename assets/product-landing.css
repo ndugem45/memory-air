@@ -2032,9 +2032,7 @@ nav a#buy-btn {
     font-weight: 500;
     line-height: normal;
 }
-nav.scrolled.black::before{
-  display:none;
-}
+
 a#buy-btn {
     display: block !important;
 }
