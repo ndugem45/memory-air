@@ -2079,7 +2079,10 @@ section.banner-section {
     margin-top: 90px;
 }
 nav .right {
-    display: flex;
-    align-items: center;
-    gap: 26px;
+    gap: 26px!important;
+}
+button#cart-btn {
+    padding: 10px 10px;
+    border-radius: 100%;
+    border: none;
 }
