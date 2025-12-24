@@ -2088,3 +2088,6 @@ button#cart-btn {
     border-radius: 100%;
     border: none;
 }
+.banner-width span {
+    font-size: 16px;
+}
