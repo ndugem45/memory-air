@@ -2009,7 +2009,7 @@ nav.black {
     background: #46342C;
     padding: 16px 0;
 }
-nav.scrolled {
+nav.black.scrolled{
     padding-block: 16px !important;
 }
 nav .menu,
