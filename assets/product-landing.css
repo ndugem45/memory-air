@@ -2039,5 +2039,5 @@ a#buy-btn {
     display: block !important;
 }
 nav .container {
-    display: flex;
+    display: flex !important;
 }    
