@@ -127,4 +127,13 @@
 
 
 
-
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.location.pathname === "/pages/memory-air-subscriptions") {
+    const buyBtn = document.getElementById("buy-btn");
+    if (buyBtn) {
+      buyBtn.setAttribute("href", "#prod_box");
+    }
+  }
+});
+</script>
