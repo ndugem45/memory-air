@@ -610,4 +610,7 @@ section.products-sec {
         max-width: 100%;
         height: fit-content;
     }
+    nav.black.scrolled {
+    padding-block: 3px !important;
+}
 }
