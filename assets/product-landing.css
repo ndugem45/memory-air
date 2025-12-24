@@ -1849,6 +1849,8 @@ span.price-main {
   font-style: normal;
   font-weight: 400;
   line-height: 160%; /* 25.6px */
+  margin-bottom:8px;
+  
 }
 .inner-prodd ul{
   margin: 20px 0;
