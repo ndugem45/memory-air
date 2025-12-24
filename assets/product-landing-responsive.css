@@ -578,4 +578,8 @@ label.image-checkbox {
 .as-seen {
   bottom: 122px;
 }
+.flex.justify-between .option {
+    width: 100%;
+    margin-bottom: 15px;
+}
 }
