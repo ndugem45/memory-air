@@ -2041,3 +2041,8 @@ a#buy-btn {
 nav .container {
     display: flex !important;
 }    
+nav .cart {
+    width: auto !important;
+    height: auto !important;
+    display: flex !important;
+}
