@@ -641,13 +641,20 @@ span.price-main {
     section.imporove-memory {
     padding-bottom: 16px;
 }
-.baner-list ul li {
-    padding-right: 10px;
+
+
+
+
+
+
 }
 
 
-
-
-
-
+@media screen and (max-width: 375px) {
+  .baner-list ul li {
+    padding-right: 10px;
+}
+.last-dtas .baner-list {
+    padding: 10px 6px;
+}
 }
