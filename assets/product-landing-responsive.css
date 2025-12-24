@@ -663,6 +663,12 @@ span.price-main {
         background: transparent;
         border-radius: 24px !important;
     }
+    .cell.feature {
+    text-align: center;
+}
+.table-row {
+    display: block;
+}
 
 
 
