@@ -653,7 +653,10 @@ span.price-main {
     position: relative;
     left: 0px;
 }
-
+.improve-inner h2 {
+    font-size: 22px !important;
+    line-height: 28px !important;
+}
 
 
 
