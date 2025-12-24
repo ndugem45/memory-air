@@ -2017,6 +2017,7 @@ nav .menu {
 }
 nav .left img {
     filter: brightness(0) invert(1) !important;
+    width: 97px;
 }
 nav a#buy-btn {
     border-radius: 48px;
