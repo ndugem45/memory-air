@@ -634,6 +634,10 @@ span.price-main {
 .why-width ul li {
     margin-bottom: 3px;
 }
+    .know-banner {
+        background-size: cover;
+        border-radius: 22px;
+    }
 
 
 
