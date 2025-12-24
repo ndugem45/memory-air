@@ -605,4 +605,9 @@ section.products-sec {
 .products-sec .mySwiper {
     margin-top: 20px;
 }
+    .video-card {
+        width: 100%;
+        max-width: 100%;
+        height: fit-content;
+    }
 }
