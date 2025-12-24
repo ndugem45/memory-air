@@ -2049,3 +2049,6 @@ nav.scrolled.black::before {
     background: #46342C !important;
     box-shadow: none !important;
 }
+nav.black.open.scrolled {
+    padding: 16px !important;
+}
