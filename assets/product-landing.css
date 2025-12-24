@@ -2009,6 +2009,9 @@ nav.black {
     background: #46342C;
     padding: 16px 0;
 }
+nav.scrolled {
+    padding-block: 16px !important;
+}
 nav .menu {
     display: none !important;
 }
@@ -2026,4 +2029,7 @@ nav a#buy-btn {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+}
+nav.scrolled.black::before{
+  display:none;
 }
