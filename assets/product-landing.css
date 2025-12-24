@@ -2006,3 +2006,21 @@ section.products-sec {
   display:flex;
   gap:20px;
 }
+nav .menu {
+    display: none;
+}
+nav .left img {
+    filter: brightness(0) invert(1) !important;
+}
+nav a#buy-btn {
+    border-radius: 48px;
+    background: var(--MA_Snow, #F8F4F3);
+    padding: 8px 24px;
+    display: inline-block;
+    color: var(--MA_Carbon-Black, #232323);
+    font-family: "General Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
