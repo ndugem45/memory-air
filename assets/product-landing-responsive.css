@@ -616,4 +616,7 @@ section.products-sec {
 .rich-texxt {
     margin-bottom: 10px;
 }
+span.title1 br {
+    display: none;
+}
 }
