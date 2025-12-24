@@ -11,6 +11,7 @@
   "sections": {
     "subscriptions_header_cKqPVh": {
       "type": "subscriptions-header",
+      "disabled": true,
       "name": "Subscriptions Page Header",
       "settings": {
         "hc_logo": "shopify://shop_images/header_logo_1.png",

@@ -2005,7 +2005,7 @@ section.products-sec {
   gap:20px;
 }
 nav.black {
-    display: none;
+    /* display: none; */
     background: #46342C;
     padding: 16px 0;
 }
