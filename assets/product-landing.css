@@ -2052,3 +2052,21 @@ nav.scrolled.black::before, nav.black.open::before, nav.scrolled.white.open::bef
 nav.black.open.scrolled {
     padding: 16px !important;
 }
+.summary button.btn.is-black.active {
+    border: 1px solid #232323;
+    color: #fff;
+    background: #232323 !important;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 80px;
+    padding: 12px 32px;
+    font-family: Avenir;
+    font-weight: 450;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0%;
+    cursor: pointer;
+    width: 100%;
+}
