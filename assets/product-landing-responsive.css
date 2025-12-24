@@ -595,4 +595,8 @@ section.banner-section {
 section.products-sec {
     padding-top: 30px;
 }
+.as-seen ul li img {
+    width: 100%;
+    max-width: 90%;
+}
 }
