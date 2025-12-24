@@ -1980,9 +1980,7 @@ span.price-main {
   text-align: center;
 }
 
-nav.black {
-    display: none;
-}
+
 .products-sec .mySwiper .swiper-slide img {
     height: 108px;
     object-fit: contain;
@@ -2005,6 +2003,11 @@ section.products-sec {
 .button_cart{
   display:flex;
   gap:20px;
+}
+nav.black {
+    display: none;
+    background: #46342C;
+    padding: 16px 0;
 }
 nav .menu {
     display: none;
