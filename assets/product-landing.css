@@ -2078,3 +2078,8 @@ nav .cart-menu .content .item .close {
 section.banner-section {
     margin-top: 90px;
 }
+nav .right {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
