@@ -625,4 +625,7 @@ span.title1 br {
 .inner-prodd ul li:after {
     top: 3px;
 }
+span.price-main {
+    font-size: 20px;
+}
 }
