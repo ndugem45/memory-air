@@ -2010,7 +2010,7 @@ nav.black {
     padding: 16px 0;
 }
 nav .menu {
-    display: none;
+    display: none !important;
 }
 nav .left img {
     filter: brightness(0) invert(1) !important;
