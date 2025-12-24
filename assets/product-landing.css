@@ -2044,7 +2044,8 @@ nav .cart {
     height: auto !important;
     display: flex !important;
 }
-nav.scrolled.black::before, nav.black.open::before, nav.scrolled.white.open::before, nav.scrolled.white.menu::before, nav.menu::before {
+nav.scrolled.black::before, nav.black.open::before, nav.scrolled.white.open::before, nav.scrolled.white.menu::before, nav.menu::before,
+nav.scrolled.black::before {
     background: #46342C !important;
     box-shadow: none !important;
 }
