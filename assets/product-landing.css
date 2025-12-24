@@ -2002,3 +2002,7 @@ section.marquees-sl {
 section.products-sec {
     padding-top: 100px;
 }
+.button_cart{
+  display:flex;
+  gap:20px;
+}
