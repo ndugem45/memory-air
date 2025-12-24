@@ -582,4 +582,7 @@ label.image-checkbox {
     width: 100%;
     margin-bottom: 15px;
 }
+nav.black.open.scrolled {
+    padding: 16px 0 !important;
+}
 }
