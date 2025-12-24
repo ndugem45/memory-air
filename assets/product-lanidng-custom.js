@@ -99,7 +99,7 @@ document.querySelectorAll('.video-card').forEach(card => {
 
 
 
-  const thumbSwiper = new Swiper(".mySwiper", {
+const thumbSwiper = new Swiper(".mySwiper", {
   spaceBetween: 10,
   slidesPerView: 4,
   freeMode: true,
@@ -115,4 +115,14 @@ const mainSwiper = new Swiper(".mySwiper2", {
   thumbs: {
     swiper: thumbSwiper,
   },
+  autoHeight: window.innerWidth <= 767 ? true : false,
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth <= 767) {
+    mainSwiper.params.autoHeight = true;
+  } else {
+    mainSwiper.params.autoHeight = false;
+  }
+  mainSwiper.update(); 
 });
