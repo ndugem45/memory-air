@@ -649,6 +649,10 @@ span.price-main {
     .customer-box {
         padding: 10px 10px;
     }
+    .works-inner-width ul li:nth-child(1) {
+    position: relative;
+    left: 0px;
+}
 
 
 
