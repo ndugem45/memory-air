@@ -1,3 +1,8 @@
+@media (max-width: 1500px) {
+.banner-width {
+    padding-left: 40px;
+}
+}
 @media (max-width: 1024px) {
   .video-card {
     width: 240px;
