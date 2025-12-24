@@ -613,4 +613,7 @@ section.products-sec {
     nav.black.scrolled {
     padding-block: 3px !important;
 }
+.rich-texxt {
+    margin-bottom: 10px;
+}
 }
