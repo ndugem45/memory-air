@@ -2,9 +2,11 @@
   <div class="container">
     <div class="customer-box">
       {% if section.settings.oct_heading != blank %}
-        <h1 class="heading">
-          {{ section.settings.oct_heading }}
-        </h1>
+        <div class="heading">
+          <h1>
+            {{ section.settings.oct_heading }}
+          </h1>
+        </div>
       {% endif %}
       <div class="custom-flx">
         <!-- Customer Info -->
@@ -41,7 +43,12 @@
               {% for i in (1..section.settings.oct_rating) %}
                 <li>
                   {% if section.settings.oct_star_image %}
-                    <img src="{{ section.settings.oct_star_image | image_url }}" alt="{{ section.settings.oct_star_image.alt }}" height="" width="">
+                    <img
+                      src="{{ section.settings.oct_star_image | image_url }}"
+                      alt="{{ section.settings.oct_star_image.alt }}"
+                      height=""
+                      width=""
+                    >
                   {% endif %}
                 </li>
               {% endfor %}
