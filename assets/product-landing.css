@@ -2070,3 +2070,7 @@ nav.black.open.scrolled {
     cursor: pointer;
     width: 100%;
 }
+nav .cart-menu .content .item .close {
+    background: transparent;
+    border: 0;
+}
