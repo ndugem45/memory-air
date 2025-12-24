@@ -599,4 +599,7 @@ section.products-sec {
     width: 100%;
     max-width: 90%;
 }
+.as-seen {
+    padding: 16px 10px;
+}
 }
