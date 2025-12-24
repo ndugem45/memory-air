@@ -589,4 +589,7 @@ nav.black {
     background: #46342C;
     padding: 3px 0;
 }
+section.banner-section {
+    margin-top: 60px;
+}
 }
