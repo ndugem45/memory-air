@@ -1044,6 +1044,7 @@ section.track {
   display: flex;
   align-items: center;
   gap: 12px;
+  font-family: General Sans Medium;
 }
 .two-mobiles img {
   width: 100%;
