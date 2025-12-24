@@ -602,4 +602,7 @@ section.products-sec {
 .as-seen {
     padding: 16px 10px;
 }
+.products-sec .mySwiper {
+    margin-top: 20px;
+}
 }
