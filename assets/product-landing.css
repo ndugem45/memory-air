@@ -1839,6 +1839,7 @@ span.price-main {
   font-weight: 800;
   line-height: 132%;
   color: #232323;
+  font-family: General Sans Medium;
 }
 
 .inner-prodd p {
@@ -1916,7 +1917,7 @@ span.price-main {
 }
 .radio-content p {
   color: var(--MA_Carbon-Black, #232323);
-  font-family: "General Sans";
+    font-family: General Sans Medium;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
