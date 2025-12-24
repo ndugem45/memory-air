@@ -671,6 +671,9 @@ span.price-main {
     font-weight: 600;
     font-size: 10px;
 }
+span.icon img {
+    width: 20px;
+}
 
 
 
