@@ -619,4 +619,7 @@ section.products-sec {
 span.title1 br {
     display: none;
 }
+.total-data {
+    gap: 10px;
+}
 }
