@@ -1460,10 +1460,10 @@ span.icon.check img {
 }
 
 .section-title {
-  font-size: 36px;
-  margin-bottom: 40px;
-  color: #3c2f28;
-  font-weight: 400;
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: #3c2f28;
+    font-weight: 400;
 }
 
 .section-title em {
