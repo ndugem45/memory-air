@@ -2035,4 +2035,9 @@ nav a#buy-btn {
 nav.scrolled.black::before{
   display:none;
 }
-    
+a#buy-btn {
+    display: block !important;
+}
+nav .container {
+    display: flex;
+}    
