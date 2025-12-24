@@ -575,9 +575,9 @@ label.image-checkbox {
 .payment-imgs img {
   width: 100%;
 }
-.as-seen {
-  bottom: 122px;
-}
+    .as-seen {
+        bottom: 149px;
+    }
 .flex.justify-between .option {
     width: 100%;
     margin-bottom: 15px;
