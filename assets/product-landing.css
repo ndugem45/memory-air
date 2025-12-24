@@ -1454,9 +1454,9 @@ span.icon.check img {
    VIDEO TESTIMONIAL SECTION
 ================================ */
 .video-testimonials {
-  padding: 80px 20px;
-  text-align: center;
-  background: #ffffff;
+    padding: 0px 0px 40px 0;
+    text-align: center;
+    background: #ffffff;
 }
 
 .section-title {
