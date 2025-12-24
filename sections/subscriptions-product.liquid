@@ -368,7 +368,7 @@ document.getElementById('AddToCartForm').addEventListener('submit', function (ev
         document.querySelector('nav').classList.add('open');
         document.querySelector('#AddToCart').setAttribute('disabled', true);
         document.querySelector('#AddToCart').innerText = 'You already have items in cart!';
-        {% comment %} window.location.href = '/cart'; {% endcomment %}
+        window.location.href = '/cart';
       }
     });
   }
