@@ -690,6 +690,10 @@ span.title1 {
     margin: 0 auto;
     display: block;
 }
+    .know-width ul li div.title-bulets {
+        padding: 8px 10px;
+        border-radius: 10px;
+    }
 
 
 
