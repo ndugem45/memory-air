@@ -683,6 +683,13 @@ span.icon img {
 span.title1 {
     font-size: 22px;
 }
+.center-imgss img {
+    width: 100%;
+    height: auto;
+    max-width: 40%;
+    margin: 0 auto;
+    display: block;
+}
 
 
 
