@@ -699,4 +699,7 @@ span.icon img {
         span.icon img {
         width: 15px;
     }
+        .table-head .cell {
+        font-size: 9px;
+    }
 }
