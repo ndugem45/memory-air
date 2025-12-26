@@ -700,6 +700,14 @@ span.title1 {
 .submit-btns {
     margin-top: 10px;
 }
+.as-seen {
+    justify-content: space-between;
+    align-items: center;
+}
+.as-seen ul {
+    width: 75%;
+    align-items: center;
+}
 
 
 
