@@ -763,4 +763,7 @@ span.title1 {
     height: 68px;
     object-fit: contain;
 }
+    .as-seen {
+        bottom: 109px;
+    }
 }
