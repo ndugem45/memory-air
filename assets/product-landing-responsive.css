@@ -692,4 +692,11 @@ span.icon img {
 .baner-list ul li:nth-child(2) {
     border-right: 0px;
 }
+    .cell {
+        font-size: 7px;
+        padding: 8px 5px;
+    }
+        span.icon img {
+        width: 15px;
+    }
 }
