@@ -708,7 +708,10 @@ span.title1 {
     width: 75%;
     align-items: center;
 }
-
+.volume-btn {
+    width: 36px;
+    height: 36px;
+}
 
 
 }
