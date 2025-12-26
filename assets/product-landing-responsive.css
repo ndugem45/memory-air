@@ -702,4 +702,11 @@ span.icon img {
         .table-head .cell {
         font-size: 9px;
     }
+        .question-faqs h4 {
+        font-size: 14px;
+    }
+        h1, h2 {
+        font-size: 24px !important;
+        line-height: 32px !important;
+    }
 }
