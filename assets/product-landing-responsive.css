@@ -759,4 +759,8 @@ span.title1 {
 .as-seen p {
     font-size: 14px;
 }
+.products-sec .mySwiper .swiper-slide img {
+    height: 68px;
+    object-fit: contain;
+}
 }
