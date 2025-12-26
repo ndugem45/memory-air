@@ -716,7 +716,10 @@ span.title1 {
     width: 15px;
     height: 15px;
 }
-
+.faqs-arrow img {
+    width: 100%;
+    max-width: 45%;
+}
 
 }
 
