@@ -47,7 +47,7 @@
         <div class="inner-product-width">
           <div class="inner-prodd">
             <h2>{{ product.title }}</h2>
-            <span class="price-main">{{ product.price | money }}</span>
+            <span class="price-main">{%if section.settings.sp_price != blank %}{{section.settings.sp_price}}{%else%}{{ product.price | money }}{% endif %}</span>
             {% if section.settings.sp_text != blank %}
               {{ section.settings.sp_text }}
             {% endif %}
@@ -208,6 +208,11 @@
       "type": "product",
       "id": "sp_product",
       "label": "Select Product"
+    },
+    {
+      "type": "text",
+      "id": "sp_price",
+      "label": "Custom Price"
     },
     {
       "type": "richtext",
