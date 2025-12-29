@@ -85,8 +85,8 @@ document.querySelectorAll('.video-card').forEach(card => {
     e.stopPropagation();
     video.muted = !video.muted;
     volumeIcon.src = video.muted
-      ? 'images/volume-off.png'
-      : 'images/volume-on.png';
+      ? 'https://cdn.shopify.com/s/files/1/0745/3658/3442/files/volume-off.png'
+      : 'https://cdn.shopify.com/s/files/1/0745/3658/3442/files/volume-on.png';
   });
 
   video.addEventListener('ended', () => {
