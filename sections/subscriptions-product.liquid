@@ -166,11 +166,11 @@
                 data-product="{{ product | json | escape }}"
                 data-handle="{{ product.handle }}"
               ></div>
-                {{ form | payment_terms }}
+               
               <div class="submit-btns">
                 <button class="add-to-cart" type="submit" name="add" id="AddToCart">Add to Cart</button>
               </div>
-           
+            {{ form | payment_terms }}
             {% endform %}
           </div>
           {% if section.settings.sp_pymntIcn %}
