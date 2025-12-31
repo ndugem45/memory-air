@@ -2103,3 +2103,11 @@ button#cart-btn {
 #prod_box {
     scroll-margin-top: 100px;
 }
+.pt_box {
+    background: linear-gradient(90deg, rgba(253, 246, 232, 0.10) 0%, #FDF6E8 47.75%, rgba(253, 246, 232, 0.20) 100%);
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+}
