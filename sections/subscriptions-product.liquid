@@ -62,6 +62,7 @@
           <div class="radio-content" id="prod_box">
             <p>Option :</p>
             <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
+              {{ form | payment_terms }}
               {% comment %} {% if product.variants != blank %} {% endcomment %}
               <div class="flex justify-between">
                 <!-- One-Time Purchase Option -->
