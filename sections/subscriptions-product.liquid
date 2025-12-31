@@ -2,7 +2,7 @@
 {% assign one_time_product = all_products['twelve-scent-belt'] %}
 {% assign one_time_variant_id = 51812622532882 %}
 <section class="products-sec">
-  <div class="container" >
+  <div class="container">
     <div class="product-flex">
       <div class="produt-width">
         <div class="swiper mySwiper2">
@@ -47,7 +47,9 @@
         <div class="inner-product-width">
           <div class="inner-prodd">
             <h2>{{ product.title }}</h2>
-            <span class="price-main">{%if section.settings.sp_price != blank %}{{section.settings.sp_price}}{% endif %}</span>
+            <span class="price-main">
+              {%- if section.settings.sp_price != blank %}{{ section.settings.sp_price }}{% endif -%}
+            </span>
             {% if section.settings.sp_text != blank %}
               {{ section.settings.sp_text }}
             {% endif %}
@@ -61,44 +63,43 @@
             <p>Option :</p>
             <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
               {% comment %} {% if product.variants != blank %} {% endcomment %}
-                <div class="flex justify-between">
-                  <!-- One-Time Purchase Option -->
-                  <div class="option" form="AddToCartForm" >
-                    <label class="image-checkbox" for="{{ one_time_variant_id }}" >
-                      <input type="radio" name="id" id="{{ one_time_variant_id }}" value="{{ one_time_variant_id }}">
+              <div class="flex justify-between">
+                <!-- One-Time Purchase Option -->
+                <div class="option" form="AddToCartForm">
+                  <label class="image-checkbox" for="{{ one_time_variant_id }}">
+                    <input type="radio" name="id" id="{{ one_time_variant_id }}" value="{{ one_time_variant_id }}">
 
-                      <div class="total-data" >
-                        <div class="uper-flex">
-                          <span class="lala">
-                            <img src="{{ 'flame.png' | asset_url }}" alt="#" width="" height="">
-                          </span>
-                        </div>
-
-                        <span class="title1">
-                          <span class="metafield-single_line_text_field">Buy Now,<br> Pay Later</span>
+                    <div class="total-data">
+                      <div class="uper-flex">
+                        <span class="lala">
+                          <img src="{{ 'flame.png' | asset_url }}" alt="#" width="" height="">
                         </span>
-
-                        <div class="price-flx">
-                          <span class="price1">
-                            <span class="metafield-single_line_text_field">{{ one_time_product.price | money }}</span>
-                            <p><span class="metafield-single_line_text_field">One Time</span></p>
-                          </span>
-                        </div>
-                        <div class="content-listss">
-                                <ul>
-                                  <li>Shipped on a monthly Basis</li>
-                                  <li>No commitment, No Subscription</li>
-                                  <li>1 device and 12 refills</li>
-                                  <li>Only $99 per month with 12 payments</li>
-                                  <li>0% interest</li>
-                                  <li><strong>Free Shipping</strong></li>
-                                </ul>
-                              </div>
                       </div>
-                    </label>
-                  </div>
 
-                  {% comment %} {% for variant in product.variants %}
+                      <span class="title1">
+                        <span class="metafield-single_line_text_field"
+                          >Buy Now,<br>
+                          Pay Later</span
+                        >
+                      </span>
+
+                      <div class="price-flx">
+                        <span class="price1">
+                          <span class="metafield-single_line_text_field">{{ one_time_product.price | money }}</span>
+                          <p><span class="metafield-single_line_text_field">One Time</span></p>
+                        </span>
+                      </div>
+                      {% if section.settings.sp_opttext != blank %}
+                      <div class="content-listss">
+                        {{ section.settings.sp_opttext }}
+                      </div>
+                      {% endif %}
+                    </div>
+                  </label>
+                </div>
+
+                {% comment %}
+                  {% for variant in product.variants %}
                     {% if variant.selling_plan_allocations[0] %}
                       <div class="option" form="AddToCartForm">
                         {% for selling_plan in variant.selling_plan_allocations %}
@@ -152,8 +153,9 @@
                     {% else %}
                       <input type="hidden" id="product" name="product" value="{{ variant.id }}">
                     {% endif %}
-                  {% endfor %} {% endcomment %}
-                </div>
+                  {% endfor %}
+                {% endcomment %}
+              </div>
               {% comment %} {% endif %} {% endcomment %}
               <div
                 style="display: none !important;"
@@ -204,7 +206,6 @@
     "groups": ["header", "footer"]
   },
   "settings": [
-  
     {
       "type": "text",
       "id": "sp_price",
@@ -214,6 +215,11 @@
       "type": "richtext",
       "id": "sp_text",
       "label": "Add Text"
+    },
+    {
+      "type": "richtext",
+      "id": "sp_opttext",
+      "label": "Option List Text"
     },
     {
       "type": "textarea",
@@ -271,17 +277,70 @@
 }
 {% endschema %}
 
-{% comment %} <script>
-  $(document).ready(function () {
-    let countP = document.querySelectorAll('.cart-menu .item-wrap .item');
+{% comment %}
+  <script>
+    $(document).ready(function () {
+      let countP = document.querySelectorAll('.cart-menu .item-wrap .item');
 
+      if (countP.length > 0) {
+        document.querySelector('#AddToCart').setAttribute('disabled', true);
+        document.querySelector('#AddToCart').innerText = 'You already have items in cart!';
+      }
+
+      const bodyElements = document.querySelectorAll('#AddToCartForm label div.option-content span.title');
+
+      bodyElements.forEach((element) => {
+        element.innerHTML = element.innerHTML.replace(/®/g, '<sup>®</sup>');
+      });
+    });
+
+    document.getElementById('AddToCartForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      if (!cartData.items.length) {
+        var variantId = document.querySelector('input[name="id"]:checked').value;
+        var deviceId = document.querySelector('input[name="product"]').value;
+
+        var sellingPlanSelect = document.getElementById('selling-id-' + variantId);
+        var sellingPlanId = sellingPlanSelect ? sellingPlanSelect.value : null;
+
+        addThis(
+          [
+            {
+              id: deviceId,
+              quantity: 1,
+            },
+            {
+              id: variantId,
+              quantity: 1,
+              selling_plan: sellingPlanId,
+            },
+          ],
+          (result) => {
+            if (result) {
+              load();
+              document.querySelector('nav').classList.add('open');
+              document.querySelector('#AddToCart').setAttribute('disabled', true);
+              document.querySelector('#AddToCart').innerText = 'You already have items in cart!';
+              window.location.href = '/cart';
+            }
+          }
+        );
+      }
+    });
+  </script>
+{% endcomment %}
+<script>
+   $(document).ready(function () {
+    // Disable Add to Cart if items already in cart
+    let countP = document.querySelectorAll('.cart-menu .item-wrap .item');
     if (countP.length > 0) {
       document.querySelector('#AddToCart').setAttribute('disabled', true);
       document.querySelector('#AddToCart').innerText = 'You already have items in cart!';
     }
 
+    // Replace ® with <sup>®</sup>
     const bodyElements = document.querySelectorAll('#AddToCartForm label div.option-content span.title');
-
     bodyElements.forEach((element) => {
       element.innerHTML = element.innerHTML.replace(/®/g, '<sup>®</sup>');
     });
@@ -291,102 +350,49 @@
     event.preventDefault();
 
     if (!cartData.items.length) {
-      var variantId = document.querySelector('input[name="id"]:checked').value;
-      var deviceId = document.querySelector('input[name="product"]').value;
+      const selectedInput = document.querySelector('input[name="id"]:checked');
+      if (!selectedInput) return alert('Please select an option');
 
-      var sellingPlanSelect = document.getElementById('selling-id-' + variantId);
-      var sellingPlanId = sellingPlanSelect ? sellingPlanSelect.value : null;
+      const variantId = selectedInput.value;
 
-      addThis(
-        [
-          {
-            id: deviceId,
-            quantity: 1,
-          },
-          {
-            id: variantId,
-            quantity: 1,
-            selling_plan: sellingPlanId,
-          },
-        ],
-        (result) => {
-          if (result) {
-            load();
-            document.querySelector('nav').classList.add('open');
-            document.querySelector('#AddToCart').setAttribute('disabled', true);
-            document.querySelector('#AddToCart').innerText = 'You already have items in cart!';
-            window.location.href = '/cart';
-          }
-        }
-      );
-    }
-  });
-</script> {% endcomment %}
-<script>
- $(document).ready(function () {
-  // Disable Add to Cart if items already in cart
-  let countP = document.querySelectorAll('.cart-menu .item-wrap .item');
-  if (countP.length > 0) {
-    document.querySelector('#AddToCart').setAttribute('disabled', true);
-    document.querySelector('#AddToCart').innerText = 'You already have items in cart!';
-  }
+      // Check if this variant has a selling plan (for subscription variants)
+      const sellingPlanSelect = document.getElementById('selling-id-' + variantId);
+      const sellingPlanId = sellingPlanSelect ? sellingPlanSelect.value : null;
 
-  // Replace ® with <sup>®</sup>
-  const bodyElements = document.querySelectorAll('#AddToCartForm label div.option-content span.title');
-  bodyElements.forEach((element) => {
-    element.innerHTML = element.innerHTML.replace(/®/g, '<sup>®</sup>');
-  });
-});
+      // Check if the form has a "device" input (for subscriptions requiring device)
+      const deviceInput = document.querySelector('input[name="product"]');
+      const deviceId = deviceInput ? deviceInput.value : null;
 
-document.getElementById('AddToCartForm').addEventListener('submit', function (event) {
-  event.preventDefault();
+      // Build cart items array
+      let cartItems = [];
 
-  if (!cartData.items.length) {
-    const selectedInput = document.querySelector('input[name="id"]:checked');
-    if (!selectedInput) return alert('Please select an option');
-
-    const variantId = selectedInput.value;
-
-    // Check if this variant has a selling plan (for subscription variants)
-    const sellingPlanSelect = document.getElementById('selling-id-' + variantId);
-    const sellingPlanId = sellingPlanSelect ? sellingPlanSelect.value : null;
-
-    // Check if the form has a "device" input (for subscriptions requiring device)
-    const deviceInput = document.querySelector('input[name="product"]');
-    const deviceId = deviceInput ? deviceInput.value : null;
-
-    // Build cart items array
-    let cartItems = [];
-
-    // Include deviceId only if exists and variant is not the one-time product
-    if (deviceId && variantId !== '51812622532882') {
-      cartItems.push({ id: deviceId, quantity: 1 });
-    }
-
-    // Add the selected variant (one-time or subscription)
-    let variantItem = { id: variantId, quantity: 1 };
-    if (sellingPlanId) variantItem.selling_plan = sellingPlanId;
-    cartItems.push(variantItem);
-
-    // Add items to cart
-    addThis(cartItems, function (result) {
-      if (result) {
-        load();
-        document.querySelector('nav').classList.add('open');
-        document.querySelector('#AddToCart').setAttribute('disabled', true);
-        document.querySelector('#AddToCart').innerText = 'You already have items in cart!';
-        {% comment %} window.location.href = '/cart'; {% endcomment %}
+      // Include deviceId only if exists and variant is not the one-time product
+      if (deviceId && variantId !== '51812622532882') {
+        cartItems.push({ id: deviceId, quantity: 1 });
       }
-    });
-  }
-});
 
-// Optional: clean up price text
-document.querySelectorAll('span.price1 span.metafield-single_line_text_field').forEach((el) => {
-  el.textContent = el.textContent.replace(/ly/g, '');
-});
+      // Add the selected variant (one-time or subscription)
+      let variantItem = { id: variantId, quantity: 1 };
+      if (sellingPlanId) variantItem.selling_plan = sellingPlanId;
+      cartItems.push(variantItem);
 
+      // Add items to cart
+      addThis(cartItems, function (result) {
+        if (result) {
+          load();
+          document.querySelector('nav').classList.add('open');
+          document.querySelector('#AddToCart').setAttribute('disabled', true);
+          document.querySelector('#AddToCart').innerText = 'You already have items in cart!';
+          {% comment %} window.location.href = '/cart'; {% endcomment %}
+        }
+      });
+    }
+  });
 
+  // Optional: clean up price text
+  document.querySelectorAll('span.price1 span.metafield-single_line_text_field').forEach((el) => {
+    el.textContent = el.textContent.replace(/ly/g, '');
+  });
 </script>
 <script>
   document.querySelectorAll('span.price1 span.metafield-single_line_text_field').forEach((el) => {
