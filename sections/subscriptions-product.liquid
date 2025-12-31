@@ -1,4 +1,4 @@
-{% assign product = all_products[section.settings.sp_product] %}
+{% comment %} {% assign product = all_products[section.settings.sp_product] %} {% endcomment %}
 {% assign one_time_product = all_products['twelve-scent-belt'] %}
 {% assign one_time_variant_id = 51812622532882 %}
 <section class="products-sec">
@@ -98,7 +98,7 @@
                     </label>
                   </div>
 
-                  {% for variant in product.variants %}
+                  {% comment %} {% for variant in product.variants %}
                     {% if variant.selling_plan_allocations[0] %}
                       <div class="option" form="AddToCartForm">
                         {% for selling_plan in variant.selling_plan_allocations %}
@@ -152,7 +152,7 @@
                     {% else %}
                       <input type="hidden" id="product" name="product" value="{{ variant.id }}">
                     {% endif %}
-                  {% endfor %}
+                  {% endfor %} {% endcomment %}
                 </div>
               {% endif %}
               <div
@@ -204,11 +204,7 @@
     "groups": ["header", "footer"]
   },
   "settings": [
-    {
-      "type": "product",
-      "id": "sp_product",
-      "label": "Select Product"
-    },
+  
     {
       "type": "text",
       "id": "sp_price",
