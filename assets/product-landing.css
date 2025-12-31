@@ -2122,3 +2122,13 @@ button#cart-btn {
     top: 13px;
     background-size: contain;
 }
+.pt_box:after {
+    position: absolute;
+    content: "";
+    background-image: url(/cdn/shop/files/left-arw.png?v=1766467392);
+    width: 66px;
+    height: 18px;
+    left: 20px;
+    top: 13px;
+    background-size: contain;
+}
