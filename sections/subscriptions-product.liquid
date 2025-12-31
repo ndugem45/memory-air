@@ -57,13 +57,13 @@
               <p>{{ section.settings.sp_stocktext }}</p>
             </div>
           {% endif %}
-          <div class="radio-content">
+          <div class="radio-content" id="prod_box">
             <p>Options :</p>
             <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
               {% comment %} {% if product.variants != blank %} {% endcomment %}
                 <div class="flex justify-between">
                   <!-- One-Time Purchase Option -->
-                  <div class="option" form="AddToCartForm" id="prod_box">
+                  <div class="option" form="AddToCartForm" >
                     <label class="image-checkbox" for="{{ one_time_variant_id }}" >
                       <input type="radio" name="id" id="{{ one_time_variant_id }}" value="{{ one_time_variant_id }}">
 
