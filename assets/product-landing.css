@@ -1809,7 +1809,8 @@ span.price1 p {
   padding-top: 10px;
 }
 label.image-checkbox {
-  width: 32%;
+  width: 100%;
+      cursor: pointer;
 }
 
 
