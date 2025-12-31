@@ -60,7 +60,7 @@
           <div class="radio-content">
             <p>Options :</p>
             <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
-              {% if product.variants != blank %}
+              {% comment %} {% if product.variants != blank %} {% endcomment %}
                 <div class="flex justify-between">
                   <!-- One-Time Purchase Option -->
                   <div class="option" form="AddToCartForm">
@@ -154,7 +154,7 @@
                     {% endif %}
                   {% endfor %} {% endcomment %}
                 </div>
-              {% endif %}
+              {% comment %} {% endif %} {% endcomment %}
               <div
                 style="display: none !important;"
                 class="sealsubs-target-element"
