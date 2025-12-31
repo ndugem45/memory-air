@@ -2118,8 +2118,8 @@ button#cart-btn {
     background-image: url(/cdn/shop/files/right-arw.png?v=1766467415);
     width: 66px;
     height: 18px;
-    right: 20px;
-    top: 13px;
+    right: 70px;
+    top: 10px;
     background-size: contain;
 }
 .pt_box:after {
@@ -2128,8 +2128,8 @@ button#cart-btn {
     background-image: url(/cdn/shop/files/left-arw.png?v=1766467392);
     width: 66px;
     height: 18px;
-    left: 20px;
-    top: 13px;
+    left: 70px;
+    top: 10px;
     background-size: contain;
 }
 shopify-payment-terms {
