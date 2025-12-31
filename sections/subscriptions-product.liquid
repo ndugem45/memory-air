@@ -2,7 +2,7 @@
 {% assign one_time_product = all_products['twelve-scent-belt'] %}
 {% assign one_time_variant_id = 51812622532882 %}
 <section class="products-sec">
-  <div class="container" id="prod_box">
+  <div class="container" >
     <div class="product-flex">
       <div class="produt-width">
         <div class="swiper mySwiper2">
@@ -67,7 +67,7 @@
                     <label class="image-checkbox" for="{{ one_time_variant_id }}">
                       <input type="radio" name="id" id="{{ one_time_variant_id }}" value="{{ one_time_variant_id }}">
 
-                      <div class="total-data">
+                      <div class="total-data" id="prod_box">
                         <div class="uper-flex">
                           <span class="lala">
                             <img src="{{ 'flame.png' | asset_url }}" alt="#" width="" height="">
