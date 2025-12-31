@@ -47,7 +47,7 @@
         <div class="inner-product-width">
           <div class="inner-prodd">
             <h2>{{ product.title }}</h2>
-            <span class="price-main">{%if section.settings.sp_price != blank %}{{section.settings.sp_price}}{%else%}{{ product.price | money }}{% endif %}</span>
+            <span class="price-main">{%if section.settings.sp_price != blank %}{{section.settings.sp_price}}{% endif %}</span>
             {% if section.settings.sp_text != blank %}
               {{ section.settings.sp_text }}
             {% endif %}
