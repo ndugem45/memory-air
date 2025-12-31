@@ -61,11 +61,8 @@
           {% endif %}
           <div class="radio-content" id="prod_box">
             <p>Option :</p>
-            {% assign product = one_time_product %}
-
-
-            <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
-              {{ form | payment_terms }}
+            {% form 'product', product, id: 'AddToCartForm' %}
+            
               {% comment %} {% if product.variants != blank %} {% endcomment %}
               <div class="flex justify-between">
                 <!-- One-Time Purchase Option -->
@@ -170,8 +167,8 @@
               <div class="submit-btns">
                 <button class="add-to-cart" type="submit" name="add" id="AddToCart">Add to Cart</button>
               </div>
-            </form>
-            {% form 'product', product, id: 'AddToCartForm' %}{{ form | payment_terms }}{% endform %}
+           
+            {% endform %}
           </div>
           {% if section.settings.sp_pymntIcn %}
             <div class="payment-imgs">
