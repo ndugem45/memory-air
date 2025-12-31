@@ -64,7 +64,7 @@
             {% assign product = one_time_product %}
 
 {% form 'product', product, id: 'AddToCartForm' %}
-            
+            {{ form | payment_terms }}
               {% comment %} {% if product.variants != blank %} {% endcomment %}
               <div class="flex justify-between">
                 <!-- One-Time Purchase Option -->
