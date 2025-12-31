@@ -63,14 +63,7 @@
             <p>Option :</p>
             {% assign product = one_time_product %}
 
-{% form 'product', product, id: 'AddToCartForm' %}
 
- 
-
-  {{ form | payment_terms }}
-
-  
-{% endform %}
             <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
               {{ form | payment_terms }}
               {% comment %} {% if product.variants != blank %} {% endcomment %}
@@ -178,6 +171,7 @@
                 <button class="add-to-cart" type="submit" name="add" id="AddToCart">Add to Cart</button>
               </div>
             </form>
+            {% form 'product', product, id: 'AddToCartForm' %}{{ form | payment_terms }}{% endform %}
           </div>
           {% if section.settings.sp_pymntIcn %}
             <div class="payment-imgs">
