@@ -235,7 +235,10 @@ label.image-checkbox {
   width: 49%;
   margin-bottom: 20px;
 }
-.rich-texxt p::before,.rich-texxt p::after{
+.rich-texxt p::before,
+.rich-texxt p::after,
+.pt_box:after,
+.pt_box:before{
     display: none;
 }
 .products-sec .mySwiper2 {
@@ -571,7 +574,10 @@ section.banner-section {
 label.image-checkbox {
   width: 100%;
 }
-.rich-texxt p::before,.rich-texxt p::after{
+.rich-texxt p::before,
+.rich-texxt p::after,
+.pt_box:after,
+.pt_box:before{
     display: none;
 }
 .products-sec .mySwiper2 {
