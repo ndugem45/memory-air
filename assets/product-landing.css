@@ -1990,7 +1990,7 @@ span.price-main {
     object-fit: contain;
 }
 .flex.justify-between .option {  
-  width: 32%;
+  width: 100%;
 }
 section.marquees-sl {
   position: relative;   top: -7px;
