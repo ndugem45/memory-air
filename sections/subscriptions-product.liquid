@@ -64,7 +64,7 @@
             {% assign product = one_time_product %}
 
 {% form 'product', product, id: 'AddToCartForm' %}
-            {{ form | payment_terms }}
+          
               {% comment %} {% if product.variants != blank %} {% endcomment %}
               <div class="flex justify-between">
                 <!-- One-Time Purchase Option -->
@@ -166,6 +166,7 @@
                 data-product="{{ product | json | escape }}"
                 data-handle="{{ product.handle }}"
               ></div>
+                {{ form | payment_terms }}
               <div class="submit-btns">
                 <button class="add-to-cart" type="submit" name="add" id="AddToCart">Add to Cart</button>
               </div>
