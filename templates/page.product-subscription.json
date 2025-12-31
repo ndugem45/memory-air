@@ -161,8 +161,9 @@
       ],
       "name": "Subscriptions Product",
       "settings": {
-        "sp_product": "memory-air-device",
+        "sp_price": "",
         "sp_text": "<p>The Biggest Improvement Ever Discovered for Human Memory.</p><p>Developed by Dr. Michael Leon, ranked top 1% of the scientists in the world</p><ul><li>Greatly Improves Memory While You Sleep</li><li>Strengthens long term brain health</li><li>Effortless nightly routine</li><li>Endorsed by professors, doctors, nurses and people like you</li><li>60 night risk free trial</li></ul>",
+        "sp_opttext": "<ul><li>Shipped on a monthly Basis</li><li>No commitment, No Subscription</li><li>1 device and 12 refills</li><li>Only $99 per month with 12 payments</li><li>0% interest</li><li><strong>Free Shipping</strong></li></ul>",
         "sp_stocktext": "Limited Stock Available - Sells Out Often",
         "sp_pymntIcn": true,
         "asn_title": "As seen in"
