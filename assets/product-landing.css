@@ -2138,3 +2138,7 @@ shopify-payment-terms {
     line-height: 160%;
     text-align: center;
 }
+
+span.italic {
+    font-size: 40px;
+}
