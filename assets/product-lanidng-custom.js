@@ -52,48 +52,54 @@ jQuery(document).ready(function ($) {
 
 });
 
-document.querySelectorAll('.video-card').forEach(card => {
-  const video = card.querySelector('video');
-  const playBtn = card.querySelector('.play-btn');
-  const pauseBtn = card.querySelector('.pause-btn');
-  const volumeIcon = card.querySelector('.volume-btn img');
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.video-card').forEach(card => {
+    const video = card.querySelector('video');
+    const playBtn = card.querySelector('.play-btn');
+    const pauseBtn = card.querySelector('.pause-btn');
+    const volumeIcon = card.querySelector('.volume-btn img');
 
-  video.muted = true;
+    if (!video) return; // safety check
 
-  function stopAll() {
-    document.querySelectorAll('.video-card').forEach(c => {
-      c.classList.remove('playing');
-      c.classList.add('paused');
-      c.querySelector('video').pause();
+    video.muted = true;
+
+    function stopAll() {
+      document.querySelectorAll('.video-card').forEach(c => {
+        const v = c.querySelector('video');
+        if (v) v.pause();
+        c.classList.remove('playing');
+        c.classList.add('paused');
+      });
+    }
+
+    playBtn.addEventListener('click', () => {
+      stopAll();
+      video.play();
+      card.classList.add('playing');
+      card.classList.remove('paused');
     });
-  }
 
-  playBtn.addEventListener('click', () => {
-    stopAll();
-    video.play();
-    card.classList.add('playing');
-    card.classList.remove('paused');
-  });
+    pauseBtn.addEventListener('click', () => {
+      video.pause();
+      card.classList.remove('playing');
+      card.classList.add('paused');
+    });
 
-  pauseBtn.addEventListener('click', () => {
-    video.pause();
-    card.classList.remove('playing');
-    card.classList.add('paused');
-  });
+    volumeIcon.addEventListener('click', (e) => {
+      e.stopPropagation();
+      video.muted = !video.muted;
+      volumeIcon.src = video.muted
+        ? 'https://cdn.shopify.com/s/files/1/0745/3658/3442/files/volume-off.png'
+        : 'https://cdn.shopify.com/s/files/1/0745/3658/3442/files/volume-on.png';
+    });
 
-  volumeIcon.addEventListener('click', (e) => {
-    e.stopPropagation();
-    video.muted = !video.muted;
-    volumeIcon.src = video.muted
-      ? 'https://cdn.shopify.com/s/files/1/0745/3658/3442/files/volume-off.png'
-      : 'https://cdn.shopify.com/s/files/1/0745/3658/3442/files/volume-on.png';
-  });
-
-  video.addEventListener('ended', () => {
-    card.classList.remove('playing');
-    card.classList.add('paused');
+    video.addEventListener('ended', () => {
+      card.classList.remove('playing');
+      card.classList.add('paused');
+    });
   });
 });
+
 
 
 
