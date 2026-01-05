@@ -13,7 +13,9 @@
         {% if block.type == 'wpt_video_card' %}
           <div class="video-card" {{ block.shopify_attributes }}>
             {% if block.settings.wpt_video != blank %}
-              {{ block.settings.wpt_video | video_tag }}
+              {{ block.settings.wpt_video | video_tag:
+               poster: block.settings.wpt_video.preview_image | image_url
+              }}
             {% endif %}
 
             <!-- Play / Pause -->
