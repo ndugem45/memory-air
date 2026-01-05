@@ -12,30 +12,27 @@
       {% for block in section.blocks %}
         {% if block.type == 'wpt_video_card' %}
           <div class="video-card" {{ block.shopify_attributes }}>
-
             {% if block.settings.wpt_video != blank %}
-              {{ block.settings.wpt_video | video_tag:
-                poster: block.settings.wpt_video.preview_image | image_url
-              }}
+              {{ block.settings.wpt_video | video_tag }}
             {% endif %}
 
+            <!-- Play / Pause -->
             <div class="video-overlay control-btn play-btn">
-              <img src="{{ 'play.png' | asset_url }}" alt="Play">
+              <img src="{{ 'play.png' | asset_url }}" alt="Play" height="" width="">
             </div>
 
             <div class="video-overlay control-btn pause-btn">
-              <img src="{{ 'pause.png' | asset_url }}" alt="Pause">
+              <img src="{{ 'pause.png' | asset_url }}" alt="Pause" height="" width="">
             </div>
 
+            <!-- Volume -->
             <div class="volume-btn">
-              <img src="{{ 'volume-off.png' | asset_url }}" alt="Volume">
+              <img src="{{ 'volume-off.png' | asset_url }}" alt="Volume" height="" width="">
             </div>
-
           </div>
         {% endif %}
       {% endfor %}
     </div>
-
   </div>
 </section>
 
