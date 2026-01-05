@@ -9,9 +9,9 @@
     {% endif %}
 
     <div class="video-grid">
-        {% for block in section.blocks %}
-          {% if block.type == 'wpt_video_card' %}
-            <div class="video-card" {{ block.shopify_attributes }}>
+      {% for block in section.blocks %}
+        {% if block.type == 'wpt_video_card' %}
+          <div class="video-card" {{ block.shopify_attributes }}>
 
             {% if block.settings.wpt_video != blank %}
               {{ block.settings.wpt_video | video_tag:
@@ -35,7 +35,6 @@
         {% endif %}
       {% endfor %}
     </div>
-
 
   </div>
 </section>
