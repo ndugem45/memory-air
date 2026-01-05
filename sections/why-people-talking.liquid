@@ -8,31 +8,39 @@
       </div>
     {% endif %}
 
-    <div class="video-grid">
-      {% for block in section.blocks %}
-        {% if block.type == 'wpt_video_card' %}
-          <div class="video-card" {{ block.shopify_attributes }}>
-            {% if block.settings.wpt_video != blank %}
-              {{ block.settings.wpt_video | video_tag }}
-            {% endif %}
+   <div class="video-grid">
+  {% for block in section.blocks %}
+    {% if block.type == 'wpt_video_card' %}
+      <div class="video-card" {{ block.shopify_attributes }}>
 
-            <!-- Play / Pause -->
-            <div class="video-overlay control-btn play-btn">
-              <img src="{{ 'play.png' | asset_url }}" alt="Play" height="" width="">
-            </div>
-
-            <div class="video-overlay control-btn pause-btn">
-              <img src="{{ 'pause.png' | asset_url }}" alt="Pause" height="" width="">
-            </div>
-
-            <!-- Volume -->
-            <div class="volume-btn">
-              <img src="{{ 'volume-off.png' | asset_url }}" alt="Volume" height="" width="">
-            </div>
-          </div>
+        {% if block.settings.wpt_video != blank %}
+          {% assign poster_img = block.settings.wpt_video.preview_image | image_url %}
+          {{ block.settings.wpt_video | video_tag:
+            poster: poster_img,
+            preload: 'metadata',
+            playsinline: true
+          }}
         {% endif %}
-      {% endfor %}
-    </div>
+
+        <!-- Play / Pause -->
+        <div class="video-overlay control-btn play-btn">
+          <img src="{{ 'play.png' | asset_url }}" alt="Play">
+        </div>
+
+        <div class="video-overlay control-btn pause-btn">
+          <img src="{{ 'pause.png' | asset_url }}" alt="Pause">
+        </div>
+
+        <!-- Volume -->
+        <div class="volume-btn">
+          <img src="{{ 'volume-off.png' | asset_url }}" alt="Volume">
+        </div>
+
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
   </div>
 </section>
 
