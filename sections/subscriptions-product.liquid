@@ -88,7 +88,7 @@
 
                       <div class="price-flx">
                         <span class="price1">
-                          <span class="metafield-single_line_text_field">{{ one_time_product.price | money }}</span>
+                          <span class="metafield-single_line_text_field">{%if section.settings.sp_price != blank%}{{section.settings.sp_price}}{%else%}{{ one_time_product.price | money }}{% endif %}</span>
                           <p><span class="metafield-single_line_text_field">One Time</span></p>
                         </span>
                       </div>
