@@ -237,7 +237,7 @@
           "type": "left_item",
           "settings": {
             "hmw_icon": "shopify://shop_images/Lightning.svg",
-            "hmw_text": "Over time, this improves memory, sleep, and mental sharpness",
+            "hmw_text": "Over time, this improves memory, sleep, and mental sharpness.",
             "hmw_arrow": "shopify://shop_images/arrow2.png"
           }
         },
