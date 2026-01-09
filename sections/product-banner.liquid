@@ -34,6 +34,9 @@
             {% endfor %}
         </ul>
       </div>
+      {% if section.settings.pbmbt_desc != blank %}
+        {{ section.settings.pbmbt_desc }}
+      {% endif %}
     </div>
     {% if section.settings.pbm_bannerimg != blank %}
     <div class="banner-width1">
@@ -97,6 +100,11 @@
                 "id": "pbm_btn_twoLink",
                 "label": "Button Two Link"
             },
+            {
+                "type": "richtext",
+                "id":"pbmbt_desc",
+                "label": "Bottom Description"
+            }
         ],
         "blocks": [
             {
