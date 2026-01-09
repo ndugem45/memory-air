@@ -2149,3 +2149,8 @@ span.italic {
 .why-content p:first-child::after{
   display:none;
 }
+.lean_btmdesc p {
+    font-size: 14px;
+    line-height: 140%;
+    margin-top: 30px;
+}
