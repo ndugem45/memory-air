@@ -50,7 +50,7 @@
             <span class="price-main">
               {%- if section.settings.sp_price != blank %}{{ section.settings.sp_price }}{% endif -%} 
             </span>
-            per month
+            {{section.settings.sp_pmtxt }}
             {% if section.settings.sp_text != blank %}
               {{ section.settings.sp_text }}
             {% endif %}
@@ -90,7 +90,7 @@
                         <span class="price1">
                            <p><span>Only </span></p>
                           <span class="metafield-single_line_text_field">{%if section.settings.sp_price != blank%}{{section.settings.sp_price}}{%else%}{{ one_time_product.price | money }}{% endif %}</span>
-                          <p><span class="metafield-single_line_text_field">per month</span></p>
+                          <p><span class="metafield-single_line_text_field">{{ section.settings.sp_pmtxt }}</span></p>
                         </span>
                       </div>
                       {% if section.settings.sp_opttext != blank %}
@@ -216,6 +216,12 @@
       "type": "text",
       "id": "sp_price",
       "label": "Custom Price"
+    },
+     {
+      "type": "text",
+      "id": "sp_pmtxt",
+      "label": "Purchase plan",
+      "default":"per month"
     },
     {
       "type": "richtext",
