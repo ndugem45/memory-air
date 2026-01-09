@@ -444,7 +444,7 @@
         "row_krpCW6": {
           "type": "row",
           "settings": {
-            "hdmac_feature": "Major Memory Improvement",
+            "hdmac_feature": "Major Memory Improvement*",
             "hdmac_col1_icon": "shopify://shop_images/Frame_1a28d8f3-9c48-4702-8a78-55569339c7b8.svg",
             "hdmac_col2_icon": "shopify://shop_images/cross-red.svg",
             "hdmac_col3_icon": "shopify://shop_images/cross-red.svg",
@@ -464,7 +464,7 @@
         "row_8jKV3K": {
           "type": "row",
           "settings": {
-            "hdmac_feature": "Neuroscientist-Designed",
+            "hdmac_feature": "Designed by Top 1% Scientist",
             "hdmac_col1_icon": "shopify://shop_images/Frame_1a28d8f3-9c48-4702-8a78-55569339c7b8.svg",
             "hdmac_col2_icon": "shopify://shop_images/cross-red.svg",
             "hdmac_col3_icon": "shopify://shop_images/Frame_1a28d8f3-9c48-4702-8a78-55569339c7b8.svg",
@@ -490,6 +490,26 @@
             "hdmac_col3_icon": "shopify://shop_images/cross-red.svg",
             "hdmac_col4_icon": "shopify://shop_images/cross-red.svg"
           }
+        },
+        "row_WixLMG": {
+          "type": "row",
+          "settings": {
+            "hdmac_feature": "Feel Younger",
+            "hdmac_col1_icon": "shopify://shop_images/Frame_1a28d8f3-9c48-4702-8a78-55569339c7b8.svg",
+            "hdmac_col2_icon": "shopify://shop_images/cross-red.svg",
+            "hdmac_col3_icon": "shopify://shop_images/cross-red.svg",
+            "hdmac_col4_icon": "shopify://shop_images/cross-red.svg"
+          }
+        },
+        "row_rxGk3P": {
+          "type": "row",
+          "settings": {
+            "hdmac_feature": "TIME Magazine Best Inventions",
+            "hdmac_col1_icon": "shopify://shop_images/Frame_1a28d8f3-9c48-4702-8a78-55569339c7b8.svg",
+            "hdmac_col2_icon": "shopify://shop_images/cross-red.svg",
+            "hdmac_col3_icon": "shopify://shop_images/cross-red.svg",
+            "hdmac_col4_icon": "shopify://shop_images/cross-red.svg"
+          }
         }
       },
       "block_order": [
@@ -497,7 +517,9 @@
         "row_EpDYgd",
         "row_8jKV3K",
         "row_4XznYh",
-        "row_w4mN4t"
+        "row_w4mN4t",
+        "row_WixLMG",
+        "row_rxGk3P"
       ],
       "name": "Memory Air Compare Table",
       "settings": {
