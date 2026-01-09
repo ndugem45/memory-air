@@ -2145,6 +2145,7 @@ span.italic {
 .works-width h2 {
     font-size: 36px;
 }
+.why-content p:first-child::before,
 .why-content p:first-child::after{
   display:none;
 }
