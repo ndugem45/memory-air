@@ -46,7 +46,9 @@
       <div class="produt-width1">
         <div class="inner-product-width">
           <div class="inner-prodd">
-            <h2>Memory Air™</h2>
+            {% if section.settings.sp_matm != blank %}
+            <h2>{{section.settings.sp_matm }}</h2>
+            {% endif %}
             <span class="price-main">
               {%- if section.settings.sp_price != blank %}{{ section.settings.sp_price }}{% endif -%} 
             </span>
@@ -212,6 +214,12 @@
     "groups": ["header", "footer"]
   },
   "settings": [
+     {
+      "type": "text",
+      "id": "sp_matm",
+      "label": "Product Title",
+      "default":"Memory Air™"
+    },
     {
       "type": "text",
       "id": "sp_price",
@@ -237,7 +245,7 @@
     {
       "type": "html",
       "id": "sp_bnyp",
-      "label": "Product Title",
+      "label": "Buy Now Text",
       "default":"Buy Now,<br> Pay Later"
     },
     {
