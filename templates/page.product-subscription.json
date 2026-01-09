@@ -684,7 +684,7 @@
           "type": "feature",
           "settings": {
             "imfa_icon": "shopify://shop_images/Frame_1.svg",
-            "imfa_text": "Feel Younger"
+            "imfa_text": "Feel 4-6 Years Younger"
           }
         },
         "feature_A7cNjR": {
@@ -703,7 +703,7 @@
       "name": "Improve Memory",
       "settings": {
         "imfa_background_image": "shopify://shop_images/improve-back.png",
-        "imfa_heading": "Improve Memory, Mood and Focus - With Memory Air.",
+        "imfa_heading": "Improve Memory, Mood and Focus - With Memory Air™",
         "imfa_description": "Strengthen your memory networks and protect your brain health performance with an easy, sleep-based nightly routine.",
         "imfa_button_text": "Buy Now",
         "imfa_button_link": "#prod_box"
