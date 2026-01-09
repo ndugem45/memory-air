@@ -79,12 +79,13 @@
                           <img src="{{ 'flame.png' | asset_url }}" alt="#" width="" height="">
                         </span>
                       </div>
-
+                      {% if section.settings.sp_bnyp != blank %}
                       <span class="title1">
                         <span class="metafield-single_line_text_field"
                           >{{ section.settings.sp_bnyp }}</span
                         >
                       </span>
+                    {% endif %}
 
                       <div class="price-flx">
                         <span class="price1">
