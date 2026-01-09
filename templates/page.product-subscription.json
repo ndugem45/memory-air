@@ -344,7 +344,7 @@
           "type": "wocs_testimonial",
           "settings": {
             "wocs_image": "shopify://shop_images/our1.png",
-            "wocs_quote": "“As a clinical nurse coordinator of pharmaceutical studies of Alzheimer’s drugs, I believe Memory Air will have a transformative impact on your memory loss. This simple and safe solution available without a prescription promises to surpass any results I witnessed as a sub-nvestigator of FDA studies.”",
+            "wocs_quote": "“As a clinical nurse coordinator of pharmaceutical studies of Alzheimer’s drugs, I believe Memory Air™ will have a transformative impact on your memory loss. This simple and safe solution available without a prescription promises to surpass any results I witnessed as a sub-nvestigator of FDA studies.”",
             "wocs_author": "Nancy W."
           }
         },
@@ -352,16 +352,16 @@
           "type": "wocs_testimonial",
           "settings": {
             "wocs_image": "shopify://shop_images/our2.png",
-            "wocs_quote": "BLISSFUL...we are sleeping very well with no sleep aids, gummies, or gimmicks!  Thank YOU!",
+            "wocs_quote": "\"I improved my memory test score by over 100% in spite of 12 years of Parkinson's Disease.\"\n<br><br>\n\"BLISSFUL...we are sleeping well with no sleep aids, gummies, or gimmicks!\" Thank YOU!\"",
             "wocs_author": "Jim (12 years with Parkinson's)  & Colette Scott"
           }
         },
         "wocs_testimonial_xkRUHf": {
           "type": "wocs_testimonial",
           "settings": {
-            "wocs_image": "shopify://shop_images/our3.png",
-            "wocs_quote": "I’ve been using the Memory Air device for a month and have been sleeping better. My wife says I wake up in a better mood. I love that there are no side effects, and all I need to do is sleep for therapy. It’s an excellent device, and I’m excited to see the benefits over time.",
-            "wocs_author": "Ricky R."
+            "wocs_image": "shopify://shop_images/expert4.webp",
+            "wocs_quote": "“Since 1990 I’ve been involved in clinical research for those living with Alzheimer’s disease. Since then, we discovered that the loss of one’s sense of smell occurs in diseases such as Alzheimer’s and Parkinson’s disease. However, up until now, there was no treatment. It’s very exciting that there is now evidence that through stimulating one’s sense of smell, one’s memory and thinking can be substantially improved.”",
+            "wocs_author": "Kim B."
           }
         }
       },
