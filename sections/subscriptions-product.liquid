@@ -357,7 +357,7 @@
     });
   </script>
 {% endcomment %}
-{% comment %} <script>
+<script>
    $(document).ready(function () {
     // Disable Add to Cart if items already in cart
     let countP = document.querySelectorAll('.cart-menu .item-wrap .item');
@@ -420,60 +420,9 @@
   document.querySelectorAll('span.price1 span.metafield-single_line_text_field').forEach((el) => {
     el.textContent = el.textContent.replace(/ly/g, '');
   });
-</script> {% endcomment %}
+</script>
 <script>
   document.querySelectorAll('span.price1 span.metafield-single_line_text_field').forEach((el) => {
     el.textContent = el.textContent.replace(/ly/g, '');
   });
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-
-  const VARIANT_ID = 51812622532882;
-  const addToCartBtn = document.getElementById('AddToCart');
-  const form = document.getElementById('AddToCartForm');
-
-  // Always checked
-  const radio = document.getElementById(VARIANT_ID);
-  if (radio) radio.checked = true;
-
-  function isVariantInCart(cart) {
-    return cart.items.some(item => item.variant_id === VARIANT_ID);
-  }
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    fetch('/cart.js')
-      .then(res => res.json())
-      .then(cart => {
-
-        if (isVariantInCart(cart)) {
-          addToCartBtn.disabled = true;
-          addToCartBtn.innerText = 'Already in Cart';
-          return;
-        }
-
-        fetch('/cart/add.js', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            id: VARIANT_ID,
-            quantity: 1
-          })
-        })
-        .then(res => res.json())
-        .then(() => {
-
-          addToCartBtn.disabled = true;
-          addToCartBtn.innerText = 'Added to Cart';
-
-          /* ✅ CART DRAWER OPEN */
-          document.dispatchEvent(new CustomEvent('cart:refresh'));
-          document.dispatchEvent(new CustomEvent('cart:open'));
-
-        });
-      });
-  });
-});
 </script>
