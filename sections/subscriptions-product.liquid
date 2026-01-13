@@ -357,7 +357,7 @@
     });
   </script>
 {% endcomment %}
-<script>
+{% comment %} <script>
    $(document).ready(function () {
     // Disable Add to Cart if items already in cart
     let countP = document.querySelectorAll('.cart-menu .item-wrap .item');
@@ -420,9 +420,60 @@
   document.querySelectorAll('span.price1 span.metafield-single_line_text_field').forEach((el) => {
     el.textContent = el.textContent.replace(/ly/g, '');
   });
-</script>
+</script> {% endcomment %}
 <script>
   document.querySelectorAll('span.price1 span.metafield-single_line_text_field').forEach((el) => {
     el.textContent = el.textContent.replace(/ly/g, '');
   });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  const VARIANT_ID = 51812622532882;
+  const addToCartBtn = document.getElementById('AddToCart');
+  const form = document.getElementById('AddToCartForm');
+
+  // 🔹 Radio always selected (safety)
+  const radio = document.getElementById(VARIANT_ID);
+  if (radio) radio.checked = true;
+
+  // 🔹 Check if variant already exists in cart
+  function isVariantInCart(cart) {
+    return cart.items.some(item => item.variant_id === VARIANT_ID);
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    fetch('/cart.js')
+      .then(res => res.json())
+      .then(cart => {
+
+        // ❌ Agar variant pehle se cart me ho
+        if (isVariantInCart(cart)) {
+          addToCartBtn.disabled = true;
+          addToCartBtn.innerText = 'Already in Cart';
+          return;
+        }
+
+        // ✅ Sirf ye variant add karo
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            id: VARIANT_ID,
+            quantity: 1
+          })
+        })
+        .then(res => res.json())
+        .then(() => {
+          addToCartBtn.disabled = true;
+          addToCartBtn.innerText = 'Added to Cart';
+          window.location.href = '/cart';
+        });
+      });
+  });
+});
 </script>
