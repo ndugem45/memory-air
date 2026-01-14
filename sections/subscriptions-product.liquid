@@ -357,7 +357,7 @@
     });
   </script>
 {% endcomment %}
-<script>
+{% comment %} <script>
    $(document).ready(function () {
     // Disable Add to Cart if items already in cart
     let countP = document.querySelectorAll('.cart-menu .item-wrap .item');
@@ -420,7 +420,86 @@
   document.querySelectorAll('span.price1 span.metafield-single_line_text_field').forEach((el) => {
     el.textContent = el.textContent.replace(/ly/g, '');
   });
+</script> {% endcomment %}
+<script>
+$(document).ready(function () {
+  // Disable Add to Cart if items already in cart
+  let countP = document.querySelectorAll('.cart-menu .item-wrap .item');
+  if (countP.length > 0) {
+    document.querySelector('#AddToCart').setAttribute('disabled', true);
+    document.querySelector('#AddToCart').innerText = 'You already have items in cart!';
+  }
+
+  // Replace ® with <sup>®</sup>
+  const bodyElements = document.querySelectorAll('#AddToCartForm label div.option-content span.title');
+  bodyElements.forEach((element) => {
+    element.innerHTML = element.innerHTML.replace(/®/g, '<sup>®</sup>');
+  });
+});
+
+// Form submit
+document.getElementById('AddToCartForm').addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  if (!cartData.items.length) {
+    const selectedInput = document.querySelector('input[name="id"]:checked');
+    if (!selectedInput) return alert('Please select an option');
+
+    const variantId = selectedInput.value;
+
+    // Check if this variant has a selling plan (for subscription variants)
+    const sellingPlanSelect = document.getElementById('selling-id-' + variantId);
+    const sellingPlanId = sellingPlanSelect ? sellingPlanSelect.value : null;
+
+    // Check if the form has a "device" input (for subscriptions requiring device)
+    const deviceInput = document.querySelector('input[name="product"]');
+    const deviceId = deviceInput ? deviceInput.value : null;
+
+    // Build cart items array
+    let cartItems = [];
+
+    // Line item properties for shipment info
+    let shipmentProperties = {
+      "Shipment Info": "First shipment: 1 Memory Air Device + 1 Scent Belt. Next 11 shipments: 1 Scent Belt per month. Total: 12 monthly shipments"
+    };
+
+    // Include deviceId only if exists and variant is not the one-time product
+    if (deviceId && variantId !== '51812622532882') {
+      cartItems.push({
+        id: deviceId,
+        quantity: 1,
+        properties: {} // Device usually does not need extra properties
+      });
+    }
+
+    // Add the selected variant (one-time or subscription) with shipment info
+    let variantItem = {
+      id: variantId,
+      quantity: 1,
+      properties: shipmentProperties
+    };
+    if (sellingPlanId) variantItem.selling_plan = sellingPlanId;
+    cartItems.push(variantItem);
+
+    // Add items to cart
+    addThis(cartItems, function (result) {
+      if (result) {
+        load();
+        document.querySelector('nav').classList.add('open');
+        document.querySelector('#AddToCart').setAttribute('disabled', true);
+        document.querySelector('#AddToCart').innerText = 'You already have items in cart!';
+        // window.location.href = '/cart'; // optional redirect
+      }
+    });
+  }
+});
+
+// Optional: clean up price text
+document.querySelectorAll('span.price1 span.metafield-single_line_text_field').forEach((el) => {
+  el.textContent = el.textContent.replace(/ly/g, '');
+});
 </script>
+
 <script>
   document.querySelectorAll('span.price1 span.metafield-single_line_text_field').forEach((el) => {
     el.textContent = el.textContent.replace(/ly/g, '');
