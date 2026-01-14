@@ -395,13 +395,7 @@
 
       // Include deviceId only if exists and variant is not the one-time product
       if (deviceId && variantId !== '51812622532882') {
-        cartItems.push({ 
-          id: deviceId, 
-          quantity: 1,
-          properties: {
-            "Shipment Info": "First shipment: 1 Memory Air Device + 1 Scent Belt. Next 11 shipments: 1 Scent Belt per month. Total: 12 monthly shipments"
-          }
-         });
+        cartItems.push({ id: deviceId, quantity: 1 });
       }
        // Selected variant with properties
 
