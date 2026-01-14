@@ -74,7 +74,7 @@
                 <div class="option" form="AddToCartForm">
                   <label class="image-checkbox" for="{{ one_time_variant_id }}">
                     <input type="radio" name="id" id="{{ one_time_variant_id }}" value="{{ one_time_variant_id }}" checked>
-
+<input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                     <div class="total-data">
                       <div class="uper-flex">
                         <span class="lala">
