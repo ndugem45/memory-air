@@ -683,6 +683,14 @@
   }
 
   function tmplt(item) {
+     let propertiesHTML = '';
+  if (item.properties) {
+    for (let key in item.properties) {
+      if (item.properties[key] && item.properties[key] !== '') {
+        propertiesHTML += `<p class="item-property"><strong>${key}:</strong> ${item.properties[key]}</p>`;
+      }
+    }
+  }
     return `<div class="item">
         <button class="close" onclick="clearCart()">
           <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -697,6 +705,7 @@
           <span>
             ${item.newPrice}
           </span>
+          ${propertiesHTML}
         </div>
       </div>`
   }
