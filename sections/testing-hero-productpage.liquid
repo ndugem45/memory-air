@@ -352,128 +352,132 @@
 
 {% endstyle %}
 
-	<div class="container container-contactus">
-		<div class="productpage_title">
-			<h1 class="m-btm m-54">
-				<span>Buy </span>
-				{{ product.title }}
-			</h1>
-		</div>
-		<div class="productpage_content">
-			<div class="productpage_content-image">
-                <img src="{{ featured_image.src | img_url: 'original' }}" alt="{{ featured_image.alt | escape }}" class="img-open illus">
-                {% if product.images.length > 1 %}
-                    <div class="image-wrapper">
-                        {% for image in product.images %}
-                            <div>
-                                <img src="{{ image.src | img_url: 'compact' }}" alt="{{ image.alt | escape }}" class="illus">
+<div class="container container-contactus">
+    <div class="productpage_title">
+        <h1 class="m-btm m-54">
+            <span>Buy </span>
+            {{ product.title }}
+        </h1>
+    </div>
+    <div class="productpage_content">
+        <div class="productpage_content-image">
+            <img src="{{ featured_image.src | img_url: 'original' }}" alt="{{ featured_image.alt | escape }}" class="img-open illus">
+            {% if product.images.length > 1 %}
+                <div class="image-wrapper">
+                    {% for image in product.images %}
+                        <div>
+                            <img src="{{ image.src | img_url: 'compact' }}" alt="{{ image.alt | escape }}" class="illus">
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="product-card">
+            <h2>{{ product.title }}</h2>
+
+            <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
+
+                {% if product.variants != blank %}
+                    <div class="radio-group">
+                        {% for variant in product.variants %}
+                            <div class="option" form="AddToCartForm">
+                                {% for selling_plan in variant.selling_plan_allocations %}
+                                    <input type="hidden" id="selling-id-{{ variant.id }}" value="{{ selling_plan.selling_plan.id }}" />
+                                {% endfor %}
+
+                                <input type="radio" name="id" id="variant-{{ variant.id }}" value="{{ variant.id }}">
+                                <label for="variant-{{ variant.id }}">
+                                    <div class="custom-checkbox"></div>
+                                    <div class="option-content">
+                                        <span class="title">{{ variant.title }}</span>
+                                        {% if variant.metafields.custom.variant_description %}
+                                            {{ variant.metafields.custom.variant_description | metafield_tag }}
+                                        {% endif %}
+                                        <span class="price">{{ variant.metafields.custom.price_text }}</span>
+                                    </div>
+                                </label>
                             </div>
                         {% endfor %}
                     </div>
                 {% endif %}
-			</div>
 
-            <div class="product-card">
-                <h2>{{ product.title }}</h2>
+                <!-- Always include hidden input for single product fallback -->
+                <input type="hidden" id="product" name="product" value="{{ product.variants.first.id }}">
 
-                <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
+                <div style="display: none !important;" class="sealsubs-target-element" data-product="{{ product | json | escape }}" data-handle="{{ product.handle }}"></div>
 
-                    {% if product.variants != blank%}
-                        <div class="radio-group">
-                            {% for variant in product.variants %}
-                                {% if variant.selling_plan_allocations[0] %}
-                                    <div class="option" form="AddToCartForm">
-                                        {% for selling_plan in variant.selling_plan_allocations %}
-                                            <input type="hidden" id="selling-id-{{  variant.id }}" value="{{ selling_plan.selling_plan.id }}" />
-                                        {% endfor %}
+                <button class="add-to-cart" type="submit" name="add" id="AddToCart">Add to cart</button>
+            </form>
 
-                                        <input type="radio" name="id" id="{{  variant.id }}" value="{{  variant.id }}">
-
-                                        <label for="{{ variant.id }}">
-                                            <div class="custom-checkbox"></div>
-                                            <div class="option-content">
-                                                <span class="title">{{ variant.title }}</span>
-                                                
-                                                {% if variant.metafields.custom.variant_description %}
-                                                    {{ variant.metafields.custom.variant_description | metafield_tag }}
-                                                {% endif %}
-                                            
-                                                <span class="price">{{ variant.metafields.custom.price_text }}</span>
-                                            </div>
-                                        </label>
-                                    </div>
-                                {% else %}
-                                    <input type="hidden" id="product" name="product" value="{{  variant.id }}">
-                                 {% endif %}
-                            {% endfor %}
-                        </div>
-                    {% endif %}
-
-                    <div style="display: none !important;" class="sealsubs-target-element" data-product="{{ product | json | escape }}" data-handle="{{ product.handle }}"></div>
-
-                    <button class="add-to-cart" type="submit" name="add" id="AddToCart">Add to cart</button>
-                </form>
-            
-                <p class="info-text">
+            <p class="info-text">
                 Sells Out Fast<br>
                 Limited Stock Available
-                </p>
-            </div>
-            
-
-		</div>
-	</div>
+            </p>
+        </div>
+    </div>
+</div>
 
 <script>
-  
-    $(document).ready(function(){
-      let countP = document.querySelectorAll('.cart-menu .item-wrap .item')
-        
-      if(countP.length > 0){
-          document.querySelector('#AddToCart').setAttribute('disabled', true);
-          document.querySelector('#AddToCart').innerText = "You already have items in cart!";
-      }
-      
-      const bodyElements = document.querySelectorAll('#AddToCartForm label div.option-content span.title');
+$(document).ready(function(){
+    // Disable button if cart has items
+    let countP = document.querySelectorAll('.cart-menu .item-wrap .item')
+    if(countP.length > 0){
+        const addBtn = document.querySelector('#AddToCart');
+        addBtn.setAttribute('disabled', true);
+        addBtn.innerText = "You already have items in cart!";
+    }
 
-      bodyElements.forEach((element) => {
+    // Replace ® with <sup>®</sup>
+    const bodyElements = document.querySelectorAll('#AddToCartForm label div.option-content span.title');
+    bodyElements.forEach((element) => {
         element.innerHTML = element.innerHTML.replace(/®/g, '<sup>®</sup>');
-      });
-    })
+    });
+});
 
+document.getElementById('AddToCartForm').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-    document.getElementById('AddToCartForm').addEventListener('submit', function(event) {
-        event.preventDefault();
+    if(!cartData.items.length){
+        const variantInput = document.querySelector('input[name="id"]:checked');
+        const productInput = document.querySelector('input[name="product"]');
 
-        if(!cartData.items.length){
-            var variantId = document.querySelector('input[name="id"]:checked').value;
-            var deviceId = document.querySelector('input[name="product"]').value;
+        if (!variantInput && !productInput) {
+            alert('Please select a product option.');
+            return;
+        }
 
-            var sellingPlanSelect = document.getElementById('selling-id-' + variantId);
-            var sellingPlanId = sellingPlanSelect ? sellingPlanSelect.value : null;
+        const variantId = variantInput ? variantInput.value : null;
+        const deviceId = productInput ? productInput.value : null;
 
-            addThis([
-                {
-                    'id': deviceId,
-                    'quantity': 1,
-                },
-                {
-                    'id': variantId,
-                    'quantity': 1,
-                    'selling_plan': sellingPlanId
-                }
-            ], (result)=>{
+        const sellingPlanSelect = variantId ? document.getElementById('selling-id-' + variantId) : null;
+        const sellingPlanId = sellingPlanSelect ? sellingPlanSelect.value : null;
+
+        const itemsToAdd = [];
+
+        if (deviceId) {
+            itemsToAdd.push({ 'id': deviceId, 'quantity': 1 });
+        }
+
+        if (variantId) {
+            itemsToAdd.push({ 'id': variantId, 'quantity': 1, 'selling_plan': sellingPlanId });
+        }
+
+        if (itemsToAdd.length) {
+            addThis(itemsToAdd, (result) => {
                 if(result){
                     load();
                     document.querySelector('nav').classList.add('open');
-                    document.querySelector('#AddToCart').setAttribute('disabled', true);
-                    document.querySelector('#AddToCart').innerText = "You already have items in cart!";
+                    const addBtn = document.querySelector('#AddToCart');
+                    addBtn.setAttribute('disabled', true);
+                    addBtn.innerText = "You already have items in cart!";
                 }
             });
         }
-    });
-
+    }
+});
 </script>
+
 
 {% schema %}
 	{
