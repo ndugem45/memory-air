@@ -9,12 +9,12 @@
  */
 {
   "sections": {
-    "hero-productpage": {
+    "testing-hero-productpage": {
       "type": "testing-hero-productpage",
       "settings": {}
     }
   },
   "order": [
-    "hero-productpage"
+    "testing-hero-productpage"
   ]
 }
