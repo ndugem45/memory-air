@@ -420,15 +420,15 @@
 
 <script>
 $(document).ready(function(){
-    // Disable button if cart has items
-    let countP = document.querySelectorAll('.cart-menu .item-wrap .item')
+    // Disable "Add to Cart" button if cart already has items
+    let countP = document.querySelectorAll('.cart-menu .item-wrap .item');
     if(countP.length > 0){
         const addBtn = document.querySelector('#AddToCart');
         addBtn.setAttribute('disabled', true);
         addBtn.innerText = "You already have items in cart!";
     }
 
-    // Replace ® with <sup>®</sup>
+    // Replace ® with <sup>®</sup> in variant titles
     const bodyElements = document.querySelectorAll('#AddToCartForm label div.option-content span.title');
     bodyElements.forEach((element) => {
         element.innerHTML = element.innerHTML.replace(/®/g, '<sup>®</sup>');
@@ -439,28 +439,34 @@ document.getElementById('AddToCartForm').addEventListener('submit', function(eve
     event.preventDefault();
 
     if(!cartData.items.length){
-        const variantInput = document.querySelector('input[name="id"]:checked');
-        const productInput = document.querySelector('input[name="product"]');
+        const variantInput = document.querySelector('input[name="id"]:checked'); // Subscription variant
+        const productInput = document.querySelector('input[name="product"]'); // Single product fallback
 
         if (!variantInput && !productInput) {
             alert('Please select a product option.');
             return;
         }
 
-        const variantId = variantInput ? variantInput.value : null;
-        const deviceId = productInput ? productInput.value : null;
+        let itemsToAdd = [];
 
-        const sellingPlanSelect = variantId ? document.getElementById('selling-id-' + variantId) : null;
-        const sellingPlanId = sellingPlanSelect ? sellingPlanSelect.value : null;
+        if (variantInput) {
+            // User selected a variant (likely a subscription)
+            const variantId = variantInput.value;
+            const sellingPlanSelect = document.getElementById('selling-id-' + variantId);
+            const sellingPlanId = sellingPlanSelect ? sellingPlanSelect.value : null;
 
-        const itemsToAdd = [];
+            itemsToAdd.push({
+                id: variantId,
+                quantity: 1,
+                ...(sellingPlanId && { selling_plan: sellingPlanId }) // Only include selling_plan if exists
+            });
 
-        if (deviceId) {
-            itemsToAdd.push({ 'id': deviceId, 'quantity': 1 });
-        }
-
-        if (variantId) {
-            itemsToAdd.push({ 'id': variantId, 'quantity': 1, 'selling_plan': sellingPlanId });
+        } else if (productInput) {
+            // Single product without subscription
+            itemsToAdd.push({
+                id: productInput.value,
+                quantity: 1
+            });
         }
 
         if (itemsToAdd.length) {
@@ -477,6 +483,7 @@ document.getElementById('AddToCartForm').addEventListener('submit', function(eve
     }
 });
 </script>
+
 
 
 {% schema %}
