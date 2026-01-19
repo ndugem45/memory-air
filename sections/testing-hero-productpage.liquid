@@ -1,0 +1,483 @@
+{% assign featured_image = current_variant.featured_image | default: product.featured_image %}
+
+{% style %}
+	#shopify-section-{{section.id}}.hero-productpage {
+		display: flex;
+		justify-content: center;
+		padding-bottom: 48px;
+        padding-top: 125px;
+        background: var(--Gradient-BG, linear-gradient(180deg, rgba(170, 126, 113, 0.10) 0%, rgba(170, 126, 113, 0.00) 98.6%), #FFF);
+	}
+	#shopify-section-{{section.id}} .productpage_title {
+        display: flex;
+		justify-content: center;
+        flex-direction: row;
+    }
+	#shopify-section-{{section.id}} .productpage-contactus {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		padding-block: 50px;
+	}
+	
+	#shopify-section-{{section.id}} .productpage_content {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		width: 100%;
+        gap: 40px;
+	}
+	
+	#shopify-section-{{section.id}} .productpage_content-image,
+	#shopify-section-{{section.id}} .productpage_content-form {
+		width: 100%;
+		position: relative;
+	}
+	#shopify-section-{{section.id}} .productpage_content-image{
+		width: 60%;
+		padding: 20px;
+		border-radius: 16px;
+		border: 1px solid #EEE;
+		background: #FFF;
+        gap: 16px;
+        display: flex;
+        flex-direction: column;
+		box-shadow: -2px -2px 10px 0px rgba(238, 238, 238, 0.20), 2px 2px 10px 0px rgba(238, 238, 238, 0.20);
+	}
+	#shopify-section-{{section.id}} .productpage_content-form {
+		background-image: url('{{ "bg-form.png" | asset_url }}');
+		background-position: top center;
+		background-repeat: no-repeat;
+		display: flex;
+		align-items: start;
+		justify-content: center;
+		height: 800px;
+		background-size: 780px 800px;
+	}
+    /* #shopify-section-{{section.id}} .productpage_img-head{
+        gap: 16px;
+        display: flex;
+        flex-direction: column;
+    } */
+
+	#shopify-section-{{section.id}} .img-open{
+		width: 100%;
+		height: 453px;
+        border-radius: 16px;
+        object-fit: cover;
+        flex: 1;
+	}
+    #shopify-section-{{section.id}} .image-wrapper{
+        display: flex;
+        justify-content: flex-start;
+        gap: 16px;
+        overflow: auto;
+        flex-direction: row;
+        flex: 1;
+    }
+    #shopify-section-{{section.id}} .image-wrapper > div{
+        flex: 1;
+        height: 130px;
+    }
+	#shopify-section-{{section.id}} .image-wrapper .illus{
+		height: 100%;
+        width: 100%;
+        border-radius: 16px;
+        object-fit: cover;
+	}
+
+	#shopify-section-{{section.id}} .productpage_text-title{
+		color: #232323;
+		font-family: "General Sans Medium";
+		font-size: 32px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 140%; /* 44.8px */
+		display: flex;
+		margin-bottom: 24px;
+	}
+
+	#shopify-section-{{section.id}} .productpage_img-text{
+		display: flex;
+		flex-direction: column;
+	}
+
+	#shopify-section-{{section.id}} .productpage_text-title > span{
+		color: #232323;
+		font-family: "Avenir";
+		font-size: 15px;
+		font-style: normal;
+		font-weight: 450;
+		line-height: 100%;
+		padding-top: 8px;
+		margin-right: 4px;
+	}
+	#shopify-section-{{section.id}} .productpage_text-list{
+		color: #232323;
+		font-family: "General Sans Medium";
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 160%; /* 28.8px */
+	}
+	#shopify-section-{{section.id}} .productpage_text-list-dsc{
+		color: #232323;
+		font-family: "General Sans Regular";
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 160%; /* 22.4px */
+		margin-bottom: 16px;
+	}
+
+	#shopify-section-{{section.id}} .productpage-title_btm > p {
+		color: #232323;
+		text-align: justify;
+		font-family: "General Sans Regular";
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 160%; /* 25.6px */
+	}
+
+    #shopify-section-{{section.id}} .product-card {
+        flex: 1;
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid #EEE;
+        background: white;
+        box-shadow: -2px -2px 10px 0px rgba(238, 238, 238, 0.20), 2px 2px 10px 0px rgba(238, 238, 238, 0.20);
+        font-family: Arial, sans-serif;
+    }
+    #shopify-section-{{section.id}} .product-card form{
+        padding: unset;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        width: 100%;
+        max-width: 100%;
+    }
+    #shopify-section-{{section.id}} .product-card form .radio-group{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    #shopify-section-{{section.id}} .product-card .desc{
+        margin-bottom: 24px;
+    }
+    #shopify-section-{{section.id}} .product-card > h2 {
+        border-bottom: solid 1px #E4E3E4;
+        padding-bottom: 8px;
+    } 
+
+    #shopify-section-{{section.id}} h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    #shopify-section-{{section.id}} .option {
+        background: white;
+        border-radius: 16px;
+        border: 1px solid #ddd;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #shopify-section-{{section.id}} .option:hover,
+    #shopify-section-{{section.id}} .option:has(input:checked)  {
+        border-color: #E1A277;
+        /* background: rgba(170, 126, 113, 0.1); */
+        /* box-shadow: 0 4px 12px rgba(170, 126, 113, 0.2); */
+        background: #F6F2F1;
+    }
+
+    #shopify-section-{{section.id}} .option label {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        cursor: pointer;
+        padding: 16px;
+    }
+
+    #shopify-section-{{section.id}} .option input {
+        display: none;
+    }
+
+    #shopify-section-{{section.id}} .custom-checkbox {
+        width: 20px;
+        height: 20px;
+        border: 1px solid #aa7e71;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s ease-in-out;
+    }
+
+
+    #shopify-section-{{section.id}} .option input:checked + label .custom-checkbox {
+        /* background: #aa7e71; */
+        background: rgba(35, 35, 35, 1);
+        border-color: #aa7e71;
+        position: relative;
+    }
+
+    #shopify-section-{{section.id}} .option input:checked + label .custom-checkbox::after {
+        content: "✔";
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    #shopify-section-{{section.id}} .option-content {
+        flex: 1;
+    }
+
+    #shopify-section-{{section.id}} .title {
+        font-size: 16px;
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    #shopify-section-{{section.id}} ul {
+        padding-left: 20px;
+        margin: 0 0 8px;
+        font-size: 14px;
+    }
+
+    #shopify-section-{{section.id}} .price {
+        font-size: 16px;
+        font-weight: bold;
+        display: block;
+        text-align: end;
+    }
+
+    #shopify-section-{{section.id}} .add-to-cart {
+        width: 100%;
+        padding: 14px;
+        background: black;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        margin-top: 16px;
+    }
+
+    #shopify-section-{{section.id}} .add-to-cart:hover {
+        background: #333;
+    }
+
+    #shopify-section-{{section.id}} .info-text {
+        text-align: center;
+        font-size: 12px;
+        color: #666;
+        margin-top: 12px;
+    }
+
+    @media (max-width: 1080px) {
+
+        #shopify-section-{{section.id}} .productpage_content {
+            flex-direction: column;
+            gap: 20px;
+        }
+        #shopify-section-{{section.id}} .productpage_title > h1,
+        #shopify-section-{{section.id}} .productpage_title > h1 > span{
+            font-size: 48px;
+            margin-bottom: 30px !important;
+        }
+
+
+        #shopify-section-{{section.id}} .productpage_content-image {
+            padding: 10px;
+            width: 100%;
+        }
+
+        #shopify-section-{{section.id}} .productpage_content-form {
+            height: auto;
+            background-size: cover;
+            padding: 20px;
+        }
+
+        #shopify-section-{{section.id}} .productpage_img-head > img {
+            height: auto;
+            
+        }
+
+        #shopify-section-{{section.id}} .img-open{
+            flex: unset;
+            height: 300px;
+        }
+
+        #shopify-section-{{section.id}} .image-wrapper {
+            flex-wrap: wrap;
+            gap: 8px;
+            width: 100%;
+        }
+        #shopify-section-{{section.id}} .image-wrapper > img {
+            width: 104px;
+            height: 60px;
+        }
+
+        #shopify-section-{{section.id}} .productpage_text-title {
+            font-size: 24px;
+        }
+
+        #shopify-section-{{section.id}} .productpage_text-list {
+            font-size: 16px;
+        }
+
+        #shopify-section-{{section.id}} .productpage_text-list-dsc {
+            font-size: 12px;
+        }
+
+        #shopify-section-{{section.id}} .product-card {
+            max-width: 100%;
+            padding: 15px;
+        }
+
+        #shopify-section-{{section.id}} .option label {
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        #shopify-section-{{section.id}} .add-to-cart {
+            font-size: 14px;
+            padding: 12px;
+        }
+    }
+
+
+
+{% endstyle %}
+
+	<div class="container container-contactus">
+		<div class="productpage_title">
+			<h1 class="m-btm m-54">
+				<span>Buy </span>
+				{{ product.title }}
+			</h1>
+		</div>
+		<div class="productpage_content">
+			<div class="productpage_content-image">
+                <img src="{{ featured_image.src | img_url: 'original' }}" alt="{{ featured_image.alt | escape }}" class="img-open illus">
+                {% if product.images.length > 1 %}
+                    <div class="image-wrapper">
+                        {% for image in product.images %}
+                            <div>
+                                <img src="{{ image.src | img_url: 'compact' }}" alt="{{ image.alt | escape }}" class="illus">
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+			</div>
+
+            <div class="product-card">
+                <h2>{{ product.title }}</h2>
+
+                <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
+
+                    {% if product.variants != blank%}
+                        <div class="radio-group">
+                            {% for variant in product.variants %}
+                                {% if variant.selling_plan_allocations[0] %}
+                                    <div class="option" form="AddToCartForm">
+                                        {% for selling_plan in variant.selling_plan_allocations %}
+                                            <input type="hidden" id="selling-id-{{  variant.id }}" value="{{ selling_plan.selling_plan.id }}" />
+                                        {% endfor %}
+
+                                        <input type="radio" name="id" id="{{  variant.id }}" value="{{  variant.id }}">
+
+                                        <label for="{{ variant.id }}">
+                                            <div class="custom-checkbox"></div>
+                                            <div class="option-content">
+                                                <span class="title">{{ variant.title }}</span>
+                                                
+                                                {% if variant.metafields.custom.variant_description %}
+                                                    {{ variant.metafields.custom.variant_description | metafield_tag }}
+                                                {% endif %}
+                                            
+                                                <span class="price">{{ variant.metafields.custom.price_text }}</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                {% else %}
+                                    <input type="hidden" id="product" name="product" value="{{  variant.id }}">
+                                 {% endif %}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    <div style="display: none !important;" class="sealsubs-target-element" data-product="{{ product | json | escape }}" data-handle="{{ product.handle }}"></div>
+
+                    <button class="add-to-cart" type="submit" name="add" id="AddToCart">Add to cart</button>
+                </form>
+            
+                <p class="info-text">
+                Sells Out Fast<br>
+                Limited Stock Available
+                </p>
+            </div>
+            
+
+		</div>
+	</div>
+
+<script>
+  
+    $(document).ready(function(){
+      let countP = document.querySelectorAll('.cart-menu .item-wrap .item')
+        
+      if(countP.length > 0){
+          document.querySelector('#AddToCart').setAttribute('disabled', true);
+          document.querySelector('#AddToCart').innerText = "You already have items in cart!";
+      }
+      
+      const bodyElements = document.querySelectorAll('#AddToCartForm label div.option-content span.title');
+
+      bodyElements.forEach((element) => {
+        element.innerHTML = element.innerHTML.replace(/®/g, '<sup>®</sup>');
+      });
+    })
+
+
+    document.getElementById('AddToCartForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        if(!cartData.items.length){
+            var variantId = document.querySelector('input[name="id"]:checked').value;
+            var deviceId = document.querySelector('input[name="product"]').value;
+
+            var sellingPlanSelect = document.getElementById('selling-id-' + variantId);
+            var sellingPlanId = sellingPlanSelect ? sellingPlanSelect.value : null;
+
+            addThis([
+                {
+                    'id': deviceId,
+                    'quantity': 1,
+                },
+                {
+                    'id': variantId,
+                    'quantity': 1,
+                    'selling_plan': sellingPlanId
+                }
+            ], (result)=>{
+                if(result){
+                    load();
+                    document.querySelector('nav').classList.add('open');
+                    document.querySelector('#AddToCart').setAttribute('disabled', true);
+                    document.querySelector('#AddToCart').innerText = "You already have items in cart!";
+                }
+            });
+        }
+    });
+
+</script>
+
+{% schema %}
+	{
+		"tag": "section",
+		"class": "hero-productpage"
+	}
+{% endschema %}
