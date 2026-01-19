@@ -390,7 +390,7 @@
                                 <label for="variant-{{ variant.id }}">
                                     <div class="custom-checkbox"></div>
                                     <div class="option-content">
-                                        <span class="title">{{ variant.title }}</span>
+                                        {% comment %} <span class="title">{{ variant.title }}</span> {% endcomment %}
                                         {% if variant.metafields.custom.variant_description %}
                                             {{ variant.metafields.custom.variant_description | metafield_tag }}
                                         {% endif %}
