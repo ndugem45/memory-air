@@ -10,7 +10,7 @@
 {
   "sections": {
     "hero-productpage": {
-      "type": "hero-productpage",
+      "type": "testing-hero-productpage",
       "settings": {}
     }
   },
