@@ -11,7 +11,9 @@
   "sections": {
     "hero-productpage": {
       "type": "hero-productpage",
-      "settings": {}
+      "settings": {
+        "hero_logo": "shopify://shop_images/WhatsApp_Image_2026-01-29_at_4.19.35_AM.jpg"
+      }
     }
   },
   "order": [
