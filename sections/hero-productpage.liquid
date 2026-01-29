@@ -362,6 +362,9 @@
 		<div class="productpage_content">
 			<div class="productpage_content-image">
                 <img src="{{ featured_image.src | img_url: 'original' }}" alt="{{ featured_image.alt | escape }}" class="img-open illus">
+                {% if section.settings.hero_logo != blank %}
+                    <img src="{{ section.settings.hero_logo | image_url }}" alt="{{ section.settings.hero_logo.alt }}" height="" width="" class="hero_logimg">
+                {% endif %}
                 {% if product.images.length > 1 %}
                     <div class="image-wrapper">
                         {% for image in product.images %}
